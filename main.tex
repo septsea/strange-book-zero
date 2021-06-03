@@ -1,0 +1,63 @@
+%!TEX program = xelatex
+
+% Ignore the next line...
+% \documentclass[UTF8,fontset=none,leqno]{ctexart}
+
+% Make sure you have installed the fonts I use. If not, just remember to
+% make some modifications.
+\documentclass[UTF8,fontset=none,twoside,leqno,a4paper]{ctexart}
+% \documentclass[UTF8,twoside,leqno]{ctexart}
+\usepackage{amssymb,amsmath}
+% Add hyperlinks to the table of contents
+\usepackage[hidelinks]{hyperref}
+
+% Enable unicode-math? If this is enabled, many font packages will not work.
+% However, if this is enabled, the symbols look better.
+\usepackage{unicode-math}
+
+\newcommand{\newsection}{\cleardoublepage \thispagestyle{empty}}
+% \newcommand{\newsection}{\cleardoublepage \thispagestyle{plain}}
+
+\input{format/style}
+
+\input{format/commandsUsingAt}
+
+% ================================================================================
+% The document begins.
+% ================================================================================
+
+\begin{document}
+
+% \begin{titlepage}
+
+\title{\sffamily Untitled}
+\date{\sffamily \itshape First released on the Internet, in June 2021}
+\author{\sffamily Septsea}
+\ctexset{today=old}
+\pagestyle{plain}
+\pagenumbering{roman}
+\renewcommand{\contentsname}{Table of Contents}
+\renewcommand{\abstractname}{Abstract}
+
+\maketitle
+\thispagestyle{empty}
+\begin{abstract}
+    This is an untitled article.
+\end{abstract}
+\tableofcontents
+
+% \end{titlepage}
+
+\newsection
+\input{contents/preface}
+
+\newsection
+\pagestyle{headings}
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\input{contents/poly}
+
+\cleardoublepage
+\thispagestyle{empty}
+
+\end{document}

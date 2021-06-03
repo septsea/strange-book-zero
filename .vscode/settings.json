@@ -1,0 +1,168 @@
+{
+    /* ======================================== */
+    /* Git settings */
+    "git.enableSmartCommit": true,
+    "git.postCommitCommand": "push",
+    /* ======================================== */
+    /* General settings for LaTeX extension */
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "makeindex",
+            "command": "makeindex",
+            "args": [
+                "%DOCFILE%.nlo",
+                "-s",
+                "nomencl.ist",
+                "-o",
+                "%DOCFILE%.nls"
+            ]
+        },
+        {
+            "name": "biber",
+            "command": "biber",
+            "args": [
+                "%DOCFILE%"
+            ]
+        },
+        {
+            "name": "bibtex",
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "xelatex🔃",
+            "tools": [
+                "xelatex"
+            ]
+        },
+        {
+            "name": "xe->mkind->bib->xe*2🔃",
+            "tools": [
+                "xelatex",
+                "makeindex",
+                "biber",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "pdf->mkind->bib->pdf*2🔃",
+            "tools": [
+                "pdflatex",
+                "makeindex",
+                "biber",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "xe->bib->xe->xe🔃",
+            "tools": [
+                "xelatex",
+                "bibtex",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
+            "name": "biber🔃",
+            "tools": [
+                "biber"
+            ]
+        },
+        {
+            "name": "pdflatex🔃",
+            "tools": [
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "pdf->bib->pdf->pdf🔃",
+            "tools": [
+                "pdflatex",
+                "bibtex",
+                "pdflatex",
+                "pdflatex"
+            ]
+        },
+        {
+            "name": "BibTeX🔃",
+            "tools": [
+                "bibtex"
+            ]
+        }
+    ],
+    // "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+    "latex-workshop.view.pdf.invertMode.enabled": "auto",
+    "latex-workshop.view.pdf.invert": 0.9,
+    "latex-workshop.view.pdf.trim": 3,
+    "latex-workshop.view.pdf.viewer": "external",
+    "latex-workshop.view.pdf.external.viewer.args": [
+        "%PDF%"
+    ],
+    "latex-workshop.view.pdf.external.synctex.args": [
+        "-forward-search",
+        "%TEX%",
+        "%LINE%",
+        "%PDF%"
+    ],
+    // Change these 2 paths when necessary
+    "latex-workshop.view.pdf.external.viewer.command": "C:\\Program Files\\SumatraPDF\\SumatraPDF.exe",
+    "latex-workshop.view.pdf.external.synctex.command": "C:\\Program Files\\SumatraPDF\\SumatraPDF.exe",
+    "latex-workshop.showContextMenu": false,
+    "latex-workshop.latex.recipe.default": "lastUsed",
+    // "editor.wordWrap": "on",
+    "latex-workshop.synctex.synctexjs.enabled": false,
+    // "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.mathpreviewpanel.editorGroup": "below",
+    "[latex]": {
+        "editor.wordWrap": "on",
+    },
+    "todo-tree.filtering.excludeGlobs": [
+        "**/*.ttc",
+        "**/*.ttf",
+        "**/*.djvu",
+        "**/*.pdf",
+        "**/*.md"
+    ],
+    "cSpell.words": [
+        "bijections",
+        "epimorphisms",
+        "bijective",
+        "epimorphic",
+        "epimorphism",
+        "homomorphic",
+        "injective",
+        "monomorphism",
+        "surjective"
+    ],
+    /* ======================================== */
+    /* Fancy settings below. */
+}
