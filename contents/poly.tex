@@ -9,6 +9,7 @@
 \def\ellipsis{\dots}
 \def\period{\text{。}}
 \def\qedsymbol{\ding{44}}
+\newcommand{\term}[1]{(\textit{#1})}
 
 \section*{Delving into Polynomials}
 \addcontentsline{toc}{section}{Delving into Polynomials}
@@ -33,11 +34,11 @@ Out of boredom, I wrote the article.
 \subsubsection*{Sets}
 
 \begin{definition}
-    集 (\textit{set}) 是具有某种特定性质的对象汇集而成的一个整体, 其对象称为元 (\textit{element})\period
+    集 \term{set} 是具有某种特定性质的对象汇集而成的一个整体, 其对象称为元 \term{element}\period
 \end{definition}
 
 \begin{definition}
-    无元的集是空集 (\textit{empty set})\period
+    无元的集是空集 \term{empty set}\period
 \end{definition}
 
 \begin{remark}
@@ -56,19 +57,19 @@ Out of boredom, I wrote the article.
 \end{definition}
 
 \begin{definition}
-    若 $a$ 是集 $A$ 的元, 则写 $a \in A$ 或 $A \ni a$, 说 $a$ 属于 (\textit{to belong to}) $A$ 或 $A$ 包含 (\textit{to contain}) $a$\period 若 $a$ 不是集 $A$ 的元, 则写 $a \notin A$, 说 $a$ 不属于 $A$\period\myFN{有点尴尬, 我太菜了, 那个 ``不包含'' 符号打不出来\period}
+    若 $a$ 是集 $A$ 的元, 则写 $a \in A$ 或 $A \ni a$, 说 $a$ 属于 \term{to belong to} $A$ 或 $A$ 包含 \term{to contain} $a$\period 若 $a$ 不是集 $A$ 的元, 则写 $a \notin A$, 说 $a$ 不属于 $A$\period\myFN{有点尴尬, 我太菜了, 那个 ``不包含'' 符号打不出来\period}
 \end{definition}
 
 \begin{example}
     % /* cspell: disable-next-line */
-    全体整数作成的集用 $\ZZ$ (\textit{Zahl}\myFN{A German word which means \textit{number}.}) 表示\period 它可以写为
+    全体整数作成的集用 $\ZZ$ \term{Zahl}\myFN{A German word which means \textit{number}.} 表示\period 它可以写为
     \begin{align*}
         \ZZ = \{\, 0,1,-1,2,-2,\cdots,n,-n,\cdots \,\} \period
     \end{align*}
 \end{example}
 
 \begin{example}
-    全体非负整数作成的集用 $\NN$ (\textit{natural}) 表示\period 它可以写为
+    全体非负整数作成的集用 $\NN$ \term{natural} 表示\period 它可以写为
     \begin{align*}
         \NN = \{\, x \mid x \in \ZZ \text{ and } x \geq 0 \,\} \period
     \end{align*}
@@ -79,7 +80,7 @@ Out of boredom, I wrote the article.
 \end{example}
 
 \begin{definition}
-    若任取 $a \in A$, 都有 $a \in B$, 则写 $A \subset B$ 或 $B \supset A$, 说 $A$ 是 $B$ 的子集 (\textit{subset}) 或 $B$ 是 $A$ 的超集 (\textit{superset})\period 假如有一个 $b \in B$ 不是 $A$ 的元, 可以用 ``真'' (\textit{proper}) 形容之\period
+    若任取 $a \in A$, 都有 $a \in B$, 则写 $A \subset B$ 或 $B \supset A$, 说 $A$ 是 $B$ 的子集 \term{subset} 或 $B$ 是 $A$ 的超集 \term{superset}\period 假如有一个 $b \in B$ 不是 $A$ 的元, 可以用 ``真'' \term{proper} 形容之\period
 \end{definition}
 
 \begin{example}
@@ -87,22 +88,22 @@ Out of boredom, I wrote the article.
 \end{example}
 
 \begin{example}
-    全体有理数作成的集用 $\QQ$ (\textit{quotient}) 表示\period 因为整数是有理数, 所以 $\ZZ \subset \QQ$\period 因为有理数 $\frac12$ 不是整数, 我们说 $\ZZ$ 是 $\QQ$ 的真子集\period
+    全体有理数作成的集用 $\QQ$ \term{quotient} 表示\period 因为整数是有理数, 所以 $\ZZ \subset \QQ$\period 因为有理数 $\frac12$ 不是整数, 我们说 $\ZZ$ 是 $\QQ$ 的真子集\period
 \end{example}
 
 \begin{definition}
-    全体实数作成的集用 $\RR$ (\textit{real}) 表示\period
+    全体实数作成的集用 $\RR$ \term{real} 表示\period
 \end{definition}
 
 \begin{definition}
-    全体复数作成的集用 $\CC$ (\textit{complex}) 表示\period 不难看出,
+    全体复数作成的集用 $\CC$ \term{complex} 表示\period 不难看出,
     \begin{align*}
         \NN \subset \ZZ \subset \QQ \subset \RR \subset \CC \period
     \end{align*}
 \end{definition}
 
 \begin{definition}
-    $\FF$ (\textit{field}) 可表示 $\QQ$, $\RR$, $\CC$ 的任意一个\period 不难看出, $\FF$ 适合这几条:
+    $\FF$ \term{field} 可表示 $\QQ$, $\RR$, $\CC$ 的任意一个\period 不难看出, $\FF$ 适合这几条:
 
     (i) $0 \in \FF$, $1 \in \FF$, $0 \neq 1$;
 
@@ -123,13 +124,13 @@ Out of boredom, I wrote the article.
 \end{definition}
 
 \begin{definition}
-    集 $A$ 与 $B$ 的交 (\textit{intersection}) 是集
+    集 $A$ 与 $B$ 的交 \term{intersection} 是集
     \begin{align*}
         A \cap B = \{\, x \mid x \in A \text{ and } x \in B \,\} \period
     \end{align*}
     也就是说, $A \cap B$ 恰由 $A$ 与 $B$ 的公共元作成\period
 
-    集 $A$ 与 $B$ 的并 (\textit{union}) 是集
+    集 $A$ 与 $B$ 的并 \term{union} 是集
     \begin{align*}
         A \cup B = \{\, x \mid x \in A \text{ or } x \in B \,\} \period
     \end{align*}
@@ -167,18 +168,18 @@ Out of boredom, I wrote the article.
 \subsubsection*{Functions}
 
 \begin{definition}
-    假如通过一个法则 $f$, 使任取 $a \in A$, 都能得到唯一的 $b \in B$, 则说这个法则 $f$ 是集 $A$ 到集 $B$ 的一个函数 (\textit{function})\period 元 $b$ 是元 $a$ 在函数 $f$ 下的象 (\textit{image})\period 元 $a$ 是元 $b$ 在 $f$ 下的一个原象 (\textit{inverse image})\period 这个关系可以写为
+    假如通过一个法则 $f$, 使任取 $a \in A$, 都能得到唯一的 $b \in B$, 则说这个法则 $f$ 是集 $A$ 到集 $B$ 的一个函数 \term{function}\period 元 $b$ 是元 $a$ 在函数 $f$ 下的象 \term{image}\period 元 $a$ 是元 $b$ 在 $f$ 下的一个原象 \term{inverse image}\period 这个关系可以写为
     \begin{align*}
          & A \to B,  \tag*{$f$:}      \\
          & a \mapsto b = f(a) \period
     \end{align*}
-    称 $A$ 是定义域 (\textit{domain}), $B$ 是陪域\myFN{不要混淆陪域与象集 (\textit{image}, \textit{range})\period $f$ 的象集是
+    称 $A$ 是定义域 \term{domain}, $B$ 是陪域\myFN{不要混淆陪域与象集 (\textit{image}, \textit{range})\period $f$ 的象集是
         \begin{align*}
             \mathrm{Im} \, f = \{\, b \in B \mid b = f(a), \, a \in A \,\} \period
         \end{align*}
         这就是中学数学里的 ``值域''\period
         % /* cspell: disable-next-line */
-    } (\textit{codomain})\period
+    } \term{codomain}\period
 \end{definition}
 
 \begin{example}
@@ -228,7 +229,7 @@ Out of boredom, I wrote the article.
 \end{example}
 
 \begin{example}
-    设 $A$ 是全体正实数作成的集\period 定义二个 $A$ 到 $\RR$ 的函数: $f_1 (x) = \frac16 \log_{2} {x^3}$, $f_2 (x) = \log_{4} {x}$\period 知道对数的读者可以看出, $f_1$ 与 $f_2$ 有着相同的对应法则, 故 $f_1 = f_2$\period 因为 $f_2$ 是对数函数 (\textit{logarithmic function}), 所以 $f_1$ 也是\period
+    设 $A$ 是全体正实数作成的集\period 定义二个 $A$ 到 $\RR$ 的函数: $f_1 (x) = \frac16 \log_{2} {x^3}$, $f_2 (x) = \log_{4} {x}$\period 知道对数的读者可以看出, $f_1$ 与 $f_2$ 有着相同的对应法则, 故 $f_1 = f_2$\period 因为 $f_2$ 是对数函数 \term{logarithmic function}, 所以 $f_1$ 也是\period
 \end{example}
 
 \begin{remark}
@@ -236,13 +237,13 @@ Out of boredom, I wrote the article.
 \end{remark}
 
 \begin{definition}
-    $A$ 到 $A$ 的函数是 $A$ 的变换 (\textit{transform})\period 换句话说, 变换是定义域跟陪域一样的函数\period
+    $A$ 到 $A$ 的函数是 $A$ 的变换 \term{transform}\period 换句话说, 变换是定义域跟陪域一样的函数\period
 \end{definition}
 
 \subsubsection*{Binary Functions}
 
 \begin{definition}
-    $A^2$ 到 $A$ 的函数称为 $A$ 的二元运算 (\textit{binary functions})\period
+    $A^2$ 到 $A$ 的函数称为 $A$ 的二元运算 \term{binary functions}\period
 \end{definition}
 
 \begin{example}
@@ -254,7 +255,7 @@ Out of boredom, I wrote the article.
 \end{remark}
 
 \begin{definition}
-    设 $T(A)$ 是全部 $A$ 的变换作成的集\period 设 $f,g$ 是 $A$ 的变换\period 任取 $a \in A$, 当然有 $b = f(a) \in A$\period 所以, $g(b) = g(f(a))$ 也是 $A$ 的元\period 当然, 这个 $g(f(a))$ 也是唯一确定的\period 这样, 我们说, $f$ 与 $g$ 的复合 (\textit{composition}) $g \circ f$ 是
+    设 $T(A)$ 是全部 $A$ 的变换作成的集\period 设 $f,g$ 是 $A$ 的变换\period 任取 $a \in A$, 当然有 $b = f(a) \in A$\period 所以, $g(b) = g(f(a))$ 也是 $A$ 的元\period 当然, 这个 $g(f(a))$ 也是唯一确定的\period 这样, 我们说, $f$ 与 $g$ 的复合 \term{composition} $g \circ f$ 是
     \begin{align*}
          & A \to A, \tag*{$g \circ f \colon$} \\
          & a \mapsto g(f(a)) \period
@@ -347,7 +348,7 @@ Out of boredom, I wrote the article.
     \begin{align*}
         (x \circ y) \circ z = x \circ (y \circ z),
     \end{align*}
-    则说 $f$ 适合结合律 (\textit{associativity})\period 此时, $(x \circ y) \circ z$ 或 $x \circ (y \circ z)$ 可简写为 $x \circ y \circ z$\period
+    则说 $f$ 适合结合律 \term{associativity}\period 此时, $(x \circ y) \circ z$ 或 $x \circ (y \circ z)$ 可简写为 $x \circ y \circ z$\period
 \end{definition}
 
 \begin{example}
@@ -375,7 +376,7 @@ Out of boredom, I wrote the article.
     \begin{align*}
         x \circ y = y \circ x,
     \end{align*}
-    则说 $\circ$ 适合交换律 (\textit{commutativity})\period
+    则说 $\circ$ 适合交换律 \term{commutativity}\period
 \end{definition}
 
 \begin{example}
@@ -402,11 +403,11 @@ Out of boredom, I wrote the article.
     \begin{align*}
          & x \cdot (y + z) = x \cdot y + x \cdot z, \tag*{(LD)}
     \end{align*}
-    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略\period 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$\period 但有意思的是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式子是对的\period 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的\period} (\textit{left distributivity})\period 类似地, 若
+    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略\period 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$\period 但有意思的是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式子是对的\period 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的\period} \term{left distributivity}\period 类似地, 若
     \begin{align*}
          & (y + z) \cdot x = y \cdot x + z \cdot x, \tag*{(RD)}
     \end{align*}
-    则说 $+$ 与 $\cdot$ 适合右 ($\cdot$) 分配律 (\textit{right distributivity})\period 说既适合 LD 也适合 RD 的 $+$ 与 $\cdot$ 适合 ($\cdot$) 分配律 (\textit{distributivity})\period 显然, 若 $\cdot$ 适合交换律, 则 LD 与 RD 等价\period
+    则说 $+$ 与 $\cdot$ 适合右 ($\cdot$) 分配律 \term{right distributivity}\period 说既适合 LD 也适合 RD 的 $+$ 与 $\cdot$ 适合 ($\cdot$) 分配律 \term{distributivity}\period 显然, 若 $\cdot$ 适合交换律, 则 LD 与 RD 等价\period
 \end{definition}
 
 \begin{example}
@@ -425,11 +426,11 @@ Out of boredom, I wrote the article.
     \begin{align*}
          & x \circ y = x \circ z \implies y = z, \tag*{(LC)}
     \end{align*}
-    则说 $\circ$ 适合左消去律 (\textit{left cancellation property})\period 类似地, 若
+    则说 $\circ$ 适合左消去律 \term{left cancellation property}\period 类似地, 若
     \begin{align*}
          & x \circ z = y \circ z \implies x = y, \tag*{(RC)}
     \end{align*}
-    则说 $\circ$ 适合右消去律 (\textit{right cancellation property})\period 说既适合 LC 也适合 RC 的 $\circ$ 适合消去律 (\textit{cancellation property})\period 显然, 若 $\circ$ 适合交换律, 则 LC 与 RC 等价\period
+    则说 $\circ$ 适合右消去律 \term{right cancellation property}\period 说既适合 LC 也适合 RC 的 $\circ$ 适合消去律 \term{cancellation property}\period 显然, 若 $\circ$ 适合交换律, 则 LC 与 RC 等价\period
 \end{definition}
 
 \begin{example}
@@ -464,7 +465,7 @@ Out of boredom, I wrote the article.
     \begin{align*}
         e \circ x = x \circ e = x,
     \end{align*}
-    则说 $e$ 是 $A$ 的 (关于运算 $\circ$ 的) 幺元 (\textit{identity})\period 如果 $e^{\prime}$ 也是幺元, 则
+    则说 $e$ 是 $A$ 的 (关于运算 $\circ$ 的) 幺元 \term{identity}\period 如果 $e^{\prime}$ 也是幺元, 则
     \begin{align*}
         e = e \circ e^{\prime} = e^{\prime} \period
     \end{align*}
@@ -480,7 +481,7 @@ Out of boredom, I wrote the article.
          & A \to A,  \tag*{$\iota$:} \\
          & a \mapsto a \period
     \end{align*}
-    它也有个一般点的名字: 恒等变换 (\textit{identity transform})\period
+    它也有个一般点的名字: 恒等变换 \term{identity transform}\period
 
     在 $S_6$ 里, $f_0$ 就是这里的 $\iota$\period
 \end{example}
@@ -490,7 +491,7 @@ Out of boredom, I wrote the article.
     \begin{align*}
         y \circ x = x \circ y = e,
     \end{align*}
-    则说 $y$ 是 $x$ 的 (关于运算 $\circ$ 的) 逆元 (\textit{inverse})\period
+    则说 $y$ 是 $x$ 的 (关于运算 $\circ$ 的) 逆元 \term{inverse}\period
 \end{definition}
 
 \begin{example}
@@ -535,7 +536,7 @@ Out of boredom, I wrote the article.
          & (y^{-1} \circ x^{-1}) \circ (x \circ y) = y^{-1} \circ (x^{-1} \circ x) \circ y = y^{-1} \circ e \circ y = y^{-1} \circ y = e,        \\
          & (x \circ y) \circ (y^{-1} \circ x^{-1}) = x \circ (y \circ y^{-1}) \circ x^{-1} = x \circ e \circ x^{-1} = x \circ x^{-1} = e \period
     \end{align*}
-    这个规则往往称为袜靴规则 (\textit{socks and shoes rule}): 设 $y$ 是穿袜, $x$ 是穿靴, $x \circ y$ 表示动作的复合: 先穿袜后穿靴\period 那么这个规则告诉我们, $x \circ y$ 的逆元就是先脱靴再脱袜\period
+    这个规则往往称为袜靴规则 \term{socks and shoes rule}: 设 $y$ 是穿袜, $x$ 是穿靴, $x \circ y$ 表示动作的复合: 先穿袜后穿靴\period 那么这个规则告诉我们, $x \circ y$ 的逆元就是先脱靴再脱袜\period
 \end{remark}
 
 \begin{remark}
@@ -545,7 +546,7 @@ Out of boredom, I wrote the article.
 \subsubsection*{Semi-groups and Groups}
 
 \begin{definition}
-    设 $S$ 是非空集\period 设 $\circ$ 是 $S$ 的二元运算\period 若 $\circ$ 适合结合律, 则称 $S$ (关于 $\circ$) 是半群 (\textit{semi-group})\period
+    设 $S$ 是非空集\period 设 $\circ$ 是 $S$ 的二元运算\period 若 $\circ$ 适合结合律, 则称 $S$ (关于 $\circ$) 是半群 \term{semi-group}\period
 \end{definition}
 
 \begin{example}
@@ -582,7 +583,7 @@ Out of boredom, I wrote the article.
 \end{example}
 
 \begin{definition}
-    设 $G$ 关于 $\circ$ 是半群\period 若 $G$ 的关于 $\circ$ 的幺元存在, 且 $G$ 的任意元都有关于 $\circ$ 的逆元, 则 $G$ 是群 (\textit{group})\period
+    设 $G$ 关于 $\circ$ 是半群\period 若 $G$ 的关于 $\circ$ 的幺元存在, 且 $G$ 的任意元都有关于 $\circ$ 的逆元, 则 $G$ 是群 \term{group}\period
 \end{definition}
 
 \begin{example}
@@ -633,7 +634,7 @@ Out of boredom, I wrote the article.
 \subsubsection*{Subgroups}
 
 \begin{definition}
-    设 $G$ 关于 $\circ$ 是群\period 设 $H \subset G$, $H$ 非空\period 若 $H$ 关于 $\circ$ 也作成群, 则 $H$ 是 $G$ 的子群 (\textit{subgroup})\period
+    设 $G$ 关于 $\circ$ 是群\period 设 $H \subset G$, $H$ 非空\period 若 $H$ 关于 $\circ$ 也作成群, 则 $H$ 是 $G$ 的子群 \term{subgroup}\period
 \end{definition}
 
 \begin{example}
@@ -672,7 +673,7 @@ Out of boredom, I wrote the article.
 \subsubsection*{Additive Groups}
 
 \begin{definition}
-    若 $G$ 关于名为 $+$ 的二元运算作成群, 幺元 $e$ 读作 ``零元'' 写作 $0$, $x \in G$ 的逆元 $x^{-1}$ 读作 ``$x$ 的相反元'' 写作 $-x$, 且 $+$ 适合交换律, 则说 $G$ 是加群 (\textit{additive group})\period 相应地, ``元的幂'' 也应该改为 ``元的倍'': $x^m$ 写为 $mx$\period 用加法的语言改写前面的幂的规则, 就得到了倍的规则: 对任意 $x,y \in G$, $m,n \in \ZZ$, 有
+    若 $G$ 关于名为 $+$ 的二元运算作成群, 幺元 $e$ 读作 ``零元'' 写作 $0$, $x \in G$ 的逆元 $x^{-1}$ 读作 ``$x$ 的相反元'' 写作 $-x$, 且 $+$ 适合交换律, 则说 $G$ 是加群 \term{additive group}\period 相应地, ``元的幂'' 也应该改为 ``元的倍'': $x^m$ 写为 $mx$\period 用加法的语言改写前面的幂的规则, 就得到了倍的规则: 对任意 $x,y \in G$, $m,n \in \ZZ$, 有
     \begin{align*}
          & (m+n)x = mx + nx,       \\
          & m(nx) = (mn)x,          \\
@@ -710,7 +711,7 @@ Out of boredom, I wrote the article.
 \end{example}
 
 \begin{remark}
-    类似地, 可以定义子加群 (\textit{sub-additive group})\period 这里, 就直接用等价刻画来描述它: ``$G$ 的非空子集 $H$ 是加群 $G$ 的子加群的一个必要与充分条件是: 任取 $x,y \in H$, 必有 $x-y \in H$\period ''
+    类似地, 可以定义子加群 \term{sub-additive group}\period 这里, 就直接用等价刻画来描述它: ``$G$ 的非空子集 $H$ 是加群 $G$ 的子加群的一个必要与充分条件是: 任取 $x,y \in H$, 必有 $x-y \in H$\period ''
 \end{remark}
 
 \subsubsection*{Sums}
@@ -800,7 +801,7 @@ Out of boredom, I wrote the article.
 
     (ii) $+$ 与 $\cdot$ 适合 $\cdot$ 分配律\period
 
-    我们说 $R$ (关于 $+$ 与 $\cdot$) 是环 (\textit{ring})\period
+    我们说 $R$ (关于 $+$ 与 $\cdot$) 是环 \term{ring}\period
 \end{definition}
 
 \begin{remark}
@@ -816,11 +817,11 @@ Out of boredom, I wrote the article.
 \end{example}
 
 \begin{example}
-    这里举一个 ``平凡的'' (\textit{trivial}) 例子\period $N$ 只有一个元 $0$\period 可以验证, $N$ 关于普通加法与乘法作成群\period 这也是 ``最小的环''\period 在上个例子里, 取 $k=0$ 就是 $N$\period
+    这里举一个 ``平凡的'' \term{trivial} 例子\period $N$ 只有一个元 $0$\period 可以验证, $N$ 关于普通加法与乘法作成群\period 这也是 ``最小的环''\period 在上个例子里, 取 $k=0$ 就是 $N$\period
 \end{example}
 
 \begin{example}
-    这里举一个 ``不平凡的'' (\textit{nontrivial}) 例子\period 设 $R = \{\, 0,a,b,c \,\}$\period 加法和乘法由以下两个表给定:
+    这里举一个 ``不平凡的'' \term{nontrivial} 例子\period 设 $R = \{\, 0,a,b,c \,\}$\period 加法和乘法由以下两个表给定:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{c|cccc}
@@ -903,11 +904,11 @@ Out of boredom, I wrote the article.
 
 \begin{remark}
     % /* cspell: disable-next-line */
-    类似地, 可以定义子环 (\textit{subring})\period 这里, 就直接用等价刻画来描述它: ``$R$ 的非空子集 $S$ 是环 $R$ 的子环的一个必要与充分条件是: 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$\period ''
+    类似地, 可以定义子环 \term{subring}\period 这里, 就直接用等价刻画来描述它: ``$R$ 的非空子集 $S$ 是环 $R$ 的子环的一个必要与充分条件是: 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$\period ''
 \end{remark}
 
 \begin{definition}
-    设 $R$ 是环\period 假设任取 $x,y \in R$, 必有 $xy = yx$, 就说 $R$ 是交换环 (\textit{commutative ring})\period
+    设 $R$ 是环\period 假设任取 $x,y \in R$, 必有 $xy = yx$, 就说 $R$ 是交换环 \term{commutative ring}\period
 \end{definition}
 
 \begin{remark}
@@ -925,7 +926,7 @@ Out of boredom, I wrote the article.
 
     (ii) $\cdot$ 适合 ``消去律变体''\myFN{一般地, 这也可称为消去律\period}: 若 $xy = xz$, $x \neq 0$, 则 $y = z$\period
 
-    我们说 $D$ (关于 $+$ 与 $\cdot$) 是整环 (\textit{domain}, \textit{integral domain})\period
+    我们说 $D$ (关于 $+$ 与 $\cdot$) 是整环 \term{domain}, \textit{integral domain}\period
 \end{definition}
 
 \begin{example}
@@ -934,7 +935,7 @@ Out of boredom, I wrote the article.
 
 \begin{example}
     % /* cspell: disable-next-line */
-    看一个有限整环的例子\period 设 $V$ (\textit{Vierergruppe}\myFN{A German word which means \textit{four-group}.}) 是 $4$ 元集:
+    看一个有限整环的例子\period 设 $V$ \term{Vierergruppe}\myFN{A German word which means \textit{four-group}.} 是 $4$ 元集:
     \begin{align*}
         V = \{\, 0,1,\tau,\tau^2 \,\}\period
     \end{align*}
@@ -992,8 +993,12 @@ Out of boredom, I wrote the article.
 \end{remark}
 
 \begin{remark}
-    类似地, 可以定义子整环 (\textit{subdomain})\period 这里, 就直接用前面的等价刻画来描述它: ``$D$ 的非空子集 $S$ 是整环 $D$ 的子整环的一个必要与充分条件是: (i) $1 \in S$; (ii) 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$\period ''
+    类似地, 可以定义子整环 \term{subdomain}\period 这里, 就直接用前面的等价刻画来描述它: ``$D$ 的非空子集 $S$ 是整环 $D$ 的子整环的一个必要与充分条件是: (i) $1 \in S$; (ii) 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$\period ''
 \end{remark}
+
+\begin{example}
+    设 $D \subset \CC$, 且 $D$ 是整环\period 不难看出, $\ZZ \subset D$\period
+\end{example}
 
 \subsubsection*{Sums and Products}
 
@@ -1006,7 +1011,7 @@ Out of boredom, I wrote the article.
 \end{definition}
 
 \begin{definition}
-    设 $n$ 是正整数\period 那么 $1$, $2$, $\cdots$, $n$ 的积是 $n$ 的阶乘 (\textit{factorial}):
+    设 $n$ 是正整数\period 那么 $1$, $2$, $\cdots$, $n$ 的积是 $n$ 的阶乘 \term{factorial}:
     \begin{align*}
         n! = \prod_{j = 1}^{n} j \period
     \end{align*}
@@ -1045,7 +1050,7 @@ Out of boredom, I wrote the article.
     \begin{align*}
         \sum_{j=p}^{q} (f(j) + g(j)) = \sum_{j=p}^{q} f(j) + \sum_{j=p}^{q} g(j) \period
     \end{align*}
-    因为整环有分配律, 故当 $c \in D$ 与变元 $j$ 无关时\myFN{这样的元称为常元 (\textit{constant})\period}
+    因为整环有分配律, 故当 $c \in D$ 与变元 $j$ 无关时\myFN{这样的元称为常元 \term{constant}\period}
     \begin{align*}
         \sum_{j=p}^{q} cf(j) = c\sum_{j=p}^{q} f(j) \period
     \end{align*}
@@ -1063,7 +1068,7 @@ Out of boredom, I wrote the article.
 \end{remark}
 
 \begin{definition}
-    最后介绍一下双阶乘 (\textit{double factorial})\period 前 $n$ 个正偶数的乘积是 $2n$ 的双阶乘:
+    最后介绍一下双阶乘 \term{double factorial}\period 前 $n$ 个正偶数的积是 $2n$ 的双阶乘:
     \begin{align*}
         (2n)!! = \prod_{j=1}^{n} {2j} \period
     \end{align*}
@@ -1101,8 +1106,156 @@ Out of boredom, I wrote the article.
     \end{align*}
 \end{example}
 
-\subsubsection*{Definition of Polynomials}
+\subsubsection*{Units and Fields}
+
+\begin{definition}
+    设 $D$ 是整环\period 设 $x \in D$\period 若存在 $y \in D$ 使 $xy=1$, 则说 $x$ 是 $D$ 的单位 \term{unit}\period
+\end{definition}
+
+\begin{remark}
+    不难看出, $D$ 至少有一个单位 $1$, 因为 $1 \cdot 1 = 1$\period 定义里的 $y$ 自然就是 $x$ 的 (乘法) 逆元, 其一般记为 $x^{-1}$\period $x^{-1}$ 当然也是单位\period 二个单位 $x,y$ 的积 $xy$ 也是单位: $(xy)(y^{-1}x^{-1})=1$\period 单位的乘法当然适合结合律\period 这样, $D$ 的单位作成一个 (乘法) 群\period 姑且叫 $D$ 的所有单位作成的集为单位群 \term{unit group} 吧!
+\end{remark}
+
+\begin{remark}
+    不难看出, $0$ 一定不是单位\period
+\end{remark}
+
+\begin{example}
+    看全体整数作成的整环 $\ZZ$\period 它恰有二个单位: $1$ 与 $-1$\period
+\end{example}
+
+\begin{example}
+    $\FF$ 也是整环\period 它有无数个单位: 任意 $\FF^{\ast}$ 的元都是单位\period
+\end{example}
+
+\begin{example}
+    前面的 $4$ 元集 $V$ 的非零元都是单位\period
+\end{example}
+
+\begin{example}
+    现在看一个不那么平凡的例子\period 设
+    \begin{align*}
+        D = \{\, x + y\sqrt{3} \mid x,y \in \ZZ \,\} \period
+    \end{align*}
+    这个 $D$ (关于数的运算) 作成整环\period
+
+    首先, 我们说, 不存在有理数 $q$ 使 $q^2 = 3$\period 用反证法\period 设 $q = \frac{m}{n}$, $m$, $n$ 是非零整数\period 我们知道, 分数可以约分, 故可以假设 $m$, $n$ 都不是 $3$ 的倍数\period 这样
+    \begin{align*}
+        m^2 = 3n^2 \period
+    \end{align*}
+    所以 $m^2$ 一定是 $3$ 的倍数\period 因为
+    \begin{align*}
+         & (3\ell)^2 = 3 \cdot 3\ell^2,                \\
+         & (3\ell \pm 1)^2 = 3(3\ell^2 \pm 2\ell) + 1,
+    \end{align*}
+    故由此可看出, $m$ 也是 $3$ 的倍数\period 记 $m=3u$\period 这样
+    \begin{align*}
+        3u^2 = n^2 \period
+    \end{align*}
+    所以 $n$ 也是 $3$ 的倍数\period 这跟假设矛盾!
+
+    再说一下 $D$ 的二个元相等意味着什么\period 设 $a$, $b$, $c$, $d$ 都是整数\period 那么
+    \begin{align*}
+        a + b\sqrt{3} = c + d\sqrt{3} \implies (a-c)^2 = 3(d-b)^2 \period
+    \end{align*}
+    若 $d - b \neq 0$, 则 $\frac{a-c}{d-b}$ 是有理数, 且
+    \begin{align*}
+        \left( \frac{a-c}{d-b} \right)^2 = 3,
+    \end{align*}
+    而这是荒谬的\period 所以 $d - b = 0$\period 这样 $a - c = 0$\period
+
+    现在再来看单位问题\period 若 $k$ 是大于 $1$ 的整数, 则 $k$ 不是 $D$ 的单位\period 反证法\period 若 $k$ 是单位, 则有 $c,d \in \ZZ$ 使
+    \begin{align*}
+        1 = k(c + d\sqrt{3}) = kc + kd\sqrt{3} \implies 1 = kc,
+    \end{align*}
+    矛盾!
+
+    $D$ 有无数多个单位\period 因为
+    \begin{align*}
+        (2+\sqrt{3})(2-\sqrt{3})=1,
+    \end{align*}
+    故对任意正整数 $n$, 有
+    \begin{align*}
+        (2+\sqrt{3})^n (2-\sqrt{3})^n=1 \period
+    \end{align*}
+    所以, $(2 \pm \sqrt{3})^n$ 是单位\period
+\end{example}
+
+\begin{definition}
+    设 $F$ 是整环\period 若每个 $F$ 的不是 $0$ 的元都是 $F$ 的单位, 则说 $F$ 是域 \term{field}\period
+\end{definition}
+
+\begin{example}
+    上面的 $\FF$ 跟 $V$ 是域\period 这也解释了为什么我们用 $\FF$ 表示 $\QQ$, $\RR$, $\CC$ 之一\period
+\end{example}
+
+\begin{remark}
+    在域 $F$ 里, 只要 $a \neq 0$, 则 $a^{-1}$ 有意义\period 那么, 我们说 $\frac{b}{a}$ 就是 $ba^{-1} = a^{-1}b$ 的简写\period 不难验证, 当 $a,c \neq 0$ 时,
+    \begin{align*}
+         & \frac{b}{a} = \frac{d}{c} \iff bc = da,              \\
+         & \frac{b}{a} \pm \frac{d}{c} = \frac{bc \pm da}{ac},  \\
+         & \frac{b}{a} \cdot \frac{d}{c} = \frac{bd}{ac}\period
+    \end{align*}
+    若 $d \neq 0$, 则
+    \begin{align*}
+        \frac{\frac{b}{a}}{\frac{d}{c}} = \frac{bc}{da}\period
+    \end{align*}
+    这就是我们熟知的分数运算法则\period
+\end{remark}
+
+\begin{remark}
+    类似地, 可以定义子域 \term{subfield}\period 这里, 就直接用前面的等价刻画来描述它: ``$F$ 的非空子集 $K$ 是域 $F$ 的子域的一个必要与充分条件是: (i) $1 \in K$; (ii) 任取 $x,y \in K$, $y \neq 0$, 必有 $x-y \in K$, $\frac{x}{y} \in K$\period ''
+\end{remark}
+
+\begin{example}
+    设 $F \subset C$, 且 $F$ 是域\period 不难看出, $\QQ \subset F$\period
+\end{example}
+
+\clearpage
+
+\subsection*{Definition of Polynomials}
 \addcontentsline{toc}{subsection}{Definition of Polynomials}
 \markright{Definition of Polynomials}
 
 现在开始介绍多项式\period
+
+\begin{definition}
+    设 $D$ 是整环\period 设 $x$ 是不在 $D$ 里的任意一个文字\period 形如
+    \begin{align*}
+        f(x) = a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in D,\ a_n \neq 0)
+    \end{align*}
+    的表达式称为 $D$ 上 $x$ 的一个多项式 \term{polynomial in $x$ over $D$}\period $n$ 称为其次数 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}\period $f(x)$ 的次数可写为 $\deg f(x)$\period
+
+    若二个多项式的次数与各同次系数均相等, 则二者相等\period
+
+    多项式的系数为 $0$ 的项可以不写\period
+
+    约定 $0 \in D$ 也是多项式, 称为零多项式\period 零多项式的次数是 $-\infty$\period 任取整数 $m$, 约定
+    \begin{align*}
+        -\infty = -\infty, \quad -\infty < m, \quad -\infty + m = m + (-\infty) = -\infty \period
+    \end{align*}
+    当然, 还约定, 零多项式只跟自己相等\period 换句话说, 若
+    \begin{align*}
+        a_0 x^0 + a_1 x^1 + \cdots + a_n x^n = 0,
+    \end{align*}
+    则 $a_0 = a_1 = \cdots = a_n = 0$\period
+
+    $D$ 上 $x$ 的所有多项式作成的集是 $D[x]$:
+    \begin{align*}
+        D[x] = \{\, a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \mid n \in \NN,\ a_0,a_1,\cdots,a_n \in D \,\} \period
+    \end{align*}
+
+    文字 $x$ 只是一个符号, 它与 $D$ 的元的和与积都是形式的\period 我们说, $x$ 是不定元 \term{indeterminate}\period
+\end{definition}
+
+\begin{example}
+    $0x^0 + 1x^1 + (-1)x^2 + 0x^3 + (-7)x^4 \in \ZZ[x]$ 是一个 $4$ 次多项式\period 顺便一提, 一般把 $x^1$ 写为 $x$\period 这个多项式的一个更普通的写法是
+    \begin{align*}
+        x - x^2 - 7x^4 \period
+    \end{align*}
+    也就是说, 按照中学的习惯写多项式即可\period
+\end{example}
+
+\begin{remark}
+    文字 $x$ 的意义在数学中是不断进化的 \term{evolving}\period 在中小学里, $x$ 是未知元 \term{unknown}: 虽然它是待求的, 但是它是一个具体的数\period 后来在函数里, $x$ 表示变元 \term{variable}, 不过它的取值范围是确定的\period 在上面的定义里, $x$ 仅仅是一个文字, 成为不定元\period
+\end{remark}

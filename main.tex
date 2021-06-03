@@ -15,8 +15,9 @@
 % However, if this is enabled, the symbols look better.
 \usepackage{unicode-math}
 
-\newcommand{\newsection}{\cleardoublepage \thispagestyle{empty}}
-% \newcommand{\newsection}{\cleardoublepage \thispagestyle{plain}}
+\providecommand{\newsection}{}
+\renewcommand{\newsection}{\cleardoublepage \thispagestyle{empty}}
+% \renewcommand{\newsection}{\cleardoublepage \thispagestyle{plain}}
 
 \input{format/style}
 

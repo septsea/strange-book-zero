@@ -13,10 +13,11 @@
 % Set the fonts. You can use whatever you like, or simply remove this part
 % and remove the option "fontset=none".
 
-\newcommand{\heiti}{\CJKfontspec{Sarasa Mono SC Light}}
-\newcommand{\songti}{\CJKfontspec{Source Han Serif CN}}
-\newcommand{\kaishu}{\CJKfontspec{Sarasa Mono SC Light}}
-\newcommand{\fangsong}{\CJKfontspec{Sarasa Mono SC Light}}
+
+\def\heiti{\CJKfontspec{Sarasa Mono SC Light}}
+\def\songti{\CJKfontspec{Source Han Serif CN}}
+\def\kaishu{\CJKfontspec{Sarasa Mono SC Light}}
+\def\fangsong{\CJKfontspec{Sarasa Mono SC Light}}
 \setmonofont{Sarasa Mono SC Light}
 \setsansfont{Source Sans Pro Light}
 \setCJKmonofont{Sarasa Mono SC Light}
@@ -26,9 +27,6 @@
 % The operating system I use do not have the 4 fonts:
 % Heiti, Songti, Kaishu, Fangsong.
 
-% \newcommand{\kaishu}{\CJKfontspec{FZKai-Z03S}}
-% \newcommand{\fangsong}{\CJKfontspec{FZFangSong-Z02S}}
-% \setCJKmainfont[ItalicFont=FZKai-Z03S]{Source Han Serif CN}
 % ================================================================================
 
 % Punctuation style: narrow some punctuation symbols
@@ -45,7 +43,8 @@
 \setfnsymbol{myFootnoteStyle}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
 % My own footnote command
-\newcommand{\myFN}[1]{\footnote{\sffamily \ #1}}
+\providecommand{\myFN}{}
+\renewcommand{\myFN}[1]{\footnote{\sffamily \ #1}}
 
 % Deprecated. Now I use the theorem layout
 % Numbering style for exercises
@@ -127,7 +126,7 @@
 % Use some special characters.
 \usepackage{pifont}
 
-\newcommand{\period}{\text{。}}
+\def\period{\text{。}}
 
 % Allow page breaks in display formulae
 \allowdisplaybreaks[4]
