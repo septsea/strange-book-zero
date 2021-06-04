@@ -60,4 +60,27 @@
             "\\end{remark}$0",
         ]
     },
+    "proposition": {
+        "scope": "latex",
+        "prefix": [
+            "prop"
+        ],
+        "body": [
+            "\\begin{proposition}",
+            "    $1",
+            "\\end{proposition}$0",
+        ]
+    },
+    "proof": {
+        "scope": "latex",
+        "prefix": [
+            "pf",
+            "proof"
+        ],
+        "body": [
+            "\\begin{pf}",
+            "    $1",
+            "\\end{pf}$0",
+        ]
+    },
 }

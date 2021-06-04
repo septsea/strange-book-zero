@@ -1,18 +1,6 @@
-% Well, I cannot find a better set of fonts that support unicode-math...
-% \setsansfont[
-%     BoldFont=* SemiBold,
-%     BoldItalicFont=* SemiBold Italic
-% ]{FiraGO}
-% \setmainfont[
-%     BoldFont=* SemiBold,
-%     BoldItalicFont=* SemiBold Italic
-% ]{FiraGO}
-% \setmathfont{Fira Math}
-
 % ================================================================================
 % Set the fonts. You can use whatever you like, or simply remove this part
 % and remove the option "fontset=none".
-
 
 \def\heiti{\CJKfontspec{Sarasa Mono SC Light}}
 \def\songti{\CJKfontspec{Source Han Serif CN}}
@@ -42,6 +30,7 @@
 }
 \setfnsymbol{myFootnoteStyle}
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
 % My own footnote command
 \providecommand{\myFN}{}
 \renewcommand{\myFN}[1]{\footnote{\sffamily \ #1}}
@@ -59,9 +48,6 @@
 %   parsep=\parskip
 % }
 
-% This is used to occupy some space.
-\newenvironment{foobar}{\vfill \itshape \sffamily  \small \begin{center}  \begin{tabular}{l}}{\end{tabular}\end{center} \vspace{2ex}}
-
 % Proof and solution style
 \usepackage{amsthm}
 % Use \nopunct to remove the dot: https://tex.stackexchange.com/questions/268912/can-i-change-the-dot-to-a-colon-after-proof-in-amsthm
@@ -72,8 +58,6 @@
 \newenvironment{pf}{\begin{proof}[\indent\bf 证 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
 \newenvironment{solution}{\begin{proof}[\indent\bf 解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
 \newenvironment{pas}{\begin{proof}[\indent\bf 证明与解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
-
-\newenvironment{bibi}{\sffamily \itshape}
 
 \newtheoremstyle{exer} % ⟨name⟩
 {} % ⟨Space above⟩
