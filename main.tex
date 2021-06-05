@@ -10,6 +10,9 @@
 \usepackage{amssymb,amsmath}
 % Add hyperlinks to the table of contents
 \usepackage[hidelinks]{hyperref}
+\usepackage{pdfpages}
+
+% \usepackage{lipsum}
 
 % Enable unicode-math? If this is enabled, many font packages will not work.
 % However, if this is enabled, the symbols look better.
@@ -29,7 +32,12 @@
 
 \begin{document}
 
-% \begin{titlepage}
+% \pagestyle{empty}
+
+\pagestyle{empty}
+\includepdf{res/cover.pdf}
+\ \
+\clearpage
 
 \title{}
 \date{}
@@ -40,11 +48,9 @@
 \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\abstractname}{Abstract}
 
-% \maketitle
+\pagestyle{plain}
 \thispagestyle{empty}
 \tableofcontents
-
-% \end{titlepage}
 
 \newsection
 \input{contents/preface}

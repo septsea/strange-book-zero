@@ -1784,7 +1784,7 @@ Out of boredom, I wrote the article.
     \begin{align*}
         f(x) = \sum_{i = 0}^{n} a_i x^i \in D[x],
     \end{align*}
-    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在\textbf{唯一的} $q(x), r(x) \in D[x]$ 使
+    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在唯一的 $q(x), r(x) \in D[x]$ 使
     \begin{align*}
         g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n \period
     \end{align*}
@@ -1941,6 +1941,24 @@ Out of boredom, I wrote the article.
          & \deg q(x) = \deg f(x) - \deg (x-a) = n-1 \period \qedhere
     \end{align*}
 \end{pf}
+
+\begin{remark}
+    如果用 $D$ 的元 $b$ 替换 $x$, 则
+    \begin{align*}
+        f(b) = (b-a)q(b) + f(a),
+    \end{align*}
+    也就是说, 存在 $r \in D$ 使
+    \begin{align*}
+        f(b) - f(a) = (b-a)r \period
+    \end{align*}
+    所以, 若 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$\period 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$)\period
+
+    那么, 这有什么用呢? 举个简单的例\period 我们说, 不存在系数为整数的多项式 $f(x)$ 使 $f(1) = f(-1) + 1$\period 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
+    \begin{align*}
+        1 = f(1) - f(-1) = (1 - (-1))r = 2r,
+    \end{align*}
+    而 $1$ 不是偶数, 矛盾\period 之后我们还会提到这一点\period
+\end{remark}
 
 \begin{definition}
     设 $f(x)$ 是 $D$ 上 $x$ 的多项式\period 若有 $a \in D$ 使 $f(a) = 0$, 则说 $a$ 是 (多项式) $f(x)$ 的根 \term{root}\period
