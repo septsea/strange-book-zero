@@ -22,9 +22,171 @@
 \renewcommand{\newsection}{\cleardoublepage \thispagestyle{empty}}
 % \renewcommand{\newsection}{\cleardoublepage \thispagestyle{plain}}
 
-\input{format/style}
+% ================================================================================
+% Set the fonts. You can use whatever you like, or simply remove this part
+% and remove the option "fontset=none".
 
-\input{format/commandsUsingAt}
+\def\heiti{\CJKfontspec{Sarasa Mono SC Light}}
+\def\songti{\CJKfontspec{Source Han Serif CN}}
+\def\kaishu{\CJKfontspec{Sarasa Mono SC Light}}
+\def\fangsong{\CJKfontspec{Sarasa Mono SC Light}}
+\setmonofont{Sarasa Mono SC Light}
+\setsansfont{Source Sans Pro Light}
+\setCJKmonofont{Sarasa Mono SC Light}
+\setCJKmainfont[ItalicFont=Sarasa Mono SC Light]{Source Han Serif CN}
+\setCJKsansfont{Sarasa Mono SC Light}
+% I use Sarasa Mono SC instead of Kaishu or Fangsong.
+% The operating system I use do not have the 4 fonts:
+% Heiti, Songti, Kaishu, Fangsong.
+
+% ================================================================================
+
+% Punctuation style: narrow some punctuation symbols
+\punctstyle{kaiming}
+
+% Footnote
+% Footnotes per page
+\usepackage[perpage]{footmisc}
+% Define a new set of footnote symbols
+\DefineFNsymbols*{myFootnoteStyle}{
+    % If unicode-math is not enabled, the dollar signs can be removed.
+    {$\dagger$}{$\ddagger$}{$\S$}{$\P$}{$\parallel$}{$\dagger\dagger$}{$\ddagger\ddagger$}
+}
+\setfnsymbol{myFootnoteStyle}
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+% My own footnote command
+\providecommand{\myFN}{}
+\renewcommand{\myFN}[1]{\footnote{\sffamily \ #1}}
+
+% Deprecated. Now I use the theorem layout
+% Numbering style for exercises
+% \usepackage{enumitem}
+% \renewcommand{\labelenumi}{\textbf{\theenumi.}}
+% \setlist[enumerate]{
+%   leftmargin=0em,
+%   listparindent=\parindent,
+%   itemindent=*,
+%   labelindent=\parindent,
+%   align=left,
+%   parsep=\parskip
+% }
+
+% Proof and solution style
+\usepackage{amsthm}
+% Use \nopunct to remove the dot: https://tex.stackexchange.com/questions/268912/can-i-change-the-dot-to-a-colon-after-proof-in-amsthm
+% Use \vspace{-\topsep} to remove extra line: https://tex.stackexchange.com/questions/59755/space-before-proof
+% \newenvironment{pf}{\begin{proof}[\indent\bf 证 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]\vspace{-\topsep}}{\end{proof}}
+% \newenvironment{solution}{\begin{proof}[\indent\bf 解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]\vspace{-\topsep}}{\end{proof}}
+% \newenvironment{pas}{\begin{proof}[\indent\bf 证明与解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]\vspace{-\topsep}}{\end{proof}}
+\newenvironment{pf}{\begin{proof}[\indent\bf 证 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
+\newenvironment{solution}{\begin{proof}[\indent\bf 解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
+\newenvironment{pas}{\begin{proof}[\indent\bf 证明与解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
+
+\newtheoremstyle{exer} % ⟨name⟩
+{} % ⟨Space above⟩
+{} % ⟨Space below⟩
+{} % ⟨Body font⟩
+{\parindent} % ⟨Indent amount⟩
+{\bfseries} % ⟨Theorem head font⟩
+{.} % ⟨Punctuation after theorem head⟩
+{.5em} % ⟨Space after theorem head⟩
+{} % ⟨Theorem head spec (can be left empty, meaning 'normal')⟩
+\theoremstyle{exer}
+\newtheorem{exercise}{}[subsection]
+
+\newtheoremstyle{exer*} % ⟨name⟩
+{} % ⟨Space above⟩
+{} % ⟨Space below⟩
+{} % ⟨Body font⟩
+{\parindent} % ⟨Indent amount⟩
+{\bfseries} % ⟨Theorem head font⟩
+{} % ⟨Punctuation after theorem head⟩
+{0em} % ⟨Space after theorem head⟩
+{} % ⟨Theorem head spec (can be left empty, meaning 'normal')⟩
+\theoremstyle{exer*}
+\newtheorem*{exercise*}{}
+
+\newtheoremstyle{remarkStyle} % ⟨name⟩
+{} % ⟨Space above⟩
+{} % ⟨Space below⟩
+{} % ⟨Body font⟩
+{\parindent} % ⟨Indent amount⟩
+{\bfseries} % ⟨Theorem head font⟩
+{} % ⟨Punctuation after theorem head⟩
+{1em} % ⟨Space after theorem head⟩
+{} % ⟨Theorem head spec (can be left empty, meaning 'normal')⟩
+\theoremstyle{remarkStyle}
+\newtheorem*{supplement}{补充题}
+\newtheorem*{proposition}{命题}
+\newtheorem*{definition}{定义}
+\newtheorem*{example}{例}
+\newtheorem*{remark}{评注}
+
+% https://oomake.com/question/175655
+\renewcommand{\theexercise}{\arabic{exercise}}
+% \newenvironment{pf}{\begin{proof}[\indent\bf 证 \hphantom{.\ }\nopunct]\vspace{-\topsep}}{\vspace{-\topsep}\end{proof}}
+% \newenvironment{solution}{\begin{proof}[\indent\bf 解 \hphantom{.\ }\nopunct]\vspace{-\topsep}}{\vspace{-\topsep}\end{proof}}
+% \newenvironment{pas}{\begin{proof}[\indent\bf 证明与解 \hphantom{.\ }\nopunct]\vspace{-\topsep}}{\vspace{-\topsep}\end{proof}}
+% Use a black square instead
+% \renewcommand{\qedsymbol}{$\blacksquare$}
+
+% Use some special characters.
+\usepackage{pifont}
+
+% Allow page breaks in display formulae
+\allowdisplaybreaks[0]
+
+\def\CC{\mathbb{C}}
+\def\RR{\mathbb{R}}
+\def\QQ{\mathbb{Q}}
+\def\ZZ{\mathbb{Z}}
+\def\NN{\mathbb{N}}
+\def\FF{\mathbb{F}}
+\def\ii{\mathrm{i}}
+\def\myStar{\ding{72}}
+\def\ellipsis{\dots}
+\def\period{\text{。}}
+\def\qedsymbol{\ding{44}}
+\newcommand{ \term}[1]{(\textit{#1})}
+
+\makeatletter
+% \providecommand{\leqnomode}{}
+% \renewcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
+% \providecommand{\reqnomode}{}
+% \renewcommand{\reqnomode}{\tagsleft@false\let\veqno\@@eqno}
+
+% Clear even-numbered pages
+\renewcommand{\cleardoublepage}{\relax \clearpage
+    \if@twoside \ifodd\c@page\relax
+        \else \thispagestyle{empty} \ \clearpage\fi\fi}
+
+% For two-sided documents
+\renewcommand\ps@headings{%
+    \let\@oddfoot\@empty\let\@evenfoot\@empty
+    \def\@evenhead{\sffamily\thepage\hfil\slshape\leftmark}%
+    \def\@oddhead{\sffamily{\slshape\rightmark}\hfil\thepage}%
+    \let\@mkboth\markboth
+    \def\sectionmark##1{%
+        \markboth {{%
+                    \ifnum \c@secnumdepth >\z@
+                        \thesection\quad
+                    \fi
+                    ##1}}{}}%
+    \def\mySubSectmark##1{%
+        \markright {%
+            \ifnum \c@secnumdepth >\@ne
+                \thesubsection\quad
+            \fi
+            ##1}}}
+
+\renewcommand\ps@plain{
+    \let\@oddhead\@empty
+    \def\@oddfoot{\hfil\sffamily\thepage\hfil}%
+    \let\@evenhead\@empty
+    \let\@evenfoot\@oddfoot}
+
+\makeatother
 
 % ============================================================
 % The document begins.
@@ -53,15 +215,42 @@
 \tableofcontents
 
 \newsection
-\input{contents/preface}
+\input{contents/Preface.tex}
 
 \newsection
 \pagestyle{headings}
 \setcounter{page}{1}
 \pagenumbering{arabic}
-\input{contents/poly}
+
+\section*{Delving into Polynomials}
+\addcontentsline{toc}{section}{Delving into Polynomials}
+\markboth{Delving into Polynomials}{}
+
+Out of boredom, I wrote the article.
+
+    % This is used to occupy some space.
+    {
+        \vfill \itshape \sffamily \small
+        \begin{center}
+            \begin{tabular}{l}
+                Gohan ni suru? Ofuro ni suru? Sore tomo\ellipsis \ wa ta shi? \\
+                (Would you like dinner? Would you like a bath? Or\ellipsis \ would you like me?)
+            \end{tabular}
+        \end{center}
+    }
+
+\clearpage
+
+\input{contents/Prerequisites.tex}
+
+\input{contents/Definition of Polynomials.tex}
+
+\input{contents/Division Algorithm.tex}
+
+\input{contents/Roots of Polynomials.tex}
 
 \cleardoublepage
-\thispagestyle{empty}
+% \thispagestyle{empty}
+\pagestyle{empty}
 
 \end{document}

@@ -1,0 +1,225 @@
+\subsection*{Roots of Polynomials}
+\addcontentsline{toc}{subsection}{Roots of Polynomials}
+\markright{Roots of Polynomials}
+
+我们回顾一下熟悉的多项式函数\period
+
+\begin{definition}
+    设 $a_0, a_1, \cdots, a_n \in D$ 称
+    \begin{align*}
+         & D \to D, \tag*{$f \colon$}               \\
+         & t \mapsto a_0 + a_1 t + \cdots + a_n t^n
+    \end{align*}
+    为 $D$ 的多项式函数 \term{polynomial function}\period 我们也说, 这个 $f$ 是由 $D$ 上 $x$ 的多项式
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    诱导的多项式函数 \term{the polynomial function induced by $f$}\period 不难看出, 若二个多项式相等, 则其诱导的多项式函数也相等\period
+\end{definition}
+
+\begin{definition}
+    设 $f$ 与 $g$ 是 $D$ 的二个多项式函数\period 二者的和 $f+g$ 定义为
+    \begin{align*}
+         & D \to D, \tag*{$f+g \colon$}  \\
+         & t \mapsto f(t) + g(t) \period
+    \end{align*}
+    二者的积 $fg$ 定义为
+    \begin{align*}
+         & D \to D, \tag*{$fg \colon$} \\
+         & t \mapsto f(t) g(t) \period
+    \end{align*}
+\end{definition}
+
+\begin{example}
+    设 $f$, $g$ 是 $D$ 的二个多项式函数:
+    \begin{align*}
+         & D \to D, \tag*{$f \colon$}                       \\
+         & t \mapsto a_0 + a_1 t + \cdots + a_n t^n,        \\
+         & D \to D, \tag*{$g \colon$}                       \\
+         & t \mapsto b_0 + b_1 t + \cdots + b_n t^n \period
+    \end{align*}
+    利用 $D$ 的运算律, 可以得到
+    \begin{align*}
+         & D \to D, \tag*{$f+g \colon$}                                      \\
+         & t \mapsto (a_0 + b_0) + (a_1 + b_1) t + \cdots + (a_n + b_n) t^n, \\
+         & D \to D, \tag*{$fg \colon$}                                       \\
+         & t \mapsto c_0 + c_1 t + \cdots + c_{2n} t^{2n},
+    \end{align*}
+    其中
+    \begin{align*}
+        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
+    \end{align*}
+\end{example}
+
+由此可得下面的命题:
+
+\begin{proposition}
+    设 $f(x),g(x) \in D[x]$, $f,g$ 分别是 $f(x),g(x)$ 诱导的多项式函数\period 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的多项式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的多项式函数\period
+
+    通俗地说, 就是: 若多项式 $f_1 (x)$, $f_2 (x)$, $\cdots$, $f_n (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立\period
+\end{proposition}
+
+\begin{example}
+    考虑 $\FF$ 与 $\FF[x]$\period 前面, 利用带余除法, 得到关系
+    \begin{align*}
+        8x^6 + 1 = (4x^3 + 12x - 8) \cdot 2(x-1)^2 (x+2) + (72x^2 - 96x + 33) \period
+    \end{align*}
+    这里 $x$ 只是一个文字, 不是数! 但是, 上面的命题告诉我们, 可以把 $x$ 看成一个数\period 比如, 由上面的式可以立即看出, $8t^6 + 1$ 与 $72t^2 - 96t + 33$ 在 $t = 1$ 或 $t = -2$ 时值是一样的\period
+
+    可是, 对于这样的式, 我们不能将 $x$ 改写为 $\FF$ 的元 $t$:
+    \begin{align*}
+        \deg 3x^2 < \deg 2x^3 \period
+    \end{align*}
+    可以看到, 若 $t=0$, 则 $3t^2 = 2t^3 = 0$, 而 $0$ 的次是 $-\infty$; 若 $t \neq 0$, 则 $3t^2$ 与 $2t^3$ 都是非零数, 次都是 $0$\period
+\end{example}
+
+\begin{remark}
+    我们已经知道, 多项式确定多项式函数\period 自然地, 有这样的问题: 多项式函数能否确定多项式? 一般情况下, 这个问题的答案是 no\period
+
+    考虑 $4$ 元集 $V = \{\, 0,1,\tau,\tau^2 \,\}$\period 它的加法与乘法如下:
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{c|cccc}
+            +      & 0      & 1      & \tau   & \tau^2 \\ \hline
+            0      & 0      & 1      & \tau   & \tau^2 \\
+            1      & 1      & 0      & \tau^2 & \tau   \\
+            \tau   & \tau   & \tau^2 & 0      & 1      \\
+            \tau^2 & \tau^2 & \tau   & 1      & 0      \\
+        \end{array}
+        \qquad \qquad
+        \begin{array}{c|cccc}
+            \cdot  & 0 & 1      & \tau   & \tau^2 \\ \hline
+            0      & 0 & 0      & 0      & 0      \\
+            1      & 0 & 1      & \tau   & \tau^2 \\
+            \tau   & 0 & \tau   & \tau^2 & 1      \\
+            \tau^2 & 0 & \tau^2 & 1      & \tau   \\
+        \end{array}
+    \end{align*}
+    在前面, 我们已经知道, $V$ 是整环\period 作 $V$ 上 $x$ 的二个多项式:
+    \begin{align*}
+        f(x) = x^4 - x, \quad g(x) = 0 \period
+    \end{align*}
+    显然, 这是二个不相等的多项式\period 但是, 任取 $t \in V$, 都有
+    \begin{align*}
+        t^4 - t = 0 \period
+    \end{align*}
+    因此, $f(x)$ 与 $g(x)$ 诱导的多项式函数是同一函数!
+
+    不过, 在某些场合下, 多项式函数可以确定多项式\period 之后我们还会提到这一点\period
+\end{remark}
+
+\begin{remark}
+    设 $f(x) = a_0 + a_1 x + \cdots + a_n x^n \in D[x]$\period 设 $t$ 是 $D$ 的元\period 以后, 我们直接写
+    \begin{align*}
+        f(t) = a_0 + a_1 t + \cdots + a_n t^n \period
+    \end{align*}
+    至少, 一方通行 \term{one-way traffic} 是没问题的\period
+\end{remark}
+
+了解了多项式与多项式函数的关系后, 下面的这个命题就不会太凸兀了\period
+
+\begin{proposition}
+    设 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a \in D$\period 则存在 $n-1$ 次多项式 $q(x)$ ($\in D[x]$) 使
+    \begin{align*}
+        f(x) = q(x) (x-a) + f(a) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    因为 $x-a$ 的首项系数 $1$ 是单位, 故存在 $D[x]$ 的二元 $q(x)$, $r(x)$ 使
+    \begin{align*}
+        f(x) = q(x) (x-a) + r(x), \quad \deg r(x) < \deg (x-a) = 1 \period
+    \end{align*}
+    所以, $r(x) = c$, $c \in D$\period 用 $D$ 的元 $a$ 替换 $x$, 有
+    \begin{align*}
+        f(a) = q(a) (a-a) + c = c \period
+    \end{align*}
+    所以
+    \begin{align*}
+        f(x) = q(x) (x-a) + f(a) \period
+    \end{align*}
+    再看这个 $q(x)$ 的次\period 因为 $f(x)$ 的次不低于 $x-a$ 的次, 故
+    \begin{align*}
+         & \deg q(x) = \deg f(x) - \deg (x-a) = n-1 \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{remark}
+    如果用 $D$ 的元 $b$ 替换 $x$, 则
+    \begin{align*}
+        f(b) = (b-a)q(b) + f(a),
+    \end{align*}
+    也就是说, 存在 $r \in D$ 使
+    \begin{align*}
+        f(b) - f(a) = (b-a)r \period
+    \end{align*}
+    所以, 若 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$\period 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$)\period
+
+    那么, 这有什么用呢? 举个简单的例\period 我们说, 不存在系数为整数的多项式 $f(x)$ 使 $f(1) = f(-1) + 1$\period 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
+    \begin{align*}
+        1 = f(1) - f(-1) = (1 - (-1))r = 2r,
+    \end{align*}
+    而 $1$ 不是偶数, 矛盾\period 之后我们还会提到这一点\period
+\end{remark}
+
+现在, 我们讨论多项式的根的基本性质\period
+
+\begin{definition}
+    设 $f(x)$ 是 $D$ 上 $x$ 的多项式\period 若有 $a \in D$ 使 $f(a) = 0$, 则说 $a$ 是 (多项式) $f(x)$ 的根 \term{root}\period
+\end{definition}
+
+\begin{example}
+    设 $D \subset \CC$, 且 $\ZZ \subset D$\period 看 $D$ 上 $x$ 的多项式
+    \begin{align*}
+        f(x) = (2x-1)(x+1)(x^2 - 3)(x^2 + 1)(x^2 + 4) \period
+    \end{align*}
+    如果 $D = \ZZ$, 则 $f(x)$ 有一个在 $D$ 里的根: $-1$\period 如果 $D = \QQ$, 则 $f(x)$ 有二个在 $D$ 里的根: $-1$, $\frac12$\period 如果 $D = \RR$, 则 $f(x)$ 有四个在 $D$ 里的根: $-1$, $\frac12$, $\pm \sqrt{3}$\period 如果 $D = \CC$, 则 $f(x)$ 有八个在 $D$ 里的根: $-1$, $\frac12$, $\pm \sqrt{3}$, $\pm \ii$, $\pm 2\ii$\period
+\end{example}
+
+\begin{example}
+    再来一个例\period 看 $D$ 上 $x$ 的多项式
+    \begin{align*}
+        f(x) = x^2 + x - 1 \period
+    \end{align*}
+    若 $D = \RR$, 则 $f(x)$ 的二个根是 $\frac{-1 \pm \sqrt{5}}{2}$\period 若 $D = V$, 则 $f(x)$ 的二个根是 $\tau, \tau^2$\period 当然, 若 $D \subset \QQ$, 则 $f(x)$ 无 ($D$ 的) 根\period
+\end{example}
+
+\begin{remark}
+    设 $a,b \in D$, 且 $a \neq 0$\period
+
+    若 $f(x) = a$, 则 $f(x)$ 无根\period 换句话说, 零次多项式至多有零个根\period
+
+    再设 $f(x) = ax + b$ 是一次多项式\period 若存在 $c \in D$ 使 $b = ac$, 则 $f(x)$ 有一个根 $-c$\period 并且, $f(x)$ 也不会有另一个根 (若 $at_1 + b = at_2 + b$, 则 $at_1 = at_2$, 故 $t_1 = t_2$)\period 若这样的 $c$ 不存在, 则 $f(x)$ 无根 (反设 $f(x)$ 有根 $d$, 则由 $ad + b = 0$ 知 $b = a(-d)$, 矛盾)\period 换句话说, 一次多项式至多有一个根\period
+
+    结合上面的二个例, 我们猜想: $n$ 次多项式 ($n \in \NN$) 至多有 $n$ 个 (不同的) 根\period 幸运的事儿是, 这个猜想是正确的\period
+\end{remark}
+
+\begin{proposition}
+    设 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$)\period $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次多项式 $q(x)$ ($\in D[x]$) 使
+    \begin{align*}
+        f(x) = q(x) (x-a) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    先看充分性\period 若这样的 $q(x)$ 存在, 则
+    \begin{align*}
+        f(a) = q(a) (a-a) = 0 \period
+    \end{align*}
+    再看必要性\period 设 $f(a)=0$\period 根据上面的命题, 存在 $n-1$ 次多项式 $q(x) \in D[x]$ 使
+    \begin{align*}
+         & f(x) = q(a) (x-a) + f(a) = q(a) (x-a) \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{proposition}
+    设 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \in \NN$)\period 则 $f(x)$ 至多有 $n$ 个不同的根\period
+\end{proposition}
+
+\begin{pf}
+    $n = 0$ 或 $n = 1$ 时, 我们已经知道这是对的\period 用数学归纳法\period 假设 $\ell$ 次多项式至多有 $\ell$ 个不同的根\period 看 $\ell + 1$ 次多项式 $f(x)$\period 如果它没有根, 当然至多有 $\ell + 1$ 个不同的根\period 如果它有一个根 $a$, 则存在 $\ell$ 次多项式 $q(x)$ 使
+    \begin{align*}
+        f(x) = q(x) (x-a) \period
+    \end{align*}
+    根据归纳假设, $q(x)$ 至多有 $\ell$ 个不同的根\period 而且, 若 $b \neq a$, 且 $b$ 不是 $q(x)$ 的根, 利用消去律可知 $f(b) \neq 0$\period 这样, $f(x)$ 至多有 $\ell + 1$ 个不同的根\period
+\end{pf}

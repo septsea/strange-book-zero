@@ -1,0 +1,203 @@
+\subsection*{Division Algorithm}
+\addcontentsline{toc}{subsection}{Division Algorithm}
+\markright{Division Algorithm}
+
+我们知道, 非负整数有这样的性质:
+
+\begin{proposition}
+    设 $n$ 是正整数, $m$ 是非负整数\period 则必有一对非负整数 $q,r$ 使
+    \begin{align*}
+        m = qn + r, \quad 0 \leq r < n \period
+    \end{align*}
+\end{proposition}
+
+例如, 取 $n=5$, $m=23$\period 不难看出,
+\begin{align*}
+    18 = 4 \cdot 5 + 3 \period
+\end{align*}
+
+多项式也有类似的性质哟\period
+
+\begin{proposition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i = 0}^{n} a_i x^i \in D[x],
+    \end{align*}
+    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在 $q(x), r(x) \in D[x]$ 使
+    \begin{align*}
+        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n \period
+    \end{align*}
+    一般称其为带余除法: $q(x)$ 就是商 \term{quotient}; $r(x)$ 就是余式 \term{remainder}\period
+\end{proposition}
+
+\begin{pf}
+    用数学归纳法\period 记 $\deg g(x) = m$\period 若 $m<n$, 则 $q(x) = 0$, $r(x) = g(x)$ 适合要求\period 所以, 命题对不高于 $n-1$ 的 $m$ 都成立\period
+
+    设 $m \leq \ell$ ($\ell \geq n-1$) 时, 命题成立\period 考虑 $m=\ell+1$ 的情形\period 此时, 设
+    \begin{align*}
+        g(x) = \sum_{i = 0}^{\ell + 1} b_i x^i \period
+    \end{align*}
+    则
+    \begin{align*}
+             & g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)                                                                                                         \\
+        = \  & \sum_{i = 0}^{\ell+1} b_i x^i - b_{\ell+1} a_n^{-1} x^{\ell+1-n} \sum_{i = 0}^{n} a_i x^i                                                            \\
+        = \  & \sum_{i = 0}^{\ell} b_i x^i + b_{\ell+1} x^{\ell+1} - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} - b_{\ell+1} a_n^{-1} a_n x^{\ell+1} \\
+        = \  & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} + b_{\ell+1} x^{\ell+1} - b_{\ell+1} x^{\ell+1}             \\
+        = \  & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i}\period
+    \end{align*}
+    设 $r_1 (x) = g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)$\period 这样, $r_1 (x)$ 的次不高于 $\ell$\period 根据归纳假设, 有 $q_1 (x), r(x) \in D[x]$ 使
+    \begin{align*}
+        r_1 (x) = q_1 (x) f(x) + r(x), \quad \deg r(x) < n \period
+    \end{align*}
+    所以
+    \begin{align*}
+        g(x)
+        = \  & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)             \\
+        = \  & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_1 (x) f(x) + r(x) \\
+        = \  & (b_{\ell+1} a_n^{-1} + q_1 (x)) f(x) + r(x) \period
+    \end{align*}
+    记 $q(x) = b_{\ell+1} a_n^{-1} + q_1 (x)$, 则 $q(x), r(x)$ 适合要求\period 所以, $m \leq \ell + 1$ 时, 命题成立\period 根据数学归纳法, 命题成立\period
+\end{pf}
+
+\begin{example}
+    取 $\FF[x]$ 的二元 $f(x) = 2(x-1)^2 (x+2)$, $g(x) = 8x^6 + 1$\period 我们来找一对多项式 $q(x), r(x) \in \FF[x]$ 使
+    \begin{align*}
+        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < \deg f(x) \period
+    \end{align*}
+    不难看出, $f(x)$ 的次是 3, 且
+    \begin{align*}
+        f(x) = 2(x^2 - 2x + 1)(x+2) = 2x^3 - 6x + 4\period
+    \end{align*}
+
+    我们按上面证明的方法寻找 $q(x)$ 与 $r(x)$\period $a_3 = 2$ 是 $\FF$ 的单位, 且 $a_3^{-1} = \frac12$\period 取
+    \begin{align*}
+        q_1 (x) = 8\cdot \frac12 \cdot x^{6-3} = 4x^3 \period
+    \end{align*}
+    则
+    \begin{align*}
+        r_1 (x)
+        = \  & g(x) - q_1(x) f(x)                  \\
+        = \  & (8x^6 + 1) - 4x^3 (2x^3 - 6x + 4)   \\
+        = \  & (8x^6 + 1) - (8x^6 - 24x^4 + 16x^3) \\
+        = \  & 24x^4 - 16x^3 + 1 \period
+    \end{align*}
+    $r_1 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
+    \begin{align*}
+        q_2 (x) = 24 \cdot \frac12 \cdot x^{4-3} = 12x \period
+    \end{align*}
+    则
+    \begin{align*}
+        r_2 (x)
+        = \  & r_1 (x) - q_2(x) f(x)                     \\
+        = \  & (24x^4 - 16x^3 + 1) - 12x (2x^3 - 6x + 4) \\
+        = \  & (24x^4 - 16x^3 + 1) - (24x^4 - 72x + 48x) \\
+        = \  & -16x^3 + 72x^2 - 48x + 1 \period
+    \end{align*}
+    $r_2 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
+    \begin{align*}
+        q_3 (x) = -16 \cdot \frac12 \cdot x^{3-3} = -8 \period
+    \end{align*}
+    则
+    \begin{align*}
+        r_3 (x)
+        = \  & r_2 (x) - q_3(x) f(x)                             \\
+        = \  & (-16x^3 + 72x^2 - 48x + 1) - (-8) (2x^3 - 6x + 4) \\
+        = \  & (-16x^3 + 72x^2 - 48x + 1) - (-16x^3 + 48x - 32)  \\
+        = \  & 72x^2 - 96x + 33 \period
+    \end{align*}
+    $r_3 (x)$ 的次低于 $3$\period 这样
+    \begin{align*}
+        g(x)
+        = \  & q_1 (x) f(x) + r_1 (x)                               \\
+        = \  & q_1 (x) f(x) + q_2 (x) f(x) + r_2 (x)                \\
+        = \  & q_1 (x) f(x) + q_2 (x) f(x) + q_3 (x) f(x) + r_3 (x) \\
+        = \  & (q_1 (x) + q_2 (x) + q_3 (x)) f(x) + r_3 (x)         \\
+        = \  & (4x^3 + 12x - 8) f(x) + (72x^2 - 96x + 33) \period
+    \end{align*}
+    也就是说,
+    \begin{align*}
+        q(x) = 4x^3 + 12x - 8, \quad r(x) = 72x^2 - 96x + 33 \period
+    \end{align*}
+\end{example}
+
+\begin{remark}
+    带余除法要求 $f(x)$ 的首项系数是单位是有必要的\period
+
+    在上面的例里, $f(x)$ 与 $g(x)$ 可以看成 $\ZZ[x]$ 的元, 但 $2$ 不是 $\ZZ$ 的单位\period 虽然最终所得 $q(x)$, $r(x)$ 也是 $\ZZ[x]$ 的元, 但这并不是一定会出现的\period 我们看下面的简单例\period
+
+    考虑 $\ZZ[x]$ 的多项式 $f(x)=2x$\period 设
+    \begin{align*}
+        r(x) = r_0, \quad q(x) = \sum_{i=0}^{p} q_i x^i, \quad g(x) = \sum_{i=0}^{s} g_i x^i,
+    \end{align*}
+    且 $r_0, q_0, \cdots, q_p, g_0, \cdots, g_s \in \ZZ$\period 由 $g(x) = q(x)f(x) + r(x)$ 知
+    \begin{align*}
+        \sum_{i=0}^{s} g_i x^i = r_0 + \sum_{i=1}^{p+1} 2q_{i-1} x^i \period
+    \end{align*}
+    所以
+    \begin{align*}
+         & p = s - 1,                                 \\
+         & r_0 = g_0,                                 \\
+         & 2q_{i-1} = g_i, \quad i=1,\cdots,s \period
+    \end{align*}
+    这说明, $g(x)$ 的 $i$ 项系数 ($i=1,\cdots,s$) 必须是偶数\period 所以, 不存在 $q(x),r(x) \in \ZZ[x]$ 使
+    \begin{align*}
+        1 + 3x + x^2 = q(x) \cdot 2x + r(x), \quad \deg r(x) < 1 \period
+    \end{align*}
+\end{remark}
+
+我们知道, 用一个正整数除非负整数, 所得的余数与商是唯一的\period 比方说, $5$ 除 $23$ 的余数只能是 $3$\period
+
+多项式也有类似的性质哟\period
+
+\begin{proposition}
+    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$\period 若 $D$ 上 $x$ 的 $4$ 个多项式 $q_1 (x)$, $r_1 (x)$, $q_2 (x)$, $r_2 (x)$ 适合
+    \begin{align*}
+         & q_1 (x) f(x) + r_1 (x) = q_2 (x) f(x) + r_2 (x),          \\
+         & \deg r_1 (x) < \deg f(x), \quad \deg r_2 (x) < \deg f(x),
+    \end{align*}
+    则必有
+    \begin{align*}
+        r_1 (x) = r_2 (x), \quad q_1 (x) = q_2 (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    记
+    \begin{align*}
+        Q(x) = q_2 (x) - q_1 (x), \quad R(x) = r_2 (x) - r_1 (x) \period
+    \end{align*}
+    题设条件即
+    \begin{align*}
+        (q_1 (x) - q_2 (x)) f(x) = r_2 (x) - r_1 (x),
+    \end{align*}
+    也就是
+    \begin{align*}
+        -Q(x) f(x) = R(x) \period
+    \end{align*}
+    反证法\period 若 $-Q(x) \neq 0$, 则 $\deg (-Q(x)) \geq 0$\period 从而
+    \begin{align*}
+        \deg R(x) = \deg (-Q(x)) + \deg f(x) \geq \deg f(x) \period
+    \end{align*}
+    可是
+    \begin{align*}
+        \deg R(x) = \deg (r_2(x) - r_1(x)) \leq \deg r_1 (x) < \deg f(x),
+    \end{align*}
+    矛盾! 故 $-Q(x) = 0$\period 这样, $R(x) = 0$\period
+\end{pf}
+
+这样, 我们得到了这个命题:
+
+\begin{proposition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i = 0}^{n} a_i x^i \in D[x],
+    \end{align*}
+    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在唯一的 $q(x), r(x) \in D[x]$ 使
+    \begin{align*}
+        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n \period
+    \end{align*}
+    一般称其为带余除法: $q(x)$ 就是商; $r(x)$ 就是余式\period 并且, 当 $f(x)$ 的次不高于 $g(x)$ 的次时, $f(x)$, $g(x)$, $q(x)$ 间还有如下的次关系:
+    \begin{align*}
+        \deg g(x) = \deg (g(x) - r(x)) = \deg q(x) + \deg f(x) \period
+    \end{align*}
+\end{proposition}

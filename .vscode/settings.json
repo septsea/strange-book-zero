@@ -151,7 +151,15 @@
         "**/*.djvu",
         "**/*.pdf",
         "**/*.md"
-    ]
+    ],
     /* ======================================== */
     /* Fancy settings below. */
+    "cSpell.ignoreWords": [
+        "addcontentsline",
+        "arraycolsep",
+        "markright",
+        "mathbb",
+        "mathrm",
+        "qedhere"
+    ],
 }

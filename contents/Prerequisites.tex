@@ -1,51 +1,261 @@
-% cSpell: ignore mathbb
-% cSpell: ignore mathrm
-% cSpell: ignore addcontentsline
-% cSpell: ignore markright
-% cSpell: ignore arraycolsep
-% cSpell: ignore qedhere
-
-\def\CC{\mathbb{C}}
-\def\RR{\mathbb{R}}
-\def\QQ{\mathbb{Q}}
-\def\ZZ{\mathbb{Z}}
-\def\NN{\mathbb{N}}
-\def\FF{\mathbb{F}}
-\def\ii{\mathrm{i}}
-\def\myStar{\ding{72}}
-\def\ellipsis{\dots}
-\def\period{\text{。}}
-% cSpell: disable-next-line
-\def\qedsymbol{\ding{44}}
-\newcommand{ \term}[1]{(\textit{#1})}
-
-\section*{Delving into Polynomials}
-\addcontentsline{toc}{section}{Delving into Polynomials}
-% cSpell: disable-next-line
-\markboth{Delving into Polynomials}{}
-
-Out of boredom, I wrote the article.
-
-    % This is used to occupy some space.
-    {
-        \vfill \itshape \sffamily \small
-        \begin{center}
-            \begin{tabular}{l}
-                % cSpell: disable-next-line
-                Gohan ni suru? Ofuro ni suru? Sore tomo\ellipsis \ wa ta shi? \\
-                (Would you like dinner? Would you like a bath? Or\ellipsis \ would you like me?)
-            \end{tabular}
-        \end{center}
-    }
-
-% cSpell: disable-next-line
-\clearpage
-
 \subsection*{Prerequisites}
 \addcontentsline{toc}{subsection}{Prerequisites}
 \markright{Prerequisites}
 
-您将在本节熟悉一些记号与术语\period 不必细品\period 本节有很多定义\period 不要害怕: 就当是认识一下词语好了\period 本文主要讨论多项式, 所以并不会过多涉及到本节内容\period 说白了, 本节是工具节\period
+您将在本节熟悉一些记号与术语\period 建议您熟悉本节的内容后学习下一节的内容\period
+
+在进入小节 Sets 前, 让我们先回顾复数与数学归纳法吧!
+
+\begin{definition}
+    复数 \term{complex number} 是形如 $x + y \ii$ ($x$, $y$ 是实数) 的数\period
+\end{definition}
+
+\begin{remark}
+    可将 $x + y \ii$ 写为 $x + \ii y$\period
+\end{remark}
+
+\begin{definition}
+    设 $a,b,c,d$ 是实数\period 则
+    \begin{align*}
+        a + b \ii = c + d \ii \iff a = c \text{ and } b = d \period
+    \end{align*}
+\end{definition}
+
+\begin{remark}
+    我们把形如 $a+0 \ii$ 的复数写为 $a$, 并认为 $a+0 \ii$ 是实数\period 反过来, $a$ 也可以认为是复数 $a + 0 \ii$\period
+
+    形如 $0 + b \ii$ 的复数可写为 $b \ii$\period 按照习惯, $1\ii$ 可写为 $\ii$, 且 $-1\ii$ 可写为 $-\ii$\period
+\end{remark}
+
+\begin{definition}
+    复数的加、乘法定义为
+    \begin{align*}
+         & (a + b \ii) + (c + d \ii) = (a + c) + (b + d) \ii,          \\
+         & (a + b \ii) (c + d \ii) = (ac - bd) + (ad + bc) \ii \period
+    \end{align*}
+    由此可见, 二个复数的和 (或积) 还是复数\period
+\end{definition}
+
+\begin{example}
+    我们计算 $\ii$ 与自己的积:
+    \begin{align*}
+        \ii \cdot \ii = (0 + 1\ii) (0 + 1\ii) = (0 \cdot 0 - 1 \cdot 1) + (0 \cdot 1 + 1 \cdot 0) \ii = -1 \period
+    \end{align*}
+    简单地说, 就是
+    \begin{align*}
+        \ii \cdot \ii = \ii^2 = -1 \period
+    \end{align*}
+\end{example}
+
+设 $z_1, z_2, z_3$ 是任意三个复数 (不必不同)\period 设 $z_1 = a + b \ii$\period
+
+\begin{proposition}
+    复数的加法适合如下运算律:
+
+    (i) 交换律: $z_1 + z_2 = z_2 + z_1$;
+
+    (ii) 结合律: $(z_1 + z_2) + z_3 = z_1 + (z_2 + z_3)$;
+
+    (iii) $0 + z_1 = z_1$;
+
+    (iv) 存在复数 $w = (-a) + (-b) \ii$ 使 $w + z_1 = 0$\period
+
+    通常把适合 (iv) 的 $w$ 记为 $-z_1$, 且称之为 $z_1$ 的相反数\period
+\end{proposition}
+
+\begin{remark}
+    $(-a) + (-b) \ii$ 可写为 $-a-b \ii$\period
+\end{remark}
+
+\begin{definition}
+    复数的减法定义为
+    \begin{align*}
+        z_2 - z_1 = z_2 + (-z_1) \period
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    复数的乘法适合如下运算律:
+
+    (v) 交换律: $z_1 z_2 = z_2 z_1$;
+
+    (vi) 结合律: $(z_1 z_2) z_3 = z_1 (z_2 z_3)$;
+
+    (vii) $1 z_1 = z_1$;
+
+    (viii) 若 $z_1 \neq 0$, 则存在复数 $v = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \ii$ 使 $v z_1 = 1$\period
+
+    通常把适合 (viii) 的 $v$ 记为 $z_1^{-1}$, 且称之为 $z_1$ 的倒数\period
+\end{proposition}
+
+\begin{definition}
+    复数的除法定义为
+    \begin{align*}
+        \frac{z_2}{z_1} = z_2 z_1^{-1} \period
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    复数的加法与乘法还适合分配律:
+    \begin{align*}
+         & z_1 (z_2 + z_3) = z_1 z_2 + z_1 z_3,       \\
+         & (z_2 + z_3) z_1 = z_2 z_1 + z_3 z_1\period
+    \end{align*}
+\end{proposition}
+
+\begin{remark}
+    $a$, $b\ii$, $c$, $d\ii$ 都可以看成是复数\period 这样
+    \begin{align*}
+        (a + b \ii) (c + d \ii)
+        = \  & (a + b \ii) c + (a + b \ii) (d \ii)  \\
+        = \  & ac + b \ii c + a d \ii + b \ii d \ii \\
+        = \  & ac + bc\ii + ad\ii + bd\ii^2         \\
+        = \  & (ac + bd\ii^2) + (ad + bc)\ii        \\
+        = \  & (ac - bd) + (ad + bc)\ii \period
+    \end{align*}
+    也就是说, 我们不必死记复数的乘法规则: 只要用运算律与 $\ii^2 = -1$ 即可召唤它\period
+\end{remark}
+
+\begin{definition}
+    $a + b\ii$ 的共轭 \term{conjugate} 是复数 $a - b\ii$ \period 复数 $z_1$ 的共轭可写为 $\overline{z_1}$\period
+\end{definition}
+
+\begin{proposition}
+    共轭适合如下性质:
+
+    (ix) $\overline{z_1} + z_1$ 与 $\ii \cdot (\overline{z_1} - z_1)$ 都是实数;
+
+    (x) $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$, $\overline{z_1 z_2} = \overline{z_1} \overline{z_2}$;
+
+    (xi) $\overline{z_1} z_1$ 是正数, 除非 $z_1 = 0$\period
+\end{proposition}
+
+\begin{definition}
+    $|z_1| = \sqrt{\overline{z_1} z_1}$ 称为 $z_1$ 的绝对值 \term{absolute value}\period
+\end{definition}
+
+\begin{proposition}
+    绝对值适合如下性质:
+    \begin{align*}
+        |z_1 z_2| = |z_1| |z_2| \period
+    \end{align*}
+\end{proposition}
+
+\begin{definition}
+    设 $n$ 是整数\period 若 $n=0$, 则说 $z_1^n = 1$\period 若 $n \geq 1$, 则说 $z_1^n$ 是 $n$ 个 $z_1$ 的积\period 若 $z_1 \neq 0$, 且 $n \leq -1$, 则说 $z_1^n$ 是 $\frac{1}{z_1^{-n}}$\period
+
+    $z_1^n$ 的一个名字是 $z_1$ 的 $n$ 次幂 \term{power}\period
+\end{definition}
+
+\begin{proposition}
+    设 $m,n$ 是非负整数\period 幂适合如下性质:
+    \begin{align*}
+        z_1^m z_1^n = z_1^{m+n}, \quad (z_1^m)^n = z_1^{mn}, \quad (z_1 z_2)^m = z_1^m z_2^m \period
+    \end{align*}
+    若 $z_1$ 与 $z_2$ 都不是 $0$, 则 $m,n$ 允许取全体整数\period
+\end{proposition}
+
+复数就先回顾到这里\period 下面回顾数学归纳法\period
+
+\begin{remark}
+    数学归纳法 \term{mathematical induction} 是一种演绎推理\period
+\end{remark}
+
+\begin{proposition}
+    设 $P(n)$ 是跟整数 $n$ 相关的命题\period 设 $P(n)$ 适合:
+
+    (i) $P(n_0)$ 是正确的;
+
+    (ii) 任取 $\ell \geq n_0$, 必有 ``若 $P(\ell)$ 是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立\period
+
+    则任取不低于 $n_0$ 的整数 $n$, 必有 $P(n)$ 是正确的\period
+\end{proposition}
+
+\begin{remark}
+    可以这么理解数学归纳法\period 假设有一排竖立的砖\period 如果 (i) 第一块砖倒下, 且 (ii) 前一块砖倒下可引起后一块砖倒下, 那么所有的砖都可以倒下, 是吧? 由此也可以看出, (i) (ii) 缺一不可\period 第一块砖不倒, 后面的砖怎么倒下呢?\myFN{当然, 也可以从第 $n$ 块砖开始倒下 ($n > 1$), 但这就照顾不到第一块了\period} 如果前一块砖倒下时后一块砖不一定能倒下, 那么会在某块砖后开始倒不下去\period
+\end{remark}
+
+\begin{example}
+    我们试着用数学归纳法证明, 对任意正整数 $n$,
+    \begin{align*}
+        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2} \period \tag*{$P(n) \colon$}
+    \end{align*}
+
+    既然想证明对任意正整数 $n$, $P(n)$ 都成立, 我们取 $n_0 = 1$\period 然后验证 (i): 左边只有 $0$ 这一项, 右边是 $\frac{1 \cdot (1-1)}{2} = 0$\period 所以 (i) 适合\period
+
+    再验证 (ii)\period (ii) 是说, 要由 $P(\ell)$ 推出 $P(\ell + 1)$\period 所以, 假设
+    \begin{align*}
+        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2}, \quad \ell \geq 1 \period
+    \end{align*}
+    因为
+    \begin{align*}
+        0 + 1 + \cdots + (\ell - 1) + \ell
+        = \  & (0 + 1 + \cdots + (\ell - 1)) + \ell            \\
+        = \  & \frac{\ell(\ell-1)}{2} + \ell \tag*{(IH)}       \\
+        = \  & \frac{\ell(\ell-1)}{2} + \frac{\ell \cdot 2}{2} \\
+        = \  & \frac{\ell(\ell+1)}{2}                          \\
+        = \  & \frac{(\ell+1)((\ell+1) - 1)}{2},
+    \end{align*}
+    故我们由 $P(\ell)$ 推出了 $P(\ell + 1)$\period 我们在哪儿用到了 $P(\ell)$ 呢? 我们在标了 (IH) 的那一行用了 $P(\ell)$\period 这样的假设称为归纳假设 \term{induction hypothesis}\period
+
+    既然 (i) (ii) 都适合, 那么任取不低于 $n_0=1$ 的整数 $n$, $P(n)$ 都对\period
+\end{example}
+
+我们用二个具体的例说明, (i) (ii) 缺一不可\period
+
+\begin{example}
+    我们 ``证明'', 对任意正整数 $n$,
+    \begin{align*}
+        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2} + 1 \period \tag*{$P^{\prime}(n) \colon$}
+    \end{align*}
+    这里, $n_0$ 自然取 $1$\period
+
+    (i) 不适合: 显然 $n=1$ 时, 左侧是 $0$ 而右侧是 $1$\period 再看 (ii)\period 假设
+    \begin{align*}
+        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2} + 1, \quad \ell \geq 1 \period
+    \end{align*}
+    由于
+    \begin{align*}
+        0 + 1 + \cdots + (\ell - 1) + \ell
+        = \  & (0 + 1 + \cdots + (\ell - 1)) + \ell                \\
+        = \  & \frac{\ell(\ell-1)}{2} + 1 \ell \tag*{(``IH'')}     \\
+        = \  & \frac{\ell(\ell-1)}{2} + \frac{\ell \cdot 2}{2} + 1 \\
+        = \  & \frac{\ell(\ell+1)}{2} + 1                          \\
+        = \  & \frac{(\ell+1)((\ell+1) - 1)}{2} + 1,
+    \end{align*}
+    故我们由 $P^{\prime}(\ell)$ ``推出''了 $P^{\prime}(\ell + 1)$\period 我们也在 (``IH'') 处用到了 ``归纳假设''\period 那么 $P^{\prime}(n)$ 就是正确的吗? 当然不是! 前面我们知道,
+    \begin{align*}
+        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2},
+    \end{align*}
+    也就是说, $P^{\prime}(n)$ 的右侧的 ``${} + 1$'' 使其错误\period 当然, 一般我们很少会犯这样的错误: 毕竟, 一开始就不对的东西就不用看下去了\period
+\end{example}
+
+\begin{example}
+    % cSpell: disable-next-line
+    不同的老婆\myFN{一般地, 二次元人会称动画、漫画、游戏、小说中自己喜爱的女性角色为老婆 \term{waifu}\period 一个二次元人可以有不止一个老婆\period}有着不同的发色\period 但是, 我们用数学归纳法却可以证明, 任意的 $n$ ($n \geq 1$) 个老婆有着相同的发色! 称这个命题为 $Q(n)$\period 这里, $n_0$ 自然取 $1$\period
+
+    (i) 当 $n=1$ 时, 一个老婆自然只有一种发色\period 这个时候, 命题是正确的!
+
+    (ii) 假设任意的 $\ell$ ($\ell \geq 1$) 个老婆有着相同的发色! 随意取 $\ell + 1$ 个老婆\period 根据假设, 老婆 $1$, $2$, $\cdots$, $\ell$ 有着相同的发色, 且老婆 $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色\period 这二组中都有 $2$, $\cdots$, $\ell$ 这 $\ell-1$ 个老婆, 所以老婆 $1$, $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色!
+
+    根据 (i) (ii), 命题成立\period
+
+    可是这对吗? 不对\period 问题出在 (ii)\period 如果说, 任意二个老婆有着相同的发色, 那任意三个老婆也有着相同的发色\period 这没问题\period 可是, 由 $Q(1)$ 推不出 $Q(2)$: 老婆 $1$ 与老婆 $2$ 根本就不重叠呀! (ii) 要求任取 $\ell \geq n_0$, 必有 $Q(\ell)$ 推出 $Q(\ell+1)$\period 而 $\ell = 1$ 时, (ii) 不对, 因此不能推出 $Q(n)$ 对任意正整数都对\period
+\end{example}
+
+下面是数学归纳法的一个变体\period 这也叫数学归纳法\period
+
+\begin{proposition}
+    设 $P(n)$ 是跟整数 $n$ 相关的命题\period 设 $P(n)$ 适合:
+
+    (i) $P(n_0)$ 是正确的;
+
+    (ii)$\prime$ 任取 $\ell \geq n_0$, 必有 ``若 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立\period
+
+    则任取不低于 $n_0$ 的整数 $n$, 必有 $P(n)$ 是正确的\period
+\end{proposition}
+
+知识就回顾到这里\period 开始进入集的世界吧!
 
 \subsubsection*{Sets}
 
@@ -199,7 +409,7 @@ Out of boredom, I wrote the article.
 \end{definition}
 
 \begin{example}
-    可以把 $\RR^2$ 看作平面上的点集\period 所以
+    可以把 $\RR^2$ 看作平面上的点集\period
     \begin{align*}
          & \RR^2 \to \RR,  \tag*{$f$:}  \\
          & (x,y) \mapsto \sqrt{x^2+y^2}
@@ -419,7 +629,7 @@ Out of boredom, I wrote the article.
     \begin{align*}
          & x \cdot (y + z) = x \cdot y + x \cdot z, \tag*{(LD)}
     \end{align*}
-    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略\period 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$\period 但有意思的是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式是对的\period 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的\period} \term{left distributivity}\period 类似地, 若
+    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略\period 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$\period 但有意思的事儿是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式是对的\period 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的\period} \term{left distributivity}\period 类似地, 若
     \begin{align*}
          & (y + z) \cdot x = y \cdot x + z \cdot x, \tag*{(RD)}
     \end{align*}
@@ -1226,740 +1436,3 @@ Out of boredom, I wrote the article.
 \begin{example}
     设 $F \subset C$, 且 $F$ 是域\period 不难看出, $\QQ \subset F$\period
 \end{example}
-
-\subsection*{Definition of Polynomials}
-\addcontentsline{toc}{subsection}{Definition of Polynomials}
-\markright{Definition of Polynomials}
-
-现在开始介绍多项式\period
-
-\begin{definition}
-    设 $D$ 是整环\period 设 $x$ 是不在 $D$ 里的任意一个文字\period 形如
-    \begin{align*}
-        f(x) = a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in D,\ a_n \neq 0)
-    \end{align*}
-    的表达式称为 $D$ 上 $x$ 的一个多项式 \term{polynomial in $x$ over $D$}\period $n$ 称为其次 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次项 \term{the $i^\text{th}$ coefficient}\period $f(x)$ 的次可写为 $\deg f(x)$\period
-
-    若二个多项式的次与各同次系数均相等, 则二者相等\period
-
-    多项式的系数为 $0$ 的项可以不写\period
-
-    约定 $0 \in D$ 也是多项式, 称为零多项式\period 零多项式的次是 $-\infty$\period 任取整数 $m$, 约定
-    \begin{align*}
-        -\infty = -\infty, \quad -\infty < m, \quad -\infty + m = m + (-\infty) = -\infty \period
-    \end{align*}
-    当然, 还约定, 零多项式只跟自己相等\period 换句话说,
-    \begin{align*}
-        a_0 x^0 + a_1 x^1 + \cdots + a_n x^n = 0
-    \end{align*}
-    的一个必要与充分条件是
-    \begin{align*}
-        a_0 = a_1 = \cdots = a_n = 0 \period
-    \end{align*}
-
-    $D$ 上 $x$ 的所有多项式作成的集是 $D[x]$:
-    \begin{align*}
-        D[x] = \{\, a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \mid n \in \NN,\ a_0,a_1,\cdots,a_n \in D \,\} \period
-    \end{align*}
-
-    文字 $x$ 只是一个符号, 它与 $D$ 的元的和与积都是形式的\period 我们说, $x$ 是不定元 \term{indeterminate}\period
-\end{definition}
-
-\begin{example}
-    $0y^0 + 1y^1 + (-1)y^2 + 0y^3 + (-7)y^4 \in \ZZ[y]$ 是一个 $4$ 次多项式\period 顺便一提, 一般把 $y^1$ 写为 $y$\period 这个多项式的一个更普通的写法是
-    \begin{align*}
-        y - y^2 - 7y^4 \period
-    \end{align*}
-
-    也许 $y^0$ 看起来有些奇怪\period 如上所言, 这只是一个形式上的表达式\period 我们之后再处理这个小细节\period
-\end{example}
-
-\begin{example}
-    $z^0 + z + z^{\frac{3}{2}}$ 不是 $z$ 的多项式\period
-\end{example}
-
-\begin{remark}
-    文字 $x$ 的意义在数学中是不断进化的 \term{evolving}\period 在中小学里, $x$ 是未知元 \term{unknown}: 虽然它是待求的, 但是它是一个具体的数\period 后来在函数里, $x$ 表示变元 \term{variable}, 不过它的取值范围是确定的\period 在上面的定义里, $x$ 仅仅是一个文字, 成为不定元\period
-\end{remark}
-
-\begin{definition}
-    设
-    \begin{align*}
-        f(x) = a_0 x^0 + a_1 x + \cdots + a_n x^n, \quad g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n
-    \end{align*}
-    是 $D[x]$ 的元\period 规定加法如下:
-    \begin{align*}
-        f(x) + g(x) = (a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n \period
-    \end{align*}
-\end{definition}
-
-\begin{example}
-    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$\period 先改写一下:
-    \begin{align*}
-        f(x) = 1x^0 + 0x + 2x^2 + 0x^3, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3 \period
-    \end{align*}
-    所以
-    \begin{align*}
-        f(x) + g(x) = -2x^0 + 4x + 2x^2 - x^3 \period
-    \end{align*}
-\end{example}
-
-\begin{proposition}
-    $D[x]$ 作成加群\period
-\end{proposition}
-
-\begin{pf}
-    设
-    \begin{align*}
-        f(x) & = a_0 x^0 + a_1 x + \cdots + a_n x^n, \\
-        g(x) & = b_0 x^0 + b_1 x + \cdots + b_n x^n, \\
-        h(x) & = c_0 x^0 + c_1 x + \cdots + c_n x^n
-    \end{align*}
-    是 $D[x]$ 的元\period 根据加法的定义, $+$ 显然是 $D[x]$ 的二元运算\period 因为 $D$ 的加法适合交换律, 故
-    \begin{align*}
-        g(x) + f(x)
-        = \  & (b_0 + a_0) x^0 + (b_1 + a_1) x + \cdots + (b_n + a_n) x^n \\
-        = \  & (a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n \\
-        = \  & f(x) + g(x) \period
-    \end{align*}
-    也就是说, $D[x]$ 的加法适合交换律\period
-
-    注意到
-    \begin{align*}
-             & (f(x) + g(x)) + h(x)                                                                 \\
-        = \  & ((a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n)                         \\
-             & \qquad + (c_0 x^0 + c_1 x + \cdots + c_n x^n)                                        \\
-        = \  & ((a_0 + b_0) + c_0) x^0 + ((a_1 + b_1) + c_1) x + \cdots + ((a_n + b_n) + c_n) x^n   \\
-        = \  & (a_0 + b_0 + c_0) x^0 + (a_1 + b_1 + c_1) x + \cdots + (a_n + b_n + c_n) x^n \period
-    \end{align*}
-    类似地, 计算 $f(x) + (g(x) + h(x))$ 也可以得到一样的结果\period 也就是说, $D[x]$ 的加法适合结合律\period
-
-    零多项式可以写为
-    \begin{align*}
-        0 = 0x^0 + 0x + \cdots + 0x^n \period
-    \end{align*}
-    这样
-    \begin{align*}
-        0 + f(x)
-        = \  & (0 + a_0) x^0 + (0 + a_1) x + \cdots + (0 + a_n) x^n \\
-        = \  & a_0 x^0 + a_1 x + \cdots + a_n x^n                   \\
-        = \  & f(x) \period
-    \end{align*}
-    类似地, $f(x) + 0 = f(x)$\period
-
-    记
-    \begin{align*}
-        \underline{f}(x) = (-a_0) x^0 + (-a_1) x + \cdots + (-a_n) x^n \period
-    \end{align*}
-    这样
-    \begin{align*}
-        \underline{f}(x) + f(x)
-        = \  & (-a_0 + a_0) x^0 + (-a_1 + a_1) x + \cdots + (-a_n + a_n) x^n \\
-        = \  & 0 x^0 + 0 x + \cdots + 0 x^n                                  \\
-        = \  & 0 \period
-    \end{align*}
-    类似地, $f(x) + \underline{f}(x) = 0$\period 以后, 我们把这个 $\underline{f}(x)$ 用普通的符号写为
-    \begin{align*}
-        -f(x) = -a_0 x^0 - a_1 x - \cdots - a_n x^n \period
-    \end{align*}
-
-    综上, $D[x]$ 是加群\period
-\end{pf}
-
-\begin{remark}
-    这算是本文的第零个单独写出的命题了\period 我们也比较详细地写出了一个证明 \term{proof}\period 写完证明后, 我们还比了一个 V 形手势 \term{the victory sign}\period 以后, 每做完一道题就给自己鼓励吧!
-\end{remark}
-
-\begin{remark}
-    可以看出, $f(x) \pm g(x)$ 的次既不会超出 $f(x)$ 的次, 也不会超出 $g(x)$ 的次\period 用符号写出来, 就是
-    \begin{align*}
-        \deg (f(x) \pm g(x)) \leq \max \{\, \deg f(x), \deg g(x) \,\} \period
-    \end{align*}
-\end{remark}
-
-\begin{remark}
-    既然 $D[x]$ 是加群, 且每个 $a_i x^i$ ($i = 0,1,\cdots,n$) 都可以看成是多项式, 那么多项式的项的次序是不重要的\period 前面的写法称为升次排列 \term{ascending order}\period 下面的写法称为降次排列 \term{descending order}:
-    \begin{align*}
-        a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 x^0 \period
-    \end{align*}
-    这跟中学里接触的多项式是一样的\period 当然, 也可以用 $\sum$ 符号书写:
-    \begin{align*}
-        \sum_{i = 0}^{n} a_i x^i \quad \text{or} \quad \sum_{i = 0}^{n} a_{n-i} x^{n-i} \period
-    \end{align*}
-
-    (非零) 多项式的最高次非零项是首项 \term{leading term}\period
-\end{remark}
-
-\begin{example}
-    $y - y^2 - 7y^4 \in \ZZ[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$\period
-\end{example}
-
-\begin{definition}
-    设
-    \begin{align*}
-        f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m, \quad g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n
-    \end{align*}
-    是 $D[x]$ 的元\period 规定乘法如下:
-    \begin{align*}
-        f(x) g(x) = c_0 x^0 + c_1 x + \cdots + c_{m+n} x^{m+n},
-    \end{align*}
-    其中
-    \begin{align*}
-        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0,
-    \end{align*}
-    且约定 $i > m$ 时 $a_i = 0$, $j > n$ 时 $b_j = 0$\period 在这个约定下, 不难看出, $\ell > m+n$ 时, $c_\ell = 0$\period 所以, 我们至少有
-    \begin{align*}
-        \deg f(x)g(x) \leq \deg f(x) + \deg g(x) \period
-    \end{align*}
-\end{definition}
-
-\begin{example}
-    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$\period 先改写一下:
-    \begin{align*}
-        f(x) = 1x^0 + 0x + 2x^2, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3 \period
-    \end{align*}
-    所以
-    \begin{align*}
-         & c_0 = 1 \cdot (-3) = -3,                         \\
-         & c_1 = 1 \cdot 4 + 0 \cdot (-3) = 4,              \\
-         & c_2 = 1 \cdot 0 + 0 \cdot 4 + 2 \cdot (-3) = -6, \\
-         & c_3 = 1 \cdot (-1) + 0 \cdot 0 + 2 \cdot 4 = 7,  \\
-         & c_4 = 0 \cdot (-1) + 2 \cdot 0 = 0,              \\
-         & c_5 = 2 \cdot (-1) = -2 \period
-    \end{align*}
-    所以
-    \begin{align*}
-        f(x) g(x) = -3x^0 + 4x - 6x^2 + 7x^3 - 2x^5 \period
-    \end{align*}
-\end{example}
-
-\begin{example}
-    再看一个例\period 设
-    \begin{align*}
-        f(x) = x, \quad g(x) = x^\ell \period
-    \end{align*}
-    $a_i$ 在 $i=1$ 时为 $1$, $i \neq 1$ 时为 $0$; $b_j$ 在 $j=\ell$ 时为 $1$, $j \neq \ell$ 时为 $0$\period
-
-    $\ell = 0$ 时, 不难算出, $f(x)g(x) = x$\period 现在设 $\ell \geq 1$\period $k \leq \ell$ 时,
-    \begin{align*}
-        c_k = 0 b_k + 1 \cdot 0 + \cdots + 0 \cdot 0 = 0 \period
-    \end{align*}
-    $k = \ell + 1$ 时,
-    \begin{align*}
-        c_{\ell + 1} = 0 \cdot 0 + 1 \cdot 1 + 0 \cdot 0 + \cdots + 0 \cdot 0 = 1 \period
-    \end{align*}
-    所以
-    \begin{align*}
-        x \cdot x^{\ell} = x^{\ell+1} \period
-    \end{align*}
-    这样, $x^\ell$ 可以视为 $x$ 的 $\ell$ 次幂\period
-\end{example}
-
-\begin{remark}
-    由上面二个例可以看到, 这跟中学的多项式乘法运算没有什么本质区别\period
-\end{remark}
-
-\begin{example}
-    设
-    \begin{align*}
-        f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m \period
-    \end{align*}
-    是 $D[x]$ 的元\period 零多项式可以写为
-    \begin{align*}
-        0 = 0x^0,
-    \end{align*}
-    由此易知
-    \begin{align*}
-        0f(x) = f(x)0 = 0\period
-    \end{align*}
-\end{example}
-
-\begin{remark}
-    设
-    \begin{align*}
-        f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m, \quad g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n
-    \end{align*}
-    是 $D[x]$ 的元, 且 $a_m \neq 0$, $b_n \neq 0$\period 这样, $f(x)g(x)$ 的 $m+n$ 次项就是 $cx^{m+n}$, 其中
-    \begin{align*}
-        c
-        = \  & a_0 b_{m+n} + \cdots + a_{m-1} b_{n+1} + a_m b_n + a_{m+1} b_{n-1} + \cdots + a_{m+n}b_n \\
-        = \  & 0 + \cdots + 0 + a_m b_n + 0 + \cdots + 0                                                \\
-        = \  & a_m b_n \period
-    \end{align*}
-    因为 $a_m \neq 0$, $b_n \neq 0$, 所以 $a_m b_n \neq 0$ (反证法: 若 $a_m b_n = 0 = a_m 0$, 因为 $a_m \neq 0$, 根据 $D$ 的消去律, 得 $b_n = 0$, 矛盾!)\period 所以
-    \begin{align*}
-        \deg f(x) g(x) = \deg f(x) + \deg g(x) \period
-    \end{align*}
-    可以验证, 若 $f$ 或 $g$ 的任意一个是 $0$, 这个关系也对\period
-\end{remark}
-
-\begin{proposition}
-    $D[x]$ 作成整环\period
-\end{proposition}
-
-\begin{pf}
-    已经知道, $D[x]$ 是加群\period 下面先说明 $D[x]$ 是交换环\period
-
-    根据定义, 多项式的乘法还是多项式, 也就是说, 乘法是二元运算\period
-
-    设
-    \begin{align*}
-         & f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m, \\
-         & g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n, \\
-         & h(x) = u_0 x^0 + u_1 x + \cdots + u_s x^s
-    \end{align*}
-    是 $D[x]$ 的元\period 则
-    \begin{align*}
-         & f(x) g(x) = c_0 x^0 + c_1 x + \cdots + c_{m+n} x^{m+n}, \\
-         & g(x) f(x) = d_0 x^0 + d_1 x + \cdots + d_{n+m} x^{n+m},
-    \end{align*}
-    其中
-    \begin{align*}
-         & c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0,        \\
-         & d_k = b_0 a_k + b_1 a_{k-1} + \cdots + b_k a_0 \period
-    \end{align*}
-    因为 $D$ 的乘法适合交换律, 加法适合交换律与结合律, 故 $c_k = d_k$\period 这样, $D[x]$ 的乘法适合交换律\period
-
-    不难算出
-    \begin{align*}
-             & (f(x) g(x)) h(x)                                                                  \\
-        = \  & (c_0 x^0 + c_1 x + \cdots + c_{m+n} x^{m+n}) (u_0 x^0 + u_1 x + \cdots + u_s x^s) \\
-        = \  & v_0 x^0 + v_1 x + \cdots + v_{m+n+s} x^{m+n+s},
-    \end{align*}
-    其中
-    \begin{align*}
-        v_t = (\text{the sum of all $a_i b_j u_r$'s with $i+j+r=t$})\period
-    \end{align*}
-    类似地, 计算 $f(x) (g(x) h(x))$ 也可以得到一样的结果\period 也就是说, $D[x]$ 的乘法适合结合律\period
-
-    现在验证分配律\period 前面已经看到, 多项式的乘法是交换的, 所以只要验证一个分配律即可\period 不失一般性, 设 $s=n$\period 这样
-    \begin{align*}
-        g(x) + h(x) = (b_0 + u_0) x^0 + (b_1 + u_1) x + \cdots + (b_n + u_n) x^n \period
-    \end{align*}
-    所以
-    \begin{align*}
-        f(x) (g(x) + h(x)) = p_0 x^0 + p_1 x^1 + \cdots + p_{m+n} x^{m+n},
-    \end{align*}
-    其中
-    \begin{align*}
-        p_k
-        = \  & a_0 (b_k + c_k) + a_1 (b_{k-1} + c_{k-1}) + \cdots + a_k (b_0 + c_0)                            \\
-        = \  & (a_0 b_k + a_0 c_k) + (a_1 b_{k-1} + a_1 c_{k-1}) + \cdots + (a_k b_0 + a_k c_0)                \\
-        = \  & (a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0) + (a_0 c_k + a_1 c_{k-1} + \cdots + a_k c_0) \period
-    \end{align*}
-    不难看出, 这就是 $f(x)g(x)$ 的 $k$ 次系数与 $f(x)h(x)$ 的 $k$ 次系数的和\period 这样, $D[x]$ 的加法与乘法适合分配律\period 至此, 我们知道, $D[x]$ 是交换环\period
-
-    交换环离整环还差二步: 一是乘法幺元, 二是消去律\period 先看消去律\period 若 $f(x)g(x) = f(x)h(x)$, $f(x) \neq 0$, 根据分配律,
-    \begin{align*}
-        0 = f(x)g(x) - f(x)h(x) = f(x) (g(x) - h(x)) \period
-    \end{align*}
-    如果 $g(x) - h(x) \neq 0$, 则 $g(x) - h(x)$ 的次不是 $-\infty$\period $f(x)$ 的次不是 $-\infty$, 故 $f(x)(g(x) - h(x))$ 的次不是 $-\infty$\period 换句话说, $f(x)(g(x) - h(x)) \neq 0$, 矛盾!
-
-    再看乘法幺元\period 设
-    \begin{align*}
-        e(x) = x^0 \period
-    \end{align*}
-    不难算出
-    \begin{align*}
-        e(x) f(x) = f(x) e(x) = f(x) \period
-    \end{align*}
-
-    综上, $D[x]$ 是整环\period
-\end{pf}
-
-\begin{remark}
-    以后, 我们把 $x^0$ 写为 $1$\period 换句话说, 代替
-    \begin{align*}
-        a_0 x^0 + a_1 x + \cdots + a_n x^n,
-    \end{align*}
-    我们写
-    \begin{align*}
-        a_0 + a_1 x + \cdots + a_n x^n \period
-    \end{align*}
-
-    这儿还有一件事儿值得一提\period 考虑
-    \begin{align*}
-        D_0 = \{\, ax^0 \mid a \in D \,\} \subset D[x] \period
-    \end{align*}
-    任取 $D_0$ 的二元 $ax^0$, $bx^0$\period 首先, $ax^0 = bx^0$ 的一个必要与充分条件是 $a=b$\period 然后, 不难看出,
-    \begin{align*}
-        ax^0 + bx^0 = (a+b)x^0, \quad (ax^0)(bx^0) = (ab)x^0 \period
-    \end{align*}
-    由此可以看出, $D_0$ 与 $D$ ``几乎完全一样''\period 用摩登 \term{modern} 数学的话来说, ``$D_0$ 与 $D$ 是天然同构的 \term{naturally isomorphic}''\period
-
-    我们不打算深究这一点\period 上面, 我们把 $x^0$ 写为 $1$; 反过来, $D$ 的元 $a$ 也可以理解为是多项式 $ax^0$\period 这跟中学的习惯是一致的\period
-\end{remark}
-
-\subsection*{Division Algorithm}
-\addcontentsline{toc}{subsection}{Division Algorithm}
-\markright{Division Algorithm}
-
-我们知道, 非负整数有这样的性质:
-
-\begin{proposition}
-    设 $n$ 是正整数, $m$ 是非负整数\period 则必有一对非负整数 $q,r$ 使
-    \begin{align*}
-        m = qn + r, \quad 0 \leq r < n \period
-    \end{align*}
-\end{proposition}
-
-例如, 取 $n=5$, $m=23$\period 不难看出,
-\begin{align*}
-    18 = 4 \cdot 5 + 3 \period
-\end{align*}
-
-多项式也有类似的性质哟\period
-
-\begin{proposition}
-    设
-    \begin{align*}
-        f(x) = \sum_{i = 0}^{n} a_i x^i \in D[x],
-    \end{align*}
-    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在 $q(x), r(x) \in D[x]$ 使
-    \begin{align*}
-        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n \period
-    \end{align*}
-    一般称其为带余除法: $q(x)$ 就是商 \term{quotient}; $r(x)$ 就是余式 \term{remainder}\period
-\end{proposition}
-
-\begin{pf}
-    用归纳法\period 记 $\deg g(x) = m$\period 若 $m<n$, 则 $q(x) = 0$, $r(x) = g(x)$ 适合要求\period 所以, 命题对不高于 $n-1$ 的 $m$ 都成立\period
-
-    设 $m \leq \ell$ ($\ell \geq n-1$) 时, 命题成立\period 考虑 $m=\ell+1$ 的情形\period 此时, 设
-    \begin{align*}
-        g(x) = \sum_{i = 0}^{\ell + 1} b_i x^i \period
-    \end{align*}
-    则
-    \begin{align*}
-             & g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)                                                                                                         \\
-        = \  & \sum_{i = 0}^{\ell+1} b_i x^i - b_{\ell+1} a_n^{-1} x^{\ell+1-n} \sum_{i = 0}^{n} a_i x^i                                                            \\
-        = \  & \sum_{i = 0}^{\ell} b_i x^i + b_{\ell+1} x^{\ell+1} - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} - b_{\ell+1} a_n^{-1} a_n x^{\ell+1} \\
-        = \  & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} + b_{\ell+1} x^{\ell+1} - b_{\ell+1} x^{\ell+1}             \\
-        = \  & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i}\period
-    \end{align*}
-    设 $r_1 (x) = g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)$\period 这样, $r_1 (x)$ 的次不高于 $\ell$\period 根据归纳假设, 有 $q_1 (x), r(x) \in D[x]$ 使
-    \begin{align*}
-        r_1 (x) = q_1 (x) f(x) + r(x), \quad \deg r(x) < n \period
-    \end{align*}
-    所以
-    \begin{align*}
-        g(x)
-        = \  & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)             \\
-        = \  & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_1 (x) f(x) + r(x) \\
-        = \  & (b_{\ell+1} a_n^{-1} + q_1 (x)) f(x) + r(x) \period
-    \end{align*}
-    记 $q(x) = b_{\ell+1} a_n^{-1} + q_1 (x)$, 则 $q(x), r(x)$ 适合要求\period 所以, $m \leq \ell + 1$ 时, 命题成立\period 根据归纳法原理, 命题成立\period
-\end{pf}
-
-\begin{example}
-    取 $\FF[x]$ 的二元 $f(x) = 2(x-1)^2 (x+2)$, $g(x) = 8x^6 + 1$\period 我们来找一对多项式 $q(x), r(x) \in \FF[x]$ 使
-    \begin{align*}
-        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < \deg f(x) \period
-    \end{align*}
-    不难看出, $f(x)$ 的次是 3, 且
-    \begin{align*}
-        f(x) = 2(x^2 - 2x + 1)(x+2) = 2x^3 - 6x + 4\period
-    \end{align*}
-
-    我们按上面证明的方法寻找 $q(x)$ 与 $r(x)$\period $a_3 = 2$ 是 $\FF$ 的单位, 且 $a_3^{-1} = \frac12$\period 取
-    \begin{align*}
-        q_1 (x) = 8\cdot \frac12 \cdot x^{6-3} = 4x^3 \period
-    \end{align*}
-    则
-    \begin{align*}
-        r_1 (x)
-        = \  & g(x) - q_1(x) f(x)                  \\
-        = \  & (8x^6 + 1) - 4x^3 (2x^3 - 6x + 4)   \\
-        = \  & (8x^6 + 1) - (8x^6 - 24x^4 + 16x^3) \\
-        = \  & 24x^4 - 16x^3 + 1 \period
-    \end{align*}
-    $r_1 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
-    \begin{align*}
-        q_2 (x) = 24 \cdot \frac12 \cdot x^{4-3} = 12x \period
-    \end{align*}
-    则
-    \begin{align*}
-        r_2 (x)
-        = \  & r_1 (x) - q_2(x) f(x)                     \\
-        = \  & (24x^4 - 16x^3 + 1) - 12x (2x^3 - 6x + 4) \\
-        = \  & (24x^4 - 16x^3 + 1) - (24x^4 - 72x + 48x) \\
-        = \  & -16x^3 + 72x^2 - 48x + 1 \period
-    \end{align*}
-    $r_2 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
-    \begin{align*}
-        q_3 (x) = -16 \cdot \frac12 \cdot x^{3-3} = -8 \period
-    \end{align*}
-    则
-    \begin{align*}
-        r_3 (x)
-        = \  & r_2 (x) - q_3(x) f(x)                             \\
-        = \  & (-16x^3 + 72x^2 - 48x + 1) - (-8) (2x^3 - 6x + 4) \\
-        = \  & (-16x^3 + 72x^2 - 48x + 1) - (-16x^3 + 48x - 32)  \\
-        = \  & 72x^2 - 96x + 33 \period
-    \end{align*}
-    $r_3 (x)$ 的次低于 $3$\period 这样
-    \begin{align*}
-        g(x)
-        = \  & q_1 (x) f(x) + r_1 (x)                               \\
-        = \  & q_1 (x) f(x) + q_2 (x) f(x) + r_2 (x)                \\
-        = \  & q_1 (x) f(x) + q_2 (x) f(x) + q_3 (x) f(x) + r_3 (x) \\
-        = \  & (q_1 (x) + q_2 (x) + q_3 (x)) f(x) + r_3 (x)         \\
-        = \  & (4x^3 + 12x - 8) f(x) + (72x^2 - 96x + 33) \period
-    \end{align*}
-    也就是说,
-    \begin{align*}
-        q(x) = 4x^3 + 12x - 8, \quad r(x) = 72x^2 - 96x + 33 \period
-    \end{align*}
-\end{example}
-
-\begin{remark}
-    带余除法要求 $f(x)$ 的首项系数是单位是有必要的\period
-
-    在上面的例里, $f(x)$ 与 $g(x)$ 可以看成 $\ZZ[x]$ 的元, 但 $2$ 不是 $\ZZ$ 的单位\period 虽然最终所得 $q(x)$, $r(x)$ 也是 $\ZZ[x]$ 的元, 但这并不是一定会出现的\period 我们看下面的简单例\period
-
-    考虑 $\ZZ[x]$ 的多项式 $f(x)=2x$\period 设
-    \begin{align*}
-        r(x) = r_0, \quad q(x) = \sum_{i=0}^{p} q_i x^i, \quad g(x) = \sum_{i=0}^{s} g_i x^i,
-    \end{align*}
-    且 $r_0, q_0, \cdots, q_p, g_0, \cdots, g_s \in \ZZ$\period 由 $g(x) = q(x)f(x) + r(x)$ 知
-    \begin{align*}
-        \sum_{i=0}^{s} g_i x^i = r_0 + \sum_{i=1}^{p+1} 2q_{i-1} x^i \period
-    \end{align*}
-    所以
-    \begin{align*}
-         & p = s - 1,                                 \\
-         & r_0 = g_0,                                 \\
-         & 2q_{i-1} = g_i, \quad i=1,\cdots,s \period
-    \end{align*}
-    这说明, $g(x)$ 的 $i$ 项系数 ($i=1,\cdots,s$) 必须是偶数\period 所以, 不存在 $q(x),r(x) \in \ZZ[x]$ 使
-    \begin{align*}
-        1 + 3x + x^2 = q(x) \cdot 2x + r(x), \quad \deg r(x) < 1 \period
-    \end{align*}
-\end{remark}
-
-我们知道, 用一个正整数除非负整数, 所得的余数与商是唯一的\period 比方说, $5$ 除 $23$ 的余数只能是 $3$\period
-
-多项式也有类似的性质哟\period
-
-\begin{proposition}
-    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$\period 若 $D$ 上 $x$ 的 $4$ 个多项式 $q_1 (x)$, $r_1 (x)$, $q_2 (x)$, $r_2 (x)$ 适合
-    \begin{align*}
-         & q_1 (x) f(x) + r_1 (x) = q_2 (x) f(x) + r_2 (x),          \\
-         & \deg r_1 (x) < \deg f(x), \quad \deg r_2 (x) < \deg f(x),
-    \end{align*}
-    则必有
-    \begin{align*}
-        r_1 (x) = r_2 (x), \quad q_1 (x) = q_2 (x) \period
-    \end{align*}
-\end{proposition}
-
-\begin{pf}
-    记
-    \begin{align*}
-        Q(x) = q_2 (x) - q_1 (x), \quad R(x) = r_2 (x) - r_1 (x) \period
-    \end{align*}
-    题设条件即
-    \begin{align*}
-        (q_1 (x) - q_2 (x)) f(x) = r_2 (x) - r_1 (x),
-    \end{align*}
-    也就是
-    \begin{align*}
-        -Q(x) f(x) = R(x) \period
-    \end{align*}
-    反证法\period 若 $-Q(x) \neq 0$, 则 $\deg (-Q(x)) \geq 0$\period 从而
-    \begin{align*}
-        \deg R(x) = \deg (-Q(x)) + \deg f(x) \geq \deg f(x) \period
-    \end{align*}
-    可是
-    \begin{align*}
-        \deg R(x) = \deg (r_2(x) - r_1(x)) \leq \deg r_1 (x) < \deg f(x),
-    \end{align*}
-    矛盾! 故 $-Q(x) = 0$\period 这样, $R(x) = 0$\period
-\end{pf}
-
-这样, 我们得到了这个命题:
-
-\begin{proposition}
-    设
-    \begin{align*}
-        f(x) = \sum_{i = 0}^{n} a_i x^i \in D[x],
-    \end{align*}
-    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在唯一的 $q(x), r(x) \in D[x]$ 使
-    \begin{align*}
-        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n \period
-    \end{align*}
-    一般称其为带余除法: $q(x)$ 就是商; $r(x)$ 就是余式\period 并且, 当 $f(x)$ 的次不高于 $g(x)$ 的次时, $f(x)$, $g(x)$, $q(x)$ 间还有如下的次关系:
-    \begin{align*}
-        \deg g(x) = \deg (g(x) - r(x)) = \deg q(x) + \deg f(x) \period
-    \end{align*}
-\end{proposition}
-
-\subsection*{Roots of Polynomials}
-\addcontentsline{toc}{subsection}{Roots of Polynomials}
-\markright{Roots of Polynomials}
-
-本节, 我们讨论多项式的根的基本性质\period
-
-我们回顾一下熟悉的多项式函数\period
-
-\begin{definition}
-    设 $a_0, a_1, \cdots, a_n \in D$ 称
-    \begin{align*}
-         & D \to D, \tag*{$f \colon$}               \\
-         & t \mapsto a_0 + a_1 t + \cdots + a_n t^n
-    \end{align*}
-    为 $D$ 的多项式函数 \term{polynomial function}\period 我们也说, 这个 $f$ 是由 $D$ 上 $x$ 的多项式
-    \begin{align*}
-        f(x) = a_0 + a_1 x + \cdots + a_n x^n
-    \end{align*}
-    诱导的多项式函数 \term{the polynomial function induced by $f$}\period 不难看出, 若二个多项式相等, 则其诱导的多项式函数也相等\period
-\end{definition}
-
-\begin{definition}
-    设 $f$ 与 $g$ 是 $D$ 的二个多项式函数\period 二者的和 $f+g$ 定义为
-    \begin{align*}
-         & D \to D, \tag*{$f+g \colon$}  \\
-         & t \mapsto f(t) + g(t) \period
-    \end{align*}
-    二者的积 $fg$ 定义为
-    \begin{align*}
-         & D \to D, \tag*{$fg \colon$} \\
-         & t \mapsto f(t) g(t) \period
-    \end{align*}
-\end{definition}
-
-\begin{example}
-    设 $f$, $g$ 是 $D$ 的二个多项式函数:
-    \begin{align*}
-         & D \to D, \tag*{$f \colon$}                       \\
-         & t \mapsto a_0 + a_1 t + \cdots + a_n t^n,        \\
-         & D \to D, \tag*{$g \colon$}                       \\
-         & t \mapsto b_0 + b_1 t + \cdots + b_n t^n \period
-    \end{align*}
-    利用 $D$ 的运算律, 可以得到
-    \begin{align*}
-         & D \to D, \tag*{$f+g \colon$}                                      \\
-         & t \mapsto (a_0 + b_0) + (a_1 + b_1) t + \cdots + (a_n + b_n) t^n, \\
-         & D \to D, \tag*{$fg \colon$}                                       \\
-         & t \mapsto c_0 + c_1 t + \cdots + c_{2n} t^{2n},
-    \end{align*}
-    其中
-    \begin{align*}
-        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
-    \end{align*}
-\end{example}
-
-由此可得下面的命题:
-
-\begin{proposition}
-    设 $f(x),g(x) \in D[x]$, $f,g$ 分别是 $f(x),g(x)$ 诱导的多项式函数\period 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的多项式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的多项式函数\period
-
-    通俗地说, 就是: 若多项式 $f_1 (x)$, $f_2 (x)$, $\cdots$, $f_n (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立\period
-\end{proposition}
-
-\begin{example}
-    考虑 $\FF$ 与 $\FF[x]$\period 前面, 利用带余除法, 得到关系
-    \begin{align*}
-        8x^6 + 1 = (4x^3 + 12x - 8) \cdot 2(x-1)^2 (x+2) + (72x^2 - 96x + 33) \period
-    \end{align*}
-    这里 $x$ 只是一个文字, 不是数! 但是, 上面的命题告诉我们, 可以把 $x$ 看成一个数\period 比如, 由上面的式可以立即看出, $8t^6 + 1$ 与 $72t^2 - 96t + 33$ 在 $t = 1$ 或 $t = -2$ 时值是一样的\period
-
-    可是, 对于这样的式, 我们不能将 $x$ 改写为 $\FF$ 的元 $t$:
-    \begin{align*}
-        \deg 3x^2 < \deg 2x^3 \period
-    \end{align*}
-    可以看到, 若 $t=0$, 则 $3t^2 = 2t^3 = 0$, 而 $0$ 的次是 $-\infty$; 若 $t \neq 0$, 则 $3t^2$ 与 $2t^3$ 都是非零数, 次都是 $0$\period
-\end{example}
-
-\begin{remark}
-    我们已经知道, 多项式确定多项式函数\period 自然地, 有这样的问题: 多项式函数能否确定多项式? 一般情况下, 这个问题的答案是 no\period
-
-    考虑 $4$ 元集 $V = \{\, 0,1,\tau,\tau^2 \,\}$\period 它的加法与乘法如下:
-    \begin{align*}
-        \arraycolsep=0.25cm
-        \begin{array}{c|cccc}
-            +      & 0      & 1      & \tau   & \tau^2 \\ \hline
-            0      & 0      & 1      & \tau   & \tau^2 \\
-            1      & 1      & 0      & \tau^2 & \tau   \\
-            \tau   & \tau   & \tau^2 & 0      & 1      \\
-            \tau^2 & \tau^2 & \tau   & 1      & 0      \\
-        \end{array}
-        \qquad \qquad
-        \begin{array}{c|cccc}
-            \cdot  & 0 & 1      & \tau   & \tau^2 \\ \hline
-            0      & 0 & 0      & 0      & 0      \\
-            1      & 0 & 1      & \tau   & \tau^2 \\
-            \tau   & 0 & \tau   & \tau^2 & 1      \\
-            \tau^2 & 0 & \tau^2 & 1      & \tau   \\
-        \end{array}
-    \end{align*}
-    在前面, 我们已经知道, $V$ 是整环\period 作 $V$ 上 $x$ 的二个多项式:
-    \begin{align*}
-        f(x) = x^4 - x, \quad g(x) = 0 \period
-    \end{align*}
-    显然, 这是二个不相等的多项式\period 但是, 任取 $t \in V$, 都有
-    \begin{align*}
-        t^4 - t = 0 \period
-    \end{align*}
-    因此, $f(x)$ 与 $g(x)$ 诱导的多项式函数是同一函数!
-
-    不过, 在某些场合下, 多项式函数可以确定多项式\period 之后我们还会提到这一点\period
-\end{remark}
-
-\begin{remark}
-    设 $f(x) = a_0 + a_1 x + \cdots + a_n x^n \in D[x]$\period 设 $t$ 是 $D$ 的元\period 以后, 我们直接写
-    \begin{align*}
-        f(t) = a_0 + a_1 t + \cdots + a_n t^n \period
-    \end{align*}
-    至少, 一方通行 \term{one-way traffic} 是没问题的\period
-\end{remark}
-
-了解了多项式与多项式函数的关系后, 下面的这个命题就不会太凸兀了\period
-
-\begin{proposition}
-    设 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a \in D$\period 则存在 $n-1$ 次多项式 $q(x)$ ($\in D[x]$) 使
-    \begin{align*}
-        f(x) = q(x) (x-a) + f(a) \period
-    \end{align*}
-\end{proposition}
-
-\begin{pf}
-    因为 $x-a$ 的首项系数 $1$ 是单位, 故存在 $D[x]$ 的二元 $q(x)$, $r(x)$ 使
-    \begin{align*}
-        f(x) = q(x) (x-a) + r(x), \quad \deg r(x) < \deg (x-a) = 1 \period
-    \end{align*}
-    所以, $r(x) = c$, $c \in D$\period 用 $D$ 的元 $a$ 替换 $x$, 有
-    \begin{align*}
-        f(a) = q(a) (a-a) + c = c \period
-    \end{align*}
-    所以
-    \begin{align*}
-        f(x) = q(x) (x-a) + f(a) \period
-    \end{align*}
-    再看这个 $q(x)$ 的次\period 因为 $f(x)$ 的次不低于 $x-a$ 的次, 故
-    \begin{align*}
-         & \deg q(x) = \deg f(x) - \deg (x-a) = n-1 \period \qedhere
-    \end{align*}
-\end{pf}
-
-\begin{remark}
-    如果用 $D$ 的元 $b$ 替换 $x$, 则
-    \begin{align*}
-        f(b) = (b-a)q(b) + f(a),
-    \end{align*}
-    也就是说, 存在 $r \in D$ 使
-    \begin{align*}
-        f(b) - f(a) = (b-a)r \period
-    \end{align*}
-    所以, 若 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$\period 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$)\period
-
-    那么, 这有什么用呢? 举个简单的例\period 我们说, 不存在系数为整数的多项式 $f(x)$ 使 $f(1) = f(-1) + 1$\period 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
-    \begin{align*}
-        1 = f(1) - f(-1) = (1 - (-1))r = 2r,
-    \end{align*}
-    而 $1$ 不是偶数, 矛盾\period 之后我们还会提到这一点\period
-\end{remark}
-
-\begin{definition}
-    设 $f(x)$ 是 $D$ 上 $x$ 的多项式\period 若有 $a \in D$ 使 $f(a) = 0$, 则说 $a$ 是 (多项式) $f(x)$ 的根 \term{root}\period
-\end{definition}
