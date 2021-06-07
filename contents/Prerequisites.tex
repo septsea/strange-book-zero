@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{Prerequisites}
 \markright{Prerequisites}
 
-您将在本节熟悉一些记号与术语\period 建议您熟悉本节的内容后学习下一节的内容\period
+您将在本节熟悉一些记号与术语\period 建议您熟悉本节的内容后学习下节的内容\period
 
 在进入小节 Sets 前, 让我们先回顾命题、复数与数学归纳法吧!
 
@@ -25,7 +25,7 @@
 \end{definition}
 
 \begin{example}
-    ``若刚下过雨, 则地面潮湿'' 是对的\period ``刚下过雨'' 是 ``充分的'': 根据常识可以知道这一点\period ``地面潮湿'' 是必要的: 地面不潮湿, 那么不可能刚下过雨\period
+    ``若刚下过雨, 则地面潮湿'' 是对的\period ``刚下过雨'' 是 ``充分的'': 根据常识可以知道这一点\period ``地面潮湿'' 是 ``必要的'': 地面不潮湿, 那么不可能刚下过雨\period
 \end{example}
 
 \begin{remark}
@@ -137,11 +137,11 @@
     $a$, $b\ii$, $c$, $d\ii$ 都可以看成是复数\period 这样
     \begin{align*}
         (a + b \ii) (c + d \ii)
-        = \  & (a + b \ii) c + (a + b \ii) (d \ii)  \\
-        = \  & ac + b \ii c + a d \ii + b \ii d \ii \\
-        = \  & ac + bc\ii + ad\ii + bd\ii^2         \\
-        = \  & (ac + bd\ii^2) + (ad + bc)\ii        \\
-        = \  & (ac - bd) + (ad + bc)\ii \period
+        = {} & (a + b \ii) c + (a + b \ii) (d \ii)  \\
+        = {} & ac + b \ii c + a d \ii + b \ii d \ii \\
+        = {} & ac + bc\ii + ad\ii + bd\ii^2         \\
+        = {} & (ac + bd\ii^2) + (ad + bc)\ii        \\
+        = {} & (ac - bd) + (ad + bc)\ii \period
     \end{align*}
     也就是说, 我们不必死记复数的乘法规则: 只要用运算律与 $\ii^2 = -1$ 即可召唤它\period
 \end{remark}
@@ -220,11 +220,11 @@
     因为
     \begin{align*}
         0 + 1 + \cdots + (\ell - 1) + \ell
-        = \  & (0 + 1 + \cdots + (\ell - 1)) + \ell            \\
-        = \  & \frac{\ell(\ell-1)}{2} + \ell \tag*{(IH)}       \\
-        = \  & \frac{\ell(\ell-1)}{2} + \frac{\ell \cdot 2}{2} \\
-        = \  & \frac{\ell(\ell+1)}{2}                          \\
-        = \  & \frac{(\ell+1)((\ell+1) - 1)}{2},
+        = {} & (0 + 1 + \cdots + (\ell - 1)) + \ell            \\
+        = {} & \frac{\ell(\ell-1)}{2} + \ell \tag*{(IH)}       \\
+        = {} & \frac{\ell(\ell-1)}{2} + \frac{\ell \cdot 2}{2} \\
+        = {} & \frac{\ell(\ell+1)}{2}                          \\
+        = {} & \frac{(\ell+1)((\ell+1) - 1)}{2},
     \end{align*}
     故我们由 $P(\ell)$ 推出了 $P(\ell + 1)$\period 我们在哪儿用到了 $P(\ell)$ 呢? 我们在标了 (IH) 的那一行用了 $P(\ell)$\period 这样的假设称为归纳假设 \term{induction hypothesis}\period
 
@@ -247,11 +247,11 @@
     由于
     \begin{align*}
         0 + 1 + \cdots + (\ell - 1) + \ell
-        = \  & (0 + 1 + \cdots + (\ell - 1)) + \ell                \\
-        = \  & \frac{\ell(\ell-1)}{2} + 1 \ell \tag*{(``IH'')}     \\
-        = \  & \frac{\ell(\ell-1)}{2} + \frac{\ell \cdot 2}{2} + 1 \\
-        = \  & \frac{\ell(\ell+1)}{2} + 1                          \\
-        = \  & \frac{(\ell+1)((\ell+1) - 1)}{2} + 1,
+        = {} & (0 + 1 + \cdots + (\ell - 1)) + \ell                \\
+        = {} & \frac{\ell(\ell-1)}{2} + 1 \ell \tag*{(``IH'')}     \\
+        = {} & \frac{\ell(\ell-1)}{2} + \frac{\ell \cdot 2}{2} + 1 \\
+        = {} & \frac{\ell(\ell+1)}{2} + 1                          \\
+        = {} & \frac{(\ell+1)((\ell+1) - 1)}{2} + 1,
     \end{align*}
     故我们由 $P^{\prime}(\ell)$ ``推出''了 $P^{\prime}(\ell + 1)$\period 我们也在 (``IH'') 处用到了 ``归纳假设''\period 那么 $P^{\prime}(n)$ 就是正确的吗? 当然不是! 前面我们知道,
     \begin{align*}
@@ -329,7 +329,7 @@
 \end{definition}
 
 \begin{definition}
-    若 $a$ 是集 $A$ 的元, 则写 $a \in A$ 或 $A \ni a$, 说 $a$ 属于 \term{to belong to} $A$ 或 $A$ 包含 \term{to contain} $a$\period 若 $a$ 不是集 $A$ 的元, 则写 $a \notin A$, 说 $a$ 不属于 $A$\period\myFN{有点尴尬, 我太菜了, 那个 ``不包含'' 符号打不出来\period}
+    若 $a$ 是集 $A$ 的元, 则写 $a \in A$ 或 $A \ni a$, 说 $a$ 属于 \term{to belong to} $A$ 或 $A$ 包含 \term{to contain} $a$\period 若 $a$ 不是集 $A$ 的元, 则写 $a \notin A$ 或 $A \not\ni a$, 说 $a$ 不属于 $A$ 或 $A$ 不包含 $a$\period
 \end{definition}
 
 \begin{example}
@@ -929,11 +929,11 @@
     我们知道, $H$ 有幺元 $e_H$, 所以 $e_H \circ e_H = e_H$\period $e_H$ 是 $G$ 的元, 所以 $e_H$ 在 $G$ 里有逆元 $(e_H)^{-1}$\period 这样,
     \begin{align*}
         e_H
-        = \  & e \circ e_H                      \\
-        = \  & ((e_H)^{-1} \circ e_H) \circ e_H \\
-        = \  & (e_H)^{-1} \circ (e_H \circ e_H) \\
-        = \  & (e_H)^{-1} \circ e_H             \\
-        = \  & e \period
+        = {} & e \circ e_H                      \\
+        = {} & ((e_H)^{-1} \circ e_H) \circ e_H \\
+        = {} & (e_H)^{-1} \circ (e_H \circ e_H) \\
+        = {} & (e_H)^{-1} \circ e_H             \\
+        = {} & e \period
     \end{align*}
     取 $y \in H$\period $y$ 在 $H$ 里有逆元 $z$, 即
     \begin{align*}
@@ -1458,7 +1458,7 @@
 \end{definition}
 
 \begin{example}
-    上面的 $\FF$ 跟 $V$ 是域\period 这也解释了为什么我们用 $\FF$ 表示 $\QQ$, $\RR$, $\CC$ 之一\period
+    不难看出, $\FF$ 是域\period 这也解释了为什么我们用 $\FF$ 表示 $\QQ$, $\RR$, $\CC$ 之一\period
 \end{example}
 
 \begin{remark}
@@ -1480,5 +1480,5 @@
 \end{remark}
 
 \begin{example}
-    设 $F \subset C$, 且 $F$ 是域\period 不难看出, $\QQ \subset F$\period
+    设 $F \subset \CC$, 且 $F$ 是域\period 不难看出, $\QQ \subset F$\period
 \end{example}

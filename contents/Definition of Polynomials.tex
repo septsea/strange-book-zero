@@ -9,7 +9,7 @@
     \begin{align*}
         f(x) = a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in D,\ a_n \neq 0)
     \end{align*}
-    的表达式称为 $D$ 上 $x$ 的一个多项式 \term{polynomial in $x$ over $D$}\period $n$ 称为其次 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次项 \term{the $i^\text{th}$ coefficient}\period $f(x)$ 的次可写为 $\deg f(x)$\period
+    的表达式称为 $D$ 上 $x$ 的一个多项式 \term{polynomial in $x$ over $D$}\period $n$ 称为其次 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次项 \term{the $i^\text{th}$ term}\period $f(x)$ 的次可写为 $\deg f(x)$\period
 
     若二个多项式的次与各同次系数均相等, 则二者相等\period
 
@@ -48,6 +48,21 @@
 
 \begin{example}
     $z^0 + z + z^{\frac{3}{2}}$ 不是 $z$ 的多项式\period
+\end{example}
+
+\begin{example}
+    考虑 $\ZZ$ 与 $\ZZ[x]$\period 设
+    \begin{align*}
+        f(x) = ax^0 + x + 2x^2 - x^4 - bx^5, \quad g(x) = cx + dx^2 - x^4 - 3x^5,
+    \end{align*}
+    其中 $a$, $b$, $c$, $d$ 都是整数\period 那么, $f(x) = g(x)$ 相当于
+    \begin{align*}
+        a = 0, \quad 1 = c, \quad 2 = d, \quad 0 = 0, \quad -1 = -1, \quad -b = -3,
+    \end{align*}
+    也就是
+    \begin{align*}
+        a = 0, \quad b = 3, \quad c = 1, \quad d = 2 \period
+    \end{align*}
 \end{example}
 
 \begin{remark}
@@ -90,19 +105,19 @@
     是 $D[x]$ 的元\period 根据加法的定义, $+$ 显然是 $D[x]$ 的二元运算\period 因为 $D$ 的加法适合交换律, 故
     \begin{align*}
         g(x) + f(x)
-        = \  & (b_0 + a_0) x^0 + (b_1 + a_1) x + \cdots + (b_n + a_n) x^n \\
-        = \  & (a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n \\
-        = \  & f(x) + g(x) \period
+        = {} & (b_0 + a_0) x^0 + (b_1 + a_1) x + \cdots + (b_n + a_n) x^n \\
+        = {} & (a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n \\
+        = {} & f(x) + g(x) \period
     \end{align*}
     也就是说, $D[x]$ 的加法适合交换律\period
 
     注意到
     \begin{align*}
              & (f(x) + g(x)) + h(x)                                                                 \\
-        = \  & ((a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n)                         \\
+        = {} & ((a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n)                         \\
              & \qquad + (c_0 x^0 + c_1 x + \cdots + c_n x^n)                                        \\
-        = \  & ((a_0 + b_0) + c_0) x^0 + ((a_1 + b_1) + c_1) x + \cdots + ((a_n + b_n) + c_n) x^n   \\
-        = \  & (a_0 + b_0 + c_0) x^0 + (a_1 + b_1 + c_1) x + \cdots + (a_n + b_n + c_n) x^n \period
+        = {} & ((a_0 + b_0) + c_0) x^0 + ((a_1 + b_1) + c_1) x + \cdots + ((a_n + b_n) + c_n) x^n   \\
+        = {} & (a_0 + b_0 + c_0) x^0 + (a_1 + b_1 + c_1) x + \cdots + (a_n + b_n + c_n) x^n \period
     \end{align*}
     类似地, 计算 $f(x) + (g(x) + h(x))$ 也可以得到一样的结果\period 也就是说, $D[x]$ 的加法适合结合律\period
 
@@ -113,9 +128,9 @@
     这样
     \begin{align*}
         0 + f(x)
-        = \  & (0 + a_0) x^0 + (0 + a_1) x + \cdots + (0 + a_n) x^n \\
-        = \  & a_0 x^0 + a_1 x + \cdots + a_n x^n                   \\
-        = \  & f(x) \period
+        = {} & (0 + a_0) x^0 + (0 + a_1) x + \cdots + (0 + a_n) x^n \\
+        = {} & a_0 x^0 + a_1 x + \cdots + a_n x^n                   \\
+        = {} & f(x) \period
     \end{align*}
     类似地, $f(x) + 0 = f(x)$\period
 
@@ -126,9 +141,9 @@
     这样
     \begin{align*}
         \underline{f}(x) + f(x)
-        = \  & (-a_0 + a_0) x^0 + (-a_1 + a_1) x + \cdots + (-a_n + a_n) x^n \\
-        = \  & 0 x^0 + 0 x + \cdots + 0 x^n                                  \\
-        = \  & 0 \period
+        = {} & (-a_0 + a_0) x^0 + (-a_1 + a_1) x + \cdots + (-a_n + a_n) x^n \\
+        = {} & 0 x^0 + 0 x + \cdots + 0 x^n                                  \\
+        = {} & 0 \period
     \end{align*}
     类似地, $f(x) + \underline{f}(x) = 0$\period 以后, 我们把这个 $\underline{f}(x)$ 用普通的符号写为
     \begin{align*}
@@ -142,6 +157,10 @@
     可以看出, $f(x) \pm g(x)$ 的次既不会超出 $f(x)$ 的次, 也不会超出 $g(x)$ 的次\period 用符号写出来, 就是
     \begin{align*}
         \deg (f(x) \pm g(x)) \leq \max \{\, \deg f(x), \deg g(x) \,\} \period
+    \end{align*}
+    若 $\deg f(x) > \deg g(x)$, 则
+    \begin{align*}
+        \deg (f(x) \pm g(x)) = \deg f(x) \period
     \end{align*}
 \end{remark}
 
@@ -210,11 +229,11 @@
 
     $\ell = 0$ 时, 不难算出, $f(x)g(x) = x$\period 现在设 $\ell \geq 1$\period $k \leq \ell$ 时,
     \begin{align*}
-        c_k = 0 b_k + 1 \cdot 0 + \cdots + 0 \cdot 0 = 0 \period
+        c_k = 0 b_k + \underbrace{1 \cdot 0 + \cdots + 0 \cdot 0}_{k \text{ terms}} = 0 \period
     \end{align*}
     $k = \ell + 1$ 时,
     \begin{align*}
-        c_{\ell + 1} = 0 \cdot 0 + 1 \cdot 1 + 0 \cdot 0 + \cdots + 0 \cdot 0 = 1 \period
+        c_{\ell + 1} = 0 \cdot 0 + 1 \cdot 1 + \underbrace{0 \cdot 0 + \cdots + 0 \cdot 0}_{\ell \text{ terms}} = 1 \period
     \end{align*}
     所以
     \begin{align*}
@@ -250,9 +269,9 @@
     是 $D[x]$ 的元, 且 $a_m \neq 0$, $b_n \neq 0$\period 这样, $f(x)g(x)$ 的 $m+n$ 次项就是 $cx^{m+n}$, 其中
     \begin{align*}
         c
-        = \  & a_0 b_{m+n} + \cdots + a_{m-1} b_{n+1} + a_m b_n + a_{m+1} b_{n-1} + \cdots + a_{m+n}b_n \\
-        = \  & 0 + \cdots + 0 + a_m b_n + 0 + \cdots + 0                                                \\
-        = \  & a_m b_n \period
+        = {} & a_0 b_{m+n} + \cdots + a_{m-1} b_{n+1} + a_m b_n + a_{m+1} b_{n-1} + \cdots + a_{m+n}b_n \\
+        = {} & 0 + \cdots + 0 + a_m b_n + 0 + \cdots + 0                                                \\
+        = {} & a_m b_n \period
     \end{align*}
     因为 $a_m \neq 0$, $b_n \neq 0$, 所以 $a_m b_n \neq 0$ (反证法: 若 $a_m b_n = 0 = a_m 0$, 因为 $a_m \neq 0$, 根据 $D$ 的消去律, 得 $b_n = 0$, 矛盾!)\period 所以
     \begin{align*}
@@ -291,8 +310,8 @@
     不难算出
     \begin{align*}
              & (f(x) g(x)) h(x)                                                                  \\
-        = \  & (c_0 x^0 + c_1 x + \cdots + c_{m+n} x^{m+n}) (u_0 x^0 + u_1 x + \cdots + u_s x^s) \\
-        = \  & v_0 x^0 + v_1 x + \cdots + v_{m+n+s} x^{m+n+s},
+        = {} & (c_0 x^0 + c_1 x + \cdots + c_{m+n} x^{m+n}) (u_0 x^0 + u_1 x + \cdots + u_s x^s) \\
+        = {} & v_0 x^0 + v_1 x + \cdots + v_{m+n+s} x^{m+n+s},
     \end{align*}
     其中
     \begin{align*}
@@ -311,9 +330,9 @@
     其中
     \begin{align*}
         p_k
-        = \  & a_0 (b_k + c_k) + a_1 (b_{k-1} + c_{k-1}) + \cdots + a_k (b_0 + c_0)                            \\
-        = \  & (a_0 b_k + a_0 c_k) + (a_1 b_{k-1} + a_1 c_{k-1}) + \cdots + (a_k b_0 + a_k c_0)                \\
-        = \  & (a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0) + (a_0 c_k + a_1 c_{k-1} + \cdots + a_k c_0) \period
+        = {} & a_0 (b_k + c_k) + a_1 (b_{k-1} + c_{k-1}) + \cdots + a_k (b_0 + c_0)                            \\
+        = {} & (a_0 b_k + a_0 c_k) + (a_1 b_{k-1} + a_1 c_{k-1}) + \cdots + (a_k b_0 + a_k c_0)                \\
+        = {} & (a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0) + (a_0 c_k + a_1 c_{k-1} + \cdots + a_k c_0) \period
     \end{align*}
     不难看出, 这就是 $f(x)g(x)$ 的 $k$ 次系数与 $f(x)h(x)$ 的 $k$ 次系数的和\period 这样, $D[x]$ 的加法与乘法适合分配律\period 至此, 我们知道, $D[x]$ 是交换环\period
 
@@ -356,4 +375,9 @@
     由此可以看出, $D_0$ 与 $D$ ``几乎完全一样''\period 用摩登 \term{modern} 数学的话来说, ``$D_0$ 与 $D$ 是天然同构的 \term{naturally isomorphic}''\period
 
     我们不打算深究这一点\period 上面, 我们把 $x^0$ 写为 $1$; 反过来, $D$ 的元 $a$ 也可以理解为是多项式 $ax^0$\period 这跟中学的习惯是一致的\period
+
+    最后, 我们指出: 既然非零的 $c \in D$ 可视为 $0$ 次多项式, 那么
+    \begin{align*}
+        \deg cf(x) = \deg f(x) \period
+    \end{align*}
 \end{remark}

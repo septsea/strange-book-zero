@@ -40,10 +40,10 @@
     则
     \begin{align*}
              & g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)                                                                                                         \\
-        = \  & \sum_{i = 0}^{\ell+1} b_i x^i - b_{\ell+1} a_n^{-1} x^{\ell+1-n} \sum_{i = 0}^{n} a_i x^i                                                            \\
-        = \  & \sum_{i = 0}^{\ell} b_i x^i + b_{\ell+1} x^{\ell+1} - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} - b_{\ell+1} a_n^{-1} a_n x^{\ell+1} \\
-        = \  & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} + b_{\ell+1} x^{\ell+1} - b_{\ell+1} x^{\ell+1}             \\
-        = \  & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i}\period
+        = {} & \sum_{i = 0}^{\ell+1} b_i x^i - b_{\ell+1} a_n^{-1} x^{\ell+1-n} \sum_{i = 0}^{n} a_i x^i                                                            \\
+        = {} & \sum_{i = 0}^{\ell} b_i x^i + b_{\ell+1} x^{\ell+1} - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} - b_{\ell+1} a_n^{-1} a_n x^{\ell+1} \\
+        = {} & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} + b_{\ell+1} x^{\ell+1} - b_{\ell+1} x^{\ell+1}             \\
+        = {} & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i}\period
     \end{align*}
     设 $r_1 (x) = g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)$\period 这样, $r_1 (x)$ 的次不高于 $\ell$\period 根据归纳假设, 有 $q_1 (x), r(x) \in D[x]$ 使
     \begin{align*}
@@ -52,9 +52,9 @@
     所以
     \begin{align*}
         g(x)
-        = \  & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)             \\
-        = \  & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_1 (x) f(x) + r(x) \\
-        = \  & (b_{\ell+1} a_n^{-1} + q_1 (x)) f(x) + r(x) \period
+        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)             \\
+        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_1 (x) f(x) + r(x) \\
+        = {} & (b_{\ell+1} a_n^{-1} + q_1 (x)) f(x) + r(x) \period
     \end{align*}
     记 $q(x) = b_{\ell+1} a_n^{-1} + q_1 (x)$, 则 $q(x), r(x)$ 适合要求\period 所以, $m \leq \ell + 1$ 时, 命题成立\period 根据数学归纳法, 命题成立\period
 \end{pf}
@@ -76,10 +76,10 @@
     则
     \begin{align*}
         r_1 (x)
-        = \  & g(x) - q_1(x) f(x)                  \\
-        = \  & (8x^6 + 1) - 4x^3 (2x^3 - 6x + 4)   \\
-        = \  & (8x^6 + 1) - (8x^6 - 24x^4 + 16x^3) \\
-        = \  & 24x^4 - 16x^3 + 1 \period
+        = {} & g(x) - q_1(x) f(x)                  \\
+        = {} & (8x^6 + 1) - 4x^3 (2x^3 - 6x + 4)   \\
+        = {} & (8x^6 + 1) - (8x^6 - 24x^4 + 16x^3) \\
+        = {} & 24x^4 - 16x^3 + 1 \period
     \end{align*}
     $r_1 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
     \begin{align*}
@@ -88,10 +88,10 @@
     则
     \begin{align*}
         r_2 (x)
-        = \  & r_1 (x) - q_2(x) f(x)                     \\
-        = \  & (24x^4 - 16x^3 + 1) - 12x (2x^3 - 6x + 4) \\
-        = \  & (24x^4 - 16x^3 + 1) - (24x^4 - 72x + 48x) \\
-        = \  & -16x^3 + 72x^2 - 48x + 1 \period
+        = {} & r_1 (x) - q_2(x) f(x)                     \\
+        = {} & (24x^4 - 16x^3 + 1) - 12x (2x^3 - 6x + 4) \\
+        = {} & (24x^4 - 16x^3 + 1) - (24x^4 - 72x + 48x) \\
+        = {} & -16x^3 + 72x^2 - 48x + 1 \period
     \end{align*}
     $r_2 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
     \begin{align*}
@@ -100,19 +100,19 @@
     则
     \begin{align*}
         r_3 (x)
-        = \  & r_2 (x) - q_3(x) f(x)                             \\
-        = \  & (-16x^3 + 72x^2 - 48x + 1) - (-8) (2x^3 - 6x + 4) \\
-        = \  & (-16x^3 + 72x^2 - 48x + 1) - (-16x^3 + 48x - 32)  \\
-        = \  & 72x^2 - 96x + 33 \period
+        = {} & r_2 (x) - q_3(x) f(x)                             \\
+        = {} & (-16x^3 + 72x^2 - 48x + 1) - (-8) (2x^3 - 6x + 4) \\
+        = {} & (-16x^3 + 72x^2 - 48x + 1) - (-16x^3 + 48x - 32)  \\
+        = {} & 72x^2 - 96x + 33 \period
     \end{align*}
     $r_3 (x)$ 的次低于 $3$\period 这样
     \begin{align*}
         g(x)
-        = \  & q_1 (x) f(x) + r_1 (x)                               \\
-        = \  & q_1 (x) f(x) + q_2 (x) f(x) + r_2 (x)                \\
-        = \  & q_1 (x) f(x) + q_2 (x) f(x) + q_3 (x) f(x) + r_3 (x) \\
-        = \  & (q_1 (x) + q_2 (x) + q_3 (x)) f(x) + r_3 (x)         \\
-        = \  & (4x^3 + 12x - 8) f(x) + (72x^2 - 96x + 33) \period
+        = {} & q_1 (x) f(x) + r_1 (x)                               \\
+        = {} & q_1 (x) f(x) + q_2 (x) f(x) + r_2 (x)                \\
+        = {} & q_1 (x) f(x) + q_2 (x) f(x) + q_3 (x) f(x) + r_3 (x) \\
+        = {} & (q_1 (x) + q_2 (x) + q_3 (x)) f(x) + r_3 (x)         \\
+        = {} & (4x^3 + 12x - 8) f(x) + (72x^2 - 96x + 33) \period
     \end{align*}
     也就是说,
     \begin{align*}
@@ -147,7 +147,35 @@
 
 我们知道, 用一个正整数除非负整数, 所得的余数与商是唯一的\period 比方说, $5$ 除 $23$ 的余数只能是 $3$\period
 
-多项式也有类似的性质哟\period
+多项式也有类似的性质哟\period 不过, 我们需要借助另一个命题的帮助\period
+
+\begin{proposition}
+    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$\period 若 $D$ 上 $x$ 的 $2$ 个多项式 $q(x)$, $r(x)$ 适合
+    \begin{align*}
+        q(x) f(x) + r(x) = 0, \quad \deg r(x) < \deg f(x),
+    \end{align*}
+    则必有
+    \begin{align*}
+        q(x) = r(x) = 0 \period
+    \end{align*}
+    通俗地说, 就是二个非零多项式的积的次不可能变低\period
+\end{proposition}
+
+\begin{pf}
+    题设条件即
+    \begin{align*}
+        -q(x) f(x) = r(x) \period
+    \end{align*}
+    反证法\period 若 $-q(x) \neq 0$, 则 $\deg (-q(x)) \geq 0$\period 从而
+    \begin{align*}
+        \deg r(x) = \deg (-q(x)) + \deg f(x) \geq \deg f(x) \period
+    \end{align*}
+    可是,
+    \begin{align*}
+        \deg r(x) < \deg f(x),
+    \end{align*}
+    矛盾! 故 $-q(x) = 0$\period 这样, $r(x) = 0$\period
+\end{pf}
 
 \begin{proposition}
     设 $f(x) \in D[x]$, 且 $f(x) \neq 0$\period 若 $D$ 上 $x$ 的 $4$ 个多项式 $q_1 (x)$, $r_1 (x)$, $q_2 (x)$, $r_2 (x)$ 适合
@@ -157,32 +185,34 @@
     \end{align*}
     则必有
     \begin{align*}
-        r_1 (x) = r_2 (x), \quad q_1 (x) = q_2 (x) \period
+        q_1 (x) = q_2 (x), \quad r_1 (x) = r_2 (x) \period
     \end{align*}
 \end{proposition}
 
 \begin{pf}
     记
     \begin{align*}
-        Q(x) = q_2 (x) - q_1 (x), \quad R(x) = r_2 (x) - r_1 (x) \period
+        Q(x) = q_1 (x) - q_2 (x), \quad R(x) = r_1 (x) - r_2 (x) \period
     \end{align*}
     题设条件即
     \begin{align*}
-        (q_1 (x) - q_2 (x)) f(x) = r_2 (x) - r_1 (x),
+        (q_1 (x) - q_2 (x)) f(x) + (r_1 (x) - r_2 (x)) = 0,
     \end{align*}
     也就是
     \begin{align*}
-        -Q(x) f(x) = R(x) \period
+        Q(x) f(x) + R(x) = 0 \period
     \end{align*}
-    反证法\period 若 $-Q(x) \neq 0$, 则 $\deg (-Q(x)) \geq 0$\period 从而
+    注意到
     \begin{align*}
-        \deg R(x) = \deg (-Q(x)) + \deg f(x) \geq \deg f(x) \period
+        \deg R(x)
+        =    {} & \deg (r_1 (x) - r_2 (x))                  \\
+        \leq {} & \max \{\, \deg r_1 (x), \deg r_2 (x) \,\} \\
+        <    {} & f(x) \period
     \end{align*}
-    可是
+    根据上个命题, $Q(x) = R(x) = 0$\period 所以,
     \begin{align*}
-        \deg R(x) = \deg (r_2(x) - r_1(x)) \leq \deg r_1 (x) < \deg f(x),
+         & q_1 (x) = q_2 (x), \quad r_1 (x) = r_2 (x) \period \qedhere
     \end{align*}
-    矛盾! 故 $-Q(x) = 0$\period 这样, $R(x) = 0$\period
 \end{pf}
 
 这样, 我们得到了这个命题:

@@ -23,7 +23,7 @@
     \end{align*}
 \end{proposition}
 
-可以看到, 在 $\FF$ 里, 带余除法的适用范围更广了\period
+可以看到, 在 $\FF[x]$ 里, 带余除法的适用范围更广了\period
 
 由于 $\FF$ 里有无数多个元, 所以
 
@@ -35,12 +35,18 @@
     $f(x)$ 的次不可能是非负整数\period 所以 $f(x)$ 只能是 $0$\period
 \end{pf}
 
+由此立得
+
+\begin{proposition}
+    设 $f(x),g(x) \in \FF[x]$\period 设 $S \subset \FF$, 且 $S$ 有无数多个元\period 若任取 $t \in S$, 必有 $f(t) = g(t)$, 则 $f(x)$ 与 $g(x)$ 是二个相同的多项式\period 通俗地说, 就是若系数为 $\FF$ 的元的二个多项式在无数多个地方有相同的取值, 则这二个多项式必相等\period
+\end{proposition}
+
+\begin{pf}
+    考虑 $h(x) = f(x) - g(x)$, 并利用上个命题\period
+\end{pf}
+
 前面已经知道, 多项式确定多项式函数\period 利用上面的命题, 我们有
 
 \begin{proposition}
     $\FF$ 上的多项式与 $\FF$ 的多项式函数是一一对应的: 不但二个不同的 $\FF$ 上的多项式给出二个不同的 $\FF$ 的多项式函数, 而且二个不同的 $\FF$ 的多项式函数给出二个不同的 $\FF$ 上的多项式\period
 \end{proposition}
-
-\begin{remark}
-    这个命题告诉我们, 我们在前面定义的 ``纯形式多项式'' 与中学里学到的多项式 (一元整式) 是没有本质区别的\period
-\end{remark}
