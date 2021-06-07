@@ -223,3 +223,25 @@
     \end{align*}
     根据归纳假设, $q(x)$ 至多有 $\ell$ 个不同的根\period 而且, 若 $b \neq a$, 且 $b$ 不是 $q(x)$ 的根, 利用消去律可知 $f(b) \neq 0$\period 这样, $f(x)$ 至多有 $\ell + 1$ 个不同的根\period
 \end{pf}
+
+由此可推出一个很有用的事实:
+
+\begin{proposition}
+    设 $a_0$, $a_1$, $\cdots$, $a_n$ 是 $D$ 的元\period 设 $n$ 是非负整数\period 设
+    \begin{align*}
+        f(x) = \sum_{i=0}^{n} = a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \period
+    \end{align*}
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $D$ 的元, 且
+    \begin{align*}
+        f(t_0) = f(t_1) = \cdots = f(t_n) = 0,
+    \end{align*}
+    则 $f(x)$ 必为零多项式\period 通俗地说, 就是次不高于 $n$ (且系数为整环的元) 的多项式不可能有 $n$ 个以上的互不相同的根, 除非这个多项式是零\period
+\end{proposition}
+
+\begin{pf}
+    反证法\period 设 $f(x)$ 不是零多项式\period 设 $f(x)$ 的次为 $m$, 则 $0 \leq m \leq n$\period 根据上一个命题, $f(x)$ 至多有 $m$ 个不同的根, 这与题设矛盾! 故 $f(x) = 0$\period
+\end{pf}
+
+\begin{remark}
+    再看前面提到的 $4$ 元集 $V$\period 可以看出, 因为 $V$ 的元 ``不够多'', 所以出现了取零值的非零多项式\period
+\end{remark}

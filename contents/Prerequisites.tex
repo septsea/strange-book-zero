@@ -4,7 +4,37 @@
 
 您将在本节熟悉一些记号与术语\period 建议您熟悉本节的内容后学习下一节的内容\period
 
-在进入小节 Sets 前, 让我们先回顾复数与数学归纳法吧!
+在进入小节 Sets 前, 让我们先回顾命题、复数与数学归纳法吧!
+
+\begin{definition}
+    能判断真假的话是命题 \term{proposition}\period 正确的命题称为真命题; 错误的命题称为假命题\period 当然, 命题也可以用 ``对'' ``错'' 形容\period
+\end{definition}
+
+\begin{example}
+    根据常识, ``日东升西落'' 是真命题\period 类似地, ``月自身可发光'' 是假命题\period
+
+    ``这是什么?'' 不是命题, 因为它没有作出判断\period 类似地, ``请保持安静'' 也不是命题, 因为它只是一个祈使句 \term{imperative sentence}\period 不过, ``难道中国不强?'' 不但是命题, 它还是正确的, 因为这个反问 \term{rhetorical question} 作出了正确的判断\period
+
+    ``$x > 3$'' 不是命题, 因为它不可判断真假\period 像这种话里有未知元, 且揭秘未知元前不可知此话之真伪的话是开句 \term{open sentence}\period
+\end{example}
+
+我们会经常遇到 ``若 $p$, 则 $q$'' 的命题\period
+
+\begin{definition}
+    设 ``若 $p$, 则 $q$'' 是真命题\period 我们说, $p$ 是 $q$ 的充分条件 \term{sufficient condition}, $q$ 是 $p$ 的必要条件 \term{necessary condition}\period
+\end{definition}
+
+\begin{example}
+    ``若刚下过雨, 则地面潮湿'' 是对的\period ``刚下过雨'' 是 ``充分的'': 根据常识可以知道这一点\period ``地面潮湿'' 是必要的: 地面不潮湿, 那么不可能刚下过雨\period
+\end{example}
+
+\begin{remark}
+    我们会遇到形如 ``$\ell$ 的一个必要与充分条件是 $r$'' 的命题\period 换个说法, 就是 ``$r$ 是 $\ell$ 的一个必要与充分条件''\period 再分解一下, 就是 ``$r$ 是 $\ell$ 的一个必要条件'' 与 ``$r$ 是 $\ell$ 的一个充分条件'' 这二个命题\period 根据定义, 这相当于 ``若 $\ell$, 则 $r$'' 与 ``若 $r$, 则 $\ell$'' 都是真命题\period 也就是说, $\ell$ 跟 $r$ 是等价的 \term{equivalent}\period
+
+    证明 ``$\ell$ 的一个必要与充分条件是 $r$'' 时, 我们会把它分为必要性 \term{necessity} 与充分性 \term{sufficiency} 二个部分\period 证明必要性, 就是证明 ``$r$ 是 $\ell$ 的一个必要条件'', 也就是证明 ``若 $\ell$, 则 $r$'' 是对的; 换句话说, 证明左边可以推出右边\period 证明充分性, 就是证明 ``$r$ 是 $\ell$ 的一个充分条件'', 也就是证明 ``若 $r$, 则 $\ell$'' 是对的; 换句话说, 证明右边可以推出左边\period
+\end{remark}
+
+命题就介绍到这里\period 下面回顾复数基础\period
 
 \begin{definition}
     复数 \term{complex number} 是形如 $x + y \ii$ ($x$, $y$ 是实数) 的数\period
@@ -185,7 +215,7 @@
 
     再验证 (ii)\period (ii) 是说, 要由 $P(\ell)$ 推出 $P(\ell + 1)$\period 所以, 假设
     \begin{align*}
-        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2}, \quad \ell \geq 1 \period
+        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2}, \quad \ell \geq n_0 \period
     \end{align*}
     因为
     \begin{align*}
@@ -212,7 +242,7 @@
 
     (i) 不适合: 显然 $n=1$ 时, 左侧是 $0$ 而右侧是 $1$\period 再看 (ii)\period 假设
     \begin{align*}
-        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2} + 1, \quad \ell \geq 1 \period
+        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2} + 1, \quad \ell \geq n_0 \period
     \end{align*}
     由于
     \begin{align*}
@@ -232,28 +262,44 @@
 
 \begin{example}
     % cSpell: disable-next-line
-    不同的老婆\myFN{一般地, 二次元人会称动画、漫画、游戏、小说中自己喜爱的女性角色为老婆 \term{waifu}\period 一个二次元人可以有不止一个老婆\period}有着不同的发色\period 但是, 我们用数学归纳法却可以证明, 任意的 $n$ ($n \geq 1$) 个老婆有着相同的发色! 称这个命题为 $Q(n)$\period 这里, $n_0$ 自然取 $1$\period
+    不同的老婆\myFN{一般地, 二次元人会称动画、漫画、游戏、小说中自己喜爱的女性角色为老婆 \term{waifu}\period 一个二次元人可以有不止一个老婆\period}有着不同的发色\period 但是, 我们用数学归纳法却可以 ``证明'', 任意的 $n$ ($n \geq 1$) 个老婆有着相同的发色! 称这个命题为 $Q(n)$\period 这里, $n_0$ 自然取 $1$\period
 
-    (i) 当 $n=1$ 时, 一个老婆自然只有一种发色\period 这个时候, 命题是正确的!
+    (i) 当 $n=n_0=1$ 时, 一个老婆自然只有一种发色\period 这个时候, 命题是正确的!
 
-    (ii) 假设任意的 $\ell$ ($\ell \geq 1$) 个老婆有着相同的发色! 随意取 $\ell + 1$ 个老婆\period 根据假设, 老婆 $1$, $2$, $\cdots$, $\ell$ 有着相同的发色, 且老婆 $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色\period 这二组中都有 $2$, $\cdots$, $\ell$ 这 $\ell-1$ 个老婆, 所以老婆 $1$, $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色!
+    (ii) 假设任意的 $\ell$ ($\ell \geq n_0$) 个老婆有着相同的发色! 随意取 $\ell + 1$ 个老婆\period 根据假设, 老婆 $1$, $2$, $\cdots$, $\ell$ 有着相同的发色, 且老婆 $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色\period 这二组中都有 $2$, $\cdots$, $\ell$ 这 $\ell-1$ 个老婆, 所以老婆 $1$, $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色!
 
     根据 (i) (ii), 命题成立\period
 
     可是这对吗? 不对\period 问题出在 (ii)\period 如果说, 任意二个老婆有着相同的发色, 那任意三个老婆也有着相同的发色\period 这没问题\period 可是, 由 $Q(1)$ 推不出 $Q(2)$: 老婆 $1$ 与老婆 $2$ 根本就不重叠呀! (ii) 要求任取 $\ell \geq n_0$, 必有 $Q(\ell)$ 推出 $Q(\ell+1)$\period 而 $\ell = 1$ 时, (ii) 不对, 因此不能推出 $Q(n)$ 对任意正整数都对\period
 \end{example}
 
-下面是数学归纳法的一个变体\period 这也叫数学归纳法\period
+下面是数学归纳法的一个变体\period
 
 \begin{proposition}
     设 $P(n)$ 是跟整数 $n$ 相关的命题\period 设 $P(n)$ 适合:
 
     (i) $P(n_0)$ 是正确的;
 
-    (ii)$\prime$ 任取 $\ell \geq n_0$, 必有 ``若 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立\period
+    (ii)$^{\prime}$ 任取 $\ell \geq n_0$, 必有 ``若 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立\period
 
     则任取不低于 $n_0$ 的整数 $n$, 必有 $P(n)$ 是正确的\period
 \end{proposition}
+
+\begin{remark}
+    可以由下面的推理看出, 上面的数学归纳法变体是正确的\period
+
+    作命题 $Q(n)$ ($n \geq n_0$) 为 ``$n - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(n)$ 都是正确的''\period
+
+    (i) $P(n_0)$ 是正确的, 所以 $n_0 - n_0 + 1$ 个命题 $P(n_0)$ 是正确的, 也就是 $Q(n_0)$ 是正确的\period
+
+    (ii) 任取 $\ell \geq n_0$\period 假设 $Q(\ell)$ 是正确的, 也就是假设 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的\period 由 (ii)$^{\prime}$, $P(\ell + 1)$ 是正确的\period 所以, $\ell + 1 - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$, $P(\ell + 1)$ 都是正确的\period 换句话说, $Q(\ell + 1)$ 是正确的\period
+
+    由数学归纳法可知, 任取不低于 $n_0$ 的整数 $n$, 必有 $Q(n)$ 是正确的\period 所以, $P(n)$ 是正确的\period
+
+    另一方面, 这个变体的条件 (ii)$^{\prime}$ 比数学归纳法的 (ii) 强, 所以若变体正确, 数学归纳法也正确\period 也就是说, 数学归纳法与其变体是等价的\period
+
+    以后, ``数学归纳法'' 既可以指老的数学归纳法 (由 $P(\ell)$ 推 $P(\ell+1)$), 也可以指变体 (由 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 推 $P(\ell+1)$)\period
+\end{remark}
 
 知识就回顾到这里\period 开始进入集的世界吧!
 
@@ -333,7 +379,7 @@
 
     (i) $0 \in \FF$, $1 \in \FF$, $0 \neq 1$;
 
-    (ii) 任取 $x,y \in \FF$ ($y \neq 0$), 必有 $x-y, \frac{x}{y} \in F$\period
+    (ii) 任取 $x,y \in \FF$ ($y \neq 0$), 必有 $x-y, \frac{x}{y} \in \FF$\period
 
     后面会见到稍详细的论述\period
 \end{definition}
@@ -786,7 +832,7 @@
 \begin{remark}
     事实上, 这里要求 $S$ 非空是有必要的\period
 
-    首先, 空集没什么意思\period 其次, 前面所述的结合律、交换律、分配律等自动成立, 这是因为对形如 ``若 $p$, 则 $q$'' 的命题 \term{proposition} 而言, $p$ 为假推出整个命题为真\period 这是相当 ``危险'' 的!
+    首先, 空集没什么意思\period 其次, 前面所述的结合律、交换律、分配律等自动成立, 这是因为对形如 ``若 $p$, 则 $q$'' 的命题而言, $p$ 为假推出整个命题为真\period 这是相当 ``危险'' 的!
 \end{remark}
 
 \begin{definition}
@@ -1351,7 +1397,7 @@
 \end{example}
 
 \begin{example}
-    $\FF$ 也是整环\period 它有无数个单位: 任意 $\FF^{\ast}$ 的元都是单位\period
+    $\FF$ 也是整环\period 它有无数多个单位: 任意 $\FF^{\ast}$ 的元都是单位\period
 \end{example}
 
 \begin{example}
