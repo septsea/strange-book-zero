@@ -21,7 +21,7 @@
 \begin{align*}
     1, \quad x-c, \quad (x-c)^2, \quad \cdots, \quad (x-c)^n
 \end{align*}
-分别是 $0$, $1$, $2$, $\cdots$, $n$ 次多项式, 所以这个 $f(x)$ 也是多项式, 且 $\deg f(x) \leq n$\period 当 $a_n \neq 0$ 时, $\deg f(x) = n$\period
+是首项系数为 $1$ 的 $0$, $1$, $2$, $\cdots$, $n$ 次多项式, 所以这个 $f(x)$ 也是多项式, 且 $\deg f(x) \leq n$\period 当 $a_n \neq 0$ 时, $\deg f(x) = n$, 且 $f(x)$ 的首项系数为 $a_n$\period
 
 再作一个多项式
 \begin{align*}
@@ -83,7 +83,7 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     \begin{align*}
         c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_n p_n (x)
     \end{align*}
-    是多项式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合 \term{linear combination}\period
+    是多项式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合 \term{linear combination}\period $c_0$, $c_1$, $\cdots$, $c_n$ 就是此线性组合的系数\period
 
     若不存在一组不全为 $0$ 的 $D$ 中元 $d_0$, $d_1$, $\cdots$, $d_n$ 使
     \begin{align*}
@@ -145,16 +145,18 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     由此可见, 线性无关的多项式有着优良的性质: 二个线性组合相等的一个必要与充分条件是对应的系数相等\period
 \end{remark}
 
-下面的命题指出, 任意多个次不同的非零多项式一定是线性无关的\period
+我们知道, $1$, $x$, $\cdots$, $x^n$ 是线性无关的\period 在这串多项式里, 后一个的次比前一个的次多 $1$\period 不仅如此, 由多项式的定义可见, 每一个次不高于 $n$ 的多项式都可以写为它们的线性组合\period 下面的命题就是这二件事实的推广\period
 
 \begin{proposition}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 分别是 $0$, $1$, $\cdots$, $n$ 次多项式\period 则 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的\period
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 分别是 $0$, $1$, $\cdots$, $n$ 次多项式\period 则:
+
+    (i) $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的;
+
+    (ii) 若 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的首项系数都是 $D$ 的单位, 则任意次不高于 $n$ 的多项式都可写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合\period 由 (i) 知, 这个组合的系数一定是唯一的\period
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 当 $n=0$ 时, 只有一个 $0$ 次多项式 $p_0 (x) = c \neq 0$ 那么, 由 $dc = 0$ 可推出 $d = 0$\period 这样, 命题对 $n=0$ 成立\period
-
-    假定命题对 $n = \ell \geq 0$ 成立\period 设 $c_0$, $c_1$, $\cdots$, $c_{\ell + 1} \in D$ 使
+    (i) 用数学归纳法\period 当 $n=0$ 时, 只有一个 $0$ 次多项式 $p_0 (x) = c \neq 0$ 那么, 由 $dc = 0$ 可推出 $d = 0$\period 这样, 命题对 $n=0$ 成立\period 假定命题对 $n = \ell \geq 0$ 成立\period 设 $c_0$, $c_1$, $\cdots$, $c_{\ell + 1} \in D$ 使
     \begin{align*}
         c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) + c_{\ell + 1} p_{\ell + 1} (x) = 0 \period
     \end{align*}
@@ -180,19 +182,63 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     \end{align*}
     也就是说, $n=\ell + 1$ 时, 命题成立\period
 
-    根据数学归纳法原理, 命题得证\period
+    (ii) 用数学归纳法\period 当 $n=0$ 时, 只有一个 $0$ 次多项式 $p_0 (x) = c \neq 0$, 且 $c$ 是单位\period 任取次不高于 $0$ 的多项式 $d$\period 因为 $d = (dc^{-1})c$, 这样, 命题对 $n=0$ 成立\period 这样, 命题对 $n=0$ 成立\period 假定命题对 $n = \ell \geq 0$ 成立\period 任取次不高于 $\ell + 1$ 的多项式 $f(x)$\period 由于 $p_{\ell + 1} (x)$ 的首项系数是单位, 所以, 由带余除法知道, 存在多项式 $q(x)$, $r(x) \in D[x]$ 使
+    \begin{align*}
+        f(x) = q(x) p_{\ell + 1} (x) + r(x), \quad \deg r(x) \leq \ell \period
+    \end{align*}
+    如果 $f(x)$ 的次不高于 $\ell$, 则 $q(x) = 0$; 如果 $f(x)$ 的次是 $\ell + 1$, 则
+    \begin{align*}
+        \deg q(x) = \deg f(x) - \deg p_{\ell+1} (x) = 0 \period
+    \end{align*}
+    也就是说, 存在 $c_{\ell + 1} \in D$ 使 $q(x) = c_{\ell + 1}$\period 所以,
+    \begin{align*}
+        f(x) = r(x) + c_{\ell + 1} p_{\ell + 1} (x), \quad \deg r(x) \leq \ell \period
+    \end{align*}
+    根据归纳假设, 存在 $c_0$, $c_1$, $\cdots$, $c_{\ell} \in D$ 使
+    \begin{align*}
+        r(x) = c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x),
+    \end{align*}
+    即
+    \begin{align*}
+        f(x) = c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) + c_{\ell + 1} p_{\ell + 1} (x) \period
+    \end{align*}
+    所以, $n = \ell + 1$ 时, 命题成立\period
 \end{pf}
 
-本节开头的问题总算得到了解答:
+\begin{example}
+    这里, (ii) 要求每个多项式的首项系数为单位是有必要的\period 考虑 $\ZZ$ 与 $\ZZ[x]$\period 取 $n=2$, 及
+    \begin{align*}
+        p_0 (x) = -1, \quad p_1 (x) = 2x, \quad p_2 (x) = 3x^2 \period
+    \end{align*}
+    根据上面的命题, 这三个多项式是线性无关的\period 考虑 $f(x) = 3 + x - 2x^2$\period 设 $c_0$, $c_1$, $c_2 \in \ZZ$ 使
+    \begin{align*}
+        3 + x - 2x^2 = c_0 \cdot (-1) + c_1 \cdot 2x + c_2 \cdot 3x^2 \period
+    \end{align*}
+    这相当于
+    \begin{align*}
+        3 = -c_0, \quad 1 = 2c_1, \quad -2 = 3c_2 \period
+    \end{align*}
+    容易看出, 这个方程组无整数解, 所以 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的 (系数为 $\ZZ$ 的元的) 线性组合不能表示每一个次数不高于 $2$ 的多项式\period
+\end{example}
+
+本节开头的问题总算得到了解答\period 不仅如此, 我们得到了更深的结论:
 
 \begin{proposition}
     设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 都是 $D$ 的元\period 设 $c \in D$\period 再设
     \begin{align*}
-         f(x) &= a_0 + a_1 (x - c) + a_2 (x - c)^2 + \cdots + a_n (x - c)^n,        \\
-         g(x) &= b_0 + b_1 (x - c) + b_2 (x - c)^2 + \cdots + b_n (x - c)^n \period
+        f(x) & = a_0 + a_1 (x - c) + a_2 (x - c)^2 + \cdots + a_n (x - c)^n,        \\
+        g(x) & = b_0 + b_1 (x - c) + b_2 (x - c)^2 + \cdots + b_n (x - c)^n \period
     \end{align*}
     则 $f(x)=g(x)$ 的一个必要与充分条件是
     \begin{align*}
         a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+    \end{align*}
+    并且, 任取
+    \begin{align*}
+        f(x) = u_0 + u_1 x + u_2 x^2 + \cdots + u_n x^n \in D[x],
+    \end{align*}
+    必存在 $v_0$, $v_1$, $\cdots$, $v_n \in D$ 使
+    \begin{align*}
+        f(x) = v_0 + v_1 (x - c) + v_2 (x - c)^2 + \cdots + v_n (x - c)^n \period
     \end{align*}
 \end{proposition}
