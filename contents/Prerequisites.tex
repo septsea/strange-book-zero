@@ -248,7 +248,7 @@
     \begin{align*}
         0 + 1 + \cdots + (\ell - 1) + \ell
         = {} & (0 + 1 + \cdots + (\ell - 1)) + \ell                \\
-        = {} & \frac{\ell(\ell-1)}{2} + 1 \ell \tag*{(``IH'')}     \\
+        = {} & \frac{\ell(\ell-1)}{2} + 1 + \ell \tag*{(``IH'')}   \\
         = {} & \frac{\ell(\ell-1)}{2} + \frac{\ell \cdot 2}{2} + 1 \\
         = {} & \frac{\ell(\ell+1)}{2} + 1                          \\
         = {} & \frac{(\ell+1)((\ell+1) - 1)}{2} + 1,
@@ -1061,7 +1061,7 @@
 \end{remark}
 
 \begin{remark}
-    上面的例其实就是一个特殊情形 ($n - m = 1$)\period
+    上面的例其实就是一个特殊情形 ($n - m + 1 = 2$)\period
 \end{remark}
 
 \subsubsection*{Rings}
@@ -1194,11 +1194,11 @@
 
     (i) 任取 $x,y \in D$, 必有 $xy = yx$;
 
-    (i) 存在 $1 \in D$, $1 \neq 0$, 使任取 $x \in D$, 必有 $1x = x1 = x$;
+    (ii) 存在 $1 \in D$, $1 \neq 0$, 使任取 $x \in D$, 必有 $1x = x1 = x$;
 
-    (ii) $\cdot$ 适合 ``消去律变体''\myFN{一般地, 这也可称为消去律\period}: 若 $xy = xz$, $x \neq 0$, 则 $y = z$\period
+    (iii) $\cdot$ 适合 ``消去律变体''\myFN{一般地, 这也可称为消去律\period}: 若 $xy = xz$, $x \neq 0$, 则 $y = z$\period
 
-    我们说 $D$ (关于 $+$ 与 $\cdot$) 是整环 \term{domain}, \textit{integral domain}\period
+    我们说 $D$ (关于 $+$ 与 $\cdot$) 是整环 (\textit{domain}, \textit{integral domain})\period
 \end{definition}
 
 \begin{example}
@@ -1272,7 +1272,7 @@
     设 $D \subset \CC$, 且 $D$ 是整环\period 不难看出, $\ZZ \subset D$\period
 \end{example}
 
-\subsubsection*{Sums and Products}
+\subsubsection*{Products}
 
 \begin{definition}
     设 $f$ 是 $\ZZ$ 的非空子集 $S$ 到整环 $D$ 的函数\period 设 $p$, $q$ 是二个整数\period 如果 $p \leq q$, 则记
@@ -1317,7 +1317,7 @@
     其中, $\prod_{j=p}^{q} \prod_{i=m}^{n} f(i,j)$ 当然是 $\prod_{j=p}^{q} \left( \prod_{i=m}^{n} f(i,j) \right))$ 的简写\period
 \end{remark}
 
-\begin{example}
+\begin{remark}
     回顾一下 $\sum$ 符号\period 我们已经知道
     \begin{align*}
         \sum_{j=p}^{q} (f(j) + g(j)) = \sum_{j=p}^{q} f(j) + \sum_{j=p}^{q} g(j) \period
@@ -1330,9 +1330,7 @@
     \begin{align*}
         \sum_{j=p}^{q} (cf(j) + dg(j)) = c\sum_{j=p}^{q} f(j) + d\sum_{j=p}^{q} g(j) \period
     \end{align*}
-\end{example}
 
-\begin{remark}
     类似地, 当 $q \geq p$, $c$ 是常元时,
     \begin{align*}
         \prod_{j=p}^{q} cf(j) = c^{q-p+1} \prod_{j=p}^{q} f(j) \period

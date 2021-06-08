@@ -4,7 +4,9 @@
 
 我们在前几节讨论的都是整环 $D$ 上的多项式, 所以看上去是有些抽象的\period 从现在开始, 我们讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period
 
-先回顾一下我们在前几节里证明的结论\period
+本节并没有什么新的知识\period 读者可以乘此机会温习一下所学内容\period
+
+我们在本节重申一些较重要的命题\period
 
 \begin{proposition}
     $\FF[x]$ 作成整环\period 所以, $\FF[x]$ 的一个名字就是 (域) $\FF$ 上 ($x$) 的多项式环\period
@@ -24,6 +26,38 @@
 \end{proposition}
 
 可以看到, 在 $\FF[x]$ 里, 带余除法的适用范围更广了\period
+
+\begin{proposition}
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次多项式\period 则:
+
+    (i) $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的;
+
+    (ii) 任意次不高于 $n$ 的多项式都可唯一地写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合\period
+\end{proposition}
+
+\begin{example}
+    考虑 $\FF$ 与 $\FF[x]$\period 取 $n=2$, 及
+    \begin{align*}
+        p_0 (x) = -1, \quad p_1 (x) = 2x, \quad p_2 (x) = 3x^2 \period
+    \end{align*}
+    这三个多项式是线性无关的\period 考虑 $f(x) = 3 + x - 2x^2$\period 设 $c_0$, $c_1$, $c_2 \in \FF$ 使
+    \begin{align*}
+        3 + x - 2x^2 = c_0 \cdot (-1) + c_1 \cdot 2x + c_2 \cdot 3x^2 \period
+    \end{align*}
+    这相当于
+    \begin{align*}
+        3 = -c_0, \quad 1 = 2c_1, \quad -2 = 3c_2 \period
+    \end{align*}
+    由此可得
+    \begin{align*}
+        c_0 = -3, \quad c_1 = \frac12, \quad c_2 = -\frac23 \period
+    \end{align*}
+    可以看到, 在 $\ZZ$ 与 $\ZZ[x]$ 里 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的线性组合还不能表示这个 $f(x)$, 但当我们在 ``大环境'' $\FF$ 与 $\FF[x]$ 下讨论问题时就可以了\period
+\end{example}
+
+\begin{remark}
+    在上节, 我们知道, 整环 $D$ 上的多项式 $f(x) = ax + b$ ($a \neq 0$) 不一定有根\period 可是, 在域 $\FF$ 里, $f(x)$ 就有根 $-\frac{b}{a}$\period
+\end{remark}
 
 由于 $\FF$ 里有无数多个元, 所以
 
@@ -50,3 +84,7 @@
 \begin{proposition}
     $\FF$ 上的多项式与 $\FF$ 的多项式函数是一一对应的: 不但二个不同的 $\FF$ 上的多项式给出二个不同的 $\FF$ 的多项式函数, 而且二个不同的 $\FF$ 的多项式函数给出二个不同的 $\FF$ 上的多项式\period
 \end{proposition}
+
+\begin{remark}
+    以后, 我们不再区分 ``多项式'' 与 ``多项式函数''\period 从现在开始, 读者可以认为本文接下来讨论的 ``多项式'' 跟中学里的多项式是同一事物\period
+\end{remark}
