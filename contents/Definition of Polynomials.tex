@@ -69,6 +69,8 @@
     文字 $x$ 的意义在数学中是不断进化的 \term{evolving}\period 在中小学里, $x$ 是未知元 \term{unknown}: 虽然它是待求的, 但是它是一个具体的数\period 后来在函数里, $x$ 表示变元 \term{variable}, 不过它的取值范围是确定的\period 在上面的定义里, $x$ 仅仅是一个文字, 成为不定元\period
 \end{remark}
 
+下面考虑多项式的运算\period 先从加法开始\period
+
 \begin{definition}
     设
     \begin{align*}
@@ -153,6 +155,13 @@
     综上, $D[x]$ 是加群\period
 \end{pf}
 
+\begin{definition}
+    设 $f(x)$, $g(x) \in D[x]$\period 规定减法如下:
+    \begin{align*}
+        f(x) - g(x) = f(x) + (-g(x)) \period
+    \end{align*}
+\end{definition}
+
 \begin{remark}
     可以看出, $f(x) \pm g(x)$ 的次既不会超出 $f(x)$ 的次, 也不会超出 $g(x)$ 的次\period 用符号写出来, 就是
     \begin{align*}
@@ -181,6 +190,8 @@
 \begin{example}
     $y - y^2 - 7y^4 \in \ZZ[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$, 且其首项系数是 $-7$\period
 \end{example}
+
+现在考虑乘法\period
 
 \begin{definition}
     设

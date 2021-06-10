@@ -5,7 +5,7 @@
 我们回顾一下熟悉的多项式函数\period
 
 \begin{definition}
-    设 $a_0, a_1, \cdots, a_n \in D$ 称
+    设 $a_0, a_1, \cdots, a_n \in D$\period 称
     \begin{align*}
          & D \to D, \tag*{$f \colon$}               \\
          & t \mapsto a_0 + a_1 t + \cdots + a_n t^n
@@ -30,33 +30,30 @@
     \end{align*}
 \end{definition}
 
-\begin{remark}
-    设 $f$, $g$ 是 $D$ 的二个多项式函数:
-    \begin{align*}
-         & D \to D, \tag*{$f \colon$}                       \\
-         & t \mapsto a_0 + a_1 t + \cdots + a_n t^n,        \\
-         & D \to D, \tag*{$g \colon$}                       \\
-         & t \mapsto b_0 + b_1 t + \cdots + b_n t^n \period
-    \end{align*}
-    利用 $D$ 的运算律, 可以得到
-    \begin{align*}
-         & D \to D, \tag*{$f+g \colon$}                                      \\
-         & t \mapsto (a_0 + b_0) + (a_1 + b_1) t + \cdots + (a_n + b_n) t^n, \\
-         & D \to D, \tag*{$fg \colon$}                                       \\
-         & t \mapsto c_0 + c_1 t + \cdots + c_{2n} t^{2n},
-    \end{align*}
-    其中
-    \begin{align*}
-        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
-    \end{align*}
-\end{remark}
-
+设 $f$, $g$ 是 $D$ 的二个多项式函数:
+\begin{align*}
+     & D \to D, \tag*{$f \colon$}                       \\
+     & t \mapsto a_0 + a_1 t + \cdots + a_n t^n,        \\
+     & D \to D, \tag*{$g \colon$}                       \\
+     & t \mapsto b_0 + b_1 t + \cdots + b_n t^n \period
+\end{align*}
+利用 $D$ 的运算律, 可以得到
+\begin{align*}
+     & D \to D, \tag*{$f+g \colon$}                                      \\
+     & t \mapsto (a_0 + b_0) + (a_1 + b_1) t + \cdots + (a_n + b_n) t^n, \\
+     & D \to D, \tag*{$fg \colon$}                                       \\
+     & t \mapsto c_0 + c_1 t + \cdots + c_{2n} t^{2n},
+\end{align*}
+其中
+\begin{align*}
+    c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
+\end{align*}
 由此可得下面的命题:
 
 \begin{proposition}
-    设 $f(x),g(x) \in D[x]$, $f,g$ 分别是 $f(x),g(x)$ 诱导的多项式函数\period 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的多项式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的多项式函数\period
+    设 $f(x)$, $g(x) \in D[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的多项式函数\period 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的多项式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的多项式函数\period
 
-    通俗地说, 若多项式 $f_1 (x)$, $f_2 (x)$, $\cdots$, $f_n (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立\period
+    通俗地说, 若多项式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立\period
 \end{proposition}
 
 \begin{example}

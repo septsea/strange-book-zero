@@ -1,18 +1,175 @@
-\subsection*{Polynomials over $\FF$}
-\addcontentsline{toc}{subsection}{Polynomials over \texorpdfstring{$\FF$}{𝔽}}
-\markright{Polynomials over $\FF$}
+\subsection*{Polynomials over $\mathbb{F}$}
+\addcontentsline{toc}{subsection}{Polynomials over \texorpdfstring{$\mathbb{F}$}{𝔽}}
+\markright{Polynomials over $\mathbb{F}$}
 
-我们在前几节讨论的都是整环 $D$ 上的多项式, 所以看上去是有些抽象的\period 从现在开始, 我们讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period
+我们在前几节讨论的都是整环 $D$ 上的多项式, 所以它们看上去是有些抽象的\period 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period 细心的读者会注意到我们在前几节未使用 $\sum$ 符号\period 这是为了让读者没那么困难地适应多项式理论\period 从本节起, 我们会较多地使用这个 $\sum$\period 您也可以乘此机会让自己熟悉它\period
 
-本节并没有什么新的知识\period 读者可以乘此机会温习一下所学内容\period
+本节并没有什么新的知识\period 您可以乘此机会温习一下所学内容\period 我们将重述一些定义与命题\period 我们在学校学数学的时候, 也会有复习课\period 就当本节就是 ``复习节'' 吧!
 
-我们在本节重申一些较重要的命题\period
+先从多项式的定义与运算开始\period
+
+\begin{definition}
+    设 $x$ 是不在 $\FF$ 里的任意一个文字\period 形如
+    \begin{align*}
+        f(x)
+        = {} & \sum_{i=0}^n a_i x^i                                                                       \\
+        = {} & a_0 + a_1 x + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in \FF,\ a_n \neq 0)
+    \end{align*}
+    的表达式称为 $\FF$ 上 $x$ 的一个多项式\period $n$ 称为其次, $a_i$ 称为其 $i$ 次系数, $a_i x^i$ 称为其 $i$ 次项\period $f(x)$ 的次可写为 $\deg f(x)$\period
+
+    若二个多项式的次与各同次系数均相等, 则二者相等\period
+
+    多项式的系数为 $0$ 的项可以不写\period
+
+    约定 $0 \in \FF$ 也是多项式, 称为零多项式\period 零多项式的次是 $-\infty$\period 任取整数 $m$, 约定
+    \begin{align*}
+         & -\infty = -\infty, \quad -\infty < m,                               \\
+         & -\infty + m = m + (-\infty) = -\infty + (-\infty) = -\infty \period
+    \end{align*}
+    当然, 还约定, 零多项式只跟自己相等\period 换句话说,
+    \begin{align*}
+        \sum_{i=0}^n a_i x^i = 0
+    \end{align*}
+    的一个必要与充分条件是
+    \begin{align*}
+        a_0 = a_1 = \cdots = a_n = 0 \period
+    \end{align*}
+
+    $\FF$ 上 $x$ 的所有多项式作成的集是 $\FF[x]$:
+    \begin{align*}
+        \FF[x] = \left\{\, \sum_{i=0}^n a_i x^i \,\,\middle|\,\, n \in \NN,\ a_0,a_1,\cdots,a_n \in \FF \,\right\} \period
+    \end{align*}
+
+    文字 $x$ 只是一个符号, 它与 $\FF$ 的元的和与积都是形式的\period 我们说, $x$ 是不定元\period
+\end{definition}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i=0}^n a_i x^i, \quad g(x) = \sum_{i=0}^n b_i x^i \in \FF[x] \period
+    \end{align*}
+    规定加法如下:
+    \begin{align*}
+        f(x) + g(x) = \sum_{i=0}^n (a_i + b_i) x^i \period
+    \end{align*}
+\end{definition}
 
 \begin{proposition}
-    $\FF[x]$ 作成整环\period 所以, $\FF[x]$ 的一个名字就是 (域) $\FF$ 上 ($x$) 的多项式环\period
+    设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$\period $\FF[x]$ 的加法适合如下性质:
+
+    (i) $f(x) + g(x) \in \FF[x]$;
+
+    (ii) $(f(x) + g(x)) + h(x)$ = $f(x) + (g(x) + h(x))$;
+
+    (iii) 存在多项式 $0$ 使 $0 + f(x) = f(x) + 0 = f(x)$;
+
+    (iv) 存在多项式 $-f(x)$ 使 $-f(x) + f(x) = f(x) + (-f(x)) = 0$;
+
+    (v) $f(x) + g(x) = g(x) + f(x)$\period
 \end{proposition}
 
-因为 $\FF$ 的每个非零元都是 $\FF$ 的单位, 所以有
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i=0}^n a_i x^i, \quad g(x) = \sum_{i=0}^n b_i x^i \in \FF[x] \period
+    \end{align*}
+    则
+    \begin{align*}
+        -g(x) = \sum_{i=0}^n (-b_i) x^i \period
+    \end{align*}
+    规定减法如下:
+    \begin{align*}
+        f(x) - g(x) = f(x) + (-g(x)) \period
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$\period 则
+    \begin{align*}
+        \deg (f(x) \pm g(x)) \leq \max \{\, \deg f(x), \deg g(x) \,\} \period
+    \end{align*}
+    若 $\deg f(x) > \deg g(x)$, 则
+    \begin{align*}
+        \deg (f(x) \pm g(x)) = \deg f(x) \period
+    \end{align*}
+    类似地, 若 $\deg f(x) < \deg g(x)$, 则
+    \begin{align*}
+        \deg (f(x) \pm g(x)) = \deg g(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i=0}^n a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x] \period
+    \end{align*}
+    这称为 $f(x)$ 的升次排列\period 下面的写法称为 $f(x)$ 的降次排列:
+    \begin{align*}
+        \sum_{j=0}^{n} a_{n-j} x^{n-j} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \period
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i=0}^m a_i x^i, \quad g(x) = \sum_{j=0}^n b_j x^j \in \FF[x] \period
+    \end{align*}
+    规定乘法如下:
+    \begin{align*}
+        f(x) g(x) = \sum_{k=0}^{m+n} \left( \sum_{i=0}^k a_i b_{k-i} \right) x^k \period
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    设 $i$, $j \in \NN$\period 则
+    \begin{align*}
+        x^i \cdot x^j = x^i x^j = x^{i + j} \period
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$\period 则
+    \begin{align*}
+        \deg f(x) g(x) = \deg f(x) + \deg g(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$\period $\FF[x]$ 的加法与乘法适合 (i) 至 (v) 及如下性质:
+
+    (vi) $f(x) g(x) \in \FF[x]$;
+
+    (vii) $(f(x) g(x)) h(x) = f(x) (g(x) h(x))$;
+
+    (viii) 存在多项式 $1$ 使 $1f(x) = f(x)1 = f(x)$;
+
+    (ix) $f(x) g(x) = g(x) f(x)$;
+
+    (x) 若 $f(x) \neq 0$, 则
+    \begin{align*}
+         & f(x) g(x) = f(x) h(x) \implies g(x) = h(x), \\
+         & g(x) f(x) = h(x) f(x) \implies g(x) = h(x);
+    \end{align*}
+
+    (xi) 二个分配律都对:
+    \begin{align*}
+         & f(x) (g(x) + h(x)) = f(x) g(x) + f(x) h(x),        \\
+         & (g(x) + h(x)) f(x) = g(x) f(x) + h(x) f(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{remark}
+    $\FF[x]$ 的一个名字就是 (域) $\FF$ 上 ($x$) 的多项式环\period
+\end{remark}
+
+\begin{proposition}
+    设 $f(x) \in \FF[x]$\period 非零的 $c \in \FF$ 是 $0$ 次多项式, 那么
+    \begin{align*}
+        \deg cf(x) = \deg f(x) \period
+    \end{align*}
+\end{proposition}
+
+再来看多项式的带余除法\period 因为 $\FF$ 的每个非零元都是 $\FF$ 的单位, 所以有
 
 \begin{proposition}
     设 $f(x) \in \FF[x]$ 是非零多项式\period 对任意 $g(x) \in \FF[x]$, 存在唯一的 $q(x), r(x) \in \FF[x]$ 使
@@ -27,6 +184,26 @@
 
 可以看到, 在 $\FF[x]$ 里, 带余除法的适用范围更广了\period
 
+下面回顾多项式的相等\period 我们借助 ``线性无关'' 讨论相等问题\period
+
+\begin{definition}
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$\period 设 $c_0$, $c_1$, $\cdots$, $c_n \in \FF$\period 我们说
+    \begin{align*}
+        \sum_{i = 0}^{n} c_i p_i (x)
+    \end{align*}
+    是多项式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合\period $c_0$, $c_1$, $\cdots$, $c_n$ 就是此线性组合的系数\period
+
+    若不存在一组不全为 $0$ 的 $\FF$ 中元 $d_0$, $d_1$, $\cdots$, $d_n$ 使
+    \begin{align*}
+        \sum_{i = 0}^{n} d_i p_i (x) = 0,
+    \end{align*}
+    则说 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的\period 换句话说, ``$p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的'' 意味着: 若 $\FF$ 中元 $r_0$, $r_1$, $\cdots$, $r_n$ 使
+    \begin{align*}
+        \sum_{i = 0}^{n} r_i p_i (x) = 0,
+    \end{align*}
+    则 $r_0 = r_1 = \cdots = r_n = 0$\period
+\end{definition}
+
 \begin{proposition}
     设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次多项式\period 则:
 
@@ -34,6 +211,8 @@
 
     (ii) 任意次不高于 $n$ 的多项式都可唯一地写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合\period
 \end{proposition}
+
+由于 $\FF$ 的每个非零元都是单位, 上面的命题的结论变强了\period 下面的例体现了这一点\period
 
 \begin{example}
     考虑 $\FF$ 与 $\FF[x]$\period 取 $n=2$, 及
@@ -55,11 +234,141 @@
     可以看到, 在 $\ZZ$ 与 $\ZZ[x]$ 里 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的线性组合还不能表示这个 $f(x)$, 但当我们在 ``大环境'' $\FF$ 与 $\FF[x]$ 下讨论问题时就可以了\period
 \end{example}
 
+\begin{proposition}
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n \in \FF$\period 设 $c \in \FF$\period 再设
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n a_i (x-c)^i, \quad g(x) = \sum_{i = 0}^n b_i (x-c)^i \period
+    \end{align*}
+    则 $f(x)=g(x)$ 的一个必要与充分条件是
+    \begin{align*}
+        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+    \end{align*}
+    并且, 任取
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n u_i x^i \in \FF[x],
+    \end{align*}
+    必存在 $v_0$, $v_1$, $\cdots$, $v_n \in \FF$ 使
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n v_i (x-c)^i \period
+    \end{align*}
+\end{proposition}
+
+最后, 我们回顾多项式函数与多项式的根\period
+
+\begin{definition}
+    设 $a_0, a_1, \cdots, a_n \in \FF$\period 称
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f \colon$}   \\
+         & t \mapsto \sum_{i = 0}^n a_i t^i
+    \end{align*}
+    为 $\FF$ 的多项式函数\period 我们也说, 这个 $f$ 是由 $\FF$ 上 $x$ 的多项式
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n a_i x^i
+    \end{align*}
+    诱导的多项式函数\period 不难看出, 若二个多项式相等, 则其诱导的多项式函数也相等\period
+\end{definition}
+
+\begin{definition}
+    设 $f$ 与 $g$ 是 $\FF$ 的二个多项式函数\period 二者的和 $f+g$ 定义为
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f+g \colon$} \\
+         & t \mapsto f(t) + g(t) \period
+    \end{align*}
+    二者的积 $fg$ 定义为
+    \begin{align*}
+         & \FF \to \FF, \tag*{$fg \colon$} \\
+         & t \mapsto f(t) g(t) \period
+    \end{align*}
+\end{definition}
+
+设 $f$, $g$ 是 $\FF$ 的二个多项式函数:
+\begin{align*}
+     & \FF \to \FF, \tag*{$f \colon$}         \\
+     & t \mapsto \sum_{i=0}^n a_i t^i,        \\
+     & \FF \to \FF, \tag*{$g \colon$}         \\
+     & t \mapsto \sum_{i=0}^n b_i t^i \period
+\end{align*}
+利用 $\FF$ 的运算律, 可以得到
+\begin{align*}
+     & \FF \to \FF, \tag*{$f+g \colon$}                                                         \\
+     & t \mapsto \sum_{i=0}^n (a_i + b_i) t^i,                                                  \\
+     & \FF \to \FF, \tag*{$fg \colon$}                                                          \\
+     & t \mapsto \sum_{i=0}^{2n} \left( \sum_{\ell=0}^{i} a_\ell b_{i-\ell} \right) t^i \period
+\end{align*}
+由此可得下面的命题:
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的多项式函数\period 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的多项式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的多项式函数\period
+
+    通俗地说, 若多项式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $\FF$ 的元 $t$, 这样的关系仍成立\period
+\end{proposition}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i=0}^n a_i x^i \in \FF[x]\period
+    \end{align*}
+    设 $t \in \FF$\period 我们把 $\FF$ 的元
+    \begin{align*}
+        \sum_{i=0}^n a_i t^i
+    \end{align*}
+    简单地写为 $f(t)$\period
+\end{definition}
+
+下面是带余除法的推论\period 它在根的讨论里起了重要的作用\period
+
+\begin{proposition}
+    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a \in \FF$\period 则存在 $n-1$ 次多项式 $q(x)$ ($\in \FF[x]$) 使
+    \begin{align*}
+        f(x) = q(x) (x-a) + f(a) \period
+    \end{align*}
+\end{proposition}
+
+\begin{definition}
+    设 $f(x)$ 是 $\FF$ 上 $x$ 的多项式\period 若有 $a \in \FF$ 使 $f(a) = 0$, 则说 $a$ 是 (多项式) $f(x)$ 的根\period
+\end{definition}
+
+\begin{proposition}
+    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式 ($n \geq 1$)\period $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次多项式 $q(x)$ ($\in \FF[x]$) 使
+    \begin{align*}
+        f(x) = q(x) (x-a) \period
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式 ($n \in \NN$)\period 则 $f(x)$ 至多有 $n$ 个不同的根\period
+\end{proposition}
+
 \begin{remark}
     在上节, 我们知道, 整环 $D$ 上的多项式 $f(x) = ax + b$ ($a \neq 0$) 不一定有根\period 可是, 在域 $\FF$ 里, $f(x)$ 就有根 $-\frac{b}{a}$\period
 \end{remark}
 
-由于 $\FF$ 里有无数多个元, 所以
+\begin{proposition}
+    设 $a_0$, $a_1$, $\cdots$, $a_n$ 是 $\FF$ 的元\period 设 $n$ 是非负整数\period 设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n \period
+    \end{align*}
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
+    \begin{align*}
+        f(t_0) = f(t_1) = \cdots = f(t_n) = 0,
+    \end{align*}
+    则 $f(x)$ 必为零多项式\period 通俗地说, 次不高于 $n$ (且系数为 $\FF$ 的元) 的多项式不可能有 $n$ 个以上的互不相同的根, 除非这个多项式是零\period
+\end{proposition}
+
+\begin{proposition}
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\FF$ 的元\period 设 $n$ 是非负整数\period 设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n,        \\
+         & g(x) = b_0 + b_1 x + \cdots + b_n x^n \period
+    \end{align*}
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
+    \begin{align*}
+        f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
+    \end{align*}
+    则 $f(x)$ 必等于 $g(x)$\period 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等\period
+\end{proposition}
+
+下面是一些新命题\period 由于 $\FF$ 里有无数多个元, 所以
 
 \begin{proposition}
     设 $f(x) \in \FF[x]$\period 设 $S \subset \FF$, 且 $S$ 有无数多个元\period 若任取 $t \in S$, 必有 $f(t) = 0$, 则 $f(x)$ 必为零多项式\period 通俗地说, 系数为 $\FF$ 的元的多项式不可能有无数多个根, 除非这个多项式是零\period
@@ -86,5 +395,5 @@
 \end{proposition}
 
 \begin{remark}
-    以后, 我们不再区分 ``多项式'' 与 ``多项式函数''\period 从现在开始, 读者可以认为本文接下来讨论的 ``多项式'' 跟中学里的多项式是同一事物\period
+    以后, 我们不再区分 ``多项式'' 与 ``多项式函数''\period 从现在开始, 您可以认为本文接下来讨论的 ``多项式'' 跟中学里的多项式是同一事物\period
 \end{remark}
