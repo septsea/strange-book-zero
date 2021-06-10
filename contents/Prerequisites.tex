@@ -21,7 +21,10 @@
 我们会经常遇到 ``若 $p$, 则 $q$'' 的命题\period
 
 \begin{definition}
-    设 ``若 $p$, 则 $q$'' 是真命题\period 我们说, $p$ 是 $q$ 的充分条件 \term{sufficient condition}, $q$ 是 $p$ 的必要条件 \term{necessary condition}\period
+    设 ``若 $p$, 则 $q$'' 是真命题\period 我们说, $p$ 是 $q$ 的充分条件 \term{sufficient condition}, $q$ 是 $p$ 的必要条件 \term{necessary condition}\period 用符号写出来, 就是
+    \begin{align*}
+        p \Rightarrow q \quad \text{or} \quad q \Leftarrow p \period
+    \end{align*}
 \end{definition}
 
 \begin{example}
@@ -29,7 +32,10 @@
 \end{example}
 
 \begin{remark}
-    我们会遇到形如 ``$\ell$ 的一个必要与充分条件是 $r$'' 的命题\period 换个说法, 就是 ``$r$ 是 $\ell$ 的一个必要与充分条件''\period 再分解一下, 就是 ``$r$ 是 $\ell$ 的一个必要条件'' 与 ``$r$ 是 $\ell$ 的一个充分条件'' 这二个命题\period 根据定义, 这相当于 ``若 $\ell$, 则 $r$'' 与 ``若 $r$, 则 $\ell$'' 都是真命题\period 也就是说, $\ell$ 跟 $r$ 是等价的 \term{equivalent}\period
+    我们会遇到形如 ``$\ell$ 的一个必要与充分条件是 $r$'' 的命题\period 换个说法, 就是 ``$r$ 是 $\ell$ 的一个必要与充分条件''\period 再分解一下, 就是 ``$r$ 是 $\ell$ 的一个必要条件'' 与 ``$r$ 是 $\ell$ 的一个充分条件'' 这二个命题\period 根据定义, 这相当于 ``若 $\ell$, 则 $r$'' 与 ``若 $r$, 则 $\ell$'' 都是真命题\period 也就是说, $\ell$ 跟 $r$ 是等价的 \term{equivalent}\period 用符号写出来, 就是
+    \begin{align*}
+        p \Leftrightarrow q \period
+    \end{align*}
 
     证明 ``$\ell$ 的一个必要与充分条件是 $r$'' 时, 我们会把它分为必要性 \term{necessity} 与充分性 \term{sufficiency} 二个部分\period 证明必要性, 就是证明 ``$r$ 是 $\ell$ 的一个必要条件'', 也就是证明 ``若 $\ell$, 则 $r$'' 是对的; 换句话说, 证明左边可以推出右边\period 证明充分性, 就是证明 ``$r$ 是 $\ell$ 的一个充分条件'', 也就是证明 ``若 $r$, 则 $\ell$'' 是对的; 换句话说, 证明右边可以推出左边\period
 \end{remark}
@@ -759,7 +765,7 @@
 \end{example}
 
 \begin{definition}
-    设 $\circ$ 是 $A$ 的二元运算\period 设 $x \in A$ 若存在 $y \in A$, 使
+    设 $\circ$ 是 $A$ 的二元运算\period 设 $e$ 是 $A$ 的幺元\period 设 $x \in A$\period 若存在 $y \in A$, 使
     \begin{align*}
         y \circ x = x \circ y = e,
     \end{align*}

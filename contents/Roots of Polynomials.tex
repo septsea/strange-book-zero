@@ -155,11 +155,11 @@
     \end{align*}
     所以, 若 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$\period 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$)\period
 
-    那么, 这有什么用呢? 举个简单的例\period 我们说, 不存在系数为整数的多项式 $f(x)$ 使 $f(1) = f(-1) + 1$\period 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
+    举个简单的例\period 我们说, 不存在系数为整数的多项式 $f(x)$ 使 $f(1) = f(-1) + 1$\period 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
     \begin{align*}
         1 = f(1) - f(-1) = (1 - (-1))r = 2r,
     \end{align*}
-    而 $1$ 不是偶数, 矛盾\period 之后我们还会提到这一点\period
+    而 $1$ 不是偶数, 矛盾\period
 \end{remark}
 
 现在, 我们讨论多项式的根的基本性质\period
@@ -229,7 +229,7 @@
 \begin{proposition}
     设 $a_0$, $a_1$, $\cdots$, $a_n$ 是 $D$ 的元\period 设 $n$ 是非负整数\period 设
     \begin{align*}
-        f(x) = \sum_{i=0}^{n} = a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \period
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n \period
     \end{align*}
     若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $D$ 的元, 且
     \begin{align*}
@@ -245,3 +245,22 @@
 \begin{remark}
     再看前面提到的 $4$ 元集 $V$\period 可以看出, 因为 $V$ 的元 ``不够多'', 所以出现了取零值的非零多项式\period
 \end{remark}
+
+此事实的一个推论是:
+
+\begin{proposition}
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $D$ 的元\period 设 $n$ 是非负整数\period 设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n,        \\
+         & g(x) = b_0 + b_1 x + \cdots + b_n x^n \period
+    \end{align*}
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $D$ 的元, 且
+    \begin{align*}
+        f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
+    \end{align*}
+    则 $f(x)$ 必等于 $g(x)$\period 通俗地说, 若次不高于 $n$ (且系数为整环的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等\period
+\end{proposition}
+
+\begin{pf}
+    考虑 $h(x) = f(x) - g(x)$\period 则 $\deg h(x) \leq n$\period $h(x)$ 有 $n+1$ 个不同的根\period 根据上个命题, $h(x)$ 是零多项式\period 这样, $f(x) = g(x)$\period
+\end{pf}

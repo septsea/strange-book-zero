@@ -21,7 +21,7 @@
 \begin{proposition}
     设
     \begin{align*}
-        f(x) = \sum_{i = 0}^{n} a_i x^i \in D[x],
+        f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in D[x],
     \end{align*}
     且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在 $q(x), r(x) \in D[x]$ 使
     \begin{align*}
@@ -35,28 +35,28 @@
 
     设 $m \leq \ell$ ($\ell \geq n-1$) 时, 命题成立\period 考虑 $m=\ell+1$ 的情形\period 此时, 设
     \begin{align*}
-        g(x) = \sum_{i = 0}^{\ell + 1} b_i x^i \period
+        g(x) = b_{\ell + 1} x^{\ell} + b_{\ell} x^{\ell} + \cdots + b_0 \in D[x] \period
     \end{align*}
-    则
+    作一个跟 $g(x)$ 有着共同首项的多项式:
     \begin{align*}
-             & g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)                                                                                                         \\
-        = {} & \sum_{i = 0}^{\ell+1} b_i x^i - b_{\ell+1} a_n^{-1} x^{\ell+1-n} \sum_{i = 0}^{n} a_i x^i                                                            \\
-        = {} & \sum_{i = 0}^{\ell} b_i x^i + b_{\ell+1} x^{\ell+1} - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} - b_{\ell+1} a_n^{-1} a_n x^{\ell+1} \\
-        = {} & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i} + b_{\ell+1} x^{\ell+1} - b_{\ell+1} x^{\ell+1}             \\
-        = {} & \sum_{i = 0}^{\ell} b_i x^i  - \sum_{i = 0}^{n-1} b_{\ell+1} a_n^{-1} a_i x^{\ell+1-n+i}\period
+        s(x) = {} & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} f(x)                                                                                      \\
+        = {}      & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} (a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0)                                                \\
+        = {}      & b_{\ell + 1} a_n^{-1} (a_n x^{\ell + 1} + a_{n-1} x^{\ell} + \cdots + a_0 x^{\ell + 1 - n})                                      \\
+        = {}      & b_{\ell + 1} (x^{\ell + 1} + a_n^{-1} a_{n-1} x^{\ell} + \cdots + a_n^{-1} a_0 x^{\ell + 1 - n})                                 \\
+        = {}      & b_{\ell + 1} x^{\ell + 1} + b_{\ell + 1} a_n^{-1} a_{n-1} x^{\ell} + \cdots + b_{\ell + 1} a_n^{-1} a_0 x^{\ell + 1 - n} \period
     \end{align*}
-    设 $r_1 (x) = g(x) - b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x)$\period 这样, $r_1 (x)$ 的次不高于 $\ell$\period 根据归纳假设, 有 $q_1 (x), r(x) \in D[x]$ 使
+    因为 $a_n$ 是单位, 故 $s(x) \in D[x]$\period 设 $r_1 (x) = g(x) - s(x) \in D[x]$\period 这样, $r_1 (x)$ 的次不高于 $\ell$\period 根据归纳假设, 有 $q_2 (x)$, $r_2(x) \in D[x]$ 使
     \begin{align*}
-        r_1 (x) = q_1 (x) f(x) + r(x), \quad \deg r(x) < n \period
+        r_1 (x) = q_2 (x) f(x) + r_2 (x), \quad \deg r_2 (x) < n \period
     \end{align*}
     所以
     \begin{align*}
         g(x)
-        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)             \\
-        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_1 (x) f(x) + r(x) \\
-        = {} & (b_{\ell+1} a_n^{-1} + q_1 (x)) f(x) + r(x) \period
+        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)                     \\
+        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_2 (x) f(x) + r_2 (x)      \\
+        = {} & (b_{\ell+1} a_n^{-1} x^{\ell+1-n} + q_2 (x)) f(x) + r_2 (x) \period
     \end{align*}
-    记 $q(x) = b_{\ell+1} a_n^{-1} + q_1 (x)$, 则 $q(x), r(x)$ 适合要求\period 所以, $m \leq \ell + 1$ 时, 命题成立\period 根据数学归纳法, 命题成立\period
+    记 $q(x) = b_{\ell+1} a_n^{-1} x^{\ell+1-n} + q_2 (x)$, $r(x) = r_2 (x)$, 则 $q(x)$, $r(x)$ 适合要求\period 所以, $m \leq \ell + 1$ 时, 命题成立\period 根据数学归纳法, 命题成立\period
 \end{pf}
 
 \begin{example}
@@ -127,11 +127,13 @@
 
     考虑 $\ZZ[x]$ 的多项式 $f(x)=2x$\period 设
     \begin{align*}
-        r(x) = r_0, \quad q(x) = \sum_{i=0}^{p} q_i x^i, \quad g(x) = \sum_{i=0}^{s} g_i x^i,
+         & r(x) = r_0,                            \\
+         & q(x) = q_0 + q_1 x + \cdots + q_p x^p, \\
+         & g(x) = g_0 + g_1 x + \cdots + g_s x^s,
     \end{align*}
-    且 $r_0, q_0, \cdots, q_p, g_0, \cdots, g_s \in \ZZ$\period 由 $g(x) = q(x)f(x) + r(x)$ 知
+    且 $r_0$, $q_0$, $\cdots$, $q_p$, $g_0$, $\cdots$, $g_s \in \ZZ$, $q_p$, $g_s \neq 0$\period 若 $g(x) = q(x)f(x) + r(x)$, 则
     \begin{align*}
-        \sum_{i=0}^{s} g_i x^i = r_0 + \sum_{i=1}^{p+1} 2q_{i-1} x^i \period
+        g_0 + g_1 x + \cdots + g_s x^s = r_0 + 2q_0 x + 2q_1 x^2 + \cdots + 2q_p x^{p+1} \period
     \end{align*}
     所以
     \begin{align*}
@@ -220,7 +222,7 @@
 \begin{proposition}
     设
     \begin{align*}
-        f(x) = \sum_{i = 0}^{n} a_i x^i \in D[x],
+        f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in D[x],
     \end{align*}
     且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在唯一的 $q(x), r(x) \in D[x]$ 使
     \begin{align*}

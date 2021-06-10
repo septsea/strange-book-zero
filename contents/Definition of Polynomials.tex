@@ -162,6 +162,10 @@
     \begin{align*}
         \deg (f(x) \pm g(x)) = \deg f(x) \period
     \end{align*}
+    类似地, 若 $\deg f(x) < \deg g(x)$, 则
+    \begin{align*}
+        \deg (f(x) \pm g(x)) = \deg g(x) \period
+    \end{align*}
 \end{remark}
 
 \begin{remark}
@@ -169,16 +173,13 @@
     \begin{align*}
         a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 x^0 \period
     \end{align*}
-    这跟中学里接触的多项式是一样的\period 当然, 也可以用 $\sum$ 符号书写:
-    \begin{align*}
-        \sum_{i = 0}^{n} a_i x^i \quad \text{or} \quad \sum_{i = 0}^{n} a_{n-i} x^{n-i} \period
-    \end{align*}
+    这跟中学里接触的多项式是一样的\period
 
-    (非零) 多项式的最高次非零项是首项 \term{leading term}\period
+    (非零) 多项式的最高次非零项是首项 \term{leading term}\period 它的系数是此多项式的首项系数 \term{the coefficient of the leading term}\period
 \end{remark}
 
 \begin{example}
-    $y - y^2 - 7y^4 \in \ZZ[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$\period
+    $y - y^2 - 7y^4 \in \ZZ[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$, 且其首项系数是 $-7$\period
 \end{example}
 
 \begin{definition}
@@ -192,7 +193,7 @@
     \end{align*}
     其中
     \begin{align*}
-        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0,
+        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
     \end{align*}
     且约定 $i > m$ 时 $a_i = 0$, $j > n$ 时 $b_j = 0$\period 在这个约定下, 不难看出, $\ell > m+n$ 时, $c_\ell = 0$\period 所以, 我们至少有
     \begin{align*}
@@ -315,7 +316,9 @@
     \end{align*}
     其中
     \begin{align*}
-        v_t = (\text{the sum of all $a_i b_j u_r$'s with $i+j+r=t$})\period
+        v_t
+        = {} & (\text{the sum of all $a_i b_j u_r$'s with $i+j+r=t$})                                  \\
+        = {} & a_0 b_0 u_t + a_0 b_1 u_{t-1} + \cdots + a_0 b_t u_0 + a_1 b_0 u_{t-1} + \cdots \period
     \end{align*}
     类似地, 计算 $f(x) (g(x) h(x))$ 也可以得到一样的结果\period 也就是说, $D[x]$ 的乘法适合结合律\period
 
