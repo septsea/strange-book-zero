@@ -155,7 +155,8 @@
         "mathbb",
         "mathrm",
         "qedhere",
-        "texorpdfstring"
+        "texorpdfstring",
+        "smallmatrix"
     ],
     "todo-tree.filtering.excludeGlobs": [
         "**/*.ttc",

@@ -62,10 +62,10 @@
 \end{example}
 
 \begin{example}
-    求次为 $2$ 的多项式 $f(x)$, 使 $f(=1)=-1$, $f(1)=1$, $f(2)=5$\period
+    求次为 $2$ 的多项式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$\period
 \end{example}
 
-设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 这 $n+1$ 个不同的元称为 $n+1$ 个节点 \term{node} 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 通俗地说, 多项式插值 \term{polynomial interpolation} 的任务是: 找一个多项式 $f(x) \in \FF[x]$ 使
+设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 这 $n+1$ 个不同的元称为 $n+1$ 个节点 \term{node}\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 通俗地说, 多项式插值 \term{polynomial interpolation} 的任务是: 找一个多项式 $f(x) \in \FF[x]$ 使
 \begin{align*}
     f(x_i) = y_i \quad (i = 0,1,\cdots,n),
 \end{align*}
@@ -181,3 +181,139 @@
     \end{align*}
     取 $q(x) = q_s (x)$ 即可\period
 \end{pf}
+
+\begin{example}
+    我们考虑非常特殊的情形\period 如果 $y_0$, $y_1$, $\cdots$, $y_n$ 中恰有一个是 $1$, 而剩下的全是 $0$, 那这样的多项式应该长什么样呢?
+
+    以 $y_0 = 1$, $y_1 = y_2 = \cdots = y_n = 0$ 为例\period 这样, 多项式 $f(x)$ 有根 $x_1$, $x_2$, $\cdots$, $x_n$\period 根据上个命题, 存在多项式 $q(x)$ 使
+    \begin{align*}
+        f(x) = q(x) (x - x_1) (x - x_2) \cdots (x - x_n) \period
+    \end{align*}
+    因为 $f(x)$ 的次低于 $n+1$, 而 $(x - x_1) (x - x_2) \cdots (x - x_n)$ 的次为 $n$, 故 $q(x)$ 一定是非零的数 $c$, 即
+    \begin{align*}
+        f(x) = c (x - x_1) (x - x_2) \cdots (x - x_n) \period
+    \end{align*}
+    因为 $f(x_0) = y_0 = 1$, 故
+    \begin{align*}
+        1 = c (x_0 - x_1) (x_0 - x_2) \cdots (x_0 - x_n),
+    \end{align*}
+    也就是
+    \begin{align*}
+        c = \frac{1}{(x_0 - x_1) (x_0 - x_2) \cdots (x_0 - x_n)} \period
+    \end{align*}
+    故
+    \begin{align*}
+        f(x) = \frac{(x - x_1) (x - x_2) \cdots (x - x_n)}{(x_0 - x_1) (x_0 - x_2) \cdots (x_0 - x_n)} \period
+    \end{align*}
+
+    类似地, 适合条件 $y_1 = 1$, $y_0 = y_2 = y_3 = \cdots = y_n = 0$ 的多项式是
+    \begin{align*}
+        \frac{(x - x_0)(x - x_2)(x - x_3) \cdots (x - x_n)}{(x_1 - x_0)(x_1 - x_2)(x_1 - x_3) \cdots (x_1 - x_n)} \period
+    \end{align*}
+    可以将这个多项式简单地写为
+    \begin{align*}
+        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq 1\end{smallmatrix}} \frac{x - x_\ell}{x_1 - x_\ell} \period
+    \end{align*}
+    上面的 $f(x)$ 也可以写为
+    \begin{align*}
+        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq 0\end{smallmatrix}} \frac{x - x_\ell}{x_0 - x_\ell} \period
+    \end{align*}
+\end{example}
+
+回到一般的设定 (也就是说, $y_0$, $y_1$, $\cdots$, $y_n$ 是 $\FF$ 的任意元)\period 作 $n+1$ 个多项式
+\begin{align*}
+    L_{i} (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell} \quad (i = 0,1,\cdots,n) \period
+\end{align*}
+不难看出, 任取 $i,j = 0,1,\cdots,n$,
+\begin{align*}
+    L_{i} (x_j) = \begin{cases}
+        1, \quad i = j; \\
+        0, \quad i \neq j \period
+    \end{cases}
+\end{align*}
+所以,
+\begin{align*}
+    f(x) = \sum_{i = 0}^{n} y_i L_{i} (x) = y_0 L_0 (x) + y_1 L_1 (x) + \cdots + y_n L_n (x)
+\end{align*}
+适合条件
+\begin{align*}
+    f(x_i) = y_i \quad (i = 0,1,\cdots,n),
+\end{align*}
+且
+\begin{align*}
+    \deg f(x) \leq n < n + 1 \period
+\end{align*}
+
+综合上面的事实, 我们已经证明了
+
+\begin{proposition}
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 存在唯一的多项式
+    \begin{align*}
+        f(x) = \sum_{i = 0}^{n} y_i \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell}
+    \end{align*}
+    适合条件
+    \begin{align*}
+        f(x_i) = y_i \quad (i = 0,1,\cdots,n),
+    \end{align*}
+    且
+    \begin{align*}
+        \deg f(x) < n + 1 \period
+    \end{align*}
+    这个公式以 ``Lagrange 插值公式'' \term{Lagrange's interpolation formula} 之名闻名全球\period
+\end{proposition}
+
+\begin{remark}
+    我们在前面接触的线性无关的多项式组 (几乎都) 是次不等的多项式\period Lagrange 插值公式告诉我们, $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 适合:
+
+    (i) $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 是线性无关的;
+
+    (ii) 任意次不高于 $n$ 的多项式都可唯一地写为 $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 的线性组合\period
+\end{remark}
+
+\begin{example}
+    取 $n = 2$\period 取
+    \begin{align*}
+         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2,        \\
+         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5 \period
+    \end{align*}
+    计算 $L_0 (x)$, $L_1 (x)$, $L_2 (x)$:
+    \begin{align*}
+         & L_0 (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq 2 \\\ell \neq 0\end{smallmatrix}} \frac{x - x_\ell}{x_0 - x_\ell} = \frac{(x - 1)(x - 2)}{(-1 - 1)(-1 - 2)} = \frac16 x^2 - \frac12 x + \frac13, \\
+         & L_1 (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq 2 \\\ell \neq 1\end{smallmatrix}} \frac{x - x_\ell}{x_1 - x_\ell} = \frac{(x + 1)(x - 2)}{(1 + 1)(1 - 2)} = -\frac12 x^2 + \frac12 x + 1,        \\
+         & L_2 (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq 2 \\\ell \neq 2\end{smallmatrix}} \frac{x - x_\ell}{x_2 - x_\ell} = \frac{(x + 1)(x - 1)}{(2 + 1)(2 - 1)} = \frac13 x^2 - \frac13 \period
+    \end{align*}
+    所以, 适合条件
+    \begin{align*}
+         & f(-1) = -1, \quad f(1) = 1, \quad f(2) = 5, \\
+         & \deg f(x) < n + 1 = 3
+    \end{align*}
+    的多项式 $f(x)$ 就是
+    \begin{align*}
+             & (-1)L_0 (x) + 1L_1 (x) + 5L_2 (x)  \\
+        = {} & -L_0 (x) + L_1 (x) + 5L_2 (x)      \\
+        = {} & -\frac16 x^2 + \frac12 x - \frac13
+        - \frac12 x^2 + \frac12 x + 1
+        + \frac53 x^2 - \frac53                   \\
+        = {} & x^2 + x - 1 \period
+    \end{align*}
+    这跟前面用三元一次方程组算出的答案完全一致\period
+\end{example}
+
+\begin{example}
+    取 $n = 3$\period 在上例的基础上, 追加
+    \begin{align*}
+        x_3 = -2, \quad y_3 = -11 \period
+    \end{align*}
+    我们的目标是: 找多项式 $f(x)$ 适合条件
+    \begin{align*}
+         & f(-1) = -1, \quad f(1) = 1, \quad f(2) = 5, \quad f(-2) = -11, \\
+         & \deg f(x) < n + 1 = 4 \period
+    \end{align*}
+    在原理上, 并没有什么复杂的地方\period 求出 $L_0 (x)$, $L_1 (x)$, $L_2 (x)$, $L_3 (x)$ 后, 答案就出来了:
+    \begin{align*}
+        f(x)
+        = {} & - \frac{(x-1)(x-2)(x+2)}{(-1-1)(-1-2)(-1+2)} + \frac{(x+1)(x-2)(x+2)}{(1+1)(1-2)(1+2)}                          \\
+             & + 5 \cdot \frac{(x+1)(x-1)(x+2)}{(2+1)(2-1)(2+2)} - 11 \cdot \frac{(x+1)(x-1)(x-2)}{(-2+1)(-2-1)(-2-2)} \period
+    \end{align*}
+    不过, 实践告诉我们, 拆开 $4$ 个 $3$ 次多项式后再相加可不是什么轻松的事儿——至少比前一个例复杂一些\period 而且, 加一个节点后, $L_0 (x)$, $L_1 (x)$, $L_2 (x)$ (跟之前相比) 都要多乘一个一次多项式\period 有无稍微容易一些的算法呢?
+\end{example}
