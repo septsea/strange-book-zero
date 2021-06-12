@@ -1,0 +1,431 @@
+\subsection*{Derivatives}
+\addcontentsline{toc}{subsection}{Derivatives}
+\markright{Derivatives}
+
+本节讨论多项式的导数\period
+
+在本节, 我们会将一些容易证明的命题留给读者练习\period 读者可乘此机会让自己熟悉证明命题的过程与数学归纳法\period
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \in D[x] \period
+    \end{align*}
+    $f(x)$ 的导数 \term{derivative} 是多项式
+    \begin{align*}
+        f^{\prime}(x) = 0 + 1a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1} \in D[x] \period
+    \end{align*}
+    $f^{\prime} (x)$ 也可写为 $(f(x))^{\prime}$\period
+\end{definition}
+
+\begin{remark}
+    整环 $D$ 里不一定有名为 ${} \pm 2$, ${}\pm 3$, $\cdots$ 的元\period 回忆一下, 若 $a \in D$, $n \in \NN$, 则
+    \begin{align*}
+        na = n \cdot a = \underbrace{a + a + \cdots + a}_{\text{$n$ $a$'s}} \period
+    \end{align*}
+    若 $-n \in \NN$, 则
+    \begin{align*}
+        na = -((-n)a) \period
+    \end{align*}
+    当然, 在 $\ZZ$ (或 $\FF$) 里, $na$ 可以认为是 $\ZZ$ (或 $\FF$) 的二个元 $n$ 与 $a$ 的积\period
+\end{remark}
+
+\begin{example}
+    取 $f(x) = x^6 - x^3 + 1 \in D[x]$\period 若 $D = \FF$, 则
+    \begin{align*}
+        f^{\prime}(x) = 6x^5 - 3x^2 + 0 = 6x^5 - 3x^2 \period
+    \end{align*}
+    若 $D$ 是 $4$ 元集 $V$, 则
+    \begin{align*}
+        f^{\prime}(x) = (6 \cdot 1)x^5 + (3 \cdot (-1)) x^2 + 0 = x^2 \period
+    \end{align*}
+    这里, $V = \{\, 0,1,\tau,\tau^2 \,\}$\period 它的加法与乘法如下:
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{c|cccc}
+            +      & 0      & 1      & \tau   & \tau^2 \\ \hline
+            0      & 0      & 1      & \tau   & \tau^2 \\
+            1      & 1      & 0      & \tau^2 & \tau   \\
+            \tau   & \tau   & \tau^2 & 0      & 1      \\
+            \tau^2 & \tau^2 & \tau   & 1      & 0      \\
+        \end{array}
+        \qquad \qquad
+        \begin{array}{c|cccc}
+            \cdot  & 0 & 1      & \tau   & \tau^2 \\ \hline
+            0      & 0 & 0      & 0      & 0      \\
+            1      & 0 & 1      & \tau   & \tau^2 \\
+            \tau   & 0 & \tau   & \tau^2 & 1      \\
+            \tau^2 & 0 & \tau^2 & 1      & \tau   \\
+        \end{array}
+    \end{align*}
+    在前面 (Prerequisites 节的 Domains 小节), 我们知道, $V$ 是整环\period 任取 $a \in V$, 都有
+    \begin{align*}
+        2 \cdot a = a + a = 0 \period
+    \end{align*}
+    所以 $a = -a$\period 这样,
+    \begin{align*}
+         & 6 \cdot 1 = 2 \cdot (3 \cdot 1) = (3 \cdot 1) + (3 \cdot 1) = 0,  \\
+         & 3 \cdot (-1) = (-1) + (-1) + (-1) = 1 + 1 + 1 = 0 + 1 = 1 \period
+    \end{align*}
+    所以, 当我们把 $f(x)$ 视为 $V[x]$ 中元时, 它的导数 ``有点奇怪''\period 同样的道理, 在 $V$ 与 $V[x]$ 中,
+    \begin{align*}
+        (x^{2k})^{\prime} = (2k \cdot 1) x^{2k-1} = 0 x^{2k-1} = 0 \period
+    \end{align*}
+\end{example}
+
+\begin{remark}
+    导数就是 $D[x]$ 到 $D[x]$ 的函数 (也就是 $D[x]$ 的变换):
+    \begin{align*}
+         & D[x] \to D[x], \tag*{$\prime \colon$}                                               \\
+         & a_0 + a_1 x + \cdots + a_n x^n \mapsto a_1 + 2a_2 x + \cdots + na_n x^{n-1} \period
+    \end{align*}
+\end{remark}
+
+\begin{definition}
+    设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_m x^m, \\
+         & g(x) = b_0 + b_1 x + \cdots + b_n x^n
+    \end{align*}
+    为 $D[x]$ 中的二个元\period 我们称
+    \begin{align*}
+        (g \circ f)(x) = b_0 + b_1 f(x) + \cdots + b_n (f(x))^n
+    \end{align*}
+    为 $f(x)$ 与 $g(x)$ 的复合 \term{composition}\period
+\end{definition}
+
+\begin{remark}
+    可以看到, $f(x)$ 与 $g(x)$ 的复合仍为多项式\period 设
+    \begin{align*}
+        h(x) = d_0 + d_1 x + \cdots + d_s x^s \in D[x] \period
+    \end{align*}
+    记
+    \begin{align*}
+        \ell(x)
+        = {} & (h \circ g) (x)                                         \\
+        = {} & d_0 + d_1 (b_0 + b_1 x + \cdots + b_n x^n) + \cdots     \\
+             & \qquad \qquad + d_s (b_0 + b_1 x + \cdots + b_n x^n)^s,
+    \end{align*}
+    则
+    \begin{align*}
+        ((h \circ g) \circ f) (x)
+        = {} & (\ell \circ f) (x)                                             \\
+        = {} & d_0 + d_1 (b_0 + b_1 f(x) + \cdots + b_n (f(x))^n) + \cdots    \\
+             & \qquad \qquad + d_s (b_0 + b_1 f(x) + \cdots + b_n (f(x))^n)^s \\
+        = {} & d_0 + d_1 (g \circ f) (x) + \cdots + d_s ((g \circ f) (x))^s   \\
+        = {} & (h \circ (g \circ f)) (x) \period
+    \end{align*}
+    换句话说, 多项式的复合适合结合律\period
+\end{remark}
+
+\begin{example}
+    取
+    \begin{align*}
+        g(x) = b_0 + b_1 x + \cdots + b_n x^n, \quad f(x) = x - c \in D[x] \period
+    \end{align*}
+    那么
+    \begin{align*}
+         & (g \circ f) (x) = b_0 + b_1 (x-c) + \cdots + b_n (x-c)^n,     \\
+         & (f \circ g) (x) = -c + b_0 + b_1 x + \cdots + b_n x^n \period
+    \end{align*}
+\end{example}
+
+\begin{example}
+    考虑 $\ZZ$ 与 $\ZZ[x]$\period 取
+    \begin{align*}
+        f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1 \period
+    \end{align*}
+    不难得到
+    \begin{align*}
+        f^{\prime} (x) = 3x^2, \quad g^{\prime} (x) = 2x + 1 \period
+    \end{align*}
+
+    (i) $4g(x)$ 也是多项式, 当然可以有导数\period 因为
+    \begin{align*}
+        4g(x) = 4x^2 + 4x - 4,
+    \end{align*}
+    故
+    \begin{align*}
+        (4g(x))^{\prime} = 8x + 4,
+    \end{align*}
+    这刚好是 $4g^{\prime} (x)$:
+    \begin{align*}
+        4g^{\prime} = 4(2x + 1) = 8x + 4 \period
+    \end{align*}
+
+    (ii) $f(x) + g(x)$ 也是多项式\period 因为
+    \begin{align*}
+        f(x) + g(x) = x^3 + 2 + x^2 + x - 1 = x^3 + x^2 + x + 1,
+    \end{align*}
+    故
+    \begin{align*}
+        (f(x) + g(x))^{\prime} = 3x^2 + 2x + 1,
+    \end{align*}
+    而这刚好是 $f^{\prime} (x) + g^{\prime} (x)$:
+    \begin{align*}
+        f^{\prime} (x) + g^{\prime} (x) = 3x^2 + 2x + 1 \period
+    \end{align*}
+\end{example}
+
+一般地, 我们有
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in D[x]$, $c \in D$\period 则
+
+    (i) $(cf(x))^{\prime} = c f^{\prime} (x)$;
+
+    (ii) $(f(x) \pm g(x))^{\prime} = f^{\prime} (x) \pm g^{\prime} (x)$\period
+
+    由 (i) (ii) 与数学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in D$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in D[x]$ 时,
+    \begin{align*}
+             & (c_0 f_0(x) + c_1 f_1(x) + \cdots + c_{k-1} f_{k-1}(x))^{\prime}                         \\
+        = {} & c_0 f^{\prime}_0(x) + c_1 f^{\prime}_1(x) + \cdots + c_{k-1} f^{\prime}_{k-1}(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    我们证明 (i) (ii), 将剩下的推论留给读者作练习\period 设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n, \\
+         & g(x) = b_0 + b_1 x + b_2 x^2 + \cdots + b_{n-1} x^{n-1} + b_n x^n
+    \end{align*}
+    是 $D[x]$ 中二个元\period
+
+    (i) $cf(x)$ 就是多项式
+    \begin{align*}
+        ca_0 + ca_1 x + ca_2 x^2 + \cdots + ca_{n-1} x^{n-1} + ca_n x^n,
+    \end{align*}
+    故
+    \begin{align*}
+        (cf(x))^{\prime}
+        = {} & (ca_0 + ca_1 x + ca_2 x^2 + \cdots + ca_{n-1} x^{n-1} + ca_n x^n)^{\prime} \\
+        = {} & ca_1 + 2ca_2 x + \cdots + (n-1)ca_{n-1} x^{n-2} + nca_n x^{n-1}            \\
+        = {} & ca_1 + c2a_2 x + \cdots + c(n-1)a_{n-1} x^{n-2} + cna_n x^{n-1}            \\
+        = {} & c(a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1})             \\
+        = {} & cf^{\prime} (x) \period
+    \end{align*}
+
+    (ii) $f(x) \pm g(x)$ 就是多项式
+    \begin{align*}
+         & (a_0 \pm b_0) + (a_1 \pm b_1) x + (a_2 \pm b_2) x^2 + \cdots       \\
+         & \qquad \qquad + (a_{n-1} \pm b_{n-1}) x^{n-1} + (a_n \pm b_n) x^n,
+    \end{align*}
+    故
+    \begin{align*}
+             & (f(x) \pm g(x))^{\prime}                                                        \\
+        = {} & ((a_0 \pm b_0) + (a_1 \pm b_1) x + (a_2 \pm b_2) x^2 + \cdots                   \\
+             & \qquad \qquad + (a_{n-1} \pm b_{n-1}) x^{n-1} + (a_n \pm b_n) x^n)^{\prime}     \\
+        = {} & (a_1 \pm b_1) + 2(a_2 \pm b_2) x + \cdots + (n-1) (a_{n-1} \pm b_{n-1}) x^{n-2} \\
+             & \qquad \qquad + n (a_n \pm b_n) x^{n-1}                                         \\
+        = {} & (a_1 \pm b_1) + (2a_2 x \pm 2b_2 x) + \cdots + ((n-1)a_{n-1} x^{n-2}            \\
+             & \qquad \qquad \pm (n-1)b_{n-1} x^{n-2})
+        + (na_n x^{n-1} \pm nb_n x^{n-1})                                                      \\
+        = {} & (a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1})                   \\
+             & \qquad \qquad \pm (b_1 + 2b_2 x + \cdots + (n-1)b_{n-1} x^{n-2} + nb_n x^{n-1}) \\
+        = {} & f^{\prime} (x) \pm g^{\prime} (x) \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in D[x]$\period 则
+    \begin{align*}
+        (f(x) g(x))^{\prime} = f^{\prime} (x) g(x) + f(x) g^{\prime} (x) \period \tag*{(\myStar)}
+    \end{align*}
+    由 (\myStar) 与数学归纳法可知: 当 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in D[x]$ 时,
+    \begin{align*}
+             & (f_0 (x) f_1 (x) \cdots f_{k-1} (x))^{\prime}                                                      \\
+        = {} & f_0^{\prime} (x) f_1 (x) \cdots f_{k-1} (x) + f_0 (x) f_1^{\prime} (x) \cdots f_{k-1} (x) + \cdots \\
+             & \qquad \qquad + f_0 (x) f_1 (x) \cdots f_{k-1}^{\prime} (x) \period
+    \end{align*}
+    取 $f_0 (x) = f_1 (x) = \cdots = f_{k-1} (x) = f(x)$ 知
+    \begin{align*}
+        (f(x))^k = k(f(x))^{k-1} f^{\prime} (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    我们证明 (\myStar), 将剩下的二个式留给读者作练习\period 首先, 任取 $i$, $j \in \NN$, $p$, $q \in D$, 有
+    \begin{align*}
+        px^i \cdot qx^j = pqx^{i+j} \period
+    \end{align*}
+    这样,
+    \begin{align*}
+        (px^i \cdot qx^j)^{\prime}
+        = {} & (pqx^{i+j})^{\prime}                                    \\
+        = {} & (i+j)pq x^{i+j-1}                                       \\
+        = {} & ipq x^{(i-1)+j} + jpq x^{i+(j-1)}                       \\
+        = {} & ipq x^{i-1} x^j + jpq x^i x^{j-1}                       \\
+        = {} & (ipx^{i-1}) (qx^j) + (px^i) (jqx^{j-1})                 \\
+        = {} & (px^i)^{\prime} (qx^j) + (px^i) (qx^j)^{\prime} \period
+    \end{align*}
+
+    设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_m x^m, \\
+         & g(x) = b_0 + b_1 x + \cdots + b_n x^n
+    \end{align*}
+    为 $D[x]$ 中的二个元\period 取 $px^i$ 为 $a_0$, $a_1 x$, $\cdots$, $a_m x^m$, 有
+    \begin{align*}
+        (a_0 \cdot qx^j)^{\prime}     & = (a_0)^{\prime} (qx^j) + (a_0) (qx^j)^{\prime},                \\
+        (a_1 x \cdot qx^j)^{\prime}   & = (a_1 x)^{\prime} (qx^j) + (a_1 x) (qx^j)^{\prime},            \\
+        \cdots \cdots \cdots \cdots   & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,        \\
+        (a_m x^m \cdot qx^j)^{\prime} & = (a_m x^m)^{\prime} (qx^j) + (a_m x^m) (qx^j)^{\prime} \period
+    \end{align*}
+    所以
+    \begin{align*}
+             & (f(x) \cdot qx^j)^{\prime}                                                                             \\
+        = {} & (a_0 \cdot qx^j + a_1 x \cdot qx^j + \cdots + a_m x^m \cdot qx^j)^{\prime}                             \\
+        = {} & (a_0 \cdot qx^j)^{\prime} + (a_1 x \cdot qx^j)^{\prime} + \cdots
+        + (a_m x^m \cdot qx^j)^{\prime}                                                                               \\
+        = {} & ((a_0)^{\prime} (qx^j) + (a_0) (qx^j)^{\prime}) + ((a_1 x)^{\prime} (qx^j)
+        + (a_1 x) (qx^j)^{\prime})                                                                                    \\
+             & \qquad \qquad + \cdots + ((a_m x^m)^{\prime} (qx^j) + (a_m x^m) (qx^j)^{\prime})                       \\
+        = {} & ((a_0)^{\prime} (qx^j) + (a_1 x)^{\prime} (qx^j) + \cdots + (a_m x^m)^{\prime} (qx^j))                 \\
+             & \qquad \qquad + ((a_0) (qx^j)^{\prime} + (a_1 x) (qx^j)^{\prime} + \cdots + (a_m x^m) (qx^j)^{\prime}) \\
+        = {} & ((a_0)^{\prime} + (a_1 x)^{\prime} + \cdots + (a_m x^m)^{\prime}) (qx^j)                               \\
+             & \qquad \qquad + (a_0 + a_1 x + \cdots + a_m x^m) (qx^j)^{\prime}                                       \\
+        = {} & (a_0 + a_1 x + \cdots + a_m x^m)^{\prime} (qx^j) + f(x) (qx^j)^{\prime}                                \\
+        = {} & f^{\prime} (x) (qx^j) + f(x) (qx^j)^{\prime} \period
+    \end{align*}
+    再取 $qx^j$ 为 $b_0$, $b_1 x$, $\cdots$, $b_n x^n$, 有
+    \begin{align*}
+        (f(x) \cdot b_0)^{\prime}     & = f^{\prime} (x) (b_0) + f(x) (b_0)^{\prime},                \\
+        (f(x) \cdot b_1 x)^{\prime}   & = f^{\prime} (x) (b_1 x) + f(x) (b_1 x)^{\prime},            \\
+        \cdots \cdots \cdots \cdots   & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,     \\
+        (f(x) \cdot b_n x^n)^{\prime} & = f^{\prime} (x) (b_n x^n) + f(x) (b_n x^n)^{\prime} \period
+    \end{align*}
+    所以
+    \begin{align*}
+             & (f(x) g(x))^{\prime}                                                                           \\
+        = {} & (f(x) \cdot b_0 + f(x) \cdot b_1 x + \cdots + f(x) \cdot b_n x^n)^{\prime}                     \\
+        = {} & (f(x) \cdot b_0)^{\prime} + (f(x) \cdot b_1 x)^{\prime} + \cdots
+        + (f(x) \cdot b_n x^n)^{\prime}                                                                       \\
+        = {} & (f^{\prime} (x) (b_0) + f(x) (b_0)^{\prime}) + (f^{\prime} (x) (b_1 x)
+        + f(x) (b_1 x)^{\prime})                                                                              \\
+             & \qquad \qquad + \cdots + (f^{\prime} (x) (b_n x^n) + f(x) (b_n x^n)^{\prime})                  \\
+        = {} & (f^{\prime} (x) (b_0) + (f^{\prime} (x) (b_1 x) + \cdots + f^{\prime} (x) (b_n x^n))           \\
+             & \qquad \qquad + (f(x) (b_0)^{\prime} + f(x) (b_1 x)^{\prime} + \cdots f(x) (b_n x^n)^{\prime}) \\
+        = {} & f^{\prime} (x) (b_0 + b_1 x + \cdots + b_n x^n)                                                \\
+             & \qquad \qquad + f(x) ((b_0)^{\prime} + (b_1 x)^{\prime} + \cdots + (b_n x^n)^{\prime})         \\
+        = {} & f^{\prime} (x) g(x) + f(x) (b_0 + b_1 x + \cdots + b_n x^n)^{\prime}                           \\
+        = {} & f^{\prime} (x) g(x) + f(x) g^{\prime} (x) \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{example}
+    考虑 $\ZZ$ 与 $\ZZ[x]$\period 取
+    \begin{align*}
+        f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1 \period
+    \end{align*}
+    不难得到
+    \begin{align*}
+        f^{\prime} (x) = 3x^2, \quad g^{\prime} (x) = 2x + 1 \period
+    \end{align*}
+
+    $f(x)$ 与 $g(x)$ 的积
+    \begin{align*}
+        f(x) g(x) = x^5 + x^4 - x^3 + 2x^2 + 2x - 2
+    \end{align*}
+    的导数是
+    \begin{align*}
+        (f(x) g(x))^{\prime} = 5x^4 + 4x^3 - 3x^2 + 4x + 2 \period
+    \end{align*}
+    如果用上面的 (\myStar) 计算, 就是
+    \begin{align*}
+             & f^{\prime} (x) g(x) + f(x) g^{\prime} (x) \\
+        = {} & 3x^2 (x^2 + x - 1) + (x^3 + 2) (2x + 1)   \\
+        = {} & 3x^4 + 3x^3 - 3x^2 + 2x^4 + x^3 + 4x + 2  \\
+        = {} & 5x^4 + 4x^3 - 3x^2 + 4x + 2 \period
+    \end{align*}
+\end{example}
+
+也许这不太能体现 (\myStar) 的作用: 算二个多项式积的导数, 拆开算好像没什么不方便的\period 的确如此\period 可是 (\myStar) 的推论
+\begin{align*}
+    ((f(x))^k)^{\prime} = k(f(x))^{k-1} f^{\prime}(x)
+\end{align*}
+很有用\period 看下面的例\period
+
+\begin{example}
+    还是考虑 $\ZZ$ 与 $\ZZ[x]$\period 计算
+    \begin{align*}
+         & p(x) = (g \circ f) (x) = (x^3 + 2)^2 + (x^3 + 2) - 1, \\
+         & q(x) = (f \circ g) (x) = (x^2 + x - 1)^3 + 2
+    \end{align*}
+    的导数\period
+
+    用定义写出 $p(x)$ 的导数并不是很难\period 因为
+    \begin{align*}
+        p(x) = (x^6 + 4x^3 + 4) + x^3 + 2 - 1 = x^6 + 5x^3 + 5,
+    \end{align*}
+    故
+    \begin{align*}
+        p^{\prime} (x) = 6x^5 + 15x^2 \period
+    \end{align*}
+    不过用定义写出 $q(x)$ 就有点麻烦了: 三项的立方不是那么好算\period 但是, 我们利用这个推论, 可直接写出
+    \begin{align*}
+        q^{\prime} (x) = 3(x^2 + x - 1)^2 (2x + 1) \period
+    \end{align*}
+\end{example}
+
+记 $g(x) = x^k$\period 取 $f(x) \in D[x]$\period 不难看出,
+\begin{align*}
+    (f(x))^k = (g \circ f)(x) \period
+\end{align*}
+所以
+\begin{align*}
+    (g \circ f)^{\prime}(x) = ((f(x))^k)^{\prime} = k(f(x))^{k-1} f^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) \period
+\end{align*}
+
+这告诉我们什么呢? 如果我们把 $f(x)$ 看成文字 $y$, 那么 $y^k \in D[y]$ 的导数是 $ky^{k-1}$\period 将此结果乘 $y = f(x) \in D[x]$ 的导数 $f^{\prime} (x)$, 就是 $(g \circ f) (x) \in D[x]$ 的导数\period
+
+取 $h(x) = x \in D[x]$\period 那么 $(f \circ h)(x)$ 就是 $f(x)$\period 因为 $(x)^{\prime} = 1$, 所以
+\begin{align*}
+    (f \circ h)^{\prime} (x) = f^{\prime} (x) = (f^{\prime} \circ h) (x) h^{\prime} (x) \period
+\end{align*}
+
+我们作出猜想: 任取 $f(x)$, $g(x) \in D[x]$, 必有
+\begin{align*}
+    (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) \period
+\end{align*}
+幸运的事儿是, 这个猜想是正确的\period
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in D[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的导数适合链规则 \term{the chain rule}:
+    \begin{align*}
+        (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    设
+    \begin{align*}
+        g(x) = b_0 + b_1 x + b_2 x^2 + \cdots + b_{n-1} x^{n-1} + b_n x^n \in D[x],
+    \end{align*}
+    则
+    \begin{align*}
+        (g \circ f) (x) = b_0 + b_1 f(x) + b_2 (f(x))^2 + \cdots + b_{n-1} (f(x))^{n-1} + b_n (f(x))^n \period
+    \end{align*}
+    所以
+    \begin{align*}
+             & (g \circ f)^{\prime} (x)                                 \\
+        = {} & b_1 f^{\prime} (x) + b_2 ((f(x))^2)^{\prime} + \cdots
+        + b_{n-1} ((f(x))^{n-1})^{\prime} + b_n ((f(x))^n)^{\prime}     \\
+        = {} & b_1 f^{\prime} (x) + b_2 \cdot 2 f(x) f^{\prime} (x)
+        + \cdots + b_{n-1} \cdot (n-1) (f(x))^{n-2} f^{\prime} (x)      \\
+             & \qquad \qquad + b_n \cdot n (f(x))^{n-1} f^{\prime} (x)  \\
+        = {} & b_1 f^{\prime} (x) + 2b_2 f(x) f^{\prime} (x)
+        + \cdots + (n-1) b_{n-1} (f(x))^{n-2} f^{\prime} (x)            \\
+             & \qquad \qquad + n b_n (f(x))^{n-1} f^{\prime} (x)        \\
+        = {} & (b_1 + 2b_2 f(x) + \cdots + (n-1) b_{n-1} (f(x))^{n-2}
+        + n b_n (f(x))^{n-1}) f^{\prime} (x)                            \\
+        = {} & (g^{\prime} \circ f) (x) f^{\prime} (x) \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{example}
+    我们用链规则计算 $p(x)$ 的导数:
+    \begin{align*}
+        p^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) = (2(x^3+2) + 1)(3x^2) = 3x^2(2x^3 + 5) \period
+    \end{align*}
+    这跟前面算出的 $6x^5 + 15x^2$ 是一致的\period
+\end{example}

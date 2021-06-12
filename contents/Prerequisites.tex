@@ -119,9 +119,11 @@
 
     (vii) $1 z_1 = z_1$;
 
-    (viii) 若 $z_1 \neq 0$, 则存在复数 $v = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \ii$ 使 $v z_1 = 1$\period
+    (viii) $(-1) z_1 = -z_1$;
 
-    通常把适合 (viii) 的 $v$ 记为 $z_1^{-1}$, 且称之为 $z_1$ 的倒数\period
+    (ix) 若 $z_1 \neq 0$, 则存在复数 $v = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \ii$ 使 $v z_1 = 1$\period
+
+    通常把适合 (ix) 的 $v$ 记为 $z_1^{-1}$, 且称之为 $z_1$ 的倒数\period
 \end{proposition}
 
 \begin{definition}
@@ -159,11 +161,13 @@
 \begin{proposition}
     共轭适合如下性质:
 
-    (ix) $\overline{z_1} + z_1$ 与 $\ii \cdot (\overline{z_1} - z_1)$ 都是实数;
+    (x) $\overline{z_1} + z_1$ 与 $\ii \cdot (\overline{z_1} - z_1)$ 都是实数;
 
-    (x) $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$, $\overline{z_1 z_2} = \overline{z_1} \overline{z_2}$;
+    (xi) $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$, $\overline{z_1 z_2} = \overline{z_1} \overline{z_2}$;
 
-    (xi) $\overline{z_1} z_1$ 是正数, 除非 $z_1 = 0$\period
+    (xii) $\overline{\overline{z_1}} = z_1$;
+
+    (xiii) $\overline{z_1} z_1$ 是正数, 除非 $z_1 = 0$\period
 \end{proposition}
 
 \begin{definition}
@@ -1241,6 +1245,18 @@
     在 $V$ 里, $1+1=0$, 这跟平常的加法有点不一样\period 换句话说, 这里的 $0$ 跟 $1$ 已经不是我们熟悉的数了\period
 \end{example}
 
+\begin{remark}
+    整环 $D$ 有乘法单位元 $1$\period 因为 $D$ 是加群, $1$ 当然有相反元 $-1$\period 任取 $a \in D$\period 根据分配律,
+    \begin{align*}
+        0 = 0a = (1 + (-1))a = 1a + (-1)a = a + (-1)a \period
+    \end{align*}
+    又因为 $a$ 的相反元 $-a$ 适合
+    \begin{align*}
+        0 = a + (-a),
+    \end{align*}
+    故由 (加法) 消去律知 $-a = (-1)a$\period
+\end{remark}
+
 \begin{example}
     全体偶数作成的集是交换环, 却不是整环\period
 \end{example}
@@ -1268,6 +1284,22 @@
     \begin{align*}
         (a+ \ii b)(c+ \ii d) = (ac-bd) + \ii (ad+bc) \period
     \end{align*}
+\end{remark}
+
+\begin{remark}
+    整环 $D$ 有乘法单位元 $1$\period 任取 $a \in D$\period 我们定义
+    \begin{align*}
+        a^0 = 1 \period
+    \end{align*}
+    我们已经知道, 当 $m$, $n$ 是正整数, $x \in D$ 时,
+    \begin{align*}
+        x^m x^n = x^{m+n}, \quad (x^m)^n = x^{mn} \period
+    \end{align*}
+    现在, 当 $m$, $n$ 是非负整数时, 上面的关系仍成立\period 并且, 既然 $D$ 的乘法适合交换律, 那么任取 $x$, $y \in D$, 必有
+    \begin{align*}
+        (xy)^m = x^m y^m,
+    \end{align*}
+    $m$ 可以是非负整数\period
 \end{remark}
 
 \begin{remark}

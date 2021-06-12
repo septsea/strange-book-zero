@@ -73,26 +73,7 @@
 \begin{remark}
     我们已经知道, 多项式确定多项式函数\period 自然地, 有这样的问题: 多项式函数能否确定多项式? 一般情况下, 这个问题的答案是 no\period
 
-    考虑 $4$ 元集 $V = \{\, 0,1,\tau,\tau^2 \,\}$\period 它的加法与乘法如下:
-    \begin{align*}
-        \arraycolsep=0.25cm
-        \begin{array}{c|cccc}
-            +      & 0      & 1      & \tau   & \tau^2 \\ \hline
-            0      & 0      & 1      & \tau   & \tau^2 \\
-            1      & 1      & 0      & \tau^2 & \tau   \\
-            \tau   & \tau   & \tau^2 & 0      & 1      \\
-            \tau^2 & \tau^2 & \tau   & 1      & 0      \\
-        \end{array}
-        \qquad \qquad
-        \begin{array}{c|cccc}
-            \cdot  & 0 & 1      & \tau   & \tau^2 \\ \hline
-            0      & 0 & 0      & 0      & 0      \\
-            1      & 0 & 1      & \tau   & \tau^2 \\
-            \tau   & 0 & \tau   & \tau^2 & 1      \\
-            \tau^2 & 0 & \tau^2 & 1      & \tau   \\
-        \end{array}
-    \end{align*}
-    在前面, 我们已经知道, $V$ 是整环\period 作 $V$ 上 $x$ 的二个多项式:
+    考虑 $4$ 元集 $V$\period 作 $V$ 上 $x$ 的二个多项式:
     \begin{align*}
         f(x) = x^4 - x, \quad g(x) = 0 \period
     \end{align*}
@@ -111,6 +92,16 @@
         f(t) = a_0 + a_1 t + \cdots + a_n t^n \period
     \end{align*}
     至少, 一方通行 \term{one-way traffic} 是没问题的\period
+
+    顺便一提, $f(x)$ 的导数也是多项式:
+    \begin{align*}
+        f^{\prime} (x) = a_1 + 2a_2 x + \cdots + na_n x^{n-1} \period
+    \end{align*}
+    我们把
+    \begin{align*}
+        a_1 + 2a_2 t + \cdots + na_n t^{n-1} \in D
+    \end{align*}
+    简单地写为 $f^{\prime} (t)$\period
 \end{remark}
 
 了解了多项式与多项式函数的关系后, 下面的这个命题就不会太凸兀了\period
@@ -120,6 +111,7 @@
     \begin{align*}
         f(x) = q(x) (x-a) + f(a) \period
     \end{align*}
+    根据带余除法, 这样的 $q(x)$ 一定是唯一的\period
 \end{proposition}
 
 \begin{pf}
@@ -178,7 +170,7 @@
     \begin{align*}
         f(x) = x^2 + x - 1 \period
     \end{align*}
-    若 $D = \RR$, 则 $f(x)$ 的二个根是 $\frac{-1 \pm \sqrt{5}}{2}$\period 若 $D = V$, 则 $f(x)$ 的二个根是 $\tau, \tau^2$\period 当然, 若 $D \subset \QQ$, 则 $f(x)$ 无 ($D$ 的) 根\period
+    若 $D = \RR$, 则 $f(x)$ 的二个根是 $\frac{-1 \pm \sqrt{5}}{2}$\period 若 $D = V$, 则 $f(x)$ 的二个根是 $\tau$, $\tau^2$\period 当然, 若 $D \subset \QQ$, 则 $f(x)$ 无 ($D$ 的) 根\period
 \end{example}
 
 \begin{remark}
@@ -196,6 +188,7 @@
     \begin{align*}
         f(x) = q(x) (x-a) \period
     \end{align*}
+    根据带余除法, 这样的 $q(x)$ 一定是唯一的\period
 \end{proposition}
 
 \begin{pf}
@@ -261,3 +254,87 @@
 \begin{pf}
     考虑 $h(x) = f(x) - g(x)$\period 则 $\deg h(x) \leq n$\period $h(x)$ 有 $n+1$ 个不同的根\period 根据上个命题, $h(x)$ 是零多项式\period 这样, $f(x) = g(x)$\period
 \end{pf}
+
+在中学, 我们学过解一元二次方程 $at^2 + bt + c = 0$ ($a$, $b$, $c$ 为实数, 且 $a \neq 0$) 的一种方法: 直接套用公式
+\begin{align*}
+    t = \frac{-b \pm \sqrt{\Delta}}{2a},
+\end{align*}
+其中
+\begin{align*}
+    \Delta = b^2 - 4ac
+\end{align*}
+是判别式: 当 $\Delta > 0$ 时, 方程有二个不等的实数解; 当 $\Delta = 0$ 时, 方程有二个相等的实数解; 当 $\Delta < 0$ 时, 方程无实数解\period
+
+当 $\Delta = 0$ 时, $c = \frac{b^2}{4a}$, 则
+\begin{align*}
+    at^2 + bt + c = a \left( t^2 + 2\frac{b}{2a}t + \left(\frac{b}{2a}\right)^2 \right) = a \left( t + \frac{b}{2a} \right)^2 \period
+\end{align*}
+记
+$$
+    f(x) = a \left( x + \frac{b}{2a} \right)^2 \in \RR[x] \period
+$$
+根据根的定义, $-\frac{b}{2a} \in \RR$ 是 $f(x)$ 的根\period 我们发现, 这个根 ``出现了'' $2$ 次, 是重复的\period 我们给这样的根一个特殊点的称呼\period
+
+\begin{definition}
+    设 $a \in D$ 是多项式 $f(x) \in D[x]$ 的根\period 那么, 存在唯一的多项式 $q(x) \in D[x]$ 使
+    \begin{align*}
+        f(x) = (x - a) q(x) \period
+    \end{align*}
+    若 $q(a) = 0$, 则说 $a$ 是 $f(x)$ 的一个重根 \term{multiple root}\period 若 $q(a) \neq 0$, 则说 $a$ 是 $f(x)$ 的一个单根 \term{simple root}\period
+\end{definition}
+
+\begin{example}
+    看 $Z$ 上 $x$ 的多项式
+    \begin{align*}
+        f(x) = (x^2 - 3)(x^2 + 2)(x - 1)^2 (x + 2) \period
+    \end{align*}
+    显然, $f(x)$ 的根是 $1$ 与 $-2$\period 因为
+    \begin{align*}
+        f(x) = (x + 2) \underbrace{(x^2 - 3)(x^2 + 2)(x - 1)^2}_{q_1 (x)},
+    \end{align*}
+    且 $q_1 (x) \neq 0$, 故 $-2$ 是 $f(x)$ 的单根\period 类似地, 由于
+    \begin{align*}
+        f(x) = (x - 1) \underbrace{(x^2 - 3)(x^2 + 2)(x - 1)(x + 2)}_{q_2 (x)},
+    \end{align*}
+    且 $q_2 (x) = 0$, 故 $1$ 是 $f(x)$ 的重根\period
+\end{example}
+
+\begin{proposition}
+    设 $a \in D$ 是多项式 $f(x) \in D[x]$ 的根\period 则:
+
+    (i) 若 $a$ 是 $f(x)$ 的重根, 则 $a$ 是 $f^{\prime} (x)$ 的根;
+
+    (ii) 若 $a$ 是 $f(x)$ 的单根, 则 $a$ 不是 $f^{\prime} (x)$ 的根\period
+
+    所以, $f(x)$ 有重根的一个必要与充分条件是: $f(x)$ 与 $f^{\prime} (x)$ 有公共根\period
+\end{proposition}
+
+\begin{pf}
+    因为 $a$ 是 $f(x)$ 的根, 故存在唯一的 $q(x)$ 使
+    \begin{align*}
+        f(x) = (x - a) q(x) \period
+    \end{align*}
+    从而
+    \begin{align*}
+        f^{\prime} (x) = (x - a)^{\prime} q(x) + (x - a) q^{\prime} (x) = q(x) + (x - a) q^{\prime} (x) \period
+    \end{align*}
+    这样
+    \begin{align*}
+        f^{\prime} (a) = q(a) + (a - a) q^{\prime} (a) = q(a) \period
+    \end{align*}
+
+    (i) 若 $a$ 是 $f(x)$ 的重根, 则 $q(a) = 0$, 故 $f^{\prime} (a) = 0$\period
+
+    (ii) 若 $a$ 是 $f(x)$ 的单根, 则 $q(a) \neq 0$, 故 $f^{\prime} (a) \neq 0$\period
+\end{pf}
+
+\begin{example}
+    我们看
+    \begin{align*}
+        f(x) = ax^2 + bx + c \in \RR[x], \quad a \neq 0 \period
+    \end{align*}
+    它的导数 $f^{\prime} (x) = 2ax + b$ 恰有一个根 $t_0 = -\frac{b}{2a}$\period 由上个命题, $f(x)$ 有重根相当于 $f(t_0) = 0$, 即
+    \begin{align*}
+        0 = f(t_0) = a \cdot \frac{b^2}{4a^2} - \frac{b^2}{2a} + c = \frac{4ac - b^2}{4a} = -\frac{\Delta}{4a} \period
+    \end{align*}
+\end{example}

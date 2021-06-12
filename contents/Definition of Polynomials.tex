@@ -233,32 +233,6 @@
 \end{example}
 
 \begin{example}
-    再看一个例\period 设
-    \begin{align*}
-        f(x) = x, \quad g(x) = x^\ell \period
-    \end{align*}
-    $a_i$ 在 $i=1$ 时为 $1$, $i \neq 1$ 时为 $0$; $b_j$ 在 $j=\ell$ 时为 $1$, $j \neq \ell$ 时为 $0$\period
-
-    $\ell = 0$ 时, 不难算出, $f(x)g(x) = x$\period 现在设 $\ell \geq 1$\period $k \leq \ell$ 时,
-    \begin{align*}
-        c_k = 0 b_k + \underbrace{1 \cdot 0 + \cdots + 0 \cdot 0}_{k \text{ terms}} = 0 \period
-    \end{align*}
-    $k = \ell + 1$ 时,
-    \begin{align*}
-        c_{\ell + 1} = 0 \cdot 0 + 1 \cdot 1 + \underbrace{0 \cdot 0 + \cdots + 0 \cdot 0}_{\ell \text{ terms}} = 1 \period
-    \end{align*}
-    所以
-    \begin{align*}
-        x \cdot x^{\ell} = x^{\ell+1} \period
-    \end{align*}
-    这样, $x^\ell$ 可以视为 $x$ 的 $\ell$ 次幂\period
-\end{example}
-
-\begin{remark}
-    由上面二个例可以看到, 这跟中学的多项式乘法运算没有什么本质区别\period
-\end{remark}
-
-\begin{example}
     设
     \begin{align*}
         f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m \period
@@ -290,6 +264,45 @@
         \deg f(x) g(x) = \deg f(x) + \deg g(x) \period
     \end{align*}
     可以验证, 若 $f$ 或 $g$ 的任意一个是 $0$, 这个关系也对\period
+\end{remark}
+
+\begin{remark}
+    设
+    \begin{align*}
+         & f(x) = px^m = a_0 + a_1 x + \cdots + a_m x^m,        \\
+         & g(x) = qx^n = b_0 + b_1 x + \cdots + b_n x^n \period
+    \end{align*}
+    当 $i \neq m$ 时, $a_i = 0$; 当 $i=m$ 时, $a_i = p \neq 0$\period 当 $j \neq n$ 时, $b_j = 0$; 当 $j=n$ 时, $b_j = q \neq 0$\period 现在考虑这二个多项式的积
+    \begin{align*}
+        f(x)g(x) = c_0 + c_1 x + \cdots + c_{m+n} x^{m+n},
+    \end{align*}
+    其中
+    \begin{align*}
+        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
+    \end{align*}
+    我们来看什么时候 $a_\ell b_{k - \ell}$ 不是 $0$\period 这相当于要求 $a_\ell$ 跟 $b_{k - \ell}$ 都不是 $0$, 所以
+    \begin{align*}
+        \ell = m, \quad k - \ell = n,
+    \end{align*}
+    也就是
+    \begin{align*}
+        \ell = m, \quad k = m + n \period
+    \end{align*}
+    所以, 当 $k \neq m+n$ 时, $c_k = 0$; 当 $k = m+n$ 时,
+    \begin{align*}
+        c_{m+n} = a_m b_n = pq \neq 0\period
+    \end{align*}
+    所以, 任取 $m$, $n \in \NN$, 必有
+    \begin{align*}
+        (px^m) (qx^n) = (pq) x^{m+n} \period
+    \end{align*}
+    特别地, 取 $p=q=1$, 有
+    \begin{align*}
+        x^m x^n = x^{m+n} \period
+    \end{align*}
+    这里提醒读者: 这个式是形式上的表达式, 其内涵与中学的 ``同底数幂相乘, 底数不变, 指数相加'' 的内涵是不一样的!
+
+    顺便一提, 若 $p$ 跟 $q$ 的一个是 $0$, 则每个 $c_k$ 全为 $0$, 故此时积是零多项式, 此式仍成立\period
 \end{remark}
 
 \begin{proposition}
@@ -368,6 +381,45 @@
     综上, $D[x]$ 是整环\period
 \end{pf}
 
+\begin{example}
+    在前面, 我们直接用定义计算了下面二个多项式的积:
+    \begin{align*}
+        f(x) = x^0 + 2x^2, \quad g(x) = -3x^0 + 4x - x^3 \period
+    \end{align*}
+    现在, 我们利用
+    \begin{align*}
+        (px^m) (qx^n) = (pq) x^{m+n} \quad (p,q \in D, \, m,n \in \NN)
+    \end{align*}
+    与运算律再做一次:
+    \begin{align*}
+        f(x) g(x)
+        = {} & (x^0 + 2x^2) (-3x^0 + 4x - x^3)                                 \\
+        = {} & x^0 (-3x^0 + 4x - x^3) + 2x^2 (-3x^0 + 4x - x^3)                \\
+        = {} & -3x^{0+0} + 4x^{0+1} - x^{0+3} - 6x^{2+0} + 8x^{2+1} - 2x^{2+3} \\
+        = {} & -3x^0 + 4x - x^3 - 6x^2 + 8x^3 - 2x^5                           \\
+        = {} & -3x^0 + 4x - 6x^2 + 7x^3 - 2x^5 \period
+    \end{align*}
+    这跟之前的结果是一致的\period
+\end{example}
+
+\begin{definition}
+    设 $m \in \NN$\period 多项式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
+    \begin{align*}
+        (f(x))^m = \underbrace{f(x) \cdot f(x) \cdot \cdots \cdot f(x)}_{\text{$m$ $f(x)$'s}} \period
+    \end{align*}
+    既然 $D[x]$ 是整环, 那么前面的幂规则都适用\period 具体地说, 设 $m$, $n \in \NN$, $f(x)$, $g(x) \in D[x]$, 则
+    \begin{align*}
+         & (f(x))^m (f(x))^n = (f(x))^{m+n},         \\
+         & ((f(x))^m)^n = (f(x))^{mn},               \\
+         & (f(x) g(x))^m = (f(x))^m (g(x))^m \period
+    \end{align*}
+    前面, 我们知道
+    \begin{align*}
+        x^m x^n = x^{m+n} \period
+    \end{align*}
+    当时, 我们还说, 这跟中学的 ``同底数幂相乘, 底数不变, 指数相加'' 有着不一样的内涵\period 有了 ``幂'' 这个概念后, 我们发现, $x^m$ 的确可以视为 $m$ 个 $x$ 的积\period
+\end{definition}
+
 \begin{remark}
     以后, 我们把 $x^0$ 写为 $1$\period 换句话说, 代替
     \begin{align*}
@@ -390,7 +442,15 @@
 
     我们不打算深究这一点\period 上面, 我们把 $x^0$ 写为 $1$; 反过来, $D$ 的元 $a$ 也可以理解为是多项式 $ax^0$\period 这跟中学的习惯是一致的\period
 
-    最后, 我们指出: 既然非零的 $c \in D$ 可视为 $0$ 次多项式, 那么
+    最后, 我们指出: 既然非零的 $c \in D$ 可视为 $0$ 次多项式, 那么 $cf(x)$ 也是多项式\period 如果
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n,
+    \end{align*}
+    那么
+    \begin{align*}
+        cf(x) = ca_0 + ca_1 x + \cdots + ca_n x^n,
+    \end{align*}
+    且
     \begin{align*}
         \deg cf(x) = \deg f(x) \period
     \end{align*}

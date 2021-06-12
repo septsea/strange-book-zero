@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{Interpolation}
 \markright{Interpolation}
 
-本节讨论多项式插值 \term{polynomial interpolation} 问题\period
+本节讨论多项式插值问题\period
 
 ``插值'' 听上去可能比较陌生\period 不过, 您在初中一定见过这样的问题:
 
@@ -65,4 +65,119 @@
     求次为 $2$ 的多项式 $f(x)$, 使 $f(=1)=-1$, $f(1)=1$, $f(2)=5$\period
 \end{example}
 
-设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period
+设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 这 $n+1$ 个不同的元称为 $n+1$ 个节点 \term{node} 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 通俗地说, 多项式插值 \term{polynomial interpolation} 的任务是: 找一个多项式 $f(x) \in \FF[x]$ 使
+\begin{align*}
+    f(x_i) = y_i \quad (i = 0,1,\cdots,n),
+\end{align*}
+且适合 ``附加条件''\period
+
+这里, ``附加条件'' 是有必要的: 如果太松, 可能找出的 $f(x)$ 不止一个; 如果太紧, 则可能找不到 $f(x)$\period
+
+\begin{example}
+    找一个多项式 $f(x)$ 使 $f(-1)=-1$, $f(0)=0$, $f(1)=1$\period
+
+    如果不作任何别的约束, 那么 $n$ 是奇数时, $f(x) = x^n$ 适合这些条件\period 不仅如此, 下面的多项式也适合条件:
+    \begin{align*}
+        \frac{1}{6}x + \frac{1}{3}x^3 + \frac{1}{2}x^5, \quad -x + 2x^7, \quad \frac{x + x^3 + \cdots + x^{2k-1}}{k} \period
+    \end{align*}
+
+    在初中, 我们知道, 若平面直角坐标系的三点 $A$, $B$, $C$ 不在同一直线上, 且任意二点的连线既不与 $y$ 轴平行也不与 $y$ 轴重合, 则存在 (唯一的) 二次函数 $y = ax^2 + bx + c$ ($a \neq 0$) 使其图像过此三点\period 假如 ``附加条件'' 是 ``$f(x)$ 是次为 $2$ 的多项式'' 呢? 设
+    \begin{align*}
+        f(x) = ax^2 + bx + c, \quad a \neq 0 \period
+    \end{align*}
+    代入已知条件, 得到三元一次方程组
+    \begin{align*}
+        \begin{cases}
+            -1 = a - b + c, \\
+            0 = c,          \\
+            1 = a + b + c \period
+        \end{cases}
+    \end{align*}
+    由此可解出
+    \begin{align*}
+        a = 0, \quad b = 1, \quad c = 0 \period
+    \end{align*}
+    这与假定 $a \neq 0$ 不符\period 所以, 这个条件太紧了\period
+\end{example}
+
+有没有什么 ``松紧得当的'' ``附加条件'' 呢? 回想一下这个命题:
+
+\begin{proposition}
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\FF$ 的元\period 设 $n$ 是非负整数\period 设
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n a_i x^i, \quad g(x) = \sum_{i = 0}^n b_i x^i \period
+    \end{align*}
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
+    \begin{align*}
+        f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
+    \end{align*}
+    则 $f(x)$ 必等于 $g(x)$\period 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等\period
+\end{proposition}
+
+由此, 我们可以试着作出这样的 ``附加条件'': 多项式的次低于节点数\period 至少, 这个条件不是太松: 因为上面的命题说, 这样的多项式若存在, 必唯一\period
+
+这个 ``附加条件'' 一定能让我们求出这个多项式吗? 不好说\period
+
+\begin{example}
+    如果把 $\FF$ 跟 $\FF[x]$ 改为 $\ZZ$ 跟 $\ZZ[x]$, 那么就没有 $1$ 次多项式 $f(x)$ 使 $f(-1)=2$, $f(1)=3$\period 为啥? 看二元一次方程组
+    \begin{align*}
+        \begin{cases}
+            2 = -a + b, \\
+            3 = a + b \period
+        \end{cases}
+    \end{align*}
+    二式相加, 可得 $5 = 2b$\period 可是, 如果 $b$ 是整数, 那么 $2b$ 是偶数\period 偶数 $2b$ 不可能等于奇数 $5$ 呀!
+\end{example}
+
+具体地说, 设次低于节点数 $n+1$ 的多项式
+\begin{align*}
+    f(x) = \sum_{i=0}^n a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x]
+\end{align*}
+适合
+\begin{align*}
+    f(x_i) = y_i \quad (i = 0,1,\cdots,n),
+\end{align*}
+则可得到下面的方程组:
+\begin{align*}
+    \begin{cases}
+        y_0 = 1 a_0 + x_0 a_1 + \cdots + x_0^n a_n, \\
+        y_1 = 1 a_0 + x_1 a_1 + \cdots + x_1^n a_n, \\
+        \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots
+        \cdots \cdots \cdots \cdots,                \\
+        y_n = 1 a_0 + x_n a_1 + \cdots + x_n^n a_n \period
+    \end{cases}
+\end{align*}
+这是一个有 $n+1$ 个 $n+1$ 元一次方程的方程组, 且未知元是 $a_0$, $a_1$, $\cdots$, $a_n$\period 假如我们能解出这个方程组, 且这个方程组的解 ``不超出 $\FF$ 的范围'' (我们说, 上面的二元一次方程组超出了 $\ZZ$ 的范围, 但没有超出 $\FF$ 的范围), 那么就能说明 ``多项式的次低于节点数'' 这个 ``附加条件'' 是 ``松紧得当的''\period
+
+可惜, 我们在初中并没有研究一般的多元一次方程组\period 我们在学习二 (三) 元一次方程组的时候, 主要学习怎么用代入消元法与加减消元法解方程组, 并没有过多地讨论方程组什么时候有解与解的结构这样的问题\period
+
+我们换一个角度看问题\period 首先, 我们有如下命题:
+
+\begin{proposition}
+    设 $t_0$, $t_1$, $\cdots$, $t_{s-1} \in \FF$ 互不相同\period 则 $t_0$, $t_1$, $\cdots$, $t_{s-1}$ ($1 \leq s \leq n$) 是 $n$ 次多项式 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-s$ 次多项式 $q(x) \in \FF[x]$ 使
+    \begin{align*}
+        f(x) = (x - t_0)(x - t_1) \cdots (x-t_{s-1}) q(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    先看充分性\period 既然 $f(x)$ 能写为这种形式, 将 $x$ 换为 $t_i$ ($i = 0$, $1$, $\cdots$, $s-1$), 则有 $f(t_i) = 0$\period
+
+    再看必要性\period 因为 $t_0$ 是 $f(x)$ 的根, 故存在 $n-1$ 次多项式 $q_1 (x) \in \FF[x]$ 使
+    \begin{align*}
+        f(x) = (x - t_0) q_1 (x) \period
+    \end{align*}
+    设 $t_j$ 是 $t_1$, $t_2$, $\cdots$, $t_{s-1}$ 的一个\period 则 $t_j \neq t_0$\period 因为 $t_j$ 也是 $f(x)$ 的根, 故
+    \begin{align*}
+        (t_j - t_0) q_1 (t_j) = f(t_j) = 0 = (t_j - t_0) 0 \period
+    \end{align*}
+    根据消去律, $q_1 (t_j) = 0$\period 这样, $t_1$, $\cdots$, $t_{s-1}$ 这 $s-1$ 个 $\FF$ 中元是 $q_1 (x)$ 的根\period 所以, 对 $q_1 (x)$ 来说, 存在 $n-1-1 = n-2$ 次多项式 $q_2 (x) \in \FF[x]$ 使
+    \begin{align*}
+        q_1 (x) = (x - t_1) q_2 (x) \implies f(x) = (x - t_0) (x - t_1) q_2 (x),
+    \end{align*}
+    且 $t_2$, $\cdots$, $t_{s-1}$ 这 $s-2$ 个 $\FF$ 中元是 $q_2 (x)$ 的根\period 再将这个过程进行 $s-2$ 次, 可得到 $n-s$ 次多项式 $q_s (x) \in \FF[x]$ 使
+    \begin{align*}
+        f(x) = (x - t_0) (x - t_1) \cdots (x - t_{s-1}) q_s (x) \period
+    \end{align*}
+    取 $q(x) = q_s (x)$ 即可\period
+\end{pf}

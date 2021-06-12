@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{Polynomials over \texorpdfstring{$\mathbb{F}$}{𝔽}}
 \markright{Polynomials over $\mathbb{F}$}
 
-我们在前几节讨论的都是整环 $D$ 上的多项式, 所以它们看上去是有些抽象的\period 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period 细心的读者会注意到我们在前几节未使用 $\sum$ 符号\period 这是为了让读者没那么困难地适应多项式理论\period 从本节起, 我们会较多地使用这个 $\sum$\period 您也可以乘此机会让自己熟悉它\period
+我们在前几节讨论的都是整环 $D$ 上的多项式, 所以它们看上去是有些抽象的\period 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period 细心的读者会注意到我们在前几节未使用 $\sum$ 符号\period 这是为了让读者没那么困难地适应多项式理论\period 从本节起, 我们会较多地使用这个 $\sum$\period 您也可以乘此机会让自己熟悉它\period 当然, 我们偶尔也会使用 $\prod$ 符号\period
 
 本节并没有什么新的知识\period 您可以乘此机会温习一下所学内容\period 我们将重述一些定义与命题\period 我们在学校学数学的时候, 也会有复习课\period 就当本节就是 ``复习节'' 吧!
 
@@ -107,6 +107,8 @@
     \begin{align*}
         \sum_{j=0}^{n} a_{n-j} x^{n-j} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \period
     \end{align*}
+
+    (非零) 多项式的最高次非零项是首项\period 它的系数是此多项式的首项系数\period
 \end{definition}
 
 \begin{definition}
@@ -121,9 +123,9 @@
 \end{definition}
 
 \begin{proposition}
-    设 $i$, $j \in \NN$\period 则
+    设 $m$, $n \in \NN$, $p$, $q \in \FF$\period 则
     \begin{align*}
-        x^i \cdot x^j = x^i x^j = x^{i + j} \period
+        px^i \cdot qx^j = (px^i) (qx^j) = (pq)x^{i + j} \period
     \end{align*}
 \end{proposition}
 
@@ -143,15 +145,17 @@
 
     (viii) 存在多项式 $1$ 使 $1f(x) = f(x)1 = f(x)$;
 
-    (ix) $f(x) g(x) = g(x) f(x)$;
+    (ix) $(-1)f(x) = -f(x)$;
 
-    (x) 若 $f(x) \neq 0$, 则
+    (x) $f(x) g(x) = g(x) f(x)$;
+
+    (xi) 若 $f(x) \neq 0$, 则
     \begin{align*}
          & f(x) g(x) = f(x) h(x) \implies g(x) = h(x), \\
          & g(x) f(x) = h(x) f(x) \implies g(x) = h(x);
     \end{align*}
 
-    (xi) 二个分配律都对:
+    (xii) 二个分配律都对:
     \begin{align*}
          & f(x) (g(x) + h(x)) = f(x) g(x) + f(x) h(x),        \\
          & (g(x) + h(x)) f(x) = g(x) f(x) + h(x) f(x) \period
@@ -161,6 +165,19 @@
 \begin{remark}
     $\FF[x]$ 的一个名字就是 (域) $\FF$ 上 ($x$) 的多项式环\period
 \end{remark}
+
+\begin{definition}
+    设 $m \in \NN$\period 多项式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
+    \begin{align*}
+        (f(x))^m = \underbrace{f(x) \cdot f(x) \cdot \cdots \cdot f(x)}_{\text{$m$ $f(x)$'s}} = \prod_{\ell = 0}^{m-1} f(x) \period
+    \end{align*}
+    设 $m$, $n \in \NN$, $f(x)$, $g(x) \in \FF[x]$, 则多项式的幂适合如下规则:
+    \begin{align*}
+         & (f(x))^m (f(x))^n = (f(x))^{m+n},         \\
+         & ((f(x))^m)^n = (f(x))^{mn},               \\
+         & (f(x) g(x))^m = (f(x))^m (g(x))^m \period
+    \end{align*}
+\end{definition}
 
 \begin{proposition}
     设 $f(x) \in \FF[x]$\period 非零的 $c \in \FF$ 是 $0$ 次多项式, 那么
@@ -253,6 +270,80 @@
     \end{align*}
 \end{proposition}
 
+我们看看多项式的导数\period
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i = 0}^{n} a_i x^i \in \FF[x] \period
+    \end{align*}
+    $f(x)$ 的导数是多项式
+    \begin{align*}
+        f^{\prime}(x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \in \FF[x] \period
+    \end{align*}
+    $f^{\prime} (x)$ 也可写为 $(f(x))^{\prime}$\period
+\end{definition}
+
+\begin{remark}
+    若 $f(x) = c$, $c \in \FF$, 则 $f^{\prime} (x)$ 为零多项式\period
+\end{remark}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = \sum_{i = 0}^{m} a_i x^i, \quad g(x) = \sum_{j = 0}^{n} b_j x^j
+    \end{align*}
+    为 $\FF[x]$ 中的二个元\period 我们称
+    \begin{align*}
+        (g \circ f)(x) = \sum_{j = 0}^{n} b_j (f(x))^j
+    \end{align*}
+    为 $f(x)$ 与 $g(x)$ 的复合\period
+\end{definition}
+
+\begin{proposition}
+    多项式的复合适合结合律\period 具体地说, 设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$, 则
+    \begin{align*}
+        ((h \circ g) \circ f)(x) = (h \circ (g \circ f))(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$\period 则
+
+    (i) $(cf(x))^{\prime} = c f^{\prime} (x)$;
+
+    (ii) $(f(x) \pm g(x))^{\prime} = f^{\prime} (x) \pm g^{\prime} (x)$\period
+
+    由 (i) (ii) 与数学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    \begin{align*}
+        \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)^{\prime} = \sum_{\ell = 0}^{k-1} c_\ell f_\ell^{\prime} (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$\period 则
+    \begin{align*}
+        (f(x) g(x))^{\prime} = f^{\prime} (x) g(x) + f(x) g^{\prime} (x) \period \tag*{(\myStar)}
+    \end{align*}
+    由 (\myStar) 与数学归纳法可知: 当 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    \begin{align*}
+             & (f_0 (x) f_1 (x) \cdots f_{k-1} (x))^{\prime}                                                      \\
+        = {} & f_0^{\prime} (x) f_1 (x) \cdots f_{k-1} (x) + f_0 (x) f_1^{\prime} (x) \cdots f_{k-1} (x) + \cdots \\
+             & \qquad \qquad + f_0 (x) f_1 (x) \cdots f_{k-1}^{\prime} (x) \period
+    \end{align*}
+    取 $f_0 (x) = f_1 (x) = \cdots = f_{k-1} (x) = f(x)$ 知
+    \begin{align*}
+        (f(x))^k = k(f(x))^{k-1} f^{\prime} (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的导数适合链规则:
+    \begin{align*}
+        (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) \period
+    \end{align*}
+\end{proposition}
+
 最后, 我们回顾多项式函数与多项式的根\period
 
 \begin{definition}
@@ -313,6 +404,16 @@
         \sum_{i=0}^n a_i t^i
     \end{align*}
     简单地写为 $f(t)$\period
+
+    顺便一提, $f(x)$ 的导数也是多项式:
+    \begin{align*}
+        f^{\prime} (x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \period
+    \end{align*}
+    我们把
+    \begin{align*}
+        \sum_{i = 1}^{n} i a_i t^{i - 1} \in \FF
+    \end{align*}
+    简单地写为 $f^{\prime} (t)$\period
 \end{definition}
 
 下面是带余除法的推论\period 它在根的讨论里起了重要的作用\period
@@ -322,6 +423,7 @@
     \begin{align*}
         f(x) = q(x) (x-a) + f(a) \period
     \end{align*}
+    根据带余除法, 这样的 $q(x)$ 一定是唯一的\period
 \end{proposition}
 
 \begin{definition}
@@ -333,6 +435,7 @@
     \begin{align*}
         f(x) = q(x) (x-a) \period
     \end{align*}
+    根据带余除法, 这样的 $q(x)$ 一定是唯一的\period
 \end{proposition}
 
 \begin{proposition}
@@ -346,7 +449,7 @@
 \begin{proposition}
     设 $a_0$, $a_1$, $\cdots$, $a_n$ 是 $\FF$ 的元\period 设 $n$ 是非负整数\period 设
     \begin{align*}
-        f(x) = a_0 + a_1 x + \cdots + a_n x^n \period
+        f(x) = \sum_{i = 0}^n a_i x^i \period
     \end{align*}
     若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
     \begin{align*}
@@ -358,14 +461,31 @@
 \begin{proposition}
     设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\FF$ 的元\period 设 $n$ 是非负整数\period 设
     \begin{align*}
-         & f(x) = a_0 + a_1 x + \cdots + a_n x^n,        \\
-         & g(x) = b_0 + b_1 x + \cdots + b_n x^n \period
+        f(x) = \sum_{i = 0}^n a_i x^i, \quad g(x) = \sum_{i = 0}^n b_i x^i \period
     \end{align*}
     若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
     \begin{align*}
         f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
     \end{align*}
     则 $f(x)$ 必等于 $g(x)$\period 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等\period
+\end{proposition}
+
+\begin{definition}
+    设 $a \in \FF$ 是多项式 $f(x) \in \FF[x]$ 的根\period 那么, 存在唯一的多项式 $q(x) \in \FF[x]$ 使
+    \begin{align*}
+        f(x) = (x - a) q(x) \period
+    \end{align*}
+    若 $q(a) = 0$, 则说 $a$ 是 $f(x)$ 的一个重根\period 若 $q(a) \neq 0$, 则说 $a$ 是 $f(x)$ 的一个单根\period
+\end{definition}
+
+\begin{proposition}
+    设 $a \in \FF$ 是多项式 $f(x) \in \FF[x]$ 的根\period 则:
+
+    (i) 若 $a$ 是 $f(x)$ 的重根, 则 $a$ 是 $f^{\prime} (x)$ 的根;
+
+    (ii) 若 $a$ 是 $f(x)$ 的单根, 则 $a$ 不是 $f^{\prime} (x)$ 的根\period
+
+    所以, $f(x)$ 有重根的一个必要与充分条件是: $f(x)$ 与 $f^{\prime} (x)$ 有公共根\period
 \end{proposition}
 
 下面是一些新命题\period 由于 $\FF$ 里有无数多个元, 所以
