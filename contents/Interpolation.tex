@@ -319,3 +319,20 @@
     \end{align*}
     不过, 实践告诉我们, 拆开 $4$ 个 $3$ 次多项式后再相加可不是什么轻松的事儿——至少比前一个例复杂一些\period 而且, 加一个节点后, $L_0 (x)$, $L_1 (x)$, $L_2 (x)$ (跟之前相比) 都要多乘一个一次多项式\period 有无稍微容易一些的算法呢?
 \end{example}
+
+\begin{definition}
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 定义
+    \begin{align*}
+        [x_i, x_j] = \frac{y_i - y_j}{x_i - x_j} \quad (i \neq j)\period
+    \end{align*}
+    这称为 $2$ 级差商 \term{second-order divided difference}\period 类似地, 当 $i$, $j$, $k$ 互不相同时, $3$ 级差商是
+    \begin{align*}
+        [x_i, x_j, x_k] = \frac{[x_i, x_j] - [x_j, x_k]}{x_i - x_k} \period
+    \end{align*}
+    一般地, 当 $i_0$, $i_1$, $\cdots$, $i_{\ell - 1}$ 互不相同时, $\ell$ 级差商定义为
+    \begin{align*}
+        [x_{i_0}, x_{i_1}, \cdots, x_{i_{\ell - 1}}] = \frac{[x_{i_0}, x_{i_1}, \cdots, x_{i_{\ell - 2}}] - [x_{i_1}, x_{i_2}, \cdots, x_{i_{\ell - 1}}]}{x_0 - x_{\ell - 1}} \period
+    \end{align*}
+
+    ``差商'' 可指代任意级差商\period
+\end{definition}

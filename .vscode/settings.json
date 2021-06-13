@@ -13,7 +13,7 @@
                 "-synctex=1",
                 "-interaction=nonstopmode",
                 "-file-line-error",
-                "-pdf",
+                // "-pdf",
                 "%DOCFILE%"
             ]
         },
@@ -51,13 +51,35 @@
             "args": [
                 "%DOCFILE%"
             ]
+        },
+        {
+            "name": "latexmk",
+            "command": "latexmk",
+            "args": [
+                "-pdflatex=\"xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S\"",
+                "-pdf",
+                "%DOCFILE%.tex"
+            ]
         }
     ],
     "latex-workshop.latex.recipes": [
         {
+            "name": "latexmk",
+            "tools": [
+                "latexmk"
+            ]
+        },
+        {
+            "name": "xe*2",
+            "tools": [
+                "xelatex",
+                "xelatex"
+            ]
+        },
+        {
             "name": "xelatex🔃",
             "tools": [
-                "xelatex"
+                "xelatex",
             ]
         },
         {
@@ -136,11 +158,11 @@
     "latex-workshop.view.pdf.external.viewer.command": "C:\\Program Files\\SumatraPDF\\SumatraPDF.exe",
     "latex-workshop.view.pdf.external.synctex.command": "C:\\Program Files\\SumatraPDF\\SumatraPDF.exe",
     "latex-workshop.showContextMenu": false,
-    "latex-workshop.latex.recipe.default": "lastUsed",
+    "latex-workshop.latex.recipe.default": "latexmk",
     // "editor.wordWrap": "on",
     "latex-workshop.synctex.synctexjs.enabled": false,
     // "latex-workshop.synctex.afterBuild.enabled": true,
-    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.latex.autoBuild.run": "never",
     "latex-workshop.mathpreviewpanel.editorGroup": "below",
     "[latex]": {
         "editor.wordWrap": "on",
