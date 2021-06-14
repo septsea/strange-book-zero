@@ -1,0 +1,34 @@
+\subsection*{Generalized Binomial Coefficients}
+\addcontentsline{toc}{subsection}{Generalized Binomial Coefficients}
+\markright{Generalized Binomial Coefficients}
+
+本节讨论广义二项系数\period
+
+回忆一下: 正整数 $n$ 的阶乘 $n!$ 是前 $n$ 个正整数的积; $0$ 的阶乘 $0!$ 是 $1$\period
+
+\begin{definition}
+    设 $n$ 是整数\period 设 $t \in \FF$\period 定义广义二项系数 \term{generalized binomial coefficient} 如下:
+    \begin{align*}
+        \binom{t}{n} = \begin{cases}
+            \frac{1}{n!} (t - 0)(t - 1) \cdots (t - (n - 1)), & \quad n > 0;        \\
+            1,                                                & \quad n = 0;        \\
+            0,                                                & \quad n < 0 \period
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+\begin{remark}
+    我们曾在 Polynomials over $\FF$ 指出, 我们将不再区分多项式与多项式函数\period 故当 $x$ 是 ``不定元'' 时, 我们把
+    \begin{align*}
+        \begin{cases}
+            \frac{1}{n!} (x - 0)(x - 1) \cdots (x - (n - 1)), & \quad n > 0; \\
+            1,                                                & \quad n = 0; \\
+            0,                                                & \quad n < 0
+        \end{cases}
+    \end{align*}
+    所表示的多项式也写为
+    \begin{align*}
+        \binom{x}{n},
+    \end{align*}
+    并也称其为 ``广义二项系数''\period
+\end{remark}
