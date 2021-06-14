@@ -4,7 +4,7 @@
 
 本节讨论多项式插值问题\period
 
-``插值'' 听上去可能比较陌生\period 不过, 您在初中一定见过这样的问题:
+``插值'' 听上去可能比较陌生\period 不过, 读者在初中一定见过这样的问题:
 
 \begin{example}
     已知一次函数的图像经过点 $(-1,2)$ 与 $(1,3)$, 求其解析式\period
@@ -659,7 +659,7 @@
 为方便, 记 $[x_i] = y_i$, 称其为 $x_i$ 的 $0$ 级差商\period 我们证明了
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元 ($n \geq 1$)\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 存在唯一的多项式
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 存在唯一的多项式
     \begin{align*}
         f(x)
         = {} & \sum_{i = 0}^{n} [x_0, x_1, \cdots, x_i]
@@ -808,3 +808,37 @@
     \end{align*}
     有兴趣的读者可展开上式, 以验证我们的计算是否正确\period 由此可见, Newton 插值公式在实操上优于 Lagrange 插值公式\period
 \end{example}
+
+我们以带余除法与插值的关系结束本节\period
+
+\begin{proposition}
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设
+    \begin{align*}
+        d(x) = (x - x_0) (x - x_1) \cdots (x - x_n) \in \FF[x]
+    \end{align*}
+    是 $n+1$ 次多项式\period 由带余除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
+    \begin{align*}
+        f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1 \period
+    \end{align*}
+    余式 $r(x)$ 可具体地写出:
+    \begin{align*}
+        r(x) = \sum_{i = 0}^{n} f(x_i) \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell}
+    \end{align*}
+    或
+    \begin{align*}
+        r(x) = \sum_{i = 0}^{n} [x_0, x_1, \cdots, x_i] \prod_{j = 0}^{i - 1} (x - x_j),
+    \end{align*}
+    其中差商的 $y_i$ 取 $f(x_i)$, $i = 0$, $1$, $\cdots$, $n$\period
+\end{proposition}
+
+\begin{pf}
+    由带余除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
+    \begin{align*}
+        f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1 \period
+    \end{align*}
+    用 $x_i$ 代替 $x$, 有
+    \begin{align*}
+        f(x_i) = q(x_i) d(x_i) + r(x_i) = r(x_i) \period
+    \end{align*}
+    因为 $\deg r(x) < n + 1$, 故由插值公式即得待证命题\period
+\end{pf}

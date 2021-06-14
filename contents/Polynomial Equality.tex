@@ -221,6 +221,30 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     容易看出, 这个方程组无整数解, 所以 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的 (系数为 $\ZZ$ 的元的) 线性组合不能表示每一个次不高于 $2$ 的多项式\period
 \end{remark}
 
+\begin{remark}
+    不难看出, $1$, $x^2$, $x^3$ 线性无关\period 可是, 它们不能表示每一个次不高于 $3$ 的多项式, 因为其线性组合
+    \begin{align*}
+        c_0 + c_1 x^2 + c_2 x^3, \quad c_0, c_1, c_2 \in D
+    \end{align*}
+    的 $1$ 次系数总是 $0$\period 所以, 最简单的 $1$ 次式 $x$ 无法用 $1$, $x^2$, $x^3$ 的线性组合表出\period
+
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 线性无关\period 设这些多项式的次的最大值为 $d$:
+    \begin{align*}
+        d = \max \{\, \deg p_0 (x), \deg p_1 (x), \cdots, \deg p_n (x) \,\} \period
+    \end{align*}
+    在什么条件下, 其线性组合能表示每一个次不高于 $d$ 的多项式? 上面的命题给出了部分的解答\period 为什么说它是 ``部分的解答'' 呢? 考虑 $\ZZ[x]$ 的二个 $1$ 次多项式
+    \begin{align*}
+        p_0 (x) = 3 - 7x, \quad p_1 (x) = -2 + 5x \period
+    \end{align*}
+    读者可验证, 这二个多项式线性无关\period 由于
+    \begin{align*}
+        1 = 5p_0 (x) + 7p_1 (x), \quad x = 2p_0 (x) + 3p_1 (x),
+    \end{align*}
+    故每一个次不高于 $1$ 的多项式都可写为 $p_0 (x)$ 与 $p_1 (x)$ 的线性组合\period
+
+    这个问题的详细讨论将超出本文的范围\period 读者也许可在线性代数中找到破解此问题的方法\period
+\end{remark}
+
 本节开头的问题总算得到了解答\period 不仅如此, 我们得到了更深的结论:
 
 \begin{proposition}

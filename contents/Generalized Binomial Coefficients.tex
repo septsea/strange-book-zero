@@ -32,3 +32,183 @@
     \end{align*}
     并也称其为 ``广义二项系数''\period
 \end{remark}
+
+广义二项系数在计数上是有用的\period
+
+从 $m$ 人里选出 $n$ 人 ($1 \leq n \leq m$, 且任意二个人都不同), 并按一定的顺序让他们坐在 $n$ 个座位上\period 一个座位上至多坐一人, 且每一个选出的人都要坐在座位上\period 共有多少种不同的安排座位的方法?
+
+不难看出, 我们可以分步安排座位\period 可以从 $m$ 人里选 $1$ 人坐第 $1$ 个座位, 再从剩下的 $m-1$ 人里选 $1$ 人坐第 $2$ 个座位……最后从剩下的 $m - (n - 1)$ 人里选 $1$ 人坐第 $n$ 个座位\period 所以, 共有
+\begin{align*}
+    m \cdot (m-1) \cdot \cdots \cdot (m - (n - 1))
+\end{align*}
+种不同的安排座位的方法\period
+
+前面, 我们是直接按座位数选人坐座位; 现在我们先选 $n$ 人, 再让他们坐在这 $n$ 个座位上\period 设从 $m$ 人里选 $n$ 人有 $C$ 种选法\period 给这 $n$ 人安排座位, 有多少种不同的方法呢? 跟上面的推理完全一致: 从这 $n$ 人里选 $1$ 人坐第 $1$ 个座位, 再从剩下的 $n-1$ 人里选 $1$ 人坐第 $2$ 个座位……最后剩下的 $1$ 人坐第 $n$ 个座位\period 所以, 有
+\begin{align*}
+    n \cdot (n - 1) \cdot \cdots \cdot 1 = n!
+\end{align*}
+种不同的为这 $n$ 人安排座位的方法\period 进而共有
+\begin{align*}
+    C \cdot n!
+\end{align*}
+种不同的安排座位的方法\period
+
+综上, 我们有
+\begin{align*}
+    m \cdot (m-1) \cdot \cdots \cdot (m - (n - 1)) = C \cdot n! \period
+\end{align*}
+由此可得, 从 $m$ 人里选 $n$ 人有
+\begin{align*}
+    C = \frac{m \cdot (m-1) \cdot \cdots \cdot (m - (n - 1))}{n!} = \binom{m}{n}
+\end{align*}
+种选法\period
+
+一般地, 我们有
+
+\begin{proposition}
+    从 $m$ 个不同的文字里选 $n$ 个的选法数为广义二项系数
+    \begin{align*}
+        \binom{m}{n} = \frac{m(m-1)\cdots(m - (n - 1))}{n!} \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    把上面的 ``人'' 换为 ``文字'', 再拟人化文字, 使其 ``坐在座位上'', 即可套用上面的推理, 从而得到待证结论\period
+\end{pf}
+
+\begin{proposition}
+    广义二项系数适合如下性质:
+
+    (i) $n \geq 0$ 时, $\binom{x}{n}$ 是首项系数为 $\frac{1}{n!}$ 的 $n$ 次多项式, 前 $n$ 个非负整数恰为其根, 且
+    \begin{align*}
+        \binom{n}{n} = 1;
+    \end{align*}
+
+    (ii) 任取 $n \in \ZZ$, 必有
+    \begin{align*}
+        \binom{x + 1}{n} = \binom{x}{n} + \binom{x}{n - 1};
+    \end{align*}
+
+    (iii) 若 $m$, $n$ 是非负整数, 则
+    \begin{align*}
+        \sum_{\ell = 0}^{m - 1} \binom{\ell}{n} = \binom{m}{n + 1};
+    \end{align*}
+
+    (iv) 任取 $n \in \ZZ$, 必有
+    \begin{align*}
+        \binom{-x}{n} = (-1)^n \binom{x + n - 1}{n};
+    \end{align*}
+
+    (v) 若 $t$, $n$ 是整数, 则
+    \begin{align*}
+        \binom{t}{n} \in \ZZ \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    (i) $\binom{x}{0} = 1$ 是 $0$ 次多项式, 无根, 首项系数为 $1$, 且 $\binom{0}{0} = 1$\period $n > 0$ 时, $\binom{x}{n}$ 的根显然是 $0$, $1$, $\cdots$, $n-1$, 其首项系数是 $\frac{1}{n!}$, 且
+    \begin{align*}
+        \binom{n}{n} = \frac{(n-0)(n-1) \cdots (n - (n-1))}{n!} = 1 \period
+    \end{align*}
+
+    (ii) 若 $n<0$, 则 $\binom{x + 1}{n}$, $\binom{x}{n}$, $\binom{x}{n - 1}$ 都是 $0$, 显然\period 若 $n=0$, 则 $\binom{x + 1}{n}$, $\binom{x}{n}$ 都是 $1$, 而 $\binom{x}{n - 1}$ 都是 $0$, 显然\period 若 $n = 1$, 则 $\binom{x + 1}{n}$, $\binom{x}{n}$, $\binom{x}{n - 1}$ 分别是 $x+1$, $x$, $1$, 显然\period 若 $n \geq 2$, 则
+    \begin{align*}
+             & \binom{x}{n} + \binom{x}{n - 1}                                                      \\
+        = {} & \frac{x(x-1) \cdots (x-(n-2))(x-(n-1))}{n!} + \frac{x(x-1) \cdots (x-(n-2))}{(n-1)!} \\
+        = {} & \frac{x(x-1) \cdots (x-(n-2))(x-(n-1))}{n!} + \frac{x(x-1) \cdots (x-(n-2))(n)}{n!}  \\
+        = {} & \frac{x(x-1) \cdots (x-(n-2))(x-(n-1) + n)}{n!}                                      \\
+        = {} & \frac{(x+1)x(x-1) \cdots (x-(n-2))}{n!}                                              \\
+        = {} & \frac{(x+1)(x+1-1)(x+1-2) \cdots (x+1-(n-1))}{n!}                                    \\
+        = {} & \binom{x + 1}{n} \period
+    \end{align*}
+
+    (iii) 由 (ii) 知
+    \begin{align*}
+        \binom{\ell}{n} = \binom{\ell + 1}{n + 1} - \binom{\ell}{n + 1} \period
+    \end{align*}
+    所以
+    \begin{align*}
+        \sum_{\ell = 0}^{m - 1} \binom{\ell}{n}
+        = {} & \sum_{\ell = 0}^{m - 1} \left(-\binom{\ell}{n + 1}
+        + \binom{\ell + 1}{n + 1} \right)                             \\
+        = {} & -\binom{0}{n + 1} + \binom{1}{n + 1} -\binom{1}{n + 1}
+        + \binom{2}{n + 1}                                            \\
+             & \qquad \qquad
+        + \cdots -\binom{m-1}{n + 1} + \binom{m}{n + 1}               \\
+        = {} & -\binom{0}{n + 1} + \binom{m}{n + 1}                   \\
+        = {} & \binom{m}{n + 1} \period
+    \end{align*}
+
+    (iv) 当 $n<0$ 时, $\binom{-x}{n}$ 与 $\binom{x + n - 1}{n}$ 都是 $0$\period 当 $n=0$ 时, $\binom{-x}{n}$ 与 $\binom{x + n - 1}{n}$ 都是 $1$, 且 $(-1)^n = 1$\period 当 $n>0$ 时,
+    \begin{align*}
+        \binom{-x}{n}
+        = {} & \frac{(-x)(-x-1) \cdots (-x-(n-1))}{n!}                 \\
+        = {} & (-1)^n \frac{x(x+1) \cdots (x+(n-1))}{n!}               \\
+        = {} & (-1)^n \frac{(x+n-1)(x+n-1-1) \cdots (x+n-1-(n-1))}{n!} \\
+        = {} & (-1)^n \binom{x+n-1}{n} \period
+    \end{align*}
+
+    (v) 若 $n < 0$, 则 $\binom{t}{n} = 0 \in \ZZ$\period 若 $n = 0$, 则 $\binom{t}{n} = 1 \in \ZZ$\period 下面考虑 $n \geq 1$ 的情形\period
+
+    我们先说明, 当 $t$ 是非负整数时, $\binom{t}{n} \in \ZZ$\period
+
+    对 $n$ 用数学归纳法\period 当 $n = 1$ 时, $\binom{t}{n} = t \in \ZZ$\period
+
+    设 $n = s \geq 1$ 时, $\binom{t}{n} \in \ZZ$\period 考虑 $n = s + 1$ 的情形\period 由 (iii) 可知
+    \begin{align*}
+        \binom{t}{s + 1} = \sum_{\ell = 0}^{t - 1} \binom{\ell}{s} \period
+    \end{align*}
+    根据归纳假设, $\binom{\ell}{s}$ ($\ell = 0$, $1$, $\cdots$, $t-1$) 都是整数, 故它们的和 $\binom{t}{s + 1}$ 也是整数\period 所以, $n = s + 1$ 时, $\binom{t}{n} \in \ZZ$\period
+
+    现在考虑 $t$ 为负整数的情形\period 由 (iv) 可知
+    \begin{align*}
+        \binom{t}{n} = (-1)^n \binom{-t + n - 1}{n} \in \ZZ \period
+    \end{align*}
+
+    综上, 若 $t$, $n$ 是整数, 则 $\binom{t}{n} \in \ZZ$\period
+\end{pf}
+
+性质 (i) (ii) 有计数相关的解释\period 下面我们为读者提供二例\period
+
+\begin{example}
+    (i) 表明, 从 $n$ 个不同的文字里选 $n$ 个的选法数是 $1$\period 这是显然的, 因为所有的文字都被选中了, 也没得选\period
+\end{example}
+
+\begin{example}
+    此例有 ``生活的气息''\period 由 (ii) 可知,
+    \begin{align*}
+        \binom{7}{3} = \binom{6}{2} + \binom{6}{3} \period
+    \end{align*}
+    据说在中华人民共和国东部的浙江省, 参加 ``普通高等学校招生全国统一考试'' \term{Nationwide Unified Examination for Admissions to General Universities and Colleges} 的人, 除了有必考的语文、数学、外语, 还要从物理、化学、生物、技术、政治、历史、地理这 $7$ 个科目里选择 $3$ 个作为选考科目\period 由于物理是 ``很有挑战性的科目'', 故有不少人不选物理\period 上式右侧的 $\binom{6}{2}$ 表示选择物理的选法数, 而 $\binom{6}{3}$ 表示不选物理的选法数\period 因为人要么选物理, 要么不选, 故它们的和就是 $7$ 选 $3$ 的选法数\period
+\end{example}
+
+\begin{proposition}
+    设 $n$ 是非负整数\period 广义二项系数适合如下性质:
+
+    (vi) 任意次不高于 $n$ 的多项式都可唯一地写为 $\binom{x}{0}$, $\binom{x}{1}$, $\cdots$, $\binom{x}{n}$ 的线性组合;
+
+    (vii) 设 $c_0$, $c_1$, $\cdots$, $c_n \in \FF$\period 设
+    \begin{align*}
+        f(x) = c_0 \binom{x}{0} + c_1 \binom{x}{1} + \cdots + c_n \binom{x}{n} \period
+    \end{align*}
+    若 $c_0$, $c_1$, $\cdots$, $c_n \in \ZZ$, 则任取 $t \in \ZZ$, 必有 $f(t) \in \ZZ$; 若 $c_0$, $c_1$, $\cdots$, $c_n$ 不全是整数, 则存在整数 $u$ 使 $f(u)$ 不是整数\period 换句话说, 任取 $t \in \ZZ$, 必有 $f(t) \in \ZZ$ 的一个必要与充分条件是: $c_0$, $c_1$, $\cdots$, $c_n$ 全是整数\period
+\end{proposition}
+
+\begin{pf}
+    (vi) 注意到 $\binom{x}{0}$, $\binom{x}{1}$, $\cdots$, $\binom{x}{n}$ 的次分别是 $0$, $1$, $\cdots$, $n$\period
+
+    (vii) 设 $c_0$, $c_1$, $\cdots$, $c_n \in \ZZ$\period 设 $t \in \ZZ$\period 由 (v), $\binom{t}{0}$, $\binom{t}{1}$, $\cdots$, $\binom{t}{n}$ 都是整数, 故 $f(t)$ 也是整数\period
+
+    设 $c_0$, $c_1$, $\cdots$, $c_n$ 不全是整数\period 这样, 存在 $\ell$ 使 $c_0$, $c_1$, $\cdots$, $c_{\ell - 1}$ 这 $\ell$ 个数全为整数, 而 $c_{\ell}$ 不是整数 (从左往右, 一个一个地看)\period 那么
+    \begin{align*}
+        f(\ell)
+        = {} & \underbrace{c_0 \binom{\ell}{0} + c_1 \binom{\ell}{1} + \cdots
+            + c_{\ell - 1} \binom{\ell}{\ell - 1}}_{\text{$\ell$ terms}}
+        {} + c_{\ell} \binom{\ell}{\ell}                                       \\
+             & \qquad \qquad + \underbrace{c_{\ell + 1} \binom{\ell}{\ell + 1}
+        + \cdots + c_{n} \binom{\ell}{n}}_{\text{$(n - \ell)$ terms}}          \\
+        = {} & (\text{an integer $q$}) + c_{\ell} + 0                          \\
+        = {} & q + c_{\ell} \period
+    \end{align*}
+    我们说, $f(\ell)$ 不是整数\period 用反证法\period 若 $f(\ell)$ 是整数, 因为 $q$ 也是整数, 故 $c_{\ell} = f(\ell) - q$ 是整数, 矛盾!
+\end{pf}
