@@ -1,0 +1,132 @@
+\subsection*{Summation Formulae}
+\addcontentsline{toc}{subsection}{Summation Formulae}
+\markright{Summation Formulae}
+
+本节讨论这么一个问题: 设 $f(x) \in \FF[x]$, 求
+\begin{align*}
+    S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1) \period
+\end{align*}
+
+\begin{example}
+    % cSpell: disable-next-line
+    相信大家应该听说过德意志数学家 Gauss\period 1787 年, Gauss 还只是一个 10 岁的孩子\period 据说, 当时他的数学教师给全班同学出了这样的算术题:
+    \begin{align*}
+        1 + 2 + 3 + \cdots + 100 = ?
+    \end{align*}
+    这里, 后一个数比前一个数多 $1$, 且共有 $100$ 个数\period 教师刚写完问题, Gauss 就算出, 答案是 $5\,050$\period 他的同学还在一个一个地加, 算了很久, 还没算对\period
+
+    Gauss 是怎么快速算出答案的呢? 设
+    \begin{align*}
+        S = 1 + 2 + 3 + \cdots + 100 \period
+    \end{align*}
+    因为加法适合交换律, 故
+    \begin{align*}
+        S = 100 + 99 + 98 + \cdots + 1 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        2S
+        = {} & (1 + 100) + (2 + 99) + (3 + 98) + \cdots + (100 + 1) \\
+        = {} & \underbrace{101 + 101 + 101 + \cdots + 101}
+        _{\text{a hundred $101$'s}}                                 \\
+        = {} & 100 \cdot 101                                        \\
+        = {} & 10\,100 \period
+    \end{align*}
+    由此可得
+    \begin{align*}
+        S = \frac{10\,100}{2} = 5\,050 \period
+    \end{align*}
+
+    如果记 $f(x) = x + 1$, 则
+    \begin{align*}
+        S
+        = {} & 1 + 2 + 3 + \cdots + 100                  \\
+        = {} & f(0) + f(1) + f(2) + \cdots + f(100 - 1)  \\
+        = {} & \sum_{\ell = 0}^{100 - 1} f(\ell) \period
+    \end{align*}
+
+    考虑更一般的情形\period 设 $f(x) = a + bx$\period 记
+    \begin{align*}
+        S(n) = f(0) + f(1) + \cdots + f(n-1) \period
+    \end{align*}
+    类似地, 把右侧倒着写:
+    \begin{align*}
+        S(n) = f(n-1) + f(n-1) + \cdots + f(0) \period
+    \end{align*}
+    因为
+    \begin{align*}
+        f(k) + f(n-1-k) = a + bk + a + b(n-1-k) = 2a + b(n - 1),
+    \end{align*}
+    故
+    \begin{align*}
+             & 2S(n)                                                        \\
+        = {} & (f(0) + f(n-1)) + (f(1) + f(n-2)) + \cdots + (f(n-1) + f(0)) \\
+        = {} & n(2a + b(n - 1)),
+    \end{align*}
+    即
+    \begin{align*}
+        S(n) = \frac{n(2a + b(n - 1))}{2} = \left(a - \frac{b}{2}\right) n + \frac{b}{2} n^2 \period
+    \end{align*}
+    我们还可以看出: $S(n)$ 是多项式, 且 $S(n)$ 的次比 $f(n)$ 的次多 $1$\period
+\end{example}
+
+上面讨论了当 $f(x)$ 的次不高于 $1$ 时如何求 $S(n)$\period 那么, 当 $f(x)$ 的次高于 $1$ 时, 怎么找 $S(n)$? 它还是多项式吗?
+
+在求和前, 我们看 $S(n)$ 适合什么性质\period $S(n)$ 是 $f(0)$, $f(1)$, $\cdots$, $f(n-1)$ 这 $n$ 个数的和\period 因为 $0$ 个数的和是 $0$, 故 $S(0) = 0$\period 同时, 不难看出, $S(n+1)$ 比 $S(n)$ 多出 $f(n)$, 也即
+\begin{align*}
+    S(n+1) - S(n) = f(n) \period
+\end{align*}
+反过来, 设 $\NN$ 到 $\FF$ 的函数 $W(n)$ 适合 $W(0) = 0$ 与 $W(n+1) - W(n) = f(n)$, 则
+\begin{align*}
+    \sum_{\ell = 0}^{n - 1} f(\ell)
+    = {} & \sum_{\ell = 0}^{n - 1} (W(\ell+1) - W(\ell))                       \\
+    = {} & \sum_{\ell = 0}^{n - 1} W(\ell+1) - \sum_{\ell = 0}^{n - 1} W(\ell) \\
+    = {} & \sum_{\ell = 1}^{n} W(\ell) - \sum_{\ell = 0}^{n - 1} W(\ell)       \\
+    = {} & W(n) - W(0)                                                         \\
+    = {} & W(n) \period
+\end{align*}
+这样, 任给 $f(x) \in \FF[x]$, 若我们能找到适合条件 $S(0) = 0$ 与 $S(x+1) - S(x) = f(x)$ 的多项式, 则
+\begin{align*}
+    \sum_{\ell = 0}^{n - 1} f(\ell) = S(n) \period
+\end{align*}
+
+\begin{proposition}
+    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式\period 存在唯一的 $n+1$ 次多项式 $F(x) \in \FF[x]$ 适合条件:
+
+    (i) $F(0) = 0$;
+
+    (ii) $F(x + 1) - F(x) = f(x)$\period
+\end{proposition}
+
+\begin{pf}
+    先看存在性\period 若 $f(x) = 0$, 则 $F(x) = 0$ 显然适合 (i) (ii), 且
+    \begin{align*}
+        \deg F(x) = -\infty = -\infty + 1 = \deg f(x) + 1 \period
+    \end{align*}
+    设 $n \geq 0$\period 根据广义二项系数的性质, 存在 $n+1$ 个 $\FF$ 中元 $c_0$, $\cdots$, $c_{n}$ 使
+    \begin{align*}
+        f(x) = \sum_{k = 0}^{n} c_k \binom{x}{k}, \quad c_{n} \neq 0 \period
+    \end{align*}
+    作多项式
+    \begin{align*}
+        F(x) = \sum_{k = 0}^{n} c_k \binom{x}{k+1} \in \FF[x] \period
+    \end{align*}
+    显然 $\deg F(x) = n + 1$\period 验证 (i):
+    \begin{align*}
+        F(0) = \sum_{k = 0}^{n} c_k \binom{0}{k+1} = \sum_{k = 0}^{n} 0 = 0 \period
+    \end{align*}
+    验证 (ii):
+    \begin{align*}
+        F(x + 1) - F(x)
+        = {} & \sum_{k = 0}^{n} c_k \binom{x+1}{k+1} - \sum_{k = 0}^{n} c_k \binom{x}{k+1} \\
+        = {} & \sum_{k = 0}^{n} c_k \left( \binom{x+1}{k+1} - \binom{x}{k+1} \right)       \\
+        = {} & \sum_{k = 0}^{n} c_k \binom{x}{k}                                           \\
+        = {} & f(x) \period
+    \end{align*}
+
+    再看唯一性\period 设 $G(x) \in \FF[x]$ 是 $n+1$ 次多项式, 并适合条件 $G(0) = 0$ 与 $G(x + 1) - G(x) = f(x)$\period 作
+    \begin{align*}
+        H(x) = F(x) - G(x) \period
+    \end{align*}
+    则 $H(0) = 0$, $H(x + 1) - H(x) = 0$\period 所以, $n$ 为非负整数时, $H(n) = 0$\period 从而 $H(x)$ 一定是零多项式, 即 $F(x) = G(x)$\period
+\end{pf}

@@ -68,12 +68,17 @@
 \begin{proposition}
     从 $m$ 个不同的文字里选 $n$ 个的选法数为广义二项系数
     \begin{align*}
-        \binom{m}{n} = \frac{m(m-1)\cdots(m - (n - 1))}{n!} \period
+        \binom{m}{n} = \frac{m(m-1)\cdots(m - (n - 1))}{n!} = \frac{m!}{n! (m-n)!} \period
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    把上面的 ``人'' 换为 ``文字'', 再拟人化文字, 使其 ``坐在座位上'', 即可套用上面的推理, 从而得到待证结论\period
+    把上面的 ``人'' 换为 ``文字'', 再拟人化文字, 使其 ``坐在座位上'', 即可套用上面的推理, 从而得到第一个等号\period 至于第二个等号, 直接计算即可:
+    \begin{align*}
+             & \frac{m(m-1)\cdots(m - (n - 1))}{n!}                                      \\
+        = {} & \frac{m(m-1)\cdots(m - (n - 1))(m - n) (m - n - 1) \cdots 1}{n! (m - n)!} \\
+        = {} & \frac{m!}{n! (m-n)!} \period \qedhere
+    \end{align*}
 \end{pf}
 
 \begin{proposition}
@@ -212,3 +217,106 @@
     \end{align*}
     我们说, $f(\ell)$ 不是整数\period 用反证法\period 若 $f(\ell)$ 是整数, 因为 $q$ 也是整数, 故 $c_{\ell} = f(\ell) - q$ 是整数, 矛盾!
 \end{pf}
+
+\begin{example}
+    我们知道, 若多项式 $f(x)$ 的系数全为整数, 则 $t \in \ZZ$ 时 $f(t) \in \ZZ$\period 不过, 反过来就不对了\period 在中学, 读者也许知道 $n$ 是整数时 $\frac{n(n+1)}{2}$ 也是整数: $n$ 与 $n+1$ 必一奇一偶, 故积是偶数, 从而被 $2$ 除后仍为整数\period 现在可以这么看:
+    \begin{align*}
+        \frac{n(n+1)}{2} = \frac{(n+1)(n+1-1)}{2} = \binom{n+1}{2} \period
+    \end{align*}
+\end{example}
+
+下面我们介绍二个与广义二项系数有关的和\period 不过, 我们先介绍一个用完就丢的工具\period
+
+\begin{definition}
+    固定某 $h \in \FF[x]$\period 设 $n$ 是非负整数, $r \in \FF[x]$ \period 定义
+    \begin{align*}
+        r^{[n]} = \begin{cases}
+            (r - 0)(r - h) \cdots (r - (n-1)h), & \quad n > 0;        \\
+            1,                                  & \quad n = 0 \period
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+不难看出,
+\begin{align*}
+    r^{[n+1]} = r^{[n]} (r - nh) \period
+\end{align*}
+若 $h = 0$, $r^{[n]}$ 就变为 $r$ 的 $n$ 次幂\period 若 $h = 1$, $r^{[n]}$ 就变为 $n! \binom{x}{n}$\period
+
+\begin{proposition}
+    设 $r$, $s \in \FF[x]$\period 设 $n$ 是非负整数\period 则
+    \begin{align*}
+        (r + s)^{[n]} = \sum_{k = 0}^{n} \binom{n}{k} r^{[n - k]} s^{[k]} \period \tag*{(\myStar)}
+    \end{align*}
+    取 $h = 0$, 得到二项展开 \term{binomial expansion}:
+    \begin{align*}
+        (r + s)^{n} = \sum_{k = 0}^{n} \binom{n}{k} r^{n - k} s^{k} \period \tag*{(BE)}
+    \end{align*}
+    取 $h = 1$, 得
+    \begin{align*}
+        n! \binom{r + s}{n} = \sum_{k = 0}^{n} \binom{n}{k} (n - k)! k! \binom{r}{n - k} \binom{s}{k} \period
+    \end{align*}
+    二边同乘 $\frac{1}{n!}$, 再利用
+    \begin{align*}
+        \binom{n}{k} = \frac{n!}{k! (n-k)!}
+    \end{align*}
+    % cSpell: disable-next-line
+    可得 Vandermonde 恒等式 \term{Vandermonde's identity}:
+    \begin{align*}
+        \binom{r + s}{n} = \sum_{k = 0}^{n} \binom{r}{n - k} \binom{s}{k} \period \tag*{(VI)}
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    用数学归纳法\period 当 $n = 0$ 时, (\myStar) 的左侧是 $1$, 右侧是 $1 \cdot 1 \cdot 1$\period 当 $n = 1$ 时, (\myStar) 的左侧是 $r + s$, 右侧是 $1 \cdot r \cdot 1 + 1 \cdot 1 \cdot s$\period
+
+    设 $n = \ell \geq 1$ 时, (\myStar) 正确, 即
+    \begin{align*}
+        (r + s)^{[\ell]} = \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell - k]} s^{[k]} \period \tag*{(\myStar)}
+    \end{align*}
+    现在, 考虑 $n = \ell + 1$ 的情形:
+    \begin{align*}
+             & (r + s)^{[\ell + 1]}                                                                                                                              \\
+        = {} & (r + s)^{[\ell]} (r + s - \ell h)                                                                                                                 \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell - k]} s^{[k]} (r + s - \ell h)                                                                       \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell - k]} s^{[k]} (r + s - (\ell - k + k) h)                                                             \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell - k]} s^{[k]} ((r - (\ell - k) h) + (s - k h))                                                       \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} (r^{[\ell - k]} (r - (\ell - k) h) s^{[k]} + r^{[\ell - k]} s^{[k]} (s - k h))                                \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} (r^{[\ell - k + 1]} s^{[k]} + r^{[\ell - k]} s^{[k + 1]})                                                     \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell + 1 - k]} s^{[k]} + \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell - k]} s^{[k + 1]}                   \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell + 1 - k]} s^{[k]} + \sum_{k = 0}^{\ell} \binom{\ell}{k + 1 - 1} r^{[\ell + 1 - (k + 1)]} s^{[k + 1]} \\
+        = {} & \sum_{k = 0}^{\ell} \binom{\ell}{k} r^{[\ell + 1 - k]} s^{[k]} + \sum_{k = 1}^{\ell + 1} \binom{\ell}{k - 1} r^{[\ell + 1 - k]} s^{[k]}           \\
+        = {} & \sum_{k = 0}^{\ell + 1} \binom{\ell}{k} r^{[\ell + 1 - k]} s^{[k]} + \sum_{k = 0}^{\ell + 1} \binom{\ell}{k - 1} r^{[\ell + 1 - k]} s^{[k]}       \\
+        = {} & \sum_{k = 0}^{\ell + 1} \left( \binom{\ell}{k} + \binom{\ell}{k - 1} \right) r^{[\ell + 1 - k]} s^{[k]}                                           \\
+        = {} & \sum_{k = 0}^{\ell + 1} \binom{\ell + 1}{k} r^{[\ell + 1 - k]} s^{[k]} \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{remark}
+    Too cruel though it is, let's say \textit{farewell} to $r^{[n]}$. We will not use $r^{[n]}$ any longer from this moment forward. It is born to be a good old tool for us. May $r^{[n]}$ and its soul rest in peace!
+\end{remark}
+
+\begin{example}
+    (VI) 也有计数相关的解释\period 老规矩, 先写下算式:
+    \begin{align*}
+        \binom{7}{3}
+        = \binom{3}{3} \binom{4}{0}
+        + \binom{3}{2} \binom{4}{1}
+        + \binom{3}{1} \binom{4}{2}
+        + \binom{3}{0} \binom{4}{3} \period
+    \end{align*}
+
+    回到中华人民共和国东部的浙江省\period 回到 ``普通高等学校招生全国统一考试''\period 前面提到, 在那儿, 参加考试的人从 $7$ 科目里选 $3$ 个\period 政治、历史、地理是偏 ``阿先生'' \term{arts} 的; 物理、化学、生物、技术是偏 ``赛先生'' \term{science} 的\period
+
+    $7$ 选 $3$ 可以这么选:
+
+    (i) 选 $3$ 个阿先生与 $0$ 个赛先生: $\binom{3}{3} \binom{4}{0}$;
+
+    (ii) 或者, 选 $2$ 个阿先生与 $1$ 个赛先生: $\binom{3}{2} \binom{4}{1}$;
+
+    (iii) 或者, 选 $1$ 个阿先生与 $2$ 个赛先生: $\binom{3}{1} \binom{4}{2}$;
+
+    (iv) 或者, 选 $0$ 个阿先生与 $3$ 个赛先生: $\binom{3}{0} \binom{4}{3}$\period
+
+    把这 $4$ 种情形下的选法数相加, 就是 $\binom{7}{3}$\period
+\end{example}

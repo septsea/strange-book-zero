@@ -179,7 +179,7 @@
         "qedhere",
         "texorpdfstring",
         "smallmatrix",
-        "binom"
+        "binom",
     ],
     "todo-tree.filtering.excludeGlobs": [
         "**/*.ttc",
