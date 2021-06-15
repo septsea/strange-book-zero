@@ -2,13 +2,12 @@
 \addcontentsline{toc}{subsection}{Summation Formulae}
 \markright{Summation Formulae}
 
-本节讨论这么一个问题: 设 $f(x) \in \FF[x]$, 求
+本节讨论求和公式 \term{summation formula} 问题: 设 $f(x) \in \FF[x]$, 求
 \begin{align*}
     S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1) \period
 \end{align*}
 
 \begin{example}
-    % cSpell: disable-next-line
     相信大家应该听说过德意志数学家 Gauss\period 1787 年, Gauss 还只是一个 10 岁的孩子\period 据说, 当时他的数学教师给全班同学出了这样的算术题:
     \begin{align*}
         1 + 2 + 3 + \cdots + 100 = ?
@@ -67,7 +66,10 @@
     \begin{align*}
         S(n) = \frac{n(2a + b(n - 1))}{2} = \left(a - \frac{b}{2}\right) n + \frac{b}{2} n^2 \period
     \end{align*}
-    我们还可以看出: $S(n)$ 是多项式, 且 $S(n)$ 的次比 $f(n)$ 的次多 $1$\period
+    我们还可以看出: $S(n)$ 是多项式, 且
+    \begin{align*}
+        \deg S(n) = \deg f(n) + 1 \period
+    \end{align*}
 \end{example}
 
 上面讨论了当 $f(x)$ 的次不高于 $1$ 时如何求 $S(n)$\period 那么, 当 $f(x)$ 的次高于 $1$ 时, 怎么找 $S(n)$? 它还是多项式吗?
@@ -91,7 +93,7 @@
 \end{align*}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式\period 存在唯一的 $n+1$ 次多项式 $F(x) \in \FF[x]$ 适合条件:
+    设 $f(x) \in \FF[x]$ 是 $m$ 次多项式\period 存在唯一的 $m+1$ 次多项式 $F(x) \in \FF[x]$ 适合条件:
 
     (i) $F(0) = 0$;
 
@@ -103,30 +105,124 @@
     \begin{align*}
         \deg F(x) = -\infty = -\infty + 1 = \deg f(x) + 1 \period
     \end{align*}
-    设 $n \geq 0$\period 根据广义二项系数的性质, 存在 $n+1$ 个 $\FF$ 中元 $c_0$, $\cdots$, $c_{n}$ 使
+    设 $m \geq 0$\period 根据广义二项系数的性质, 存在 $m+1$ 个 $\FF$ 中元 $c_0$, $\cdots$, $c_{m}$ 使
     \begin{align*}
-        f(x) = \sum_{k = 0}^{n} c_k \binom{x}{k}, \quad c_{n} \neq 0 \period
+        f(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell}, \quad c_{m} \neq 0 \period
     \end{align*}
-    作多项式
+    (读者可思考: 若 $c_{m} = 0$, $f(x)$ 还能是 $m$ 次多项式吗?) 作多项式
     \begin{align*}
-        F(x) = \sum_{k = 0}^{n} c_k \binom{x}{k+1} \in \FF[x] \period
+        F(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell+1} \in \FF[x] \period
     \end{align*}
-    显然 $\deg F(x) = n + 1$\period 验证 (i):
+    显然 $\deg F(x) = m + 1$\period 验证 (i):
     \begin{align*}
-        F(0) = \sum_{k = 0}^{n} c_k \binom{0}{k+1} = \sum_{k = 0}^{n} 0 = 0 \period
+        F(0) = \sum_{\ell = 0}^{m} c_\ell \binom{0}{\ell+1} = \sum_{\ell = 0}^{m} 0 = 0 \period
     \end{align*}
     验证 (ii):
     \begin{align*}
         F(x + 1) - F(x)
-        = {} & \sum_{k = 0}^{n} c_k \binom{x+1}{k+1} - \sum_{k = 0}^{n} c_k \binom{x}{k+1} \\
-        = {} & \sum_{k = 0}^{n} c_k \left( \binom{x+1}{k+1} - \binom{x}{k+1} \right)       \\
-        = {} & \sum_{k = 0}^{n} c_k \binom{x}{k}                                           \\
+        = {} & \sum_{\ell = 0}^{m} c_\ell \binom{x+1}{\ell+1} - \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell+1} \\
+        = {} & \sum_{\ell = 0}^{m} c_\ell \left( \binom{x+1}{\ell+1} - \binom{x}{\ell+1} \right)             \\
+        = {} & \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell}                                                    \\
         = {} & f(x) \period
     \end{align*}
 
-    再看唯一性\period 设 $G(x) \in \FF[x]$ 是 $n+1$ 次多项式, 并适合条件 $G(0) = 0$ 与 $G(x + 1) - G(x) = f(x)$\period 作
+    再看唯一性\period 设 $G(x) \in \FF[x]$ 是 $m+1$ 次多项式, 并适合条件 $G(0) = 0$ 与 $G(x + 1) - G(x) = f(x)$\period 作
     \begin{align*}
         H(x) = F(x) - G(x) \period
     \end{align*}
-    则 $H(0) = 0$, $H(x + 1) - H(x) = 0$\period 所以, $n$ 为非负整数时, $H(n) = 0$\period 从而 $H(x)$ 一定是零多项式, 即 $F(x) = G(x)$\period
+    则 $H(0) = 0$, $H(x + 1) - H(x) = 0$\period 所以, $r$ 为非负整数时, $H(r) = 0$\period 从而 $H(x)$ 一定是零多项式, 即 $F(x) = G(x)$\period
+\end{pf}
+
+\begin{example}
+    记 $f(x) = x^2$\period 我们求
+    \begin{align*}
+        S(n) = f(0) + f(1) + \cdots + f(n-1) = \sum_{\ell = 0}^{n - 1} f(\ell) \period
+    \end{align*}
+    由上个命题可知, 存在唯一的次为 $3$ 的多项式 $F(x)$ 使 $F(0) = 0$, $F(x + 1) - F(x) = f(x)$, 且 $S(n) = F(n)$\period
+
+    可以用插值的思想求 $F(x)$\period 取 $x_0$, $x_1$, $x_2$, $x_3$ 为 $0$, $1$, $-1$, $2$\period 不难算出:
+    \begin{align*}
+         & y_{0} = F(0) = 0,                      \\
+         & y_{1} = F(1) = F(0) + f(0) = 0,        \\
+         & y_{2} = F(-1) = F(0) - f(-1) = -1,     \\
+         & y_{3} = F(2) = F(1) + f(1) = 1 \period
+    \end{align*}
+    注意到 $y_0 = y_1 = 0$, 故可以考虑 Lagrange 插值 (只要算 $L_2 (x)$ 与 $L_3 (x)$):
+    \begin{align*}
+         & L_2 (x) = \frac{(x - 0)(x - 1)(x - 2)}{(-1 - 0)(-1 - 1)(-1 - 2)} = -\frac{x(x-1)(x-2)}{6}, \\
+         & L_3 (x) = \frac{(x - 0)(x - 1)(x + 1)}{(2 - 0)(2 - 1)(2 + 1)} = \frac{x(x-1)(x+1)}{6},     \\
+         & F(x) = y_2 L_2 (x) + y_3 L_3 (x) = \frac{x(x-1)(2x-1)}{6} \period
+    \end{align*}
+    当然, 也可利用 Newton 插值\period 作出差商表:
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{c|cccc}
+            2  & 1  & \       & \        & \       \\
+            -1 & -1 & \frac23 & \        & \       \\
+            1  & 0  & \frac12 & \frac16  & \       \\
+            0  & 0  & 0       & -\frac12 & \frac13 \\
+        \end{array}
+    \end{align*}
+    故
+    \begin{align*}
+        F(x)
+        = {} & [0] + [0,1] (x - 0) + [0,1,-1] (x - 0)(x - 1)    \\
+             & \qquad \qquad + [0,1,-1,2] (x - 0)(x - 1)(x + 1) \\
+        = {} & -\frac{1}{2} x(x-1) + \frac{1}{3} x(x-1)(x+1)    \\
+        = {} & \frac{x(x-1)(2x-1)}{6} \period
+    \end{align*}
+
+    综上, 我们有
+    \begin{align*}
+        \sum_{\ell = 0}^{n - 1} \ell^2 = 0^2 + 1^2 + \cdots + (n-1)^2 = \frac{n(n-1)(2n-1)}{6} \period
+    \end{align*}
+\end{example}
+
+由上个命题的证明过程, 有
+
+\begin{proposition}
+    若
+    \begin{align*}
+        f(x) = c_0 \binom{x}{0} + c_1 \binom{x}{1} + \cdots + c_m \binom{x}{m},
+    \end{align*}
+    则
+    \begin{align*}
+        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = c_0 \binom{n}{1} + c_1 \binom{n}{2} + \cdots + c_m \binom{n}{m + 1} \period
+    \end{align*}
+\end{proposition}
+
+由此可见, 若我们能把 $f(x)$ 写为广义二项系数的线性组合, 则寻找 $S(n)$ 的过程将十分简单\period 接下来, 我们讨论怎么方便地把多项式写为广义二项系数的线性组合\period
+
+\begin{definition}
+    设 $f(x) \in \FF[x]$\period 定义 $f(x)$ 的差分 \term{difference} 为
+    \begin{align*}
+        \Delta f(x) = f(x+1) - f(x) \in \FF[x]\period
+    \end{align*}
+    设 $t \in \FF$\period 我们把
+    \begin{align*}
+        f(t+1) - f(t) \in \FF
+    \end{align*}
+    也写为 $\Delta f(t)$\period
+\end{definition}
+
+\begin{example}
+    取 $f(x) = x^2 + x - 1$\period 则
+    \begin{align*}
+        f(x + 1) = (x + 1)^2 + (x + 1) - 1 = x^2 + 3x + 1,
+    \end{align*}
+    故
+    \begin{align*}
+        \Delta f(x) = 2x + 2 \period
+    \end{align*}
+\end{example}
+
+\begin{proposition}
+    设 $k$ 是整数\period 则
+    \begin{align*}
+        \Delta \binom{x}{k} = \binom{x}{k - 1} \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    也许, 这就是所谓的 ``新瓶装旧酒'' 吧! 不过, 为了方便, 我们还是单独列出来\period
 \end{pf}
