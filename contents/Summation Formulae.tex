@@ -178,6 +178,8 @@
     \end{align*}
 \end{example}
 
+其实, 我们可以在此处结束本节\period 设 $f(x)$ 是 $n$ 次多项式\period 上面的命题告诉我们, 存在唯一的 $n+1$ 次多项式 $F(x)$ 使 $F(0) = 0$, $F(x + 1) - F(x) = f(x)$, 且 $S(n) = F(n)$\period 利用这些条件, 可以确定 $F(x)$ 在 $n+2$ 个整数点处的值, 从而可用插值公式求出 $F(x)$\period 不过, 为了使实操容易一些, 我们还得多研究一点\period
+
 由上个命题的证明过程, 有
 
 \begin{proposition}
@@ -198,6 +200,7 @@
     \begin{align*}
         \Delta f(x) = f(x+1) - f(x) \in \FF[x]\period
     \end{align*}
+
     设 $t \in \FF$\period 我们把
     \begin{align*}
         f(t+1) - f(t) \in \FF
@@ -214,6 +217,10 @@
     \begin{align*}
         \Delta f(x) = 2x + 2 \period
     \end{align*}
+    所以
+    \begin{align*}
+        \Delta f(332) = 2 \cdot 332 + 2 = 666 \period
+    \end{align*}
 \end{example}
 
 \begin{proposition}
@@ -226,3 +233,528 @@
 \begin{pf}
     也许, 这就是所谓的 ``新瓶装旧酒'' 吧! 不过, 为了方便, 我们还是单独列出来\period
 \end{pf}
+
+回忆一下, 导数适合如下二条性质:
+
+(i) $(cf(x))^{\prime} = c f^{\prime} (x)$;
+
+(ii) $(f(x) \pm g(x))^{\prime} = f^{\prime} (x) \pm g^{\prime} (x)$\period
+
+差分也有类似的性质\period
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$\period 则
+
+    (i) $\Delta (cf(x)) = c \Delta f(x)$;
+
+    (ii) $\Delta (f(x) \pm g(x)) = \Delta f(x) \pm \Delta g(x)$\period
+
+    由 (i) (ii) 与数学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    \begin{align*}
+        \Delta \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
+        = \sum_{\ell = 0}^{k-1} c_\ell \Delta f_\ell (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    老样子, 我们证明 (i) (ii), 将剩下的推论留给读者作练习\period 设
+
+    (i) 设 $p(x) = cf(x)$\period 则
+    \begin{align*}
+        \Delta (cf(x))
+        = {} & \Delta p(x)           \\
+        = {} & p(x+1) - p(x)         \\
+        = {} & cf(x+1) - cf(x)       \\
+        = {} & c(f(x+1) - f(x))      \\
+        = {} & c \Delta f(x) \period
+    \end{align*}
+
+    (ii) 设 $q(x) = f(x) \pm g(x)$\period 则
+    \begin{align*}
+        \Delta (f(x) \pm g(x))
+        = {} & \Delta q(x)                                  \\
+        = {} & q(x+1) - q(x)                                \\
+        = {} & (f(x+1) \pm g(x+1)) - (f(x) \pm g(x))        \\
+        = {} & (f(x+1) - f(x)) \pm (g(x+1) - g(x))          \\
+        = {} & \Delta f(x) \pm \Delta g(x) \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{definition}
+    设 $f(x) \in \FF[x]$\period 记
+    \begin{align*}
+        \Delta^0 f(x) = f(x) \in \FF[x],
+    \end{align*}
+    并称其为 $f(x)$ 的 $0$ 级差分 \term{zeroth-order difference}\period $1$ 级差分就是差分:
+    \begin{align*}
+        \Delta^1 f(x) = \Delta f(x) = \Delta (\Delta^0 f(x)) \in \FF[x] \period
+    \end{align*}
+    $1$ 级差分的差分是 $2$ 级差分:
+    \begin{align*}
+        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) \in \FF[x] \period
+    \end{align*}
+    $2$ 级差分的差分是 $3$ 级差分:
+    \begin{align*}
+        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) \in \FF[x] \period
+    \end{align*}
+    一般地, $e$ 级差分就是 $e - 1$ 级差分的差分:
+    \begin{align*}
+        \Delta^e f(x) = \Delta (\Delta^{e-1} f(x)) \in \FF[x] \period
+    \end{align*}
+
+    设 $t \in \FF$\period 既然 $\Delta^e f(x)$ 是某个多项式
+    \begin{align*}
+        v_0 + v_1 x + \cdots + v_s x^s \in \FF[x],
+    \end{align*}
+    我们将
+    \begin{align*}
+        v_0 + v_1 t + \cdots + v_s t^s \in \FF[x]
+    \end{align*}
+    简单地写为 $\Delta^e f(t)$\period
+\end{definition}
+
+\begin{example}
+    设
+    \begin{align*}
+        f(x) = 2x^3 + 3x^2 + 5x + 7 \period
+    \end{align*}
+    根据定义, $f(x)$ 的 $0$ 级差分就是自己:
+    \begin{align*}
+        \Delta^0 f(x) = 2x^3 + 3x^2 + 5x + 7 \period
+    \end{align*}
+    因为
+    \begin{align*}
+        (1+x)^3
+        = {} & (1+x)^2 (1+x)         \\
+        = {} & (1+2x+x^2) (1+x)      \\
+        = {} & 1+2x+x^2 + x+2x^2+x^3 \\
+        = {} & 1+3x+3x^2+x^3,
+    \end{align*}
+    故
+    \begin{align*}
+        f(x+1)
+        = {} & 2(x+1)^3 + 3(x+1)^2 + 5(x+1) + 7 \\
+        = {} & 2x^3 + 9x^2 + 17x + 17 \period
+    \end{align*}
+    从而 $f(x)$ 的 $1$ 级差分是
+    \begin{align*}
+        \Delta^1 f(x) = \Delta f(x) = f(x+1) - f(x) = 6x^2 + 12x + 10 \period
+    \end{align*}
+    因为
+    \begin{align*}
+        \Delta^1 f(x+1) = 6(x+1)^2 + 12(x+1) + 10 = 6x^2 + 24x + 28,
+    \end{align*}
+    故 $f(x)$ 的 $2$ 级差分是
+    \begin{align*}
+        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) = \Delta^1 f(x+1) - \Delta^1 f(x) = 12x + 18 \period
+    \end{align*}
+    因为
+    \begin{align*}
+        \Delta^2 f(x+1) = 12(x+1) + 18 = 12x + 30,
+    \end{align*}
+    故 $f(x)$ 的 $3$ 级差分是
+    \begin{align*}
+        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) = \Delta^2 f(x+1) - \Delta^2 f(x) = 12 \period
+    \end{align*}
+    因为
+    \begin{align*}
+        \Delta^3 f(x+1) = 12,
+    \end{align*}
+    故 $f(x)$ 的 $4$ 级差分是
+    \begin{align*}
+        \Delta^4 f(x) = \Delta (\Delta^3 f(x)) = \Delta^3 f(x+1) - \Delta^3 f(x) = 0 \period
+    \end{align*}
+    读者不难验证: 对任意超出 $3$ 的整数 $e$, 必有
+    \begin{align*}
+        \Delta^e f(x) = 0 \period
+    \end{align*}
+
+    由上面的计算, 可知
+    \begin{align*}
+         & \Delta^0 f(1) = 2 \cdot 1^3 + 3 \cdot 1^2 + 5 \cdot 1 + 7 = 17, \\
+         & \Delta^1 f(1) = 6 \cdot 1^2 + 12 \cdot 1^2 + 10 = 28,           \\
+         & \Delta^2 f(1) = 12 \cdot 1 + 18 = 30,                           \\
+         & \Delta^3 f(1) = 12,                                             \\
+         & \Delta^e f(1) = 0 \quad (e > 3) \period
+    \end{align*}
+\end{example}
+
+高级差分适合如下性质:
+
+\begin{proposition}
+    设 $e$ 是非负整数\period 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    \begin{align*}
+        \Delta^e \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
+        = \sum_{\ell = 0}^{k-1} c_\ell \Delta^e f_\ell (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    用数学归纳法\period 我们把具体过程留给读者当练习\period
+\end{pf}
+
+\begin{proposition}
+    设 $e$ 是非负整数\period 设 $k$ 是整数\period 则
+    \begin{align*}
+        \Delta^e \binom{x}{k} = \binom{x}{k - e} \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    用数学归纳法\period 我们把具体过程留给读者当练习\period
+\end{pf}
+
+\begin{proposition}
+    设 $e$ 是非负整数\period 设 $f(x) \in \FF[x]$\period 则
+    \begin{align*}
+        \Delta^e f(x) = \sum_{k = 0}^{e} (-1)^{e-k} \binom{e}{k} f(x+k) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    当 $e = 0$ 时, 左侧是 $f(x)$, 右侧是
+    \begin{align*}
+        (-1)^0 \binom{0}{0} f(x+0) = f(x) \period
+    \end{align*}
+    当 $e = 1$ 时, 左侧是 $f(x+1) - f(x)$, 右侧是
+    \begin{align*}
+        (-1)^1 \binom{1}{0} f(x+0) + (-1)^0 \binom{1}{1} f(x+1) = -f(x) + f(x+1) \period
+    \end{align*}
+    所以, 命题对 $e=0$ 或 $e=1$ 成立\period
+
+    设命题对 $e = \ell \geq 1$ 成立, 即
+    \begin{align*}
+        \Delta^{\ell} f(x) = \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+k) \period
+    \end{align*}
+    则 $e = \ell + 1$ 时,
+    \begin{align*}
+             & \Delta^{\ell + 1} f(x)                                                          \\
+        = {} & \Delta (\Delta^{\ell} f(x))                                                     \\
+        = {} & \Delta^{\ell} f(x+1) - \Delta^{\ell} f(x)                                       \\
+        = {} & \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+1+k)
+        - \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+k)                             \\
+        = {} & \sum_{k = 0}^{\ell} (-1)^{(\ell+1)-(k+1)} \binom{\ell}{k+1-1} f(x+k+1)          \\
+             & \qquad \qquad + \sum_{k = 0}^{\ell} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)      \\
+        = {} & \sum_{k = 1}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell}{k-1} f(x+k)
+        + \sum_{k = 0}^{\ell} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)                           \\
+        = {} & \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell}{k-1} f(x+k)
+        + \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)                         \\
+        = {} & \sum_{k = 0}^{\ell+1} \left( (-1)^{\ell+1-k} \binom{\ell}{k-1} f(x+k)
+        + (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k) \right)                                       \\
+        = {} & \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \left( \binom{\ell}{k-1}
+        + \binom{\ell}{k} \right) f(x+k)                                                       \\
+        = {} & \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell+1}{k} f(x+k) \period \qedhere
+    \end{align*}
+\end{pf}
+
+我们再补充一个跟广义二项系数有关的性质:
+
+\begin{proposition}
+    设 $k$ 是整数\period 则
+    \begin{align*}
+        \binom{0}{k} = \begin{cases}
+            1, & \quad k = 0;           \\
+            0, & \quad k \neq 0 \period
+        \end{cases}
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    显然\period
+\end{pf}
+
+设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的多项式\period 我们知道, $f(x)$ 一定可以写为广义二项系数的线性组合:
+\begin{align*}
+    f(x) = \sum_{k = 0}^{m} c_{k} \binom{x}{k} \period
+\end{align*}
+对左右二侧求 $e$ 级差分 ($e \leq m$), 有
+\begin{align*}
+    \Delta^e f(x) = \sum_{k = 0}^{m} c_{k} \binom{x}{k - e} \period
+\end{align*}
+用 $0$ 替换 $x$, 有
+\begin{align*}
+    \Delta^e f(0) = \sum_{k = 0}^{m} c_{k} \binom{0}{k - e} = c_{e} \period
+\end{align*}
+所以
+\begin{align*}
+    f(x)
+    = {} & \sum_{k = 0}^{m} \Delta^k f(0) \binom{x}{k}                                                   \\
+    = {} & \Delta^0 f(0) \binom{x}{0} + \Delta^1 f(0) \binom{x}{1} + \cdots + \Delta^m f(0) \binom{x}{m} \\
+    = {} & f(0) + \Delta f(0) \binom{x}{1} + \cdots + \Delta^m f(0) \binom{x}{m} \period
+\end{align*}
+
+我们已经证明了
+
+\begin{proposition}
+    设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的多项式\period 则
+    \begin{align*}
+        f(x)
+        = {} & \sum_{k = 0}^{m} \Delta^k f(0) \binom{x}{k}                                                   \\
+        = {} & \Delta^0 f(0) \binom{x}{0} + \Delta^1 f(0) \binom{x}{1} + \cdots + \Delta^m f(0) \binom{x}{m} \\
+        = {} & f(0) + \Delta f(0) \binom{x}{1} + \cdots + \Delta^m f(0) \binom{x}{m},
+    \end{align*}
+    所以
+    \begin{align*}
+        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) \binom{n}{1} + \Delta f(0) \binom{n}{2} + \cdots + \Delta^{m} f(0) \binom{n}{m + 1} \period
+    \end{align*}
+\end{proposition}
+
+注意到
+\begin{align*}
+    \Delta^k f(0) = \sum_{u = 0}^{k} (-1)^{k-u} \binom{k}{u} f(u),
+\end{align*}
+故计算 $\Delta^k f(0)$ 需要用到 $f(0)$, $f(1)$, $\cdots$, $f(k)$ 这 $k+1$ 个数\period 也就是说, 计算 $\Delta^0 f(0)$, $\Delta^1 f(0)$, $\cdots$, $\Delta^m f(0)$ 需要用到 $f(0)$, $f(1)$, $\cdots$, $f(m)$ 这 $m+1$ 个数\period
+
+下面我们举几个具体的例, 帮助读者消化这种求和方法\period
+
+\begin{example}
+    设 $f(x) = x^2 + x - 1$\period 求
+    \begin{align*}
+        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1) \period
+    \end{align*}
+
+    这里, $m = 2$\period 所以, 我们计算 $f(0)$, $f(1)$, $f(2)$:
+    \begin{align*}
+        f(0) = -1, \quad f(1) = 1, \quad f(2) = 5 \period
+    \end{align*}
+    由此, 不难算出:
+    \begin{align*}
+         & \Delta^0 f(0) = f(0) = -1,                                \\
+         & \Delta^1 f(0) = f(1) - f(0) = 2,                          \\
+         & \Delta^1 f(1) = f(2) - f(1) = 4,                          \\
+         & \Delta^2 f(0) = \Delta^1 f(1) - \Delta^1 f(0) = 2 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        f(x)
+        = {} & f(0) + \Delta f(0) \binom{x}{1} + \Delta^2 f(0) \binom{x}{2} \\
+        = {} & -1 + 2 \binom{x}{1} + 2 \binom{x}{2} \period
+    \end{align*}
+    从而
+    \begin{align*}
+        S(n)
+        = {} & \sum_{\ell = 0}^{n - 1} f(\ell)                   \\
+        = {} & -1 \binom{n}{1} + 2 \binom{n}{2} + 2 \binom{n}{3} \\
+        = {} & -n + n(n-1) + \frac{n(n-1)(n-2)}{3}               \\
+        = {} & \frac{n(n+2)(n-2)}{3} \period
+    \end{align*}
+
+    实操时, 往往用名为 ``差分表'' 的表进行计算\period 当 $m = 2$ 时, 它长这样:
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{ccc}
+            \Delta^{0} f(2) & \               & \               \\
+            \Delta^{0} f(1) & \Delta^{1} f(1) & \               \\
+            \Delta^{0} f(0) & \Delta^{1} f(0) & \Delta^{2} f(0) \\
+        \end{array}
+    \end{align*}
+    在这个问题里, 差分表如下:
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{ccc}
+            5  & \  & \ \\
+            1  & 4  & \ \\
+            -1 & 2  & 2 \\
+        \end{array}
+    \end{align*}
+\end{example}
+
+\begin{example}
+    求前 $n$ 个非负整数的立方和
+    \begin{align*}
+        S(n) = 0^3 + 1^3 + \cdots + (n-1)^3 = \sum_{\ell = 0}^{n - 1} \ell^3 \period
+    \end{align*}
+    取 $f(x) = x^3$\period 这里, $m = 3$\period 画出 $m = 3$ 时的差分表:
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{cccc}
+            \Delta^{0} f(3) & \               & \               & \               \\
+            \Delta^{0} f(2) & \Delta^{1} f(2) & \               & \               \\
+            \Delta^{0} f(1) & \Delta^{1} f(1) & \Delta^{2} f(1) & \               \\
+            \Delta^{0} f(0) & \Delta^{1} f(0) & \Delta^{2} f(0) & \Delta^{3} f(0) \\
+        \end{array}
+    \end{align*}
+    $\Delta^{0} f(t)$ 就是 $f(t)$:
+    \begin{align*}
+        f(0) = 0, \quad f(1) = 1, \quad f(2) = 8, \quad f(3) = 27 \period
+    \end{align*}
+    写在表上, 就是
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{cccc}
+            27 & \               & \               & \               \\
+            8  & \Delta^{1} f(2) & \               & \               \\
+            1  & \Delta^{1} f(1) & \Delta^{2} f(1) & \               \\
+            0  & \Delta^{1} f(0) & \Delta^{2} f(0) & \Delta^{3} f(0) \\
+        \end{array}
+    \end{align*}
+    由此可确定 $1$ 级差分:
+    \begin{align*}
+         & \Delta^{1} f(2) = f(3) - f(2) = 19,       \\
+         & \Delta^{1} f(1) = f(2) - f(1) = 7,        \\
+         & \Delta^{1} f(0) = f(1) - f(0) = 1 \period
+    \end{align*}
+    写在表上, 就是
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{cccc}
+            27 & \  & \               & \               \\
+            8  & 19 & \               & \               \\
+            1  & 7  & \Delta^{2} f(1) & \               \\
+            0  & 1  & \Delta^{2} f(0) & \Delta^{3} f(0) \\
+        \end{array}
+    \end{align*}
+    类似地, 可确定 $2$ 级差分:
+    \begin{align*}
+         & \Delta^{2} f(1) = \Delta^{1} f(2) - \Delta^{1} f(1) = 12,       \\
+         & \Delta^{2} f(0) = \Delta^{1} f(1) - \Delta^{1} f(0) = 6 \period
+    \end{align*}
+    写在表上, 就是
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{cccc}
+            27 & \  & \  & \               \\
+            8  & 19 & \  & \               \\
+            1  & 7  & 12 & \               \\
+            0  & 1  & 6  & \Delta^{3} f(0) \\
+        \end{array}
+    \end{align*}
+    最后, 可确定 $3$ 级差分:
+    \begin{align*}
+         & \Delta^{3} f(0) = \Delta^{2} f(1) - \Delta^{2} f(0) = 6 \period
+    \end{align*}
+    写在表上, 就是
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{cccc}
+            27 & \  & \  & \ \\
+            8  & 19 & \  & \ \\
+            1  & 7  & 12 & \ \\
+            0  & 1  & 6  & 6 \\
+        \end{array}
+    \end{align*}
+    所以
+    \begin{align*}
+        f(x)
+        = {} & f(0) + \Delta f(0) \binom{x}{1} + \Delta^2 f(0) \binom{x}{2} + \Delta^3 f(0) \binom{x}{3} \\
+        = {} & \binom{x}{1} + 6 \binom{x}{2} + 6 \binom{x}{3} \period
+    \end{align*}
+    从而
+    \begin{align*}
+        S(n)
+        = {} & \sum_{\ell = 0}^{n - 1} f(\ell)                             \\
+        = {} & \binom{x}{2} + 6 \binom{x}{3} + 6 \binom{x}{4}              \\
+        = {} & \frac{n(n-1)}{2} + n(n-1)(n-2) + \frac{n(n-1)(n-2)(n-3)}{4} \\
+        = {} & \frac{n(n-1)}{4} (2 + 4(n-2) + (n-2)(n-3))                  \\
+        = {} & \frac{n(n-1)}{4} n(n-1)                                     \\
+        = {} & \left( \frac{n(n-1)}{2} \right)^2 \period
+    \end{align*}
+\end{example}
+
+\begin{remark}
+    回忆一下, 前 $n$ 个非负整数的和
+    \begin{align*}
+        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2} \period
+    \end{align*}
+    上面的例告诉我们,
+    \begin{align*}
+        0^3 + 1^3 + \cdots + (n - 1)^3 = (0 + 1 + \cdots + (n - 1))^2 \period
+    \end{align*}
+    所以, 前 $n$ 个非负整数的立方和等于前 $n$ 个非负整数的和的平方\period
+\end{remark}
+
+\begin{example}
+    求前 $n$ 个非负整数的 $4$ 次幂和
+    \begin{align*}
+        S(n) = 0^4 + 1^4 + \cdots + (n-1)^4 = \sum_{\ell = 0}^{n - 1} \ell^4 \period
+    \end{align*}
+    取 $f(x) = x^4$\period 这里, $m = 4$\period 画出 $m = 4$ 时的差分表:
+    \begin{align*}
+        \arraycolsep=0.25cm
+        \begin{array}{ccccc}
+            \Delta^{0} f(4) & \               & \               & \               & \               \\
+            \Delta^{0} f(3) & \Delta^{1} f(3) & \               & \               & \               \\
+            \Delta^{0} f(2) & \Delta^{1} f(2) & \Delta^{2} f(2) & \               & \               \\
+            \Delta^{0} f(1) & \Delta^{1} f(1) & \Delta^{2} f(1) & \Delta^{3} f(1) & \               \\
+            \Delta^{0} f(0) & \Delta^{1} f(0) & \Delta^{2} f(0) & \Delta^{3} f(0) & \Delta^{4} f(0) \\
+        \end{array}
+    \end{align*}
+    我们直接填差分表:
+    \begin{align*}
+         & {
+                \arraycolsep=0.25cm
+                \begin{array}{ccccc}
+                    256 & \               & \               & \               & \               \\
+                    81  & \Delta^{1} f(3) & \               & \               & \               \\
+                    16  & \Delta^{1} f(2) & \Delta^{2} f(2) & \               & \               \\
+                    1   & \Delta^{1} f(1) & \Delta^{2} f(1) & \Delta^{3} f(1) & \               \\
+                    0   & \Delta^{1} f(0) & \Delta^{2} f(0) & \Delta^{3} f(0) & \Delta^{4} f(0) \\
+                \end{array}
+        }    \\
+         & {
+                \arraycolsep=0.25cm
+                \begin{array}{ccccc}
+                    256 & \   & \               & \               & \               \\
+                    81  & 175 & \               & \               & \               \\
+                    16  & 65  & \Delta^{2} f(2) & \               & \               \\
+                    1   & 15  & \Delta^{2} f(1) & \Delta^{3} f(1) & \               \\
+                    0   & 1   & \Delta^{2} f(0) & \Delta^{3} f(0) & \Delta^{4} f(0) \\
+                \end{array}
+        }    \\
+         & {
+                \arraycolsep=0.25cm
+                \begin{array}{ccccc}
+                    256 & \   & \   & \               & \               \\
+                    81  & 175 & \   & \               & \               \\
+                    16  & 65  & 110 & \               & \               \\
+                    1   & 15  & 50  & \Delta^{3} f(1) & \               \\
+                    0   & 1   & 14  & \Delta^{3} f(0) & \Delta^{4} f(0) \\
+                \end{array}
+        }    \\
+         & {
+                \arraycolsep=0.25cm
+                \begin{array}{ccccc}
+                    256 & \   & \   & \  & \               \\
+                    81  & 175 & \   & \  & \               \\
+                    16  & 65  & 110 & \  & \               \\
+                    1   & 15  & 50  & 60 & \               \\
+                    0   & 1   & 14  & 36 & \Delta^{4} f(0) \\
+                \end{array}
+        }    \\
+         & {
+                \arraycolsep=0.25cm
+                \begin{array}{ccccc}
+                    256 & \   & \   & \  & \  \\
+                    81  & 175 & \   & \  & \  \\
+                    16  & 65  & 110 & \  & \  \\
+                    1   & 15  & 50  & 60 & \  \\
+                    0   & 1   & 14  & 36 & 24 \\
+                \end{array}
+            }
+    \end{align*}
+    所以
+    \begin{align*}
+        f(x)
+        = {} & f(0) + \Delta f(0) \binom{x}{1} + \Delta^2 f(0) \binom{x}{2} + \Delta^3 f(0) \binom{x}{3} + \Delta^4 f(0) \binom{x}{4} \\
+        = {} & \binom{x}{1} + 14 \binom{x}{2} + 36 \binom{x}{3} + 24 \binom{x}{4} \period
+    \end{align*}
+    从而
+    \begin{align*}
+        S(n)
+        = {} & \sum_{\ell = 0}^{n - 1} f(\ell)                                         \\
+        = {} & \binom{n}{2} + 14 \binom{n}{3} + 36 \binom{n}{4} + 24 \binom{n}{5}      \\
+        = {} & \frac{n(n-1)}{2} + \frac{7n(n-1)(n-2)}{3} + \frac{3n(n-1)(n-2)(n-3)}{2} \\
+             & \qquad \qquad + \frac{n(n-1)(n-2)(n-3)}{5}                              \\
+        = {} & \frac{n(n-1)}{30} (15 + 70(n-2) + 45(n-3)(n-2)                          \\
+             & \qquad \qquad + 6(n-4)(n-3)(n-2))                                       \\
+        = {} & \frac{n(n-1)}{30} (6n^3 - 9n^2 + n + 1)                                 \\
+        = {} & \frac{n(n-1)}{120} (24n^3 - 36n^2 + 4n + 4)                             \\
+        = {} & \frac{n(n-1)}{120} (3(2n)^3 - 9(2n)^2 + 2(2n) + 4)                      \\
+        = {} & \frac{n(n-1)}{120} (3(2n)^3 - 3 - 9(2n)^2 + 9 + 2(2n) - 2)              \\
+        = {} & \frac{n(n-1)}{120} (3((2n)^3 - 1) - 9((2n)^2 - 1) + 2((2n) - 1))        \\
+        = {} & \frac{n(n-1)}{120} (2n-1) (3((2n)^2 + 2n + 1) - 9(2n + 1) + 2)          \\
+        = {} & \frac{n(n-1)(2n-1)}{120} (12n^2 - 12n - 4)                              \\
+        = {} & \frac{n(n-1)(2n-1)}{30} (3n^2 - 3n - 1)                                 \\
+        = {} & \frac{n(n-1)(2n-1)(3n^2 - 3n - 1)}{30} \period
+    \end{align*}
+\end{example}
