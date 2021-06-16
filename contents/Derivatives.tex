@@ -89,7 +89,7 @@
     \end{align*}
     为 $D[x]$ 中的二个元\period 我们称
     \begin{align*}
-        (g \circ f)(x) = b_0 + b_1 f(x) + \cdots + b_n (f(x))^n
+        (g \circ f)(x) = g(f(x)) = b_0 + b_1 f(x) + \cdots + b_n (f(x))^n
     \end{align*}
     为 $f(x)$ 与 $g(x)$ 的复合 \term{composition}\period
 \end{definition}
@@ -125,8 +125,8 @@
     \end{align*}
     那么
     \begin{align*}
-         & (g \circ f) (x) = b_0 + b_1 (x-c) + \cdots + b_n (x-c)^n,     \\
-         & (f \circ g) (x) = -c + b_0 + b_1 x + \cdots + b_n x^n \period
+         & (g \circ f) (x) = g(f(x)) = b_0 + b_1 (x-c) + \cdots + b_n (x-c)^n,     \\
+         & (f \circ g) (x) = f(g(x)) = -c + b_0 + b_1 x + \cdots + b_n x^n \period
     \end{align*}
 \end{example}
 
@@ -348,8 +348,8 @@
 \begin{example}
     还是考虑 $\ZZ$ 与 $\ZZ[x]$\period 计算
     \begin{align*}
-         & p(x) = (g \circ f) (x) = (x^3 + 2)^2 + (x^3 + 2) - 1, \\
-         & q(x) = (f \circ g) (x) = (x^2 + x - 1)^3 + 2
+         & p(x) = (g \circ f) (x) = g(f(x)) = (x^3 + 2)^2 + (x^3 + 2) - 1, \\
+         & q(x) = (f \circ g) (x) = f(g(x)) = (x^2 + x - 1)^3 + 2
     \end{align*}
     的导数\period
 
@@ -393,6 +393,10 @@
     设 $f(x)$, $g(x) \in D[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的导数适合链规则 \term{the chain rule}:
     \begin{align*}
         (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) \period
+    \end{align*}
+    链规则也可写为
+    \begin{align*}
+        (g(f(x)))^{\prime} = g^{\prime} (f(x)) f^{\prime} (x) \period
     \end{align*}
 \end{proposition}
 

@@ -299,7 +299,7 @@
     \end{align*}
     为 $\FF[x]$ 中的二个元\period 我们称
     \begin{align*}
-        (g \circ f)(x) = \sum_{j = 0}^{n} b_j (f(x))^j
+        (g \circ f)(x) = g(f(x)) = \sum_{j = 0}^{n} b_j (f(x))^j
     \end{align*}
     为 $f(x)$ 与 $g(x)$ 的复合\period
 \end{definition}
@@ -345,6 +345,10 @@
     设 $f(x)$, $g(x) \in \FF[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的导数适合链规则:
     \begin{align*}
         (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) \period
+    \end{align*}
+    链规则也可写为
+    \begin{align*}
+        (g(f(x)))^{\prime} = g^{\prime} (f(x)) f^{\prime} (x) \period
     \end{align*}
 \end{proposition}
 
