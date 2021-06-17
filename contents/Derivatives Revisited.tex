@@ -57,3 +57,71 @@
         = {} & 1 + 3x + 3x^2 + x^3 \period
     \end{align*}
 \end{example}
+
+设 $c \in \FF$\period 在 Polynomial Equality 节, 我们用 $1$, $x-c$, $(x-c)^2$, $\cdots$, $(x-c)^n$ 引出线性无关, 并证明了
+
+\begin{proposition}
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n \in \FF$\period 设 $c \in \FF$\period 再设
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n a_i (x-c)^i, \quad g(x) = \sum_{i = 0}^n b_i (x-c)^i \period
+    \end{align*}
+    则 $f(x)=g(x)$ 的一个必要与充分条件是
+    \begin{align*}
+        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+    \end{align*}
+    并且, 任取
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n u_i x^i \in \FF[x],
+    \end{align*}
+    必存在 $v_0$, $v_1$, $\cdots$, $v_n \in \FF$ 使
+    \begin{align*}
+        f(x) = \sum_{i = 0}^n v_i (x-c)^i \period
+    \end{align*}
+\end{proposition}
+
+利用二项展开, 有
+\begin{align*}
+    x^i
+    = {} & (c + (x - c))^i                                           \\
+    = {} & \sum_{j = 0}^{i} \binom{n}{k} c^{n - k} (x-c)^{k} \period
+\end{align*}
+由此, 我们可以把任意多项式
+\begin{align*}
+    f(x) = \sum_{i = 0}^n u_i x^i \in \FF[x]
+\end{align*}
+写为
+\begin{align*}
+    f(x) = \sum_{i = 0}^n v_i (x-c)^i \in \FF[x] \period
+\end{align*}
+
+\begin{example}
+    设
+    \begin{align*}
+        f(x) = x^3 - 6x^2 + 15x - 12 \period
+    \end{align*}
+    取 $c = 2$\period 利用二项展开, 有
+    \begin{align*}
+         & \begin{aligned}
+            x^3
+            = {} & (2 + (x - 2))^3                                                             \\
+            = {} & 1 \cdot 2^3 + 3 \cdot 2^2 (x-2) + 3 \cdot 2^1 (x-2)^2 + 1 \cdot 2^0 (x-2)^3 \\
+            = {} & 8 + 12(x-2) + 6(x-2)^2 + (x-2)^3,
+        \end{aligned} \\
+         & \begin{aligned}
+            x^2
+            = {} & (2 + (x - 2))^2                                       \\
+            = {} & 1 \cdot 2^2 + 2 \cdot 2^1 (x-2) + 1 \cdot 2^0 (x-2)^2 \\
+            = {} & 4 + 4(x-2) + (x-2)^2,
+        \end{aligned} \\
+         & x = 2 + (x-2) \period
+    \end{align*}
+    所以
+    \begin{align*}
+        f(x)
+        = {} & x^3 - 6x^2 + 15x - 12              \\
+        = {} & 8 + 12(x-2) + 6(x-2)^2 + (x-2)^3   \\
+             & \qquad - 6(4 + 4(x-2) + (x-2)^2)   \\
+             & \qquad \qquad + 15(2 + (x-2)) - 12 \\
+        = {} & (x-2)^3 + 3(x-2) + 2 \period
+    \end{align*}
+\end{example}
