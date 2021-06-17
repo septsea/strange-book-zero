@@ -10,7 +10,7 @@ The source code of the work is licensed under [the Unlicense](https://unlicense.
 >
 > THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 >
-> For more information, please refer to <https://unlicense.org>
+> For more information, please refer to [<https://unlicense.org>](https://unlicense.org)
 
 The text is licensed under [CC0](https://creativecommons.org/publicdomain/zero/1.0/). Here is the summary:
 
@@ -22,6 +22,8 @@ The text is licensed under [CC0](https://creativecommons.org/publicdomain/zero/1
 >
 > ## Other information
 > 
-> - In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as publicity or privacy rights.
+> - In no way are the patent or trademark rights of any person affected by CC0, nor are the rights that other persons may have in the work or in how the work is used, such as [publicity or privacy](https://wiki.creativecommons.org/Frequently_Asked_Questions#When_are_publicity_rights_relevant.3F) rights.
 > - Unless expressly stated otherwise, the person who associated a work with this deed makes no warranties about the work, and disclaims liability for all uses of the work, to the fullest extent permitted by applicable law.
-> - When using or citing the work, you should not imply endorsement by the author or the affirmer.
+> - When using or citing the work, you should not imply endorsement<sup>1</sup> by the author or the affirmer.
+
+<sup>1</sup> In some jurisdictions, wrongfully implying that an author, publisher or anyone else endorses your use of a work may be unlawful.
