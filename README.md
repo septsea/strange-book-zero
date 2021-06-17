@@ -23,6 +23,8 @@ The external fonts that I use are `Source Han Serif CN`, `Sarasa Mono SC Light` 
 
 Please feel free to read, modify or redistribute the book, where the *or* is of course an inclusive *or*.
 
+I highly appreciate any comments, corrections or suggestions.
+
 Project Links:
 
 - [https://gitee.com/septsea/strange-book-zero](https://gitee.com/septsea/strange-book-zero)
