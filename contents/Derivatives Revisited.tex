@@ -455,6 +455,10 @@
     以后我们不用 $q_m (r)$ 记号了\period
 \end{remark}
 
+\begin{remark}
+    我们提一个读者可能已经注意到的事实\period 设 $n$ 是非负整数\period 则 $n$ 次多项式的 $n$ 级导数不是 $0$, 但 $n+1$ 级导数是 $0$\period 这也解释了为什么在 Taylor 公式里, 我们只要求 $n$ 不低于 $f(x)$ 的次\period
+\end{remark}
+
 \begin{example}
     取 $n = 3$\period 设
     \begin{align*}
@@ -492,8 +496,52 @@ Taylor 公式一个用途是证明
 \end{proposition}
 
 \begin{pf}
-    % TODO: To be continued.
+    设 $h(x) = f(x)g(x)$\period 取整数 $n$ 使 $\deg f(x) \leq n$, $\deg g(x) \leq n$, $\deg h(x) \leq n$, 且 $1 \leq n$\period 任取 $c \in \FF$\period 则
+    \begin{align*}
+         & f(x) = \sum_{i = 0}^{n} \frac{D^i f(c)}{i!} (x-c)^i,        \\
+         & g(x) = \sum_{j = 0}^{n} \frac{D^j g(c)}{j!} (x-c)^j,        \\
+         & h(x) = \sum_{k = 0}^{n} \frac{D^k h(c)}{k!} (x-c)^k \period
+    \end{align*}
+    不过, 既然 $h(x)$ 是 $f(x)$ 与 $g(x)$ 的积, 也应有
+    \begin{align*}
+        h(x) = \sum_{k = 0}^{n+n} s_k (x-c)^k = \sum_{k = 0}^{n} s_k (x-c)^k,
+    \end{align*}
+    其中
+    \begin{align*}
+        s_k
+        = {} & \sum_{i = 0}^{k} \frac{D^i f(c)}{i!} \cdot \frac{D^{k-i} g(c)}{(k-i)!}   \\
+        = {} & \frac{1}{k!} \sum_{i = 0}^{k} \binom{k}{i} D^i f(c) D^{k-i} g(c) \period
+    \end{align*}
+    所以, 任取不超过 $n$ 的非负整数 $k$, 必有
+    \begin{align*}
+                 & s_k = \frac{D^k h(c)}{k!}                                              \\
+        \implies & D^k h(c) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(c) D^{k-i} g(c) \period
+    \end{align*}
+    作多项式
+    \begin{align*}
+        E(x) = D^k h(x) - \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x) \period
+    \end{align*}
+    上面的推理告诉我们, 任取 $c \in \FF$, 必有 $E(c) = 0$\period 所以 $E(x)$ 一定是零多项式, 即
+    \begin{align*}
+        D^k h(x) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x) \period
+    \end{align*}
+    取 $k=1$, 有
+    \begin{align*}
+             & D (f(x)g(x))                                          \\
+        = {} & D^1 h(x)                                              \\
+        = {} & \sum_{i = 0}^{1} \binom{1}{i} D^i f(x) D^{1-i} g(x)   \\
+        = {} & 1 \cdot D^0 f(x) D^1 g(x) + 1 \cdot D^1 f(x) D^0 g(x) \\
+        = {} & Df(x) \cdot g(x) + f(x) \cdot Dg(x) \period \qedhere
+    \end{align*}
 \end{pf}
+
+\begin{remark}
+    事实上, 我们得到了高级导数的 Leibniz 公式 \term{Leibniz's formula}: 若 $k$ 是非负整数, 且 $f(x)$, $g(x) \in \FF[x]$, 则
+    \begin{align*}
+        D^k (f(x)g(x)) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x) \period
+    \end{align*}
+    不过, 在本文里, 我们用不到这个公式\period
+\end{remark}
 
 \begin{example}
     取
