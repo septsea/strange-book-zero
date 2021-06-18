@@ -83,7 +83,7 @@
 \begin{align*}
     x^i
     = {} & (c + (x - c))^i                                           \\
-    = {} & \sum_{j = 0}^{i} \binom{n}{k} c^{n - k} (x-c)^{k} \period
+    = {} & \sum_{j = 0}^{i} \binom{i}{j} c^{i - j} (x-c)^{j} \period
 \end{align*}
 由此, 我们可以把任意多项式
 \begin{align*}
@@ -218,7 +218,7 @@
 \end{pf}
 
 \begin{example}
-    考虑 $\FF$ 与 $\FF[x]$\period 取
+    取
     \begin{align*}
         f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1 \period
     \end{align*}
@@ -318,5 +318,270 @@
     读者不难验证: 对任意超出 $3$ 的整数 $e$, 必有
     \begin{align*}
         D^e f(x) = 0 \period
+    \end{align*}
+\end{example}
+
+类似地, 高级导数适合如下性质:
+
+\begin{proposition}
+    设 $e$ 是非负整数\period 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    \begin{align*}
+        D^e \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
+        = \sum_{\ell = 0}^{k-1} c_\ell D^e f_\ell (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    用数学归纳法\period 我们把具体过程留给读者当练习\period
+\end{pf}
+
+% cSpell: disable-next-line
+当初我们为得到 Vandermonde 恒等式与二项展开, 我们引入了临时工具 $r^{[k]}$\period 现在, 类似地, 为了更方便地讨论多项式的高级导数, 我们引入
+
+\begin{definition}
+    设 $m$ 为整数\period 设 $r \in \FF[x]$\period 定义
+    \begin{align*}
+        q_m (r) = \begin{cases}
+            \frac{1}{m!} r^m, & \quad m > 0;        \\
+            1,                & \quad m = 0;        \\
+            0,                & \quad m < 0 \period
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+设 $k$ 是整数\period 我们知道
+\begin{align*}
+    \Delta \binom{x}{k} = \binom{x}{k - 1} \period
+\end{align*}
+类似地, 我们有
+
+\begin{proposition}
+    设 $m$ 为整数\period 则
+    \begin{align*}
+        D q_m (x) = q_{m-1} (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    $m > 0$ 时,
+    \begin{align*}
+        D q_m (x) = m \cdot \frac{x^{m-1}}{m!} = \frac{x^{m-1}}{(m-1)!} = q_{m-1} (x) \period
+    \end{align*}
+    $m \leq 0$ 时, $q_m (x) = a$, 这里 $a \in \FF$\period 故
+    \begin{align*}
+         & D q_m (x) = 0 = q_{m-1} (x) \period \qedhere
+    \end{align*}
+\end{pf}
+
+由此可得
+
+\begin{proposition}
+    设 $e$ 是非负整数\period 设 $m$ 为整数\period 则
+    \begin{align*}
+        D^e q_m (x) = q_{m-e} (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    用数学归纳法\period 我们把具体过程留给读者当练习\period
+\end{pf}
+
+现在, 我们看高级导数与二项展开的关系\period
+
+固定某 $c \in \FF$\period 固定某非负整数 $n$\period 任取不高于 $n$ 的非负整数 $i$\period 则
+\begin{align*}
+    q_{i} (x)
+    = {} & \frac{1}{i!} \sum_{j = 0}^{i} \binom{i}{j} c^{i - j} (x-c)^{j}           \\
+    = {} & \frac{1}{i!} \sum_{j = 0}^{i} \frac{i!}{(i - j)! j!} c^{i - j} (x-c)^{j} \\
+    = {} & \frac{1}{i!} \sum_{j = 0}^{i} i! q_{i-j} (c) q_{j} (x-c)                 \\
+    = {} & \sum_{j = 0}^{i} q_{i-j} (c) q_{j} (x-c)                                 \\
+    = {} & \sum_{j = 0}^{n} q_{i-j} (c) q_{j} (x-c) \period
+\end{align*}
+任取次不高于 $n$ 的多项式
+\begin{align*}
+    f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x] \period
+\end{align*}
+设
+\begin{align*}
+    b_\ell = \ell! a_\ell \quad (\ell = 0,1,\cdots,n) \period
+\end{align*}
+则
+\begin{align*}
+    f(x) = b_0 q_0 (x) + b_1 q_1 (x) + \cdots + b_n q_n (x) \period
+\end{align*}
+不难看出, 当 $j$ 是非负整数时,
+\begin{align*}
+    D^j f(x) = b_0 q_{0-j} (x) + b_1 q_{1-j} (x) + \cdots + b_n q_{n-j} (x) \period
+\end{align*}
+所以
+\begin{align*}
+    f(x)
+    = {} & \sum_{i = 0}^{n} b_i q_i (x)                                     \\
+    = {} & \sum_{i = 0}^{n} b_i \sum_{j = 0}^{n} q_{i-j} (c) q_{j} (x-c)    \\
+    = {} & \sum_{i = 0}^{n} \sum_{j = 0}^{n} b_i q_{i-j} (c) q_{j} (x-c)    \\
+    = {} & \sum_{j = 0}^{n} \sum_{i = 0}^{n} b_i q_{i-j} (c) q_{j} (x-c)    \\
+    = {} & \sum_{j = 0}^{n} \left( \sum_{i = 0}^{n} b_i q_{i-j} (c) \right)
+    q_{j} (x-c)                                                             \\
+    = {} & \sum_{j = 0}^{n} D^j f(c) q_{j} (x-c)                            \\
+    = {} & \sum_{j = 0}^{n} \frac{D^j f(c)}{j!} (x-c)^j \period
+\end{align*}
+
+我们已经证明了
+
+\begin{proposition}
+    设 $n$ 是非负整数\period 设 $f(x)$ 是次不高于 $n$ 的多项式\period 设 $c \in \FF$\period 则 Taylor 公式 \term{Taylor's formula} 成立:
+    \begin{align*}
+        f(x) = \sum_{j = 0}^{n} \frac{D^j f(c)}{j!} (x-c)^j \period
+    \end{align*}
+\end{proposition}
+
+\begin{remark}
+    我们可以说, Taylor 公式是二项展开的推广\period 也可以说, 二项展开是 Taylor 公式的特例\period
+\end{remark}
+
+\begin{remark}
+    取 $c = 0$, 有
+    \begin{align*}
+        f(x) = \sum_{j = 0}^{n} \frac{D^j f(0)}{j!} x^j \period
+    \end{align*}
+    读者可能会注意到, 上式的形式与
+    \begin{align*}
+        f(x) = \sum_{k = 0}^{n} \Delta^k f(0) \binom{x}{k}
+    \end{align*}
+    的形式十分相似\period
+\end{remark}
+
+\begin{remark}
+    以后我们不用 $q_m (r)$ 记号了\period
+\end{remark}
+
+\begin{example}
+    取 $n = 3$\period 设
+    \begin{align*}
+        f(x) = x^3 - 6x^2 + 15x - 12 \period
+    \end{align*}
+    则 $f(x)$ 的次不高于 $n$, 且
+    \begin{align*}
+         & D^0 f(x) = f(x) = x^3 - 6x^2 + 15x - 12, \\
+         & D^1 f(x) = D f(x) = 3x^2 - 12x + 15,     \\
+         & D^2 f(x) = D (D f(x)) = 6x - 12,         \\
+         & D^3 f(x) = D (D^2 f(x)) = 6 \period
+    \end{align*}
+    取 $c = 2$\period 则
+    \begin{align*}
+         & D^0 f(2) = 2^3 - 6 \cdot 2^2 + 15 \cdot 2 - 12 = 2, \\
+         & D^1 f(2) = 3 \cdot 2^2 - 12 \cdot 2 + 15 = 3,       \\
+         & D^2 f(2) = 6 \cdot 2 - 12 = 0,                      \\
+         & D^3 f(2) = 6 \period
+    \end{align*}
+    根据 Taylor 公式,
+    \begin{align*}
+        f(x)
+        = {} & 2 + \frac{3}{1!} (x-2) + \frac{0}{2!} (x-2)^2 + \frac{6}{3!} (x-2)^3 \\
+        = {} & 2 + 3(x-2) + (x-2)^3 \period
+    \end{align*}
+\end{example}
+
+Taylor 公式一个用途是证明
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$\period 则
+    \begin{align*}
+        D(f(x) g(x)) = Df(x) \cdot g(x) + f(x) \cdot Dg(x) \period \tag*{(\myStar)}
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    % TODO: To be continued.
+\end{pf}
+
+\begin{example}
+    取
+    \begin{align*}
+        f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1 \period
+    \end{align*}
+    不难得到
+    \begin{align*}
+        Df (x) = 3x^2, \quad Dg (x) = 2x + 1 \period
+    \end{align*}
+
+    $f(x)$ 与 $g(x)$ 的积
+    \begin{align*}
+        f(x) g(x) = x^5 + x^4 - x^3 + 2x^2 + 2x - 2
+    \end{align*}
+    的导数是
+    \begin{align*}
+        D(f(x) g(x)) = 5x^4 + 4x^3 - 3x^2 + 4x + 2 \period
+    \end{align*}
+    如果用上面的 (\myStar) 计算, 就是
+    \begin{align*}
+             & Df (x) g(x) + f(x) Dg (x)                \\
+        = {} & 3x^2 (x^2 + x - 1) + (x^3 + 2) (2x + 1)  \\
+        = {} & 3x^4 + 3x^3 - 3x^2 + 2x^4 + x^3 + 4x + 2 \\
+        = {} & 5x^4 + 4x^3 - 3x^2 + 4x + 2 \period
+    \end{align*}
+\end{example}
+
+下面的二个命题是正确的:
+
+\begin{proposition}
+    当 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    \begin{align*}
+             & D(f_0 (x) f_1 (x) \cdots f_{k-1} (x))                                              \\
+        = {} & Df_0 (x) f_1 (x) \cdots f_{k-1} (x) + f_0 (x) Df_1 (x) \cdots f_{k-1} (x) + \cdots \\
+             & \qquad \qquad + f_0 (x) f_1 (x) \cdots Df_{k-1} (x) \period
+    \end{align*}
+    取 $f_0 (x) = f_1 (x) = \cdots = f_{k-1} (x) = f(x)$ 知
+    \begin{align*}
+        D((f(x))^k) = k(f(x))^{k-1} Df(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    用数学归纳法\period 我们把具体过程留给读者当练习\period
+\end{pf}
+
+\begin{example}
+    设 $f(x) = (x^2 + x - 1)^{666}$\period 求 $Df(x)$\period
+
+    取 $g(x) = x^2 + x - 1$\period 显然, $f(x) = (g(x))^{666}$\period 所以
+    \begin{align*}
+        Df(x)
+        = {} & D((g(x))^{666})                          \\
+        = {} & 666 (g(x))^{666 - 1} Dg(x)               \\
+        = {} & 666 (x^2 + x - 1)^{665} (2x + 1)         \\
+        = {} & 666 (2x + 1) (x^2 + x - 1)^{665} \period
+    \end{align*}
+\end{example}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的导数适合链规则:
+    \begin{align*}
+        D(g \circ f) (x) = (Dg \circ f)(x) Df (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    可看 Derivatives 节的相应内容\period
+\end{pf}
+
+\begin{example}
+    设 $f(x) = (x^2 + x - 1)^5 + 3 (x^2 + x - 1)^4 - 1$\period 求 $Df(x)$\period
+
+    取 $g(x) = x^5 + 3x^4 - 1$ 与 $h(x) = x^2 + x - 1$\period 则
+    \begin{align*}
+         & Dg(x) = 5x^4 + 12x^3 = x^3 (5x + 12), \\
+         & Dh(x) = 2x + 1 \period
+    \end{align*}
+    显然,
+    \begin{align*}
+        f(x) = g(h(x)) = (g \circ h) (x) \period
+    \end{align*}
+    所以
+    \begin{align*}
+        Df(x)
+        = {} & (Dg \circ h)(x) Dh(x)                            \\
+        = {} & (x^2 + x - 1)^3 (5(x^2 + x - 1) + 12) (2x + 1)   \\
+        = {} & (2x + 1) (5x^2 + 5x + 7) (x^2 + x - 1)^3 \period
     \end{align*}
 \end{example}

@@ -5,14 +5,17 @@
 
 % Make sure you have installed the fonts I use. If not, just remember to
 % make some modifications.
-\documentclass[UTF8,fontset=none,twoside,leqno,a4paper]{ctexart}
+\documentclass[UTF8,fontset=none,twoside,leqno,12pt,a4paper]{ctexart}
 % \documentclass[UTF8,twoside,leqno]{ctexart}
+
 \usepackage{amssymb}
 \usepackage{amsmath}
 % Add hyperlinks to the table of contents
 \usepackage[hidelinks]{hyperref}
 \usepackage{bookmark}
 \usepackage{xcolor}
+\xeCJKsetup{CJKmath=true}
+\def\period{。}
 % \definecolor{bb}{RGB}{251,114,153}
 
 % \usepackage{lipsum}
@@ -64,29 +67,11 @@
 \providecommand{\myFN}{}
 \renewcommand{\myFN}[1]{\footnote{\sffamily \ #1}}
 
-% Deprecated. Now I use the theorem layout
-% Numbering style for exercises
-% \usepackage{enumitem}
-% \renewcommand{\labelenumi}{\textbf{\theenumi.}}
-% \setlist[enumerate]{
-%   leftmargin=0em,
-%   listparindent=\parindent,
-%   itemindent=*,
-%   labelindent=\parindent,
-%   align=left,
-%   parsep=\parskip
-% }
-
 % Proof and solution style
 \usepackage{amsthm}
 % Use \nopunct to remove the dot: https://tex.stackexchange.com/questions/268912/can-i-change-the-dot-to-a-colon-after-proof-in-amsthm
 % Use \vspace{-\topsep} to remove extra line: https://tex.stackexchange.com/questions/59755/space-before-proof
-% \newenvironment{pf}{\begin{proof}[\indent\bf 证 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]\vspace{-\topsep}}{\end{proof}}
-% \newenvironment{solution}{\begin{proof}[\indent\bf 解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]\vspace{-\topsep}}{\end{proof}}
-% \newenvironment{pas}{\begin{proof}[\indent\bf 证明与解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]\vspace{-\topsep}}{\end{proof}}
 \newenvironment{pf}{\begin{proof}[\indent\bf 证 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
-\newenvironment{solution}{\begin{proof}[\indent\bf 解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
-\newenvironment{pas}{\begin{proof}[\indent\bf 证明与解 \hspace{-.1em}\hspace{-\labelsep}\hspace{1em}\nopunct]}{\end{proof}}
 
 \newtheoremstyle{exer} % ⟨name⟩
 {} % ⟨Space above⟩
@@ -122,7 +107,6 @@
 {1em} % ⟨Space after theorem head⟩
 {} % ⟨Theorem head spec (can be left empty, meaning 'normal')⟩
 \theoremstyle{remarkStyle}
-\newtheorem*{supplement}{补充题}
 \newtheorem*{proposition}{命题}
 \newtheorem*{definition}{定义}
 \newtheorem*{example}{例}
@@ -130,17 +114,12 @@
 
 % https://oomake.com/question/175655
 \renewcommand{\theexercise}{\arabic{exercise}}
-% \newenvironment{pf}{\begin{proof}[\indent\bf 证 \hphantom{.\ }\nopunct]\vspace{-\topsep}}{\vspace{-\topsep}\end{proof}}
-% \newenvironment{solution}{\begin{proof}[\indent\bf 解 \hphantom{.\ }\nopunct]\vspace{-\topsep}}{\vspace{-\topsep}\end{proof}}
-% \newenvironment{pas}{\begin{proof}[\indent\bf 证明与解 \hphantom{.\ }\nopunct]\vspace{-\topsep}}{\vspace{-\topsep}\end{proof}}
-% Use a black square instead
-% \renewcommand{\qedsymbol}{$\blacksquare$}
 
 % Use some special characters.
 \usepackage{pifont}
 
 % Allow page breaks in display formulae
-\allowdisplaybreaks[4]
+\allowdisplaybreaks[3]
 
 \def\CC{\mathbb{C}}
 \def\RR{\mathbb{R}}
@@ -151,7 +130,6 @@
 \def\ii{\mathrm{i}}
 \def\myStar{\ding{72}}
 \def\ellipsis{\dots}
-\def\period{\text{。}}
 \def\qedsymbol{\ding{44}}
 \newcommand{\term}[1]{(\textit{#1})}
 
@@ -210,12 +188,18 @@
 \vfill
 
 \begin{center}
-    \textbf{\LARGE Delving into Polynomials}
+    \sffamily
 
-    \vspace{1.5ex}
+    \textbf{\huge Delving into Polynomials}
 
-    \textit{A \ding{180}\myFN{\ding{180} implies stupidity in the two-dimensional culture.} article written by a \ding{180} person}
+    \vspace{2ex}
+
+    \textit{\large A \ding{200}\myFN{\ding{200} implies stupidity in the two-dimensional culture.} article written by a \ding{200} person}
 \end{center}
+
+\vfill
+
+\ \
 
 \vfill
 
@@ -268,28 +252,40 @@ Out of boredom, I wrote the article.
     }
 
 \clearpage
-
 \input{contents/Prerequisites.tex}
 
+\clearpage
 \input{contents/Definition of Polynomials.tex}
 
+\clearpage
 \input{contents/Division Algorithm.tex}
 
+\clearpage
 \input{contents/Polynomial Equality.tex}
 
+\clearpage
 \input{contents/Derivatives.tex}
 
+\clearpage
 \input{contents/Roots of Polynomials.tex}
 
+\clearpage
 \input{contents/Polynomials over F.tex}
 
+\clearpage
 \input{contents/Interpolation.tex}
 
+\clearpage
 \input{contents/Generalized Binomial Coefficients.tex}
 
+\clearpage
 \input{contents/Summation Formulae.tex}
 
+\clearpage
 \input{contents/Derivatives Revisited.tex}
+
+\clearpage
+\input{contents/Differential Calculus on Polynomials.tex}
 
 \cleardoublepage
 % \thispagestyle{empty}
