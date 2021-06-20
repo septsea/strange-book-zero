@@ -1,0 +1,566 @@
+\subsection*{Introduction to Differential Calculus on Polynomials}
+\addcontentsline{toc}{subsection}{Introduction to Differential Calculus on Polynomials}
+\markright{Introduction to Differential Calculus on Polynomials}
+
+本节讨论多项式的微分学 \term{differential calculus} 初步\myFN{学过一元函数微分学的读者可能会觉得本节废话连篇\period 不过, 为照顾不熟悉三角不等式及相关知识的读者, 作者也没什么更好的写作思路了\period}\period 这也是本文的最终节\period
+
+How time flies! 一开始, 我们在 Prerequisites 给读者介绍预备知识\period 然后, 我们给读者介绍了系数为整环的元的多项式\period 当初, 多项式还是有点抽象的\period 我们利用带余除法推出了几个很重要的命题, 并指出: 当多项式的系数为 $\FF$ 的元时, 多项式与中学学的多项式 (函数) 没有根本上的区别\period 我们在 Interpolation 节开始介绍多项式的应用\period 后面的 Summation Formulae 节告诉读者一种方便的求和法\period 在上节, 我们捡起很久未出场的导数, 并把它重讲了一遍\period 我们利用高级导数推广了二项展开, 得到了 Taylor 公式, 并用它重证多项式的积的导数规则\period
+
+之前, 导数都是形式的——有点 ``空降'' 的味道\period 现在, 我们要用 Taylor 公式给导数一种含义\period 如果您知道一点微积分 \term{calculus}, 您将不会对本节感到特别陌生; 如果您没有学过微积分, 无妨将本节作为 ``入微作''\period
+
+我们在 Polynomials over $\FF$ 节说过, 我们不再讨论抽象的整环或系数为整环的元的多项式, 而是讨论 $\FF$ 与 $\FF[x]$\period 现在, 我们再具体一点——讨论老朋友 $\RR$ 与 $\RR[x]$——再准确点, 其实是 $\RR$ 到 $\RR$ 的多项式函数\period
+
+不过, 我们需要承认一个事实是对的\period 为什么说 ``承认'' 呢? 因为它的证明需要超出本文的知识很多很多的工具\period 但是, 它并不是什么 ``牵强附会'' 的命题\period 是什么命题呢? 我们不必现在就说; 我们在用到它的时候再说\period
+
+我们先带读者熟悉实数\period
+
+读者也许还记得实数 $a$ 的绝对值:
+\begin{align*}
+    |a| = \begin{cases}
+        a,  & \quad a \geq 0;     \\
+        -a, & \quad a < 0 \period
+    \end{cases}
+\end{align*}
+
+请读者尝试自行证明下面四个命题\period 当然, 熟悉这四个命题的读者可以不证\period 我们把它们写在这里供读者参考\period
+
+\begin{proposition}
+    设 $a \in \RR$\period 则 $|a| \geq 0$\period
+\end{proposition}
+
+\begin{proposition}
+    设 $a \in \RR$\period 则
+    \begin{align*}
+        a = \begin{cases}
+            |a|,  & \quad a \geq 0;     \\
+            -|a|, & \quad a < 0 \period
+        \end{cases}
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $a \in \RR$\period 则 $-|a| \leq a \leq |a|$\period
+\end{proposition}
+
+\begin{proposition}
+    设 $a \in \RR$, 且 $b > 0$\period 则
+    \begin{align*}
+         & |a| \leq b \iff -b \leq a \leq b; \\
+         & |a| < b \iff -b < a < b \period
+    \end{align*}
+\end{proposition}
+
+读者也许还记得平方的性质:
+\begin{align*}
+    a^2 = (-a)^2 \period
+\end{align*}
+并且, 若 $a$, $b$ 都是非负数, 则
+\begin{align*}
+    a = b \iff a^2 = b^2 \period
+\end{align*}
+
+利用这些性质, 我们有
+
+\begin{proposition}
+    设 $a_0$, $a_1$, $\cdots$, $a_{n-1} \in \RR$\period 则
+    \begin{align*}
+        |a_0 a_1 \cdots a_{n-1}| = |a_0| \cdot |a_1| \cdot \cdots \cdot |a_{n-1}| \period
+    \end{align*}
+    特别地, 若 $a_0 = a_1 = \cdots = a_{n-1} = a$, 则
+    \begin{align*}
+        |a^n| = |a|^n \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    请读者尝试自行证明此命题\period 不过, 我们愿意提示读者: (i) 等式的左右二侧都是非负的; (ii) 等式的左右二侧的平方是一样的\period
+\end{pf}
+
+下面是一个十分重要的不等式:
+
+\begin{proposition}
+    设 $a_0$, $a_1$, $\cdots$, $a_{n-1} \in \RR$\period 则
+    \begin{align*}
+        |a_0 + a_1 + \cdots + a_{n-1}| \leq |a_0| + |a_1| + \cdots + |a_{n-1}| \period
+    \end{align*}
+    这个不等式的一个名字是三角不等式 \term{triangle inequality}\period
+\end{proposition}
+
+\begin{pf}
+    易知
+    \begin{align*}
+         & -|a_0| \leq a_0 \leq |a_0|,                    \\
+         & -|a_1| \leq a_1 \leq |a_1|,                    \\
+         & \cdots \cdots \cdots \cdots
+        \cdots \cdots \cdots \cdots
+        \cdots \cdots \cdots \cdots,                      \\
+         & -|a_{n-1}| \leq a_{n-1} \leq |a_{n-1}| \period
+    \end{align*}
+    记
+    \begin{align*}
+        b = |a_0| + |a_1| + \cdots + |a_{n-1}| \period
+    \end{align*}
+    易知 $b \geq 0$, 且
+    \begin{align*}
+        -b \leq a_0 + a_1 + \cdots + a_{n-1} \leq b \period
+    \end{align*}
+    所以
+    \begin{align*}
+         & |a_0 + a_1 + \cdots + a_{n-1}| \leq b = |a_0| + |a_1| + \cdots + |a_{n-1}| \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{definition}
+    设 $a$, $b$ 是实数, 且 $a < b$\period 称
+    \begin{align*}
+        [a,b] = \{\, t \in \RR \mid a \leq t \leq b \,\}
+    \end{align*}
+    为闭区间 \term{closed interval}; 称
+    \begin{align*}
+        (a,b) = \{\, t \in \RR \mid a < t < b \,\}
+    \end{align*}
+    为开区间 \term{open interval}\period 类似地, 有半闭区间 \term{half-closed interval}:
+    \begin{align*}
+         & [a,b) = \{\, t \in \RR \mid a \leq t < b \,\},        \\
+         & (a,b] = \{\, t \in \RR \mid a < t \leq b \,\} \period
+    \end{align*}
+    $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$ 都是有限区间 \term{finite interval}\period 此名暗示着, 还有无限区间 \term{infinite interval}:
+    \begin{align*}
+         & (-\infty, a) = \{\, t \in \RR \mid t < a \,\},    \\
+         & (-\infty, a] = \{\, t \in \RR \mid t \leq a \,\}, \\
+         & (b, +\infty) = \{\, t \in \RR \mid t > b \,\},    \\
+         & [b, +\infty) = \{\, t \in \RR \mid t \geq b \,\}, \\
+         & (-\infty, +\infty) = \RR \period
+    \end{align*}
+    有限区间与无限区间都是区间 \term{interval}\period
+\end{definition}
+
+\begin{proposition}
+    设 $a$, $b$ 是实数, 且 $a < b$\period 若 $r > |a|$ 且 $r > |b|$, 则 $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$ 都是 $[-r, r]$ 的真子集\period
+\end{proposition}
+
+\begin{pf}
+    请读者尝试自行证明此命题\period
+\end{pf}
+
+% 下面的定义指出, 利用 $S$ 的非空子集, 点可被分为三类\period
+
+% \begin{definition}
+%     设 $S$ 是 $\RR$ 的非空子集\period 设 $a \in \RR$\period 若存在正数 $\delta_0$ 使
+%     \begin{align*}
+%         |t - a| < \delta_0 \implies t \in S,
+%     \end{align*}
+%     则说 $a$ 是 $S$ 的内点 \term{interior point}\period 显然, $S$ 的内点都是 $S$ 的元\period
+
+%     若存在正数 $\delta_1$ 使
+%     \begin{align*}
+%         |t - a| < \delta_1 \implies t \notin S,
+%     \end{align*}
+%     则说 $a$ 是 $S$ 的外点 \term{exterior point}\period 显然, $S$ 的外点一定不是 $S$ 的元\period
+
+%     若 $a$ 既不是内点, 也不是外点, 就说 $a$ 是界点 \term{boundary point}\period
+% \end{definition}
+
+% \begin{example}
+%     考虑
+%     \begin{align*}
+%         S = (0, 4] = \{\, t \in \RR \mid 0 < t \leq 4 \,\} \period
+%     \end{align*}
+
+%     $2$ 是 $S$ 的内点\period 这是因为, 存在正数 $\delta_0 = 1$, 使
+%     \begin{align*}
+%         |t - 2| < \delta_0 \implies t \in S \period
+%     \end{align*}
+
+%     $666$ 是 $S$ 的外点\period 这是因为, 存在正数 $\delta_1 = 233$, 使
+%     \begin{align*}
+%         |t - 666| < \delta_1 \implies t \notin S \period
+%     \end{align*}
+
+%     $0$ 是 $S$ 的界点\period 反证法\period 若 $0$ 是 $S$ 的内点, 则应有某正数 $\delta_2$ 使
+%     \begin{align*}
+%         |t - 0| < \delta_2 \implies t \in S \period
+%     \end{align*}
+%     可是, 这是矛盾: 当 $t = -\frac{\delta_2}{2}$ 时, 此 $t$ 适合 $|t - 0| < \delta_2$ 却不适合 $t \in S$\period 所以 $0$ 一定不是 $S$ 的内点\period 若 $t$ 是 $S$ 的外点, 则应有正数 $\delta_3$ 使
+%     \begin{align*}
+%         |t - 0| < \delta_3 \implies t \notin S \period
+%     \end{align*}
+%     可是, 这仍是矛盾\period 若 $\frac12 < \delta_3$, 取 $t = \frac12$\period 此 $t$ 适合 $|t - 0| < \delta_3$ 与 $t \in S$\period 若 $\frac12 \geq \delta_3$, 取 $t = \frac{\delta_3}{2}$\period 此 $t$ 也适合 $|t - 0| < \delta_3$ 与 $t \in S$\period 所以 $0$ 也不是 $S$ 的外点\period 这样, $0$ 必为 $S$ 的界点\period
+
+%     类似地, 读者可以用反证法证明 $4$ 也是 $S$ 的界点\period 注意到界点既可以是 $S$ 的元, 也可以不是 $S$ 的元\period
+% \end{example}
+
+% \begin{remark}
+%     % Something wrong with the formatter
+%     设 $a$, $b$ 是实数, 且 $a < b$\period 我们有如下命题:
+
+%     (i) $a$ 是 $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$, $(-\infty,a)$, $(-\infty,a]$ 的界点;
+
+%     (ii) $b$ 是 $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$, $(b,+\infty)$, $[b,+\infty)$ 的界点;
+
+%                     (iii) 若 $t \in (a,b)$, 则 $t$ 是 $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$ 的内点;
+
+%                     (iv) 若 $t \notin [a,b]$, 则 $t$ 是 $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$ 的外点;
+
+%                     (v) 若 $t \in (-\infty,a)$, 则 $t$ 是 $(-\infty,a)$, $(-\infty,a]$ 的内点, 且 $t$ 是 $(a,+\infty)$, $[a,+\infty)$ 的外点;
+
+%     (vi) 若 $t \in (b,+\infty)$, 则 $t$ 是 $(b,+\infty)$, $[b,+\infty)$ 的内点, 且 $t$ 是 $(-\infty,b)$, $(-\infty,b]$ 的外点;
+
+%     (vii) 若 $t \in \RR$, 则 $t$ 是 $\RR$ 的内点;
+
+%     (viii) 若 $r > |a|$ 且 $r > |b|$, 则 $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$ 都是 $[-r, r]$ 的真子集\period
+% \end{remark}
+
+下面建立一些关于多项式的不等式\period
+
+\begin{proposition}
+    设 $n$ 是非负整数\period 设 $a_0, a_1$, $\cdots$, $a_n \in \RR$\period 任取正数 $r$, 必存在正数 $M$ 使
+    \begin{align*}
+        |u| \leq r \implies |a_0 + a_1 u + \cdots + a_n u^n| \leq M \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    设正数 $C$ 不低于 $|a_0|$, $|a_1|$, $\cdots$, $|a_n|$ 的任意一个\period 则 $|u| \leq r$ 时,
+    \begin{align*}
+                & |a_0 + a_1 u + \cdots + a_n u^n|         \\
+        \leq {} & |a_0| + |a_1 u| + \cdots + |a_n u^n|     \\
+        = {}    & |a_0| + |a_1| |u| + \cdots + |a_n| |u|^n \\
+        \leq {} & C (1 + |u| + \cdots + |u|^n)             \\
+        \leq {} & C (1 + r + \cdots + r^n) \period
+    \end{align*}
+    记
+    \begin{align*}
+        M = C (1 + r + \cdots + r^n) > 0\period
+    \end{align*}
+    由此,
+    \begin{align*}
+         & |u| \leq r \implies |a_0 + a_1 u \cdots + a_n u^n| \leq M \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{proposition}
+    设 $I$ 是有限区间\period 设 $f(x) \in \RR[x]$\period 存在正数 $M$ 使
+    \begin{align*}
+        u \in I \implies |f(u)| \leq M \period
+    \end{align*}
+    用文字描述这句话, 就是: 多项式函数在任意有限区间上都是有界的 \term{to be bounded}\period
+\end{proposition}
+
+\begin{pf}
+    取 $r > 0$ 使 $I \subset [-r, r]$\period 设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \RR[x] \period
+    \end{align*}
+    根据上个命题, 存在正数 $M$ 使
+    \begin{align*}
+        |u| \leq r \implies |f(u)| \leq M \period
+    \end{align*}
+    所以
+    \begin{align*}
+         & u \in I \implies |f(u)| \leq M \period \qedhere
+    \end{align*}
+\end{pf}
+
+我们有时称 $\RR$ 的元为点\period
+
+\begin{proposition}
+    设 $f(x) \in \RR[x]$\period 设 $t_0 \in \RR$\period 任取 $\varepsilon > 0$, 必有 $\delta > 0$, 使
+    \begin{align*}
+        |t - t_0| < \delta \implies |f(t) - f(t_0)| < \varepsilon \period
+    \end{align*}
+    通俗地说, 当点 $t$ 与点 $t_0$ 足够近时, 多项式在二点的值可任意接近\period
+\end{proposition}
+
+\begin{pf}
+    若 $f(x) = c$, $c \in \RR$, 则
+    \begin{align*}
+        |f(t) - f(t_0)| = |c - c| = 0 < \varepsilon
+    \end{align*}
+    总是成立的\period 下设 $f(x)$ 的次高于 $0$\period
+
+    根据 Roots of Polynomials 节的结论, 存在多项式 $q(x)$ 使
+    \begin{align*}
+        f(x) = (x - t_0) q(x) + f(t_0) \period
+    \end{align*}
+    所以
+    \begin{align*}
+        |f(t) - f(t_0)| = |q(t)| |t - t_0| \period
+    \end{align*}
+    设 $I = [t_0 - 1, t_0 + 1]$\period 不难看出,
+    \begin{align*}
+        I
+        = {} & \{\, t \in \RR \mid t_0 - 1 \leq t \leq t_0 + 1 \,\} \\
+        = {} & \{\, t \in \RR \mid -1 \leq t - t_0 \leq 1 \,\}      \\
+        = {} & \{\, t \in \RR \mid |t - t_0| \leq 1 \,\} \period
+    \end{align*}
+    利用上个命题, 存在 $M > 0$ 使
+    \begin{align*}
+        |t - t_0| \leq 1 \implies |q(t)| \leq M \period
+    \end{align*}
+    这样,
+    \begin{align*}
+        |t - t_0| \leq 1 \implies |f(t) - f(t_0)| \leq M |t - t_0| \period
+    \end{align*}
+    任取 $\varepsilon > 0$\period 取一个既低于 $1$ 也低于 $\frac{\varepsilon}{M}$ 的正数 $\delta$\period 这样, $|t - t_0| < \delta$ 时, 必有
+    \begin{align*}
+         & |f(t) - f(t_0)| \leq M |t - t_0| < M \cdot \frac{\varepsilon}{M} = \varepsilon \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{proposition}
+    设 $t_0 \in \RR$\period 设 $\ell$ 是非负整数\period 设
+    \begin{align*}
+         & f(x) = a_\ell (x - t_0)^\ell + a_{\ell+1} (x - t_0)^{\ell+1}
+        + \cdots + a_n (x - t_0)^n,                                     \\
+         & g(x) = a_\ell (x - t_0)^\ell,
+    \end{align*}
+    且 $a_\ell \neq 0$\period 则存在 $\delta > 0$, 使 $0 < |t - t_0| < \delta$ 时, 必有 $f(t)$ 与 $g(t)$ 同号\period
+\end{proposition}
+
+\begin{pf}
+    我们说, 二个不为 $0$ 的数 $a$, $b$ 同号, 相当于 $ab > 0$\period 记
+    \begin{align*}
+        p(x) = \frac{1}{a_\ell} \sum_{j = \ell + 1}^{n} a_j (x - t_0)^{j - (\ell + 1)} \period
+    \end{align*}
+    则
+    \begin{align*}
+        f(x)
+        = {} & a_\ell (x - t_0)^\ell + a_\ell (x - t_0)^{\ell} (x - t_0) p(x) \\
+        = {} & a_\ell (x - t_0)^\ell (1 + (x - t_0) p(x))                     \\
+        = {} & g(x) (1 + (x - t_0) p(x)) \period
+    \end{align*}
+    所以
+    \begin{align*}
+        f(x) g(x) = (g(x))^2 (1 + (x - t_0) p(x)) \period
+    \end{align*}
+    记 $q(x) = 1 + (x - t_0) p(x)$\period 取 $\varepsilon = \frac12$\period 由上个命题, 存在 $\delta > 0$ 使
+    \begin{align*}
+        |t - t_0| < \delta \implies |q(t) - 1| = |q(t) - q(t_0)| < \varepsilon = \frac12 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        |t - t_0| < \delta \implies q(t) - 1 > -\frac12 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        0 < |t - t_0| < \delta \implies q(t) > \frac12 \period
+    \end{align*}
+    因为
+    \begin{align*}
+        0 < |t - t_0| \implies (g(t))^2 > 0,
+    \end{align*}
+    故
+    \begin{align*}
+         & 0 < |t - t_0| < \delta \implies f(t) g(t) > \frac12 (g(t))^2 > 0 \period \qedhere
+    \end{align*}
+\end{pf}
+
+下面讨论导数与变率的关系\period
+
+\begin{definition}
+    设 $a$, $b$ 是实数, 且 $a < b$\period 设 $f(x) \in \RR[x]$\period 我们说多项式 $f(x)$ 在区间 $[a, b]$ 的平均变率 \term{average rate of change} 是
+    \begin{align*}
+        \frac{f(b) - f(a)}{b - a} \period
+    \end{align*}
+\end{definition}
+
+\begin{example}
+    设 $f(x) = a_0 + a_1 x$\period 则
+    \begin{align*}
+        \frac{f(b) - f(a)}{b - a} = \frac{(a_0 + a_1 b) - (a_0 + a_1 a)}{b - a} = a_1 \period
+    \end{align*}
+    可以看到, $f(x)$ 在 $[a, b]$ 的平均变率与具体区间无关\period 反过来, 若多项式 $f(x)$ 适合: 任取 $c$, $d \in \RR$, $c < d$, 都有
+    \begin{align*}
+        \frac{f(d) - f(c)}{d - c}
+    \end{align*}
+    为常数 $A$, 则
+    \begin{align*}
+        d > 0 \implies f(d) = f(0) + Ad \period
+    \end{align*}
+    作多项式
+    \begin{align*}
+        E(x) = f(0) + Ax - f(x),
+    \end{align*}
+    则任取 $d > 0$, 都有 $E(d) = 0$\period 这样, $E(x)$ 是零多项式, 即
+    \begin{align*}
+        f(x) = f(0) + Ax \period
+    \end{align*}
+\end{example}
+
+从上面的例可知: 次低于 $2$ 的多项式 $f(x) = a_0 + a_1 x$ 在任意闭区间 $[a, b]$ 的平均变率都是常数\period 我们说, 任取 $t \in \RR$, $f(x)$ 在点 $t$ 的变率 \term{rate of change} 是 $a_1$\period
+
+不过, 次高于 $1$ 的多项式有着不一样的平均变率\period
+
+\begin{example}
+    设 $f(x) = x^2 + x - 1$\period 取 $a = 0$, $b = 1$, $c = 2$\period 易知
+    \begin{align*}
+        f(a) = -1, \quad f(b) = 1, \quad f(c) = 5 \period
+    \end{align*}
+    所以, $f(x)$ 在 $[a, b]$ 的平均变率是
+    \begin{align*}
+        \frac{f(b) - f(a)}{b - a} = \frac{1 - (-1)}{1 - 0} = 2 \period
+    \end{align*}
+    而 $f(x)$ 在 $[b, c]$ 的平均变率是
+    \begin{align*}
+        \frac{f(c) - f(b)}{c - b} = \frac{5 - 1}{2 - 1} = 4 \period
+    \end{align*}
+    顺便一提, $f(x)$ 在 $[a, c]$ 的平均变率是
+    \begin{align*}
+        \frac{f(c) - f(a)}{c - a} = \frac{5 - (-1)}{2 - 0} = 3 \period
+    \end{align*}
+\end{example}
+
+虽然我们现在还不知道任意多项式 $f(x)$ 在点 $t$ 的变率, 但我们还是能作出一些定性判断的\period
+
+\begin{example}
+    设 $f_1 (x)$, $f_2 (x)$ 是多项式\period 设想 $P_1$, $P_2$ 二人同时同地在一条笔直的路上骑车单向前进\period 设 $f_1 (t)$, $f_2 (t)$ 分别表示 $t$ s 后 $P_1$, $P_2$ 距始点的距离\period 所以, $f_1 (x)$ (或 $f_2 (x)$) 在 $[a, b]$ 的平均变率代表 $a$ s 至 $b$ s 这一段的平均速率\period 如果 $f_1 (x)$ (或 $f_2 (x)$) 的次为 $1$, 则平均变率 $A$ 不变, 也就是我们常说的 ``匀速直线运动''\period 我们也说, 任取 $a > 0$, $P_1$ (或 $P_2$) 在 $a$ s 的速率都是 $A$\period
+
+    设 $t_0$ s 后, $P_1$ 从后赶上 $P_2$ 并超越之\period 这相当于, 存在 $\delta > 0$ 使
+    \begin{align*}
+        t_0 - \delta < t < t_0 & \implies f_1 (t) < f_2 (t),        \\
+        t = t_0                & \implies f_1 (t) = f_2 (t),        \\
+        t_0 < t < t_0 + \delta & \implies f_1 (t) > f_2 (t) \period
+    \end{align*}
+    经验告诉我们, $P_1$ 在 $t_0$ s 的速率一定不低于 $P_2$ 在 $t_0$ s 的速率\period 若不然, $P_1$ 是不可能赶上 $P_2$ 后并超越之, 是不是?
+\end{example}
+
+抽象上面的例, 我们可得到
+
+\begin{proposition}
+    虽然我们还不能准确地定义变率, 但生活经验告诉我们, 变率应适合如下特性:
+
+    设 $f (x)$, $g (x) \in \RR[x]$\period 若 $f (t_0) = g (t_0)$, 且存在 $\delta > 0$ 使
+    \begin{align*}
+        t_0 - \delta < t < t_0 & \implies f (t) < g (t),        \\
+        t_0 < t < t_0 + \delta & \implies f (t) > g (t) \period
+    \end{align*}
+    我们说, $f (x)$ 在点 $t_0$ 的变率不低于 $g (x)$ 在点 $t_0$ 的变率\period
+\end{proposition}
+
+为充分利用此特性, 我们特化之\period
+
+设 $A \in \RR$\period 取 $g(x) = f(t_0) + A (x - t_0)$, 则 $f(t_0) = g(t_0)$\period 因为 $g(x)$ 在 $t_0$ 的变率是 $A$, 故
+
+\begin{proposition}
+    变率应适合如下特性:
+
+    设 $f (x) \in \RR[x]$\period 若存在 $\delta_0 > 0$ 使
+    \begin{align*}
+        t_0 - \delta_0 < t < t_0 & \implies f (t) < f(t_0) + A (t - t_0),        \\
+        t_0 < t < t_0 + \delta_0 & \implies f (t) > f(t_0) + A (t - t_0) \period
+    \end{align*}
+    我们说, $f (x)$ 在点 $t_0$ 的变率不低于 $A$\period
+
+    若存在 $\delta_1 > 0$ 使
+    \begin{align*}
+        t_0 - \delta_1 < t < t_0 & \implies f (t) > f(t_0) + A (t - t_0),        \\
+        t_0 < t < t_0 + \delta_1 & \implies f (t) < f(t_0) + A (t - t_0) \period
+    \end{align*}
+    我们说, $f (x)$ 在点 $t_0$ 的变率不高于 $A$\period
+\end{proposition}
+
+若 $t_0 - \delta < t < t_0$, 则 $t_0 - t > 0$\period 所以
+\begin{align*}
+    f (t) < f(t_0) + A (t - t_0)
+    \iff {} & f (t) < f(t_0) - A (t_0 - t)              \\
+    \iff {} & A (t_0 - t) < f(t_0) - f(t)               \\
+    \iff {} & A < \frac{f(t_0) - f(t)}{t_0 - t}         \\
+    \iff {} & \frac{f(t) - f(t_0)}{t - t_0} > A \period
+\end{align*}
+若 $t_0 < t < t_0 + \delta$, 则 $t - t_0 > 0$\period 所以
+\begin{align*}
+    f (t) > f(t_0) + A (t - t_0)
+    \iff {} & f(t) - f(t_0) > A (t - t_0)               \\
+    \iff {} & \frac{f(t) - f(t_0)}{t - t_0} > A \period
+\end{align*}
+$t_0 - \delta < t < t_0$ 与 $t_0 < t < t_0 + \delta$ 相当于
+\begin{align*}
+    0 < |t - t_0| < \delta \period
+\end{align*}
+这样, 我们有
+
+\begin{proposition}
+    变率应适合如下特性:
+
+    设 $f (x) \in \RR[x]$\period 若存在 $\delta > 0$ 使
+    \begin{align*}
+        0 < |t - t_0| < \delta & \implies \frac{f(t) - f(t_0)}{t - t_0} > A,
+    \end{align*}
+    我们说, $f (x)$ 在点 $t_0$ 的变率不低于 $A$\period
+\end{proposition}
+
+同理可得
+
+\begin{proposition}
+    变率应适合如下特性:
+
+    设 $f (x) \in \RR[x]$\period 若存在 $\delta > 0$ 使
+    \begin{align*}
+        0 < |t - t_0| < \delta & \implies \frac{f(t) - f(t_0)}{t - t_0} < A,
+    \end{align*}
+    我们说, $f (x)$ 在点 $t_0$ 的变率不高于 $A$\period
+\end{proposition}
+
+现在, 让我们揭秘变率\period
+
+设 $t_0 \in \RR$\period 设 $f(x)$ 的次不高于 $n$\period 根据 Taylor 公式,
+\begin{align*}
+    f(x) = f(t_0) + Df(t_0) (x - t_0) + \sum_{j = 2}^{n} \frac{D^j f(t_0)}{j!} (x - t_0)^j \period
+\end{align*}
+所以, $t \neq t_0$ 时,
+\begin{align*}
+    \frac{f(t) - f(t_0)}{t - t_0} = Df(t_0) + \sum_{j = 2}^{n} \frac{D^j f(t_0)}{j!} (t - t_0)^{j - 1} \period
+\end{align*}
+设 $A \in \RR$\period 则
+\begin{align*}
+    \frac{f(t) - f(t_0)}{t - t_0} - A = (Df(t_0) - A) + \sum_{j = 2}^{n} \frac{D^j f(t_0)}{j!} (t - t_0)^{j - 1} \period
+\end{align*}
+记
+\begin{align*}
+    q(x) = (Df(t_0) - A) + \sum_{j = 2}^{n} \frac{D^j f(t_0)}{j!} (x - t_0)^{j - 1} \period
+\end{align*}
+若 $Df(t_0) - A \neq 0$, 则存在 $\delta > 0$, 使 $0 < |t - t_0| < \delta$ 时, $q(t)$ 与 $Df(t_0) - A$ 同号\period
+
+设 $f(x)$ 在点 $t_0$ 的变率为 $r$\period 任取 $A < Df(t_0)$, 必有
+\begin{align*}
+    0 < |t - t_0| < \delta \implies \frac{f(t) - f(t_0)}{t - t_0} > A \implies r \geq A \period
+\end{align*}
+任取 $A > Df(t_0)$, 必有
+\begin{align*}
+    0 < |t - t_0| < \delta \implies \frac{f(t) - f(t_0)}{t - t_0} < A \implies r \leq A \period
+\end{align*}
+
+我们证明: $r = Df(t_0)$\period 反证法\period 若 $r < Df(t_0)$, 作
+\begin{align*}
+    A_0 = \frac{Df(t_0) + r}{2} \period
+\end{align*}
+不难看出
+\begin{align*}
+    A_0 < \frac{Df(t_0) + Df(t_0)}{2} = Df(t_0),
+\end{align*}
+故
+\begin{align*}
+    r \geq A_0 = \frac{Df(t_0) + r}{2} \implies r \geq Df(t_0),
+\end{align*}
+矛盾! 若 $r > Df(t_0)$, 作
+\begin{align*}
+    A_1 = \frac{Df(t_0) + r}{2} \period
+\end{align*}
+不难看出
+\begin{align*}
+    A_1 > \frac{Df(t_0) + Df(t_0)}{2} = Df(t_0),
+\end{align*}
+故
+\begin{align*}
+    r \leq A_1 = \frac{Df(t_0) + r}{2} \implies r \leq Df(t_0),
+\end{align*}
+矛盾! 所以, $r$ 必为 $Df(t_0)$\period
+
+我们得到了本节最重要的命题:
+
+\begin{proposition}
+    设 $f (x) \in \RR[x]$\period 设 $t_0 \in \RR$\period 则 $Df(t_0)$ 是 $f(x)$ 在点 $t_0$ 的变率\period
+\end{proposition}
+
+至此, 我们找到了导数的一种含义, 本节的任务终了\period 我们就讨论到这里吧\period 再见, 读者朋友!
