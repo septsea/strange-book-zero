@@ -2,7 +2,8 @@
     /* ======================================== */
     /* Git settings */
     "git.enableSmartCommit": true,
-    "git.postCommitCommand": "push",
+    "git.postCommitCommand": "sync",
+    "git.autofetch": "all",
     /* ======================================== */
     /* General settings for LaTeX extension */
     "latex-workshop.latex.tools": [
