@@ -4,6 +4,7 @@
     "git.enableSmartCommit": true,
     "git.postCommitCommand": "sync",
     "git.autofetch": "all",
+    "git.confirmSync": false,
     /* ======================================== */
     /* General settings for LaTeX extension */
     "latex-workshop.latex.tools": [
