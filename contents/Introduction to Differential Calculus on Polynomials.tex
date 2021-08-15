@@ -1,14 +1,14 @@
-\subsection*{Introduction to Differential Calculus on Polynomials}
-\addcontentsline{toc}{subsection}{Introduction to Differential Calculus on Polynomials}
-\markright{Introduction to Differential Calculus on Polynomials}
+\subsection*{\IntroductionToDifferentialCalculusOnPolynomials}
+\addcontentsline{toc}{subsection}{\IntroductionToDifferentialCalculusOnPolynomials}
+\markright{\IntroductionToDifferentialCalculusOnPolynomials}
 
 本节讨论多项式的微分学 \term{differential calculus} 初步\myFN{学过一元函数微分学的读者可能会觉得本节废话连篇\period 不过, 为照顾不熟悉三角不等式及相关知识的读者, 作者也没什么更好的写作思路了\period}\period 这也是本文的最终节\period
 
-How time flies! 一开始, 我们在 Prerequisites 给读者介绍预备知识\period 然后, 我们给读者介绍了系数为整环的元的多项式\period 当初, 多项式还是有点抽象的\period 我们利用带余除法推出了几个很重要的命题, 并指出: 当多项式的系数为 $\FF$ 的元时, 多项式与中学学的多项式 (函数) 没有根本上的区别\period 我们在 Interpolation 节开始介绍多项式的应用\period 后面的 Summation Formulae 节告诉读者一种方便的求和法\period 在上节, 我们捡起很久未出场的导数, 并把它重讲了一遍\period 我们利用高级导数推广了二项展开, 得到了 Taylor 公式, 并用它重证多项式的积的导数规则\period
+How time flies! 一开始, 我们在 ``\Prerequisites '' 给读者介绍预备知识\period 然后, 我们给读者介绍了系数为整环的元的多项式\period 当初, 多项式还是有点抽象的\period 我们利用带余除法推出了几个很重要的命题, 并指出: 当多项式的系数为 $\FF$ 的元时, 多项式与中学学的多项式 (函数) 没有根本上的区别\period 我们在 ``\Interpolation '' 节开始介绍多项式的应用\period 后面的 ``\SummationFormulae '' 节告诉读者一种方便的求和法\period 在上节, 我们捡起很久未出场的微商, 并把它重讲了一遍\period 我们利用高级微商推广了二项展开, 得到了 Taylor 公式, 并用它重证多项式的积的微商规则\period
 
-之前, 导数都是形式的——有点 ``空降'' 的味道\period 现在, 我们要用 Taylor 公式给导数一种含义\period 如果您知道一点微积分 \term{calculus}, 您将不会对本节感到特别陌生; 如果您没有学过微积分, 无妨将本节作为 ``入微作''\period
+之前, 微商都是形式的——有点 ``空降'' 的味道\period 现在, 我们要用 Taylor 公式给微商一种含义\period 如果您知道一点微积分 \term{calculus}, 您将不会对本节感到特别陌生; 如果您没有学过微积分, 无妨将本节作为 ``入微作''\period
 
-我们在 Polynomials over $\FF$ 节说过, 我们不再讨论抽象的整环或系数为整环的元的多项式, 而是讨论 $\FF$ 与 $\FF[x]$\period 现在, 我们再具体一点——讨论老朋友 $\RR$ 与 $\RR[x]$——再准确点, 其实是 $\RR$ 到 $\RR$ 的多项式函数\period
+我们在 ``\PolynomialsOverF '' 节说过, 我们不再讨论抽象的整环或系数为整环的元的多项式, 而是讨论 $\FF$ 与 $\FF[x]$\period 现在, 我们再具体一点——讨论老朋友 $\RR$ 与 $\RR[x]$——再准确点, 其实是 $\RR$ 到 $\RR$ 的多项式函数\period
 
 不过, 我们需要承认一个事实是对的\period 为什么说 ``承认'' 呢? 因为它的证明需要超出本文的知识很多很多的工具\period 但是, 它并不是什么 ``牵强附会'' 的命题\period 是什么命题呢? 我们不必现在就说; 我们在用到它的时候再说\period
 
@@ -279,7 +279,7 @@ How time flies! 一开始, 我们在 Prerequisites 给读者介绍预备知识\p
     \end{align*}
     总是成立的\period 下设 $f(x)$ 的次高于 $0$\period
 
-    根据 Roots of Polynomials 节的结论, 存在多项式 $q(x)$ 使
+    根据 ``\RootsOfPolynomials '' 节的结论, 存在多项式 $q(x)$ 使
     \begin{align*}
         f(x) = (x - t_0) q(x) + f(t_0) \period
     \end{align*}
@@ -356,7 +356,7 @@ How time flies! 一开始, 我们在 Prerequisites 给读者介绍预备知识\p
     \end{align*}
 \end{pf}
 
-下面讨论导数与变率的关系\period
+下面讨论微商与变率的关系\period
 
 \begin{definition}
     设 $a$, $b$ 是实数, 且 $a < b$\period 设 $f(x) \in \RR[x]$\period 我们说多项式 $f(x)$ 在区间 $[a, b]$ 的平均变率 \term{average rate of change} 是
@@ -563,4 +563,4 @@ $t_0 - \delta < t < t_0$ 与 $t_0 < t < t_0 + \delta$ 相当于
     设 $f (x) \in \RR[x]$\period 设 $t_0 \in \RR$\period 则 $Df(t_0)$ 是 $f(x)$ 在点 $t_0$ 的变率\period
 \end{proposition}
 
-至此, 我们找到了导数的一种含义, 本节的任务终了\period 我们就讨论到这里吧\period 再见, 读者朋友!
+至此, 我们找到了微商的一种含义, 本节的任务终了\period 我们就讨论到这里吧\period 再见, 读者朋友!

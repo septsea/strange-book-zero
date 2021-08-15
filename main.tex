@@ -15,7 +15,8 @@
 \usepackage{bookmark}
 \usepackage{xcolor}
 \xeCJKsetup{CJKmath=true}
-\def\period{。}
+\def\period{．}
+% \def\period{。}
 % \definecolor{bb}{RGB}{251,114,153}
 
 % \usepackage{lipsum}
@@ -133,6 +134,39 @@
 \def\qedsymbol{\ding{44}}
 \newcommand{\term}[1]{(\textit{#1})}
 
+% cSpell: enable
+% Localization
+\def\HEADING{查考多项式}
+\def\contentsname{目录}
+\def\LicenseNotice{版权声明}
+\def\Preface{前言}
+
+\def\Prerequisites{预备知识}
+\def\Sets{集}
+\def\Functions{函数}
+\def\BinaryFunctions{二元运算}
+\def\SemiGroupsAndGroups{半群与群}
+\def\Subgroups{子群}
+\def\AdditiveGroups{加群}
+\def\Sums{和}
+\def\Rings{环}
+\def\Domains{整环}
+\def\Products{积}
+\def\UnitsAndFields{单位与域}
+
+\def\DefinitionOfPolynomials{多项式的定义}
+\def\DivisionAlgorithm{带余除法}
+\def\PolynomialEquality{多项式的相等}
+\def\Derivatives{微商}
+\def\RootsOfPolynomials{多项式的根}
+\def\PolynomialsOverF{\texorpdfstring{$\FF$}{𝔽} 上的多项式}
+\def\Interpolation{插值}
+\def\GeneralizedBinomialCoefficients{广义二项系数}
+\def\SummationFormulae{求和公式}
+\def\DerivativesRevisited{再探微商}
+\def\IntroductionToDifferentialCalculusOnPolynomials{多项式的微分学初步}
+
+% cSpell: disable
 \makeatletter
 % \providecommand{\leqnomode}{}
 % \renewcommand{\leqnomode}{\tagsleft@true\let\veqno\@@leqno}
@@ -190,11 +224,12 @@
 \begin{center}
     \sffamily
 
-    \textbf{\huge Delving into Polynomials}
+    \textbf{\huge \HEADING}
 
     \vspace{2ex}
 
-    \textit{\large A \ding{200}\myFN{\ding{200} implies stupidity in the two-dimensional culture.} article written by a \ding{200} person}
+    \textit{\large Septsea}
+    % \textit{\large A \ding{200}\myFN{\ding{200} implies stupidity in the two-dimensional culture.} article written by a \ding{200} person}
 \end{center}
 
 \vfill
@@ -216,7 +251,7 @@
 \ctexset{today=old}
 \pagestyle{plain}
 \pagenumbering{roman}
-\renewcommand{\contentsname}{Table of Contents}
+% \renewcommand{\contentsname}{Table of Contents}
 \renewcommand{\abstractname}{Abstract}
 
 \pagestyle{plain}
@@ -234,22 +269,23 @@
 \setcounter{page}{1}
 \pagenumbering{arabic}
 
-\section*{Delving into Polynomials}
-\addcontentsline{toc}{section}{Delving into Polynomials}
-\markboth{Delving into Polynomials}{}
+\section*{\HEADING}
+\addcontentsline{toc}{section}{\HEADING}
+\markboth{\HEADING}{}
 
-Out of boredom, I wrote the article.
+% Out of boredom, I wrote the article.
+出于无聊, Septsea 撰写本文\period
 
-    % This is used to occupy some space.
-    {
-        \vfill \itshape \sffamily \small
-        \begin{center}
-            \begin{tabular}{l}
-                Gohan ni suru? Ofuro ni suru? Sore tomo\ellipsis \ wa ta shi? \\
-                (Would you like dinner? Would you like a bath? Or\ellipsis \ would you like me?)
-            \end{tabular}
-        \end{center}
-    }
+% This is used to occupy some space.
+% {
+%     \vfill \itshape \sffamily \small
+%     \begin{center}
+%         \begin{tabular}{l}
+%             Gohan ni suru? Ofuro ni suru? Sore tomo\ellipsis \ wa ta shi? \\
+%             (Would you like dinner? Would you like a bath? Or\ellipsis \ would you like me?)
+%         \end{tabular}
+%     \end{center}
+% }
 
 \clearpage
 \input{contents/Prerequisites.tex}
@@ -289,6 +325,10 @@ Out of boredom, I wrote the article.
 
 \cleardoublepage
 % \thispagestyle{empty}
+
+% Fan Fiction Patch
+\input{contents/Fan Fiction/Fan Fiction.tex}
+
 \pagestyle{empty}
 
 \end{document}

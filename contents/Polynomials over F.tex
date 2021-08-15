@@ -1,6 +1,6 @@
-\subsection*{Polynomials over $\mathbb{F}$}
-\addcontentsline{toc}{subsection}{Polynomials over \texorpdfstring{$\mathbb{F}$}{𝔽}}
-\markright{Polynomials over $\mathbb{F}$}
+\subsection*{\PolynomialsOverF}
+\addcontentsline{toc}{subsection}{\PolynomialsOverF}
+\markright{\PolynomialsOverF}
 
 我们在前几节讨论的都是整环 $D$ 上的多项式, 所以它们看上去是有些抽象的\period 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period 细心的读者会注意到我们在前几节未使用 $\sum$ 符号\period 这是为了让读者没那么困难地适应多项式理论\period 从本节起, 我们会较多地使用这个 $\sum$\period 读者也可以乘此机会让自己熟悉它\period 当然, 我们偶尔也会使用 $\prod$ 符号\period
 
@@ -274,14 +274,14 @@
     \end{align*}
 \end{proposition}
 
-我们看看多项式的导数\period
+我们看看多项式的微商\period
 
 \begin{definition}
     设
     \begin{align*}
         f(x) = \sum_{i = 0}^{n} a_i x^i \in \FF[x] \period
     \end{align*}
-    $f(x)$ 的导数是多项式
+    $f(x)$ 的微商是多项式
     \begin{align*}
         f^{\prime}(x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \in \FF[x] \period
     \end{align*}
@@ -342,7 +342,7 @@
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的导数适合链规则:
+    设 $f(x)$, $g(x) \in \FF[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的微商适合链规则:
     \begin{align*}
         (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) \period
     \end{align*}
@@ -413,7 +413,7 @@
     \end{align*}
     简单地写为 $f(t)$, 并称其为多项式 $f(x)$ 在点 $t$ 的值\period
 
-    顺便一提, $f(x)$ 的导数也是多项式:
+    顺便一提, $f(x)$ 的微商也是多项式:
     \begin{align*}
         f^{\prime} (x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \period
     \end{align*}
