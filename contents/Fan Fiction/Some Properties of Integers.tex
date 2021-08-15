@@ -1,3 +1,360 @@
 \subsection*{\SomePropertiesOfIntegers}
 \addcontentsline{toc}{subsection}{\SomePropertiesOfIntegers}
 \markright{\SomePropertiesOfIntegers}
+
+本文的目标是补充一点整数的性质; 我们后面会用到这些东西\period
+
+\begin{definition}
+    设 $x$ 是实数\period 称最大的不超过 $x$ 的整数 $\lfloor x \rfloor$ 为 $x$ 的整数部分 \term{integer part}; $x - \lfloor x \rfloor$ 为 $x$ 的小数部分 \term{fractional part}\period
+\end{definition}
+
+\begin{example}
+    读者可能已经知道数学里有一个叫 $2\pi$ 的数\period 如果圆的半径为 $r$, 则圆的周长是 $2\pi r$, 圆的面积是 $\frac12 \cdot 2\pi r^2$\period 由定义, 知
+    \begin{align*}
+        \lfloor 2\pi \rfloor = 6 \period
+    \end{align*}
+    不过,
+    \begin{align*}
+        \lfloor -2\pi \rfloor = -7;
+    \end{align*}
+    不仔细的读者很容易犯错哟\period
+\end{example}
+
+\begin{proposition}
+    对任意实数 $x$,
+    \begin{align*}
+        0 \leq x - \lfloor x \rfloor < 1 \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    $0 \leq x - \lfloor x \rfloor$ 是显然的: $\lfloor x \rfloor$ 被定义为 ``不超过'' $x$ 的最大整数\period 另一半 $x - \lfloor x \rfloor < 1$ 可以这么看: 既然 $\lfloor x \rfloor$ 被定义为不超过 $x$ 的 ``最大整数'', 那么
+    \begin{align*}
+        \lfloor x \rfloor + 1 > x \period
+    \end{align*}
+    这就是我们所需要的关系\period
+\end{pf}
+
+我们知道, 非负整数有这样的性质:
+
+\begin{proposition}
+    设 $n$ 是正整数, $m$ 是非负整数\period 则必有一对非负整数 $q,r$ 使
+    \begin{align*}
+        m = qn + r, \quad 0 \leq r < n \period
+    \end{align*}
+\end{proposition}
+
+例如, 取 $n=5$, $m=23$\period 不难看出,
+\begin{align*}
+    23 = 4 \cdot 5 + 3 \period
+\end{align*}
+
+现在, 我们看一看为什么上面的命题是正确的\period 不过, 我们可以抛弃一个假定: $m \geq 0$\period
+
+还是假定 $n$ 是正整数\period $\frac{m}{n}$ 是一个有理数, 当然也是实数\period 所以
+\begin{align*}
+    \frac{m}{n} = \underbrace{\left\lfloor \frac{m}{n} \right\rfloor}_{q} + \left( \frac{m}{n} - \left\lfloor \frac{m}{n} \right\rfloor \right) \period
+\end{align*}
+二边同乘 $n$, 有
+\begin{align*}
+    m = n \cdot q + \underbrace{\left( m - n\left\lfloor \frac{m}{n} \right\rfloor \right)}_{r} \period
+\end{align*}
+显然 $q$ 与 $r$ 是整数\period 注意到 $0 \leq \frac{r}{n} < 1$, 所以 $0 \leq r < n$\period
+
+换句话说, 我们证明了
+\begin{proposition}
+    设 $n$ 是正整数, $m$ 是整数\period 则必有一对整数 $q,r$ 使
+    \begin{align*}
+        m = qn + r, \quad 0 \leq r < n \period
+    \end{align*}
+\end{proposition}
+
+设 $n$ 是负整数\period 那么 $-n$ 是正整数\period 所以, 有一对整数 $q,r$ 使
+\begin{align*}
+    m = q(-n) + r, \quad 0 \leq r < -n \period
+\end{align*}
+也就是
+\begin{align*}
+    m = (-q)n + r, \quad 0 \leq r < |n|,
+\end{align*}
+这里 $|n|$ 代表 $n$ 的绝对值\period 综上, 我们证明了 ``整数的带余除法'':
+\begin{proposition}
+    设 $n$ 是非零整数, $m$ 是整数\period 则必有一对整数 $q,r$ 使
+    \begin{align*}
+        m = qn + r, \quad 0 \leq r < |n| \period
+    \end{align*}
+\end{proposition}
+
+读者或许还记得 ``因子'' 与 ``公因子'' 的概念\period
+\begin{definition}
+    设 $a$, $b$ 是整数\period 若存在整数 $c$ 使 $a=bc$, 则说 $a$ 是 $b$ 的倍 \term{multiple}, 或 $b$ 是 $a$ 的因子 \term{divisor}\period
+\end{definition}
+
+\begin{example}
+    $\pm 1$ 是任意整数的因子; $\pm 1$ 只能是 $1$ 或 $-1$ 的倍\period $0$ 只能是 $0$ 的因子; $0$ 可以是任意整数的倍\period
+\end{example}
+
+\begin{proposition}
+    设 $a$, $b$, $c$ 是整数\period 因子适合如下性质:
+
+    (i) $\pm a$ 是 $a$ 的因子;
+
+    (ii) 若 $c$ 是 $b$ 的因子, 且 $b$ 是 $a$ 的因子, 则 $c$ 是 $a$ 的因子;
+
+    (iii) 若 $a$ 是 $b$ 的因子, 且 $b$ 是 $a$ 的因子, 则 $a = b$ 或 $a = -b$\period
+
+    (iv) 设 $k$, $\ell$ 是整数\period 若 $c$ 是 $a$ 的因子, 且 $c$ 是 $b$ 的因子, 则 $c$ 是 $ka \pm \ell b$ 的因子\period
+\end{proposition}
+
+\begin{pf}
+    (i) 注意到 $a = 1 \cdot a = (-1) \cdot (-a)$, 也就是 $a = (\pm 1) (\pm a)$\period
+
+    (ii) 因为 $c$ 是 $b$ 的因子, 故存在整数 $x$ 使 $b = xc$\period 因为 $b$ 是 $a$ 的因子, 故存在整数 $y$ 使 $a = yb$\period 所以
+    \begin{align*}
+        a = yb = y(xc) = (yx)c \period
+    \end{align*}
+    因为 $yx$ 也是整数, 故 $c$ 是 $a$ 的因子\period
+
+    (iii) 若 $a = 0$, 则 $b = 0$, 当然有 $a = \pm b = 0$\period 下设 $a \neq 0$\period
+
+    因为 $a$ 是 $b$ 的因子, 故存在整数 $x$ 使 $b = xa$; 因为 $b$ 是 $a$ 的因子, 故存在整数 $y$ 使 $a = yb$\period 所以
+    \begin{align*}
+        a = yb = y(xa) = (yx)a \implies 1 = yx \period
+    \end{align*}
+    因为 $x$ 与 $y$ 是整数, 且积为正数, 故 $x = y = 1$ 或 $x = y = -1$\period 所以 $a = yb = b$ 或 $a = yb = -b$\period
+
+    (iv) 因为 $c$ 是 $a$ 的因子, 且 $c$ 是 $b$ 的因子, 故存在整数 $x$, $y$ 使 $a = xc$ 且 $b = yc$\period 所以
+    \begin{align*}
+         & ka \pm \ell b = k(xc) \pm \ell (yc) = (kx) c \pm (\ell y) c = (kx \pm \ell y) c \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{definition}
+    设 $a$, $b$ 是整数\period 若存在整数 $c$ 使 ``存在整数 $x$, $y$ 使 $a=cx$ 且 $b=cy$'' 为真命题, 则 $c$ 是 $a$ 与 $b$ 的公因子 \term{common divisor}\period
+\end{definition}
+
+\begin{example}
+    $\pm 1$ 是任意二个整数的公因子\period
+\end{example}
+
+现在我们引出 ``最大公因子'' 的概念\period
+
+\begin{definition}
+    设 $a$, $b$ 是整数\period 适合下述二性质的整数 $g$ 是 $a$ 与 $b$ 的最大公因子 \term{greatest common divisor}:
+
+    (i) $g$ 是 $a$ 与 $b$ 的公因子;
+
+    (ii) 若 $c$ 是 $a$ 与 $b$ 的公因子, 则 $c$ 是 $g$ 的因子\period
+\end{definition}
+
+由定义立即可得
+\begin{proposition}
+    设 $a$, $b$ 是整数\period 若 $g$ 与 $h$ 都是 $a$ 与 $b$ 的最大公因子, 则 $g = h$ 或 $g = -h$\period
+\end{proposition}
+
+\begin{pf}
+    因为 $g$ 是 $h$ 的因子, 且 $h$ 也是 $g$ 的因子\period
+\end{pf}
+
+\begin{example}
+    不难看出, $0$ 与 $a$ 的最大公因子是 $\pm a$: (i) $\pm a$ 是 $0$ 的因子, 且 $\pm a$ 是 $\pm a$ 的因子; (ii) 若 $c$ 是 $0$ 与 $a$ 的公因子, 则因为 ``$c$ 是 $a$ 的因子且 $a$ 是 $\pm a$ 的因子'', 故 $c$ 是 $\pm a$ 的因子\period
+\end{example}
+
+\begin{example}
+    不难看出, $\pm 1$ 与 $a$ 的最大公因子是 $\pm 1$: (i) $\pm 1$ 是 $\pm 1$ 的因子, 且 $\pm 1$ 是 $a$ 的因子; (ii) 若 $c$ 是 $\pm 1$ 与 $a$ 的公因子, 则因为 ``$c$ 是 $\pm 1$ 的因子'', 故 $c$ 是 $\pm 1$, 当然是 $\pm 1$ 的因子\period
+\end{example}
+
+\begin{proposition}
+    设 $a$, $b$, $q$ 是整数\period 设 $a$ 与 $b$ 的最大公因子是 $g$; 设 $a - bq$ 与 $b$ 的最大公因子是 $h$\period 则 $g = h$ 或 $g = -h$\period
+\end{proposition}
+
+\begin{pf}
+    因为 $g$ 是 $a$ 与 $b$ 的公因子, 故 $g$ 是 $1 \cdot a - q \cdot b$ 的因子\period 这说明, $g$ 是 $a - bq$ 与 $b$ 的公因子\period 因为 $h$ 是 $a - bq$ 与 $b$ 的最大公因子, 故 $g$ 是 $h$ 的因子\period
+
+    因为 $h$ 是 $a - bq$ 与 $b$ 的公因子, 故 $h$ 是 $1 \cdot (a - bq) + q \cdot b$ 的因子\period 这说明, $h$ 是 $a$ 与 $b$ 的公因子\period 因为 $g$ 是 $a$ 与 $b$ 的最大公因子, 故 $h$ 是 $g$ 的因子\period
+
+    综上, $g = h$ 或 $g = -h$\period
+\end{pf}
+
+我们现在可以证明
+\begin{proposition}
+    设 $a$, $b$ 是整数\period $a$ 与 $b$ 的最大公因子一定存在\period
+\end{proposition}
+
+\begin{pf}
+    无妨假定 $b$ 不是 $0$\period 所以, 根据带余除法, 有
+    \begin{align*}
+        a = bq_0 + r_0, \quad 0 \leq r_0 < |b| \period
+    \end{align*}
+    根据上一个命题, $r_0$ 与 $b$ 的最大公因子是 $a$ 与 $b$ 的最大公因子\period 若 $r_0 = 0$, 则 $b$ 就是 $0$ 与 $b$ (从而也是 $a$ 与 $b$) 的最大公因子\period 若 $r_0 > 0$, 则
+    \begin{align*}
+        b = r_0 q_1 + r_1, \quad 0 \leq r_1 < r_0 \period
+    \end{align*}
+    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $b$ 的最大公因子, 所以也是 $a$ 与 $b$ 的最大公因子\period 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $a$ 与 $b$) 的最大公因子\period 若 $r_1 > 0$, 则
+    \begin{align*}
+        r_0 = r_1 q_2 + r_2, \quad 0 \leq r_2 < r_1 \period
+    \end{align*}
+
+    这个过程必定会在有限步后停止\period 反证法\period 如果此过程可一直进行下去, 则我们可得到无限多个正整数 $r_0$, $r_1$, $\cdots$ 使
+    \begin{align*}
+        |b| > r_0 > r_1 > \cdots > r_k > r_{k+1} > \cdots \period
+    \end{align*}
+    可是, 不存在无限递降的正整数列 (低于 $|b|$ 的正整数至多有 $|b| - 1$ 个), 矛盾!
+
+    为方便, 分别称 $a$ 与 $b$ 为 $r_{-2}$ 与 $r_{-1}$\period 根据上面的分析, 一定存在整数 $n$ 使
+    \begin{align*}
+         & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 < r_{\ell} < |r_{\ell - 1}|, \quad \ell = 0,1,\cdots,n-2; \\
+         & r_{n - 3} = r_{n - 2} q_{n - 1} \period
+    \end{align*}
+    $r_{n-2}$ 是 $0$ 与 $r_{n-2}$ 的最大公因子, 也是 $r_{n-2}$ 与 $r_{n-3}$ 的最大公因子, 也是 $r_{n-3}$ 与 $r_{n-4}$ 的最大公因子……也是 $r_{-2}$ 与 $r_{-1}$ 的最大公因子\period 所以, $r_{n-2}$ 是 $a$ 与 $b$ 的最大公因子\period
+\end{pf}
+
+这个命题的证明过程事实上也给出了一个计算二个整数的最大公因子的算法\period
+
+\begin{example}
+    设 $a = 2\,116$, $b = 667$\period 我们来找一个 $a$ 与 $b$ 的最大公因子\period
+
+    不难作出如下计算:
+    \begin{align*}
+        2\,116 & = 667 \cdot 3 + 115, \\
+        667    & = 115 \cdot 5 + 92,  \\
+        115    & = 92 \cdot 1 + 23,   \\
+        92     & = 23 \cdot 4 \period
+    \end{align*}
+    所以, $23$ 是 $92$ 与 $115$ 的最大公因子, 是 $115$ 与 $667$ 的最大公因子, 是 $667$ 与 $2\,116$ 的最大公因子\period
+
+    当然, 读者不难说明, $-23$ 是另一个最大公因子\period $\pm 23$ 是 $a$ 与 $b$ 唯二的最大公因子\period
+\end{example}
+
+根据上面的计算, 我们有
+\begin{align*}
+    1 \cdot 115 + (-1) \cdot 92 = 23 \period
+\end{align*}
+又因为
+\begin{align*}
+    92 = 1 \cdot 667 + (-5) \cdot 115,
+\end{align*}
+故
+\begin{align*}
+    1 \cdot 115 + (-1 \cdot 1) \cdot 667 + (-1 \cdot (-5)) \cdot 115 = 23,
+\end{align*}
+即
+\begin{align*}
+    6 \cdot 115 + (-1) \cdot 667 = 23 \period
+\end{align*}
+又因为
+\begin{align*}
+    115 = 1 \cdot 2\,116 + (-3) \cdot 667,
+\end{align*}
+故
+\begin{align*}
+    (6 \cdot 1) \cdot 2\,116 + (6 \cdot (-3)) \cdot 667 + (-1) \cdot 667 = 23,
+\end{align*}
+即
+\begin{align*}
+    6 \cdot 2\,116 + (-19) \cdot 667 = 23 \period
+\end{align*}
+
+一般地, 我们有
+\begin{proposition}
+    设 $a$, $b$ 是整数\period 设 $g$ 是 $a$ 与 $b$ 的最大公因子\period 存在整数 $s$ 与 $t$ 使
+    \begin{align*}
+        sa + tb = g \period
+    \end{align*}
+    这个等式的一个名字是 Bézout 等式 \term{Bézout's identity}\period
+\end{proposition}
+
+\begin{pf}
+    若 $a=b=0$, 则可取 $s=t=0$\period 下设 $b \neq 0$\period
+
+    为方便, 分别称 $a$ 与 $b$ 为 $r_{-2}$ 与 $r_{-1}$\period 设存在整数 $n$ 使
+    \begin{align*}
+         & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 < r_{\ell} < |r_{\ell - 1}|, \quad \ell = 0,1,\cdots,n-2; \\
+         & r_{n - 3} = r_{n - 2} q_{n - 1} \period
+    \end{align*}
+    为方便, 记
+    \begin{align*}
+        r_{\ell} = 0, \quad \ell \geq n - 1 \period
+    \end{align*}
+
+    我们用数学归纳法证明辅助命题 $P(\ell)$: 任取非负整数 $\ell$, 必有二整数 $s$, $t$ 使
+    \begin{align*}
+        r_\ell = sa + tb \period
+    \end{align*}
+    $r_0$ 可写为
+    \begin{align*}
+        r_0 = 1 r_{\ell - 2} + (-q_0) r_{\ell} = 1a + (-q_0)b \period
+    \end{align*}
+    $r_1$ 可写为
+    \begin{align*}
+        r_1 = 1r_{-1} + (-q_1) r_0 = (-q_1) a + (1 + q_0 q_1) b \period
+    \end{align*}
+    所以 $P(0)$ 与 $P(1)$ 正确\period 假定 $P(0)$, $P(1)$, $\cdots$, $P(k-1)$ 正确\period 我们的目标是: 推出 $P(k)$ 正确\period 若 $k \geq n-1$, 则
+    \begin{align*}
+        r_k = 0 = 0a + 0b \period
+    \end{align*}
+    若 $k \leq n-2$, 则根据归纳假设, 存在整数 $u$, $v$, $x$, $y$ 使
+    \begin{align*}
+        r_{k-2} = ua + vb, \quad r_{k-1} = xa + yb \period
+    \end{align*}
+    所以
+    \begin{align*}
+        r_{k} = r_{k-2} - r_{k-1} q_k = (u - xq_k) a + (v - yq_k) b \period
+    \end{align*}
+    因为 $u - xq_k$ 与 $v - yq_k$ 均为整数, 故 $P(k)$ 正确\period
+
+    所以, 存在整数 $s$, $t$ 使
+    \begin{align*}
+        sa + tb = r_{n-2} \period
+    \end{align*}
+    因为 $r_{n-2}$ 与 $g$ 都是 $a$ 与 $b$ 的最大公因子, 故 $r_{n-2} = g$ 或 $r_{n-2} = -g$\period 若 $r_{n-2} = g$:
+    \begin{align*}
+        sa + tb = g;
+    \end{align*}
+    若 $r_{n-2} = -g$:
+    \begin{align*}
+         & (-s)a + (-t)b = g \period \qedhere
+    \end{align*}
+\end{pf}
+
+有了最大公因子的概念, 我们可以引出 ``互素'':
+\begin{definition}
+    设 $a$, $b$ 是整数\period 若 $a$ 与 $b$ 的最大公因子是 $\pm 1$, 则称 $a$ 与 $b$ 互素 \term{to be relatively prime}\period
+\end{definition}
+
+\begin{example}
+    显然, $\pm 1$ 与任意整数都互素\period
+\end{example}
+
+下面给出一个极重要的命题:
+\begin{proposition}
+    设 $a$, $b$ 是整数\period $a$ 与 $b$ 互素的一个必要与充分条件是: 存在整数 $s$, $t$ 使
+    \begin{align*}
+        sa + tb = 1 \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    先看必要性\period 显然; 这是 Bézout 等式的结果\period
+
+    再看充分性\period 设 $g$ 是 $a$ 与 $b$ 的最大公因子\period 因为 $sa + tb = 1$, 故 $g$ 是 $1$ 的因子\period 这样, $g$ 一定是 $\pm 1$\period
+\end{pf}
+
+我们以一个十分有用的命题结束本文:
+\begin{proposition}
+    设 $a$, $b$, $c$ 是整数\period 若 $c$ 是 $ab$ 的因子, 且 $c$ 与 $a$ 互素, 则 $c$ 一定是 $b$ 的因子\period
+\end{proposition}
+
+\begin{pf}
+    因为 $c$ 与 $a$ 互素, 故存在整数 $s$ 与 $t$ 使
+    \begin{align*}
+        sc + ta = 1 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        (bs)c + t(ab) = b \period
+    \end{align*}
+    因为 $c$ 是 $c$ 的因子, 且 $c$ 是 $ab$ 的因子, 故 $c$ 是 $b = (bs)c + t(ab)$ 的因子\period
+\end{pf}
+
+感谢您的阅读\period
