@@ -4,8 +4,10 @@
 
 本文的目标是补充一点整数的性质; 我们后面会用到这些东西\period
 
+为尽可能多地照顾读者, 本文被加了一点细节\period
+
 \begin{definition}
-    设 $x$ 是实数\period 称最大的不超过 $x$ 的整数 $\lfloor x \rfloor$ 为 $x$ 的整数部分 \term{integer part}; $x - \lfloor x \rfloor$ 为 $x$ 的小数部分 \term{fractional part}\period
+    设 $t$ 是实数\period 称最大的且不超过 $t$ 的整数 $\lfloor t \rfloor$ 为 $t$ 的整数部分 \term{integer part}; $t - \lfloor t \rfloor$ 为 $t$ 的小数部分 \term{fractional part}\period
 \end{definition}
 
 \begin{example}
@@ -21,16 +23,16 @@
 \end{example}
 
 \begin{proposition}
-    对任意实数 $x$,
+    对任意实数 $t$,
     \begin{align*}
-        0 \leq x - \lfloor x \rfloor < 1 \period
+        0 \leq t - \lfloor t \rfloor < 1 \period
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    $0 \leq x - \lfloor x \rfloor$ 是显然的: $\lfloor x \rfloor$ 被定义为 ``不超过'' $x$ 的最大整数\period 另一半 $x - \lfloor x \rfloor < 1$ 可以这么看: 既然 $\lfloor x \rfloor$ 被定义为不超过 $x$ 的 ``最大整数'', 那么
+    $0 \leq t - \lfloor t \rfloor$ 是显然的: $\lfloor t \rfloor$ 被定义为最大的且 ``不超过'' $t$ 的整数\period 另一半 $t - \lfloor t \rfloor < 1$ 可以这么看: 既然 $\lfloor t \rfloor$ 被定义为 ``最大的'' 且不超过 $t$ 的整数, 那么
     \begin{align*}
-        \lfloor x \rfloor + 1 > x \period
+        \lfloor t \rfloor + 1 > t \period
     \end{align*}
     这就是我们所需要的关系\period
 \end{pf}
@@ -38,56 +40,86 @@
 我们知道, 非负整数有这样的性质:
 
 \begin{proposition}
-    设 $n$ 是正整数, $m$ 是非负整数\period 则必有一对非负整数 $q,r$ 使
+    设 $g$ 是正整数, $f$ 是非负整数\period 则必有一对非负整数 $q,r$ 使
     \begin{align*}
-        m = qn + r, \quad 0 \leq r < n \period
+        f = qg + r, \quad 0 \leq r < g \period
     \end{align*}
 \end{proposition}
 
-例如, 取 $n=5$, $m=23$\period 不难看出,
+例如, 取 $g=5$, $f=23$\period 不难看出,
 \begin{align*}
     23 = 4 \cdot 5 + 3 \period
 \end{align*}
 
-现在, 我们看一看为什么上面的命题是正确的\period 不过, 我们可以抛弃一个假定: $m \geq 0$\period
+现在, 我们看一看为什么上面的命题是正确的\period 顺便一提, 我们可以抛弃一个假定: $f \geq 0$\period
 
-还是假定 $n$ 是正整数\period $\frac{m}{n}$ 是一个有理数, 当然也是实数\period 所以
+还是假定 $g$ 是正整数\period $\frac{f}{g}$ 是一个有理数, 当然也是实数\period 所以
 \begin{align*}
-    \frac{m}{n} = \underbrace{\left\lfloor \frac{m}{n} \right\rfloor}_{q} + \left( \frac{m}{n} - \left\lfloor \frac{m}{n} \right\rfloor \right) \period
+    \frac{f}{g} = \underbrace{\left\lfloor \frac{f}{g} \right\rfloor}_{q} + \left( \frac{f}{g} - \left\lfloor \frac{f}{g} \right\rfloor \right) \period
 \end{align*}
-二边同乘 $n$, 有
+二边同乘 $g$, 有
 \begin{align*}
-    m = n \cdot q + \underbrace{\left( m - n\left\lfloor \frac{m}{n} \right\rfloor \right)}_{r} \period
+    f = g \cdot q + \underbrace{\left( f - g\left\lfloor \frac{f}{g} \right\rfloor \right)}_{r} \period
 \end{align*}
-显然 $q$ 与 $r$ 是整数\period 注意到 $0 \leq \frac{r}{n} < 1$, 所以 $0 \leq r < n$\period
+显然 $q$ 与 $r$ 是整数\period 注意到 $0 \leq \frac{r}{g} < 1$, 所以 $0 \leq r < g$\period
 
 换句话说, 我们证明了
 \begin{proposition}
-    设 $n$ 是正整数, $m$ 是整数\period 则必有一对整数 $q,r$ 使
+    设 $g$ 是正整数, $f$ 是整数\period 则必有一对整数 $q,r$ 使
     \begin{align*}
-        m = qn + r, \quad 0 \leq r < n \period
+        f = qg + r, \quad 0 \leq r < g \period
     \end{align*}
 \end{proposition}
 
-设 $n$ 是负整数\period 那么 $-n$ 是正整数\period 所以, 有一对整数 $q,r$ 使
+设 $g$ 是负整数\period 那么 $-g$ 是正整数\period 所以, 有一对整数 $q,r$ 使
 \begin{align*}
-    m = q(-n) + r, \quad 0 \leq r < -n \period
+    f = q(-g) + r, \quad 0 \leq r < -g \period
 \end{align*}
 也就是
 \begin{align*}
-    m = (-q)n + r, \quad 0 \leq r < |n|,
+    f = (-q)g + r, \quad 0 \leq r < |g|,
 \end{align*}
-这里 $|n|$ 代表 $n$ 的绝对值\period 综上, 我们证明了 ``整数的带余除法'':
+这里 $|g|$ 代表 $g$ 的绝对值\period 综上, 我们证明了 ``整数的带余除法'':
 \begin{proposition}
-    设 $n$ 是非零整数, $m$ 是整数\period 则必有一对整数 $q,r$ 使
+    设 $g$ 是非零整数, $f$ 是整数\period 则必有一对整数 $q,r$ 使
     \begin{align*}
-        m = qn + r, \quad 0 \leq r < |n| \period
+        f = qg + r, \quad 0 \leq r < |g| \period
     \end{align*}
 \end{proposition}
 
+还有一个小惊喜: 上述命题的 $q$ 与 $r$ 必定唯一\period 设
+\begin{align*}
+     & q_1 g + r_1 = q_2 g + r_2,                       \\
+     & 0 \leq r_1 < |g|, \quad 0 \leq r_2 < |g| \period
+\end{align*}
+这样
+\begin{align*}
+    |q_1 - q_2| |g| = |r_1 - r_2| \period
+\end{align*}
+不难看出
+\begin{align*}
+    0 - |g| < r_1 - r_2 < |g| + 0,
+\end{align*}
+即
+\begin{align*}
+    |r_1 - r_2| < |g| \period
+\end{align*}
+从而
+\begin{align*}
+    |q_1 - q_2| = \frac{|r_1 - r_2|}{|g|} < \frac{|g|}{|g|} = 1 \period
+\end{align*}
+因为 $|q_1 - q_2|$ 是整数, 故
+\begin{align*}
+    |q_1 - q_2| = 0 \implies q_1 = q_2 \period
+\end{align*}
+进而
+\begin{align*}
+    |r_1 - r_2| = |q_1 - q_2| |g| = 0 \implies r_1 = r_2 \period
+\end{align*}
+
 读者或许还记得 ``因子'' 与 ``公因子'' 的概念\period
 \begin{definition}
-    设 $a$, $b$ 是整数\period 若存在整数 $c$ 使 $a=bc$, 则说 $a$ 是 $b$ 的倍 \term{multiple}, 或 $b$ 是 $a$ 的因子 \term{divisor}\period
+    设 $f$, $g$ 是整数\period 若存在整数 $h$ 使 $f=gh$, 则说 $f$ 是 $g$ 的倍 \term{multiple}, 或 $g$ 是 $f$ 的因子 \term{divisor}\period
 \end{definition}
 
 \begin{example}
@@ -95,42 +127,42 @@
 \end{example}
 
 \begin{proposition}
-    设 $a$, $b$, $c$ 是整数\period 因子适合如下性质:
+    设 $f$, $g$, $h$ 是整数\period 因子适合如下性质:
 
-    (i) $\pm a$ 是 $a$ 的因子;
+    (i) $\pm f$ 是 $f$ 的因子;
 
-    (ii) 若 $c$ 是 $b$ 的因子, 且 $b$ 是 $a$ 的因子, 则 $c$ 是 $a$ 的因子;
+    (ii) 若 $h$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则 $h$ 是 $f$ 的因子;
 
-    (iii) 若 $a$ 是 $b$ 的因子, 且 $b$ 是 $a$ 的因子, 则 $a = b$ 或 $a = -b$\period
+    (iii) 若 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则 $f = g$ 或 $f = -g$\period
 
-    (iv) 设 $k$, $\ell$ 是整数\period 若 $c$ 是 $a$ 的因子, 且 $c$ 是 $b$ 的因子, 则 $c$ 是 $ka \pm \ell b$ 的因子\period
+    (iv) 设 $k$, $\ell$ 是整数\period 若 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 则 $h$ 是 $kf \pm \ell g$ 的因子\period
 \end{proposition}
 
 \begin{pf}
-    (i) 注意到 $a = 1 \cdot a = (-1) \cdot (-a)$, 也就是 $a = (\pm 1) (\pm a)$\period
+    (i) 注意到 $f = 1 \cdot f = (-1) \cdot (-f)$, 也就是 $f = (\pm 1) (\pm f)$\period
 
-    (ii) 因为 $c$ 是 $b$ 的因子, 故存在整数 $x$ 使 $b = xc$\period 因为 $b$ 是 $a$ 的因子, 故存在整数 $y$ 使 $a = yb$\period 所以
+    (ii) 因为 $h$ 是 $g$ 的因子, 故存在整数 $p$ 使 $g = ph$\period 因为 $g$ 是 $f$ 的因子, 故存在整数 $q$ 使 $f = qg$\period 所以
     \begin{align*}
-        a = yb = y(xc) = (yx)c \period
+        f = qg = q(ph) = (qp)h \period
     \end{align*}
-    因为 $yx$ 也是整数, 故 $c$ 是 $a$ 的因子\period
+    因为 $qp$ 也是整数, 故 $h$ 是 $f$ 的因子\period
 
-    (iii) 若 $a = 0$, 则 $b = 0$, 当然有 $a = \pm b = 0$\period 下设 $a \neq 0$\period
+    (iii) 若 $f = 0$, 则 $g = 0$, 当然有 $f = \pm g = 0$\period 下设 $f \neq 0$\period
 
-    因为 $a$ 是 $b$ 的因子, 故存在整数 $x$ 使 $b = xa$; 因为 $b$ 是 $a$ 的因子, 故存在整数 $y$ 使 $a = yb$\period 所以
+    因为 $f$ 是 $g$ 的因子, 故存在整数 $p$ 使 $g = pf$; 因为 $g$ 是 $f$ 的因子, 故存在整数 $q$ 使 $f = qg$\period 所以
     \begin{align*}
-        a = yb = y(xa) = (yx)a \implies 1 = yx \period
+        f = qg = q(pf) = (qp)f \implies 1 = qp \period
     \end{align*}
-    因为 $x$ 与 $y$ 是整数, 且积为正数, 故 $x = y = 1$ 或 $x = y = -1$\period 所以 $a = yb = b$ 或 $a = yb = -b$\period
+    因为 $p$ 与 $q$ 是整数, 且积为 $1$, 故 $p = q = 1$ 或 $p = q = -1$\period 所以 $f = qg = g$ 或 $f = qg = -g$\period
 
-    (iv) 因为 $c$ 是 $a$ 的因子, 且 $c$ 是 $b$ 的因子, 故存在整数 $x$, $y$ 使 $a = xc$ 且 $b = yc$\period 所以
+    (iv) 因为 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 故存在整数 $p$, $q$ 使 $f = ph$ 且 $g = qh$\period 所以
     \begin{align*}
-         & ka \pm \ell b = k(xc) \pm \ell (yc) = (kx) c \pm (\ell y) c = (kx \pm \ell y) c \period \qedhere
+         & kf \pm \ell g = k(ph) \pm \ell (qh) = (kp) h \pm (\ell q) h = (kp \pm \ell q) h \period \qedhere
     \end{align*}
 \end{pf}
 
 \begin{definition}
-    设 $a$, $b$ 是整数\period 若存在整数 $c$ 使 ``存在整数 $x$, $y$ 使 $a=cx$ 且 $b=cy$'' 为真命题, 则 $c$ 是 $a$ 与 $b$ 的公因子 \term{common divisor}\period
+    设 $f$, $g$ 是整数\period 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common divisor}\period
 \end{definition}
 
 \begin{example}
@@ -140,79 +172,79 @@
 现在我们引出 ``最大公因子'' 的概念\period
 
 \begin{definition}
-    设 $a$, $b$ 是整数\period 适合下述二性质的整数 $g$ 是 $a$ 与 $b$ 的最大公因子 \term{greatest common divisor}:
+    设 $f$, $g$ 是整数\period 适合下述二性质的整数 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common divisor}:
 
-    (i) $g$ 是 $a$ 与 $b$ 的公因子;
+    (i) $d$ 是 $f$ 与 $g$ 的公因子;
 
-    (ii) 若 $c$ 是 $a$ 与 $b$ 的公因子, 则 $c$ 是 $g$ 的因子\period
+    (ii) 若 $e$ 是 $f$ 与 $g$ 的公因子, 则 $e$ 是 $d$ 的因子\period
 \end{definition}
 
 由定义立即可得
 \begin{proposition}
-    设 $a$, $b$ 是整数\period 若 $g$ 与 $h$ 都是 $a$ 与 $b$ 的最大公因子, 则 $g = h$ 或 $g = -h$\period
+    设 $f$, $g$ 是整数\period 若 $d_1$ 与 $d_2$ 都是 $f$ 与 $g$ 的最大公因子, 则 $d_1 = d_2$ 或 $d_1 = -d_2$\period
 \end{proposition}
 
 \begin{pf}
-    因为 $g$ 是 $h$ 的因子, 且 $h$ 也是 $g$ 的因子\period
+    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子\period
 \end{pf}
 
 \begin{example}
-    不难看出, $0$ 与 $a$ 的最大公因子是 $\pm a$: (i) $\pm a$ 是 $0$ 的因子, 且 $\pm a$ 是 $\pm a$ 的因子; (ii) 若 $c$ 是 $0$ 与 $a$ 的公因子, 则因为 ``$c$ 是 $a$ 的因子且 $a$ 是 $\pm a$ 的因子'', 故 $c$ 是 $\pm a$ 的因子\period
+    不难看出, $0$ 与 $f$ 的最大公因子是 $\pm f$: (i) $\pm f$ 是 $0$ 的因子, 且 $\pm f$ 是 $\pm f$ 的因子; (ii) 若 $d$ 是 $0$ 与 $f$ 的公因子, 则因为 ``$d$ 是 $f$ 的因子且 $f$ 是 $\pm f$ 的因子'', 故 $d$ 是 $\pm f$ 的因子\period
 \end{example}
 
 \begin{example}
-    不难看出, $\pm 1$ 与 $a$ 的最大公因子是 $\pm 1$: (i) $\pm 1$ 是 $\pm 1$ 的因子, 且 $\pm 1$ 是 $a$ 的因子; (ii) 若 $c$ 是 $\pm 1$ 与 $a$ 的公因子, 则因为 ``$c$ 是 $\pm 1$ 的因子'', 故 $c$ 是 $\pm 1$, 当然是 $\pm 1$ 的因子\period
+    不难看出, $\pm 1$ 与 $f$ 的最大公因子是 $\pm 1$: (i) $\pm 1$ 是 $\pm 1$ 的因子, 且 $\pm 1$ 是 $f$ 的因子; (ii) 若 $d$ 是 $\pm 1$ 与 $f$ 的公因子, 则因为 ``$d$ 是 $\pm 1$ 的因子'', 故 $d$ 是 $\pm 1$, 当然是 $\pm 1$ 的因子\period
 \end{example}
 
 \begin{proposition}
-    设 $a$, $b$, $q$ 是整数\period 设 $a$ 与 $b$ 的最大公因子是 $g$; 设 $a - bq$ 与 $b$ 的最大公因子是 $h$\period 则 $g = h$ 或 $g = -h$\period
+    设 $f$, $g$, $q$ 是整数\period 设 $f$ 与 $g$ 的最大公因子是 $d_1$; 设 $f - gq$ 与 $g$ 的最大公因子是 $d_2$\period 则 $d_1 = d_2$ 或 $d_1 = -d_2$\period
 \end{proposition}
 
 \begin{pf}
-    因为 $g$ 是 $a$ 与 $b$ 的公因子, 故 $g$ 是 $1 \cdot a - q \cdot b$ 的因子\period 这说明, $g$ 是 $a - bq$ 与 $b$ 的公因子\period 因为 $h$ 是 $a - bq$ 与 $b$ 的最大公因子, 故 $g$ 是 $h$ 的因子\period
+    因为 $d_1$ 是 $f$ 与 $g$ 的公因子, 故 $d_1$ 是 $1 \cdot f - q \cdot g$ 的因子\period 这说明, $d_1$ 是 $f - gq$ 与 $g$ 的公因子\period 因为 $d_2$ 是 $f - gq$ 与 $g$ 的最大公因子, 故 $d_1$ 是 $d_2$ 的因子\period
 
-    因为 $h$ 是 $a - bq$ 与 $b$ 的公因子, 故 $h$ 是 $1 \cdot (a - bq) + q \cdot b$ 的因子\period 这说明, $h$ 是 $a$ 与 $b$ 的公因子\period 因为 $g$ 是 $a$ 与 $b$ 的最大公因子, 故 $h$ 是 $g$ 的因子\period
+    因为 $d_2$ 是 $f - gq$ 与 $g$ 的公因子, 故 $d_2$ 是 $1 \cdot (f - gq) + q \cdot g$ 的因子\period 这说明, $d_2$ 是 $f$ 与 $g$ 的公因子\period 因为 $d_1$ 是 $f$ 与 $g$ 的最大公因子, 故 $d_2$ 是 $d_1$ 的因子\period
 
-    综上, $g = h$ 或 $g = -h$\period
+    综上, $d_1 = d_2$ 或 $d_1 = -d_2$\period
 \end{pf}
 
 我们现在可以证明
 \begin{proposition}
-    设 $a$, $b$ 是整数\period $a$ 与 $b$ 的最大公因子一定存在\period
+    设 $f$, $g$ 是整数\period $f$ 与 $g$ 的最大公因子一定存在\period
 \end{proposition}
 
 \begin{pf}
-    无妨假定 $b$ 不是 $0$\period 所以, 根据带余除法, 有
+    无妨假定 $g$ 不是 $0$\period 所以, 根据带余除法, 有
     \begin{align*}
-        a = bq_0 + r_0, \quad 0 \leq r_0 < |b| \period
+        f = gq_0 + r_0, \quad 0 \leq r_0 < |g| \period
     \end{align*}
-    根据上一个命题, $r_0$ 与 $b$ 的最大公因子是 $a$ 与 $b$ 的最大公因子\period 若 $r_0 = 0$, 则 $b$ 就是 $0$ 与 $b$ (从而也是 $a$ 与 $b$) 的最大公因子\period 若 $r_0 > 0$, 则
+    根据上一个命题, $r_0$ 与 $g$ 的最大公因子是 $f$ 与 $g$ 的最大公因子\period 若 $r_0 = 0$, 则 $g$ 就是 $0$ 与 $g$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_0 > 0$, 则
     \begin{align*}
-        b = r_0 q_1 + r_1, \quad 0 \leq r_1 < r_0 \period
+        g = r_0 q_1 + r_1, \quad 0 \leq r_1 < r_0 \period
     \end{align*}
-    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $b$ 的最大公因子, 所以也是 $a$ 与 $b$ 的最大公因子\period 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $a$ 与 $b$) 的最大公因子\period 若 $r_1 > 0$, 则
+    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $g$ 的最大公因子, 所以也是 $f$ 与 $g$ 的最大公因子\period 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_1 > 0$, 则
     \begin{align*}
         r_0 = r_1 q_2 + r_2, \quad 0 \leq r_2 < r_1 \period
     \end{align*}
 
     这个过程必定会在有限步后停止\period 反证法\period 如果此过程可一直进行下去, 则我们可得到无限多个正整数 $r_0$, $r_1$, $\cdots$ 使
     \begin{align*}
-        |b| > r_0 > r_1 > \cdots > r_k > r_{k+1} > \cdots \period
+        |g| > r_0 > r_1 > \cdots > r_k > r_{k+1} > \cdots \period
     \end{align*}
-    可是, 不存在无限递降的正整数列 (低于 $|b|$ 的正整数至多有 $|b| - 1$ 个), 矛盾!
+    可是, 不存在无限递降的正整数列 (低于 $|g|$ 的正整数至多有 $|g| - 1$ 个), 矛盾!
 
-    为方便, 分别称 $a$ 与 $b$ 为 $r_{-2}$ 与 $r_{-1}$\period 根据上面的分析, 一定存在整数 $n$ 使
+    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$\period 根据上面的分析, 一定存在整数 $n$ 使
     \begin{align*}
          & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 < r_{\ell} < |r_{\ell - 1}|, \quad \ell = 0,1,\cdots,n-2; \\
          & r_{n - 3} = r_{n - 2} q_{n - 1} \period
     \end{align*}
-    $r_{n-2}$ 是 $0$ 与 $r_{n-2}$ 的最大公因子, 也是 $r_{n-2}$ 与 $r_{n-3}$ 的最大公因子, 也是 $r_{n-3}$ 与 $r_{n-4}$ 的最大公因子……也是 $r_{-2}$ 与 $r_{-1}$ 的最大公因子\period 所以, $r_{n-2}$ 是 $a$ 与 $b$ 的最大公因子\period
+    $r_{n-2}$ 是 $0$ 与 $r_{n-2}$ 的最大公因子, 也是 $r_{n-2}$ 与 $r_{n-3}$ 的最大公因子, 也是 $r_{n-3}$ 与 $r_{n-4}$ 的最大公因子……也是 $r_{-2}$ 与 $r_{-1}$ 的最大公因子\period 所以, $r_{n-2}$ 是 $f$ 与 $g$ 的最大公因子\period
 \end{pf}
 
 这个命题的证明过程事实上也给出了一个计算二个整数的最大公因子的算法\period
 
 \begin{example}
-    设 $a = 2\,116$, $b = 667$\period 我们来找一个 $a$ 与 $b$ 的最大公因子\period
+    设 $f = 2\,116$, $g = 667$\period 我们来找一个 $f$ 与 $g$ 的最大公因子\period
 
     不难作出如下计算:
     \begin{align*}
@@ -223,7 +255,7 @@
     \end{align*}
     所以, $23$ 是 $92$ 与 $115$ 的最大公因子, 是 $115$ 与 $667$ 的最大公因子, 是 $667$ 与 $2\,116$ 的最大公因子\period
 
-    当然, 读者不难说明, $-23$ 是另一个最大公因子\period $\pm 23$ 是 $a$ 与 $b$ 唯二的最大公因子\period
+    当然, 读者不难说明, $-23$ 是另一个最大公因子\period $\pm 23$ 是 $f$ 与 $g$ 唯二的最大公因子\period
 \end{example}
 
 根据上面的计算, 我们有
@@ -257,17 +289,17 @@
 
 一般地, 我们有
 \begin{proposition}
-    设 $a$, $b$ 是整数\period 设 $g$ 是 $a$ 与 $b$ 的最大公因子\period 存在整数 $s$ 与 $t$ 使
+    设 $f$, $g$ 是整数\period 设 $d$ 是 $f$ 与 $g$ 的最大公因子\period 存在整数 $s$ 与 $t$ 使
     \begin{align*}
-        sa + tb = g \period
+        sf + tg = d \period
     \end{align*}
     这个等式的一个名字是 Bézout 等式 \term{Bézout's identity}\period
 \end{proposition}
 
 \begin{pf}
-    若 $a=b=0$, 则可取 $s=t=0$\period 下设 $b \neq 0$\period
+    若 $f=g=0$, 则可取 $s=t=0$\period 下设 $g \neq 0$\period
 
-    为方便, 分别称 $a$ 与 $b$ 为 $r_{-2}$ 与 $r_{-1}$\period 设存在整数 $n$ 使
+    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$\period 设存在整数 $n$ 使
     \begin{align*}
          & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 < r_{\ell} < |r_{\ell - 1}|, \quad \ell = 0,1,\cdots,n-2; \\
          & r_{n - 3} = r_{n - 2} q_{n - 1} \period
@@ -279,47 +311,43 @@
 
     我们用数学归纳法证明辅助命题 $P(\ell)$: 任取非负整数 $\ell$, 必有二整数 $s$, $t$ 使
     \begin{align*}
-        r_\ell = sa + tb \period
+        r_\ell = sf + tg \period
     \end{align*}
     $r_0$ 可写为
     \begin{align*}
-        r_0 = 1 r_{\ell - 2} + (-q_0) r_{\ell} = 1a + (-q_0)b \period
+        r_0 = 1 r_{\ell - 2} + (-q_0) r_{\ell} = 1f + (-q_0)g \period
     \end{align*}
     $r_1$ 可写为
     \begin{align*}
-        r_1 = 1r_{-1} + (-q_1) r_0 = (-q_1) a + (1 + q_0 q_1) b \period
+        r_1 = 1r_{-1} + (-q_1) r_0 = (-q_1) f + (1 + q_0 q_1) g \period
     \end{align*}
     所以 $P(0)$ 与 $P(1)$ 正确\period 假定 $P(0)$, $P(1)$, $\cdots$, $P(k-1)$ 正确\period 我们的目标是: 推出 $P(k)$ 正确\period 若 $k \geq n-1$, 则
     \begin{align*}
-        r_k = 0 = 0a + 0b \period
+        r_k = 0 = 0f + 0g \period
     \end{align*}
-    若 $k \leq n-2$, 则根据归纳假设, 存在整数 $u$, $v$, $x$, $y$ 使
+    若 $k \leq n-2$, 则根据归纳假设, 存在整数 $u$, $v$, $z$, $w$ 使
     \begin{align*}
-        r_{k-2} = ua + vb, \quad r_{k-1} = xa + yb \period
+        r_{k-2} = uf + vg, \quad r_{k-1} = zf + wg \period
     \end{align*}
     所以
     \begin{align*}
-        r_{k} = r_{k-2} - r_{k-1} q_k = (u - xq_k) a + (v - yq_k) b \period
+        r_{k} = r_{k-2} - r_{k-1} q_k = (u - zq_k) f + (v - wq_k) g \period
     \end{align*}
-    因为 $u - xq_k$ 与 $v - yq_k$ 均为整数, 故 $P(k)$ 正确\period
+    因为 $u - zq_k$ 与 $v - wq_k$ 均为整数, 故 $P(k)$ 正确\period
 
     所以, 存在整数 $s$, $t$ 使
     \begin{align*}
-        sa + tb = r_{n-2} \period
+        sf + tg = r_{n-2} \period
     \end{align*}
-    因为 $r_{n-2}$ 与 $g$ 都是 $a$ 与 $b$ 的最大公因子, 故 $r_{n-2} = g$ 或 $r_{n-2} = -g$\period 若 $r_{n-2} = g$:
+    因为 $r_{n-2}$ 与 $d$ 都是 $f$ 与 $g$ 的最大公因子, 故 $d = cr_{n-2}$, 其中 $c = \pm 1$\period 所以
     \begin{align*}
-        sa + tb = g;
-    \end{align*}
-    若 $r_{n-2} = -g$:
-    \begin{align*}
-         & (-s)a + (-t)b = g \period \qedhere
+         & (cs)f + (ct)g = d \period \qedhere
     \end{align*}
 \end{pf}
 
 有了最大公因子的概念, 我们可以引出 ``互素'':
 \begin{definition}
-    设 $a$, $b$ 是整数\period 若 $a$ 与 $b$ 的最大公因子是 $\pm 1$, 则称 $a$ 与 $b$ 互素 \term{to be relatively prime}\period
+    设 $f$, $g$ 是整数\period 若 $f$ 与 $g$ 的最大公因子是 $\pm 1$, 则称 $f$ 与 $g$ 互素 \term{to be relatively prime}\period
 \end{definition}
 
 \begin{example}
@@ -328,33 +356,183 @@
 
 下面给出一个极重要的命题:
 \begin{proposition}
-    设 $a$, $b$ 是整数\period $a$ 与 $b$ 互素的一个必要与充分条件是: 存在整数 $s$, $t$ 使
+    设 $f$, $g$ 是整数\period $f$ 与 $g$ 互素的一个必要与充分条件是: 存在整数 $s$, $t$ 使
     \begin{align*}
-        sa + tb = 1 \period
+        sf + tg = 1 \period
     \end{align*}
 \end{proposition}
 
 \begin{pf}
     先看必要性\period 显然; 这是 Bézout 等式的结果\period
 
-    再看充分性\period 设 $g$ 是 $a$ 与 $b$ 的最大公因子\period 因为 $sa + tb = 1$, 故 $g$ 是 $1$ 的因子\period 这样, $g$ 一定是 $\pm 1$\period
+    再看充分性\period 设 $d$ 是 $f$ 与 $g$ 的最大公因子\period 因为 $sf + tg = 1$, 故 $d$ 是 $1$ 的因子\period 这样, $d$ 一定是 $\pm 1$\period
 \end{pf}
 
-我们以一个十分有用的命题结束本文:
+下面是几个关于互素的性质\period
+
 \begin{proposition}
-    设 $a$, $b$, $c$ 是整数\period 若 $c$ 是 $ab$ 的因子, 且 $c$ 与 $a$ 互素, 则 $c$ 一定是 $b$ 的因子\period
+    设 $f$, $g$, $h$ 是整数\period 互素有如下性质:
+
+    (i) 若 $h$ 是 $fg$ 的因子, 且 $h$ 与 $f$ 互素, 则 $h$ 是 $g$ 的因子;
+
+    (ii) 若 $f$ 与 $g$ 互素, 且 $f$ 与 $h$ 互素, 则 $f$ 与 $gh$ 互素;
+
+    (iii) 若 $f$ 是 $h$ 的因子, $g$ 是 $h$ 的因子, 且 $f$ 与 $g$ 互素, 则 $fg$ 是 $h$ 的因子\period
 \end{proposition}
 
 \begin{pf}
-    因为 $c$ 与 $a$ 互素, 故存在整数 $s$ 与 $t$ 使
+    (i) 因为 $h$ 与 $f$ 互素, 故存在整数 $s$ 与 $t$ 使
     \begin{align*}
-        sc + ta = 1 \period
+        sh + tf = 1 \period
     \end{align*}
     所以
     \begin{align*}
-        (bs)c + t(ab) = b \period
+        (gs)h + t(fg) = g \period
     \end{align*}
-    因为 $c$ 是 $c$ 的因子, 且 $c$ 是 $ab$ 的因子, 故 $c$ 是 $b = (bs)c + t(ab)$ 的因子\period
+    因为 $h$ 是 $h$ 的因子, 且 $h$ 是 $fg$ 的因子, 故 $h$ 是 $g = (gs)h + t(fg)$ 的因子\period
+
+    (ii) 因为 $f$ 与 $g$ 互素, 故存在整数 $u$, $v$ 使
+    \begin{align*}
+        uf + vg = 1 \period
+    \end{align*}
+    因为 $f$ 与 $h$ 互素, 故存在整数 $s$, $t$ 使
+    \begin{align*}
+        sf + th = 1 \period
+    \end{align*}
+    从而
+    \begin{align*}
+        1 = (uf + vg)(sf + th) = (ufs + uth + vgs)f + (vt)(gh) \period
+    \end{align*}
+    所以 $f$ 与 $gh$ 互素\period
+
+    (iii) 因为 $f$ 是 $h$ 的因子, 故存在整数 $p$ 使 $h = fp$\period 因为 $g$ 是 $h = fp$ 的因子, 且 $f$ 与 $g$ 互素, 故由 (i) 知 $g$ 是 $p$ 的因子\period 设 $p = gq$\period 这样
+    \begin{align*}
+        h = fp = f(gq) = (fg)q,
+    \end{align*}
+    故 $fg$ 是 $h$ 的因子\period
 \end{pf}
 
-感谢您的阅读\period
+感谢您的阅读\period 请休息一会儿\period
+
+\myLine
+
+现在我们推广公因子、最大公因子、互素的概念\period
+
+前面, 我们讨论了二个整数的公因子、最大公因子、互素; 现在, 我们从量的角度推广\period
+
+\begin{proposition}
+    设 $u_1$, $u_2$, $\cdots$, $u_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $u_1 f_1 + u_2 f_2 + \cdots + u_n f_n$ 的因子\period
+\end{proposition}
+
+作为练习, 请读者证明
+\begin{proposition}
+    设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子\period
+\end{proposition}
+
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 适合下述二性质的整数 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子:
+
+    (i) $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子;
+
+    (ii) 若 $e$ 是 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $e$ 是 $d$ 的因子\period
+\end{definition}
+
+由定义立即可得
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d_1$ 与 $d_2$ 都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则 $d_1 = d_2$ 或 $d_1 = -d_2$\period
+\end{proposition}
+
+\begin{pf}
+    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子\period
+\end{pf}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period
+
+    (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子存在;
+
+    (ii) 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则存在整数 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = d \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    (i) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在\period
+
+    今看 $n = k+1$ 时的情形\period 令 $d_k$ 为 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 我们证明: $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period
+
+    首先, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子\period $d$ 当然是 $f_{k+1}$ 的因子\period 固定某个 $1$ 至 $k$ 间的 $\ell$\period 因为 $d$ 是 $d_k$ 的因子, 而 $d_k$ 是 $f_{\ell}$ 的因子, 故 $d$ 是 $f_{\ell}$ 的因子\period 这样, $d$ 确为 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子\period
+
+    其次, 若 $e$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子, 则 $e$ 当然是 $f_1$, $f_2$, $\cdots$, $f_{k}$ 的公因子, 故 $e$ 是 $d_k$ 的因子\period 又因为 $e$ 是 $f_{k+1}$ 的因子, 则 $e$ 是 $d_k$ 与 $f_{k+1}$ 的公因子\period 这样, $e$ 是 $d$ 的因子\period
+
+    根据最大公因子的定义, $d$ 一定是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 所以, $n = k+1$ 时, (i) 正确\period
+
+    (ii) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在整数 $u_1$, $u_2$, $\cdots$, $u_k$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_k f_k = d_k \period
+    \end{align*}
+
+    今看 $n = k+1$ 时的情形\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 由 (i) 知, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 由 Bézout 等式知, 存在整数 $u$, $u_{k+1}$ 使
+    \begin{align*}
+        u d_k + u_{k+1} f_{k+1} = d \period
+    \end{align*}
+    根据归纳假设, 存在整数 $v_1$, $v_2$, $\cdots$, $v_k$ 使
+    \begin{align*}
+        v_1 f_1 + v_2 f_2 + \cdots + v_k f_k = d_k \period
+    \end{align*}
+    这样
+    \begin{align*}
+        (uv_1) f_1 + (uv_2) f_2 + \cdots + (uv_k) f_k + u_{k+1} f_{k+1} = d \period
+    \end{align*}
+    所以, $n = k+1$ 时, (ii) 正确\period
+\end{pf}
+
+跟之前一样, 有了最大公因子的概念, 我们可以引出 ``互素'':
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子是 $\pm 1$, 则称 $f_1$, $f_2$, $\cdots$, $f_n$ 互素\period
+\end{definition}
+
+下面的命题也是十分自然的\period
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 存在整数 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1 \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    先看必要性\period 显然; 这是上个命题的结果\period
+
+    再看充分性\period 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子\period 因为 $u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1$, 故 $d$ 是 $1$ 的因子\period 这样, $d$ 一定是 $\pm 1$\period
+\end{pf}
+
+我们再讨论互素的一个性质\period
+
+\begin{proposition}
+    设整数 $f_1$, $f_2$, $\cdots$, $f_n$ 不全是零\period
+
+    (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子 $d$ 不是零;
+
+    (ii) 任取 $1$ 至 $n$ 间的整数 $\ell$, 必有 (唯一的) 整数 $g_\ell$ 使 $f_\ell = dg_\ell$;
+
+    (iii) $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子是 $\pm 1$; 换句话说, $g_1$, $g_2$, $\cdots$, $g_n$ 互素;
+
+    (iv) 反过来, 若整数 $u_1$, $u_2$, $\cdots$, $u_n$ 互素, 则 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子\period
+\end{proposition}
+
+\begin{pf}
+    (i) 零一定不是非零整数的因子, 故零不是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 当然也不是最大公因子\period
+
+    (ii) 既然 $d$ 是最大公因子, 当然也是公因子\period 对 $f_{\ell}$ 而言, 由因子的定义, 知: 存在整数 $g_{\ell}$ 使 $f_{\ell} = dg_{\ell}$\period 现在看唯一性\period 假定 $f_{\ell} = dg_{\ell} = dg_{\ell}^{\prime}$\period 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $g_{\ell} = g_{\ell}^{\prime}$\period
+
+    (iii) 设 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子是 $\delta$\period 这样, 由 (ii), 知: 对任意 $g_{\ell}$, 有整数 $h_{\ell}$ 使 $g_{\ell} = \delta h_{\ell}$\period 所以
+    \begin{align*}
+        f_{\ell} = dg_{\ell} = d(\delta h_{\ell}) = (d\delta) h_{\ell} \period
+    \end{align*}
+    所以 $d\delta$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period 所以 $d\delta$ 是 $d$ 的因子\period $d$ 显然是 $d\delta$ 的因子, 故 $d\delta = \pm d$\period 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $\delta = \pm 1$\period
+
+    (iv) 若 $w = 0$, 命题显然成立: $0$, $0$, $\cdots$, $0$ 的最大公因子当然是 $0$\period 下设 $w \neq 0$\period
+
+    $w$ 显然是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的公因子\period 设 $ws$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子, 这里 $s$ 是某个整数\period 由 (ii), 对每个 $wu_{\ell}$, 都有整数 $q_{\ell}$ 使 $wu_{\ell} = wsq_{\ell}$\period 因为 $s \neq 0$, 故可从等式二边消去 $w$, 即 $u_{\ell} = sq_{\ell}$\period 这样, $s$ 是 $u_1$, $u_2$, $\cdots$, $u_n$ 的公因子, 故 $s$ 是 $\pm 1$ 的因子, 即 $s = \pm 1$\period 所以 $\pm w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子\period
+\end{pf}
