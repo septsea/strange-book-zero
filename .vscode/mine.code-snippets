@@ -23,8 +23,8 @@
         ],
         "body": [
             "\\begin{align*}",
-            "    $1",
-            "\\end{align*}$0",
+            "    $0",
+            "\\end{align*}\n",
         ]
     },
     "definition": {
@@ -34,8 +34,8 @@
         ],
         "body": [
             "\\begin{definition}",
-            "    $1",
-            "\\end{definition}$0",
+            "    $0",
+            "\\end{definition}\n",
         ]
     },
     "example": {
@@ -45,8 +45,8 @@
         ],
         "body": [
             "\\begin{example}",
-            "    $1",
-            "\\end{example}$0",
+            "    $0",
+            "\\end{example}\n",
         ]
     },
     "remark": {
@@ -56,8 +56,8 @@
         ],
         "body": [
             "\\begin{remark}",
-            "    $1",
-            "\\end{remark}$0",
+            "    $0",
+            "\\end{remark}\n",
         ]
     },
     "proposition": {
@@ -67,20 +67,20 @@
         ],
         "body": [
             "\\begin{proposition}",
-            "    $1",
-            "\\end{proposition}$0",
+            "    $0",
+            "\\end{proposition}\n",
         ]
     },
     "proof": {
         "scope": "latex",
         "prefix": [
             "pf",
-            "proof"
+            // "proof"
         ],
         "body": [
             "\\begin{pf}",
-            "    $1",
-            "\\end{pf}$0",
+            "    $0",
+            "\\end{pf}\n",
         ]
     },
 }
