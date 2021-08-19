@@ -361,11 +361,11 @@
     \begin{align*}
         f = gq_0 + r_0, \quad 0 \leq r_0 < |g| \period
     \end{align*}
-    根据上一个命题, $r_0$ 与 $g$ 的最大公因子是 $f$ 与 $g$ 的最大公因子\period 若 $r_0 = 0$, 则 $g$ 就是 $0$ 与 $g$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_0 > 0$, 则
+    根据上一个命题, $r_0$ 与 $g$ 的最大公因子是 $f$ 与 $g$ 的最大公因子\period 若 $r_0 = 0$, 则 $g$ 就是 $0$ 与 $g$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_0 \neq 0$, 则
     \begin{align*}
         g = r_0 q_1 + r_1, \quad 0 \leq r_1 < r_0 \period
     \end{align*}
-    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $g$ 的最大公因子, 所以也是 $f$ 与 $g$ 的最大公因子\period 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_1 > 0$, 则
+    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $g$ 的最大公因子, 所以也是 $f$ 与 $g$ 的最大公因子\period 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_1 \neq 0$, 则
     \begin{align*}
         r_0 = r_1 q_2 + r_2, \quad 0 \leq r_2 < r_1 \period
     \end{align*}
@@ -720,7 +720,7 @@
 \end{definition}
 
 \begin{remark}
-    $0$ 或 单位既不是可约的, 也不是不可约的\period
+    $0$ 或单位既不是可约的, 也不是不可约的\period
 \end{remark}
 
 \begin{example}
@@ -768,7 +768,7 @@
 
     (ii) $\Rightarrow$ (iii): 若 $p$ 是 $f$ 的因子, 则不必证了\period 今假设 $p$ 不是 $f$ 的因子\period 所以, $p$ 与 $f$ 互素\period 因为 $p$ 是 $fg$ 的因子, 故 $p$ 一定是 $g$ 的因子\period
 
-    (iii) $\Rightarrow$ (iv): 反证法\period 设 $p = f_1 f_2$, 且 $|f_1| < |p|$, $|f_2| < |p|$\period 因为 $p \neq 0$, 故 $f_1 \neq 0$, 且 $f_2 \neq 0$\period 所以, $|f_1| \geq 1$, 且 $|f_2| \geq 1$\period 既然 $p = f_1 f_2$, $p$ 当然是 $f_1 f_2$ 的因子\period 所以, $p$ 是 $f_1$ 的因子, 或 $p$ 是 $f_2$ 的因子\period 若 $p$ 是 $f_1$ 的因子, 则存在整数 $g_1$ 使 $f_1 = pg_1$\period 因为 $f_1 \neq 0$, 故 $g_1 \neq 0$\period 这样, $|g_1| \geq 1$\period 所以 $|f_1| = |p| |g_1| \geq |p|$\period 这与假定 $|f_1| < |p|$ 矛盾! 类似地, 若 $p$ 是 $f_2$ 的因子, 也有 $|f_2| < |p|$, 矛盾! 综上, 这样的 $f_1$ 与 $f_2$ 不存在\period
+    (iii) $\Rightarrow$ (iv): 反证法\period 设 $p = f_1 f_2$, 且 $|f_1| < |p|$, $|f_2| < |p|$\period 因为 $p \neq 0$, 故 $f_1 \neq 0$, 且 $f_2 \neq 0$\period 所以, $|f_1| \geq 1$, 且 $|f_2| \geq 1$\period 既然 $p = f_1 f_2$, $p$ 当然是 $f_1 f_2$ 的因子\period 所以, $p$ 是 $f_1$ 的因子, 或 $p$ 是 $f_2$ 的因子\period 若 $p$ 是 $f_1$ 的因子, 则存在整数 $g_1$ 使 $f_1 = pg_1$\period 因为 $f_1 \neq 0$, 故 $g_1 \neq 0$\period 这样, $|g_1| \geq 1$\period 所以 $|f_1| = |p| |g_1| \geq |p|$\period 这与假定 $|f_1| < |p|$ 矛盾! 类似地, 若 $p$ 是 $f_2$ 的因子, 也有 $|f_2| \geq |p|$, 矛盾! 综上, 这样的 $f_1$ 与 $f_2$ 不存在\period
 
     (iv) $\Rightarrow$ (i): 这说明: 若整数 $f_1$, $f_2$ 使 $p = f_1 f_2$, 则 $|f_1| \geq |p|$ 或 $|f_2| \geq |p|$\period 若 $|f_1| \geq |p|$, 则 $|p| = |f_1| |f_2| \geq |p| |f_2|$, 故 $|f_2| \leq 1$ (因为 $p \neq 0$, 故 $|p| \neq 0$, 从而可从不等式二边消去正因子), 即 $f_2 = \pm 1$ (因为 $f_2$ 不能为 $0$), 即 $f_2$ 是单位\period 类似地, 若 $|f_2| \geq |p|$, 则 $f_1$ 是单位\period
 \end{pf}

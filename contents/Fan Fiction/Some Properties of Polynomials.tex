@@ -1,0 +1,775 @@
+\subsection*{\SomePropertiesOfPolynomials}
+\addcontentsline{toc}{subsection}{\SomePropertiesOfPolynomials}
+\markright{\SomePropertiesOfPolynomials}
+
+本文的目标是补充一点多项式的性质; 我们后面会用到这些东西\period
+
+为尽可能多地照顾读者, 本文被加了一点细节\period
+
+$\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ 是全体系数为 $\FF$ 的元的多项式作成的集\period 在本文 ``\SomePropertiesOfPolynomials '' 里, 我们约定: ``多项式'' 都是 $\FF[x]$ 的元, 而 ``数'' ``常数'' 都是 $\FF$ 的元 (当然也是多项式)\period ``整数'' 还是读者熟悉的整数; 当然, 这也是多项式\period
+
+读者可能还记得, 我们写多项式时, 一般都会带 ``$(x)$'' 记号:
+\begin{align*}
+    f(x) = a_0 + a_1 x + \cdots + a_n x^n \period
+\end{align*}
+这个记号的优点有: (i) 清楚地表示出多项式的不定元为 $x$; (ii) 若 $t$ 是数, 可用 $f(t)$ 表示数
+\begin{align*}
+    a_0 + a_1 t + \cdots + a_n t^n;
+\end{align*}
+(iii) 若 $g(x)$ 是多项式, 可用 $f(g(x))$ 表示多项式
+\begin{align*}
+    a_0 + a_1 g(x) + \cdots + a_n (g(x))^n \period
+\end{align*}
+不过, 在本文里, 我们一般不干 (ii) (iii) 这二件事\period 所以, 为了方便, 我们也写
+\begin{align*}
+    f = a_0 + a_1 x + \cdots + a_n x^n \period
+\end{align*}
+
+在正式进入讨论前, 作者希望读者能回想起二件事:
+
+(i) 多项式 $f$ 的次用 $\deg f$ 表示\period 零多项式的次是 $-\infty$\period 若多项式 $g$, $h$ 适合 $f = gh$, 则
+\begin{align*}
+    \deg f = \deg g + \deg h \period
+\end{align*}
+
+(ii) 多项式的乘法适合消去律\period 设 $f$, $g$, $h$ 是多项式\period 若 $f \neq 0$, 且 $fg = fh$, 则 $g = h$\period
+
+我们先从多项式的单位开始\period
+
+\begin{definition}
+    设 $f$ 是多项式\period 若存在多项式 $g$ 使 $fg = 1$, 则说 $f$ 是单位 \term{unit}\period $g$ 称为 $f$ 的逆 \term{inverse}\period
+\end{definition}
+
+\begin{proposition}
+    $1$ 是单位\period
+\end{proposition}
+
+\begin{pf}
+    因为 $1 \cdot 1 = 1$\period
+\end{pf}
+
+\begin{proposition}
+    $0$ 一定不是单位\period
+\end{proposition}
+
+\begin{pf}
+    $0$ 与任何多项式的积都是 $0$, 不等于 $1$\period
+\end{pf}
+
+\begin{proposition}
+    设 $f$ 是单位\period 若多项式 $g$, $h$ 适合 $fg = fh = 1$, 则 $g = h$\period
+\end{proposition}
+
+\begin{pf}
+    因为多项式的乘法是交换的、结合的, 故
+    \begin{align*}
+         & g = g1 = g(fh) = (gf)h = (fg)h = 1h = h \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{definition}
+    设 $f$ 是单位\period 上个命题指出, $f$ 的逆一定是唯一的 (根据单位的定义, $f$ 的逆当然存在)\period 我们用 $f^{-1}$ 表示 $f$ 的逆\period
+\end{definition}
+
+\begin{proposition}
+    设 $f$ 是单位\period $f$ 的逆 $f^{-1}$ 也是单位, 且 $(f^{-1})^{-1} = f$\period
+\end{proposition}
+
+\begin{pf}
+    因为 $f$ 是单位, 故存在多项式 $f^{-1}$ 使 $ff^{-1} = 1$\period 因为乘法可交换, 故 $f^{-1} f = 1$\period 所以对多项式 $f^{-1}$ 而言, 存在多项式 $f$ 使 $f^{-1} f = 1$\period 由单位的定义, $f^{-1}$ 是单位\period 因为单位的逆唯一, 故 $f$ 是 $f^{-1}$ 的逆\period
+\end{pf}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是单位\period 则 $f_1 f_2 \cdots f_n$ 也是单位, 且
+    \begin{align*}
+        (f_1 f_2 \cdots f_n)^{-1} = f_n^{-1} \cdots f_2^{-1} f_1^{-1} \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    既然 $f_1$, $f_2$, $\cdots$, $f_n$ 是单位, 那么它们都有逆, 分别为 $f_1^{-1}$, $f_2^{-1}$, $\cdots$, $f_n^{-1}$\period 所以
+    \begin{align*}
+             & (f_1 f_2 \cdots f_{n-1} f_n) (f_n^{-1} f_{n-1}^{-1} \cdots f_2^{-1} f_1^{-1})   \\
+        = {} & (f_1 f_2 \cdots f_{n-1}) (f_n f_n^{-1}) (f_{n-1}^{-1} \cdots f_2^{-1} f_1^{-1}) \\
+        = {} & (f_1 f_2 \cdots f_{n-1}) (1) (f_{n-1}^{-1} \cdots f_2^{-1} f_1^{-1})            \\
+        = {} & (f_1 f_2 \cdots f_{n-1}) (f_{n-1}^{-1} \cdots f_2^{-1} f_1^{-1})                \\
+        = {} & \cdots \cdots \cdots \cdots                                                     \\
+        = {} & f_1 f_1^{-1}                                                                    \\
+        = {} & 1 \period
+    \end{align*}
+    所以, $f_1 f_2 \cdots f_n$ 是单位\period 因为单位的逆唯一, 故
+    \begin{align*}
+         & (f_1 f_2 \cdots f_n)^{-1} = f_n^{-1} \cdots f_2^{-1} f_1^{-1} \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{definition}
+    多项式的全体单位称为多项式的单位群\period
+\end{definition}
+
+\begin{proposition}
+    多项式的单位群恰由全体非零常数作成\period
+\end{proposition}
+
+\begin{pf}
+    每个非零常数 $c$ 都有倒数 $\frac{1}{c}$\period $\frac{1}{c}$ 也是非零常数, 故由 $c \cdot \frac{1}{c} = 1$ 可知 $c$ 是单位\period
+
+    设 $f$ 是单位\period 所以, 存在多项式 $g$ 使 $fg = 1$\period 我们证明: $\deg f = 0$\period
+
+    这很容易\period 因为 $fg = 1$, 故 $\deg f + \deg g = \deg 1 = 0$\period 显然 $\deg f$ 与 $\deg g$ 都是非负整数\period 这样, $\deg f = 0$\period 零次多项式就是非零常数\period
+
+    综上, 多项式的单位群恰由全体非零常数作成\period
+\end{pf}
+
+读者可能还记得, 多项式也有带余除法:
+
+\begin{proposition}
+    设 $f$ 是非零多项式\period 对任意多项式 $g$, 存在唯一的一对多项式 $q, r$ 使
+    \begin{align*}
+        g = q f + r, \quad \deg r < \deg f \period
+    \end{align*}
+    一般称其为带余除法: $q$ 就是商; $r$ 就是余式\period 并且, 当 $f$ 的次不高于 $g$ 的次时, $f$, $g$, $q$ 间还有如下的次关系:
+    \begin{align*}
+        \deg g = \deg (g - r) = \deg q + \deg f \period
+    \end{align*}
+\end{proposition}
+
+我们已经在前面证明过这个关系, 所以我们就不赘述了\period
+
+请读者休息一会儿\period
+
+\myLine
+
+\begin{definition}
+    设 $f$, $g$ 是多项式\period 若存在多项式 $h$ 使 $f=gh$, 则说 $f$ 是 $g$ 的倍 \term{multiple}, 或 $g$ 是 $f$ 的因子 \term{divisor}\period
+\end{definition}
+
+\begin{example}
+    单位是任意多项式的因子; 单位只能是单位的倍\period $0$ 只能是 $0$ 的因子; $0$ 可以是任意多项式的倍\period
+\end{example}
+
+\begin{proposition}
+    设 $f$, $g$, $h$ 是多项式\period 因子适合如下性质:
+
+    (i) $f$ 是 $f$ 的因子;
+
+    (ii) 若 $h$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则 $h$ 是 $f$ 的因子;
+
+    (iii) 若 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则存在单位 $q$ 使 $f = qg$;
+
+    (iv) 设 $k$, $\ell$ 是多项式\period 若 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 则 $h$ 是 $kf \pm \ell g$ 的因子;
+
+    (v) 若 $\varepsilon_1$, $\varepsilon_2$ 是单位, 且 $g$ 是 $f$ 的因子, 则 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子\period
+\end{proposition}
+
+\begin{pf}
+    (i) 注意到 $f = 1f$, 其中 $1$ 是单位\period
+
+    (ii) 因为 $h$ 是 $g$ 的因子, 故存在多项式 $p$ 使 $g = ph$\period 因为 $g$ 是 $f$ 的因子, 故存在多项式 $q$ 使 $f = qg$\period 所以
+    \begin{align*}
+        f = qg = q(ph) = (qp)h \period
+    \end{align*}
+    因为 $qp$ 也是多项式, 故 $h$ 是 $f$ 的因子\period
+
+    (iii) 若 $f = 0$, 则 $g = 0$, 当然有 $f = 1 g = 0$, 其中 $1$ 是单位\period 下设 $f \neq 0$\period
+
+    因为 $f$ 是 $g$ 的因子, 故存在多项式 $p$ 使 $g = pf$; 因为 $g$ 是 $f$ 的因子, 故存在多项式 $q$ 使 $f = qg$\period 所以
+    \begin{align*}
+        f = qg = q(pf) = (qp)f \period
+    \end{align*}
+    因为 $f \neq 0$, 故可从等式二边消去 $f$, 即
+    \begin{align*}
+        1 = qp \period
+    \end{align*}
+    由此可知 $q$ 是单位\period
+
+    (iv) 因为 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 故存在多项式 $p$, $q$ 使 $f = ph$ 且 $g = qh$\period 所以
+    \begin{align*}
+        kf \pm \ell g = k(ph) \pm \ell (qh) = (kp) h \pm (\ell q) h = (kp \pm \ell q) h \period
+    \end{align*}
+
+    (v) 若存在多项式 $q$ 使 $f = gq$, 则
+    \begin{align*}
+        \varepsilon_1 f = g(\varepsilon_1 q) = g(\varepsilon_2 \varepsilon_2^{-1}) (\varepsilon_1 q) = (g\varepsilon_2) (\varepsilon_2^{-1} \varepsilon_1 q) \period
+    \end{align*}
+    因为单位的逆是多项式, 且 (有限多个) 多项式的积是多项式, 故 $\varepsilon_2^{-1} \varepsilon_1 q$ 是多项式\period 从而 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子\period
+\end{pf}
+
+为方便, 我们定义一个新词\period
+
+\begin{definition}
+    设 $f$, $g$ 是多项式\period 若存在单位 $\varepsilon$ 使 $f = \varepsilon g$, 则说 $f$ 是 $g$ 的相伴 \term{associate}\period 因为
+    \begin{align*}
+        g = 1g = (\varepsilon^{-1} \varepsilon) g = \varepsilon^{-1} (\varepsilon g) = \varepsilon^{-1} f,
+    \end{align*}
+    故 $g$ 当然也是 $f$ 的相伴\period 所以, 我们说 $f$ 与 $g$ 相伴 \term{to be associate}\period
+\end{definition}
+
+显然, 因为 $f = 1f$, 故 $f$ 与 $f$ 相伴\period 上面的文字已经说明 $f$ 与 $g$ 相伴相当于 $g$ 与 $f$ 相伴\period 我们还有下面的
+\begin{proposition}
+    设 $f$, $g$, $h$ 是多项式\period 若 $f$ 与 $g$ 相伴, 且 $g$ 与 $h$ 相伴, 则 $f$ 与 $h$ 相伴\period
+\end{proposition}
+
+\begin{pf}
+    因为 $f$ 与 $g$ 相伴, 故存在单位 $\varepsilon_1$ 使 $f = \varepsilon_1 g$\period 因为 $g$ 与 $h$ 相伴, 故存在单位 $\varepsilon_2$ 使 $g = \varepsilon_2 h$\period 所以
+    \begin{align*}
+        f = \varepsilon_1 g = \varepsilon_1 (\varepsilon_2 h) = (\varepsilon_1 \varepsilon_2) h \period
+    \end{align*}
+    因为 $\varepsilon_1 \varepsilon_2$ 是单位, 故 $f$ 与 $g$ 相伴\period
+\end{pf}
+
+根据 (iii), 我们有
+\begin{proposition}
+    设 $f$, $g$ 是多项式\period $f$ 与 $g$ 相伴的一个必要与充分条件是 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子\period
+\end{proposition}
+
+\begin{definition}
+    设 $f$, $g$ 是多项式\period 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common divisor}\period
+\end{definition}
+
+\begin{example}
+    单位是任意二个多项式的公因子\period
+\end{example}
+
+现在我们引出 ``最大公因子'' 的概念\period
+
+\begin{definition}
+    设 $f$, $g$ 是多项式\period 适合下述二性质的多项式 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common divisor}:
+
+    (i) $d$ 是 $f$ 与 $g$ 的公因子;
+
+    (ii) 若 $e$ 是 $f$ 与 $g$ 的公因子, 则 $e$ 是 $d$ 的因子\period
+\end{definition}
+
+由定义立即可得
+\begin{proposition}
+    设 $f$, $g$ 是多项式\period 若 $d_1$ 与 $d_2$ 都是 $f$ 与 $g$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴\period
+\end{proposition}
+
+\begin{pf}
+    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子\period
+\end{pf}
+
+\begin{remark}
+    由此可见, 最大公因子不一定是唯一的\period 但这不是很重要\period
+\end{remark}
+
+\begin{example}
+    不难看出, $d = f$ 是 $0$ 与 $f$ 的最大公因子: (i) $d$ 是 $0$ 的因子, 且 $d$ 是 $f$ 的因子; (ii) 若 $e$ 是 $0$ 与 $f$ 的公因子, 则 $e$ 当然是 $d$ (即 $f$) 的因子\period
+\end{example}
+
+\begin{example}
+    设 $\varepsilon$ 是单位\period 不难看出, $d = \varepsilon$ 是 $\varepsilon$ 与 $f$ 的最大公因子: (i) $d$ 是 $\varepsilon$ 的因子, 且 $d$ 是 $f$ 的因子; (ii) 若 $e$ 是 $\varepsilon$ 与 $f$ 的公因子, 则 $e$ 当然是 $d$ (即 $\varepsilon$) 的因子\period
+\end{example}
+
+\begin{proposition}
+    设 $f$, $g$, $q$ 是多项式\period 设 $f$ 与 $g$ 的最大公因子是 $d_1$; 设 $f - gq$ 与 $g$ 的最大公因子是 $d_2$\period 则 $d_1$ 与 $d_2$ 相伴\period
+\end{proposition}
+
+\begin{pf}
+    因为 $d_1$ 是 $f$ 与 $g$ 的公因子, 故 $d_1$ 是 $1 \cdot f - q \cdot g$ 的因子\period 这说明, $d_1$ 是 $f - gq$ 与 $g$ 的公因子\period 因为 $d_2$ 是 $f - gq$ 与 $g$ 的最大公因子, 故 $d_1$ 是 $d_2$ 的因子\period
+
+    因为 $d_2$ 是 $f - gq$ 与 $g$ 的公因子, 故 $d_2$ 是 $1 \cdot (f - gq) + q \cdot g$ 的因子\period 这说明, $d_2$ 是 $f$ 与 $g$ 的公因子\period 因为 $d_1$ 是 $f$ 与 $g$ 的最大公因子, 故 $d_2$ 是 $d_1$ 的因子\period
+
+    综上, $d_1$ 与 $d_2$ 相伴\period
+\end{pf}
+
+我们现在可以证明
+\begin{proposition}
+    设 $f$, $g$ 是多项式\period $f$ 与 $g$ 的最大公因子一定存在\period
+\end{proposition}
+
+\begin{pf}
+    无妨假定 $g$ 不是 $0$\period 所以, 根据带余除法, 有
+    \begin{align*}
+        f = gq_0 + r_0, \quad \deg r_0 < \deg g \period
+    \end{align*}
+    根据上一个命题, $r_0$ 与 $g$ 的最大公因子是 $f$ 与 $g$ 的最大公因子\period 若 $r_0 = 0$, 则 $g$ 就是 $0$ 与 $g$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_0 \neq 0$, 则
+    \begin{align*}
+        g = r_0 q_1 + r_1, \quad \deg r_1 < \deg r_0 \period
+    \end{align*}
+    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $g$ 的最大公因子, 所以也是 $f$ 与 $g$ 的最大公因子\period 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_1 \neq 0$, 则
+    \begin{align*}
+        r_0 = r_1 q_2 + r_2, \quad \deg r_2 < \deg r_1 \period
+    \end{align*}
+
+    这个过程必定会在有限步后停止\period 反证法\period 如果此过程可一直进行下去, 则我们可得到无限多个非负整数 $\deg r_0$, $\deg r_1$, $\cdots$ 使
+    \begin{align*}
+        \deg g > \deg r_0 > \deg r_1 > \cdots > \deg r_k > \deg r_{k+1} > \cdots \period
+    \end{align*}
+    可是, 不存在无限递降的非负整数列 (低于 $\deg g$ 的非负整数至多有 $\deg g$ 个), 矛盾!
+
+    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$\period 根据上面的分析, 一定存在整数 $n$ 使
+    \begin{align*}
+         & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 \leq \deg r_{\ell} < \deg r_{\ell - 1}, \quad \ell = 0,1,\cdots,n-2; \\
+         & r_{n - 3} = r_{n - 2} q_{n - 1} \period
+    \end{align*}
+    $r_{n-2}$ 是 $0$ 与 $r_{n-2}$ 的最大公因子, 也是 $r_{n-2}$ 与 $r_{n-3}$ 的最大公因子, 也是 $r_{n-3}$ 与 $r_{n-4}$ 的最大公因子……也是 $r_{-2}$ 与 $r_{-1}$ 的最大公因子\period 所以, $r_{n-2}$ 是 $f$ 与 $g$ 的最大公因子\period
+\end{pf}
+
+这个命题的证明过程事实上也给出了一个计算二个多项式的最大公因子的算法\period
+
+\begin{example}
+    设 $f = x^5 + 3x + 1$, $g = x^2 - x - 1$\period 我们来找一个 $f$ 与 $g$ 的最大公因子\period
+
+    不难作出如下计算:
+    \begin{align*}
+        x^5 + 3x + 1 & = (x^2 - x - 1) \cdot (x^3 + x^2 + 2x + 3) + (8x + 4),   \\
+        x^2 - x - 1  & = (8x + 4) \cdot \frac{2x - 3}{16} - \frac{1}{4} \period
+    \end{align*}
+    所以, $-\frac{1}{4}$ 是 $8x + 4$ 与 $x^2 - x - 1$ 的最大公因子, 是 $x^2 - x - 1$ 与 $x^5 + 3x + 1$ 的最大公因子\period
+
+    当然, 读者不难说明, 每个单位都是 $f$ 与 $g$ 的最大公因子\period
+\end{example}
+
+根据上面的计算, 我们有
+\begin{align*}
+    1 \cdot (x^2 - x - 1) + \frac{-2x + 3}{16} \cdot (8x + 4) = -\frac{1}{4} \period
+\end{align*}
+又因为
+\begin{align*}
+    8x + 4 = 1 \cdot (x^5 + 3x + 1) + (-x^3 - x^2 - 2x - 3) \cdot (x^2 - x - 1),
+\end{align*}
+故
+\begin{align*}
+     & \frac{-2x+3}{16} (x^5 + 3x + 1)                                                                   \\
+     & \qquad + \left( 1 + \frac{-2x+3}{16} (-x^3-x^2-2x-3) \right) (x^2 - x - 1) = -\frac{1}{4} \period
+\end{align*}
+即
+\begin{align*}
+    \frac{-2x+3}{16} (x^5 + 3x + 1) + \frac{2x^4-x^3+x^2+7}{16} (x^2 - x - 1) = -\frac{1}{4} \period
+\end{align*}
+
+一般地, 我们有
+\begin{proposition}
+    设 $f$, $g$ 是多项式\period 设 $d$ 是 $f$ 与 $g$ 的最大公因子\period 存在多项式 $s$ 与 $t$ 使
+    \begin{align*}
+        sf + tg = d \period
+    \end{align*}
+    这个等式的一个名字是 Bézout 等式 \term{Bézout's identity}\period
+\end{proposition}
+
+\begin{pf}
+    若 $f=g=0$, 则可取 $s=t=0$\period 下设 $g \neq 0$\period
+
+    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$\period 设存在整数 $n$ 使
+    \begin{align*}
+         & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 \leq \deg r_{\ell} < \deg r_{\ell - 1}, \quad \ell = 0,1,\cdots,n-2; \\
+         & r_{n - 3} = r_{n - 2} q_{n - 1} \period
+    \end{align*}
+    为方便, 记
+    \begin{align*}
+        r_{\ell} = 0, \quad \ell \geq n - 1 \period
+    \end{align*}
+
+    我们用数学归纳法证明辅助命题 $P(\ell)$: 任取非负整数 $\ell$, 必有二多项式 $s$, $t$ 使
+    \begin{align*}
+        r_\ell = sf + tg \period
+    \end{align*}
+    $r_0$ 可写为
+    \begin{align*}
+        r_0 = 1 r_{\ell - 2} + (-q_0) r_{\ell} = 1f + (-q_0)g \period
+    \end{align*}
+    $r_1$ 可写为
+    \begin{align*}
+        r_1 = 1r_{-1} + (-q_1) r_0 = (-q_1) f + (1 + q_0 q_1) g \period
+    \end{align*}
+    所以 $P(0)$ 与 $P(1)$ 正确\period 假定 $P(0)$, $P(1)$, $\cdots$, $P(k-1)$ 正确\period 我们的目标是: 推出 $P(k)$ 正确\period 若 $k \geq n-1$, 则
+    \begin{align*}
+        r_k = 0 = 0f + 0g \period
+    \end{align*}
+    若 $k \leq n-2$, 则根据归纳假设, 存在多项式 $u$, $v$, $z$, $w$ 使
+    \begin{align*}
+        r_{k-2} = uf + vg, \quad r_{k-1} = zf + wg \period
+    \end{align*}
+    所以
+    \begin{align*}
+        r_{k} = r_{k-2} - r_{k-1} q_k = (u - zq_k) f + (v - wq_k) g \period
+    \end{align*}
+    因为 $u - zq_k$ 与 $v - wq_k$ 均为多项式, 故 $P(k)$ 正确\period
+
+    所以, 存在多项式 $s$, $t$ 使
+    \begin{align*}
+        sf + tg = r_{n-2} \period
+    \end{align*}
+    因为 $r_{n-2}$ 与 $d$ 都是 $f$ 与 $g$ 的最大公因子, 故 $d = \varepsilon r_{n-2}$, 其中 $\varepsilon$ 是单位\period 所以
+    \begin{align*}
+         & (\varepsilon s)f + (\varepsilon t)g = d \period \qedhere
+    \end{align*}
+\end{pf}
+
+有了最大公因子的概念, 我们可以引出 ``互素'':
+\begin{definition}
+    设 $f$, $g$ 是多项式\period 若单位是 $f$ 与 $g$ 的最大公因子, 则称 $f$ 与 $g$ 互素 \term{to be relatively prime}\period
+\end{definition}
+
+\begin{example}
+    显然, 单位与任意多项式都互素\period
+\end{example}
+
+下面给出一个极重要的命题:
+\begin{proposition}
+    设 $f$, $g$ 是多项式\period $f$ 与 $g$ 互素的一个必要与充分条件是: 存在多项式 $s$, $t$ 使
+    \begin{align*}
+        sf + tg = 1 \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    先看必要性\period 显然; 这是 Bézout 等式的结果\period
+
+    再看充分性\period 设 $d$ 是 $f$ 与 $g$ 的最大公因子\period 因为 $sf + tg = 1$, 故 $d$ 是 $1$ 的因子\period 这样, $d$ 一定是单位\period
+\end{pf}
+
+下面是几个关于互素的性质\period
+
+\begin{proposition}
+    设 $f$, $g$, $h$ 是多项式\period 互素有如下性质:
+
+    (i) 若 $h$ 是 $fg$ 的因子, 且 $h$ 与 $f$ 互素, 则 $h$ 是 $g$ 的因子;
+
+    (ii) 若 $f$ 与 $g$ 互素, 且 $f$ 与 $h$ 互素, 则 $f$ 与 $gh$ 互素;
+
+    (iii) 若 $f$ 是 $h$ 的因子, $g$ 是 $h$ 的因子, 且 $f$ 与 $g$ 互素, 则 $fg$ 是 $h$ 的因子\period
+\end{proposition}
+
+\begin{pf}
+    (i) 因为 $h$ 与 $f$ 互素, 故存在多项式 $s$ 与 $t$ 使
+    \begin{align*}
+        sh + tf = 1 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        (gs)h + t(fg) = g \period
+    \end{align*}
+    因为 $h$ 是 $h$ 的因子, 且 $h$ 是 $fg$ 的因子, 故 $h$ 是 $g = (gs)h + t(fg)$ 的因子\period
+
+    (ii) 因为 $f$ 与 $g$ 互素, 故存在多项式 $u$, $v$ 使
+    \begin{align*}
+        uf + vg = 1 \period
+    \end{align*}
+    因为 $f$ 与 $h$ 互素, 故存在多项式 $s$, $t$ 使
+    \begin{align*}
+        sf + th = 1 \period
+    \end{align*}
+    从而
+    \begin{align*}
+        1 = (uf + vg)(sf + th) = (ufs + uth + vgs)f + (vt)(gh) \period
+    \end{align*}
+    所以 $f$ 与 $gh$ 互素\period
+
+    (iii) 因为 $f$ 是 $h$ 的因子, 故存在多项式 $p$ 使 $h = fp$\period 因为 $g$ 是 $h = fp$ 的因子, 且 $f$ 与 $g$ 互素, 故由 (i) 知 $g$ 是 $p$ 的因子\period 设 $p = gq$\period 这样
+    \begin{align*}
+        h = fp = f(gq) = (fg)q,
+    \end{align*}
+    故 $fg$ 是 $h$ 的因子\period
+\end{pf}
+
+感谢您的阅读\period 请休息一会儿\period
+
+\myLine
+
+现在我们推广公因子、最大公因子、互素的概念\period
+
+前面, 我们讨论了二个多项式的公因子、最大公因子、互素; 现在, 我们从量的角度推广\period
+
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period
+\end{definition}
+
+作为练习, 请读者证明
+\begin{proposition}
+    设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子\period
+\end{proposition}
+
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 适合下述二性质的多项式 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子:
+
+    (i) $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子;
+
+    (ii) 若 $e$ 是 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $e$ 是 $d$ 的因子\period
+\end{definition}
+
+由定义立即可得
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 若 $d_1$ 与 $d_2$ 都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴\period
+\end{proposition}
+
+\begin{pf}
+    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子\period
+\end{pf}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period
+
+    (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子存在;
+
+    (ii) 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则存在多项式 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = d \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    (i) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在\period
+
+    今看 $n = k+1$ 时的情形\period 令 $d_k$ 为 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 我们证明: $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period
+
+    首先, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子\period $d$ 当然是 $f_{k+1}$ 的因子\period 固定某个 $1$ 至 $k$ 间的 $\ell$\period 因为 $d$ 是 $d_k$ 的因子, 而 $d_k$ 是 $f_{\ell}$ 的因子, 故 $d$ 是 $f_{\ell}$ 的因子\period 这样, $d$ 确为 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子\period
+
+    其次, 若 $e$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子, 则 $e$ 当然是 $f_1$, $f_2$, $\cdots$, $f_{k}$ 的公因子, 故 $e$ 是 $d_k$ 的因子\period 又因为 $e$ 是 $f_{k+1}$ 的因子, 则 $e$ 是 $d_k$ 与 $f_{k+1}$ 的公因子\period 这样, $e$ 是 $d$ 的因子\period
+
+    根据最大公因子的定义, $d$ 一定是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 所以, $n = k+1$ 时, (i) 正确\period
+
+    (ii) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在多项式 $u_1$, $u_2$, $\cdots$, $u_k$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_k f_k = d_k \period
+    \end{align*}
+    今看 $n = k+1$ 时的情形\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 由 (i) 知, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 由 Bézout 等式知, 存在多项式 $u$, $u_{k+1}$ 使
+    \begin{align*}
+        u d_k + u_{k+1} f_{k+1} = d \period
+    \end{align*}
+    根据归纳假设, 存在多项式 $v_1$, $v_2$, $\cdots$, $v_k$ 使
+    \begin{align*}
+        v_1 f_1 + v_2 f_2 + \cdots + v_k f_k = d_k \period
+    \end{align*}
+    这样
+    \begin{align*}
+        (uv_1) f_1 + (uv_2) f_2 + \cdots + (uv_k) f_k + u_{k+1} f_{k+1} = d \period
+    \end{align*}
+    所以, $n = k+1$ 时, (ii) 正确\period
+\end{pf}
+
+跟之前一样, 有了最大公因子的概念, 我们可以引出 ``互素'':
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 若单位是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则称 $f_1$, $f_2$, $\cdots$, $f_n$ 互素\period
+\end{definition}
+
+下面的命题也是十分自然的\period
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 存在多项式 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1 \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    先看必要性\period 显然; 这是上个命题的结果\period
+
+    再看充分性\period 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子\period 因为 $u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1$, 故 $d$ 是 $1$ 的因子\period 这样, $d$ 一定是单位\period
+\end{pf}
+
+我们再讨论互素的一个性质\period
+
+\begin{proposition}
+    设多项式 $f_1$, $f_2$, $\cdots$, $f_n$ 不全是零\period
+
+    (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子 $d$ 不是零;
+
+    (ii) 任取 $1$ 至 $n$ 间的整数 $\ell$, 必有 (唯一的) 多项式 $g_\ell$ 使 $f_\ell = dg_\ell$;
+
+    (iii) 单位是 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子; 换句话说, $g_1$, $g_2$, $\cdots$, $g_n$ 互素;
+
+    (iv) 反过来, 若多项式 $u_1$, $u_2$, $\cdots$, $u_n$ 互素, 则 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子\period
+\end{proposition}
+
+\begin{pf}
+    (i) 零一定不是非零多项式的因子, 故零不是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 当然也不是最大公因子\period
+
+    (ii) 既然 $d$ 是最大公因子, 当然也是公因子\period 对 $f_{\ell}$ 而言, 由因子的定义, 知: 存在多项式 $g_{\ell}$ 使 $f_{\ell} = dg_{\ell}$\period 现在看唯一性\period 假定 $f_{\ell} = dg_{\ell} = dg_{\ell}^{\prime}$\period 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $g_{\ell} = g_{\ell}^{\prime}$\period
+
+    (iii) 设 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子是 $\delta$\period 这样, 由 (ii), 知: 对任意 $g_{\ell}$, 有多项式 $h_{\ell}$ 使 $g_{\ell} = \delta h_{\ell}$\period 所以
+    \begin{align*}
+        f_{\ell} = dg_{\ell} = d(\delta h_{\ell}) = (d\delta) h_{\ell} \period
+    \end{align*}
+    所以 $d\delta$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period 所以 $d\delta$ 是 $d$ 的因子\period $d$ 显然是 $d\delta$ 的因子, 故 $d\delta = \varepsilon d$, 其中 $\varepsilon$ 是单位\period 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $\delta = \varepsilon$\period
+
+    (iv) 若 $w = 0$, 命题显然成立: $0$, $0$, $\cdots$, $0$ 的最大公因子当然是 $0$\period 下设 $w \neq 0$\period
+
+    $w$ 显然是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的公因子\period 设 $ws$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子, 这里 $s$ 是某个多项式\period 由 (ii), 对每个 $wu_{\ell}$, 都有多项式 $q_{\ell}$ 使 $wu_{\ell} = wsq_{\ell}$\period 因为 $w \neq 0$, 故可从等式二边消去 $w$, 即 $u_{\ell} = sq_{\ell}$\period 这样, $s$ 是 $u_1$, $u_2$, $\cdots$, $u_n$ 的公因子, 故 $s$ 是单位的因子, 即 $s$ 是单位\period 所以 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子\period
+\end{pf}
+
+\myLine
+
+现在, 我们讨论不可约的多项式\period
+
+\begin{definition}
+    设多项式 $f$ 既不是 $0$, 也不是单位\period
+
+    (i) 若存在二个不全为单位的多项式 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f$ 是可约的 \term{reducible}\period
+
+    (ii) 若 $f$ 不是可约的, 则说 $f$ 是不可约的 \term{irreducible}\period 换言之, 若 $f$ 是不可约的, 则 ``多项式 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''\period
+\end{definition}
+
+\begin{remark}
+    $0$ 或单位既不是可约的, 也不是不可约的\period
+\end{remark}
+
+\begin{example}
+    设 $t$ 是常数\period 则 $x-t$ 是不可约的\period
+
+    设多项式 $f_1$, $f_2$ 适合 $f_1 f_2 = x-t$\period 所以, $\deg f_1 + \deg f_2 = \deg (x-t) = 1$\period
+
+    $f_1$ 与 $f_2$ 当然是非零的\period 这样, $\deg f_1$ 与 $\deg f_2$ 都是非负整数\period 所以, $\deg f_1$ 与 $\deg f_2$ 必定有一个是 $0$, 另一个是 $1$\period 无妨假设 $\deg f_1 = 0$\period 所以 $f_1$ 是非零常数\period 所以 $f_1$ 是单位\period 类似地, 若 $\deg f_2 = 0$, 则 $f_2$ 是单位\period
+
+    不管怎么样, 我们已经证明了 ``多项式 $f_1$, $f_2$ 使 $x-t = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''\period 这样, $x-t$ 是不可约的\period
+\end{example}
+
+\begin{example}
+    $x^2 - 1$ 是可约的: $x^2 - 1 = (x+1) (x-1)$, 而 $x+1$ 不是单位, $x-1$ 也不是单位\period
+\end{example}
+
+\begin{remark}
+    作者在此有必要提醒读者: 不可约的多项式与多项式的系数所在范围密切相关\period
+
+    我们看 $f = x^2 - 2$\period 显然, 读者在中学可能已经知道, ``这没法再 (在有理数范围里) `分解' 了''\period 的确, $f$ 作为有理系数多项式是不可约的\period 不过, 如果视 $f$ 为实系数多项式, 则可继续将 $f$ 写为 $(x + \sqrt2) (x - \sqrt2)$\period 类似地, 若视 $g = x^2 + 1$ 为实系数多项式, 则 $g$ ``也没办法再 (在实数范围里) `分解' 了''\period 可是, 若视 $g$ 为复系数多项式, 则 $g = (x + \ii) (x - \ii)$\period
+
+    所以, 除非语境明确 (或者系数所在范围无关紧要), 我们总是说 ``某多项式作为有理 (实、复) 系数多项式是不可约的''\period
+\end{remark}
+
+\begin{proposition}
+    设多项式 $p$ 既不是 $0$, 也不是单位\period 设 $\varepsilon$ 是单位\period 若 $p$ 是不可约的, 则 $\varepsilon p$ 也是不可约的\period
+\end{proposition}
+
+\begin{pf}
+    设二多项式 $f_1$, $f_2$ 使 $\varepsilon p = f_1 f_2$\period 所以, $p = (\varepsilon^{-1} f_1) (f_2)$\period 因为 $p$ 是不可约的, 故 $\varepsilon^{-1} f_1$ 是单位或 $f_2$ 是单位\period 这也就是说, $f_1$ 是单位或 $f_2$ 是单位\period 所以, $\varepsilon p$ 是不可约的\period
+\end{pf}
+
+\begin{example}
+    由上个命题可知: $1$ 次多项式一定是不可约的\period
+\end{example}
+
+\begin{proposition}
+    设多项式 $p$ 既不是 $0$, 也不是单位\period 下述四命题等价:
+
+    (i) 若多项式 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f_1$ 是单位或 $f_2$ 是单位;
+
+    (ii) 对任意多项式 $f$, 要么 $p$ 是 $f$ 的因子, 要么 $p$ 与 $f$ 互素 (二者不会同时发生);
+
+    (iii) 若 $f$, $g$ 是多项式, 且 $p$ 是 $fg$ 的因子, 则 $p$ 是 $f$ 的因子, 或 $p$ 是 $g$ 的因子;
+
+    (iv) 不存在多项式 $f_1$, $f_2$ 使 $p = f_1 f_2$, 且 $\deg f_1 < \deg p$, $\deg f_2 < \deg p$\period
+\end{proposition}
+
+\begin{pf}
+    (i) $\Rightarrow$ (ii): 任取多项式 $f$\period 设 $d$ 是 $p$ 与 $f$ 的最大公因子\period 所以, 存在多项式 $g$ 使 $p = dg$\period 所以, $d$ 是单位或 $g$ 是单位\period 若 $d$ 是单位, 则单位是 $p$ 与 $f$ 的最大公因子, 即 $p$ 与 $f$ 互素; 若 $g$ 是单位, 则 $d = p g^{-1}$, 故 $p$ 是 $f$ 的因子\period
+
+    若二者同时发生, 则 $d$ 是单位且 $g$ 是单位, 故 $p$ 也是单位\period 这与 $p$ 不是单位矛盾\period
+
+    (ii) $\Rightarrow$ (iii): 若 $p$ 是 $f$ 的因子, 则不必证了\period 今假设 $p$ 不是 $f$ 的因子\period 所以, $p$ 与 $f$ 互素\period 因为 $p$ 是 $fg$ 的因子, 故 $p$ 一定是 $g$ 的因子\period
+
+    (iii) $\Rightarrow$ (iv): 反证法\period 设 $p = f_1 f_2$, 且 $\deg f_1 < \deg p$, $\deg f_2 < \deg p$\period 因为 $p \neq 0$, 故 $f_1 \neq 0$, 且 $f_2 \neq 0$\period 所以, $\deg f_1 \geq 0$, 且 $\deg f_2 \geq 0$\period 既然 $p = f_1 f_2$, $p$ 当然是 $f_1 f_2$ 的因子\period 所以, $p$ 是 $f_1$ 的因子, 或 $p$ 是 $f_2$ 的因子\period 若 $p$ 是 $f_1$ 的因子, 则存在多项式 $g_1$ 使 $f_1 = pg_1$\period 因为 $f_1 \neq 0$, 故 $g_1 \neq 0$\period 这样, $\deg g_1 \geq 0$\period 所以 $\deg f_1 = \deg p + \deg g_1 \geq \deg p$\period 这与假定 $\deg f_1 < \deg p$ 矛盾! 类似地, 若 $p$ 是 $f_2$ 的因子, 也有 $\deg f_2 \geq \deg p$, 矛盾! 综上, 这样的 $f_1$ 与 $f_2$ 不存在\period
+
+    (iv) $\Rightarrow$ (i): 这说明: 若多项式 $f_1$, $f_2$ 使 $p = f_1 f_2$, 则 $\deg f_1 \geq \deg p$ 或 $\deg f_2 \geq \deg p$\period 若 $\deg f_1 \geq \deg p$, 则 $\deg p = \deg f_1 + \deg f_2 \geq \deg p + \deg f_2$, 故 $\deg f_2 \leq 0$, 即 $f_2$ 是非零常数, 即 $f_2$ 是单位\period 类似地, 若 $\deg f_2 \geq \deg p$, 则 $f_1$ 是单位\period
+\end{pf}
+
+\begin{remark}
+    利用 (iii) 与数学归纳法, 读者可得如下结论 (作为练习):
+
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 设多项式 $p$ 是不可约的\period 若 $p$ 是 $f_1 f_2 \cdots f_n$ 的因子, 则存在 $1$ 至 $n$ 间的整数 $\ell$, 使 $p$ 是 $f_{\ell}$ 的因子\period
+\end{remark}
+
+\begin{remark}
+    设多项式 $f$ 既不是 $0$, 也不是单位\period (iv) 表明, ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个多项式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $\deg f_1 < \deg f$, $\deg f_2 < \deg f$''\period
+\end{remark}
+
+下面是关于不可约的多项式的积的命题\period
+
+\begin{proposition}
+    设多项式 $p_1$, $p_2$, $\cdots$, $p_m$, $q_1$, $q_2$, $\cdots$, $q_n$ 都是不可约的\period 设
+    \begin{align*}
+        p_1 p_2 \cdots p_m = q_1 q_2 \cdots q_n \period
+    \end{align*}
+
+    (i) $m = n$;
+
+    (ii) 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_m$ (注意, $n = m$) 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴\period
+\end{proposition}
+
+\begin{pf}
+    对等式左侧的不可约的多项式的数目 $m$ 用数学归纳法\period 当 $m = 1$ 时, 有
+    \begin{align*}
+        p_1 = q_1 q_2 \cdots q_n \period
+    \end{align*}
+
+    先证明: $n = 1$\period 反证法\period 设 $n > 1$\period 因为 $p_1 = q_1 q_2 \cdots q_n$, 故 $p_1$ 是某个 $q_i$ 的因子 ($i$ 是某个 $1$ 至 $n$ 间的整数)\period 因为乘法可交换, 不失一般性, 设 $p_1$ 是 $q_1$ 的因子\period 因为 $q_1$ 是不可约的, 且 $q_1$ 与 $p_1$ 不是互素的, 故 $q_1$ 也是 $p_1$ 的因子\period 所以, 存在单位 $\varepsilon$ 使 $q_1 = \varepsilon p_1$\period 进而
+    \begin{align*}
+        p_1 = (\varepsilon p_1) q_2 \cdots q_n = p_1 (\varepsilon q_2) \cdots q_n \period
+    \end{align*}
+    因为 $p_1 \neq 0$, 故可从等式二边消去 $p_1$, 即
+    \begin{align*}
+        1 = (\varepsilon q_2) \cdots q_n \period
+    \end{align*}
+    因为 $q_2$ 是不可约的, 故 $\varepsilon q_2$ 也是不可约的\period 上式表明, $\varepsilon q_2$ 是 $1$ 的因子, 故 $\varepsilon q_2$ 是单位\period 这与假定矛盾! 所以, $n$ 不可大于 $1$\period 这样, $n = 1$\period
+
+    既然 $n = 1$, 那么 $p_1 = q_1$\period 所以, 不必调换顺序即可知 $p_1$ 与 $q_1$ 相伴\period
+
+    所以, $m=1$ 时, 命题成立\period
+
+    假定 $m=k$ 时, 命题成立\period 现在看 $m=k+1$ 时的情形\period 设 $p_1$, $p_2$, $\cdots$, $p_k$, $p_{k+1}$, $q_1$, $q_2$, $\cdots$, $q_n$ 是不可约的\period 设
+    \begin{align*}
+        p_1 p_2 \cdots p_k p_{k+1} = q_1 q_2 \cdots q_n \period
+    \end{align*}
+    因为 $p_1$ 是 $q_1 q_2 \cdots q_n$ 的因子, 故 $p_1$ 是某个 $q_j$ 的因子 ($j$ 是某个 $1$ 至 $n$ 间的整数)\period 因为乘法可交换, 不失一般性, 设 $p_1$ 是 $q_1$ 的因子\period 因为 $q_1$ 是不可约的, 且 $q_1$ 与 $p_1$ 不是互素的, 故 $q_1$ 也是 $p_1$ 的因子\period 所以, 存在单位 $\varepsilon^{\prime}$ 使 $q_1 = \varepsilon^{\prime} p_1$\period 进而
+    \begin{align*}
+        p_1 p_2 \cdots p_k p_{k+1} = (\varepsilon^{\prime} p_1) q_2 \cdots q_n = p_1 (\varepsilon^{\prime} q_2) \cdots q_n \period
+    \end{align*}
+    因为 $p_1 \neq 0$, 故可从等式二边消去 $p_1$, 即
+    \begin{align*}
+        p_2 \cdots p_k p_{k+1} = (\varepsilon^{\prime} q_2) \cdots q_n \period
+    \end{align*}
+    因为 $q_2$ 是不可约的, 故 $\varepsilon^{\prime} q_2$ 也是不可约的\period 上式左侧的不可约的多项式的数目是 $k$\period 根据归纳假设, $n-1 = k$, 即 $n = k+1$\period 这证明了 $m=k+1$ 时 (i) 成立\period
+
+    前面已证得, 适当地调换 $q_1$, $q_2$, $\cdots$, $q_n$ 的顺序, 可使 $p_1$ 与 $q_1$ 相伴\period 根据归纳假设, 可以适当地调换 $\varepsilon^{\prime} q_2$, $\cdots$, $q_{k+1}$ (注意, $n = k+1$) 的顺序, 使任取 $3$ 至 $k+1$ 间的整数 $u$, $p_u$ 与 $q_u$ 相伴\period 当然 $p_2$ 与 $\varepsilon^{\prime} q_2$ 也相伴\period 因为 $\varepsilon^{\prime} q_2$ 与 $q_2$ 相伴, 所以 $p_2$ 与 $q_2$ 相伴\period 把这些事实放在一块儿, 就是: 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_{k+1}$ 的顺序, 使任取 $1$ 至 $k+1$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴\period 这样, $m = k+1$ 时, (ii) 成立\period
+\end{pf}
+
+\begin{proposition}
+    设多项式 $f$ 既不是 $0$, 也不是单位\period 存在不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    \begin{align*}
+        f = p_1 p_2 \cdots p_m \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    对 $f$ 的次 $N$ 用数学归纳法\period 因为 $f$ 既不是 $0$, 也不是单位, 故 $N \geq 1$\period $N = 1$ 时, $f = ax + b$, 这里 $a$, $b$ 是常数, 且 $a \neq 0$\period 我们已经知道, $1$ 次多项式是不可约的\period 这样, $f$ 是不可约的, 故存在不可约的多项式 $p_1 = f$ 使 $f = p_1$\period 这样, $N = 1$ 时, 命题成立\period
+
+    设 $N \leq k$ ($k \geq 1$) 时, 命题成立\period 考虑 $N = k+1$\period 若 $f$ 是不可约的, 则存在不可约的多项式 $p_1 = f$ 使 $f = p_1$\period 若 $f$ 是可约的, 则存在二多项式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $\deg f_1 < \deg f$, $\deg f_2 < \deg f$\period 所以 $\deg f_1 \leq \deg f - 1 = k$, $\deg f_2 \leq \deg f - 1 = k$\period 根据归纳假设, 存在不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_i$, $p_{i+1}$, $p_{i+2}$, $\cdots$, $p_m$ 使
+    \begin{align*}
+        f_1 = p_1 p_2 \cdots p_i, \quad f_2 = p_{i+1} p_{i+2} \cdots p_m \period
+    \end{align*}
+    所以
+    \begin{align*}
+        f = f_1 f_2 = p_1 p_2 \cdots p_i p_{i+1} p_{i+2} \cdots p_m \period
+    \end{align*}
+    故 $N = k+1$ 时, 命题也成立\period
+\end{pf}
+
+合并上二个命题, 可得
+\begin{proposition}
+    设多项式 $f$ 既不是 $0$, 也不是单位\period
+
+    (i) 存在不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    \begin{align*}
+        f = p_1 p_2 \cdots p_m;
+    \end{align*}
+
+    (ii) 若 $q_1$, $q_2$, $\cdots$, $q_m$, $s_1$, $s_2$, $\cdots$, $s_n$ 是不可约的多项式, 且
+    \begin{align*}
+        f = q_1 q_2 \cdots q_m = s_1 s_2 \cdots s_n,
+    \end{align*}
+    则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴\period
+\end{proposition}
+
+我们以一个简单的命题结束本文\period
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 任取不可约的多项式 $p$, 存在某个 $f_i$, 使 $p$ 不是 $f_i$ 的因子\period
+\end{proposition}
+
+\begin{pf}
+    先看必要性\period 反证法\period 假定结论不成立, 即: 存在不可约的多项式 $p$, 使任取 $f_i$, $p$ 是 $f_i$ 的因子\period 这样, $p$ 就是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period 所以, $p$ 是单位的因子\period 矛盾!
+
+    再看充分性\period 还是反证法\period 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位\period 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的多项式都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的多项式 $p_0$, 使 $p_0$ 是 $d$ 的因子 (由上个命题, 显然)\period 所以, 存在不可约的多项式 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子\period 矛盾!
+\end{pf}
+
+本文就到这里\period 再见, 亲爱的读者朋友!
