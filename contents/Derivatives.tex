@@ -128,7 +128,82 @@
          & (g \circ f) (x) = g(f(x)) = b_0 + b_1 (x-c) + \cdots + b_n (x-c)^n,     \\
          & (f \circ g) (x) = f(g(x)) = -c + b_0 + b_1 x + \cdots + b_n x^n \period
     \end{align*}
+    这表明: 多项式的复合一般不交换\period
 \end{example}
+
+下面的命题相当显然了\period
+
+\begin{proposition}
+    设 $f(x)$, $g(x)$, $h(x) \in D[x]$\period
+
+    (i) 设 $p(x) = f(x) + g(x)$\period 则
+    \begin{align*}
+        p(h(x)) = f(h(x)) + g(h(x)) \period
+    \end{align*}
+
+    (ii) 设 $q(x) = f(x) g(x)$\period 则
+    \begin{align*}
+        q(h(x)) = f(h(x)) g(h(x)) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n, \\
+         & g(x) = b_0 + b_1 x + \cdots + b_n x^n
+    \end{align*}
+    是 $D[x]$ 中二个元\period 这样,
+    \begin{align*}
+         & f(h(x)) = a_0 + a_1 h(x) + \cdots + a_n (h(x))^n,        \\
+         & g(h(x)) = b_0 + b_1 h(x) + \cdots + b_n (h(x))^n \period
+    \end{align*}
+
+    (i) 根据加法的定义, 有
+    \begin{align*}
+        p(x) = f(x) + g(x) = c_0 + c_1 x + \cdots + c_n x^n,
+    \end{align*}
+    其中
+    \begin{align*}
+        c_i = a_i + b_i, \quad i = 0,1,\cdots,n \period
+    \end{align*}
+    所以
+    \begin{align*}
+        p(h(x)) = c_0 + c_1 h(x) + \cdots + c_n (h(x))^n \period
+    \end{align*}
+    根据多项式的运算律, 有
+    \begin{align*}
+             & f(h(x)) + g(h(x))                                                                   \\
+        = {} & (a_0 + a_1 h(x) + \cdots + a_n (h(x))^n) + (b_0 + b_1 h(x) + \cdots + b_n (h(x))^n) \\
+        = {} & (a_0 + b_0) + (a_1 + b_1) h(x) + \cdots + (a_n + b_n) (h(x))^n                      \\
+        = {} & c_0 + c_1 h(x) + \cdots + c_n (h(x))^n                                              \\
+        = {} & p(h(x)) \period
+    \end{align*}
+
+    (ii) 根据乘法的定义, 有
+    \begin{align*}
+        q(x) = f(x) g(x) = d_0 + d_1 x + \cdots + d_{2n} x^{2n},
+    \end{align*}
+    其中
+    \begin{align*}
+        d_i = a_0 b_i + a_1 b_{i-1} + \cdots + a_i b_0, \quad i = 0,1,\cdots,2n \period
+    \end{align*}
+    所以
+    \begin{align*}
+        q(h(x)) = d_0 + d_1 h(x) + \cdots + d_{2n} (h(x))^{2n} \period
+    \end{align*}
+    根据多项式的运算律, 有
+    \begin{align*}
+             & f(h(x)) g(h(x))                                                                               \\
+        = {} & (a_0 + a_1 h(x) + \cdots + a_n (h(x))^n) (b_0 + b_1 h(x) + \cdots + b_n (h(x))^n)             \\
+        = {} & (a_0 b_0) + (a_0 b_1 + a_1 b_0) h(x) + \cdots + (a_n b_n) (h(x))^{2n}                         \\
+        = {} & (a_0 b_0) + (a_0 b_1 + a_1 b_0) h(x) + \cdots + (a_0 b_{2n} + a_1 b_{2n-1} + \cdots + a_n b_n \\
+             & \qquad + a_{n+1} b_{n-1} + \cdots + a_{2n} b_0) (h(x))^{2n}                                   \\
+        = {} & c_0 + c_1 h(x) + \cdots + c_{2n} (h(x))^{2n}                                                  \\
+        = {} & q(h(x)) \period \qedhere
+    \end{align*}
+
+\end{pf}
 
 \begin{example}
     考虑 $\ZZ$ 与 $\ZZ[x]$\period 取
@@ -266,10 +341,10 @@
     \end{align*}
     为 $D[x]$ 中的二个元\period 取 $px^i$ 为 $a_0$, $a_1 x$, $\cdots$, $a_m x^m$, 有
     \begin{align*}
-        (a_0 \cdot qx^j)^{\prime}     & = (a_0)^{\prime} (qx^j) + (a_0) (qx^j)^{\prime},                \\
-        (a_1 x \cdot qx^j)^{\prime}   & = (a_1 x)^{\prime} (qx^j) + (a_1 x) (qx^j)^{\prime},            \\
-        \cdots \cdots \cdots \cdots   & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,        \\
-        (a_m x^m \cdot qx^j)^{\prime} & = (a_m x^m)^{\prime} (qx^j) + (a_m x^m) (qx^j)^{\prime} \period
+        (a_0 \cdot qx^j)^{\prime}     = {} & (a_0)^{\prime} (qx^j) + (a_0) (qx^j)^{\prime},                \\
+        (a_1 x \cdot qx^j)^{\prime}   = {} & (a_1 x)^{\prime} (qx^j) + (a_1 x) (qx^j)^{\prime},            \\
+        \cdots \cdots \cdots \cdots        & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,      \\
+        (a_m x^m \cdot qx^j)^{\prime} = {} & (a_m x^m)^{\prime} (qx^j) + (a_m x^m) (qx^j)^{\prime} \period
     \end{align*}
     所以
     \begin{align*}
@@ -289,10 +364,10 @@
     \end{align*}
     再取 $qx^j$ 为 $b_0$, $b_1 x$, $\cdots$, $b_n x^n$, 有
     \begin{align*}
-        (f(x) \cdot b_0)^{\prime}     & = f^{\prime} (x) (b_0) + f(x) (b_0)^{\prime},                \\
-        (f(x) \cdot b_1 x)^{\prime}   & = f^{\prime} (x) (b_1 x) + f(x) (b_1 x)^{\prime},            \\
-        \cdots \cdots \cdots \cdots   & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,     \\
-        (f(x) \cdot b_n x^n)^{\prime} & = f^{\prime} (x) (b_n x^n) + f(x) (b_n x^n)^{\prime} \period
+        (f(x) \cdot b_0)^{\prime}     = {} & f^{\prime} (x) (b_0) + f(x) (b_0)^{\prime},                \\
+        (f(x) \cdot b_1 x)^{\prime}   = {} & f^{\prime} (x) (b_1 x) + f(x) (b_1 x)^{\prime},            \\
+        \cdots \cdots \cdots \cdots        & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,   \\
+        (f(x) \cdot b_n x^n)^{\prime} = {} & f^{\prime} (x) (b_n x^n) + f(x) (b_n x^n)^{\prime} \period
     \end{align*}
     所以
     \begin{align*}

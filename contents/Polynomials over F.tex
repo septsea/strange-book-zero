@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{\PolynomialsOverF}
 \markright{\PolynomialsOverF}
 
-我们在前几节讨论的都是整环 $D$ 上的多项式, 所以它们看上去是有些抽象的\period 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period 细心的读者会注意到我们在前几节未使用 $\sum$ 符号\period 这是为了让读者没那么困难地适应多项式理论\period 从本节起, 我们会较多地使用这个 $\sum$\period 读者也可以乘此机会让自己熟悉它\period 当然, 我们偶尔也会使用 $\prod$ 符号\period
+我们在前几节讨论的都是整环 $D$ 上的多项式, 所以它们看上去是有些抽象的\period 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个\period 细心的读者会注意到我们在前几节未使用 $\sum$ 符号: 这是为了让读者没那么困难地适应多项式理论\period 从本节起, 我们会较多地使用这个 $\sum$\period 读者也可以乘此机会让自己熟悉它\period 当然, 我们偶尔也会使用 $\prod$ 符号\period
 
 本节并没有什么新的知识\period 读者可以乘此机会温习一下所学内容\period 我们将重述一些定义与命题\period 我们在学校学数学的时候, 也会有复习课\period 就当本节就是 ``复习节'' 吧!
 
@@ -308,6 +308,20 @@
     多项式的复合适合结合律\period 具体地说, 设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$, 则
     \begin{align*}
         ((h \circ g) \circ f)(x) = (h \circ (g \circ f))(x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$\period
+
+    (i) 设 $p(x) = f(x) + g(x)$\period 则
+    \begin{align*}
+        p(h(x)) = f(h(x)) + g(h(x)) \period
+    \end{align*}
+
+    (ii) 设 $q(x) = f(x) g(x)$\period 则
+    \begin{align*}
+        q(h(x)) = f(h(x)) g(h(x)) \period
     \end{align*}
 \end{proposition}
 

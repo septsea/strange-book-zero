@@ -391,10 +391,10 @@
 
     不难作出如下计算:
     \begin{align*}
-        2\,116 & = 667 \cdot 3 + 115, \\
-        667    & = 115 \cdot 5 + 92,  \\
-        115    & = 92 \cdot 1 + 23,   \\
-        92     & = 23 \cdot 4 \period
+        2\,116 = {} & 667 \cdot 3 + 115, \\
+        667    = {} & 115 \cdot 5 + 92,  \\
+        115    = {} & 92 \cdot 1 + 23,   \\
+        92     = {} & 23 \cdot 4 \period
     \end{align*}
     所以, $23$ 是 $92$ 与 $115$ 的最大公因子, 是 $115$ 与 $667$ 的最大公因子, 是 $667$ 与 $2\,116$ 的最大公因子\period
 
@@ -567,6 +567,10 @@
     设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period
 \end{definition}
 
+\begin{remark}
+    我们并没有禁止 $n$ 取 $1$\period 同理, 一个整数也可以有 ``最大公因子''; 一个整数也可以 ``互素''\period
+\end{remark}
+
 作为练习, 请读者证明
 \begin{proposition}
     设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子\period
@@ -601,7 +605,7 @@
 \end{proposition}
 
 \begin{pf}
-    (i) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在\period
+    (i) 对 $n$ 用数学归纳法\period 显然, $n = 1$ 或 $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在\period
 
     今看 $n = k+1$ 时的情形\period 令 $d_k$ 为 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 我们证明: $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period
 
@@ -611,7 +615,7 @@
 
     根据最大公因子的定义, $d$ 一定是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 所以, $n = k+1$ 时, (i) 正确\period
 
-    (ii) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在整数 $u_1$, $u_2$, $\cdots$, $u_k$ 使
+    (ii) 对 $n$ 用数学归纳法\period 显然, $n = 1$ 或 $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在整数 $u_1$, $u_2$, $\cdots$, $u_k$ 使
     \begin{align*}
         u_1 f_1 + u_2 f_2 + \cdots + u_k f_k = d_k \period
     \end{align*}
@@ -718,6 +722,14 @@
 
     (ii) 若 $f$ 不是可约的, 则说 $f$ 是不可约的 \term{irreducible}\period 换言之, 若 $f$ 是不可约的, 则 ``整数 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''\period
 \end{definition}
+
+\begin{remark}
+    或许, 读者还能记起素数\myFN{``素数'' 的一个同义词是 ``质数''\period} \term{prime number} 的定义:
+
+    设整数 $f > 1$\period 若 ``正整数 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1 = 1$ 或 $f_2 = 1$'', 则 $f$ 是素数\period
+
+    作者当然可以不用 ``不可约的整数''; 但是, 为了让读者更好地体会到整数与多项式的相似的地方, 作者还是使用了一般的词\period
+\end{remark}
 
 \begin{remark}
     $0$ 或单位既不是可约的, 也不是不可约的\period
@@ -869,6 +881,25 @@
     \end{align*}
     则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴\period
 \end{proposition}
+
+\begin{remark}
+    或许, 读者更熟悉这个命题:
+
+    设整数 $f > 2$\period
+
+    (i) 存在素数\myFN{这里的 ``素数'' 当然是正的不可约的整数\period} $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    \begin{align*}
+        f = p_1 p_2 \cdots p_m;
+    \end{align*}
+
+    (ii) 若 $q_1$, $q_2$, $\cdots$, $q_m$, $s_1$, $s_2$, $\cdots$, $s_n$ 是素数, 且
+    \begin{align*}
+        f = q_1 q_2 \cdots q_m = s_1 s_2 \cdots s_n,
+    \end{align*}
+    则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell = s_\ell$\period
+
+    作者承认, 这才是原版 ``算术基本定理''\period 不过, 为了消除一些不本质的差异, 作者还是使用了 ``不可约的整数'' 版\period
+\end{remark}
 
 我们以一个简单的命题结束本文\period
 

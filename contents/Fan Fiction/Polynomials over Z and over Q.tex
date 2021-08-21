@@ -1,0 +1,481 @@
+\subsection*{\PolynomialsOverZAndOverQ}
+\addcontentsline{toc}{subsection}{\PolynomialsOverZAndOverQ}
+\markright{\PolynomialsOverZAndOverQ}
+
+前面, 我们系统地介绍了整数与 (系数为 $\FF$ 的元的) 多项式的一些性质\period 它们有一个共同点: 都可以作带余除法\period 因为带余除法, 我们证明了最大公因子的存在性与 Bézout 等式; 因为最大公因子与 Bézout 等式, 我们考察了互素, 进而考虑了不可约的整数与不可约的多项式\period
+
+读者可能注意到, 在 ``\SomePropertiesOfPolynomials '' 里, 我们没有讨论整系数多项式\period 为什么没讨论呢? 读者可以想一想, 整系数多项式是否还有带余除法\period
+
+\begin{example}
+    以 $f = x^2 + 1$, $g = 2x$ 为例\period 设存在整系数多项式 $q$, $r$ 使
+    \begin{align*}
+        f = gq + r, \quad \deg r < \deg g = 1 \period
+    \end{align*}
+    由此可设 $r = c$, $c$ 是某个待确定的整数\period 设
+    \begin{align*}
+        q = a_0 + a_1 x + \cdots + a_n x^n,
+    \end{align*}
+    且 $a_0$, $a_1$, $\cdots$, $a_n$ 都是整数\period 所以
+    \begin{align*}
+        x^2 + 1 = c + 2a_0 x + 2a_1 x^2 + \cdots + 2a_n x^{n+1} \period
+    \end{align*}
+    由此可知 $n+1 = 2$, 且
+    \begin{align*}
+        1 = c, \quad 0 = 2a_0, \quad 1 = 2a_1 \period
+    \end{align*}
+    问题来了: 哪个整数乘 $2$ 等于 $1$? 所以这样的 $q$ 不存在\period
+
+    当然, 如果读者视 $f$, $g$, $q$, $r$ 为有理系数多项式, 立即可得
+    \begin{align*}
+        q = \frac{1}{2}x, \quad r = 1 \period
+    \end{align*}
+\end{example}
+
+在 ``\SomePropertiesOfPolynomials '' 里, 我们把 ``\SomePropertiesOfIntegers '' 的套路几乎原封不动地搬了过来\period 不过, 由于整系数多项式不一定有带余除法, 故我们没法 ``偷懒地'' 讨论整系数多项式\period
+
+但情况不是特别糟\period 首先, 整数是有理数, 故整系数多项式是有理系数多项式\period 其次, 读者知道, 有理数是二个整数的比 (分母不为零)\period 取不为零的有理系数多项式
+\begin{align*}
+    f = \frac{p_0}{q_0} + \frac{p_1}{q_1} x + \cdots + \frac{p_n}{q_n} x^n,
+\end{align*}
+这里 $p_0$, $q_0$, $p_1$, $q_0$, $\cdots$, $p_n$, $q_n$ 都是整数, 且 $q_0$, $q_1$, $\cdots$, $q_n$ 都不是零\period 作整数
+\begin{align*}
+     & Q = q_0 q_1 \cdots q_n,                       \\
+     & Q_0 = q_1 q_2 \cdots q_n = \frac{Q}{q_0},     \\
+     & Q_1 = q_0 q_2 \cdots q_n = \frac{Q}{q_1},     \\
+     & \cdots \cdots \cdots \cdots,                  \\
+     & Q_n = q_0 q_1 \cdots q_{n-1} = \frac{Q}{q_n},
+\end{align*}
+将 $f$ 改写为
+\begin{align*}
+    f = \frac{p_0 Q_0}{Q} + \frac{p_1 Q_1}{Q} x + \cdots + \frac{p_n Q_n}{Q} x^n \period
+\end{align*}
+设 $d$ 是 $p_0 Q_0$, $p_1 Q_1$, $\cdots$, $p_n Q_n$ (视为整数, 而不是多项式) 的最大公因子\period 这样, 存在整数 $m_0$, $m_1$, $\cdots$, $m_n$ 使
+\begin{align*}
+    p_0 Q_0 = d m_0, \quad p_1 Q_1 = d m_1, \quad \cdots, \quad p_n Q_n = d m_n \period
+\end{align*}
+所以
+\begin{align*}
+    f = \frac{d}{Q} (m_0 + m_1 x + \cdots + m_n x^n) \period
+\end{align*}
+由最大公因子的性质, 知 $m_0$, $m_1$, $\cdots$, $m_n$ 互素\period 最后, 设 $D$ 是 $d$ 与 $Q$ 的最大公因子, 且 $d = Dd^{\prime}$, $Q = DQ^{\prime}$\period 所以
+\begin{align*}
+    f = \frac{d^{\prime}}{Q^{\prime}} (m_0 + m_1 x + \cdots + m_n x^n) \period
+\end{align*}
+
+上面的叙述看起来有些抽象, 实则很好理解\period
+
+\begin{example}
+    取
+    \begin{align*}
+        f = 1 + \frac{2}{3} x + \frac{1}{6}x^2 + \frac{3}{5}x^3 \period
+    \end{align*}
+    这里
+    \begin{align*}
+        q_0 = 1, \quad q_1 = 3, \quad q_2 = 6, \quad q_3 = 5 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        Q = 180, \quad Q_0 = 180, \quad Q_1 = 60, \quad Q_2 = 30, \quad Q_3 = 36 \period
+    \end{align*}
+    因为
+    \begin{align*}
+        p_0 = 1, \quad p_1 = 2, \quad p_2 = 1, \quad p_3 = 3,
+    \end{align*}
+    故
+    \begin{align*}
+        p_0 Q_0 = 180, \quad p_1 Q_1 = 120, \quad p_2 Q_2 = 30, \quad p_3 Q_3 = 108 \period
+    \end{align*}
+    所以 $f$ 可被改写为
+    \begin{align*}
+        f = \frac{180}{180} + \frac{120}{180} x + \frac{30}{180} x^2 + \frac{108}{180} x^3 \period
+    \end{align*}
+    读者可能一眼就认出来, 这如果不是通分, 那它什么都不是\period
+
+    不难算出 $6$ 是 $180$, $120$, $30$, $108$ 的最大公因子是 $6$\period 所以
+    \begin{align*}
+        f = \frac{6}{180} (30 + 20x + 5x^2 + 18x^3) \period
+    \end{align*}
+    不难算出, $1$ 是 $30$, $20$, $5$, $18$ 的最大公因子\period 最后, 因为 $6$ 是 $6$ 与 $180$ 的最大公因子, 故可进一步将 $f$ 改写为
+    \begin{align*}
+        f = \frac{1}{30} (30 + 20x + 5x^2 + 18x^3) \period
+    \end{align*}
+\end{example}
+
+上面假定 $f \neq 0$; 现在考虑 $0$\period 显然 $0 = 0 \cdot 1$, 其中 $1$ 是整系数多项式, 且其系数互素\period
+
+上面的文字说明: 有理系数多项式 $f$ 总可以写为一个有理数 $c_f$ 与一个整系数多项式 $f^{\ast}$ 的积, 且 $f^{\ast}$ 的系数互素\period
+
+因此, 我们可以借助有理系数多项式讨论整系数多项式\period
+
+\begin{definition}
+    设
+    \begin{align*}
+        f = a_0 + a_1 x + \cdots + a_n x^n \period
+    \end{align*}
+    若系数 $a_0$, $a_1$, $\cdots$, $a_n$ 都是整数, 且整数 $a_0$, $a_1$, $\cdots$, $a_n$ 互素, 则 $f$ 是本原的 \term{primitive}\period
+\end{definition}
+
+\begin{proposition}
+    设 $f$ 是有理系数多项式, 且 $f$ 不是零\period
+
+    (i) $f$ 一定可以写为有理数 $c_f$ 与本原的多项式 $f^{\ast}$ 的积, 即 $f = c_f f^{\ast}$;
+
+    (ii) 若有理数 $r$ 与本原的多项式 $g$ 适合 $f = rg$, 必有 $r = \varepsilon c_f$, $g = \varepsilon^{-1} f^{\ast}$, 其中 $\varepsilon = \pm 1$\period
+
+    $c_f$ 称为 $f$ 的容量 \term{capacity}; $f^{\ast}$ 称为 $f$ 的本原的相伴 \term{primitive associate}\period
+\end{proposition}
+
+\begin{pf}
+    (i) 显然\period
+
+    (ii) 设 $c_f f^{\ast} = r g$, 其中 $c_f$, $r$ 是有理数, $f^{\ast}$, $g$ 是本原的多项式\period 不难看出, $f$ 的次一定等于 $g$ 的次\period 设
+    \begin{align*}
+        f^{\ast} = {} & s_0 + s_1 x + \cdots + s_n x^n,        \\
+        g = {}        & t_0 + t_1 x + \cdots + t_n x^n \period
+    \end{align*}
+    设 $\frac{c_f}{r} = \frac{p}{q}$, $p$, $q$ 为整数, $q \geq 1$ 且 $p$ 与 $q$ 互素\period 所以
+    \begin{align*}
+        p f^{\ast} = q \frac{c_f f^{\ast}}{r} = q \frac{r g}{r} = q g \period
+    \end{align*}
+    所以
+    \begin{align*}
+        p s_i = q t_i, \quad i = 0,1,\cdots,n \period
+    \end{align*}
+    因为 $p$ 与 $q$ 互素, 故任取 $g$ 的系数 $t_i$, $p$ 一定是 $t_i$ 的因子\period 所以 $p$ 是 $t_0$, $t_1$, $\cdots$, $t_n$ 的公因子\period 因为 $t_0$, $t_1$, $\cdots$, $t_n$ 互素, 故 $p$ 是 (整数的) 单位 $\varepsilon_1$\period 既然 $p$ 与 $q$ 互素, 则 $q$ 也是 (整数的) 单位 $\varepsilon_2$\period 所以
+    \begin{align*}
+        r = c_f \frac{q}{p} = (\varepsilon_1^{-1} \varepsilon_2) c_f \period
+    \end{align*}
+    从而
+    \begin{align*}
+        g = f^{\ast} \frac{c_f}{f} = (\varepsilon_1 \varepsilon_2^{-1}) f^{\ast} \period
+    \end{align*}
+    记 $\varepsilon = \varepsilon_1^{-1} \varepsilon_2$, 则 $\varepsilon^{-1} = \varepsilon_1 \varepsilon_2^{-1}$\period 因为 $\varepsilon_1$, $\varepsilon_2$ 都是整数的单位, 故 $\varepsilon$ 也是整数的单位\period 所以, $\varepsilon = \pm 1$\period
+\end{pf}
+
+\begin{remark}
+    我们可以这么叙述我们刚才证明的命题: 若忽略 (整数的) 单位的区别, 有理系数多项式可唯一地写为有理数与本原的多项式的积\period
+\end{remark}
+
+\begin{proposition}
+    设多项式 $f$, $g$, $h$ 的系数都是整数\period 设 $f = gh$\period
+
+    (i) 若 $f$ 是本原的, 则 $g$ 与 $h$ 也是本原的;
+
+    (ii) 若 $g$ 与 $h$ 是本原的, 则 $f$ 也是本原的\period
+\end{proposition}
+
+\begin{pf}
+    (i) 反证法\period 因为乘法可交换, 故不失一般性, 设 $g$ 不是本原的\period 这样, 存在整系数多项式 $\ell$ 与不是 (整数的) 单位的整数 $t$, 使 $g = t\ell$\period 这样, $f = t \cdot (\ell h)$\period 所以 $t$ 是 $f$ 的所有系数的公因子, 故 $t$ 是 (整数的) 单位的公因子, 即 $t$ 也是 (整数的) 单位\period 矛盾!
+
+    (ii) 任取不可约的整数 $p$\period 我们证明: 存在 $f$ 的系数 $c$, 使 $p$ 不是 $c$ 的因子\period 设
+    \begin{align*}
+         & g = g_m x^m + g_{m-1} x^{m-1} + \cdots + g_0, \\
+         & h = h_n x^n + h_{n-1} x^{n-1} + \cdots + h_0
+    \end{align*}
+    是二个本原的多项式\period 所以, 从次高的项往次低的项看, 一定存在二个整数 $s$, $t$ 使 $p$ 是 $g_m$, $g_{m-1}$, $\cdots$, $g_{s+1}$, $h_n$, $h_{n-1}$, $\cdots$, $h_{t+1}$ 的因子, 但 $p$ 不是 $g_s$ 的因子, 且 $p$ 不是 $h_t$ 的因子\period 我们看 $f$ 的 $s+t$ 次系数:
+    \begin{align*}
+        f_{s+t}
+        = {} & g_s h_t + g_{s+1} h_{t-1} + \cdots + g_{s+t} h_0         \\
+             & \quad + g_{s-1} h_{t+1} + \cdots + g_{0} h_{s+t} \period
+    \end{align*}
+    由此可见, $p$ 是上式右侧除 $g_s h_t$ 外的任意一项的因子\period 这样, $p$ 不是 $f$ 的 $s+t$ 次系数 $f_{s+t}$ 的因子\period 所以 $f$ 的全部系数一定互素\period
+\end{pf}
+
+\begin{proposition}
+    设多项式 $f$, $g$ 的系数都是整数\period
+
+    (i) 若 $g$ 是本原的, 且存在多项式 $h$ 使 $f = gh$, 则 $h$ 的系数也都是整数;
+
+    (ii) 在 (i) 的基础上, 若还假定 $f$ 也是本原的, 则 $h$ 也是本原的\period
+\end{proposition}
+
+\begin{pf}
+    (i) $f$ 与 $g$ 当然可以视为有理系数多项式\period 由带余除法知, $h$ 至少也是有理系数多项式\period 将 $h$ 写为 $c_h h^{\ast}$, 其中 $c_h$ 是某有理数, $h$ 是本原的多项式\period 所以
+    \begin{align*}
+        f = gh = g(c_h h^{\ast}) = c_h (g h^{\ast}) \period
+    \end{align*}
+    显然, $g h^{\ast}$ 是本原的\period 当然, $f$ 也可写为
+    \begin{align*}
+        f = c_f f^{\ast},
+    \end{align*}
+    其中 $c_f$ 是整数 (因为 $f$ 的系数都是整数), 且 $f^{\ast}$ 是本原的多项式\period 所以, 存在 (整数的) 单位 $\varepsilon$, 使
+    \begin{align*}
+        c_h = \varepsilon c_f, \quad g h^{\ast} = \varepsilon^{-1} f^{\ast} \period
+    \end{align*}
+    从而
+    \begin{align*}
+        h = c_h h^{\ast} = \varepsilon c_f h^{\ast}
+    \end{align*}
+    的系数都是整数\period
+
+    (ii) 若 $f$ 也是本原的, 则由 (i) 的证明过程, 知 $h$ 是本原的\period
+\end{pf}
+
+\begin{proposition}
+    设多项式 $f$ 的系数都是整数\period 设 $f$ 可写为二个有理系数多项式 $g$, $h$ 的积\period 则 $f$ 可写为
+    \begin{align*}
+        f = c_f g^{\ast} h^{\ast} \period
+    \end{align*}
+    上式应这么理解: 存在 $g$ 的某个本原的相伴 $g^{\ast}$, 存在 $h$ 的某个本原的相伴 $h^{\ast}$, 存在 $f$ 的某个容量 $c_f$, 使上式成立\period
+\end{proposition}
+
+\begin{pf}
+    设 $f = c_f f^{\ast}$, $g = c_g g^{\ast}$, $h = c_h h^{\ast}$, 其中 $f^{\ast}$, $g^{\ast}$, $h^{\ast}$ 都是本原的多项式, $c_g$ 与 $c_h$ 使有理数, 且 $c_f$ (由题设) 是整数\period 因为 $f = gh$, 故
+    \begin{align*}
+        c_f f^{\ast} = (c_g c_h) (g^{\ast} h^{\ast}) \period
+    \end{align*}
+    $g^{\ast} h^{\ast}$ 是本原的\period 所以, 存在 (整数的) 单位 $\varepsilon$, 使
+    \begin{align*}
+        c_g c_h = \varepsilon c_f, \quad g^{\ast} h^{\ast} = \varepsilon^{-1} f^{\ast} \period
+    \end{align*}
+    所以
+    \begin{align*}
+         & f = c_g c_h g^{\ast} h^{\ast} = (\varepsilon c_f) g^{\ast} h^{\ast} = c_f^{\prime} g^{\ast} h^{\ast} \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{remark}
+    设多项式 $f$ 的系数都是整数\period 上个命题表明: 若 $f$ 可写为二个有理系数多项式的积, 则 $f$ 可写为二个整系数多项式的积\period 反过来, 因为整数是有理数, 故若 $f$ 可写为二个整系数多项式的积, $f$ 当然可写为二个有理系数多项式的积\period 每个有理系数多项式都可写为有理数与本原的多项式的积\period 所以, 我们可以借整数的性质研究有理系数多项式是否是可约的\period
+\end{remark}
+
+\myLine
+
+作者本想到此结束本文\period 不过, 抱着认真、负责的态度, 作者再给几个重要的命题就结束本文吧\period
+
+先从几个简单的小命题开始吧\period 这里, 为了方便, 称正的不可约的整数为素数\period
+
+\begin{proposition}
+    设 $p$ 是素数\period 若 $j$ 是小于 $p$ 的正整数, 则 $p$ 是 (广义) 二项系数 $\binom{p}{j}$ 的因子\period
+\end{proposition}
+
+\begin{pf}
+    易知
+    \begin{align*}
+        \binom{p}{j} = \frac{p \cdot (p-1) \cdots (p-(j-1))}{j!} = K,
+    \end{align*}
+    其中 $K$ 是整数\period 所以
+    \begin{align*}
+        p \cdot (p-1) \cdots (p-(j-1)) = K \cdot j! \period
+    \end{align*}
+    我们的目标是: 证明 $p$ 是 $K$ 的因子\period 这里, $p$ 已经是 $K \cdot j!$ 的因子了\period 如果我们能证明 $p$ 与 $j!$ 互素, 那么 $p$ 一定是 $K$ 的因子\period 想法很美好, 是吧? 确实\period
+
+    继续分解这个目标\period 假如我们能说明 $1$, $2$, $\cdots$, $j$ 都与 $p$ 互素, 那 $1! = 1$ 与 $p$ 互素, $2! = 1! \cdot 2$ 与 $p$ 也互素, $3! = 2! \cdot 3$ 与 $p$ 也互素……一直到 $j! = (j-1)! \cdot j$ 与 $p$ 也互素\period
+
+    好! 任取小于 $p$ 的正整数 $\ell$\period 我们证明: $p$ 与 $\ell$ 互素\period 反证法\period 若 $p$ 与 $\ell$ 不互素, 则 $p$ 一定是 $\ell$ 的因子\period 所以, 存在整数 $q$ 使 $\ell = pq$\period 因为 $\ell \neq 0$, 故 $q \neq 0$, 即 $|q| \geq 1$\period 所以
+    \begin{align*}
+        \ell = |\ell| = |p| |q| \geq |p| \cdot 1 = p \period
+    \end{align*}
+    但是, 这与假定 $\ell < p$ 矛盾\period 彳亍\period 完了\period
+\end{pf}
+
+前面, 我们讨论多项式的性质时, 为了简单, 我们把 $f(x)$, $g(x)$, $h(x)$, $\cdots$ 写为 $f$, $g$, $h$, $\cdots$\period 现在, 因为我们需要多项式的复合, 我们需要写出被省略的 ``$(x)$''\period
+
+\begin{proposition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是有理系数多项式, 且 $n \geq 1$, $a_n \neq 0$ (这表明, $f(x)$ 不是 $0$, 也不是多项式的单位, 且 $f(x)$ 的次为 $n$)\period 设 $\alpha$, $\beta$ 是有理数, 且 $\alpha \neq 0$\period 设
+    \begin{align*}
+        g(x) = f(\alpha x + \beta) = a_0 + a_1 (\alpha x + \beta) + \cdots + a_n (\alpha x + \beta)^n \period
+    \end{align*}
+    显然, $g(x)$ 也是有理系数多项式, 且次仍为 $n$ ($g(x)$ 的次不超过 $n$, 且其 $n$ 次系数 $a_n \alpha^n \neq 0$)\period 因为
+    \begin{align*}
+        x = \alpha \cdot \left( \frac{1}{\alpha} x + \frac{-\beta}{\alpha} \right) + \beta,
+    \end{align*}
+    故
+    \begin{align*}
+        f(x) = f\left( \alpha \cdot \left( \frac{1}{\alpha} x + \frac{-\beta}{\alpha} \right) + \beta \right) = g\left( \frac{1}{\alpha} x + \frac{-\beta}{\alpha} \right) \period
+    \end{align*}
+    这里, $\frac{1}{\alpha}$, $\frac{-\beta}{\alpha}$ 当然也是有理数, 且 $\frac{1}{\alpha} \neq 0$\period
+
+    (i) 若 $f(x)$ (作为有理系数多项式, 下同) 是可约的, 则 $g(x)$ 是可约的;
+
+    (ii) 若 $g(x)$ 是可约的, 则 $f(x)$ 是可约的\period
+
+    简单点说, ``$f(x)$ 是可约的 (不可约的)'' 的一个必要与充分条件是: ``$f(\alpha x + \beta)$ ($\alpha$, $\beta$ 是有理数, 且 $\alpha \neq 0$) 是可约的 (不可约的)''\period
+\end{proposition}
+
+\begin{pf}
+    事实上, 我们只要证明 (i)\period (ii) 的证明就是把 (i) 的证明里的 $f$ 与 $g$ 互换, 且 $\alpha$, $\beta$ 分别换为 $\frac{1}{\alpha}$, $\frac{-\beta}{\alpha}$\period
+
+    设 $f(x)$ 是可约的\period 所以, 存在二个不是单位的 (次高于 $0$ 的) 多项式 $f_1 (x)$, $f_2 (x)$ 使
+    \begin{align*}
+        f(x) = f_1 (x) f_2 (x) \period
+    \end{align*}
+    记
+    \begin{align*}
+        g_1 (x) = f_1 (\alpha x + \beta), \quad g_2 (x) = f_2 (\alpha x + \beta),
+    \end{align*}
+    则
+    \begin{align*}
+        g(x) = f(\alpha x + \beta) = f_1 (\alpha x + \beta) f_2 (\alpha x + \beta) = g_1 (x) g_2 (x) \period
+    \end{align*}
+    因为 $\deg g_1 (x) = \deg f_1 (x)$, $\deg g_2 (x) = \deg f_2 (x)$, 故 $g_1 (x)$, $g_2 (x)$ 都不是单位\period 从而 $g(x)$ 也是可约的\period
+\end{pf}
+
+\begin{remark}
+    有一点值得读者注意\period
+
+    设 $f(x) = x + 4$\period 显然, $f(x)$ 是不可约的\period
+
+    设 $g(x) = f(x^2) = x^2 + 4$\period 我们证明: $g(x)$ 是不可约的\period
+
+    反证法\period 假定存在二个有理系数多项式 $g_1 (x)$, $g_2 (x)$ 使
+    \begin{align*}
+        g(x) = g_1 (x) g_2 (x),
+    \end{align*}
+    且 $g_1 (x)$, $g_2 (x)$ 都不是单位\period 根据前面的命题, 可进一步假定 $g_1 (x)$, $g_2 (x)$ 的系数都是整数 (这可以简化讨论)\period 因为 $\deg g_1 (x) + \deg g_2 (x) = 2$, 而 $\deg g_1 (x) > 0$, $\deg g_2 (x) > 0$, 故 $g_1 (x)$ 与 $g_2 (x)$ 的次都是 $1$\period 所以, 设
+    \begin{align*}
+        g_1 (x) = ax + b, \quad g_2 (x) = cx + d,
+    \end{align*}
+    其中 $a$, $b$, $c$, $d$ 都是整数\period 从而
+    \begin{align*}
+        x^2 + 4 = (ax + b)(cx + d) = (ac) x^2 + (ad + bc) x + (bd),
+    \end{align*}
+    也就是
+    \begin{align*}
+        ac = 1, \quad ad + bc = 0, \quad bd = 4 \period
+    \end{align*}
+    由 $ac = 1$ 知 $a = c = 1$ 或 $a = c = -1$\period 所以
+    \begin{align*}
+         & b + d = \frac{ad + ba}{a} = \frac{ad + bc}{a} = 0, \\
+         & bd = 4 \period
+    \end{align*}
+    消去 $d$, 有
+    \begin{align*}
+        b^2 = -4 \period
+    \end{align*}
+    看到这里, 读者可能笑了: 整数的平方不可能是 $-4$ 呀! 所以, $g(x)$ 一定是不可约的\period
+
+    设 $h(x) = g(x^2) = x^4 + 4$\period 我们证明: $h(x)$ 是可约的\period
+
+    这里就没必要反证了\period 作者直接点吧\period 无非就是添平方嘛! 具体一点, 就是
+    \begin{align*}
+        x^4 + 4
+        = {} & x^4 + 4x^2 + 4 - 4x^2                 \\
+        = {} & (x^2 + 2)^2 - (2x)^2                  \\
+        = {} & (x^2 + 2x + 2) (x^2 - 2x + 2) \period
+    \end{align*}
+    显然 $x^2 \pm 2x + 2$ 不是单位\period 所以, $h(x)$ 是可约的\period
+
+    设 $\ell (x) = h(x^2) = x^8 + 4$\period 显然,
+    \begin{align*}
+        x^8 + 4
+        = {} & (x^2)^4 + 4                               \\
+        = {} & ((x^2)^2 + 2x^2 + 2) ((x^2)^2 - 2x^2 + 2) \\
+        = {} & (x^4 + 2x^2 + 2) (x^4 - 2x^2 + 2),
+    \end{align*}
+    且 $x^4 \pm 2x^2 + 2$ 不是单位, 故 $\ell (x)$ 是可约的\period
+
+    作者举这个例的目的是提醒读者: 上个命题的 $\alpha x + \beta$ 不能改为较高次的多项式; 否则, 命题不一定成立\period
+\end{remark}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是多项式, $a_n \neq 0$, 且 $a_0 \neq 0$\period $f(x)$ 的反多项式 \term{reciprocal polynomial} 是
+    \begin{align*}
+        f^{\mathrm{r}} (x) = a_n + a_{n-1} x + \cdots + a_0 x^n \period
+    \end{align*}
+    也就是说, $f^{\mathrm{r}} (x)$ 的 $j$ 次系数是 $a_{n-j}$ ($j = 0,1,\cdots,n$)\period
+
+    请读者注意: 上面的 $f(x)$ 的 $0$ 次项系数不是 $0$\period 如果 $a_0 = 0$, 它的反多项式是未定义的\period
+\end{definition}
+
+\begin{example}
+    设
+    \begin{align*}
+        f(x) = 1 + 3x + 6x^2 + 10x^3 + 15x^4 + 21x^5 \period
+    \end{align*}
+    所以
+    \begin{align*}
+        f^{\mathrm{r}} (x) = 21 + 15x + 10x^2 + 6x^3 + 3x^4 + x^5 \period
+    \end{align*}
+\end{example}
+
+\begin{example}
+    设
+    \begin{align*}
+        g(x) = -6 - 5 (x - 1) + 2 (x - 1)^2 + (x - 1)^3 \period
+    \end{align*}
+    读者可能会觉得
+    \begin{align*}
+        g^{\mathrm{r}} (x) = 1 + 2 (x - 1) - 5 (x - 1)^2 - 6 (x - 1)^3 \period
+    \end{align*}
+    但这不对\period 按照定义, 我们要先将 $g(x)$ 写为 $1$, $x$, $x^2$, $x^3$, $\cdots$ 的线性组合:
+    \begin{align*}
+        g(x)
+        = {} & -6 - 5(x - 1) + 2 (x^2 - 2x + 1) + (x^3 - 3x^2 + 3x - 1) \\
+        = {} & -6 + (-5x + 5) + (2x^2 - 4x + 2) + (x^3 - 3x^2 + 3x - 1) \\
+        = {} & -6x - x^2 + x^3 \period
+    \end{align*}
+    由此可见, $g(x)$ 的 $0$ 次项系数为 $0$\period 所以, $g^{\mathrm{r}} (x)$ 是未定义的\period
+\end{example}
+
+\begin{proposition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是多项式, $a_n \neq 0$, 且 $a_0 \neq 0$\period
+
+    (i) $f(x)$ 的反多项式 $f^{\mathrm{r}} (x)$ 的次仍为 $n$;
+
+    (ii) $f^{\mathrm{r}}(x)$ 的反多项式 $(f^{\mathrm{r}})^{\mathrm{r}} (x)$ 是 $f(x)$;
+
+    (iii) 若 $t$ 是非零的数, 则
+    \begin{align*}
+        f^{\mathrm{r}} (t) = t^n f \left( \frac{1}{t} \right) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    (i) $f(x)$ 的反多项式是
+    \begin{align*}
+        f^{\mathrm{r}} (x) = a_n + a_{n-1} x + \cdots + a_0 x^n \period
+    \end{align*}
+    因为 $a_0 \neq 0$, 故 $f^{\mathrm{r}} (x)$ 的次仍为 $n$\period
+
+    (ii) 设
+    \begin{align*}
+        b_j = a_{n - j}, \quad j = 0,1,\cdots,n \period
+    \end{align*}
+    则 $f(x)$ 的反多项式可写为
+    \begin{align*}
+        f^{\mathrm{r}} (x) = b_0 + b_1 x + \cdots + b_n x^n \period
+    \end{align*}
+    因为 $b_0 = a_n \neq 0$, 且 $b_n = a_0 \neq 0$, 故 $f^{\mathrm{r}}(x)$ 的反多项式是
+    \begin{align*}
+        (f^{\mathrm{r}})^{\mathrm{r}} (x)
+        = {} & b_n + b_{n-1} x + \cdots + b_0 x^n \\
+        = {} & a_0 + a_1 x + \cdots + a_n x^n     \\
+        = {} & f(x) \period
+    \end{align*}
+
+    (iii) 设 $t$ 是非零的数\period 则
+    \begin{align*}
+        f \left( \frac{1}{t} \right)
+        = {} & a_0 + a_1 \frac{1}{t} + a_2 \left( \frac{1}{t} \right)^2 + \cdots + a_n \left( \frac{1}{t} \right)^n \\
+        = {} & a_0 + a_1 \frac{1}{t} + a_2 \frac{1}{t^2} + \cdots + a_n \frac{1}{t^n}                               \\
+        = {} & a_0 \frac{t^n}{t^n} + a_1 \frac{t^{n-1}}{t^n} + a_2 \frac{t^{n-2}}{t^n} + \cdots + a_n \frac{1}{t^n} \\
+        = {} & \frac{a_0 t^n + a_1 t^{n-1} + a_2 t^{n-2} + \cdots + a_n}{t^n}                                       \\
+        = {} & \frac{a_n + a_{n-1} t + \cdots + a_0 t^n}{t^n}                                                       \\
+        = {} & \frac{f^{\mathrm{r}} (t)}{t^n} \period
+    \end{align*}
+    所以
+    \begin{align*}
+         & f^{\mathrm{r}} (t) = t^n f \left( \frac{1}{t} \right) \period \qedhere
+    \end{align*}
+\end{pf}
+
+% Dummy text here.
+\lipsum[1-150]
+
+\lipsum[1-150]
+
+\lipsum[1-150]
+
+下述命题一般被称为 Eisenstein 判别法 \term{Eisenstein criterion}\period 当然了, 此命题仅仅是 ``$f$ 是不可约的'' 的一个充分条件哟\period

@@ -314,8 +314,8 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 
     不难作出如下计算:
     \begin{align*}
-        x^5 + 3x + 1 & = (x^2 - x - 1) \cdot (x^3 + x^2 + 2x + 3) + (8x + 4),   \\
-        x^2 - x - 1  & = (8x + 4) \cdot \frac{2x - 3}{16} - \frac{1}{4} \period
+        x^5 + 3x + 1 = {} & (x^2 - x - 1) \cdot (x^3 + x^2 + 2x + 3) + (8x + 4),   \\
+        x^2 - x - 1  = {} & (8x + 4) \cdot \frac{2x - 3}{16} - \frac{1}{4} \period
     \end{align*}
     所以, $-\frac{1}{4}$ 是 $8x + 4$ 与 $x^2 - x - 1$ 的最大公因子, 是 $x^2 - x - 1$ 与 $x^5 + 3x + 1$ 的最大公因子\period
 
@@ -477,6 +477,10 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
     设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period
 \end{definition}
 
+\begin{remark}
+    我们并没有禁止 $n$ 取 $1$\period 同理, 一个多项式也可以有 ``最大公因子''; 一个多项式也可以 ``互素''\period
+\end{remark}
+
 作为练习, 请读者证明
 \begin{proposition}
     设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式\period 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子\period
@@ -511,7 +515,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 \end{proposition}
 
 \begin{pf}
-    (i) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在\period
+    (i) 对 $n$ 用数学归纳法\period 显然, $n = 1$ 或 $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在\period
 
     今看 $n = k+1$ 时的情形\period 令 $d_k$ 为 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 我们证明: $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period
 
@@ -521,7 +525,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 
     根据最大公因子的定义, $d$ 一定是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 所以, $n = k+1$ 时, (i) 正确\period
 
-    (ii) 对 $n$ 用数学归纳法\period $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在多项式 $u_1$, $u_2$, $\cdots$, $u_k$ 使
+    (ii) 对 $n$ 用数学归纳法\period 显然, $n = 1$ 或 $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在多项式 $u_1$, $u_2$, $\cdots$, $u_k$ 使
     \begin{align*}
         u_1 f_1 + u_2 f_2 + \cdots + u_k f_k = d_k \period
     \end{align*}
@@ -771,5 +775,9 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 
     再看充分性\period 还是反证法\period 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位\period 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的多项式都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的多项式 $p_0$, 使 $p_0$ 是 $d$ 的因子 (由上个命题, 显然)\period 所以, 存在不可约的多项式 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子\period 矛盾!
 \end{pf}
+
+\begin{remark}
+    作者说一件不是很重要的事\period 事实上, 本文改编自 ``\SomePropertiesOfIntegers ''\period 作者做了这么几件事: (i) 将大量的 ``整数'' 替换为 ``多项式''; (ii) 修改一些细节; (iii) 修改了几个例\period (i) 是最容易的, 而 (iii) 是最繁的\period
+\end{remark}
 
 本文就到这里\period 再见, 亲爱的读者朋友!
