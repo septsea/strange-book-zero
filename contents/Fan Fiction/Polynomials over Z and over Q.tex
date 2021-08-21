@@ -382,7 +382,7 @@
     \end{align*}
     也就是说, $f^{\mathrm{r}} (x)$ 的 $j$ 次系数是 $a_{n-j}$ ($j = 0,1,\cdots,n$)\period
 
-    请读者注意: 上面的 $f(x)$ 的 $0$ 次项系数不是 $0$\period 如果 $a_0 = 0$, 它的反多项式是未定义的\period
+    请读者注意: 上面的 $f(x)$ 的 $0$ 次系数不是 $0$\period 如果 $a_0 = 0$, 它的反多项式是未定义的\period
 \end{definition}
 
 \begin{example}
@@ -405,14 +405,14 @@
     \begin{align*}
         g^{\mathrm{r}} (x) = 1 + 2 (x - 1) - 5 (x - 1)^2 - 6 (x - 1)^3 \period
     \end{align*}
-    但这不对\period 按照定义, 我们要先将 $g(x)$ 写为 $1$, $x$, $x^2$, $x^3$, $\cdots$ 的线性组合:
+    但这不对\period 按照定义, 我们要先展开 $g(x)$:
     \begin{align*}
         g(x)
         = {} & -6 - 5(x - 1) + 2 (x^2 - 2x + 1) + (x^3 - 3x^2 + 3x - 1) \\
         = {} & -6 + (-5x + 5) + (2x^2 - 4x + 2) + (x^3 - 3x^2 + 3x - 1) \\
         = {} & -6x - x^2 + x^3 \period
     \end{align*}
-    由此可见, $g(x)$ 的 $0$ 次项系数为 $0$\period 所以, $g^{\mathrm{r}} (x)$ 是未定义的\period
+    由此可见, $g(x)$ 的 $0$ 次系数为 $0$\period 所以, $g^{\mathrm{r}} (x)$ 是未定义的\period
 \end{example}
 
 \begin{proposition}
@@ -471,4 +471,181 @@
     \end{align*}
 \end{pf}
 
+\begin{proposition}
+    设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n,    \\
+         & f_1 (x) = p_0 + p_1 x + \cdots + p_u x^u, \\
+         & f_2 (x) = q_0 + q_1 x + \cdots + q_v x^v
+    \end{align*}
+    是多项式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $a_0 \neq 0$\period 设
+    \begin{align*}
+        f(x) = f_1 (x) f_2 (x) \period
+    \end{align*}
+
+    (i) $u + v = n$;
+
+    (ii) $p_0 \neq 0$, $q_0 \neq 0$;
+
+    (iii) $f^{\mathrm{r}} (x) = f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x)$\period
+\end{proposition}
+
+\begin{pf}
+    (i) 显然\myFN{因为 $f(x) = f_1 (x) f_2 (x)$, 故 $\deg f(x) = \deg f_1 (x) + \deg f_2 (x)$\period}\period
+
+    (ii) 因为 $f(x) = f_1 (x) f_2 (x)$, 故 $p_0 q_0 = a_0$\period 因为 $a_0 \neq 0$, 故 $p_0 \neq 0$, $q_0 \neq 0$\period
+
+    (iii) 因为 $a_0 \neq 0$, $p_0 \neq 0$, $q_0 \neq 0$, 故 $f(x)$, $f_1 (x)$, $f_2 (x)$ 都有反多项式:
+    \begin{align*}
+         & f^{\mathrm{r}} (x) = a_n + a_{n-1} x + \cdots + a_0 x^n,          \\
+         & f_1^{\mathrm{r}} (x) = p_u + p_{u-1} x + \cdots + p_0 x^u,        \\
+         & f_2^{\mathrm{r}} (x) = q_v + q_{v-1} x + \cdots + q_0 x^v \period
+    \end{align*}
+    记
+    \begin{align*}
+        E(x) = f^{\mathrm{r}} (x) - f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x) \period
+    \end{align*}
+    任取非零的数 $t$\period 则
+    \begin{align*}
+        E(t)
+        = {} & f^{\mathrm{r}} (t) - f_1^{\mathrm{r}} (t) f_2^{\mathrm{r}} (t)                                           \\
+        = {} & t^n f \left( \frac{1}{t} \right) - t^u f_1 \left( \frac{1}{t} \right) t^v f_2 \left( \frac{1}{t} \right) \\
+        = {} & t^n f \left( \frac{1}{t} \right) - t^u t^v f_1 \left( \frac{1}{t} \right) f_2 \left( \frac{1}{t} \right) \\
+        = {} & t^n f \left( \frac{1}{t} \right) - t^{u+v} f \left( \frac{1}{t} \right)                                  \\
+        = {} & t^n f \left( \frac{1}{t} \right) - t^n f \left( \frac{1}{t} \right)                                      \\
+        = {} & 0 \period
+    \end{align*}
+    这说明, 多项式 $E(x)$ 有无限多个根\period 所以, $E(x)$ 一定是零多项式, 即
+    \begin{align*}
+         & f^{\mathrm{r}} (x) = f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x) \period \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{proposition}
+    设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n,    \\
+         & f_1 (x) = p_0 + p_1 x + \cdots + p_u x^u, \\
+         & f_2 (x) = q_0 + q_1 x + \cdots + q_v x^v
+    \end{align*}
+    是多项式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $p_0 \neq 0$, $q_0 \neq 0$, $a_0 \neq 0$\period 设
+    \begin{align*}
+        f^{\mathrm{r}} (x) = f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x) \period
+    \end{align*}
+    则
+    \begin{align*}
+        f(x) = f_1 (x) f_2 (x) \period
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    因为 ($0$ 次系数不为 $0$ 的) 多项式 $g$ 的反多项式的反多项式是 $g$, 故由上命题知本命题也对\period
+\end{pf}
+
+跟前面的 ``$\alpha x + \beta$'' 类似, 我们有
+\begin{proposition}
+    设多项式 $f(x)$ 既不是零, 也不是单位, 且 $0$ 次系数不为 $0$\period ``$f(x)$ 是可约的 (不可约的)'' 的一个必要与充分条件是: ``反多项式 $f^{\mathrm{r}} (x)$ 是可约的 (不可约的)''\period
+\end{proposition}
+
+\begin{pf}
+    这是作者留给读者的练习题; 请读者尝试自行补充细节 (可以说, 这跟 ``$\alpha x + \beta$'' 几乎一致)\period
+\end{pf}
+
+抱歉, 读者朋友\period 作者一不小心, 又写多了\period ``喧宾夺主了, 属于是\period '' 所以, 请读者消化一下\period
+
+\myLine
+
+我们继续吧!
+
+本来, 作者只想用下面的判别法结束本文, 但又觉得只是冷冰冰地丢下一个判别法不是很负责\period 所以, 作者决定加几个例\period 为尽可能地消除读者的疑惑, 作者再加了一点细节\period 加着加着, 又写多了……
+
 下述命题一般被称为 Eisenstein 判别法 \term{Eisenstein criterion}\period 当然了, 此命题仅仅是 ``$f$ 是不可约的'' 的一个充分条件哟\period
+
+\begin{proposition}
+    设多项式
+    \begin{align*}
+        f = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    的系数都是整数\period 若存在不可约的整数 $p$ 适合如下三条件, 则 $f$ 是不可约的:
+
+    (i) $p$ 不是 $a_n$ 的因子 (这说明 $a_n \neq 0$);
+
+    (ii) $p$ 是 $a_{n-1}$, $a_{n-2}$, $\cdots$, $a_0$ 的因子\period
+
+    (iii) $p^2$ 不是 $a_0$ 的因子 (这说明 $a_0 \neq 0$)\period
+\end{proposition}
+
+\begin{pf}
+    用反证法\period 设二个 (系数都是整数的) 的多项式 $g$, $h$ 使 $f = gh$, 其中
+    \begin{align*}
+         & g = g_0 + g_1 x + \cdots + g_\ell x^\ell, \\
+         & h = h_0 + h_1 x + \cdots + h_m x^m
+    \end{align*}
+    都不是单位, 且 $g_\ell \neq 0$, $h_m \neq 0$\period 所以 $1 \leq \ell < n$, $1 \leq m < n$, 且 $\ell + m = n$\period
+
+    因为 $p$ 是 $a_0 = g_0 h_0$ 的因子, 故 $p$ 是 $g_0$ 的因子, 或 $p$ 是 $h_0$ 的因子\period 因为 $p^2$ 不是 $a_0$ 的因子, 故 $p$ 不可能是 $g_0$ 与 $h_0$ 的公因子\period 不失一般性, 设 $p$ 是 $g_0$ 的因子, 且 $p$ 不是 $h_0$ 的因子\period 因为 $p$ 不是 $a_n = g_\ell h_m$ 的因子, 故 $p$ 不是 $g_\ell$ 的因子\period 所以, 从次低的项往次高的项看, 必有整数 $k$ ($1 \leq k \leq \ell < n$) 使 $p$ 是 $g_0$, $g_1$, $\cdots$, $g_{k-1}$ 的因子, 但 $p$ 不是 $g_k$ 的因子\period 所以
+    \begin{align*}
+        a_k = g_k h_0 + g_{k-1} h_1 + \cdots + g_0 h_k \period
+    \end{align*}
+    由此可见, $p$ 是上式右侧除 $g_k h_0$ 外的任意一项的因子\period 这样, $p$ 不是 $a_k$ 的因子\period 这跟 $k < n$ 矛盾!
+\end{pf}
+
+我们用几个例帮助读者消化此判别法\period
+
+\begin{example}
+    我们可以随手写出任意次的不可约的多项式: $x^n + p$, 这里 $p$ 是某个不可约的整数, 且 $n$ 是正整数\period
+\end{example}
+
+\begin{example}
+    设 $f = -7 + 9x + 3x^6$\period 不难看出, 不存在不可约的整数 $p$ 适合 Eisenstein 判别法的三条件\period
+
+    因为 (不是单位的) 多项式与其反多项式 (若存在) 要么都是可约的, 要么都是不可约的, 所以我们可以试试\myFN{只是 ``试试''; 不一定管用哟\period}反多项式\period $f$ 的 $0$ 次系数不是 $0$, 故 $f$ 的反多项式存在, 且 $f^{\mathrm{r}} = 3 + 9x^5 - 7x^6$\period 由此可见, 取 $p = 3$, 则 $p$ (与 $f^{\mathrm{r}}$) 适合 Eisenstein 判别法的三条件, 故 $f^{\mathrm{r}}$ 是不可约的\period 从而 $f$ 也是不可约的\period
+\end{example}
+
+一般地, 下面的 Eisenstein 判别法的变体成立:
+
+\begin{proposition}
+    设多项式
+    \begin{align*}
+        f = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    的系数都是整数\period 若存在不可约的整数 $p$ 适合如下三条件, 则 $f$ 是不可约的:
+
+    (i) $p$ 不是 $a_0$ 的因子 (这说明 $a_0 \neq 0$);
+
+    (ii) $p$ 是 $a_1$, $a_2$, $\cdots$, $a_n$ 的因子\period
+
+    (iii) $p^2$ 不是 $a_n$ 的因子 (这说明 $a_n \neq 0$)\period
+\end{proposition}
+
+\begin{pf}
+    考虑 $f$ 的反多项式 $f^{\mathrm{r}}$\period 对 $f^{\mathrm{r}}$ 施行 Eisenstein 判别法, 可知 $f^{\mathrm{r}}$ 是不可约的\period 故 $f$ 也是不可约的\period (作者邀请感兴趣的读者补全细节\period)
+\end{pf}
+
+我们用一个经典的例结束本文\period
+
+\begin{example}
+    设 $q$ 是素数\period 设
+    \begin{align*}
+        f(x) = 1 + x + \cdots + x^{q-2} + x^{q-1} \period
+    \end{align*}
+    我们证明: $f(x)$ 是不可约的\period
+
+    显然, 不存在不可约的整数 $p$ 适合 Eisenstein 判别法的三条件\period 反多项式也没有帮助: $f(x)$ 的反多项式刚好是 $f(x)$\period 我们试试 ``$\alpha x + \beta$'' 吧\period
+
+    考虑
+    \begin{align*}
+        g(x) = f(x + 1) = (1 + x)^0 + (1 + x)^1 + \cdots + (1 + x)^{q - 2} + (1 + x)^{q - 1} \period
+    \end{align*}
+    我们需要展开 $g(x)$\period 我们知道, $(1 + x)^\ell$ 的 $j$ 次系数是 $\binom{\ell}{j}$\period 所以, $g(x)$ 的 $j$ 次系数是
+    \begin{align*}
+        \binom{0}{j} + \binom{1}{j} + \cdots + \binom{q-2}{j} + \binom{q-1}{j} = \binom{q}{j + 1} \period
+    \end{align*}
+    也就是说,
+    \begin{align*}
+        g(x) = \binom{q}{1} + \binom{q}{2} x + \cdots + \binom{q}{q - 1} x^{q-2} + x^{q-1} \period
+    \end{align*}
+    取 $p = q$\period 因为 $q$ 是素数 (正的不可约的整数), $p$ 当然是不可约的整数\period 由此可见, $p$ (与 $g(x)$) 适合 Eisenstein 判别法的三条件, 故 $g(x)$ 是不可约的\period 故 $f(x)$ 也是不可约的\period
+\end{example}
+
+感谢读者的阅读! 再见\period
