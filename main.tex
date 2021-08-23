@@ -15,7 +15,8 @@
 \usepackage{bookmark}
 \usepackage{xcolor}
 \xeCJKsetup{CJKmath=true}
-\def\period{．}
+\def\period{. }
+% \def\period{．}
 % \def\period{。}
 % \definecolor{bb}{RGB}{251,114,153}
 
@@ -56,7 +57,9 @@
 
 % Footnote
 % Footnotes per page
-\usepackage[perpage]{footmisc}
+\usepackage[perpage,flushmargin,hang]{footmisc}
+% \renewcommand{\hangfootparindent}{0\parindent}
+\renewcommand{\hangfootparskip}{0.25\baselineskip}
 % Define a new set of footnote symbols
 \DefineFNsymbols*{myFootnoteStyle}{
     % If unicode-math is not enabled, the dollar signs can be removed.
@@ -67,7 +70,7 @@
 
 % My own footnote command
 \providecommand{\myFN}{}
-\renewcommand{\myFN}[1]{\footnote{\sffamily \ #1}}
+\renewcommand{\myFN}[1]{\footnote{\sffamily #1}}
 
 % Proof and solution style
 \usepackage{amsthm}

@@ -25,6 +25,20 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
     f = a_0 + a_1 x + \cdots + a_n x^n \period
 \end{align*}
 
+为方便, 我们定义一些词\period
+
+\begin{definition}
+    设 $f$ 是多项式\period 若 $f$ 的系数都是复数, 则 $f$ 是复系数多项式 \term{polynomial with complex coefficients}; 若 $f$ 的系数都是实数, 则 $f$ 是实系数多项式 \term{polynomial with real coefficients}; 若 $f$ 的系数都是有理数, 则 $f$ 是有理系数多项式 \term{polynomial with rational coefficients}; 若 $f$ 的系数都是整数, 则 $f$ 是整系数多项式 \term{polynomial with integral coefficients}\period
+\end{definition}
+
+\begin{remark}
+    我们提醒读者: 因为实数是复数, 故实系数多项式当然是复系数多项式; 因为有理数是实数, 故有理系数多项式当然是实系数多项式; 因为整数是有理数, 故整系数多项式当然是有理系数多项式\period
+
+    以 $x^2 + 3$ 为例\period 当我们讨论复系数多项式 $x^2 + 3$ 时, 我们允许不是实数的复数出现, 所以 ``$x^2 + 3$ 可写为二个 $1$ 次多项式的积'' 是对的\myFN{因为 $x^2 + 3 = x^2 - (\sqrt{3} \ii)^2 = (x + \sqrt{3} \ii) (x - \sqrt{3} \ii)$\period} 但是, 当我们讨论有理系数多项式 $x^2 + 3$ 时, 我们不允许不是有理数的复数出现, 所以 ``$x^2 + 3$ 可写为二个 $1$ 次多项式的积'' 是错的\period
+
+    所以, 明确多项式的系数范围是有必要的\period 不过, 正如前面所说, 我们讨论系数为 $\FF$ 的多项式, 而 $\FF$ 可以是 $\QQ$, 可以是 $\RR$, 也可以是 $\CC$\period 所以, 读者不必 (在本文) 过于关注这件小事\period 不同的系数的范围引起的差别主要体现在可约的与不可约的多项式上\period
+\end{remark}
+
 在正式进入讨论前, 作者希望读者能回想起二件事:
 
 (i) 多项式 $f$ 的次用 $\deg f$ 表示\period 零多项式的次是 $-\infty$\period 若多项式 $g$, $h$ 适合 $f = gh$, 则
@@ -141,11 +155,13 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 \myLine
 
 \begin{definition}
-    设 $f$, $g$ 是多项式\period 若存在多项式 $h$ 使 $f=gh$, 则说 $f$ 是 $g$ 的倍 \term{multiple}, 或 $g$ 是 $f$ 的因子 \term{divisor}\period
+    设 $f$, $g$ 是多项式\period 若存在多项式 $h$ 使 $f=gh$, 则说 $g$ 是 $f$ 的因子 \term{factor}\period
 \end{definition}
 
 \begin{example}
-    单位是任意多项式的因子; 单位只能是单位的倍\period $0$ 只能是 $0$ 的因子; $0$ 可以是任意多项式的倍\period
+    (i) 单位是任意多项式的因子; 单位的因子一定是单位\period
+
+    (ii) 任意多项式都是 $0$ 的因子; 非零多项式的因子一定不是 $0$\period
 \end{example}
 
 \begin{proposition}
@@ -224,7 +240,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 \end{proposition}
 
 \begin{definition}
-    设 $f$, $g$ 是多项式\period 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common divisor}\period
+    设 $f$, $g$ 是多项式\period 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common factor}\period
 \end{definition}
 
 \begin{example}
@@ -234,7 +250,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 现在我们引出 ``最大公因子'' 的概念\period
 
 \begin{definition}
-    设 $f$, $g$ 是多项式\period 适合下述二性质的多项式 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common divisor}:
+    设 $f$, $g$ 是多项式\period 适合下述二性质的多项式 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common factor}:
 
     (i) $d$ 是 $f$ 与 $g$ 的公因子;
 
@@ -687,7 +703,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 
     (i) $m = n$;
 
-    (ii) 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_m$ (注意, $n = m$) 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴\period
+    (ii) 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_m$ (注意, $n = m$) 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴 (注意: 调换顺序后的 $q_{\ell}$ 不一定跟原来的 $q_{\ell}$ 相等!)\period
 \end{proposition}
 
 \begin{pf}
@@ -761,8 +777,72 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
     \begin{align*}
         f = q_1 q_2 \cdots q_m = s_1 s_2 \cdots s_n,
     \end{align*}
-    则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴\period
+    则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴 (注意: 调换顺序后的 $s_\ell$ 不一定跟原来的 $s_\ell$ 相等!)\period
 \end{proposition}
+
+设多项式 $f$ 既不是 $0$, 也不是单位\period 利用上个命题, 我们可以方便地定出 $f$ 的因子\period
+
+\begin{proposition}
+    设多项式 $f$ 既不是 $0$, 也不是单位\period 设 $p_1$, $p_2$, $\cdots$, $p_m$ 是不可约的多项式, 且
+    \begin{align*}
+        f = p_1 p_2 \cdots p_m \period
+    \end{align*}
+    $f$ 的因子必为
+    \begin{align*}
+        \varepsilon p_{j_1} p_{j_2} \cdots p_{j_s} \tag*{(\myStar)},
+    \end{align*}
+    其中 $\varepsilon$ 是单位, $j_1$, $j_2$, $\cdots$, $j_s$ 是 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 ($s$ 可取 $0$; 此时, 这就是单位)\period
+\end{proposition}
+
+\begin{pf}
+    从 $1$, $2$, $\cdots$, $m$ 中选出 $s$ 个不同的数 $j_1$, $j_2$, $\cdots$, $j_s$, 那么还剩 $m-s$ 个数未被挑选\period 记这 $m-s$ 个数为 $j_{s+1}$, $\cdots$, $j_m$\period 由于
+    \begin{align*}
+        f
+        = {} & p_1 p_2 \cdots p_m                                                                          \\
+        = {} & (p_{j_1} p_{j_2} \cdots p_{j_s}) (p_{j_{s+1}} \cdots p_{j_m})                               \\
+        = {} & (\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}) (\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}),
+    \end{align*}
+    且 $\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}$ 是多项式, 故 $\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}$ 是 $f$ 的因子\period
+
+    设 $g$ 是 $f$ 的因子\period 我们证明: $g$ 一定能写为 (\myStar) 的形式\period
+
+    首先, $g$ 一定不是 $0$\period 若 $g$ 是单位, 取 $s = 0$, $g$ 即可写为 (\myStar) 的形式\period 现在设 $g$ 既不是 $0$, 也不是单位\period
+
+    设多项式 $h$ 使 $f = gh$\period $h$ 当然不是 $0$\period 若 $h$ 是单位, 则
+    \begin{align*}
+        g = h^{-1} f = h^{-1} p_1 p_2 \cdots p_m \period
+    \end{align*}
+    $h^{-1}$ 也是单位, 且 $1$, $2$, $\cdots$, $m$ 当然是 $1$, $2$, $\cdots$, $m$ 中 $m$ 个不同的数\period
+
+    若 $h$ 不是单位, 则存在不可约的多项式 $q_1$, $q_2$, $\cdots$, $q_s$, $q_{s+1}$, $\cdots$, $q_n$ 使
+    \begin{align*}
+        g = q_1 q_2 \cdots q_s, \quad h = q_{s+1} \cdots q_n \period
+    \end{align*}
+    所以
+    \begin{align*}
+        f = gh = q_1 q_2 \cdots q_s q_{s+1} \cdots q_n \period
+    \end{align*}
+    从而 $n = m$, 且可以适当地调换 $p_1$, $p_2$, $\cdots$, $p_m$ 的顺序, 使任取 $1$, $2$, $\cdots$, $m$ 中的数 $\ell$, $q_\ell$ 与 $p_\ell$ 相伴\period 但是, 我们注意到, 调换后的 $p_{\ell}$ 跟题设的 $p_{\ell}$ 不一定是相等的, 所以我们稍微变通一下\period
+
+    我们把 $s$ 个不可约的多项式 $q_1$, $q_2$, $\cdots$, $q_s$ 写在左边, 把 $m$ 个不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_m$ 写在右边:
+    \begin{align*}
+        q_1, q_2, \cdots, q_s; \qquad p_1, p_2, \cdots, p_m \period
+    \end{align*}
+    对 $q_1$ 而言, 肯定有整数 $j_1$ 使 $q_1$ 不与 $p_i$ ($i < j_1$) 相伴 (从左向右看诸 $p_\ell$ 即可), 但 $q_1$ 与 $p_{j_1}$ 相伴\period 也就是说, 存在单位 $\varepsilon_1$ 使 $q_1 = \varepsilon_1 p_1$\period 去掉左边的 $q_1$ 与右边的 $p_{j_1}$, 有
+    \begin{align*}
+        q_2, \cdots, q_s; \qquad p_1, \cdots, p_{j_1 - 1}, p_{j_1 + 1}, \cdots, p_m \period
+    \end{align*}
+    类似地, 对 $q_2$ 而言, 肯定有整数 $j_2$ 使 $q_2$ 不与 $p_i$ ($i < j_2$, $i \neq j_1$) 相伴, 但 $q_2$ 与 $p_{j_2}$ 相伴\period 也就是说, 存在单位 $\varepsilon_2$ 使 $q_2 = \varepsilon_2 p_{j_2}$\period
+
+    反复地执行此事, 可知: 存在 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 $j_1$, $j_2$, $\cdots$, $j_s$, 存在 $s$ 个单位 $\varepsilon_1$, $\varepsilon_2$, $\cdots$, $\varepsilon_s$ 使 $q_\ell = \varepsilon_s p_{j_\ell}$\period 所以
+    \begin{align*}
+        f
+        = {} & q_1 q_2 \cdots q_s                                                                \\
+        = {} & (\varepsilon_1 p_{j_1}) (\varepsilon_2 p_{j_2}) \cdots (\varepsilon_s p_{j_s})    \\
+        = {} & (\varepsilon_1 \varepsilon_2 \cdots \varepsilon_s) p_{j_1} p_{j_2} \cdots p_{j_s} \\
+        = {} & \varepsilon p_{j_1} p_{j_2} \cdots p_{j_s} \period \qedhere
+    \end{align*}
+\end{pf}
 
 我们以一个简单的命题结束本文\period
 
@@ -773,7 +853,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集\period $\FF[x]$ �
 \begin{pf}
     先看必要性\period 反证法\period 假定结论不成立, 即: 存在不可约的多项式 $p$, 使任取 $f_i$, $p$ 是 $f_i$ 的因子\period 这样, $p$ 就是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period 所以, $p$ 是单位的因子\period 矛盾!
 
-    再看充分性\period 还是反证法\period 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位\period 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的多项式都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的多项式 $p_0$, 使 $p_0$ 是 $d$ 的因子 (由上个命题, 显然)\period 所以, 存在不可约的多项式 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子\period 矛盾!
+    再看充分性\period 还是反证法\period 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位\period 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的多项式都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的多项式 $p_0$, 使 $p_0$ 是 $d$ 的因子\period 所以, 存在不可约的多项式 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子\period 矛盾!
 \end{pf}
 
 \begin{remark}

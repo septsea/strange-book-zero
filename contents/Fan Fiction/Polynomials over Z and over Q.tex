@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{\PolynomialsOverZAndOverQ}
 \markright{\PolynomialsOverZAndOverQ}
 
-前面, 我们系统地介绍了整数与 (系数为 $\FF$ 的元的) 多项式的一些性质\period 它们有一个共同点: 都可以作带余除法\period 因为带余除法, 我们证明了最大公因子的存在性与 Bézout 等式; 因为最大公因子与 Bézout 等式, 我们考察了互素, 进而考虑了不可约的整数与不可约的多项式\period
+在 ``\SomePropertiesOfIntegers '' 与 ``\SomePropertiesOfPolynomials '' 里, 我们系统地介绍了整数与 (系数为 $\FF$ 的元的) 多项式的一些性质\period 它们有一个共同点: 都可以作带余除法\period 因为带余除法, 我们证明了最大公因子的存在性与 Bézout 等式; 因为最大公因子与 Bézout 等式, 我们考察了互素, 进而考虑了不可约的整数 (多项式)\period
 
 读者可能注意到, 在 ``\SomePropertiesOfPolynomials '' 里, 我们没有讨论整系数多项式\period 为什么没讨论呢? 读者可以想一想, 整系数多项式是否还有带余除法\period
 
@@ -49,7 +49,7 @@
 \begin{align*}
     f = \frac{p_0 Q_0}{Q} + \frac{p_1 Q_1}{Q} x + \cdots + \frac{p_n Q_n}{Q} x^n \period
 \end{align*}
-设 $d$ 是 $p_0 Q_0$, $p_1 Q_1$, $\cdots$, $p_n Q_n$ (视为整数, 而不是多项式) 的最大公因子\period 这样, 存在整数 $m_0$, $m_1$, $\cdots$, $m_n$ 使
+设 $d$ 是整数 (而不是多项式) $p_0 Q_0$, $p_1 Q_1$, $\cdots$, $p_n Q_n$ 的最大公因子\period 这样, 存在整数 $m_0$, $m_1$, $\cdots$, $m_n$ 使
 \begin{align*}
     p_0 Q_0 = d m_0, \quad p_1 Q_1 = d m_1, \quad \cdots, \quad p_n Q_n = d m_n \period
 \end{align*}
@@ -289,7 +289,15 @@
     \end{align*}
     这里, $\frac{1}{\alpha}$, $\frac{-\beta}{\alpha}$ 当然也是有理数, 且 $\frac{1}{\alpha} \neq 0$\period
 
-    (i) 若 $f(x)$ (作为有理系数多项式, 下同) 是可约的, 则 $g(x)$ 是可约的;
+    (i) 若 $f(x)$ 是可约的\myFN{
+        这里的 ``可约的'' 是指 $f(x)$ 作为有理系数多项式是可约的 (也就是说, 这是 ``\SomePropertiesOfPolynomials '' 里的 ``可约的'')\period 作者不打算讨论详细讨论整系数多项式的 ``可约的'' 的含义; 相反, 作者决定只在脚注里简单地提一提\period
+
+        设 $f$ 是整系数多项式\period 若存在整系数多项式 $g$ 使 $fg = 1$, 则说 $f$ 是整系数多项式的单位\period 由此, 读者可以证明: 整系数多项式的单位恰为 $1$, $-1$——这跟有理系数多项式的单位很不一样\period
+
+        设 $f$ 是整系数多项式, 且 $f$ 既不是零也不是单位\period $f$ 作为整系数多项式是可约的, 是指存在二个不是单位的 (整系数) 多项式 $f_1$, $f_2$, 使 $f = f_1 f_2$\period 所以, 若把 $4x$ 视为整系数多项式, $4x$ 是可约的: $4 = 4 \cdot x$, 且 $4$ 与 $x$ 都不是 (整系数多项式的) 单位\period 但若视 $4x$ 为有理系数多项式, 则 $4x$ 当然是不可约的\period
+
+        作者不希望这些小差异影响读者\period 而且, 这不是什么很重要的点\period
+    }, 则 $g(x)$ 是可约的;
 
     (ii) 若 $g(x)$ 是可约的, 则 $f(x)$ 是可约的\period
 

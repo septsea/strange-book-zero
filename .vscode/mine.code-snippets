@@ -83,4 +83,16 @@
             "\\end{pf}\n",
         ]
     },
+    "subsection": {
+        "scope": "latex",
+        "prefix": [
+            "subsection"
+        ],
+        "body": [
+            "\\subsection*{$1}",
+            "\\addcontentsline{toc}{subsection}{$1}",
+            "\\markright{$1}",
+            "$0"
+        ]
+    },
 }
