@@ -2,58 +2,58 @@
 \addcontentsline{toc}{subsection}{\PolynomialEquality}
 \markright{\PolynomialEquality}
 
-本节讨论二个多项式的相等\period
+本节讨论二个多项式的相等.
 
-设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 都是整环 $D$ 的元\period 根据定义, 我们已经知道,
+设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 都是整环 $D$ 的元. 根据定义, 我们已经知道,
 \begin{align*}
     a_0 + a_1 x + \cdots + a_n x^n = b_0 + b_1 x + \cdots + b_n x^n
 \end{align*}
 的一个必要与充分条件是
 \begin{align*}
-    a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+    a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n.
 \end{align*}
 
 之后, 我们会遇到形如
 \begin{align*}
     f(x) = a_0 + a_1 (x - c) + a_2 (x - c)^2 + \cdots + a_n (x - c)^n
 \end{align*}
-的式, 这里 $c \in D$\period 因为
+的式, 这里 $c \in D$. 因为
 \begin{align*}
     1, \quad x-c, \quad (x-c)^2, \quad \cdots, \quad (x-c)^n
 \end{align*}
-是首项系数为 $1$ 的 $0$, $1$, $2$, $\cdots$, $n$ 次多项式, 所以这个 $f(x)$ 也是多项式, 且 $\deg f(x) \leq n$\period 当 $a_n \neq 0$ 时, $\deg f(x) = n$, 且 $f(x)$ 的首项系数为 $a_n$\period
+是首项系数为 $1$ 的 $0$, $1$, $2$, $\cdots$, $n$ 次多项式, 所以这个 $f(x)$ 也是多项式, 且 $\deg f(x) \leq n$. 当 $a_n \neq 0$ 时, $\deg f(x) = n$, 且 $f(x)$ 的首项系数为 $a_n$.
 
 再作一个多项式
 \begin{align*}
-    g(x) = b_0 + b_1 (x - c) + b_2 (x - c)^2 + \cdots + b_n (x - c)^n \period
+    g(x) = b_0 + b_1 (x - c) + b_2 (x - c)^2 + \cdots + b_n (x - c)^n.
 \end{align*}
-$f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=0$, $(x-c)^\ell$ 就变为普通的 $x^\ell$\period 所以, $c=0$ 时, $f(x)=g(x)$ 的一个必要与充分条件是
+$f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等. 若 $c=0$, $(x-c)^\ell$ 就变为普通的 $x^\ell$. 所以, $c=0$ 时, $f(x)=g(x)$ 的一个必要与充分条件是
 \begin{align*}
-    a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+    a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n.
 \end{align*}
 可是, 如果 $c \neq 0$ 呢? 这个时候, 还是一样的条件吗?
 
-先看一个例\period
+先看一个例.
 
 \begin{example}
     我们试研究
     \begin{align*}
-        a_0 + a_1 (x - c) + a_2 (x - c)^2 = b_0 + b_1 (x - c) + b_2 (x - c)^2 \tag*{(\myStar)} \period
+        a_0 + a_1 (x - c) + a_2 (x - c)^2 = b_0 + b_1 (x - c) + b_2 (x - c)^2 \tag*{(\myStar)}.
     \end{align*}
     在中学, 我们已经知道
     \begin{align*}
-        (x - c)^2 = c^2 - 2cx + x^2 \period
+        (x - c)^2 = c^2 - 2cx + x^2.
     \end{align*}
     这样, (\myStar) 的左侧变为
     \begin{align*}
-             & a_0 + a_1 (x - c) + a_2 (x - c)^2                           \\
-        = {} & a_0 + a_1 (-c + x) + a_2 (c^2 - 2cx + x^2)                  \\
-        = {} & a_0 + (-a_1 c + a_1 x) + (a_2 c^2 + (-2a_2 c) x + a_2 x^2)  \\
-        = {} & (a_0 - a_1 c + a_2 c^2) + (a_1 -2a_2 c) x + a_2 x^2 \period
+             & a_0 + a_1 (x - c) + a_2 (x - c)^2                          \\
+        = {} & a_0 + a_1 (-c + x) + a_2 (c^2 - 2cx + x^2)                 \\
+        = {} & a_0 + (-a_1 c + a_1 x) + (a_2 c^2 + (-2a_2 c) x + a_2 x^2) \\
+        = {} & (a_0 - a_1 c + a_2 c^2) + (a_1 -2a_2 c) x + a_2 x^2.
     \end{align*}
     同理, (\myStar) 的右侧变为
     \begin{align*}
-        (b_0 - b_1 c + b_2 c^2) + (b_1 -2b_2 c) x + b_2 x^2 \period
+        (b_0 - b_1 c + b_2 c^2) + (b_1 -2b_2 c) x + b_2 x^2.
     \end{align*}
     所以, (\myStar) 成立等价于
     \begin{align*}
@@ -63,70 +63,70 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     \end{align*}
     即
     \begin{align*}
-        (a_0 - b_0) - c(a_1 - b_1) + c^2(a_2 - b_2) = {} & 0,        \\
-        (a_1 - b_1) - 2c(a_2 - b_2)                 = {} & 0,        \\
-        (a_2 - b_2)                                 = {} & 0 \period
+        (a_0 - b_0) - c(a_1 - b_1) + c^2(a_2 - b_2) = {} & 0, \\
+        (a_1 - b_1) - 2c(a_2 - b_2)                 = {} & 0, \\
+        (a_2 - b_2)                                 = {} & 0.
     \end{align*}
     由这个方程组, 可解出
     \begin{align*}
-        a_0 - b_0 = a_1 - b_1 = a_2 - b_2 = 0 \period
+        a_0 - b_0 = a_1 - b_1 = a_2 - b_2 = 0.
     \end{align*}
     这跟 $c = 0$ 时的
     \begin{align*}
         a_0 = b_0, \quad a_1 = b_1, \quad a_2 = b_2
     \end{align*}
-    是完全一致的\period
+    是完全一致的.
 \end{example}
 
 \begin{definition}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in D[x]$\period 设 $c_0$, $c_1$, $\cdots$, $c_n \in D$\period 我们说
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in D[x]$. 设 $c_0$, $c_1$, $\cdots$, $c_n \in D$. 我们说
     \begin{align*}
         c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_n p_n (x)
     \end{align*}
-    是多项式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合 \term{linear combination}\period $c_0$, $c_1$, $\cdots$, $c_n$ 就是此线性组合的系数\period
+    是多项式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合 \term{linear combination}. $c_0$, $c_1$, $\cdots$, $c_n$ 就是此线性组合的系数.
 
     若不存在一组不全为 $0$ 的 $D$ 中元 $d_0$, $d_1$, $\cdots$, $d_n$ 使
     \begin{align*}
         d_0 p_0 (x) + d_1 p_1 (x) + \cdots + d_n p_n (x) = 0,
     \end{align*}
-    则说 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的 \term{linearly independent}\period 换句话说, ``$p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的'' 意味着: 若 $D$ 中元 $r_0$, $r_1$, $\cdots$, $r_n$ 使
+    则说 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的 \term{linearly independent}. 换句话说, ``$p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的'' 意味着: 若 $D$ 中元 $r_0$, $r_1$, $\cdots$, $r_n$ 使
     \begin{align*}
         r_0 p_0 (x) + r_1 p_1 (x) + \cdots + r_n p_n (x) = 0,
     \end{align*}
-    则 $r_0 = r_1 = \cdots = r_n = 0$\period
+    则 $r_0 = r_1 = \cdots = r_n = 0$.
 \end{definition}
 
 \begin{example}
-    显然, $1$, $x$, $\cdots$, $x^n$ 是线性无关的\period 当然, 前面的例告诉我们, $1$, $x-c$, $(x-c)^2$ 也是线性无关的\period
+    显然, $1$, $x$, $\cdots$, $x^n$ 是线性无关的. 当然, 前面的例告诉我们, $1$, $x-c$, $(x-c)^2$ 也是线性无关的.
 \end{example}
 
 \begin{example}
-    单独一个非零多项式是线性无关的\period
+    单独一个非零多项式是线性无关的.
 \end{example}
 
 \begin{remark}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的\period
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的.
 
-    (i) 显然, 因为多项式的加法可交换, 随意打乱这 $n+1$ 个多项式的次序后得到的多项式仍线性无关\period
+    (i) 显然, 因为多项式的加法可交换, 随意打乱这 $n+1$ 个多项式的次序后得到的多项式仍线性无关.
 
-    (ii) 对任意 $\ell$ ($0 \leq \ell \leq n$), $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_{\ell} (x)$ 这 $\ell + 1$ 个多项式也是线性无关的\period 设 $c_0$, $c_1$, $\cdots$, $c_\ell \in D$, 且
+    (ii) 对任意 $\ell$ ($0 \leq \ell \leq n$), $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_{\ell} (x)$ 这 $\ell + 1$ 个多项式也是线性无关的. 设 $c_0$, $c_1$, $\cdots$, $c_\ell \in D$, 且
     \begin{align*}
-        c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_\ell p_\ell (x) = 0 \period
+        c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_\ell p_\ell (x) = 0.
     \end{align*}
     这个相当于
     \begin{align*}
-        c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_\ell p_\ell (x) + 0 p_{\ell+1} (x) + \cdots + 0 p_n (x) = 0 \period
+        c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_\ell p_\ell (x) + 0 p_{\ell+1} (x) + \cdots + 0 p_n (x) = 0.
     \end{align*}
     所以
     \begin{align*}
-        c_0 = c_1 = \cdots = c_\ell = \underbrace{0 = \cdots = 0}_{(n - \ell)\text{ $0$'s}} = 0 \period
+        c_0 = c_1 = \cdots = c_\ell = \underbrace{0 = \cdots = 0}_{(n - \ell)\text{ $0$'s}} = 0.
     \end{align*}
 
-    (iii) 根据 (i) (ii) 可知, 线性无关的多项式的片段也是线性无关的\period
+    (iii) 根据 (i) (ii) 可知, 线性无关的多项式的片段也是线性无关的.
 \end{remark}
 
 \begin{remark}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的\period 设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 都是 $D$ 的元\period 那么
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的. 设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 都是 $D$ 的元. 那么
     \begin{align*}
         a_0 p_0 (x) + a_1 p_1 (x) + \cdots + a_n p_n (x) = b_0 p_0 (x) + b_1 p_1 (x) + \cdots + b_n p_n (x)
     \end{align*}
@@ -140,59 +140,59 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     \end{align*}
     亦即
     \begin{align*}
-        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n.
     \end{align*}
-    由此可见, 线性无关的多项式有着优良的性质: 二个线性组合相等的一个必要与充分条件是对应的系数相等\period
+    由此可见, 线性无关的多项式有着优良的性质: 二个线性组合相等的一个必要与充分条件是对应的系数相等.
 \end{remark}
 
-我们知道, $1$, $x$, $\cdots$, $x^n$ 是线性无关的\period 在这串多项式里, 后一个的次比前一个的次多 $1$\period 不仅如此, 由多项式的定义可见, 每一个次不高于 $n$ 的多项式都可以写为它们的线性组合\period 下面的命题就是这二件事实的推广\period
+我们知道, $1$, $x$, $\cdots$, $x^n$ 是线性无关的. 在这串多项式里, 后一个的次比前一个的次多 $1$. 不仅如此, 由多项式的定义可见, 每一个次不高于 $n$ 的多项式都可以写为它们的线性组合. 下面的命题就是这二件事实的推广.
 
 \begin{proposition}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in D[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次多项式\period 则:
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in D[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次多项式. 则:
 
     (i) $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的;
 
-    (ii) 若 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的首项系数都是 $D$ 的单位, 则任意次不高于 $n$ 的多项式都可写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合\period 由 (i) 知, 这个组合的系数一定是唯一的\period
+    (ii) 若 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的首项系数都是 $D$ 的单位, 则任意次不高于 $n$ 的多项式都可写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合. 由 (i) 知, 这个组合的系数一定是唯一的.
 \end{proposition}
 
 \begin{pf}
-    (i) 用数学归纳法\period 当 $n=0$ 时, 只有一个 $0$ 次多项式 $p_0 (x) = c \neq 0$ 那么, 由 $dc = 0$ 可推出 $d = 0$\period 这样, 命题对 $n=0$ 成立\period 假定命题对 $n = \ell \geq 0$ 成立\period 设 $c_0$, $c_1$, $\cdots$, $c_{\ell + 1} \in D$ 使
+    (i) 用数学归纳法. 当 $n=0$ 时, 只有一个 $0$ 次多项式 $p_0 (x) = c \neq 0$ 那么, 由 $dc = 0$ 可推出 $d = 0$. 这样, 命题对 $n=0$ 成立. 假定命题对 $n = \ell \geq 0$ 成立. 设 $c_0$, $c_1$, $\cdots$, $c_{\ell + 1} \in D$ 使
     \begin{align*}
-        c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) + c_{\ell + 1} p_{\ell + 1} (x) = 0 \period
+        c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) + c_{\ell + 1} p_{\ell + 1} (x) = 0.
     \end{align*}
     记
     \begin{align*}
         r(x) = c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x),
     \end{align*}
-    则 $r(x)$ 的次不高于 $\ell$\period 所以
+    则 $r(x)$ 的次不高于 $\ell$. 所以
     \begin{align*}
-        c_{\ell + 1} p_{\ell + 1} (x) + r(x) = 0, \quad \deg r(x) \leq \ell < \deg p_{\ell + 1} (x) \period
+        c_{\ell + 1} p_{\ell + 1} (x) + r(x) = 0, \quad \deg r(x) \leq \ell < \deg p_{\ell + 1} (x).
     \end{align*}
     由上节命题知
     \begin{align*}
-        c_{\ell + 1} = 0, \quad r(x) = 0 \period
+        c_{\ell + 1} = 0, \quad r(x) = 0.
     \end{align*}
     根据归纳假设,
     \begin{align*}
-        r(x) = c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) = 0 \implies c_0 = c_1 = \cdots = c_{\ell} = 0 \period
+        r(x) = c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) = 0 \implies c_0 = c_1 = \cdots = c_{\ell} = 0.
     \end{align*}
     这样,
     \begin{align*}
-        c_0 = c_1 = \cdots = c_{\ell} = c_{\ell + 1} = 0 \period
+        c_0 = c_1 = \cdots = c_{\ell} = c_{\ell + 1} = 0.
     \end{align*}
-    也就是说, $n=\ell + 1$ 时, 命题成立\period
+    也就是说, $n=\ell + 1$ 时, 命题成立.
 
-    (ii) 用数学归纳法\period 当 $n=0$ 时, 只有一个 $0$ 次多项式 $p_0 (x) = c \neq 0$, 且 $c$ 是单位\period 任取次不高于 $0$ 的多项式 $d$\period 因为 $d = (dc^{-1})c$, 这样, 命题对 $n=0$ 成立\period 这样, 命题对 $n=0$ 成立\period 假定命题对 $n = \ell \geq 0$ 成立\period 任取次不高于 $\ell + 1$ 的多项式 $f(x)$\period 由于 $p_{\ell + 1} (x)$ 的首项系数是单位, 所以, 由带余除法知道, 存在多项式 $q(x)$, $r(x) \in D[x]$ 使
+    (ii) 用数学归纳法. 当 $n=0$ 时, 只有一个 $0$ 次多项式 $p_0 (x) = c \neq 0$, 且 $c$ 是单位. 任取次不高于 $0$ 的多项式 $d$. 因为 $d = (dc^{-1})c$, 这样, 命题对 $n=0$ 成立. 这样, 命题对 $n=0$ 成立. 假定命题对 $n = \ell \geq 0$ 成立. 任取次不高于 $\ell + 1$ 的多项式 $f(x)$. 由于 $p_{\ell + 1} (x)$ 的首项系数是单位, 所以, 由带余除法知道, 存在多项式 $q(x)$, $r(x) \in D[x]$ 使
     \begin{align*}
-        f(x) = q(x) p_{\ell + 1} (x) + r(x), \quad \deg r(x) \leq \ell \period
+        f(x) = q(x) p_{\ell + 1} (x) + r(x), \quad \deg r(x) \leq \ell.
     \end{align*}
     如果 $f(x)$ 的次不高于 $\ell$, 则 $q(x) = 0$; 如果 $f(x)$ 的次是 $\ell + 1$, 则
     \begin{align*}
-        \deg q(x) = \deg f(x) - \deg p_{\ell+1} (x) = 0 \period
+        \deg q(x) = \deg f(x) - \deg p_{\ell+1} (x) = 0.
     \end{align*}
-    也就是说, 存在 $c_{\ell + 1} \in D$ 使 $q(x) = c_{\ell + 1}$\period 所以
+    也就是说, 存在 $c_{\ell + 1} \in D$ 使 $q(x) = c_{\ell + 1}$. 所以
     \begin{align*}
-        f(x) = r(x) + c_{\ell + 1} p_{\ell + 1} (x), \quad \deg r(x) \leq \ell \period
+        f(x) = r(x) + c_{\ell + 1} p_{\ell + 1} (x), \quad \deg r(x) \leq \ell.
     \end{align*}
     根据归纳假设, 存在 $c_0$, $c_1$, $\cdots$, $c_{\ell} \in D$ 使
     \begin{align*}
@@ -200,62 +200,62 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     \end{align*}
     即
     \begin{align*}
-        f(x) = c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) + c_{\ell + 1} p_{\ell + 1} (x) \period
+        f(x) = c_0 p_0 (x) + c_1 p_1 (x) + \cdots + c_{\ell} p_{\ell} (x) + c_{\ell + 1} p_{\ell + 1} (x).
     \end{align*}
-    所以, $n = \ell + 1$ 时, 命题成立\period
+    所以, $n = \ell + 1$ 时, 命题成立.
 \end{pf}
 
 \begin{remark}
-    这里, (ii) 要求每个多项式的首项系数为单位是有必要的\period 考虑 $\ZZ$ 与 $\ZZ[x]$\period 取 $n=2$, 及
+    这里, (ii) 要求每个多项式的首项系数为单位是有必要的. 考虑 $\ZZ$ 与 $\ZZ[x]$. 取 $n=2$, 及
     \begin{align*}
-        p_0 (x) = -1, \quad p_1 (x) = 2x, \quad p_2 (x) = 3x^2 \period
+        p_0 (x) = -1, \quad p_1 (x) = 2x, \quad p_2 (x) = 3x^2.
     \end{align*}
-    根据上面的命题, 这三个多项式是线性无关的\period 考虑 $f(x) = 3 + x - 2x^2$\period 设 $c_0$, $c_1$, $c_2 \in \ZZ$ 使
+    根据上面的命题, 这三个多项式是线性无关的. 考虑 $f(x) = 3 + x - 2x^2$. 设 $c_0$, $c_1$, $c_2 \in \ZZ$ 使
     \begin{align*}
-        3 + x - 2x^2 = c_0 \cdot (-1) + c_1 \cdot 2x + c_2 \cdot 3x^2 \period
+        3 + x - 2x^2 = c_0 \cdot (-1) + c_1 \cdot 2x + c_2 \cdot 3x^2.
     \end{align*}
     这相当于
     \begin{align*}
-        3 = -c_0, \quad 1 = 2c_1, \quad -2 = 3c_2 \period
+        3 = -c_0, \quad 1 = 2c_1, \quad -2 = 3c_2.
     \end{align*}
-    容易看出, 这个方程组无整数解, 所以 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的 (系数为 $\ZZ$ 的元的) 线性组合不能表示每一个次不高于 $2$ 的多项式\period
+    容易看出, 这个方程组无整数解, 所以 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的 (系数为 $\ZZ$ 的元的) 线性组合不能表示每一个次不高于 $2$ 的多项式.
 \end{remark}
 
 \begin{remark}
-    不难看出, $1$, $x^2$, $x^3$ 线性无关\period 可是, 它们不能表示每一个次不高于 $3$ 的多项式, 因为其线性组合
+    不难看出, $1$, $x^2$, $x^3$ 线性无关. 可是, 它们不能表示每一个次不高于 $3$ 的多项式, 因为其线性组合
     \begin{align*}
         c_0 + c_1 x^2 + c_2 x^3, \quad c_0, c_1, c_2 \in D
     \end{align*}
-    的 $1$ 次系数总是 $0$\period 所以, 最简单的 $1$ 次式 $x$ 无法用 $1$, $x^2$, $x^3$ 的线性组合表出\period
+    的 $1$ 次系数总是 $0$. 所以, 最简单的 $1$ 次式 $x$ 无法用 $1$, $x^2$, $x^3$ 的线性组合表出.
 
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 线性无关\period 设这些多项式的次的最大值为 $d$:
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 线性无关. 设这些多项式的次的最大值为 $d$:
     \begin{align*}
-        d = \max \{\, \deg p_0 (x), \deg p_1 (x), \cdots, \deg p_n (x) \,\} \period
+        d = \max \{\, \deg p_0 (x), \deg p_1 (x), \cdots, \deg p_n (x) \,\}.
     \end{align*}
-    在什么条件下, 其线性组合能表示每一个次不高于 $d$ 的多项式? 上面的命题给出了部分的解答\period 为什么说它是 ``部分的解答'' 呢? 考虑 $\ZZ[x]$ 的二个 $1$ 次多项式
+    在什么条件下, 其线性组合能表示每一个次不高于 $d$ 的多项式? 上面的命题给出了部分的解答. 为什么说它是 ``部分的解答'' 呢? 考虑 $\ZZ[x]$ 的二个 $1$ 次多项式
     \begin{align*}
-        p_0 (x) = 3 - 7x, \quad p_1 (x) = -2 + 5x \period
+        p_0 (x) = 3 - 7x, \quad p_1 (x) = -2 + 5x.
     \end{align*}
-    读者可验证, 这二个多项式线性无关\period 由于
+    读者可验证, 这二个多项式线性无关. 由于
     \begin{align*}
         1 = 5p_0 (x) + 7p_1 (x), \quad x = 2p_0 (x) + 3p_1 (x),
     \end{align*}
-    故每一个次不高于 $1$ 的多项式都可写为 $p_0 (x)$ 与 $p_1 (x)$ 的线性组合\period
+    故每一个次不高于 $1$ 的多项式都可写为 $p_0 (x)$ 与 $p_1 (x)$ 的线性组合.
 
-    这个问题的详细讨论将超出本文的范围\period 读者也许可在线性代数中找到破解此问题的方法\period
+    这个问题的详细讨论将超出本文的范围. 读者也许可在线性代数中找到破解此问题的方法.
 \end{remark}
 
-本节开头的问题总算得到了解答\period 不仅如此, 我们得到了更深的结论:
+本节开头的问题总算得到了解答. 不仅如此, 我们得到了更深的结论:
 
 \begin{proposition}
-    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 都是 $D$ 的元\period 设 $c \in D$\period 再设
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 都是 $D$ 的元. 设 $c \in D$. 再设
     \begin{align*}
-        f(x) = {} & a_0 + a_1 (x - c) + a_2 (x - c)^2 + \cdots + a_n (x - c)^n,        \\
-        g(x) = {} & b_0 + b_1 (x - c) + b_2 (x - c)^2 + \cdots + b_n (x - c)^n \period
+        f(x) = {} & a_0 + a_1 (x - c) + a_2 (x - c)^2 + \cdots + a_n (x - c)^n, \\
+        g(x) = {} & b_0 + b_1 (x - c) + b_2 (x - c)^2 + \cdots + b_n (x - c)^n.
     \end{align*}
     则 $f(x)=g(x)$ 的一个必要与充分条件是
     \begin{align*}
-        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n.
     \end{align*}
     并且, 任取
     \begin{align*}
@@ -263,6 +263,6 @@ $f(x)$ 与 $g(x)$ 都是多项式, 自然可以讨论是否相等\period 若 $c=
     \end{align*}
     必存在 $v_0$, $v_1$, $\cdots$, $v_n \in D$ 使
     \begin{align*}
-        f(x) = v_0 + v_1 (x - c) + v_2 (x - c)^2 + \cdots + v_n (x - c)^n \period
+        f(x) = v_0 + v_1 (x - c) + v_2 (x - c)^2 + \cdots + v_n (x - c)^n.
     \end{align*}
 \end{proposition}

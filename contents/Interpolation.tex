@@ -2,131 +2,131 @@
 \addcontentsline{toc}{subsection}{\Interpolation}
 \markright{\Interpolation}
 
-本节讨论多项式插值问题\period
+本节讨论多项式插值问题.
 
-``插值'' 听上去可能比较陌生\period 不过, 读者在初中一定见过这样的问题:
+``插值'' 听上去可能比较陌生. 不过, 读者在初中一定见过这样的问题:
 
 \begin{example}
-    已知一次函数的图像经过点 $(-1,2)$ 与 $(1,3)$, 求其解析式\period
+    已知一次函数的图像经过点 $(-1,2)$ 与 $(1,3)$, 求其解析式.
 \end{example}
 
 \begin{example}
-    已知二次函数的图像经过点 $(-1,-1)$, $(1,1)$ 与 $(2,5)$, 求其解析式\period
+    已知二次函数的图像经过点 $(-1,-1)$, $(1,1)$ 与 $(2,5)$, 求其解析式.
 \end{example}
 
-在初中, 我们是用 ``待定系数法'' \term{the method of undetermined coefficients} 求解的\period 它的基本思想是 ``求什么, 设什么''\period 设此一次函数的解析式为
+在初中, 我们是用 ``待定系数法'' \term{the method of undetermined coefficients} 求解的. 它的基本思想是 ``求什么, 设什么''. 设此一次函数的解析式为
 \begin{align*}
-    y = ax + b, \quad a \neq 0 \period
+    y = ax + b, \quad a \neq 0.
 \end{align*}
 代入已知条件, 得到二元一次方程组
 \begin{align*}
     \begin{cases}
         2 = -a + b, \\
-        3 = a + b \period
+        3 = a + b.
     \end{cases}
 \end{align*}
 由此可解出
 \begin{align*}
-    a = \frac12, \quad b = \frac52 \period
+    a = \frac12, \quad b = \frac52.
 \end{align*}
 所以此一次函数的解析式为
 \begin{align*}
-    y = \frac12 x + \frac52 \period
+    y = \frac12 x + \frac52.
 \end{align*}
 
 完全类似地, 设此二次函数的解析式为
 \begin{align*}
-    y = ax^2 + bx + c, \quad a \neq 0 \period
+    y = ax^2 + bx + c, \quad a \neq 0.
 \end{align*}
 代入已知条件, 得到三元一次方程组
 \begin{align*}
     \begin{cases}
         -1 = a - b + c, \\
         1 = a + b + c,  \\
-        5 = 4a + 2b + c \period
+        5 = 4a + 2b + c.
     \end{cases}
 \end{align*}
 由此可解出
 \begin{align*}
-    a = 1, \quad b = 1, \quad c = -1 \period
+    a = 1, \quad b = 1, \quad c = -1.
 \end{align*}
 所以此二次函数的解析式为
 \begin{align*}
-    y = x^2 + x - 1 \period
+    y = x^2 + x - 1.
 \end{align*}
 
-在初中, 一般用左 $y$ 右 $x$ 的等式表示函数 (的解析式)\period 这种表示法强调因变元 \term{dependent variable} $y$ 与自变元 \term{independent variable} $x$ 的关系\period 不过, 既然我们有 $f(x)$ 这样的记号, 那么因变元就不必写出了\period 并且, 我们在前节提到, 我们不再区分多项式与多项式函数\period 所以, 为方便, 我们用另一种方式叙述这二个问题:
+在初中, 一般用左 $y$ 右 $x$ 的等式表示函数 (的解析式). 这种表示法强调因变元 \term{dependent variable} $y$ 与自变元 \term{independent variable} $x$ 的关系. 不过, 既然我们有 $f(x)$ 这样的记号, 那么因变元就不必写出了. 并且, 我们在前节提到, 我们不再区分多项式与多项式函数. 所以, 为方便, 我们用另一种方式叙述这二个问题:
 
 \begin{example}
-    求次为 $1$ 的多项式 $f(x)$, 使 $f(-1)=2$, $f(1)=3$\period
+    求次为 $1$ 的多项式 $f(x)$, 使 $f(-1)=2$, $f(1)=3$.
 \end{example}
 
 \begin{example}
-    求次为 $2$ 的多项式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$\period
+    求次为 $2$ 的多项式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$.
 \end{example}
 
-设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 这 $n+1$ 个不同的元称为 $n+1$ 个节点 \term{node}\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 通俗地说, 多项式插值 \term{polynomial interpolation} 的任务是: 找一个多项式 $f(x) \in \FF[x]$ 使
+设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 这 $n+1$ 个不同的元称为 $n+1$ 个节点 \term{node}. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 通俗地说, 多项式插值 \term{polynomial interpolation} 的任务是: 找一个多项式 $f(x) \in \FF[x]$ 使
 \begin{align*}
     f(x_i) = y_i \quad (i = 0,1,\cdots,n),
 \end{align*}
-且适合 ``附加条件''\period
+且适合 ``附加条件''.
 
-这里, ``附加条件'' 是有必要的: 如果太松, 可能找出的 $f(x)$ 不止一个; 如果太紧, 则可能找不到 $f(x)$\period
+这里, ``附加条件'' 是有必要的: 如果太松, 可能找出的 $f(x)$ 不止一个; 如果太紧, 则可能找不到 $f(x)$.
 
 \begin{example}
-    找一个多项式 $f(x)$ 使 $f(-1)=-1$, $f(0)=0$, $f(1)=1$\period
+    找一个多项式 $f(x)$ 使 $f(-1)=-1$, $f(0)=0$, $f(1)=1$.
 
-    如果不作任何别的约束, 那么 $n$ 是奇数时, $f(x) = x^n$ 适合这些条件\period 不仅如此, 下面的多项式也适合条件:
+    如果不作任何别的约束, 那么 $n$ 是奇数时, $f(x) = x^n$ 适合这些条件. 不仅如此, 下面的多项式也适合条件:
     \begin{align*}
-        \frac{1}{6}x + \frac{1}{3}x^3 + \frac{1}{2}x^5, \quad -x + 2x^7, \quad \frac{x + x^3 + \cdots + x^{2k-1}}{k} \period
+        \frac{1}{6}x + \frac{1}{3}x^3 + \frac{1}{2}x^5, \quad -x + 2x^7, \quad \frac{x + x^3 + \cdots + x^{2k-1}}{k}.
     \end{align*}
 
-    在初中, 我们知道, 若平面直角坐标系的三点 $A$, $B$, $C$ 不在同一直线上, 且任意二点的连线既不与 $y$ 轴平行也不与 $y$ 轴重合, 则存在 (唯一的) 二次函数 $y = ax^2 + bx + c$ ($a \neq 0$) 使其图像过此三点\period 假如 ``附加条件'' 是 ``$f(x)$ 是次为 $2$ 的多项式'' 呢? 设
+    在初中, 我们知道, 若平面直角坐标系的三点 $A$, $B$, $C$ 不在同一直线上, 且任意二点的连线既不与 $y$ 轴平行也不与 $y$ 轴重合, 则存在 (唯一的) 二次函数 $y = ax^2 + bx + c$ ($a \neq 0$) 使其图像过此三点. 假如 ``附加条件'' 是 ``$f(x)$ 是次为 $2$ 的多项式'' 呢? 设
     \begin{align*}
-        f(x) = ax^2 + bx + c, \quad a \neq 0 \period
+        f(x) = ax^2 + bx + c, \quad a \neq 0.
     \end{align*}
     代入已知条件, 得到三元一次方程组
     \begin{align*}
         \begin{cases}
             -1 = a - b + c, \\
             0 = c,          \\
-            1 = a + b + c \period
+            1 = a + b + c.
         \end{cases}
     \end{align*}
     由此可解出
     \begin{align*}
-        a = 0, \quad b = 1, \quad c = 0 \period
+        a = 0, \quad b = 1, \quad c = 0.
     \end{align*}
-    这与假定 $a \neq 0$ 不符\period 所以, 这个条件太紧了\period
+    这与假定 $a \neq 0$ 不符. 所以, 这个条件太紧了.
 \end{example}
 
 有没有什么 ``松紧得当的'' ``附加条件'' 呢? 回想一下这个命题:
 
 \begin{proposition}
-    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\FF$ 的元\period 设 $n$ 是非负整数\period 设
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\FF$ 的元. 设 $n$ 是非负整数. 设
     \begin{align*}
-        f(x) = \sum_{i = 0}^n a_i x^i, \quad g(x) = \sum_{i = 0}^n b_i x^i \period
+        f(x) = \sum_{i = 0}^n a_i x^i, \quad g(x) = \sum_{i = 0}^n b_i x^i.
     \end{align*}
     若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
     \begin{align*}
         f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
     \end{align*}
-    则 $f(x)$ 必等于 $g(x)$\period 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等\period
+    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等.
 \end{proposition}
 
-由此, 我们可以试着作出这样的 ``附加条件'': 多项式的次低于节点数\period 至少, 这个条件不是太松: 因为上面的命题说, 这样的多项式若存在, 必唯一\period
+由此, 我们可以试着作出这样的 ``附加条件'': 多项式的次低于节点数. 至少, 这个条件不是太松: 因为上面的命题说, 这样的多项式若存在, 必唯一.
 
-这个 ``附加条件'' 一定能让我们求出这个多项式吗? 不好说\period
+这个 ``附加条件'' 一定能让我们求出这个多项式吗? 不好说.
 
 \begin{example}
-    如果把 $\FF$ 跟 $\FF[x]$ 改为 $\ZZ$ 跟 $\ZZ[x]$, 那么就没有 $1$ 次多项式 $f(x)$ 使 $f(-1)=2$, $f(1)=3$\period 为啥? 看二元一次方程组
+    如果把 $\FF$ 跟 $\FF[x]$ 改为 $\ZZ$ 跟 $\ZZ[x]$, 那么就没有 $1$ 次多项式 $f(x)$ 使 $f(-1)=2$, $f(1)=3$. 为啥? 看二元一次方程组
     \begin{align*}
         \begin{cases}
             2 = -a + b, \\
-            3 = a + b \period
+            3 = a + b.
         \end{cases}
     \end{align*}
-    二式相加, 可得 $5 = 2b$\period 可是, 如果 $b$ 是整数, 那么 $2b$ 是偶数\period 偶数 $2b$ 不可能等于奇数 $5$ 呀!
+    二式相加, 可得 $5 = 2b$. 可是, 如果 $b$ 是整数, 那么 $2b$ 是偶数. 偶数 $2b$ 不可能等于奇数 $5$ 呀!
 \end{example}
 
 具体地说, 设次低于节点数 $n+1$ 的多项式
@@ -144,54 +144,54 @@
         y_1 = 1 a_0 + x_1 a_1 + \cdots + x_1^n a_n, \\
         \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots
         \cdots \cdots \cdots \cdots,                \\
-        y_n = 1 a_0 + x_n a_1 + \cdots + x_n^n a_n \period
+        y_n = 1 a_0 + x_n a_1 + \cdots + x_n^n a_n.
     \end{cases}
 \end{align*}
-这是一个有 $n+1$ 个 $n+1$ 元一次方程的方程组, 且未知元是 $a_0$, $a_1$, $\cdots$, $a_n$\period 假如我们能解出这个方程组, 且这个方程组的解 ``不超出 $\FF$ 的范围'' (我们说, 上面的二元一次方程组超出了 $\ZZ$ 的范围, 但没有超出 $\FF$ 的范围), 那么就能说明 ``多项式的次低于节点数'' 这个 ``附加条件'' 是 ``松紧得当的''\period
+这是一个有 $n+1$ 个 $n+1$ 元一次方程的方程组, 且未知元是 $a_0$, $a_1$, $\cdots$, $a_n$. 假如我们能解出这个方程组, 且这个方程组的解 ``不超出 $\FF$ 的范围'' (我们说, 上面的二元一次方程组超出了 $\ZZ$ 的范围, 但没有超出 $\FF$ 的范围), 那么就能说明 ``多项式的次低于节点数'' 这个 ``附加条件'' 是 ``松紧得当的''.
 
-可惜, 我们在初中并没有研究一般的多元一次方程组\period 我们在学习二 (三) 元一次方程组的时候, 主要学习怎么用代入消元法与加减消元法解方程组, 并没有过多地讨论方程组什么时候有解与解的结构这样的问题\period
+可惜, 我们在初中并没有研究一般的多元一次方程组. 我们在学习二 (三) 元一次方程组的时候, 主要学习怎么用代入消元法与加减消元法解方程组, 并没有过多地讨论方程组什么时候有解与解的结构这样的问题.
 
-我们换一个角度看问题\period 首先, 我们有如下命题:
+我们换一个角度看问题. 首先, 我们有如下命题:
 
 \begin{proposition}
-    设 $t_0$, $t_1$, $\cdots$, $t_{s-1} \in \FF$ 互不相同\period 则 $t_0$, $t_1$, $\cdots$, $t_{s-1}$ ($1 \leq s \leq n$) 是 $n$ 次多项式 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-s$ 次多项式 $q(x) \in \FF[x]$ 使
+    设 $t_0$, $t_1$, $\cdots$, $t_{s-1} \in \FF$ 互不相同. 则 $t_0$, $t_1$, $\cdots$, $t_{s-1}$ ($1 \leq s \leq n$) 是 $n$ 次多项式 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-s$ 次多项式 $q(x) \in \FF[x]$ 使
     \begin{align*}
-        f(x) = (x - t_0)(x - t_1) \cdots (x-t_{s-1}) q(x) \period
+        f(x) = (x - t_0)(x - t_1) \cdots (x-t_{s-1}) q(x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    先看充分性\period 既然 $f(x)$ 能写为这种形式, 将 $x$ 换为 $t_i$ ($i = 0$, $1$, $\cdots$, $s-1$), 则有 $f(t_i) = 0$\period
+    先看充分性. 既然 $f(x)$ 能写为这种形式, 将 $x$ 换为 $t_i$ ($i = 0$, $1$, $\cdots$, $s-1$), 则有 $f(t_i) = 0$.
 
-    再看必要性\period 因为 $t_0$ 是 $f(x)$ 的根, 故存在 $n-1$ 次多项式 $q_1 (x) \in \FF[x]$ 使
+    再看必要性. 因为 $t_0$ 是 $f(x)$ 的根, 故存在 $n-1$ 次多项式 $q_1 (x) \in \FF[x]$ 使
     \begin{align*}
-        f(x) = (x - t_0) q_1 (x) \period
+        f(x) = (x - t_0) q_1 (x).
     \end{align*}
-    设 $t_j$ 是 $t_1$, $t_2$, $\cdots$, $t_{s-1}$ 的一个\period 则 $t_j \neq t_0$\period 因为 $t_j$ 也是 $f(x)$ 的根, 故
+    设 $t_j$ 是 $t_1$, $t_2$, $\cdots$, $t_{s-1}$ 的一个. 则 $t_j \neq t_0$. 因为 $t_j$ 也是 $f(x)$ 的根, 故
     \begin{align*}
-        (t_j - t_0) q_1 (t_j) = f(t_j) = 0 = (t_j - t_0) 0 \period
+        (t_j - t_0) q_1 (t_j) = f(t_j) = 0 = (t_j - t_0) 0.
     \end{align*}
-    根据消去律, $q_1 (t_j) = 0$\period 这样, $t_1$, $\cdots$, $t_{s-1}$ 这 $s-1$ 个 $\FF$ 中元是 $q_1 (x)$ 的根\period 所以, 对 $q_1 (x)$ 来说, 存在 $n-1-1 = n-2$ 次多项式 $q_2 (x) \in \FF[x]$ 使
+    根据消去律, $q_1 (t_j) = 0$. 这样, $t_1$, $\cdots$, $t_{s-1}$ 这 $s-1$ 个 $\FF$ 中元是 $q_1 (x)$ 的根. 所以, 对 $q_1 (x)$ 来说, 存在 $n-1-1 = n-2$ 次多项式 $q_2 (x) \in \FF[x]$ 使
     \begin{align*}
         q_1 (x) = (x - t_1) q_2 (x) \implies f(x) = (x - t_0) (x - t_1) q_2 (x),
     \end{align*}
-    且 $t_2$, $\cdots$, $t_{s-1}$ 这 $s-2$ 个 $\FF$ 中元是 $q_2 (x)$ 的根\period 再将这个过程进行 $s-2$ 次, 可得到 $n-s$ 次多项式 $q_s (x) \in \FF[x]$ 使
+    且 $t_2$, $\cdots$, $t_{s-1}$ 这 $s-2$ 个 $\FF$ 中元是 $q_2 (x)$ 的根. 再将这个过程进行 $s-2$ 次, 可得到 $n-s$ 次多项式 $q_s (x) \in \FF[x]$ 使
     \begin{align*}
-        f(x) = (x - t_0) (x - t_1) \cdots (x - t_{s-1}) q_s (x) \period
+        f(x) = (x - t_0) (x - t_1) \cdots (x - t_{s-1}) q_s (x).
     \end{align*}
-    取 $q(x) = q_s (x)$ 即可\period
+    取 $q(x) = q_s (x)$ 即可.
 \end{pf}
 
 \begin{example}
-    我们考虑非常特殊的情形\period 如果 $y_0$, $y_1$, $\cdots$, $y_n$ 中恰有一个是 $1$, 而剩下的全是 $0$, 那这样的多项式应该长什么样呢?
+    我们考虑非常特殊的情形. 如果 $y_0$, $y_1$, $\cdots$, $y_n$ 中恰有一个是 $1$, 而剩下的全是 $0$, 那这样的多项式应该长什么样呢?
 
-    以 $y_0 = 1$, $y_1 = y_2 = \cdots = y_n = 0$ 为例\period 这样, 多项式 $f(x)$ 有根 $x_1$, $x_2$, $\cdots$, $x_n$\period 根据上个命题, 存在多项式 $q(x)$ 使
+    以 $y_0 = 1$, $y_1 = y_2 = \cdots = y_n = 0$ 为例. 这样, 多项式 $f(x)$ 有根 $x_1$, $x_2$, $\cdots$, $x_n$. 根据上个命题, 存在多项式 $q(x)$ 使
     \begin{align*}
-        f(x) = q(x) (x - x_1) (x - x_2) \cdots (x - x_n) \period
+        f(x) = q(x) (x - x_1) (x - x_2) \cdots (x - x_n).
     \end{align*}
     因为 $f(x)$ 的次低于 $n+1$, 而 $(x - x_1) (x - x_2) \cdots (x - x_n)$ 的次为 $n$, 故 $q(x)$ 一定是非零的数 $c$, 即
     \begin{align*}
-        f(x) = c (x - x_1) (x - x_2) \cdots (x - x_n) \period
+        f(x) = c (x - x_1) (x - x_2) \cdots (x - x_n).
     \end{align*}
     因为 $f(x_0) = y_0 = 1$, 故
     \begin{align*}
@@ -199,36 +199,36 @@
     \end{align*}
     也就是
     \begin{align*}
-        c = \frac{1}{(x_0 - x_1) (x_0 - x_2) \cdots (x_0 - x_n)} \period
+        c = \frac{1}{(x_0 - x_1) (x_0 - x_2) \cdots (x_0 - x_n)}.
     \end{align*}
     故
     \begin{align*}
-        f(x) = \frac{(x - x_1) (x - x_2) \cdots (x - x_n)}{(x_0 - x_1) (x_0 - x_2) \cdots (x_0 - x_n)} \period
+        f(x) = \frac{(x - x_1) (x - x_2) \cdots (x - x_n)}{(x_0 - x_1) (x_0 - x_2) \cdots (x_0 - x_n)}.
     \end{align*}
 
     类似地, 适合条件 $y_1 = 1$, $y_0 = y_2 = y_3 = \cdots = y_n = 0$ 的多项式是
     \begin{align*}
-        \frac{(x - x_0)(x - x_2)(x - x_3) \cdots (x - x_n)}{(x_1 - x_0)(x_1 - x_2)(x_1 - x_3) \cdots (x_1 - x_n)} \period
+        \frac{(x - x_0)(x - x_2)(x - x_3) \cdots (x - x_n)}{(x_1 - x_0)(x_1 - x_2)(x_1 - x_3) \cdots (x_1 - x_n)}.
     \end{align*}
     可以将这个多项式简单地写为
     \begin{align*}
-        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq 1\end{smallmatrix}} \frac{x - x_\ell}{x_1 - x_\ell} \period
+        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq 1\end{smallmatrix}} \frac{x - x_\ell}{x_1 - x_\ell}.
     \end{align*}
     上面的 $f(x)$ 也可以写为
     \begin{align*}
-        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq 0\end{smallmatrix}} \frac{x - x_\ell}{x_0 - x_\ell} \period
+        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq 0\end{smallmatrix}} \frac{x - x_\ell}{x_0 - x_\ell}.
     \end{align*}
 \end{example}
 
-回到一般的设定 (也就是说, $y_0$, $y_1$, $\cdots$, $y_n$ 是 $\FF$ 的任意元)\period 作 $n+1$ 个多项式
+回到一般的设定 (也就是说, $y_0$, $y_1$, $\cdots$, $y_n$ 是 $\FF$ 的任意元). 作 $n+1$ 个多项式
 \begin{align*}
-    L_{i} (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell} \quad (i = 0,1,\cdots,n) \period
+    L_{i} (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell} \quad (i = 0,1,\cdots,n).
 \end{align*}
 不难看出, 任取 $i,j = 0,1,\cdots,n$,
 \begin{align*}
     L_{i} (x_j) = \begin{cases}
         1, \quad i = j; \\
-        0, \quad i \neq j \period
+        0, \quad i \neq j.
     \end{cases}
 \end{align*}
 所以
@@ -241,13 +241,13 @@
 \end{align*}
 且
 \begin{align*}
-    \deg f(x) \leq n < n + 1 \period
+    \deg f(x) \leq n < n + 1.
 \end{align*}
 
 综合上面的事实, 我们已经证明了
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 存在唯一的多项式
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 存在唯一的多项式
     \begin{align*}
         f(x) = \sum_{i = 0}^{n} y_i \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell}
     \end{align*}
@@ -257,37 +257,37 @@
     \end{align*}
     且
     \begin{align*}
-        \deg f(x) < n + 1 \period
+        \deg f(x) < n + 1.
     \end{align*}
-    这个公式的一个名字是 ``Lagrange 插值公式'' \term{Lagrange's interpolation formula}\period
+    这个公式的一个名字是 ``Lagrange 插值公式'' \term{Lagrange's interpolation formula}.
 \end{proposition}
 
 \begin{remark}
-    我们在前面接触的线性无关的多项式组 (几乎都) 是次不等的多项式\period Lagrange 插值公式告诉我们, $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 适合:
+    我们在前面接触的线性无关的多项式组 (几乎都) 是次不等的多项式. Lagrange 插值公式告诉我们, $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 适合:
 
     (i) $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 是线性无关的;
 
     (ii) 任意次不高于 $n$ 的多项式都可唯一地写为 $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 的线性组合;
 
-    (iii) $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 全为 $n$ 次多项式\period
+    (iii) $L_0 (x)$, $L_1 (x)$, $\cdots$, $L_n (x)$ 全为 $n$ 次多项式.
 \end{remark}
 
 \begin{remark}
     由上面的公式, 可以看出, $f(x)$ 的 $n$ 次系数是
     \begin{align*}
-        \sum_{i = 0}^{n} y_i \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{1}{x_i - x_\ell} \period
+        \sum_{i = 0}^{n} y_i \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{1}{x_i - x_\ell}.
     \end{align*}
-    看上去有点复杂\period 我们想个办法简单地写出 $\prod$ 符号代表的内容\period 作 $n+1$ 次多项式
+    看上去有点复杂. 我们想个办法简单地写出 $\prod$ 符号代表的内容. 作 $n+1$ 次多项式
     \begin{align*}
-        N_{n+1} (x) = (x - x_0) (x - x_1) \cdots (x - x_n) \period
+        N_{n+1} (x) = (x - x_0) (x - x_1) \cdots (x - x_n).
     \end{align*}
-    从 $0$, $1$, $\cdots$, $n$ 里任取一个整数 $i$\period 那么
+    从 $0$, $1$, $\cdots$, $n$ 里任取一个整数 $i$. 那么
     \begin{align*}
-        N_{n+1} (x) = (x - x_i) \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell) \period
+        N_{n+1} (x) = (x - x_i) \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell).
     \end{align*}
     二边求微商, 有
     \begin{align*}
-        N_{n+1} (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell) + (x - x_i) \left( \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell) \right)^{\prime} \period
+        N_{n+1} (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell) + (x - x_i) \left( \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell) \right)^{\prime}.
     \end{align*}
     用 $x_i$ 代替 $x$, 有
     \begin{align*}
@@ -295,25 +295,25 @@
     \end{align*}
     即
     \begin{align*}
-        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{1}{x_i - x_\ell} = \frac{1}{N_{n+1}^{\prime} (x_i)} \period
+        \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{1}{x_i - x_\ell} = \frac{1}{N_{n+1}^{\prime} (x_i)}.
     \end{align*}
     这样, $f(x)$ 的 $n$ 次系数可简单地写为
     \begin{align*}
-        \sum_{i = 0}^{n} \frac{y_i}{N_{n+1}^{\prime} (x_i)} \period
+        \sum_{i = 0}^{n} \frac{y_i}{N_{n+1}^{\prime} (x_i)}.
     \end{align*}
 \end{remark}
 
 \begin{example}
-    取 $n = 2$\period 取
+    取 $n = 2$. 取
     \begin{align*}
-         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2,        \\
-         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5 \period
+         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2, \\
+         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5.
     \end{align*}
     计算 $L_0 (x)$, $L_1 (x)$, $L_2 (x)$:
     \begin{align*}
          & L_0 (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq 2 \\\ell \neq 0\end{smallmatrix}} \frac{x - x_\ell}{x_0 - x_\ell} = \frac{(x - 1)(x - 2)}{(-1 - 1)(-1 - 2)} = \frac16 x^2 - \frac12 x + \frac13, \\
          & L_1 (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq 2 \\\ell \neq 1\end{smallmatrix}} \frac{x - x_\ell}{x_1 - x_\ell} = \frac{(x + 1)(x - 2)}{(1 + 1)(1 - 2)} = -\frac12 x^2 + \frac12 x + 1,        \\
-         & L_2 (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq 2 \\\ell \neq 2\end{smallmatrix}} \frac{x - x_\ell}{x_2 - x_\ell} = \frac{(x + 1)(x - 1)}{(2 + 1)(2 - 1)} = \frac13 x^2 - \frac13 \period
+         & L_2 (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq 2 \\\ell \neq 2\end{smallmatrix}} \frac{x - x_\ell}{x_2 - x_\ell} = \frac{(x + 1)(x - 1)}{(2 + 1)(2 - 1)} = \frac13 x^2 - \frac13.
     \end{align*}
     所以, 适合条件
     \begin{align*}
@@ -327,62 +327,62 @@
         = {} & -\frac16 x^2 + \frac12 x - \frac13
         - \frac12 x^2 + \frac12 x + 1
         + \frac53 x^2 - \frac53                   \\
-        = {} & x^2 + x - 1 \period
+        = {} & x^2 + x - 1.
     \end{align*}
-    这跟前面用三元一次方程组算出的答案完全一致\period
+    这跟前面用三元一次方程组算出的答案完全一致.
 \end{example}
 
 \begin{example}
-    取 $n = 3$\period 在上例的基础上, 追加
+    取 $n = 3$. 在上例的基础上, 追加
     \begin{align*}
-        x_3 = -2, \quad y_3 = -11 \period
+        x_3 = -2, \quad y_3 = -11.
     \end{align*}
     我们的目标是: 找多项式 $f(x)$ 适合条件
     \begin{align*}
          & f(-1) = -1, \quad f(1) = 1, \quad f(2) = 5, \quad f(-2) = -11, \\
-         & \deg f(x) < n + 1 = 4 \period
+         & \deg f(x) < n + 1 = 4.
     \end{align*}
-    在原理上, 并没有什么复杂的地方\period 求出 $L_0 (x)$, $L_1 (x)$, $L_2 (x)$, $L_3 (x)$ 后, 答案就出来了:
+    在原理上, 并没有什么复杂的地方. 求出 $L_0 (x)$, $L_1 (x)$, $L_2 (x)$, $L_3 (x)$ 后, 答案就出来了:
     \begin{align*}
         f(x)
-        = {} & - \frac{(x-1)(x-2)(x+2)}{(-1-1)(-1-2)(-1+2)} + \frac{(x+1)(x-2)(x+2)}{(1+1)(1-2)(1+2)}                          \\
-             & + 5 \cdot \frac{(x+1)(x-1)(x+2)}{(2+1)(2-1)(2+2)} - 11 \cdot \frac{(x+1)(x-1)(x-2)}{(-2+1)(-2-1)(-2-2)} \period
+        = {} & - \frac{(x-1)(x-2)(x+2)}{(-1-1)(-1-2)(-1+2)} + \frac{(x+1)(x-2)(x+2)}{(1+1)(1-2)(1+2)}                   \\
+             & + 5 \cdot \frac{(x+1)(x-1)(x+2)}{(2+1)(2-1)(2+2)} - 11 \cdot \frac{(x+1)(x-1)(x-2)}{(-2+1)(-2-1)(-2-2)}.
     \end{align*}
-    不过, 实践告诉我们, 拆开 $4$ 个 $3$ 次多项式后再相加可不是什么轻松的事儿——至少比前一个例复杂一些\period 而且, 加一个节点后, $L_0 (x)$, $L_1 (x)$, $L_2 (x)$ (跟之前相比) 都要多乘一个一次多项式\period 有无稍微容易一些的算法呢?
+    不过, 实践告诉我们, 拆开 $4$ 个 $3$ 次多项式后再相加可不是什么轻松的事儿——至少比前一个例复杂一些. 而且, 加一个节点后, $L_0 (x)$, $L_1 (x)$, $L_2 (x)$ (跟之前相比) 都要多乘一个一次多项式. 有无稍微容易一些的算法呢?
 \end{example}
 
 \begin{definition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 定义
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 定义
     \begin{align*}
-        [x_i, x_j] = \frac{y_i - y_j}{x_i - x_j} \quad (i \neq j)\period
+        [x_i, x_j] = \frac{y_i - y_j}{x_i - x_j} \quad (i \neq j).
     \end{align*}
-    这称为 $1$ 级差商 \term{first-order divided difference}\period 类似地, 当 $i$, $j$, $k$ 互不相同时, $2$ 级差商是
+    这称为 $1$ 级差商 \term{first-order divided difference}. 类似地, 当 $i$, $j$, $k$ 互不相同时, $2$ 级差商是
     \begin{align*}
-        [x_i, x_j, x_k] = \frac{[x_i, x_j] - [x_j, x_k]}{x_i - x_k} \period
+        [x_i, x_j, x_k] = \frac{[x_i, x_j] - [x_j, x_k]}{x_i - x_k}.
     \end{align*}
     一般地, 当 $i_0$, $i_1$, $\cdots$, $i_{\ell - 1}$ 互不相同时, $\ell - 1$ 级差商定义为
     \begin{align*}
-        [x_{i_0}, x_{i_1}, \cdots, x_{i_{\ell - 1}}] = \frac{[x_{i_0}, x_{i_1}, \cdots, x_{i_{\ell - 2}}] - [x_{i_1}, x_{i_2}, \cdots, x_{i_{\ell - 1}}]}{x_0 - x_{\ell - 1}} \period
+        [x_{i_0}, x_{i_1}, \cdots, x_{i_{\ell - 1}}] = \frac{[x_{i_0}, x_{i_1}, \cdots, x_{i_{\ell - 2}}] - [x_{i_1}, x_{i_2}, \cdots, x_{i_{\ell - 1}}]}{x_0 - x_{\ell - 1}}.
     \end{align*}
 
-    ``差商'' 可指代任意级差商\period 高级差商可任意指代 $\ell$ 级差商, 此处 $\ell > 1$\period
+    ``差商'' 可指代任意级差商. 高级差商可任意指代 $\ell$ 级差商, 此处 $\ell > 1$.
 \end{definition}
 
 \begin{example}
-    取 $n = 2$\period 取
+    取 $n = 2$. 取
     \begin{align*}
-         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2,        \\
-         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5 \period
+         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2, \\
+         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5.
     \end{align*}
     我们随意地计算三个 $1$ 级差商:
     \begin{align*}
-         & [x_0, x_1] = \frac{y_0 - y_1}{x_0 - x_1} = 1,        \\
-         & [x_0, x_2] = \frac{y_0 - y_2}{x_0 - x_2} = 2,        \\
-         & [x_1, x_2] = \frac{y_1 - y_2}{x_1 - x_2} = 4 \period
+         & [x_0, x_1] = \frac{y_0 - y_1}{x_0 - x_1} = 1, \\
+         & [x_0, x_2] = \frac{y_0 - y_2}{x_0 - x_2} = 2, \\
+         & [x_1, x_2] = \frac{y_1 - y_2}{x_1 - x_2} = 4.
     \end{align*}
     由此可知
     \begin{align*}
-         & [x_0, x_1, x_2] = \frac{[x_0, x_1] - [x_1, x_2]}{x_0 - x_2} = \frac{1 - 4}{-1 - 2} = 1 \period
+         & [x_0, x_1, x_2] = \frac{[x_0, x_1] - [x_1, x_2]}{x_0 - x_2} = \frac{1 - 4}{-1 - 2} = 1.
     \end{align*}
     根据 $1$ 级差商的定义,
     \begin{align*}
@@ -390,43 +390,43 @@
     \end{align*}
     故
     \begin{align*}
-        [x_2, x_1] = [x_1, x_2] = 4 \period
+        [x_2, x_1] = [x_1, x_2] = 4.
     \end{align*}
     所以
     \begin{align*}
-         & [x_0, x_2, x_1] = \frac{[x_0, x_2] - [x_2, x_1]}{x_0 - x_1} = \frac{2 - 4}{-1 - 1} = 1 \period
+         & [x_0, x_2, x_1] = \frac{[x_0, x_2] - [x_2, x_1]}{x_0 - x_1} = \frac{2 - 4}{-1 - 1} = 1.
     \end{align*}
     同样的道理,
     \begin{align*}
-        [x_1, x_0] = [x_0, x_1] = 1 \period
+        [x_1, x_0] = [x_0, x_1] = 1.
     \end{align*}
     所以
     \begin{align*}
-         & [x_1, x_0, x_2] = \frac{[x_1, x_0] - [x_0, x_2]}{x_1 - x_2} = \frac{1 - 2}{1 - 2} = 1 \period
+         & [x_1, x_0, x_2] = \frac{[x_1, x_0] - [x_0, x_2]}{x_1 - x_2} = \frac{1 - 2}{1 - 2} = 1.
     \end{align*}
     我们发现, 在这些特殊的 $x_i$ 与 $y_j$ ($i,j = 0,1,2$) 下
     \begin{align*}
-        [x_0, x_1, x_2] = [x_0, x_2, x_1] = [x_1, x_0, x_2] \period
+        [x_0, x_1, x_2] = [x_0, x_2, x_1] = [x_1, x_0, x_2].
     \end{align*}
-    类似地, 读者还可以计算 $[x_1, x_2, x_0]$, $[x_2, x_0, x_1]$, $[x_2, x_1, x_0]$, 它们跟上面三个 $2$ 级差商有着同样的值\period 换句话说, 我们猜想, $2$ 级差商 $[x_i, x_j, x_k]$ 的三个文字 $x_i$, $x_j$, $x_k$ 的次序可以任意交换, 且值不变 (当然, $y_i$, $y_j$, $y_k$ 的次序也要交换)\period
+    类似地, 读者还可以计算 $[x_1, x_2, x_0]$, $[x_2, x_0, x_1]$, $[x_2, x_1, x_0]$, 它们跟上面三个 $2$ 级差商有着同样的值. 换句话说, 我们猜想, $2$ 级差商 $[x_i, x_j, x_k]$ 的三个文字 $x_i$, $x_j$, $x_k$ 的次序可以任意交换, 且值不变 (当然, $y_i$, $y_j$, $y_k$ 的次序也要交换).
 \end{example}
 
 幸运的事儿是, 我们没猜错:
 
 \begin{proposition}
-    设 $m$ 是高于 $1$ 的整数\period $m - 1$ 级差商 $[x_0, x_1, \cdots, x_{m-1}]$ 可表示为
+    设 $m$ 是高于 $1$ 的整数. $m - 1$ 级差商 $[x_0, x_1, \cdots, x_{m-1}]$ 可表示为
     \begin{align*}
         [x_0, x_1, \cdots, x_{m-1}] = \sum_{k = 0}^{m-1} \frac{y_k}{N_m^{\prime} (x_k)},
     \end{align*}
     这里
     \begin{align*}
-        N_m (x) = (x - x_0)(x - x_1) \cdots (x - x_{m-1}) = \prod_{k=0}^{m-1} (x - x_k) \period
+        N_m (x) = (x - x_0)(x - x_1) \cdots (x - x_{m-1}) = \prod_{k=0}^{m-1} (x - x_k).
     \end{align*}
-    由此立得: 随意交换 $x_0$, $x_1$, $\cdots$, $x_{m-1}$ 的次序, 若 $y_0$, $y_1$, $\cdots$, $y_{m-1}$ 的次序也跟着改变, 得到的新 $m - 1$ 级差商的值不变\period
+    由此立得: 随意交换 $x_0$, $x_1$, $\cdots$, $x_{m-1}$ 的次序, 若 $y_0$, $y_1$, $\cdots$, $y_{m-1}$ 的次序也跟着改变, 得到的新 $m - 1$ 级差商的值不变.
 \end{proposition}
 
 \begin{pf}
-    回想一下, $\ell$ 级差商 ($\ell > 1$) 是用 $\ell - 1$ 级差商定义的\period 所以, 我们用数学归纳法证明这个结论\period
+    回想一下, $\ell$ 级差商 ($\ell > 1$) 是用 $\ell - 1$ 级差商定义的. 所以, 我们用数学归纳法证明这个结论.
 
     当 $m = 2$ 时,
     \begin{align*}
@@ -434,11 +434,11 @@
     \end{align*}
     故
     \begin{align*}
-        N_2^{\prime} (x) = 2x - (x_0 + x_1) \period
+        N_2^{\prime} (x) = 2x - (x_0 + x_1).
     \end{align*}
     从而
     \begin{align*}
-        N_2^{\prime} (x_0) = x_0 - x_1, \quad N_2^{\prime} (x_1) = x_1 - x_0 \period
+        N_2^{\prime} (x_0) = x_0 - x_1, \quad N_2^{\prime} (x_1) = x_1 - x_0.
     \end{align*}
     根据定义,
     \begin{align*}
@@ -447,44 +447,44 @@
         = {} & \frac{y_0}{x_0 - x_1} - \frac{y_1}{x_0 - x_1}                   \\
         = {} & \frac{y_0}{x_0 - x_1} + \frac{y_1}{x_1 - x_0}                   \\
         = {} & \frac{y_0}{N_2^{\prime} (x_0)} + \frac{y_1}{N_2^{\prime} (x_1)} \\
-        = {} & \sum_{k = 0}^{2-1} \frac{y_k}{N_2^{\prime} (x_k)} \period
+        = {} & \sum_{k = 0}^{2-1} \frac{y_k}{N_2^{\prime} (x_k)}.
     \end{align*}
-    所以, 结论对 $m = 2$ 成立\period
+    所以, 结论对 $m = 2$ 成立.
 
-    假设结论对 $m = \ell \geq 2$ 成立\period 我们要由此推出: 结论对 $m = \ell + 1$ 也成立\period $x_0$, $x_1$, $\cdots$, $x_{\ell}$ 这 $\ell + 1$ 个元的 $\ell$ 级差商, 按定义, 是
+    假设结论对 $m = \ell \geq 2$ 成立. 我们要由此推出: 结论对 $m = \ell + 1$ 也成立. $x_0$, $x_1$, $\cdots$, $x_{\ell}$ 这 $\ell + 1$ 个元的 $\ell$ 级差商, 按定义, 是
     \begin{align*}
-        [x_{0}, x_{1}, \cdots, x_{\ell}] = \frac{[x_{0}, x_{1}, \cdots, x_{\ell - 1}] - [x_{1}, x_{2}, \cdots, x_{\ell}]}{x_0 - x_{\ell}} \period
+        [x_{0}, x_{1}, \cdots, x_{\ell}] = \frac{[x_{0}, x_{1}, \cdots, x_{\ell - 1}] - [x_{1}, x_{2}, \cdots, x_{\ell}]}{x_0 - x_{\ell}}.
     \end{align*}
-    这里, $[x_{0}, x_{1}, \cdots, x_{\ell - 1}]$ 与 $[x_{1}, x_{2}, \cdots, x_{\ell}]$ 都是 $\ell - 1$ 级差商\period 按归纳假设,
+    这里, $[x_{0}, x_{1}, \cdots, x_{\ell - 1}]$ 与 $[x_{1}, x_{2}, \cdots, x_{\ell}]$ 都是 $\ell - 1$ 级差商. 按归纳假设,
     \begin{align*}
          & [x_{0}, x_{1}, \cdots, x_{\ell - 1}] = \sum_{k = 0}^{\ell-1} \frac{y_k}{P^{\prime} (x_k)}, \\
          & [x_{1}, x_{2}, \cdots, x_{\ell}] = \sum_{k = 1}^{\ell} \frac{y_k}{Q^{\prime} (x_k)},
     \end{align*}
     其中
     \begin{align*}
-         & P(x) = (x - x_0) (x - x_1) \cdots (x - x_{\ell - 1}),    \\
-         & Q(x) = (x - x_1) (x - x_2) \cdots (x - x_{\ell}) \period
+         & P(x) = (x - x_0) (x - x_1) \cdots (x - x_{\ell - 1}), \\
+         & Q(x) = (x - x_1) (x - x_2) \cdots (x - x_{\ell}).
     \end{align*}
     作
     \begin{align*}
         N_{\ell + 1} (x) = (x - x_0) (x - x_1) \cdots (x - x_{\ell - 1}) (x - x_{\ell}),
     \end{align*}
-    我们观察 $N_{\ell + 1} (x)$ 与 $P(x)$ (或 $Q(x)$) 的关系\period 显然,
+    我们观察 $N_{\ell + 1} (x)$ 与 $P(x)$ (或 $Q(x)$) 的关系. 显然,
     \begin{align*}
-        N_{\ell + 1} (x) = P(x) (x - x_{\ell}) \period
+        N_{\ell + 1} (x) = P(x) (x - x_{\ell}).
     \end{align*}
     二边求微商, 有
     \begin{align*}
-        N_{\ell + 1}^{\prime} (x) = P^{\prime} (x) (x - x_{\ell}) + P(x) \period
+        N_{\ell + 1}^{\prime} (x) = P^{\prime} (x) (x - x_{\ell}) + P(x).
     \end{align*}
     用 $x_u$ ($u \neq \ell$) 代替 $x$, 有
     \begin{align*}
-        N_{\ell + 1}^{\prime} (x_u) = {} & P^{\prime} (x_u) (x_u - x_{\ell}) + P(x_u) = P^{\prime} (x_u) (x_u - x_{\ell})                   \\
-                                         & \implies \frac{1}{P^{\prime} (x_u)} = \frac{x_u - x_{\ell}}{N_{\ell + 1}^{\prime} (x_u)} \period
+        N_{\ell + 1}^{\prime} (x_u) = {} & P^{\prime} (x_u) (x_u - x_{\ell}) + P(x_u) = P^{\prime} (x_u) (x_u - x_{\ell})            \\
+                                         & \implies \frac{1}{P^{\prime} (x_u)} = \frac{x_u - x_{\ell}}{N_{\ell + 1}^{\prime} (x_u)}.
     \end{align*}
     同理, 若 $v \neq 0$, 则
     \begin{align*}
-        \frac{1}{Q^{\prime} (x_v)} = \frac{x_v - x_0}{N_{\ell + 1}^{\prime} (x_v)} \period
+        \frac{1}{Q^{\prime} (x_v)} = \frac{x_v - x_0}{N_{\ell + 1}^{\prime} (x_v)}.
     \end{align*}
     所以
     \begin{align*}
@@ -506,7 +506,7 @@
         = {} & \sum_{k = 0}^{\ell} \frac{y_k (x_0 - x_{\ell})}
         {N_{\ell + 1}^{\prime} (x_k)}                                \\
         = {} & (x_0 - x_{\ell}) \sum_{k = 0}^{\ell} \frac{y_k}
-        {N_{\ell + 1}^{\prime} (x_k)} \period
+        {N_{\ell + 1}^{\prime} (x_k)}.
     \end{align*}
     这样
     \begin{align*}
@@ -516,7 +516,7 @@
         = {} & \frac{1}{x_0 - x_{\ell}} \cdot (x_0 - x_{\ell})
         \sum_{k = 0}^{\ell} \frac{y_k} {N_{\ell + 1}^{\prime} (x_k)} \\
         = {} & \sum_{k = 0}^{(\ell + 1) - 1} \frac{y_k}
-        {N_{\ell + 1}^{\prime} (x_k)} \period \qedhere
+        {N_{\ell + 1}^{\prime} (x_k)}. \qedhere
     \end{align*}
 \end{pf}
 
@@ -527,72 +527,72 @@
     \end{align*}
     其中
     \begin{align*}
-        N_{n+1} (x) = (x - x_0) (x - x_1) \cdots (x - x_n) \period
+        N_{n+1} (x) = (x - x_0) (x - x_1) \cdots (x - x_n).
     \end{align*}
     用差商的语言, 有: $f(x)$ 的 $n$ 次系数可用 $n$ 级差商
     \begin{align*}
         [x_0, x_1, \cdots, x_n]
     \end{align*}
-    表示\period
+    表示.
 \end{remark}
 
-现在, 我们来看看差商在多项式插值里的用处\period 设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 作 $n+1$ 个多项式:
+现在, 我们来看看差商在多项式插值里的用处. 设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 作 $n+1$ 个多项式:
 \begin{align*}
-     & N_0 (x) = 1,                                                 \\
-     & N_1 (x) = x - x_0,                                           \\
-     & N_2 (x) = (x - x_0) (x - x_1),                               \\
+     & N_0 (x) = 1,                                          \\
+     & N_1 (x) = x - x_0,                                    \\
+     & N_2 (x) = (x - x_0) (x - x_1),                        \\
      & \cdots \cdots \cdots \cdots \cdots \cdots \cdots
-    \cdots \cdots \cdots \cdots \cdots \cdots \cdots,               \\
-     & N_{n} (x) = (x - x_0) (x - x_1) \cdots (x - x_{n-1}) \period
+    \cdots \cdots \cdots \cdots \cdots \cdots \cdots,        \\
+     & N_{n} (x) = (x - x_0) (x - x_1) \cdots (x - x_{n-1}).
 \end{align*}
 
 因为 $N_0 (x)$, $N_1 (x)$, $\cdots$, $N_n (x)$ 的次分别是 $0$, $1$, $\cdots$, $n$, 所以:
 
 (i) $N_0 (x)$, $N_1 (x)$, $\cdots$, $N_n (x)$ 是线性无关的;
 
-(ii) 任意次不高于 $n$ 的多项式都可唯一地写为 $N_0 (x)$, $N_1 (x)$, $\cdots$, $N_n (x)$ 的线性组合\period
+(ii) 任意次不高于 $n$ 的多项式都可唯一地写为 $N_0 (x)$, $N_1 (x)$, $\cdots$, $N_n (x)$ 的线性组合.
 
 由前面的 Lagrange 插值公式可知, 存在一个次不高于 $n$ 的多项式 $f(x)$ 使
 \begin{align*}
-    f(x_i) = y_i \quad (i = 0,1,\cdots,n) \period
+    f(x_i) = y_i \quad (i = 0,1,\cdots,n).
 \end{align*}
 对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_n \in \FF$ 使
 \begin{align*}
-    f(x) = \sum_{i = 0}^{n} c_i N_{n} (x) \period
+    f(x) = \sum_{i = 0}^{n} c_i N_{n} (x).
 \end{align*}
-我们的任务就是找出 $c_0$, $c_1$, $\cdots$, $c_n$\period 先从 $c_n$ 看起\period 显然, 左侧的 $n$ 次系数是 $[x_0, x_1, \cdots, x_n]$, 而右侧的 $n$ 次系数是 $c_n$, 故
+我们的任务就是找出 $c_0$, $c_1$, $\cdots$, $c_n$. 先从 $c_n$ 看起. 显然, 左侧的 $n$ 次系数是 $[x_0, x_1, \cdots, x_n]$, 而右侧的 $n$ 次系数是 $c_n$, 故
 \begin{align*}
-    c_n = [x_0, x_1, \cdots, x_n] \period
+    c_n = [x_0, x_1, \cdots, x_n].
 \end{align*}
 找出 $c_n$, 还有 $n$ 个系数要找呢! 接下来的系数该怎么找呢?
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元 ($n \geq 1$)\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 作 $n+1$ 个多项式:
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元 ($n \geq 1$). 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 作 $n+1$ 个多项式:
     \begin{align*}
-         & N_0 (x) = 1,                                                 \\
-         & N_1 (x) = x - x_0,                                           \\
-         & N_2 (x) = (x - x_0) (x - x_1),                               \\
+         & N_0 (x) = 1,                                          \\
+         & N_1 (x) = x - x_0,                                    \\
+         & N_2 (x) = (x - x_0) (x - x_1),                        \\
          & \cdots \cdots \cdots \cdots \cdots \cdots \cdots
-        \cdots \cdots \cdots \cdots \cdots \cdots \cdots,               \\
-         & N_{n} (x) = (x - x_0) (x - x_1) \cdots (x - x_{n-1}) \period
+        \cdots \cdots \cdots \cdots \cdots \cdots \cdots,        \\
+         & N_{n} (x) = (x - x_0) (x - x_1) \cdots (x - x_{n-1}).
     \end{align*}
     由 Lagrange 插值公式可知, 存在一个次不高于 $n$ 的多项式 $f(x)$ 使
     \begin{align*}
-        f(x_i) = y_i \quad (i = 0,1,\cdots,n) \period
+        f(x_i) = y_i \quad (i = 0,1,\cdots,n).
     \end{align*}
     对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_n \in \FF$ 使
     \begin{align*}
-        f(x) = \sum_{i = 0}^{n} c_i N_{n} (x) \period
+        f(x) = \sum_{i = 0}^{n} c_i N_{n} (x).
     \end{align*}
     这些系数有着简单的形式:
     \begin{align*}
-         & c_0 = y_0,                                                     \\
-         & c_i = [x_0, x_1, \cdots, x_i] \quad (i = 1,2,\cdots,n) \period
+         & c_0 = y_0,                                              \\
+         & c_i = [x_0, x_1, \cdots, x_i] \quad (i = 1,2,\cdots,n).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 当 $n=1$ 时,
+    用数学归纳法. 当 $n=1$ 时,
     \begin{align*}
         f(x)
         = {} & y_0 \frac{x - x_1}{x_0 - x_1}
@@ -602,27 +602,27 @@
         = {} & y_0 + y_0 \frac{x - x_0}{x_0 - x_1}
         - y_1 \frac{x - x_0}{x_0 - x_1}                      \\
         = {} & y_0 + \frac{y_0 - y_1}{x_0 - x_1} (x - x_0)   \\
-        = {} & y_0 N_0 (x) + [x_0, x_1] N_1 (x) \period
+        = {} & y_0 N_0 (x) + [x_0, x_1] N_1 (x).
     \end{align*}
-    这样, 结论对 $n=1$ 成立\period
+    这样, 结论对 $n=1$ 成立.
 
-    设结论对 $n = \ell \geq 1$ 成立\period 我们看 $n = \ell + 1$ 的情形\period
+    设结论对 $n = \ell \geq 1$ 成立. 我们看 $n = \ell + 1$ 的情形.
 
     由 Lagrange 插值公式可知, 存在一个次不高于 $\ell + 1$ 的多项式 $f(x)$ 使
     \begin{align*}
-        f(x_i) = y_i \quad (i = 0,1,\cdots,\ell + 1) \period
+        f(x_i) = y_i \quad (i = 0,1,\cdots,\ell + 1).
     \end{align*}
     对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_{\ell}, c_{\ell + 1} \in \FF$ 使
     \begin{align*}
-        f(x) = \sum_{i = 0}^{\ell} c_i N_{i} (x) + c_{\ell + 1} N_{\ell + 1} (x) \period
+        f(x) = \sum_{i = 0}^{\ell} c_i N_{i} (x) + c_{\ell + 1} N_{\ell + 1} (x).
     \end{align*}
     左侧的 $\ell + 1$ 次系数是 $[x_0, x_1, \cdots, x_\ell, x_{\ell + 1}]$, 右侧的 $\ell + 1$ 次系数是 $c_{\ell + 1}$, 故
     \begin{align*}
-        c_{\ell + 1} = [x_0, x_1, \cdots, x_\ell, x_{\ell + 1}] \period
+        c_{\ell + 1} = [x_0, x_1, \cdots, x_\ell, x_{\ell + 1}].
     \end{align*}
     作
     \begin{align*}
-        g(x) = f(x) - [x_0, x_1, \cdots, x_\ell, x_{\ell + 1}] N_{\ell + 1} (x) \period
+        g(x) = f(x) - [x_0, x_1, \cdots, x_\ell, x_{\ell + 1}] N_{\ell + 1} (x).
     \end{align*}
     则
     \begin{align*}
@@ -630,36 +630,36 @@
     \end{align*}
     且 $i \neq \ell + 1$ 时,
     \begin{align*}
-        g(x_i) = f(x_i) - [x_0, x_1, \cdots, x_\ell, x_{\ell + 1}] 0 = y_i \period
+        g(x_i) = f(x_i) - [x_0, x_1, \cdots, x_\ell, x_{\ell + 1}] 0 = y_i.
     \end{align*}
-    这个 $g(x)$ 的次不会高于 $\ell$\period 并且, $i = 0$, $1$, $\cdots$, $\ell$ 时, $g(x_i) = y_i$\period
+    这个 $g(x)$ 的次不会高于 $\ell$. 并且, $i = 0$, $1$, $\cdots$, $\ell$ 时, $g(x_i) = y_i$.
 
     由 Lagrange 插值公式, 存在一个次不高于 $\ell$ 的多项式 $h(x)$ 使
     \begin{align*}
-        h(x_i) = y_i \quad (i = 0,1,\cdots,\ell) \period
+        h(x_i) = y_i \quad (i = 0,1,\cdots,\ell).
     \end{align*}
     对这个 $h(x)$ 而言, 存在 (唯一的) $d_0$, $d_1$, $\cdots$, $d_{\ell} \in \FF$ 使
     \begin{align*}
-        h(x) = \sum_{i = 0}^{\ell} d_i N_{i} (x) \period
+        h(x) = \sum_{i = 0}^{\ell} d_i N_{i} (x).
     \end{align*}
     根据归纳假设,
     \begin{align*}
-         & d_0 = y_0,                                                        \\
-         & d_i = [x_0, x_1, \cdots, x_i] \quad (i = 1,2,\cdots,\ell) \period
+         & d_0 = y_0,                                                 \\
+         & d_i = [x_0, x_1, \cdots, x_i] \quad (i = 1,2,\cdots,\ell).
     \end{align*}
-    由插值的唯一性, $g(x) = h(x)$\period 所以
+    由插值的唯一性, $g(x) = h(x)$. 所以
     \begin{align*}
-         & c_0 = d_0 = y_0,                                                        \\
-         & c_i = d_i = [x_0, x_1, \cdots, x_i] \quad (i = 1,2,\cdots,\ell) \period
+         & c_0 = d_0 = y_0,                                                 \\
+         & c_i = d_i = [x_0, x_1, \cdots, x_i] \quad (i = 1,2,\cdots,\ell).
     \end{align*}
 
-    所以, $n = \ell + 1$ 时, 结论是正确的\period
+    所以, $n = \ell + 1$ 时, 结论是正确的.
 \end{pf}
 
-为方便, 记 $[x_i] = y_i$, 称其为 $x_i$ 的 $0$ 级差商\period 我们证明了
+为方便, 记 $[x_i] = y_i$, 称其为 $x_i$ 的 $0$ 级差商. 我们证明了
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$\period 存在唯一的多项式
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 存在唯一的多项式
     \begin{align*}
         f(x)
         = {} & \sum_{i = 0}^{n} [x_0, x_1, \cdots, x_i]
@@ -673,39 +673,39 @@
     \end{align*}
     且
     \begin{align*}
-        \deg f(x) < n + 1 \period
+        \deg f(x) < n + 1.
     \end{align*}
-    这个公式的一个名字是 ``Newton 插值公式'' \term{Newton's interpolation formula}\period
+    这个公式的一个名字是 ``Newton 插值公式'' \term{Newton's interpolation formula}.
 \end{proposition}
 
-我们举三个具体的例帮读者消化这个 Newton 插值公式\period
+我们举三个具体的例帮读者消化这个 Newton 插值公式.
 
 \begin{example}
-    求次不高于 $1$ 的多项式 $f(x)$, 使 $f(-1)=2$, $f(1)=3$\period
+    求次不高于 $1$ 的多项式 $f(x)$, 使 $f(-1)=2$, $f(1)=3$.
 
     这里, $n = 1$, 且
     \begin{align*}
-         & x_0 = -1, \quad x_1 = 1,       \\
-         & y_0 = 2, \quad y_1 = 3 \period
+         & x_0 = -1, \quad x_1 = 1, \\
+         & y_0 = 2, \quad y_1 = 3.
     \end{align*}
     不难算出
     \begin{align*}
-         & [x_0] = y_0 = 2,                                           \\
-         & [x_0, x_1] = \frac{y_0 - y_1}{x_0 - x_1} = \frac12 \period
+         & [x_0] = y_0 = 2,                                    \\
+         & [x_0, x_1] = \frac{y_0 - y_1}{x_0 - x_1} = \frac12.
     \end{align*}
     所以
     \begin{align*}
-        f(x) = 2 + \frac12 (x - (-1)) = \frac12 x + \frac52 \period
+        f(x) = 2 + \frac12 (x - (-1)) = \frac12 x + \frac52.
     \end{align*}
 \end{example}
 
 \begin{example}
-    求次不高于 $2$ 的多项式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$\period
+    求次不高于 $2$ 的多项式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$.
 
     这里, $n = 2$, 且
     \begin{align*}
-         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2,        \\
-         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5 \period
+         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2, \\
+         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5.
     \end{align*}
     不难算出
     \begin{align*}
@@ -715,15 +715,15 @@
          & [x_1, x_2] = \frac{y_1 - y_2}{x_1 - x_2}
         = 4,                                                \\
          & [x_0, x_1, x_2] = \frac{[x_0, x_1] - [x_1, x_2]}
-        {x_0 - x_2} = 1 \period
+        {x_0 - x_2} = 1.
     \end{align*}
     所以
     \begin{align*}
-        f(x) = -1 + (x + 1) + (x + 1)(x - 1) = x^2 + x - 1 \period
+        f(x) = -1 + (x + 1) + (x + 1)(x - 1) = x^2 + x - 1.
     \end{align*}
-    前面, 我们用 Lagrange 插值公式, 得到了一样的结果, 不过计算过程稍繁\period
+    前面, 我们用 Lagrange 插值公式, 得到了一样的结果, 不过计算过程稍繁.
 
-    实操时, 往往用名为 ``差商表'' 的表进行计算\period 当 $n = 2$ 时, 它长这样:
+    实操时, 往往用名为 ``差商表'' 的表进行计算. 当 $n = 2$ 时, 它长这样:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{c|ccc}
@@ -744,12 +744,12 @@
 \end{example}
 
 \begin{example}
-    求次不高于 $3$ 的多项式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$, $f(-2) = -11$\period
+    求次不高于 $3$ 的多项式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$, $f(-2) = -11$.
 
     这里, $n = 3$, 且
     \begin{align*}
-         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2, \quad x_3 = -2          \\
-         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5, \quad y_3 = -11 \period
+         & x_0 = -1, \quad x_1 = 1, \quad x_2 = 2, \quad x_3 = -2   \\
+         & y_0 = -1, \quad y_1 = 1, \quad y_2 = 5, \quad y_3 = -11.
     \end{align*}
 
     画出 $n = 3$ 时的差商表:
@@ -772,15 +772,15 @@
             -1                   & -1                     & 1                           & 1                                & \textcolor{red}{[x_0, x_1, x_2, x_3]} \\
         \end{array}
     \end{align*}
-    我们的目标是算出 $[x_0, x_1, x_2, x_3]$\period 所以, 我们要算出 $[x_1, x_2, x_3]$; 所以, 我们要算出 $[x_2, x_3]$; 所以, 我们要算出 $[x_3]$\period 不过, $[x_3]$ 是已知的, 它就是 $y_3$, 也就是 $-11$\period
+    我们的目标是算出 $[x_0, x_1, x_2, x_3]$. 所以, 我们要算出 $[x_1, x_2, x_3]$; 所以, 我们要算出 $[x_2, x_3]$; 所以, 我们要算出 $[x_3]$. 不过, $[x_3]$ 是已知的, 它就是 $y_3$, 也就是 $-11$.
 
     列出算式:
     \begin{align*}
-         & x_3 = -2,                                                                              \\
-         & [x_3] = y_3 = -11,                                                                     \\
-         & [x_2, x_3] = \frac{y_2 - y_3}{x_2 - x_3} = 4,                                          \\
-         & [x_1, x_2, x_3] = \frac{[x_1, x_2] - [x_2, x_3]}{x_1 - x_3} = 0,                       \\
-         & [x_0, x_1, x_2, x_3] = \frac{[x_0, x_1, x_2] - [x_1, x_2, x_3]}{x_0 - x_3} = 1 \period
+         & x_3 = -2,                                                                       \\
+         & [x_3] = y_3 = -11,                                                              \\
+         & [x_2, x_3] = \frac{y_2 - y_3}{x_2 - x_3} = 4,                                   \\
+         & [x_1, x_2, x_3] = \frac{[x_1, x_2] - [x_2, x_3]}{x_1 - x_3} = 0,                \\
+         & [x_0, x_1, x_2, x_3] = \frac{[x_0, x_1, x_2] - [x_1, x_2, x_3]}{x_0 - x_3} = 1.
     \end{align*}
     此时, 差商表如下:
     \begin{align*}
@@ -797,28 +797,28 @@
         f(x)
         = {} & -1 + (x + 1) + (x + 1)(x - 1) + (x + 1)(x - 1)(x - 2) \\
         = {} & (x^2 + x - 1) + (x^3 - 2x^2 - x + 2)                  \\
-        = {} & x^3 - x^2 + 1 \period
+        = {} & x^3 - x^2 + 1.
     \end{align*}
 
     用 Lagrange 插值公式, 有
     \begin{align*}
         f(x)
-        = {} & - \frac{(x-1)(x-2)(x+2)}{(-1-1)(-1-2)(-1+2)} + \frac{(x+1)(x-2)(x+2)}{(1+1)(1-2)(1+2)}                          \\
-             & + 5 \cdot \frac{(x+1)(x-1)(x+2)}{(2+1)(2-1)(2+2)} - 11 \cdot \frac{(x+1)(x-1)(x-2)}{(-2+1)(-2-1)(-2-2)} \period
+        = {} & - \frac{(x-1)(x-2)(x+2)}{(-1-1)(-1-2)(-1+2)} + \frac{(x+1)(x-2)(x+2)}{(1+1)(1-2)(1+2)}                   \\
+             & + 5 \cdot \frac{(x+1)(x-1)(x+2)}{(2+1)(2-1)(2+2)} - 11 \cdot \frac{(x+1)(x-1)(x-2)}{(-2+1)(-2-1)(-2-2)}.
     \end{align*}
-    有兴趣的读者可展开上式, 以验证我们的计算是否正确\period 由此可见, Newton 插值公式在实操上优于 Lagrange 插值公式\period
+    有兴趣的读者可展开上式, 以验证我们的计算是否正确. 由此可见, Newton 插值公式在实操上优于 Lagrange 插值公式.
 \end{example}
 
-我们以带余除法与插值的关系结束本节\period
+我们以带余除法与插值的关系结束本节.
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元\period 设
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设
     \begin{align*}
         d(x) = (x - x_0) (x - x_1) \cdots (x - x_n) \in \FF[x]
     \end{align*}
-    是 $n+1$ 次多项式\period 由带余除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
+    是 $n+1$ 次多项式. 由带余除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
     \begin{align*}
-        f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1 \period
+        f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1.
     \end{align*}
     余式 $r(x)$ 可具体地写出:
     \begin{align*}
@@ -828,17 +828,17 @@
     \begin{align*}
         r(x) = \sum_{i = 0}^{n} [x_0, x_1, \cdots, x_i] \prod_{j = 0}^{i - 1} (x - x_j),
     \end{align*}
-    其中差商的 $y_i$ 取 $f(x_i)$, $i = 0$, $1$, $\cdots$, $n$\period
+    其中差商的 $y_i$ 取 $f(x_i)$, $i = 0$, $1$, $\cdots$, $n$.
 \end{proposition}
 
 \begin{pf}
     由带余除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
     \begin{align*}
-        f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1 \period
+        f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1.
     \end{align*}
     用 $x_i$ 代替 $x$, 有
     \begin{align*}
-        f(x_i) = q(x_i) d(x_i) + r(x_i) = r(x_i) \period
+        f(x_i) = q(x_i) d(x_i) + r(x_i) = r(x_i).
     \end{align*}
-    因为 $\deg r(x) < n + 1$, 故由插值公式即得待证命题\period
+    因为 $\deg r(x) < n + 1$, 故由插值公式即得待证命题.
 \end{pf}

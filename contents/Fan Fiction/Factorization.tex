@@ -5,105 +5,105 @@
 % TODO
 To be continued. I will finish this part later.
 
-本文的主要目的: (i) 为读者介绍因子分解整数的方法; (ii) 为读者介绍一些 (在有理数范围里) 因子分解有理系数多项式的方法\period
+本文的主要目的: (i) 为读者介绍因子分解整数的方法; (ii) 为读者介绍一些 (在有理数范围里) 因子分解有理系数多项式的方法.
 
-我们先讨论因子分解整数吧\period
+我们先讨论因子分解整数吧.
 
 \myLine
 
-现在, 我们讨论因子分解多项式\period
+现在, 我们讨论因子分解多项式.
 
-本文的多项式的系数都是有理数\period 所以, 在本文里, 为了方便, 作者单说 ``多项式'' 时, 它一定是有理系数多项式\period
+本文的多项式的系数都是有理数. 所以, 在本文里, 为了方便, 作者单说 ``多项式'' 时, 它一定是有理系数多项式.
 
-作者再约定一次 (其实作者早就在 ``\PolynomialsOverZAndOverQ '' 里说过了): 说多项式 $f$ 是可约的, 是指视 $f$ 为有理系数多项式时, $f$ 是可约的\period 所以, 当读者看到形如 ``$4x$ 是不可约的'' 的陈述时, 作者希望读者不要认为这是错的\period
+作者再约定一次 (其实作者早就在 ``\PolynomialsOverZAndOverQ '' 里说过了): 说多项式 $f$ 是可约的, 是指视 $f$ 为有理系数多项式时, $f$ 是可约的. 所以, 当读者看到形如 ``$4x$ 是不可约的'' 的陈述时, 作者希望读者不要认为这是错的.
 
 \begin{definition}
-    设 $f$, $g_1$, $g_2$, $\cdots$, $g_n$ 是多项式\period 根据分配律, 有
+    设 $f$, $g_1$, $g_2$, $\cdots$, $g_n$ 是多项式. 根据分配律, 有
     \begin{align*}
-        \underbrace{fg_1 + fg_2 + \cdots + fg_n}_{\text{LHS}} = \underbrace{f \cdot (g_1 + g_2 + \cdots + g_n)}_{\text{RHS}} \period
+        \underbrace{fg_1 + fg_2 + \cdots + fg_n}_{\text{LHS}} = \underbrace{f \cdot (g_1 + g_2 + \cdots + g_n)}_{\text{RHS}}.
     \end{align*}
-    我们唤写 LHS\myFN{LHS, left-hand side 也; RHS, right-hand side 也\period} 为 RHS 的行为为提出 LHS 的 $f$ \term{to extract $f$ from the LHS}\period 当然, 若省略 ``LHS 的'' 不会造成歧义, 我们也可以只说 ``提出 $f$''\period
+    我们唤写 LHS\myFN{LHS, left-hand side 也; RHS, right-hand side 也.} 为 RHS 的行为为提出 LHS 的 $f$ \term{to extract $f$ from the LHS}. 当然, 若省略 ``LHS 的'' 不会造成歧义, 我们也可以只说 ``提出 $f$''.
 \end{definition}
 
 \begin{example}
-    设 $f = x^2 - a^2$, $a$ 为数\period 则
+    设 $f = x^2 - a^2$, $a$ 为数. 则
     \begin{align*}
         f
-        = {} & x^2 - a^2                       \\
-        = {} & x^2 - xa + ax - a^2             \\
-        = {} & (x^2 - xa) + (ax - a^2) \period
+        = {} & x^2 - a^2                \\
+        = {} & x^2 - xa + ax - a^2      \\
+        = {} & (x^2 - xa) + (ax - a^2).
     \end{align*}
     根据分配律,
     \begin{align*}
-        x^2 - xa = x(x - a), \quad ax - a^2 = a(x - a) \period
+        x^2 - xa = x(x - a), \quad ax - a^2 = a(x - a).
     \end{align*}
     所以, 我们提出 $x^2 - xa$ 的 $x$, 并提出 $ax - a^2$ 的 $a$:
     \begin{align*}
-        f = x(x - a) + a(x - a) \period
+        f = x(x - a) + a(x - a).
     \end{align*}
     根据分配律,
     \begin{align*}
-        x(x - a) + a(x - a) = (x + a)(x - a) \period
+        x(x - a) + a(x - a) = (x + a)(x - a).
     \end{align*}
     所以, 提出 $x-a$, 就有
     \begin{align*}
-        f = (x + a)(x - a) \period
+        f = (x + a)(x - a).
     \end{align*}
 \end{example}
 
 \begin{definition}
-    设 $f$ 是多项式, 且 $f \neq 0$\period 将 $f$ 写为 (有理数的) 单位\myFN{单位可以是 $1$; 换句话说, 这个单位可以 ``不出现''\period}与有限多个\myFN{允许 $0$ 个\period 此时, $f$ 就是单位\period}不可约的多项式的幂\myFN{举一个例\period 设 $f = 2x^3 + 4x^2 + 2x$\period 不难看出, $f = 2x \cdot (x+1) \cdot (x+1)$\period 为方便, 我们可以把 $(x+1) \cdot (x+1)$ 写为 $(x+1)^2$, 即 $f = 2x(x+1)^2$\period}的积的行为是 ``因子分解'' \term{to factorize}; ``因子分解'' 的过程也是 ``因子分解'' \term{factorization}; ``因子分解'' 的结果 (单位与有限多个不可约的多项式的幂的积) 也是 ``因子分解'' \term{factorization}\period
+    设 $f$ 是多项式, 且 $f \neq 0$. 将 $f$ 写为 (有理数的) 单位\myFN{单位可以是 $1$; 换句话说, 这个单位可以 ``不出现''.}与有限多个\myFN{允许 $0$ 个. 此时, $f$ 就是单位.}不可约的多项式的幂\myFN{举一个例. 设 $f = 2x^3 + 4x^2 + 2x$. 不难看出, $f = 2x \cdot (x+1) \cdot (x+1)$. 为方便, 我们可以把 $(x+1) \cdot (x+1)$ 写为 $(x+1)^2$, 即 $f = 2x(x+1)^2$.}的积的行为是 ``因子分解'' \term{to factorize}; ``因子分解'' 的过程也是 ``因子分解'' \term{factorization}; ``因子分解'' 的结果 (单位与有限多个不可约的多项式的幂的积) 也是 ``因子分解'' \term{factorization}.
 \end{definition}
 
 \begin{example}
-    设 $f = 4x^2 - 64$\period 不难看出,
+    设 $f = 4x^2 - 64$. 不难看出,
     \begin{align*}
-        f = (2x)^2 - 8^2 = (2x + 8) (2x - 8) \period
+        f = (2x)^2 - 8^2 = (2x + 8) (2x - 8).
     \end{align*}
-    因为 $2x \pm 8$ 都是不可约的, 故 $(2x + 8)(2x - 8)$ 是 $f$ 的 (一个) 因子分解\period
+    因为 $2x \pm 8$ 都是不可约的, 故 $(2x + 8)(2x - 8)$ 是 $f$ 的 (一个) 因子分解.
 
-    可是, 读者可能会觉得 ``这没分解完''\period 如果读者是说 $2x \pm 8 = 2 (x \pm 4)$, 那 ``的确如此''\period 可是, 按照我们的定义, $2x \pm 8$ 已经是可约的\period
+    可是, 读者可能会觉得 ``这没分解完''. 如果读者是说 $2x \pm 8 = 2 (x \pm 4)$, 那 ``的确如此''. 可是, 按照我们的定义, $2x \pm 8$ 已经是可约的.
 
-    当然, 读者可以再看看因子分解的定义: 单位与有限多个不可约的多项式的幂的积\period 也就是说, 我们可以认为 $4 (x + 4) (x - 4)$ 也是 $f$ 的因子分解, 因为 $4$ 是单位, 且 $x \pm 4$ 是不可约的\period 不过, 既然这样, 读者也应该接受 $64 \left( \frac{x}{4} + 1 \right) \left( \frac{x}{4} - 1 \right) $ 为 $f$ 的因子分解, 因为 $64$ 也是单位, 且 $\frac{x}{4} \pm 1$ 也是不可约的\period
+    当然, 读者可以再看看因子分解的定义: 单位与有限多个不可约的多项式的幂的积. 也就是说, 我们可以认为 $4 (x + 4) (x - 4)$ 也是 $f$ 的因子分解, 因为 $4$ 是单位, 且 $x \pm 4$ 是不可约的. 不过, 既然这样, 读者也应该接受 $64 \left( \frac{x}{4} + 1 \right) \left( \frac{x}{4} - 1 \right) $ 为 $f$ 的因子分解, 因为 $64$ 也是单位, 且 $\frac{x}{4} \pm 1$ 也是不可约的.
 
-    这或许就跟有理数一样: $\frac{-1}{2}$ 跟 $-\frac{111}{222}$, $\frac{1\,234}{-2\,468}$ 表示同一个分数\period 我们一般都会让分子与分母互素\period 类似地, 我们也会对因子分解的结果作一些限定 (当然, 不强行要求唯一)\period 常用的一个约定是这样的\period 假定
+    这或许就跟有理数一样: $\frac{-1}{2}$ 跟 $-\frac{111}{222}$, $\frac{1\,234}{-2\,468}$ 表示同一个分数. 我们一般都会让分子与分母互素. 类似地, 我们也会对因子分解的结果作一些限定 (当然, 不强行要求唯一). 常用的一个约定是这样的. 假定
     \begin{align*}
         f = \varepsilon f_1^{k_1} f_2^{k_2} \cdots f_n^{k_n},
     \end{align*}
-    其中 $\varepsilon$ 是单位, $f_1$, $f_2$, $\cdots$, $f_n$ 都是不可约的多项式, 且 $k_1$, $k_2$, $\cdots$, $k_n$ 都是正整数\period 把每个 $f_i$ 写为 $c_i F_i$, 其中 $F_i$ 是 $f_i$ 的一个本原的相伴\period 这样
+    其中 $\varepsilon$ 是单位, $f_1$, $f_2$, $\cdots$, $f_n$ 都是不可约的多项式, 且 $k_1$, $k_2$, $\cdots$, $k_n$ 都是正整数. 把每个 $f_i$ 写为 $c_i F_i$, 其中 $F_i$ 是 $f_i$ 的一个本原的相伴. 这样
     \begin{align*}
         f
         = {} & \varepsilon (c_1 F_1)^{k_1} (c_2 F_2)^{k_2} \cdots (c_n F_n)^{k_n}                      \\
         = {} & \varepsilon (c_1^{k_1} F_1^{k_1}) (c_2^{k_2} F_2^{k_2}) \cdots (c_n^{k_n} F_n^{k_n})    \\
         = {} & (\varepsilon c_1^{k_1} c_2^{k_2} \cdots c_n^{k_n}) F_1^{k_1} F_2^{k_2} \cdots F_n^{k_n} \\
-        = {} & \varepsilon^{\prime} F_1^{k_1} F_2^{k_2} \cdots F_n^{k_n} \period
+        = {} & \varepsilon^{\prime} F_1^{k_1} F_2^{k_2} \cdots F_n^{k_n}.
     \end{align*}
 
     按照此约定, $4x^2 - 64$ 的因子分解如下:
     \begin{align*}
         4x^2 - 64
-        = {} & 4 (x + 4) (x - 4)          \\
-        = {} & -4 (-x - 4) (x - 4)        \\
-        = {} & 4 (-x - 4) (-x + 4)        \\
-        = {} & -4 (x + 4)(-x + 4) \period
+        = {} & 4 (x + 4) (x - 4)   \\
+        = {} & -4 (-x - 4) (x - 4) \\
+        = {} & 4 (-x - 4) (-x + 4) \\
+        = {} & -4 (x + 4)(-x + 4).
     \end{align*}
-    读者可以按需选一个因子分解\period 比方说, 喜欢使不可约的因子的首项系数为正数的读者可选 $4 (x + 4) (x - 4)$; 当然, 喜欢使不可约的因子的 $0$ 次系数为正数的读者可选 $-4 (x + 4) (-x + 4)$; 最后, 不在乎这些细节的读者可随意地选\period
+    读者可以按需选一个因子分解. 比方说, 喜欢使不可约的因子的首项系数为正数的读者可选 $4 (x + 4) (x - 4)$; 当然, 喜欢使不可约的因子的 $0$ 次系数为正数的读者可选 $-4 (x + 4) (-x + 4)$; 最后, 不在乎这些细节的读者可随意地选.
 
-    这么看来, 要求不可约的因子都是本原的似乎不是很奇怪\period 事实上, 它很有用\period 读者马上就可以看到这一点\period
+    这么看来, 要求不可约的因子都是本原的似乎不是很奇怪. 事实上, 它很有用. 读者马上就可以看到这一点.
 \end{example}
 
-在前面, 我们讨论了整系数多项式与多项式的关系\period 利用本原的多项式, 我们得到了下面的结论\period
+在前面, 我们讨论了整系数多项式与多项式的关系. 利用本原的多项式, 我们得到了下面的结论.
 
-(i) 每个多项式都是某个有理数与本原的多项式的积\period 所以, 遇到 $\frac12 + \frac13 x + \frac15 x^2$ 时, 我们可将其写为 $\frac{1}{30} (15 + 10x + 6x^2)$, 然后考虑 $15 + 10x + 6x^2$ 的因子分解\period
+(i) 每个多项式都是某个有理数与本原的多项式的积. 所以, 遇到 $\frac12 + \frac13 x + \frac15 x^2$ 时, 我们可将其写为 $\frac{1}{30} (15 + 10x + 6x^2)$, 然后考虑 $15 + 10x + 6x^2$ 的因子分解.
 
-(ii) 若整系数多项式可写为二个多项式的积, 则其一定可写为二个整系数多项式的积\period 所以, 当我们假设整系数多项式是可约的时, 我们可以假定因子的系数都是整数\period 这一点, 在证明 Eisenstein 判别法时就用到了\period
+(ii) 若整系数多项式可写为二个多项式的积, 则其一定可写为二个整系数多项式的积. 所以, 当我们假设整系数多项式是可约的时, 我们可以假定因子的系数都是整数. 这一点, 在证明 Eisenstein 判别法时就用到了.
 
-(iii) 设 $f$ 是整系数多项式, $g$ 是本原的多项式\period 若存在多项式 $h$ 使 $f = gh$, 则 $h$ 的系数一定都是整数\period 这也暗示了本原的多项的特殊性: 提出整系数多项式的本原的因子, 剩下的部分仍是整系数的\period 我们等会儿就要演示这一点有多么有用\period
+(iii) 设 $f$ 是整系数多项式, $g$ 是本原的多项式. 若存在多项式 $h$ 使 $f = gh$, 则 $h$ 的系数一定都是整数. 这也暗示了本原的多项的特殊性: 提出整系数多项式的本原的因子, 剩下的部分仍是整系数的. 我们等会儿就要演示这一点有多么有用.
 
-最简单的不可约的多项式是 $1$ 次的\period 所以, 让我们从 $1$ 次因子开始吧!
+最简单的不可约的多项式是 $1$ 次的. 所以, 让我们从 $1$ 次因子开始吧!
 
 \begin{proposition}
-    设整数 $u$, $v$ 互素, 且 $u \neq 0$\period 这样, $g = ux - v$ 是本原的 $1$ 次多项式\period 设 $f$ 是整系数多项式\period 若 $g$ 是 $f$ 的因子, 则 $u$ 是 $f$ 的首项系数的因子, 且 $v$ 是 $f$ 的 $0$ 次系数的因子\period
+    设整数 $u$, $v$ 互素, 且 $u \neq 0$. 这样, $g = ux - v$ 是本原的 $1$ 次多项式. 设 $f$ 是整系数多项式. 若 $g$ 是 $f$ 的因子, 则 $u$ 是 $f$ 的首项系数的因子, 且 $v$ 是 $f$ 的 $0$ 次系数的因子.
 \end{proposition}
 
 \begin{pf}
@@ -111,59 +111,59 @@ To be continued. I will finish this part later.
     \begin{align*}
         f = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0
     \end{align*}
-    是整系数多项式, 且 $a_n \neq 0$\period 因为 $g = ux - v$ 是本原的, $g$ 是 $f$ 的因子, 故存在整系数多项式 $h$ 使 $f = gh$\period 因为 $\deg f = \deg g + \deg h$, 故 $\deg h = n - 1$\period 所以, 可设
+    是整系数多项式, 且 $a_n \neq 0$. 因为 $g = ux - v$ 是本原的, $g$ 是 $f$ 的因子, 故存在整系数多项式 $h$ 使 $f = gh$. 因为 $\deg f = \deg g + \deg h$, 故 $\deg h = n - 1$. 所以, 可设
     \begin{align*}
         h = b_{n-1} x^{n-1} + \cdots + b_1 x + b_0,
     \end{align*}
-    且 $b_{n-1} \neq 0$\period 从而
+    且 $b_{n-1} \neq 0$. 从而
     \begin{align*}
-        a_n = ub_{n-1}, \quad a_0 = -vb_0 \period
+        a_n = ub_{n-1}, \quad a_0 = -vb_0.
     \end{align*}
-    故 $u$ 是 $a_n$ 的因子, 且 $v$ 是 $a_0$ 的因子\period
+    故 $u$ 是 $a_n$ 的因子, 且 $v$ 是 $a_0$ 的因子.
 \end{pf}
 
 既然 $ux - v$ 是 $f$ 的因子, 那么有多项式 $h$ 使
 \begin{align*}
-    f = (ux - v) h \period
+    f = (ux - v) h.
 \end{align*}
 适当地改写一下:
 \begin{align*}
     f = \left( x - \frac{v}{u} \right) (uh)
 \end{align*}
-由此可见, $\frac{v}{u}$ 是 $f$ 的根\period 所以, 用根的语言描述上个命题, 就是
+由此可见, $\frac{v}{u}$ 是 $f$ 的根. 所以, 用根的语言描述上个命题, 就是
 \begin{proposition}
-    设整数 $u$, $v$ 互素, 且 $v \neq 0$\period 设 $f$ 是整系数多项式\period 若 $\frac{v}{u}$ 是 $f$ 的根, 则 $u$ 是 $f$ 的首项系数的因子, 且 $v$ 是 $f$ 的 $0$ 次系数的因子\period
+    设整数 $u$, $v$ 互素, 且 $v \neq 0$. 设 $f$ 是整系数多项式. 若 $\frac{v}{u}$ 是 $f$ 的根, 则 $u$ 是 $f$ 的首项系数的因子, 且 $v$ 是 $f$ 的 $0$ 次系数的因子.
 \end{proposition}
 
-有二个特殊情形值得一提\period
+有二个特殊情形值得一提.
 
-若 $f$ 的 $0$ 次系数是 $0$, 则由于每个整数都是 $0$ 的因子, 这似乎是 ``听君一席话, 胜听一席话''\period 不过, 并不是这样\period 既然 $f$ 的 $0$ 次系数是 $0$, 那么
+若 $f$ 的 $0$ 次系数是 $0$, 则由于每个整数都是 $0$ 的因子, 这似乎是 ``听君一席话, 胜听一席话''. 不过, 并不是这样. 既然 $f$ 的 $0$ 次系数是 $0$, 那么
 \begin{align*}
     f = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + 0,
 \end{align*}
-其中 $a_n \neq 0$\period 从次低的项往次高的项看, 必存在正整数 $\ell$ 使 $\ell$ 个系数 $a_0$, $a_1$, $\cdots$, $a_{\ell-1}$ 为 $0$, 而 $a_{\ell}$ 不为 $0$\period 所以,
+其中 $a_n \neq 0$. 从次低的项往次高的项看, 必存在正整数 $\ell$ 使 $\ell$ 个系数 $a_0$, $a_1$, $\cdots$, $a_{\ell-1}$ 为 $0$, 而 $a_{\ell}$ 不为 $0$. 所以,
 \begin{align*}
     f
-    = {} & a_n x^n + a_{n-1} x^{n-1} + \cdots + a_\ell x^\ell                                                      \\
-    = {} & x^{\ell} \cdot \underbrace{(a_n x^{n - \ell} + a_{n-1} x^{n - 1 - \ell} + \cdots + a_\ell)}_{g} \period
+    = {} & a_n x^n + a_{n-1} x^{n-1} + \cdots + a_\ell x^\ell                                               \\
+    = {} & x^{\ell} \cdot \underbrace{(a_n x^{n - \ell} + a_{n-1} x^{n - 1 - \ell} + \cdots + a_\ell)}_{g}.
 \end{align*}
-不难看出, $n - \ell$ 次多项式 $g$ 的 $0$ 次系数 $a_{\ell} \neq 0$\period 我们已提出 $x^{\ell}$, 故我们只要继续寻找 $g$ 的 $1$ 次因子 (或有理根) 即可\period
+不难看出, $n - \ell$ 次多项式 $g$ 的 $0$ 次系数 $a_{\ell} \neq 0$. 我们已提出 $x^{\ell}$, 故我们只要继续寻找 $g$ 的 $1$ 次因子 (或有理根) 即可.
 
-若 $f$ 的首项系数是 $\pm 1$, 则 $u$ 也一定是 $\pm 1$\period 所以我们有
+若 $f$ 的首项系数是 $\pm 1$, 则 $u$ 也一定是 $\pm 1$. 所以我们有
 \begin{proposition}
-    设 $f$ 是整系数多项式, 且其首项系数是 $\pm 1$\period 若有理数 $r$ 是 $f$ 的根, 则 $r$ 一定是整数, 且 $r$ 是 $f$ 的 $0$ 次系数的因子\period
+    设 $f$ 是整系数多项式, 且其首项系数是 $\pm 1$. 若有理数 $r$ 是 $f$ 的根, 则 $r$ 一定是整数, 且 $r$ 是 $f$ 的 $0$ 次系数的因子.
 \end{proposition}
 
 \begin{example}
-    设 $n$ 是正整数\period 设 $m$ 是整数, 且不存在整数 $s$ 使 $s^n = m$\period 我们证明: 不存在有理数 $r$ 使 $r^n = m$\period
+    设 $n$ 是正整数. 设 $m$ 是整数, 且不存在整数 $s$ 使 $s^n = m$. 我们证明: 不存在有理数 $r$ 使 $r^n = m$.
 
-    反证法\period 若存在有理数 $r$ 使 $r^n = m$, 则有理数 $r$ 是整系数多项式 $f = x^n - m$ 的根\period 因为 $f$ 的首项系数是 $1$, 故 $r$ 一定是整数\period 可是, $m$ 不是整数的平方, 矛盾!
+    反证法. 若存在有理数 $r$ 使 $r^n = m$, 则有理数 $r$ 是整系数多项式 $f = x^n - m$ 的根. 因为 $f$ 的首项系数是 $1$, 故 $r$ 一定是整数. 可是, $m$ 不是整数的平方, 矛盾!
 
-    读者可能听说过, $\sqrt{2}$ 是无理数\period 我们可以这么看: $\sqrt{2}$ 是实数; 实数不是有理数就是无理数; $\sqrt{2}$ 的平方是 $2$; 整数的平方不可能是 $2$\period
+    读者可能听说过, $\sqrt{2}$ 是无理数. 我们可以这么看: $\sqrt{2}$ 是实数; 实数不是有理数就是无理数; $\sqrt{2}$ 的平方是 $2$; 整数的平方不可能是 $2$.
 
-    类似地, 读者可证明: $\sqrt[3]{2}$ 也是无理数\period
+    类似地, 读者可证明: $\sqrt[3]{2}$ 也是无理数.
 \end{example}
 
-呀! 作者跑远了呢\period 回来, 回来!
+呀! 作者跑远了呢. 回来, 回来!
 
-设 $f$ 是整系数多项式, 且其首项系数 $a_n \neq 0$, $0$ 次系数为 $a_0$\period 设 $a_0$ 的全部因子为
+设 $f$ 是整系数多项式, 且其首项系数 $a_n \neq 0$, $0$ 次系数为 $a_0$. 设 $a_0$ 的全部因子为

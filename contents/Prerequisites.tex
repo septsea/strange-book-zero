@@ -2,88 +2,88 @@
 \addcontentsline{toc}{subsection}{\Prerequisites}
 \markright{\Prerequisites}
 
-读者将在本节熟悉一些记号与术语\period 建议读者熟悉本节的内容后学习下节的内容\period
+读者将在本节熟悉一些记号与术语. 建议读者熟悉本节的内容后学习下节的内容.
 
 在进入小节 ``\Sets '' 前, 让我们先回顾命题、复数与数学归纳法吧!
 
 \begin{definition}
-    能判断真假的话是命题 \term{proposition}\period 正确的命题称为真命题; 错误的命题称为假命题\period 当然, 命题也可以用 ``对'' ``错'' 形容\period
+    能判断真假的话是命题 \term{proposition}. 正确的命题称为真命题; 错误的命题称为假命题. 当然, 命题也可以用 ``对'' ``错'' 形容.
 \end{definition}
 
 \begin{example}
-    根据常识, ``日东升西落'' 是真命题\period 类似地, ``月自身可发光'' 是假命题\period
+    根据常识, ``日东升西落'' 是真命题. 类似地, ``月自身可发光'' 是假命题.
 
-    ``这是什么?'' 不是命题, 因为它没有作出判断\period 类似地, ``请保持安静'' 也不是命题, 因为它只是一个祈使句 \term{imperative sentence}\period 不过, ``难道中国不强?'' 不但是命题, 它还是正确的, 因为这个反问 \term{rhetorical question} 作出了正确的判断\period
+    ``这是什么?'' 不是命题, 因为它没有作出判断. 类似地, ``请保持安静'' 也不是命题, 因为它只是一个祈使句 \term{imperative sentence}. 不过, ``难道中国不强?'' 不但是命题, 它还是正确的, 因为这个反问 \term{rhetorical question} 作出了正确的判断.
 
-    ``$x > 3$'' 不是命题, 因为它不可判断真假\period 像这种话里有未知元, 且揭秘未知元前不可知此话之真伪的话是开句 \term{open sentence}\period
+    ``$x > 3$'' 不是命题, 因为它不可判断真假. 像这种话里有未知元, 且揭秘未知元前不可知此话之真伪的话是开句 \term{open sentence}.
 \end{example}
 
-我们会经常遇到 ``若 $p$, 则 $q$'' 的命题\period
+我们会经常遇到 ``若 $p$, 则 $q$'' 的命题.
 
 \begin{definition}
-    设 ``若 $p$, 则 $q$'' 是真命题\period 我们说, $p$ 是 $q$ 的充分条件 \term{sufficient condition}, $q$ 是 $p$ 的必要条件 \term{necessary condition}\period 用符号写出来, 就是
+    设 ``若 $p$, 则 $q$'' 是真命题. 我们说, $p$ 是 $q$ 的充分条件 \term{sufficient condition}, $q$ 是 $p$ 的必要条件 \term{necessary condition}. 用符号写出来, 就是
     \begin{align*}
-        p \Rightarrow q \quad \text{or} \quad q \Leftarrow p \period
+        p \Rightarrow q \quad \text{or} \quad q \Leftarrow p.
     \end{align*}
 \end{definition}
 
 \begin{example}
-    ``若刚下过雨, 则地面潮湿'' 是对的\period ``刚下过雨'' 是 ``充分的'': 根据常识可以知道这一点\period ``地面潮湿'' 是 ``必要的'': 地面不潮湿, 那么不可能刚下过雨\period
+    ``若刚下过雨, 则地面潮湿'' 是对的. ``刚下过雨'' 是 ``充分的'': 根据常识可以知道这一点. ``地面潮湿'' 是 ``必要的'': 地面不潮湿, 那么不可能刚下过雨.
 \end{example}
 
 \begin{remark}
-    我们会遇到形如 ``$\ell$ 的一个必要与充分条件是 $r$'' 的命题\period 换个说法, 就是 ``$r$ 是 $\ell$ 的一个必要与充分条件''\period 再分解一下, 就是 ``$r$ 是 $\ell$ 的一个必要条件'' 与 ``$r$ 是 $\ell$ 的一个充分条件'' 这二个命题\period 根据定义, 这相当于 ``若 $\ell$, 则 $r$'' 与 ``若 $r$, 则 $\ell$'' 都是真命题\period 也就是说, $\ell$ 跟 $r$ 是等价的 \term{equivalent}\period 用符号写出来, 就是
+    我们会遇到形如 ``$\ell$ 的一个必要与充分条件是 $r$'' 的命题. 换个说法, 就是 ``$r$ 是 $\ell$ 的一个必要与充分条件''. 再分解一下, 就是 ``$r$ 是 $\ell$ 的一个必要条件'' 与 ``$r$ 是 $\ell$ 的一个充分条件'' 这二个命题. 根据定义, 这相当于 ``若 $\ell$, 则 $r$'' 与 ``若 $r$, 则 $\ell$'' 都是真命题. 也就是说, $\ell$ 跟 $r$ 是等价的 \term{equivalent}. 用符号写出来, 就是
     \begin{align*}
-        p \Leftrightarrow q \period
+        p \Leftrightarrow q.
     \end{align*}
 
-    证明 ``$\ell$ 的一个必要与充分条件是 $r$'' 时, 我们会把它分为必要性 \term{necessity} 与充分性 \term{sufficiency} 二个部分\period 证明必要性, 就是证明 ``$r$ 是 $\ell$ 的一个必要条件'', 也就是证明 ``若 $\ell$, 则 $r$'' 是对的; 换句话说, 证明左边可以推出右边\period 证明充分性, 就是证明 ``$r$ 是 $\ell$ 的一个充分条件'', 也就是证明 ``若 $r$, 则 $\ell$'' 是对的; 换句话说, 证明右边可以推出左边\period
+    证明 ``$\ell$ 的一个必要与充分条件是 $r$'' 时, 我们会把它分为必要性 \term{necessity} 与充分性 \term{sufficiency} 二个部分. 证明必要性, 就是证明 ``$r$ 是 $\ell$ 的一个必要条件'', 也就是证明 ``若 $\ell$, 则 $r$'' 是对的; 换句话说, 证明左边可以推出右边. 证明充分性, 就是证明 ``$r$ 是 $\ell$ 的一个充分条件'', 也就是证明 ``若 $r$, 则 $\ell$'' 是对的; 换句话说, 证明右边可以推出左边.
 \end{remark}
 
-命题就介绍到这里\period 下面回顾复数基础\period
+命题就介绍到这里. 下面回顾复数基础.
 
 \begin{definition}
-    复数 \term{complex number} 是形如 $x + y \ii$ ($x$, $y$ 是实数) 的数\period
+    复数 \term{complex number} 是形如 $x + y \ii$ ($x$, $y$ 是实数) 的数.
 \end{definition}
 
 \begin{remark}
-    可将 $x + y \ii$ 写为 $x + \ii y$\period
+    可将 $x + y \ii$ 写为 $x + \ii y$.
 \end{remark}
 
 \begin{definition}
-    设 $a,b,c,d$ 是实数\period 则
+    设 $a,b,c,d$ 是实数. 则
     \begin{align*}
-        a + b \ii = c + d \ii \iff a = c \text{ and } b = d \period
+        a + b \ii = c + d \ii \iff a = c \text{ and } b = d.
     \end{align*}
 \end{definition}
 
 \begin{remark}
-    我们把形如 $a+0 \ii$ 的复数写为 $a$, 并认为 $a+0 \ii$ 是实数\period 反过来, $a$ 也可以认为是复数 $a + 0 \ii$\period
+    我们把形如 $a+0 \ii$ 的复数写为 $a$, 并认为 $a+0 \ii$ 是实数. 反过来, $a$ 也可以认为是复数 $a + 0 \ii$.
 
-    形如 $0 + b \ii$ 的复数可写为 $b \ii$\period 按照习惯, $1\ii$ 可写为 $\ii$, 且 $-1\ii$ 可写为 $-\ii$\period
+    形如 $0 + b \ii$ 的复数可写为 $b \ii$. 按照习惯, $1\ii$ 可写为 $\ii$, 且 $-1\ii$ 可写为 $-\ii$.
 \end{remark}
 
 \begin{definition}
     复数的加、乘法定义为
     \begin{align*}
-         & (a + b \ii) + (c + d \ii) = (a + c) + (b + d) \ii,          \\
-         & (a + b \ii) (c + d \ii) = (ac - bd) + (ad + bc) \ii \period
+         & (a + b \ii) + (c + d \ii) = (a + c) + (b + d) \ii,   \\
+         & (a + b \ii) (c + d \ii) = (ac - bd) + (ad + bc) \ii.
     \end{align*}
-    由此可见, 二个复数的和 (或积) 还是复数\period
+    由此可见, 二个复数的和 (或积) 还是复数.
 \end{definition}
 
 \begin{example}
     我们计算 $\ii$ 与自己的积:
     \begin{align*}
-        \ii \cdot \ii = (0 + 1\ii) (0 + 1\ii) = (0 \cdot 0 - 1 \cdot 1) + (0 \cdot 1 + 1 \cdot 0) \ii = -1 \period
+        \ii \cdot \ii = (0 + 1\ii) (0 + 1\ii) = (0 \cdot 0 - 1 \cdot 1) + (0 \cdot 1 + 1 \cdot 0) \ii = -1.
     \end{align*}
     简单地说, 就是
     \begin{align*}
-        \ii \cdot \ii = \ii^2 = -1 \period
+        \ii \cdot \ii = \ii^2 = -1.
     \end{align*}
 \end{example}
 
-设 $z_1, z_2, z_3$ 是任意三个复数 (不必不同)\period 设 $z_1 = a + b \ii$\period
+设 $z_1, z_2, z_3$ 是任意三个复数 (不必不同). 设 $z_1 = a + b \ii$.
 
 \begin{proposition}
     复数的加法适合如下运算律:
@@ -94,19 +94,19 @@
 
     (iii) $0 + z_1 = z_1$;
 
-    (iv) 存在复数 $w = (-a) + (-b) \ii$ 使 $w + z_1 = 0$\period
+    (iv) 存在复数 $w = (-a) + (-b) \ii$ 使 $w + z_1 = 0$.
 
-    通常把适合 (iv) 的 $w$ 记为 $-z_1$, 且称之为 $z_1$ 的相反数\period
+    通常把适合 (iv) 的 $w$ 记为 $-z_1$, 且称之为 $z_1$ 的相反数.
 \end{proposition}
 
 \begin{remark}
-    $(-a) + (-b) \ii$ 可写为 $-a-b \ii$\period
+    $(-a) + (-b) \ii$ 可写为 $-a-b \ii$.
 \end{remark}
 
 \begin{definition}
     复数的减法定义为
     \begin{align*}
-        z_2 - z_1 = z_2 + (-z_1) \period
+        z_2 - z_1 = z_2 + (-z_1).
     \end{align*}
 \end{definition}
 
@@ -121,41 +121,41 @@
 
     (viii) $(-1) z_1 = -z_1$;
 
-    (ix) 若 $z_1 \neq 0$, 则存在复数 $v = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \ii$ 使 $v z_1 = 1$\period
+    (ix) 若 $z_1 \neq 0$, 则存在复数 $v = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \ii$ 使 $v z_1 = 1$.
 
-    通常把适合 (ix) 的 $v$ 记为 $z_1^{-1}$, 且称之为 $z_1$ 的倒数\period
+    通常把适合 (ix) 的 $v$ 记为 $z_1^{-1}$, 且称之为 $z_1$ 的倒数.
 \end{proposition}
 
 \begin{definition}
     复数的除法定义为
     \begin{align*}
-        \frac{z_2}{z_1} = z_2 z_1^{-1} \period
+        \frac{z_2}{z_1} = z_2 z_1^{-1}.
     \end{align*}
 \end{definition}
 
 \begin{proposition}
     复数的加法与乘法还适合分配律:
     \begin{align*}
-         & z_1 (z_2 + z_3) = z_1 z_2 + z_1 z_3,       \\
-         & (z_2 + z_3) z_1 = z_2 z_1 + z_3 z_1\period
+         & z_1 (z_2 + z_3) = z_1 z_2 + z_1 z_3, \\
+         & (z_2 + z_3) z_1 = z_2 z_1 + z_3 z_1.
     \end{align*}
 \end{proposition}
 
 \begin{remark}
-    $a$, $b\ii$, $c$, $d\ii$ 都可以看成是复数\period 这样
+    $a$, $b\ii$, $c$, $d\ii$ 都可以看成是复数. 这样
     \begin{align*}
         (a + b \ii) (c + d \ii)
         = {} & (a + b \ii) c + (a + b \ii) (d \ii)  \\
         = {} & ac + b \ii c + a d \ii + b \ii d \ii \\
         = {} & ac + bc\ii + ad\ii + bd\ii^2         \\
         = {} & (ac + bd\ii^2) + (ad + bc)\ii        \\
-        = {} & (ac - bd) + (ad + bc)\ii \period
+        = {} & (ac - bd) + (ad + bc)\ii.
     \end{align*}
-    也就是说, 我们不必死记复数的乘法规则: 只要用运算律与 $\ii^2 = -1$ 即可召唤它\period
+    也就是说, 我们不必死记复数的乘法规则: 只要用运算律与 $\ii^2 = -1$ 即可召唤它.
 \end{remark}
 
 \begin{definition}
-    设 $a$, $b$ 是实数\period $a + b\ii$ 的共轭 \term{conjugate} 是复数 $a - b\ii$ \period 复数 $z_1$ 的共轭可写为 $\overline{z_1}$\period
+    设 $a$, $b$ 是实数. $a + b\ii$ 的共轭 \term{conjugate} 是复数 $a - b\ii$. 复数 $z_1$ 的共轭可写为 $\overline{z_1}$.
 \end{definition}
 
 \begin{proposition}
@@ -167,65 +167,65 @@
 
     (xii) $\overline{\overline{z_1}} = z_1$;
 
-    (xiii) $\overline{z_1} z_1$ 是正数, 除非 $z_1 = 0$\period
+    (xiii) $\overline{z_1} z_1$ 是正数, 除非 $z_1 = 0$.
 \end{proposition}
 
 \begin{definition}
-    $|z_1| = \sqrt{\overline{z_1} z_1}$ 称为 $z_1$ 的绝对值 \term{absolute value}\period
+    $|z_1| = \sqrt{\overline{z_1} z_1}$ 称为 $z_1$ 的绝对值 \term{absolute value}.
 \end{definition}
 
 \begin{proposition}
     绝对值适合如下性质:
     \begin{align*}
-        |z_1 z_2| = |z_1| |z_2| \period
+        |z_1 z_2| = |z_1| |z_2|.
     \end{align*}
 \end{proposition}
 
 \begin{definition}
-    设 $n$ 是整数\period 若 $n=0$, 则说 $z_1^n = 1$\period 若 $n \geq 1$, 则说 $z_1^n$ 是 $n$ 个 $z_1$ 的积\period 若 $z_1 \neq 0$, 且 $n \leq -1$, 则说 $z_1^n$ 是 $\frac{1}{z_1^{-n}}$\period
+    设 $n$ 是整数. 若 $n=0$, 则说 $z_1^n = 1$. 若 $n \geq 1$, 则说 $z_1^n$ 是 $n$ 个 $z_1$ 的积. 若 $z_1 \neq 0$, 且 $n \leq -1$, 则说 $z_1^n$ 是 $\frac{1}{z_1^{-n}}$.
 
-    $z_1^n$ 的一个名字是 $z_1$ 的 $n$ 次幂 \term{power}\period
+    $z_1^n$ 的一个名字是 $z_1$ 的 $n$ 次幂 \term{power}.
 \end{definition}
 
 \begin{proposition}
-    设 $m,n$ 是非负整数\period 幂适合如下性质:
+    设 $m,n$ 是非负整数. 幂适合如下性质:
     \begin{align*}
-        z_1^m z_1^n = z_1^{m+n}, \quad (z_1^m)^n = z_1^{mn}, \quad (z_1 z_2)^m = z_1^m z_2^m \period
+        z_1^m z_1^n = z_1^{m+n}, \quad (z_1^m)^n = z_1^{mn}, \quad (z_1 z_2)^m = z_1^m z_2^m.
     \end{align*}
-    若 $z_1$ 与 $z_2$ 都不是 $0$, 则 $m,n$ 允许取全体整数\period
+    若 $z_1$ 与 $z_2$ 都不是 $0$, 则 $m,n$ 允许取全体整数.
 \end{proposition}
 
-复数就先回顾到这里\period 下面回顾数学归纳法\period
+复数就先回顾到这里. 下面回顾数学归纳法.
 
 \begin{remark}
-    数学归纳法 \term{mathematical induction} 是一种演绎推理\period
+    数学归纳法 \term{mathematical induction} 是一种演绎推理.
 \end{remark}
 
 \begin{proposition}
-    设 $P(n)$ 是跟整数 $n$ 相关的命题\period 设 $P(n)$ 适合:
+    设 $P(n)$ 是跟整数 $n$ 相关的命题. 设 $P(n)$ 适合:
 
     (i) $P(n_0)$ 是正确的;
 
-    (ii) 任取 $\ell \geq n_0$, 必有 ``若 $P(\ell)$ 是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立\period
+    (ii) 任取 $\ell \geq n_0$, 必有 ``若 $P(\ell)$ 是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立.
 
-    则任取不低于 $n_0$ 的整数 $n$, 必有 $P(n)$ 是正确的\period
+    则任取不低于 $n_0$ 的整数 $n$, 必有 $P(n)$ 是正确的.
 \end{proposition}
 
 \begin{remark}
-    可以这么理解数学归纳法\period 假设有一排竖立的砖\period 如果 (i) 第一块砖倒下, 且 (ii) 前一块砖倒下可引起后一块砖倒下, 那么所有的砖都可以倒下, 是吧? 由此也可以看出, (i) (ii) 缺一不可\period 第一块砖不倒, 后面的砖怎么倒下呢?\myFN{当然, 也可以从第 $n$ 块砖开始倒下 ($n > 1$), 但这就照顾不到第一块了\period} 如果前一块砖倒下时后一块砖不一定能倒下, 那么会在某块砖后开始倒不下去\period
+    可以这么理解数学归纳法. 假设有一排竖立的砖. 如果 (i) 第一块砖倒下, 且 (ii) 前一块砖倒下可引起后一块砖倒下, 那么所有的砖都可以倒下, 是吧? 由此也可以看出, (i) (ii) 缺一不可. 第一块砖不倒, 后面的砖怎么倒下呢?\myFN{当然, 也可以从第 $n$ 块砖开始倒下 ($n > 1$), 但这就照顾不到第一块了.} 如果前一块砖倒下时后一块砖不一定能倒下, 那么会在某块砖后开始倒不下去.
 \end{remark}
 
 \begin{example}
     我们试着用数学归纳法证明, 对任意正整数 $n$,
     \begin{align*}
-        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2} \period \tag*{$P(n) \colon$}
+        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2}. \tag*{$P(n) \colon$}
     \end{align*}
 
-    既然想证明对任意正整数 $n$, $P(n)$ 都成立, 我们取 $n_0 = 1$\period 然后验证 (i): 左边只有 $0$ 这一项, 右边是 $\frac{1 \cdot (1-1)}{2} = 0$\period 所以 (i) 适合\period
+    既然想证明对任意正整数 $n$, $P(n)$ 都成立, 我们取 $n_0 = 1$. 然后验证 (i): 左边只有 $0$ 这一项, 右边是 $\frac{1 \cdot (1-1)}{2} = 0$. 所以 (i) 适合.
 
-    再验证 (ii)\period (ii) 是说, 要由 $P(\ell)$ 推出 $P(\ell + 1)$\period 所以, 假设
+    再验证 (ii). (ii) 是说, 要由 $P(\ell)$ 推出 $P(\ell + 1)$. 所以, 假设
     \begin{align*}
-        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2}, \quad \ell \geq n_0 \period
+        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2}, \quad \ell \geq n_0.
     \end{align*}
     因为
     \begin{align*}
@@ -236,23 +236,23 @@
         = {} & \frac{\ell(\ell+1)}{2}                          \\
         = {} & \frac{(\ell+1)((\ell+1) - 1)}{2},
     \end{align*}
-    故我们由 $P(\ell)$ 推出了 $P(\ell + 1)$\period 我们在哪儿用到了 $P(\ell)$ 呢? 我们在标了 (IH) 的那一行用了 $P(\ell)$\period 这样的假设称为归纳假设 \term{induction hypothesis}\period
+    故我们由 $P(\ell)$ 推出了 $P(\ell + 1)$. 我们在哪儿用到了 $P(\ell)$ 呢? 我们在标了 (IH) 的那一行用了 $P(\ell)$. 这样的假设称为归纳假设 \term{induction hypothesis}.
 
-    既然 (i) (ii) 都适合, 那么任取不低于 $n_0=1$ 的整数 $n$, $P(n)$ 都对\period
+    既然 (i) (ii) 都适合, 那么任取不低于 $n_0=1$ 的整数 $n$, $P(n)$ 都对.
 \end{example}
 
-我们用二个具体的例说明, (i) (ii) 缺一不可\period
+我们用二个具体的例说明, (i) (ii) 缺一不可.
 
 \begin{example}
     我们 ``证明'', 对任意正整数 $n$,
     \begin{align*}
-        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2} + 1 \period \tag*{$P^{\prime}(n) \colon$}
+        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2} + 1. \tag*{$P^{\prime}(n) \colon$}
     \end{align*}
-    这里, $n_0$ 自然取 $1$\period
+    这里, $n_0$ 自然取 $1$.
 
-    (i) 不适合: 显然 $n=1$ 时, 左侧是 $0$ 而右侧是 $1$\period 再看 (ii)\period 假设
+    (i) 不适合: 显然 $n=1$ 时, 左侧是 $0$ 而右侧是 $1$. 再看 (ii). 假设
     \begin{align*}
-        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2} + 1, \quad \ell \geq n_0 \period
+        0 + 1 + \cdots + (\ell - 1) = \frac{\ell(\ell-1)}{2} + 1, \quad \ell \geq n_0.
     \end{align*}
     由于
     \begin{align*}
@@ -263,227 +263,227 @@
         = {} & \frac{\ell(\ell+1)}{2} + 1                          \\
         = {} & \frac{(\ell+1)((\ell+1) - 1)}{2} + 1,
     \end{align*}
-    故我们由 $P^{\prime}(\ell)$ ``推出''了 $P^{\prime}(\ell + 1)$\period 我们也在 (``IH'') 处用到了 ``归纳假设''\period 那么 $P^{\prime}(n)$ 就是正确的吗? 当然不是! 前面我们知道,
+    故我们由 $P^{\prime}(\ell)$ ``推出''了 $P^{\prime}(\ell + 1)$. 我们也在 (``IH'') 处用到了 ``归纳假设''. 那么 $P^{\prime}(n)$ 就是正确的吗? 当然不是! 前面我们知道,
     \begin{align*}
         0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2},
     \end{align*}
-    也就是说, $P^{\prime}(n)$ 的右侧的 ``${} + 1$'' 使其错误\period 当然, 一般我们很少会犯这样的错误: 毕竟, 一开始就不对的东西就不用看下去了\period
+    也就是说, $P^{\prime}(n)$ 的右侧的 ``${} + 1$'' 使其错误. 当然, 一般我们很少会犯这样的错误: 毕竟, 一开始就不对的东西就不用看下去了.
 \end{example}
 
 \begin{example}
     % cSpell: disable-next-line
-    不同的老婆\myFN{一般地, 二次元人会称动画、漫画、游戏、小说中自己喜爱的女性角色为老婆 \term{waifu}\period 一个二次元人可以有不止一个老婆\period}有着不同的发色\period 但是, 我们用数学归纳法却可以 ``证明'', 任意的 $n$ ($n \geq 1$) 个老婆有着相同的发色! 称这个命题为 $Q(n)$\period 这里, $n_0$ 自然取 $1$\period
+    不同的老婆\myFN{一般地, 二次元人会称动画、漫画、游戏、小说中自己喜爱的女性角色为老婆 \term{waifu}. 一个二次元人可以有不止一个老婆.}有着不同的发色. 但是, 我们用数学归纳法却可以 ``证明'', 任意的 $n$ ($n \geq 1$) 个老婆有着相同的发色! 称这个命题为 $Q(n)$. 这里, $n_0$ 自然取 $1$.
 
-    (i) 当 $n=n_0=1$ 时, 一个老婆自然只有一种发色\period 这个时候, 命题是正确的!
+    (i) 当 $n=n_0=1$ 时, 一个老婆自然只有一种发色. 这个时候, 命题是正确的!
 
-    (ii) 假设任意的 $\ell$ ($\ell \geq n_0$) 个老婆有着相同的发色! 随意取 $\ell + 1$ 个老婆\period 根据假设, 老婆 $1$, $2$, $\cdots$, $\ell$ 有着相同的发色, 且老婆 $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色\period 这二组中都有 $2$, $\cdots$, $\ell$ 这 $\ell-1$ 个老婆, 所以老婆 $1$, $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色!
+    (ii) 假设任意的 $\ell$ ($\ell \geq n_0$) 个老婆有着相同的发色! 随意取 $\ell + 1$ 个老婆. 根据假设, 老婆 $1$, $2$, $\cdots$, $\ell$ 有着相同的发色, 且老婆 $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色. 这二组中都有 $2$, $\cdots$, $\ell$ 这 $\ell-1$ 个老婆, 所以老婆 $1$, $2$, $\cdots$, $\ell$, $\ell+1$ 有着相同的发色!
 
-    根据 (i) (ii), 命题成立\period
+    根据 (i) (ii), 命题成立.
 
-    可是这对吗? 不对\period 问题出在 (ii)\period 如果说, 任意二个老婆有着相同的发色, 那任意三个老婆也有着相同的发色\period 这没问题\period 可是, 由 $Q(1)$ 推不出 $Q(2)$: 老婆 $1$ 与老婆 $2$ 根本就不重叠呀! (ii) 要求任取 $\ell \geq n_0$, 必有 $Q(\ell)$ 推出 $Q(\ell+1)$\period 而 $\ell = 1$ 时, (ii) 不对, 因此不能推出 $Q(n)$ 对任意正整数都对\period
+    可是这对吗? 不对. 问题出在 (ii). 如果说, 任意二个老婆有着相同的发色, 那任意三个老婆也有着相同的发色. 这没问题. 可是, 由 $Q(1)$ 推不出 $Q(2)$: 老婆 $1$ 与老婆 $2$ 根本就不重叠呀! (ii) 要求任取 $\ell \geq n_0$, 必有 $Q(\ell)$ 推出 $Q(\ell+1)$. 而 $\ell = 1$ 时, (ii) 不对, 因此不能推出 $Q(n)$ 对任意正整数都对.
 \end{example}
 
-下面是数学归纳法的一个变体\period
+下面是数学归纳法的一个变体.
 
 \begin{proposition}
-    设 $P(n)$ 是跟整数 $n$ 相关的命题\period 设 $P(n)$ 适合:
+    设 $P(n)$ 是跟整数 $n$ 相关的命题. 设 $P(n)$ 适合:
 
     (i) $P(n_0)$ 是正确的;
 
-    (ii)$^{\prime}$ 任取 $\ell \geq n_0$, 必有 ``若 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立\period
+    (ii)$^{\prime}$ 任取 $\ell \geq n_0$, 必有 ``若 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的, 则 $P(\ell + 1)$ 是正确的'' 成立.
 
-    则任取不低于 $n_0$ 的整数 $n$, 必有 $P(n)$ 是正确的\period
+    则任取不低于 $n_0$ 的整数 $n$, 必有 $P(n)$ 是正确的.
 \end{proposition}
 
 \begin{remark}
-    可以由下面的推理看出, 上面的数学归纳法变体是正确的\period
+    可以由下面的推理看出, 上面的数学归纳法变体是正确的.
 
-    作命题 $Q(n)$ ($n \geq n_0$) 为 ``$n - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(n)$ 都是正确的''\period
+    作命题 $Q(n)$ ($n \geq n_0$) 为 ``$n - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(n)$ 都是正确的''.
 
-    (i) $P(n_0)$ 是正确的, 所以 $n_0 - n_0 + 1$ 个命题 $P(n_0)$ 是正确的, 也就是 $Q(n_0)$ 是正确的\period
+    (i) $P(n_0)$ 是正确的, 所以 $n_0 - n_0 + 1$ 个命题 $P(n_0)$ 是正确的, 也就是 $Q(n_0)$ 是正确的.
 
-    (ii) 任取 $\ell \geq n_0$\period 假设 $Q(\ell)$ 是正确的, 也就是假设 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的\period 由 (ii)$^{\prime}$, $P(\ell + 1)$ 是正确的\period 所以, $\ell + 1 - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$, $P(\ell + 1)$ 都是正确的\period 换句话说, $Q(\ell + 1)$ 是正确的\period
+    (ii) 任取 $\ell \geq n_0$. 假设 $Q(\ell)$ 是正确的, 也就是假设 $\ell - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 都是正确的. 由 (ii)$^{\prime}$, $P(\ell + 1)$ 是正确的. 所以, $\ell + 1 - n_0 + 1$ 个命题 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$, $P(\ell + 1)$ 都是正确的. 换句话说, $Q(\ell + 1)$ 是正确的.
 
-    由数学归纳法可知, 任取不低于 $n_0$ 的整数 $n$, 必有 $Q(n)$ 是正确的\period 所以, $P(n)$ 是正确的\period
+    由数学归纳法可知, 任取不低于 $n_0$ 的整数 $n$, 必有 $Q(n)$ 是正确的. 所以, $P(n)$ 是正确的.
 
-    另一方面, 这个变体的条件 (ii)$^{\prime}$ 比数学归纳法的 (ii) 强, 所以若变体正确, 数学归纳法也正确\period 也就是说, 数学归纳法与其变体是等价的\period
+    另一方面, 这个变体的条件 (ii)$^{\prime}$ 比数学归纳法的 (ii) 强, 所以若变体正确, 数学归纳法也正确. 也就是说, 数学归纳法与其变体是等价的.
 
-    以后, ``数学归纳法'' 既可以指老的数学归纳法 (由 $P(\ell)$ 推 $P(\ell+1)$), 也可以指变体 (由 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 推 $P(\ell+1)$)\period
+    以后, ``数学归纳法'' 既可以指老的数学归纳法 (由 $P(\ell)$ 推 $P(\ell+1)$), 也可以指变体 (由 $P(n_0)$, $P(n_0 + 1)$, $\cdots$, $P(\ell)$ 推 $P(\ell+1)$).
 \end{remark}
 
-知识就回顾到这里\period 开始进入集的世界吧!
+知识就回顾到这里. 开始进入集的世界吧!
 
 \subsubsection*{\Sets}
 
 \begin{definition}
-    集 \term{set} 是具有某种特定性质的对象汇集而成的一个整体, 其对象称为元 \term{element}\period
+    集 \term{set} 是具有某种特定性质的对象汇集而成的一个整体, 其对象称为元 \term{element}.
 \end{definition}
 
 \begin{definition}
-    无元的集是空集 \term{empty set}\period
+    无元的集是空集 \term{empty set}.
 \end{definition}
 
 \begin{remark}
-    一般用小写字母表示元, 大写字母表示集\period
+    一般用小写字母表示元, 大写字母表示集.
 \end{remark}
 
 \begin{definition}
     一般地, 若集 $A$ 由元 $a$, $b$, $c$, $\cdots$ 作成, 我们写
     \begin{align*}
-        A = \{\, a,b,c,\cdots \,\} \period
+        A = \{\, a,b,c,\cdots \,\}.
     \end{align*}
-    还有一种记号\period 设集 $A$ 是由具有某种性质 $p$ 的对象汇集而成, 则记
+    还有一种记号. 设集 $A$ 是由具有某种性质 $p$ 的对象汇集而成, 则记
     \begin{align*}
-        A = \{\, x \mid x \text{ possesses the property } p \,\} \period
+        A = \{\, x \mid x \text{ possesses the property } p \,\}.
     \end{align*}
 \end{definition}
 
 \begin{definition}
-    若 $a$ 是集 $A$ 的元, 则写 $a \in A$ 或 $A \ni a$, 说 $a$ 属于 \term{to belong to} $A$ 或 $A$ 包含 \term{to contain} $a$\period 若 $a$ 不是集 $A$ 的元, 则写 $a \notin A$ 或 $A \not\ni a$, 说 $a$ 不属于 $A$ 或 $A$ 不包含 $a$\period
+    若 $a$ 是集 $A$ 的元, 则写 $a \in A$ 或 $A \ni a$, 说 $a$ 属于 \term{to belong to} $A$ 或 $A$ 包含 \term{to contain} $a$. 若 $a$ 不是集 $A$ 的元, 则写 $a \notin A$ 或 $A \not\ni a$, 说 $a$ 不属于 $A$ 或 $A$ 不包含 $a$.
 \end{definition}
 
 \begin{example}
     % cSpell: disable-next-line
-    全体整数作成的集用 $\ZZ$ \term{Zahl}\myFN{A German word which means \textit{number}.} 表示\period 它可以写为
+    全体整数作成的集用 $\ZZ$ \term{Zahl}\myFN{A German word which means \textit{number}.} 表示. 它可以写为
     \begin{align*}
-        \ZZ = \{\, 0,1,-1,2,-2,\cdots,n,-n,\cdots \,\} \period
+        \ZZ = \{\, 0,1,-1,2,-2,\cdots,n,-n,\cdots \,\}.
     \end{align*}
 \end{example}
 
 \begin{example}
-    全体非负整数作成的集用 $\NN$ \term{natural} 表示\period 它可以写为
+    全体非负整数作成的集用 $\NN$ \term{natural} 表示. 它可以写为
     \begin{align*}
-        \NN = \{\, x \mid x \in \ZZ \text{ and } x \geq 0 \,\} \period
+        \NN = \{\, x \mid x \in \ZZ \text{ and } x \geq 0 \,\}.
     \end{align*}
     为了方便, 也可以写为
     \begin{align*}
-        \NN = \{\, x \in \ZZ \mid x \geq 0 \,\} \period
+        \NN = \{\, x \in \ZZ \mid x \geq 0 \,\}.
     \end{align*}
 \end{example}
 
 \begin{definition}
-    若任取 $a \in A$, 都有 $a \in B$, 则写 $A \subset B$ 或 $B \supset A$, 说 $A$ 是 $B$ 的子集 \term{subset} 或 $B$ 是 $A$ 的超集 \term{superset}\period 假如有一个 $b \in B$ 不是 $A$ 的元, 可以用 ``真'' \term{proper} 形容之\period
+    若任取 $a \in A$, 都有 $a \in B$, 则写 $A \subset B$ 或 $B \supset A$, 说 $A$ 是 $B$ 的子集 \term{subset} 或 $B$ 是 $A$ 的超集 \term{superset}. 假如有一个 $b \in B$ 不是 $A$ 的元, 可以用 ``真'' \term{proper} 形容之.
 \end{definition}
 
 \begin{example}
-    空集是任意集的子集\period 空集是任意不空的集的真子集\period
+    空集是任意集的子集. 空集是任意不空的集的真子集.
 \end{example}
 
 \begin{example}
-    全体有理数作成的集用 $\QQ$ \term{quotient} 表示\period 因为整数是有理数, 所以 $\ZZ \subset \QQ$\period 因为有理数 $\frac12$ 不是整数, 我们说 $\ZZ$ 是 $\QQ$ 的真子集\period
+    全体有理数作成的集用 $\QQ$ \term{quotient} 表示. 因为整数是有理数, 所以 $\ZZ \subset \QQ$. 因为有理数 $\frac12$ 不是整数, 我们说 $\ZZ$ 是 $\QQ$ 的真子集.
 \end{example}
 
 \begin{definition}
-    全体实数作成的集用 $\RR$ \term{real} 表示\period
+    全体实数作成的集用 $\RR$ \term{real} 表示.
 \end{definition}
 
 \begin{definition}
-    全体复数作成的集用 $\CC$ \term{complex} 表示\period 不难看出,
+    全体复数作成的集用 $\CC$ \term{complex} 表示. 不难看出,
     \begin{align*}
-        \NN \subset \ZZ \subset \QQ \subset \RR \subset \CC \period
+        \NN \subset \ZZ \subset \QQ \subset \RR \subset \CC.
     \end{align*}
 \end{definition}
 
 \begin{definition}
-    $\FF$ \term{field} 可表示 $\QQ$, $\RR$, $\CC$ 的任意一个\period 不难看出, $\FF$ 适合这几条:
+    $\FF$ \term{field} 可表示 $\QQ$, $\RR$, $\CC$ 的任意一个. 不难看出, $\FF$ 适合这几条:
 
     (i) $0 \in \FF$, $1 \in \FF$, $0 \neq 1$;
 
-    (ii) 任取 $x,y \in \FF$ ($y \neq 0$), 必有 $x-y, \frac{x}{y} \in \FF$\period
+    (ii) 任取 $x,y \in \FF$ ($y \neq 0$), 必有 $x-y, \frac{x}{y} \in \FF$.
 
-    后面会见到稍详细的论述\period
+    后面会见到稍详细的论述.
 \end{definition}
 
 \begin{definition}
-    设 $\mathbb{L}$ 是 $\CC$, $\RR$, $\QQ$, $\ZZ$, $\NN$, $\FF$ 的任意一个\period $\mathbb{L}^{\ast}$ 表示 $\mathbb{L}$ 去掉 $0$ 后得到的集\period 不难看出, $\mathbb{L}$ 是 $\mathbb{L}^{\ast}$ 的真超集\period
+    设 $\mathbb{L}$ 是 $\CC$, $\RR$, $\QQ$, $\ZZ$, $\NN$, $\FF$ 的任意一个. $\mathbb{L}^{\ast}$ 表示 $\mathbb{L}$ 去掉 $0$ 后得到的集. 不难看出, $\mathbb{L}$ 是 $\mathbb{L}^{\ast}$ 的真超集.
 \end{definition}
 
 \begin{definition}
-    若集 $A$ 与 $B$ 包含的元完全一样, 则 $A$ 与 $B$ 是同一集\period 我们说 $A$ 等于 $B$, 写 $A = B$\period 显然
+    若集 $A$ 与 $B$ 包含的元完全一样, 则 $A$ 与 $B$ 是同一集. 我们说 $A$ 等于 $B$, 写 $A = B$. 显然
     \begin{align*}
-        A = B \iff A \subset B \text{ and } B \subset A \period
+        A = B \iff A \subset B \text{ and } B \subset A.
     \end{align*}
 \end{definition}
 
 \begin{definition}
     集 $A$ 与 $B$ 的交 \term{intersection} 是集
     \begin{align*}
-        A \cap B = \{\, x \mid x \in A \text{ and } x \in B \,\} \period
+        A \cap B = \{\, x \mid x \in A \text{ and } x \in B \,\}.
     \end{align*}
-    也就是说, $A \cap B$ 恰由 $A$ 与 $B$ 的公共元作成\period
+    也就是说, $A \cap B$ 恰由 $A$ 与 $B$ 的公共元作成.
 
     集 $A$ 与 $B$ 的并 \term{union} 是集
     \begin{align*}
-        A \cup B = \{\, x \mid x \in A \text{ or } x \in B \,\} \period
+        A \cup B = \{\, x \mid x \in A \text{ or } x \in B \,\}.
     \end{align*}
-    也就是说, $A \cup B$ 恰包含 $A$ 与 $B$ 的全部元\period
+    也就是说, $A \cup B$ 恰包含 $A$ 与 $B$ 的全部元.
 
-    类似地, 可定义多个集的交与并\period
+    类似地, 可定义多个集的交与并.
 \end{definition}
 
 \begin{definition}
-    设 $A$, $B$ 是集\period 定义
+    设 $A$, $B$ 是集. 定义
     \begin{align*}
-        A \times B = \{\, (a,b) \mid a \in A, \ b \in B  \,\} \period
+        A \times B = \{\, (a,b) \mid a \in A, \ b \in B  \,\}.
     \end{align*}
-    $A \times A$ 可简写为 $A^2$\period 类似地,
+    $A \times A$ 可简写为 $A^2$. 类似地,
     \begin{align*}
-        A \times B \times C = \{\, (a,b,c) \mid a \in A, \ b \in B, \ c \in C  \,\}, \quad A^3 = A \times A \times A \period
+        A \times B \times C = \{\, (a,b,c) \mid a \in A, \ b \in B, \ c \in C  \,\}, \quad A^3 = A \times A \times A.
     \end{align*}
 \end{definition}
 
 \begin{example}
-    设 $A = \{\, 1,2 \,\}$, $B = \{\, 3,4,5 \,\}$\period 则
+    设 $A = \{\, 1,2 \,\}$, $B = \{\, 3,4,5 \,\}$. 则
     \begin{align*}
-        A \times B = \{\, (1,3),(1,4),(1,5),(2,3),(2,4),(2,5) \,\}\period
+        A \times B = \{\, (1,3),(1,4),(1,5),(2,3),(2,4),(2,5) \,\}.
     \end{align*}
     而
     \begin{align*}
-        B \times A = \{\, (3,1),(3,2),(4,1),(4,2),(5,1),(5,2) \,\}\period
+        B \times A = \{\, (3,1),(3,2),(4,1),(4,2),(5,1),(5,2) \,\}.
     \end{align*}
 \end{example}
 
 \begin{remark}
-    一般地, $A \times B \neq B \times A$\period 假如 $A$, $B$ 各自有 $m$, $n$ 个元, 利用一点计数知识可以看出, $A \times B$ 有 $mn$ 个元\period
+    一般地, $A \times B \neq B \times A$. 假如 $A$, $B$ 各自有 $m$, $n$ 个元, 利用一点计数知识可以看出, $A \times B$ 有 $mn$ 个元.
 \end{remark}
 
 \subsubsection*{\Functions}
 
 \begin{definition}
-    假如通过一个法则 $f$, 使任取 $a \in A$, 都能得到唯一的 $b \in B$, 则说这个法则 $f$ 是集 $A$ 到集 $B$ 的一个函数 \term{function}\period 元 $b$ 是元 $a$ 在函数 $f$ 下的象 \term{image}\period 元 $a$ 是元 $b$ 在 $f$ 下的一个原象 \term{inverse image}\period 这个关系可以写为
+    假如通过一个法则 $f$, 使任取 $a \in A$, 都能得到唯一的 $b \in B$, 则说这个法则 $f$ 是集 $A$ 到集 $B$ 的一个函数 \term{function}. 元 $b$ 是元 $a$ 在函数 $f$ 下的象 \term{image}. 元 $a$ 是元 $b$ 在 $f$ 下的一个原象 \term{inverse image}. 这个关系可以写为
     \begin{align*}
-         & A \to B,  \tag*{$f$:}      \\
-         & a \mapsto b = f(a) \period
+         & A \to B,  \tag*{$f$:} \\
+         & a \mapsto b = f(a).
     \end{align*}
-    称 $A$ 是定义域 \term{domain}, $B$ 是陪域\myFN{不要混淆陪域与象集 (\textit{image}, \textit{range})\period $f$ 的象集是
+    称 $A$ 是定义域 \term{domain}, $B$ 是陪域\myFN{不要混淆陪域与象集 (\textit{image}, \textit{range}). $f$ 的象集是
         \begin{align*}
-            \mathrm{Im} \, f = \{\, b \in B \mid b = f(a), \, a \in A \,\} \period
+            \mathrm{Im} \, f = \{\, b \in B \mid b = f(a), \, a \in A \,\}.
         \end{align*}
-        这就是中学数学里的 ``值域''\period
+        这就是中学数学里的 ``值域''.
         % cSpell: disable-next-line
-    } \term{codomain}\period
+    } \term{codomain}.
 \end{definition}
 
 \begin{example}
-    可以把 $\RR^2$ 看作平面上的点集\period
+    可以把 $\RR^2$ 看作平面上的点集.
     \begin{align*}
          & \RR^2 \to \RR,  \tag*{$f$:}  \\
          & (x,y) \mapsto \sqrt{x^2+y^2}
     \end{align*}
-    是函数: 它表示点 $(x,y)$ 到点 $(0,0)$ 的距离\period
+    是函数: 它表示点 $(x,y)$ 到点 $(0,0)$ 的距离.
 \end{example}
 
 \begin{example}
     设
     \begin{align*}
-         & A = \{\, \text{dinner}, \text{bath}, \text{me} \,\}, \quad B = \{\, 0,1 \,\} \period
+         & A = \{\, \text{dinner}, \text{bath}, \text{me} \,\}, \quad B = \{\, 0,1 \,\}.
     \end{align*}
 
     法则
     \begin{align*}
          & \text{dinner} \mapsto 0, \quad \text{bath} \mapsto 1 \tag*{$f_1$:}
     \end{align*}
-    不是 $A$ 到 $B$ 的函数, 因为它没有为 $A$ 的元 $\text{me}$ 规定象\period 但是, 如果记 $A_1 = \{\, \text{dinner}, \text{bath} \,\}$, 这个 $f_1$ 可以是 $A_1$ 到 $B$ 的函数\period
+    不是 $A$ 到 $B$ 的函数, 因为它没有为 $A$ 的元 $\text{me}$ 规定象. 但是, 如果记 $A_1 = \{\, \text{dinner}, \text{bath} \,\}$, 这个 $f_1$ 可以是 $A_1$ 到 $B$ 的函数.
 
     法则
     \begin{align*}
@@ -491,7 +491,7 @@
          & \text{bath} \mapsto 1,                          \\
          & \text{me} \mapsto b \quad \text{where } b^2 = b
     \end{align*}
-    不是 $A$ 到 $B$ 的函数, 因为它给 $A$ 的元 $\text{me}$ 规定的象不唯一\period
+    不是 $A$ 到 $B$ 的函数, 因为它给 $A$ 的元 $\text{me}$ 规定的象不唯一.
 
     法则
     \begin{align*}
@@ -499,64 +499,64 @@
         \text{bath} \mapsto 1, \quad
         \text{me} \mapsto -1 \tag*{$f_3$:}
     \end{align*}
-    不是 $A$ 到 $B$ 的函数, 因为它给 $A$ 的元 $\text{me}$ 规定的象不是 $B$ 的元\period 但是, 如果记 $B_1 = \{\, -1,0,1 \,\}$, 这个 $f_3$ 可以是 $A$ 到 $B_1$ 的函数\period
+    不是 $A$ 到 $B$ 的函数, 因为它给 $A$ 的元 $\text{me}$ 规定的象不是 $B$ 的元. 但是, 如果记 $B_1 = \{\, -1,0,1 \,\}$, 这个 $f_3$ 可以是 $A$ 到 $B_1$ 的函数.
 \end{example}
 
 \begin{definition}
-    设 $f_1$ 与 $f_2$ 都是 $A$ 到 $B$ 的函数\period 若任取 $a \in A$, 必有 $f_1 (a) = f_2 (a)$, 则说这二个函数相等, 写为 $f_1 = f_2$\period
+    设 $f_1$ 与 $f_2$ 都是 $A$ 到 $B$ 的函数. 若任取 $a \in A$, 必有 $f_1 (a) = f_2 (a)$, 则说这二个函数相等, 写为 $f_1 = f_2$.
 \end{definition}
 
 \begin{example}
-    设 $A \subset \CC$, 且 $A$ 非空\period 定义二个 $A$ 到 $\CC$ 的函数: $f_1 (x) = x^2$, $f_2 (x) = |x|^2$\period 如果 $A = \RR$, 那么 $f_1 = f_2$\period 可是, 若 $A = \CC$, $f_1$ 与 $f_2$ 不相等\period
+    设 $A \subset \CC$, 且 $A$ 非空. 定义二个 $A$ 到 $\CC$ 的函数: $f_1 (x) = x^2$, $f_2 (x) = |x|^2$. 如果 $A = \RR$, 那么 $f_1 = f_2$. 可是, 若 $A = \CC$, $f_1$ 与 $f_2$ 不相等.
 \end{example}
 
 \begin{example}
-    设 $A$ 是全体正实数作成的集\period 定义二个 $A$ 到 $\RR$ 的函数: $f_1 (x) = \frac16 \log_{2} {x^3}$, $f_2 (x) = \log_{4} {x}$\period 知道对数的读者可以看出, $f_1$ 与 $f_2$ 有着相同的对应法则, 故 $f_1 = f_2$\period 因为 $f_2$ 是对数函数 \term{logarithmic function}, 所以 $f_1$ 也是\period
+    设 $A$ 是全体正实数作成的集. 定义二个 $A$ 到 $\RR$ 的函数: $f_1 (x) = \frac16 \log_{2} {x^3}$, $f_2 (x) = \log_{4} {x}$. 知道对数的读者可以看出, $f_1$ 与 $f_2$ 有着相同的对应法则, 故 $f_1 = f_2$. 因为 $f_2$ 是对数函数 \term{logarithmic function}, 所以 $f_1$ 也是.
 \end{example}
 
 \begin{remark}
-    在上下文清楚的情况下, 可以单说函数的对应法则\period 比如, 中学数学课说 ``二次函数 $f(x) = x^2 + x - 1$'' 时, 定义域与陪域默认都是 $\RR$\period 中学的函数一般都是实数的子集到实数的子集的函数\period 所谓 ``自然定义域'' 是指 (在一定范围内) 一切使对应法则有意义的元构成的集\period 比如, 在中学, 我们说 $\frac{1}{x}$ 的自然定义域是 $\RR^{\ast}$, $\sqrt{x}$ 的自然定义域是一切非负实数\period 在研究复变函数时, 我们说 $\frac{1}{z}$ 的自然定义域是 $\CC^{\ast}$\period 如果不明确函数的定义域, 我们会根据上下文作出自然定义域作为它的定义域\period
+    在上下文清楚的情况下, 可以单说函数的对应法则. 比如, 中学数学课说 ``二次函数 $f(x) = x^2 + x - 1$'' 时, 定义域与陪域默认都是 $\RR$. 中学的函数一般都是实数的子集到实数的子集的函数. 所谓 ``自然定义域'' 是指 (在一定范围内) 一切使对应法则有意义的元构成的集. 比如, 在中学, 我们说 $\frac{1}{x}$ 的自然定义域是 $\RR^{\ast}$, $\sqrt{x}$ 的自然定义域是一切非负实数. 在研究复变函数时, 我们说 $\frac{1}{z}$ 的自然定义域是 $\CC^{\ast}$. 如果不明确函数的定义域, 我们会根据上下文作出自然定义域作为它的定义域.
 \end{remark}
 
 \begin{definition}
-    $A$ 到 $A$ 的函数是 $A$ 的变换 \term{transform}\period 换句话说, 变换是定义域跟陪域一样的函数\period
+    $A$ 到 $A$ 的函数是 $A$ 的变换 \term{transform}. 换句话说, 变换是定义域跟陪域一样的函数.
 \end{definition}
 
 \subsubsection*{\BinaryFunctions}
 
 \begin{definition}
-    $A^2$ 到 $A$ 的函数称为 $A$ 的二元运算 \term{binary functions}\period
+    $A^2$ 到 $A$ 的函数称为 $A$ 的二元运算 \term{binary functions}.
 \end{definition}
 
 \begin{example}
-    设 $f(x,y) = x-y$\period 这个 $f$ 是 $\ZZ$ 的二元运算; 但是, 它不是 $\NN$ 的二元运算\period
+    设 $f(x,y) = x-y$. 这个 $f$ 是 $\ZZ$ 的二元运算; 但是, 它不是 $\NN$ 的二元运算.
 \end{example}
 
 \begin{remark}
-    设 $\circ$ 是 $A$ 的二元运算\period 代替 $\circ (x,y)$, 我们写 $x \circ y$\period 一般地, 若表示这个二元运算的符号不是字母, 我们就把这个符号写在二个元的中间\period
+    设 $\circ$ 是 $A$ 的二元运算. 代替 $\circ (x,y)$, 我们写 $x \circ y$. 一般地, 若表示这个二元运算的符号不是字母, 我们就把这个符号写在二个元的中间.
 \end{remark}
 
 \begin{definition}
-    设 $T(A)$ 是全部 $A$ 的变换作成的集\period 设 $f,g$ 是 $A$ 的变换\period 任取 $a \in A$, 当然有 $b = f(a) \in A$\period 所以, $g(b) = g(f(a))$ 也是 $A$ 的元\period 当然, 这个 $g(f(a))$ 也是唯一确定的\period 这样, 我们说, $f$ 与 $g$ 的复合 \term{composition} $g \circ f$ 是
+    设 $T(A)$ 是全部 $A$ 的变换作成的集. 设 $f,g$ 是 $A$ 的变换. 任取 $a \in A$, 当然有 $b = f(a) \in A$. 所以, $g(b) = g(f(a))$ 也是 $A$ 的元. 当然, 这个 $g(f(a))$ 也是唯一确定的. 这样, 我们说, $f$ 与 $g$ 的复合 \term{composition} $g \circ f$ 是
     \begin{align*}
          & A \to A, \tag*{$g \circ f \colon$} \\
-         & a \mapsto g(f(a)) \period
+         & a \mapsto g(f(a)).
     \end{align*}
     所以, 复合是 $T(A)$ 的二元运算:
     \begin{align*}
          & T(A) \times T(A) \to T(A), \tag*{$\circ \colon$} \\
-         & (g,f) \mapsto g \circ f \period
+         & (g,f) \mapsto g \circ f.
     \end{align*}
 \end{definition}
 
 \begin{remark}
-    设 $A$ 有有限多个元\period 此时, 可排出 $A$ 的元:
+    设 $A$ 有有限多个元. 此时, 可排出 $A$ 的元:
     \begin{align*}
-        A = \{\, a_1, a_2, \cdots, a_n \,\} \period
+        A = \{\, a_1, a_2, \cdots, a_n \,\}.
     \end{align*}
-    设 $f$ 是 $A^2$ 到 $B$ 的函数\period 则任给整数 $i,j$, $1 \leq i,j \leq n$, 记
+    设 $f$ 是 $A^2$ 到 $B$ 的函数. 则任给整数 $i,j$, $1 \leq i,j \leq n$, 记
     \begin{align*}
-        f(a_i, a_j) = b_{i,j} \in B \period
+        f(a_i, a_j) = b_{i,j} \in B.
     \end{align*}
     可以用这样的表描述此函数:
     \begin{align*}
@@ -580,11 +580,11 @@
             a_n    & b_{n,1} & b_{n,2} & \cdots & b_{n,n} \\
         \end{array}
     \end{align*}
-    这种表示函数的方式是方便的\period 如果这些 $b_{i,j}$ 都是 $A$ 的元, 就说这张表是 $A$ 的运算表\period
+    这种表示函数的方式是方便的. 如果这些 $b_{i,j}$ 都是 $A$ 的元, 就说这张表是 $A$ 的运算表.
 \end{remark}
 
 \begin{example}
-    设 $T = \{\, 0,1,-1 \,\}$, $\circ (x,y) = xy$\period 不难看出, $\circ$ 确实是 $T$ 的二元运算\period 它的运算表如下:
+    设 $T = \{\, 0,1,-1 \,\}$, $\circ (x,y) = xy$. 不难看出, $\circ$ 确实是 $T$ 的二元运算. 它的运算表如下:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{c|ccc}
@@ -597,18 +597,18 @@
 \end{example}
 
 \begin{example}
-    设 $\FF_{\mathrm{nu}}$ 是将 $\FF$ 去掉 $0$, $1$ 后得到的集\myFN{这个 $\FF_{\mathrm{nu}}$ 只是临时记号: $\mathrm{nu}$ 表示 \textit{nil}, \textit{unity}\period}\period 看下列 $6$ 个法则:
+    设 $\FF_{\mathrm{nu}}$ 是将 $\FF$ 去掉 $0$, $1$ 后得到的集\myFN{这个 $\FF_{\mathrm{nu}}$ 只是临时记号: $\mathrm{nu}$ 表示 \textit{nil}, \textit{unity}.}. 看下列 $6$ 个法则:
     \begin{align*}
-         & x \mapsto x; \tag*{$f_0 \colon$}                   \\
-         & x \mapsto 1-x; \tag*{$f_1 \colon$}                 \\
-         & x \mapsto \frac{1}{x}; \tag*{$f_2 \colon$}         \\
-         & x \mapsto 1-\frac{1}{1-x}; \tag*{$f_3 \colon$}     \\
-         & x \mapsto 1-\frac{1}{x}; \tag*{$f_4 \colon$}       \\
-         & x \mapsto \frac{1}{1-x}\period \tag*{$f_5 \colon$}
+         & x \mapsto x; \tag*{$f_0 \colon$}               \\
+         & x \mapsto 1-x; \tag*{$f_1 \colon$}             \\
+         & x \mapsto \frac{1}{x}; \tag*{$f_2 \colon$}     \\
+         & x \mapsto 1-\frac{1}{1-x}; \tag*{$f_3 \colon$} \\
+         & x \mapsto 1-\frac{1}{x}; \tag*{$f_4 \colon$}   \\
+         & x \mapsto \frac{1}{1-x}. \tag*{$f_5 \colon$}
     \end{align*}
-    记 $S_6 = \{\, f_0,f_1,f_2,f_3,f_4,f_5 \,\}$\period 可以验证, $S_6 \subset T(\FF_{\mathrm{nu}})$\period
+    记 $S_6 = \{\, f_0,f_1,f_2,f_3,f_4,f_5 \,\}$. 可以验证, $S_6 \subset T(\FF_{\mathrm{nu}})$.
 
-    进一步地, $36$ 次复合告诉我们, 任取 $f,g \in S_6$, 必有 $g \circ f \in S_6$\period 可以验证, 这是 $S_6$ 的 (复合) 运算表:
+    进一步地, $36$ 次复合告诉我们, 任取 $f,g \in S_6$, 必有 $g \circ f \in S_6$. 可以验证, 这是 $S_6$ 的 (复合) 运算表:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{c|cccccc}
@@ -622,402 +622,402 @@
         \end{array}
     \end{align*}
 
-    我们在本节会经常用 $S_6$ 举例\period
+    我们在本节会经常用 $S_6$ 举例.
 \end{example}
 
 \begin{definition}
-    设 $\circ$ 是 $A$ 的二元运算\period 若任取 $x,y,z \in A$, 必有
+    设 $\circ$ 是 $A$ 的二元运算. 若任取 $x,y,z \in A$, 必有
     \begin{align*}
         (x \circ y) \circ z = x \circ (y \circ z),
     \end{align*}
-    则说 $f$ 适合结合律 \term{associativity}\period 此时, $(x \circ y) \circ z$ 或 $x \circ (y \circ z)$ 可简写为 $x \circ y \circ z$\period
+    则说 $f$ 适合结合律 \term{associativity}. 此时, $(x \circ y) \circ z$ 或 $x \circ (y \circ z)$ 可简写为 $x \circ y \circ z$.
 \end{definition}
 
 \begin{example}
-    $\ZZ$ 的加法当然适合结合律\period 可是, 它的减法不适合结合律\period
+    $\ZZ$ 的加法当然适合结合律. 可是, 它的减法不适合结合律.
 \end{example}
 
 \begin{remark}
-    变换的复合适合结合律\period 确切地, 设 $f,g,h$ 都是 $A$ 的变换\period 任取 $a \in A$, 则
+    变换的复合适合结合律. 确切地, 设 $f,g,h$ 都是 $A$ 的变换. 任取 $a \in A$, 则
     \begin{align*}
-         & (h \circ (g \circ f))(a) = h((g \circ f)(a)) = h(g(f(a))),        \\
-         & ((h \circ g) \circ f)(a) = (h \circ g)(f(a)) = h(g(f(a))) \period
+         & (h \circ (g \circ f))(a) = h((g \circ f)(a)) = h(g(f(a))), \\
+         & ((h \circ g) \circ f)(a) = (h \circ g)(f(a)) = h(g(f(a))).
     \end{align*}
     也就是说,
     \begin{align*}
-        h \circ (g \circ f) = (h \circ g) \circ f \period
+        h \circ (g \circ f) = (h \circ g) \circ f.
     \end{align*}
 \end{remark}
 
 \begin{example}
-    $S_6$ 的复合当然适合结合律\period
+    $S_6$ 的复合当然适合结合律.
 \end{example}
 
 \begin{definition}
-    设 $\circ$ 是 $A$ 的二元运算\period 若任取 $x,y \in A$, 必有
+    设 $\circ$ 是 $A$ 的二元运算. 若任取 $x,y \in A$, 必有
     \begin{align*}
         x \circ y = y \circ x,
     \end{align*}
-    则说 $\circ$ 适合交换律 \term{commutativity}\period
+    则说 $\circ$ 适合交换律 \term{commutativity}.
 \end{definition}
 
 \begin{example}
-    $\FF^{\ast}$ 的乘法当然适合交换律\period 可是, 它的除法不适合交换律\period
+    $\FF^{\ast}$ 的乘法当然适合交换律. 可是, 它的除法不适合交换律.
 \end{example}
 
 \begin{example}
-    $S_6$ 的复合不适合交换律, 因为 $f_1 \circ f_2 = f_4$, 而 $f_2 \circ f_1 = f_5$, 二者不相等\period
+    $S_6$ 的复合不适合交换律, 因为 $f_1 \circ f_2 = f_4$, 而 $f_2 \circ f_1 = f_5$, 二者不相等.
 \end{example}
 
 \begin{remark}
-    在本文里, $\cdot$ 运算的优先级高于 $+$ 运算\period 所以, $a \cdot b + c$ 的意思就是
+    在本文里, $\cdot$ 运算的优先级高于 $+$ 运算. 所以, $a \cdot b + c$ 的意思就是
     \begin{align*}
         (a \cdot b) + c,
     \end{align*}
     而不是
     \begin{align*}
-        a \cdot (b + c)\period
+        a \cdot (b + c).
     \end{align*}
 \end{remark}
 
 \begin{definition}
-    设 $+$, $\cdot$ 是 $A$ 的二个二元运算\period 若任取 $x,y,z \in A$, 必有
+    设 $+$, $\cdot$ 是 $A$ 的二个二元运算. 若任取 $x,y,z \in A$, 必有
     \begin{align*}
          & x \cdot (y + z) = x \cdot y + x \cdot z, \tag*{(LD)}
     \end{align*}
-    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略\period 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$\period 但有意思的事儿是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式是对的\period 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的\period} \term{left distributivity}\period 类似地, 若
+    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略. 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$. 但有意思的事儿是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式是对的. 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的.} \term{left distributivity}. 类似地, 若
     \begin{align*}
          & (y + z) \cdot x = y \cdot x + z \cdot x, \tag*{(RD)}
     \end{align*}
-    则说 $+$ 与 $\cdot$ 适合右 ($\cdot$) 分配律 \term{right distributivity}\period 说既适合 LD 也适合 RD 的 $+$ 与 $\cdot$ 适合 ($\cdot$) 分配律 \term{distributivity}\period 显然, 若 $\cdot$ 适合交换律, 则 LD 与 RD 等价\period
+    则说 $+$ 与 $\cdot$ 适合右 ($\cdot$) 分配律 \term{right distributivity}. 说既适合 LD 也适合 RD 的 $+$ 与 $\cdot$ 适合 ($\cdot$) 分配律 \term{distributivity}. 显然, 若 $\cdot$ 适合交换律, 则 LD 与 RD 等价.
 \end{definition}
 
 \begin{example}
-    $\FF$ 的加法与乘法适合分配律\period 当然, 减法与乘法也适合分配律:
+    $\FF$ 的加法与乘法适合分配律. 当然, 减法与乘法也适合分配律:
     \begin{align*}
-        x(y-z) = xy - xz = yx - zx = (y-z)x \period
+        x(y-z) = xy - xz = yx - zx = (y-z)x.
     \end{align*}
     甚至, 在正实数里, 加法与除法适合右分配律:
     \begin{align*}
-        \frac{y+z}{x} = \frac{y}{x} + \frac{z}{x} \period
+        \frac{y+z}{x} = \frac{y}{x} + \frac{z}{x}.
     \end{align*}
 \end{example}
 
 \begin{definition}
-    设 $\circ$ 是 $A$ 的二元运算\period 若任取 $x,y,z \in A$, 必有
+    设 $\circ$ 是 $A$ 的二元运算. 若任取 $x,y,z \in A$, 必有
     \begin{align*}
          & x \circ y = x \circ z \implies y = z, \tag*{(LC)}
     \end{align*}
-    则说 $\circ$ 适合左消去律 \term{left cancellation property}\period 类似地, 若
+    则说 $\circ$ 适合左消去律 \term{left cancellation property}. 类似地, 若
     \begin{align*}
          & x \circ z = y \circ z \implies x = y, \tag*{(RC)}
     \end{align*}
-    则说 $\circ$ 适合右消去律 \term{right cancellation property}\period 说既适合 LC 也适合 RC 的 $\circ$ 适合消去律 \term{cancellation property}\period 显然, 若 $\circ$ 适合交换律, 则 LC 与 RC 等价\period
+    则说 $\circ$ 适合右消去律 \term{right cancellation property}. 说既适合 LC 也适合 RC 的 $\circ$ 适合消去律 \term{cancellation property}. 显然, 若 $\circ$ 适合交换律, 则 LC 与 RC 等价.
 \end{definition}
 
 \begin{example}
-    显然, $\NN$ 的乘法不适合消去律, 但 $\NN^{\ast}$ 的乘法适合消去律\myFN{后面提到整环时, 我们会稍微修改一下消去律的描述\period}\period
+    显然, $\NN$ 的乘法不适合消去律, 但 $\NN^{\ast}$ 的乘法适合消去律\myFN{后面提到整环时, 我们会稍微修改一下消去律的描述.}.
 \end{example}
 
 \begin{example}
-    考虑 $x \circ y = x^3 + y^2$\period 若把 $\circ$ 视为 $\NN$ 的二元运算, 那么它适合消去律\period 若把 $\circ$ 视为 $\QQ$ 的二元运算, 那么它适合右消去律\period 若把 $\circ$ 视为 $\CC$ 的二元运算, 那么它不适合任意一个消去律\period
+    考虑 $x \circ y = x^3 + y^2$. 若把 $\circ$ 视为 $\NN$ 的二元运算, 那么它适合消去律. 若把 $\circ$ 视为 $\QQ$ 的二元运算, 那么它适合右消去律. 若把 $\circ$ 视为 $\CC$ 的二元运算, 那么它不适合任意一个消去律.
 \end{example}
 
 \begin{example}
-    一般地, 当 $A$ 至少有二个元时, $\circ$ (在 $T(A)$ 里) 不适合消去律\period 设 $a,b \in A$, $a \neq b$\period 考虑下面 $4$ 个变换:
+    一般地, 当 $A$ 至少有二个元时, $\circ$ (在 $T(A)$ 里) 不适合消去律. 设 $a,b \in A$, $a \neq b$. 考虑下面 $4$ 个变换:
     \begin{align*}
-         & a \mapsto a, \quad b \mapsto b, \quad x \mapsto x \text{ where $x \neq a,b$}; \tag*{$g_0 \colon$}       \\
-         & a \mapsto a, \quad b \mapsto a, \quad x \mapsto x \text{ where $x \neq a,b$}; \tag*{$g_1 \colon$}       \\
-         & a \mapsto b, \quad b \mapsto b, \quad x \mapsto x \text{ where $x \neq a,b$}; \tag*{$g_2 \colon$}       \\
-         & a \mapsto b, \quad b \mapsto a, \quad x \mapsto x \text{ where $x \neq a,b$}\period \tag*{$g_3 \colon$}
+         & a \mapsto a, \quad b \mapsto b, \quad x \mapsto x \text{ where $x \neq a,b$}; \tag*{$g_0 \colon$} \\
+         & a \mapsto a, \quad b \mapsto a, \quad x \mapsto x \text{ where $x \neq a,b$}; \tag*{$g_1 \colon$} \\
+         & a \mapsto b, \quad b \mapsto b, \quad x \mapsto x \text{ where $x \neq a,b$}; \tag*{$g_2 \colon$} \\
+         & a \mapsto b, \quad b \mapsto a, \quad x \mapsto x \text{ where $x \neq a,b$}. \tag*{$g_3 \colon$}
     \end{align*}
     可以验证,
     \begin{align*}
-        g_3 \circ g_1 = g_2 \circ g_1 = g_2 \circ g_3 = g_2 \period
+        g_3 \circ g_1 = g_2 \circ g_1 = g_2 \circ g_3 = g_2.
     \end{align*}
-    由此可以看出, $\circ$ 不适合任意一个消去律\period
+    由此可以看出, $\circ$ 不适合任意一个消去律.
 \end{example}
 
 \begin{example}
-    我们看 $\circ$ 在 $S_6$ 里是否适合消去律\period 取 $f,g,h \in S_6$\period 由表易知, 当 $g \neq h$ 时, $f \circ g \neq f \circ h$ (横着看运算表), 且 $g \circ f \neq h \circ f$ (竖着看运算表)\period 这说明, $\circ$ 在 $T(\FF_{\mathrm{nu}})$ 的子集 $S_6$ 里适合消去律\period
+    我们看 $\circ$ 在 $S_6$ 里是否适合消去律. 取 $f,g,h \in S_6$. 由表易知, 当 $g \neq h$ 时, $f \circ g \neq f \circ h$ (横着看运算表), 且 $g \circ f \neq h \circ f$ (竖着看运算表). 这说明, $\circ$ 在 $T(\FF_{\mathrm{nu}})$ 的子集 $S_6$ 里适合消去律.
 \end{example}
 
 \begin{definition}
-    设 $\circ$ 是 $A$ 的二元运算\period 若存在 $e \in A$, 使若任取 $x \in A$, 必有
+    设 $\circ$ 是 $A$ 的二元运算. 若存在 $e \in A$, 使若任取 $x \in A$, 必有
     \begin{align*}
         e \circ x = x \circ e = x,
     \end{align*}
-    则说 $e$ 是 $A$ 的 (关于运算 $\circ$ 的) 幺元 \term{identity}\period 如果 $e^{\prime}$ 也是幺元, 则
+    则说 $e$ 是 $A$ 的 (关于运算 $\circ$ 的) 幺元 \term{identity}. 如果 $e^{\prime}$ 也是幺元, 则
     \begin{align*}
-        e = e \circ e^{\prime} = e^{\prime} \period
+        e = e \circ e^{\prime} = e^{\prime}.
     \end{align*}
 \end{definition}
 
 \begin{example}
-    $\FF$ 的加法的幺元是 $0$, 且其乘法的幺元是 $1$\period
+    $\FF$ 的加法的幺元是 $0$, 且其乘法的幺元是 $1$.
 \end{example}
 
 \begin{example}
     不难看出, 这个变换是 $T(A)$ 的幺元:
     \begin{align*}
          & A \to A,  \tag*{$\iota$:} \\
-         & a \mapsto a \period
+         & a \mapsto a.
     \end{align*}
-    它也有个一般点的名字: 恒等变换 \term{identity transform}\period
+    它也有个一般点的名字: 恒等变换 \term{identity transform}.
 
-    在 $S_6$ 里, $f_0$ 就是这里的 $\iota$\period
+    在 $S_6$ 里, $f_0$ 就是这里的 $\iota$.
 \end{example}
 
 \begin{definition}
-    设 $\circ$ 是 $A$ 的二元运算\period 设 $e$ 是 $A$ 的幺元\period 设 $x \in A$\period 若存在 $y \in A$, 使
+    设 $\circ$ 是 $A$ 的二元运算. 设 $e$ 是 $A$ 的幺元. 设 $x \in A$. 若存在 $y \in A$, 使
     \begin{align*}
         y \circ x = x \circ y = e,
     \end{align*}
-    则说 $y$ 是 $x$ 的 (关于运算 $\circ$ 的) 逆元 \term{inverse}\period
+    则说 $y$ 是 $x$ 的 (关于运算 $\circ$ 的) 逆元 \term{inverse}.
 \end{definition}
 
 \begin{example}
-    $\FF$ 的每个元都有加法逆元, 即其相反数\period
+    $\FF$ 的每个元都有加法逆元, 即其相反数.
 \end{example}
 
 \begin{remark}
-    设 $\circ$ 适合结合律\period 如果 $y, y^{\prime}$ 都是 $x$ 的逆元, 则
+    设 $\circ$ 适合结合律. 如果 $y, y^{\prime}$ 都是 $x$ 的逆元, 则
     \begin{align*}
-        y = y \circ e = y \circ (x \circ y^{\prime}) = (y \circ x) \circ y^{\prime} = e \circ y^{\prime} = y^{\prime} \period
+        y = y \circ e = y \circ (x \circ y^{\prime}) = (y \circ x) \circ y^{\prime} = e \circ y^{\prime} = y^{\prime}.
     \end{align*}
-    此时, 一般用 $x^{-1}$ 表示 $x$ 的逆元\period 因为
+    此时, 一般用 $x^{-1}$ 表示 $x$ 的逆元. 因为
     \begin{align*}
         x^{-1} \circ x = x \circ x^{-1} = e,
     \end{align*}
-    由上可知, $x^{-1}$ 也有逆元, 且 $(x^{-1})^{-1} = x$\period
+    由上可知, $x^{-1}$ 也有逆元, 且 $(x^{-1})^{-1} = x$.
 \end{remark}
 
 \begin{example}
-    一般地, 当 $A$ 至少有二个元时, $T(A)$ 既有有逆元的变换, 也有无逆元的变换\period 还是看前面的 $g_0$, $g_1$, $g_2$, $g_3$\period 首先, $g_0$ 是幺元 $\iota$\period 不难看出, $g_0$ 与 $g_3$ 都有逆元:
+    一般地, 当 $A$ 至少有二个元时, $T(A)$ 既有有逆元的变换, 也有无逆元的变换. 还是看前面的 $g_0$, $g_1$, $g_2$, $g_3$. 首先, $g_0$ 是幺元 $\iota$. 不难看出, $g_0$ 与 $g_3$ 都有逆元:
     \begin{align*}
-         & g_0 \circ g_0 = g_3 \circ g_3 = g_0 \period
+         & g_0 \circ g_0 = g_3 \circ g_3 = g_0.
     \end{align*}
-    不过, $g_1$ 不可能有逆元\period 假设 $g_1$ 有逆元 $h$, 则应有
+    不过, $g_1$ 不可能有逆元. 假设 $g_1$ 有逆元 $h$, 则应有
     \begin{align*}
-        (h \circ g_1)(a) = \iota(a) = a, \quad (h \circ g_1)(b) = \iota(b) = b \period
+        (h \circ g_1)(a) = \iota(a) = a, \quad (h \circ g_1)(b) = \iota(b) = b.
     \end{align*}
     可是, $g_1(a) = g_1(b) = a$, 故 $(h \circ g_1)(a) = (h \circ g_1)(b) = h(a)$, 它不能既等于 $a$ 也等于 $b$, 矛盾!
 \end{example}
 
 \begin{example}
-    再看 $S_6$\period 由表可看出, $f_0$, $f_1$, $f_2$, $f_3$, $f_4$, $f_5$ 的逆元分别是 $f_0$, $f_1$, $f_2$, $f_3$, $f_5$, $f_4$\period
+    再看 $S_6$. 由表可看出, $f_0$, $f_1$, $f_2$, $f_3$, $f_4$, $f_5$ 的逆元分别是 $f_0$, $f_1$, $f_2$, $f_3$, $f_5$, $f_4$.
 \end{example}
 
 \begin{remark}
-    设 $\circ$ 适合结合律\period 如果 $x,y$ 都有逆元, 那么 $x \circ y$ 也有逆元, 且
+    设 $\circ$ 适合结合律. 如果 $x,y$ 都有逆元, 那么 $x \circ y$ 也有逆元, 且
     \begin{align*}
-        (x \circ y)^{-1} = y^{-1} \circ x^{-1} \period
+        (x \circ y)^{-1} = y^{-1} \circ x^{-1}.
     \end{align*}
     为了说明这一点, 只要按定义验证即可:
     \begin{align*}
-         & (y^{-1} \circ x^{-1}) \circ (x \circ y) = y^{-1} \circ (x^{-1} \circ x) \circ y = y^{-1} \circ e \circ y = y^{-1} \circ y = e,        \\
-         & (x \circ y) \circ (y^{-1} \circ x^{-1}) = x \circ (y \circ y^{-1}) \circ x^{-1} = x \circ e \circ x^{-1} = x \circ x^{-1} = e \period
+         & (y^{-1} \circ x^{-1}) \circ (x \circ y) = y^{-1} \circ (x^{-1} \circ x) \circ y = y^{-1} \circ e \circ y = y^{-1} \circ y = e, \\
+         & (x \circ y) \circ (y^{-1} \circ x^{-1}) = x \circ (y \circ y^{-1}) \circ x^{-1} = x \circ e \circ x^{-1} = x \circ x^{-1} = e.
     \end{align*}
-    这个规则往往称为袜靴规则 \term{socks and shoes rule}: 设 $y$ 是穿袜, $x$ 是穿靴, $x \circ y$ 表示动作的复合: 先穿袜后穿靴\period 那么这个规则告诉我们, $x \circ y$ 的逆元就是先脱靴再脱袜\period
+    这个规则往往称为袜靴规则 \term{socks and shoes rule}: 设 $y$ 是穿袜, $x$ 是穿靴, $x \circ y$ 表示动作的复合: 先穿袜后穿靴. 那么这个规则告诉我们, $x \circ y$ 的逆元就是先脱靴再脱袜.
 \end{remark}
 
 \begin{remark}
-    由此可见, 结合律是一条很重要的规则\period 我们算 $63 \cdot 8 \cdot 125$ 时也会想着先算 $8 \cdot 125$\period
+    由此可见, 结合律是一条很重要的规则. 我们算 $63 \cdot 8 \cdot 125$ 时也会想着先算 $8 \cdot 125$.
 \end{remark}
 
 \subsubsection*{\SemiGroupsAndGroups}
 
 \begin{definition}
-    设 $S$ 是非空集\period 设 $\circ$ 是 $S$ 的二元运算\period 若 $\circ$ 适合结合律, 则称 $S$ (关于 $\circ$) 是半群 \term{semi-group}\period
+    设 $S$ 是非空集. 设 $\circ$ 是 $S$ 的二元运算. 若 $\circ$ 适合结合律, 则称 $S$ (关于 $\circ$) 是半群 \term{semi-group}.
 \end{definition}
 
 \begin{example}
-    $\NN$ 关于加法 (或乘法) 作成半群\period
+    $\NN$ 关于加法 (或乘法) 作成半群.
 \end{example}
 
 \begin{example}
-    $T(A)$ 关于 $\circ$ 作成半群\period
+    $T(A)$ 关于 $\circ$ 作成半群.
 \end{example}
 
 \begin{remark}
-    事实上, 这里要求 $S$ 非空是有必要的\period
+    事实上, 这里要求 $S$ 非空是有必要的.
 
-    首先, 空集没什么意思\period 其次, 前面所述的结合律、交换律、分配律等自动成立, 这是因为对形如 ``若 $p$, 则 $q$'' 的命题而言, $p$ 为假推出整个命题为真\period 这是相当 ``危险'' 的!
+    首先, 空集没什么意思. 其次, 前面所述的结合律、交换律、分配律等自动成立, 这是因为对形如 ``若 $p$, 则 $q$'' 的命题而言, $p$ 为假推出整个命题为真. 这是相当 ``危险'' 的!
 \end{remark}
 
 \begin{definition}
-    设 $m$ 是正整数\period 设 $x$ 是半群 $S$ 的元\period 令
+    设 $m$ 是正整数. 设 $x$ 是半群 $S$ 的元. 令
     \begin{align*}
-        x^{1} = x, \quad x^{m} = x \circ x^{m-1} \period
+        x^{1} = x, \quad x^{m} = x \circ x^{m-1}.
     \end{align*}
-    $x^{m}$ 称为 $x$ 的 $m$ 次幂\period 不难看出, 当 $m,n$ 都是正整数时,
+    $x^{m}$ 称为 $x$ 的 $m$ 次幂. 不难看出, 当 $m,n$ 都是正整数时,
     \begin{align*}
-        x^{m+n} = x^m \circ x^n, \quad (x^m)^n = x^{mn} \period
+        x^{m+n} = x^m \circ x^n, \quad (x^m)^n = x^{mn}.
     \end{align*}
     假如 $S$ 有二个元 $x$, $y$ 适合 $x \circ y = y \circ x$, 那么还有
     \begin{align*}
-        (x \circ y)^m = x^m \circ y^m \period
+        (x \circ y)^m = x^m \circ y^m.
     \end{align*}
 \end{definition}
 
 \begin{example}
-    还是看熟悉的 $\NN$\period 对于乘法而言, 这里的幂就是普通的幂——一个数自乘多次的结果\period 对于加法而言, 这里的幂相当于乘法——一个数自加多次的结果\period
+    还是看熟悉的 $\NN$. 对于乘法而言, 这里的幂就是普通的幂——一个数自乘多次的结果. 对于加法而言, 这里的幂相当于乘法——一个数自加多次的结果.
 \end{example}
 
 \begin{definition}
-    设 $G$ 关于 $\circ$ 是半群\period 若 $G$ 的关于 $\circ$ 的幺元存在, 且 $G$ 的任意元都有关于 $\circ$ 的逆元, 则 $G$ 是群 \term{group}\period
+    设 $G$ 关于 $\circ$ 是半群. 若 $G$ 的关于 $\circ$ 的幺元存在, 且 $G$ 的任意元都有关于 $\circ$ 的逆元, 则 $G$ 是群 \term{group}.
 \end{definition}
 
 \begin{example}
-    $\NN$ 关于加法 (或乘法) 不能作成群\period $\ZZ$ 关于加法作成群, 但关于乘法不能作成群\period $\FF$ 关于乘法不能作成群, 但 $\FF^{\ast}$ 关于乘法作成群\period 不过, $\FF^{\ast}$ 关于加法不能作成群\period
+    $\NN$ 关于加法 (或乘法) 不能作成群. $\ZZ$ 关于加法作成群, 但关于乘法不能作成群. $\FF$ 关于乘法不能作成群, 但 $\FF^{\ast}$ 关于乘法作成群. 不过, $\FF^{\ast}$ 关于加法不能作成群.
 \end{example}
 
 \begin{example}
-    $T(A)$ 一般不是群\period 不过, $S_6$ 是群\period
+    $T(A)$ 一般不是群. 不过, $S_6$ 是群.
 \end{example}
 
 \begin{remark}
-    群有唯一的幺元\period 群的每个元都有唯一的逆元\period
+    群有唯一的幺元. 群的每个元都有唯一的逆元.
 \end{remark}
 
 \begin{remark}
-    设 $G$ 关于 $\circ$ 是群\period 我们说, $\circ$ 适合消去律\period
+    设 $G$ 关于 $\circ$ 是群. 我们说, $\circ$ 适合消去律.
 
-    假如 $x \circ y = x \circ z$\period 二侧左边乘 $x$ 的逆元 $x^{-1}$, 就有
+    假如 $x \circ y = x \circ z$. 二侧左边乘 $x$ 的逆元 $x^{-1}$, 就有
     \begin{align*}
-        x^{-1} \circ (x \circ y) = x^{-1} \circ (x \circ y) \period
+        x^{-1} \circ (x \circ y) = x^{-1} \circ (x \circ y).
     \end{align*}
     由于 $\circ$ 适合结合律,
     \begin{align*}
-        (x^{-1} \circ x) \circ y = (x^{-1} \circ x) \circ y \period
+        (x^{-1} \circ x) \circ y = (x^{-1} \circ x) \circ y.
     \end{align*}
     也就是
     \begin{align*}
-        e \circ y = e \circ z \period
+        e \circ y = e \circ z.
     \end{align*}
-    这样, $y = z$\period 类似地, 用同样的方法可以知道, 右消去律也对\period
+    这样, $y = z$. 类似地, 用同样的方法可以知道, 右消去律也对.
 \end{remark}
 
 \begin{definition}
-    已经知道, 群的每个元 $x$ 都有逆元 $x^{-1}$\period 由此, 当 $m$ 是正整数时, 定义 $x^{-m} = (x^{-1})^m$\period 再定义 $x^0 = e$\period 利用半群的结果, 可以看出, 当 $m,n$ 都是整数时,
+    已经知道, 群的每个元 $x$ 都有逆元 $x^{-1}$. 由此, 当 $m$ 是正整数时, 定义 $x^{-m} = (x^{-1})^m$. 再定义 $x^0 = e$. 利用半群的结果, 可以看出, 当 $m,n$ 都是整数时,
     \begin{align*}
-        x^{m+n} = x^m \circ x^n, \quad (x^m)^n = x^{mn} \period
+        x^{m+n} = x^m \circ x^n, \quad (x^m)^n = x^{mn}.
     \end{align*}
     假如 $G$ 有二个元 $x$, $y$ 适合 $x \circ y = y \circ x$, 那么还有
     \begin{align*}
-        (x \circ y)^m = x^m \circ y^m \period
+        (x \circ y)^m = x^m \circ y^m.
     \end{align*}
 \end{definition}
 
 \begin{example}
-    对于 $\FF^{\ast}$ 的乘法而言, 这里的任意整数幂跟普通的整数幂没有任何区别\period 我们学习数的负整数幂的时候, 也是借助倒数定义的\period
+    对于 $\FF^{\ast}$ 的乘法而言, 这里的任意整数幂跟普通的整数幂没有任何区别. 我们学习数的负整数幂的时候, 也是借助倒数定义的.
 \end{example}
 
 \subsubsection*{\Subgroups}
 
 \begin{definition}
-    设 $G$ 关于 $\circ$ 是群\period 设 $H \subset G$, $H$ 非空\period 若 $H$ 关于 $\circ$ 也作成群, 则 $H$ 是 $G$ 的子群 \term{subgroup}\period
+    设 $G$ 关于 $\circ$ 是群. 设 $H \subset G$, $H$ 非空. 若 $H$ 关于 $\circ$ 也作成群, 则 $H$ 是 $G$ 的子群 \term{subgroup}.
 \end{definition}
 
 \begin{example}
-    对加法来说, $\ZZ$ 是 $\FF$ 的子群\period 对乘法来说, $\ZZ^{\ast}$ 不是 $\FF^{\ast}$ 的子群\period
+    对加法来说, $\ZZ$ 是 $\FF$ 的子群. 对乘法来说, $\ZZ^{\ast}$ 不是 $\FF^{\ast}$ 的子群.
 \end{example}
 
 \begin{remark}
-    设 $H \subset G$, $H$ 非空\period $H$ 是 $G$ 的子群的一个必要与充分条件是: 任取 $x,y \in H$, 必有 $x \circ y^{-1} \in H$\period
+    设 $H \subset G$, $H$ 非空. $H$ 是 $G$ 的子群的一个必要与充分条件是: 任取 $x,y \in H$, 必有 $x \circ y^{-1} \in H$.
 
-    怎么说明这一点呢? 先看充分性\period 任取 $x \in H$, 则 $e = x \circ x^{-1} \in H$\period 任取 $y \in H$, 则 $y^{-1} = e \circ y^{-1} \in H$\period 所以
+    怎么说明这一点呢? 先看充分性. 任取 $x \in H$, 则 $e = x \circ x^{-1} \in H$. 任取 $y \in H$, 则 $y^{-1} = e \circ y^{-1} \in H$. 所以
     \begin{align*}
-        x \circ y = x \circ (y^{-1})^{-1} \in H \period
+        x \circ y = x \circ (y^{-1})^{-1} \in H.
     \end{align*}
-    $\circ$ 在 $G$ 适合结合律, $H \subset G$, 所以 $\circ$ 作为 $H$ 的二元运算也适合结合律\period 至此, $H$ 是半群\period
+    $\circ$ 在 $G$ 适合结合律, $H \subset G$, 所以 $\circ$ 作为 $H$ 的二元运算也适合结合律. 至此, $H$ 是半群.
 
-    前面已经说明, $e \in H$, 所以 $H$ 的关于 $\circ$ 的幺元存在\period 进一步地, $x \in H$ 在 $G$ 里的逆元也是 $H$ 的元, 所以 $H$ 的任意元都有关于 $\circ$ 的逆元\period 这样, $H$ 是群\period 顺便一提, 我们刚才也说明了, $G$ 的幺元也是 $H$ 的幺元, 且 $H$ 的元在 $G$ 里的逆元也是在 $H$ 里的逆元\period
+    前面已经说明, $e \in H$, 所以 $H$ 的关于 $\circ$ 的幺元存在. 进一步地, $x \in H$ 在 $G$ 里的逆元也是 $H$ 的元, 所以 $H$ 的任意元都有关于 $\circ$ 的逆元. 这样, $H$ 是群. 顺便一提, 我们刚才也说明了, $G$ 的幺元也是 $H$ 的幺元, 且 $H$ 的元在 $G$ 里的逆元也是在 $H$ 里的逆元.
 
-    再看必要性\period 假设 $H$ 是一个群\period 任取 $x,y \in H$, 我们要说明 $x \circ y^{-1} \in H$\period 看上去有点显然呀! $H$ 是群, 所以 $y$ 有逆元 $y^{-1}$, 又因为 $\circ$ 是 $H$ 的二元运算, $x \circ y^{-1} \in H$\period 不过要注意一个细节\period 我们说明充分性时, $y^{-1}$ 被认为是 $y$ 在 $G$ 里的逆元; 可是, 刚才的论证里 $y^{-1}$ 实则是 $y$ 在 $H$ 里的逆元\period 大问题! 怎么解决呢? 如果我们说明 $y$ 在 $H$ 里的逆元也是 $y$ 在 $G$ 里的逆元, 那这个漏洞就被修复了\period
+    再看必要性. 假设 $H$ 是一个群. 任取 $x,y \in H$, 我们要说明 $x \circ y^{-1} \in H$. 看上去有点显然呀! $H$ 是群, 所以 $y$ 有逆元 $y^{-1}$, 又因为 $\circ$ 是 $H$ 的二元运算, $x \circ y^{-1} \in H$. 不过要注意一个细节. 我们说明充分性时, $y^{-1}$ 被认为是 $y$ 在 $G$ 里的逆元; 可是, 刚才的论证里 $y^{-1}$ 实则是 $y$ 在 $H$ 里的逆元. 大问题! 怎么解决呢? 如果我们说明 $y$ 在 $H$ 里的逆元也是 $y$ 在 $G$ 里的逆元, 那这个漏洞就被修复了.
 
-    我们知道, $H$ 有幺元 $e_H$, 所以 $e_H \circ e_H = e_H$\period $e_H$ 是 $G$ 的元, 所以 $e_H$ 在 $G$ 里有逆元 $(e_H)^{-1}$\period 这样,
+    我们知道, $H$ 有幺元 $e_H$, 所以 $e_H \circ e_H = e_H$. $e_H$ 是 $G$ 的元, 所以 $e_H$ 在 $G$ 里有逆元 $(e_H)^{-1}$. 这样,
     \begin{align*}
         e_H
         = {} & e \circ e_H                      \\
         = {} & ((e_H)^{-1} \circ e_H) \circ e_H \\
         = {} & (e_H)^{-1} \circ (e_H \circ e_H) \\
         = {} & (e_H)^{-1} \circ e_H             \\
-        = {} & e \period
+        = {} & e.
     \end{align*}
-    取 $y \in H$\period $y$ 在 $H$ 里有逆元 $z$, 即
+    取 $y \in H$. $y$ 在 $H$ 里有逆元 $z$, 即
     \begin{align*}
-        z \circ y = y \circ z = e_H = e\period
+        z \circ y = y \circ z = e_H = e.
     \end{align*}
-    $y$, $z$ 都是 $G$ 的元\period 这样, 根据逆元的唯一性, $z$ 自然是 $y$ 在 $G$ 里的逆元\period
+    $y$, $z$ 都是 $G$ 的元. 这样, 根据逆元的唯一性, $z$ 自然是 $y$ 在 $G$ 里的逆元.
 \end{remark}
 
 \subsubsection*{\AdditiveGroups}
 
 \begin{definition}
-    若 $G$ 关于名为 $+$ 的二元运算作成群, 幺元 $e$ 读作 ``零元'' 写作 $0$, $x \in G$ 的逆元 $x^{-1}$ 读作 ``$x$ 的相反元'' 写作 $-x$, 且 $+$ 适合交换律, 则说 $G$ 是加群 \term{additive group}\period 相应地, ``元的幂'' 也应该改为 ``元的倍'': $x^m$ 写为 $mx$\period 用加法的语言改写前面的幂的规则, 就得到了倍的规则: 对任意 $x,y \in G$, $m,n \in \ZZ$, 有
+    若 $G$ 关于名为 $+$ 的二元运算作成群, 幺元 $e$ 读作 ``零元'' 写作 $0$, $x \in G$ 的逆元 $x^{-1}$ 读作 ``$x$ 的相反元'' 写作 $-x$, 且 $+$ 适合交换律, 则说 $G$ 是加群 \term{additive group}. 相应地, ``元的幂'' 也应该改为 ``元的倍'': $x^m$ 写为 $mx$. 用加法的语言改写前面的幂的规则, 就得到了倍的规则: 对任意 $x,y \in G$, $m,n \in \ZZ$, 有
     \begin{align*}
-         & (m+n)x = mx + nx,       \\
-         & m(nx) = (mn)x,          \\
-         & m(x+y) = mx + my\period
+         & (m+n)x = mx + nx, \\
+         & m(nx) = (mn)x,    \\
+         & m(x+y) = mx + my.
     \end{align*}
-    顺便一提, 在这种记号下, $x-y$ 是 $x+(-y)$ 的简写\period 并且
+    顺便一提, 在这种记号下, $x-y$ 是 $x+(-y)$ 的简写. 并且
     \begin{align*}
-        x + y = x + z \implies y = z\period
+        x + y = x + z \implies y = z.
     \end{align*}
-    由于这里的加法适合交换律, 直接换位就是右消去律\period 前面说, 若运算适合结合律, 则 $x$ 的逆元的逆元还是 $x$\period 这句话用加法的语言写, 就是
+    由于这里的加法适合交换律, 直接换位就是右消去律. 前面说, 若运算适合结合律, 则 $x$ 的逆元的逆元还是 $x$. 这句话用加法的语言写, 就是
     \begin{align*}
-        -(-x) = x\period
+        -(-x) = x.
     \end{align*}
     前面的 ``袜靴规则'' 就是
     \begin{align*}
-        -(x+y) = (-y) + (-x) = (-x) + (-y) = -x-y\period
+        -(x+y) = (-y) + (-x) = (-x) + (-y) = -x-y.
     \end{align*}
-    这就是熟悉的去括号法则\period 这里体现了交换律的作用\period
+    这就是熟悉的去括号法则. 这里体现了交换律的作用.
 \end{definition}
 
 \begin{remark}
-    初见此定义可能会觉得有些混乱: 怎么 ``倒数'' 又变为 ``相反数'' 了? 其实这都是借鉴已有写法\period 前面, $\circ$ 虽然不是 $\cdot$, 但这个形状暗示着乘法, 因此有 $x^{-1}$ 这样的记号; 现在, 运算的名字是 $+$, 自然要根据形状作出相应的改变\period 其实, 这里 ``名为 $+$'' ``零元'' ``相反元'' 都不是本质——换句话说, 还是可以用老记号\period 不过, 我们主要接触至少与二种运算相关联的结构——整环与域, 所以用二套记号、名字是有必要的\period
+    初见此定义可能会觉得有些混乱: 怎么 ``倒数'' 又变为 ``相反数'' 了? 其实这都是借鉴已有写法. 前面, $\circ$ 虽然不是 $\cdot$, 但这个形状暗示着乘法, 因此有 $x^{-1}$ 这样的记号; 现在, 运算的名字是 $+$, 自然要根据形状作出相应的改变. 其实, 这里 ``名为 $+$'' ``零元'' ``相反元'' 都不是本质——换句话说, 还是可以用老记号. 不过, 我们主要接触至少与二种运算相关联的结构——整环与域, 所以用二套记号、名字是有必要的.
 \end{remark}
 
 \begin{remark}
-    前面的 $x^0 = e$ 在加群里变为 $0x = 0$\period 看上去 ``很普通'', 不过左边的 $0$ 是整数, 右边的 $0$ 是加群的零元, 二者一般不一样!
+    前面的 $x^0 = e$ 在加群里变为 $0x = 0$. 看上去 ``很普通'', 不过左边的 $0$ 是整数, 右边的 $0$ 是加群的零元, 二者一般不一样!
 \end{remark}
 
 \begin{example}
-    显而易见, $\ZZ$, $\FF$ 都是加群\period
+    显而易见, $\ZZ$, $\FF$ 都是加群.
 \end{example}
 
 \begin{example}
-    $S_6$ 不是加群, 因为它的二元运算不适合交换律\period
+    $S_6$ 不是加群, 因为它的二元运算不适合交换律.
 \end{example}
 
 \begin{remark}
-    类似地, 可以定义子加群 \term{sub-additive group}\period 这里, 就直接用等价刻画来描述它: ``$G$ 的非空子集 $H$ 是加群 $G$ 的子加群的一个必要与充分条件是: 任取 $x,y \in H$, 必有 $x-y \in H$\period ''
+    类似地, 可以定义子加群 \term{sub-additive group}. 这里, 就直接用等价刻画来描述它: ``$G$ 的非空子集 $H$ 是加群 $G$ 的子加群的一个必要与充分条件是: 任取 $x,y \in H$, 必有 $x-y \in H$. ''
 \end{remark}
 
 \subsubsection*{\Sums}
 
 \begin{definition}
-    设 $f$ 是 $\ZZ$ 的非空子集 $S$ 到加群 $G$ 的函数\period 设 $p$, $q$ 是二个整数\period 如果 $p \leq q$, 则记
+    设 $f$ 是 $\ZZ$ 的非空子集 $S$ 到加群 $G$ 的函数. 设 $p$, $q$ 是二个整数. 如果 $p \leq q$, 则记
     \begin{align*}
-        \sum_{j = p}^{q} f(j) = f(p) + f(p + 1) + \cdots + f(q)\period
+        \sum_{j = p}^{q} f(j) = f(p) + f(p + 1) + \cdots + f(q).
     \end{align*}
-    也就是说, $\sum_{j = p}^{q} f(j)$ 就是 $q - (p - 1)$ 个元的和的一种简洁的表示法\period 如果 $p > q$, 约定 $\sum_{j = p}^{q} f(j) = 0$\period
+    也就是说, $\sum_{j = p}^{q} f(j)$ 就是 $q - (p - 1)$ 个元的和的一种简洁的表示法. 如果 $p > q$, 约定 $\sum_{j = p}^{q} f(j) = 0$.
 \end{definition}
 
 \begin{example}
     我们已经知道, $n \geq 0$ 时
     \begin{align*}
-        0 + 1 + \cdots + (n-1) = \frac{n(n-1)}{2}\period
+        0 + 1 + \cdots + (n-1) = \frac{n(n-1)}{2}.
     \end{align*}
     用 $\sum$ 写出来, 就是
     \begin{align*}
-        \sum_{k=0}^{n-1} k = \frac{n(n-1)}{2}\period
+        \sum_{k=0}^{n-1} k = \frac{n(n-1)}{2}.
     \end{align*}
-    这里的 $k$ 是所谓的 ``dummy variable''\period 所以
+    这里的 $k$ 是所谓的 ``dummy variable''. 所以
     \begin{align*}
-        \sum_{j=0}^{n-1} j = \sum_{k=0}^{n-1} k = \sum_{\ell=0}^{n-1} \ell = \frac{n(n-1)}{2}\period
+        \sum_{j=0}^{n-1} j = \sum_{k=0}^{n-1} k = \sum_{\ell=0}^{n-1} \ell = \frac{n(n-1)}{2}.
     \end{align*}
 \end{example}
 
@@ -1025,37 +1025,37 @@
     $f$ 可以是常函数:
     \begin{align*}
         \sum_{t=p}^{q} 1 = \begin{cases}
-            q - p + 1, & \quad q \geq p;     \\
-            0,         & \quad q < p \period
+            q - p + 1, & \quad q \geq p; \\
+            0,         & \quad q < p.
         \end{cases}
     \end{align*}
 \end{example}
 
 \begin{example}
-    设 $f$ 与 $g$ 是 $\ZZ$ 的非空子集 $S$ 到加群 $G$ 的函数\period 因为加群的加法适合结合律与交换律, 所以
+    设 $f$ 与 $g$ 是 $\ZZ$ 的非空子集 $S$ 到加群 $G$ 的函数. 因为加群的加法适合结合律与交换律, 所以
     \begin{align*}
-        \sum_{j=p}^{q} (f(j) + g(j)) = \sum_{j=p}^{q} f(j) + \sum_{j=p}^{q} g(j) \period
+        \sum_{j=p}^{q} (f(j) + g(j)) = \sum_{j=p}^{q} f(j) + \sum_{j=p}^{q} g(j).
     \end{align*}
 \end{example}
 
 \begin{remark}
-    设 $f(i,j)$ 是 $\ZZ^2$ 的非空子集到加群 $G$ 的函数\period 记
+    设 $f(i,j)$ 是 $\ZZ^2$ 的非空子集到加群 $G$ 的函数. 记
     \begin{align*}
         S_C = \sum_{j=p}^{q} \sum_{i=m}^{n} f(i,j), \quad S_R = \sum_{i=m}^{n} \sum_{j=p}^{q} f(i,j),
     \end{align*}
-    其中 $q \geq p$, $n \geq m$\period $\sum_{i=m}^{n} f(i,j)$ 是何物? 暂时视 $i$ 之外的变元为常元, 则
+    其中 $q \geq p$, $n \geq m$. $\sum_{i=m}^{n} f(i,j)$ 是何物? 暂时视 $i$ 之外的变元为常元, 则
     \begin{align*}
-        \sum_{i=m}^{n} f(i,j) = f(m,j) + f(m+1,j) + \cdots + f(n,j) \period
+        \sum_{i=m}^{n} f(i,j) = f(m,j) + f(m+1,j) + \cdots + f(n,j).
     \end{align*}
     $\sum_{j=p}^{q} \sum_{i=m}^{n} f(i,j)$ 是 $\sum_{j=p}^{q} \left( \sum_{i=m}^{n} f(i,j) \right)$ 的简写:
     \begin{align*}
-        \sum_{j=p}^{q} \sum_{i=m}^{n} f(i,j) = \sum_{i=m}^{n} f(i,p) + \sum_{i=m}^{n} f(i,p+1) + \cdots + \sum_{i=m}^{n} f(i,q) \period
+        \sum_{j=p}^{q} \sum_{i=m}^{n} f(i,j) = \sum_{i=m}^{n} f(i,p) + \sum_{i=m}^{n} f(i,p+1) + \cdots + \sum_{i=m}^{n} f(i,q).
     \end{align*}
-    $\sum_{i=m}^{n} \sum_{j=p}^{q} f(i,j)$ 有着类似的解释\period 我们说, $S_C$ 一定与 $S_R$ 相等\period
+    $\sum_{i=m}^{n} \sum_{j=p}^{q} f(i,j)$ 有着类似的解释. 我们说, $S_C$ 一定与 $S_R$ 相等.
 
     记
     \begin{align*}
-        C_j = \sum_{i=m}^{n} f(i,j), \quad R_i = \sum_{j=p}^{q} f(i,j) \period
+        C_j = \sum_{i=m}^{n} f(i,j), \quad R_i = \sum_{j=p}^{q} f(i,j).
     \end{align*}
     考虑下面的表:
     \begin{align*}
@@ -1067,43 +1067,43 @@
             C_{p}    & C_{p+1}    & \cdots & C_{q}    & \
         \end{array}
     \end{align*}
-    由此, 不难看出, $S_C$ 与 $S_R$ 只是用不同的方法将 $(n-m+1)(q-p+1)$ 个元相加罢了\period
+    由此, 不难看出, $S_C$ 与 $S_R$ 只是用不同的方法将 $(n-m+1)(q-p+1)$ 个元相加罢了.
 \end{remark}
 
 \begin{remark}
-    上面的例其实就是一个特殊情形 ($n - m + 1 = 2$)\period
+    上面的例其实就是一个特殊情形 ($n - m + 1 = 2$).
 \end{remark}
 
 \subsubsection*{\Rings}
 
 \begin{definition}
-    设 $R$ 是加群\period 设 $\cdot$ (读作 ``乘法'') 也是 $R$ 的二元运算\period 假设
+    设 $R$ 是加群. 设 $\cdot$ (读作 ``乘法'') 也是 $R$ 的二元运算. 假设
 
     (i) $\cdot$ 适合结合律;
 
-    (ii) $+$ 与 $\cdot$ 适合 $\cdot$ 分配律\period
+    (ii) $+$ 与 $\cdot$ 适合 $\cdot$ 分配律.
 
-    我们说 $R$ (关于 $+$ 与 $\cdot$) 是环 \term{ring}\period
+    我们说 $R$ (关于 $+$ 与 $\cdot$) 是环 \term{ring}.
 \end{definition}
 
 \begin{remark}
-    在不引起歧义的情况下, 可省去 $\cdot$ \, \period 例如, $a \cdot b$ 可写为 $ab$\period
+    在不引起歧义的情况下, 可省去 $\cdot$ \,. 例如, $a \cdot b$ 可写为 $ab$.
 \end{remark}
 
 \begin{example}
-    $\ZZ$, $\FF$ (关于普通加法与乘法) 都是环\period
+    $\ZZ$, $\FF$ (关于普通加法与乘法) 都是环.
 \end{example}
 
 \begin{example}
-    全体偶数作成的集也是环\period 一般地, 设 $k$ 是整数, 则全体 $nk$ ($n \in \ZZ$) 作成的集是环\period
+    全体偶数作成的集也是环. 一般地, 设 $k$ 是整数, 则全体 $nk$ ($n \in \ZZ$) 作成的集是环.
 \end{example}
 
 \begin{example}
-    这里举一个 ``平凡的'' \term{trivial} 例\period $N$ 只有一个元 $0$\period 可以验证, $N$ 关于普通加法与乘法作成群\period 这也是 ``最小的环''\period 在上个例里, 取 $k=0$ 就是 $N$\period
+    这里举一个 ``平凡的'' \term{trivial} 例. $N$ 只有一个元 $0$. 可以验证, $N$ 关于普通加法与乘法作成群. 这也是 ``最小的环''. 在上个例里, 取 $k=0$ 就是 $N$.
 \end{example}
 
 \begin{example}
-    这里举一个 ``不平凡的'' \term{nontrivial} 例\period 设 $R = \{\, 0,a,b,c \,\}$\period 加法和乘法由以下二个表给定:
+    这里举一个 ``不平凡的'' \term{nontrivial} 例. 设 $R = \{\, 0,a,b,c \,\}$. 加法和乘法由以下二个表给定:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{c|cccc}
@@ -1122,21 +1122,21 @@
             c     & 0 & a & b & c \\
         \end{array}
     \end{align*}
-    可以验证, 这是一个环\period
+    可以验证, 这是一个环.
 \end{example}
 
 \begin{remark}
-    我们看一下环的简单性质\period
+    我们看一下环的简单性质.
 
-    已经知道, $R$ 的任意元的 ``整数 $0$ 倍'' 是 $R$ 的零元\period 不禁好奇, 零元乘任意元会是什么结果\period 首先, 回想起, $R$ 的零元适合 $0+0=0$\period 利用分配律, 当 $x \in R$ 时,
+    已经知道, $R$ 的任意元的 ``整数 $0$ 倍'' 是 $R$ 的零元. 不禁好奇, 零元乘任意元会是什么结果. 首先, 回想起, $R$ 的零元适合 $0+0=0$. 利用分配律, 当 $x \in R$ 时,
     \begin{align*}
-        0x = (0+0)x = 0x + 0x\period
+        0x = (0+0)x = 0x + 0x.
     \end{align*}
-    我们知道, 加法适合消去律\period 所以
+    我们知道, 加法适合消去律. 所以
     \begin{align*}
-        0 = 0x\period
+        0 = 0x.
     \end{align*}
-    类似地, $x0 = 0$\period 也许有点眼熟? 但是这里左右二侧的 $0$ 都是 $R$ 的元, 不一定是数!
+    类似地, $x0 = 0$. 也许有点眼熟? 但是这里左右二侧的 $0$ 都是 $R$ 的元, 不一定是数!
 
     因为
     \begin{align*}
@@ -1145,81 +1145,81 @@
     \end{align*}
     所以
     \begin{align*}
-        (-x)y = x(-y) = -xy\period
+        (-x)y = x(-y) = -xy.
     \end{align*}
     从而
     \begin{align*}
-        (-x)(-y) = -(x(-y)) = -(-xy) = xy\period
+        (-x)(-y) = -(x(-y)) = -(-xy) = xy.
     \end{align*}
 
     根据分配律,
     \begin{align*}
-         & x (y_1 + \cdots y_n) = x y_1 + \cdots + x y_n,          \\
-         & (x_1 + \cdots + x_m) y = x_1 y + \cdots + x_m y \period
+         & x (y_1 + \cdots y_n) = x y_1 + \cdots + x y_n,   \\
+         & (x_1 + \cdots + x_m) y = x_1 y + \cdots + x_m y.
     \end{align*}
     二式联合, 就是
     \begin{align*}
-        (x_1 + \cdots + x_m)(y_1 + \cdots y_n) = x_1 y_1 + \cdots + x_1 y_n + \cdots + x_m y_1 + \cdots + x_m y_n \period
+        (x_1 + \cdots + x_m)(y_1 + \cdots y_n) = x_1 y_1 + \cdots + x_1 y_n + \cdots + x_m y_1 + \cdots + x_m y_n.
     \end{align*}
     利用 $\sum$ 符号, 此式可以写为
     \begin{align*}
-        \left( \sum_{i=1}^{m} x_i \right) \left( \sum_{j=1}^{n} y_j \right) = \sum_{i=1}^{m} \sum_{j=1}^{n} x_i y_j \period
+        \left( \sum_{i=1}^{m} x_i \right) \left( \sum_{j=1}^{n} y_j \right) = \sum_{i=1}^{m} \sum_{j=1}^{n} x_i y_j.
     \end{align*}
     所以, 若 $n$ 是整数, $x,y \in R$, 则
     \begin{align*}
-        (nx)y = n(xy) = x(ny) \period
+        (nx)y = n(xy) = x(ny).
     \end{align*}
 
     对于正整数 $m$, $n$ 与 $R$ 的元 $x$, 有
     \begin{align*}
-        x^{m+n} = x^m x^n, \quad (x^m)^n = x^{mn} \period
+        x^{m+n} = x^m x^n, \quad (x^m)^n = x^{mn}.
     \end{align*}
     假如 $R$ 有二个元 $x$, $y$ 适合 $xy = yx$, 那么还有
     \begin{align*}
-        (xy)^m = x^m y^m \period
+        (xy)^m = x^m y^m.
     \end{align*}
 \end{remark}
 
 \begin{example}
-    在 $\ZZ$, $\FF$ 里, 这些就是我们熟悉的 (部分的) 数的运算律\period
+    在 $\ZZ$, $\FF$ 里, 这些就是我们熟悉的 (部分的) 数的运算律.
 \end{example}
 
 \begin{remark}
     % cSpell: disable-next-line
-    类似地, 可以定义子环 \term{subring}\period 这里, 就直接用等价刻画来描述它: ``$R$ 的非空子集 $S$ 是环 $R$ 的子环的一个必要与充分条件是: 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$\period ''
+    类似地, 可以定义子环 \term{subring}. 这里, 就直接用等价刻画来描述它: ``$R$ 的非空子集 $S$ 是环 $R$ 的子环的一个必要与充分条件是: 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$. ''
 \end{remark}
 
 \begin{definition}
-    设 $R$ 是环\period 假设任取 $x,y \in R$, 必有 $xy = yx$, 就说 $R$ 是交换环 \term{commutative ring}\period
+    设 $R$ 是环. 假设任取 $x,y \in R$, 必有 $xy = yx$, 就说 $R$ 是交换环 \term{commutative ring}.
 \end{definition}
 
 \begin{remark}
-    以后接触的环都是交换环\period
+    以后接触的环都是交换环.
 \end{remark}
 
 \subsubsection*{\Domains}
 
 \begin{definition}
-    设 $D$ 是环\period 假设
+    设 $D$ 是环. 假设
 
     (i) 任取 $x,y \in D$, 必有 $xy = yx$;
 
     (ii) 存在 $1 \in D$, $1 \neq 0$, 使任取 $x \in D$, 必有 $1x = x1 = x$;
 
-    (iii) $\cdot$ 适合 ``消去律变体''\myFN{一般地, 这也可称为消去律\period}: 若 $xy = xz$, $x \neq 0$, 则 $y = z$\period
+    (iii) $\cdot$ 适合 ``消去律变体''\myFN{一般地, 这也可称为消去律.}: 若 $xy = xz$, $x \neq 0$, 则 $y = z$.
 
-    我们说 $D$ (关于 $+$ 与 $\cdot$) 是整环 (\textit{domain}, \textit{integral domain})\period
+    我们说 $D$ (关于 $+$ 与 $\cdot$) 是整环 (\textit{domain}, \textit{integral domain}).
 \end{definition}
 
 \begin{example}
-    $\ZZ$, $\FF$ 都是整环\period 当然, 也有介于 $\ZZ$ 与 $\FF$ 之间的整环\period 假如 $s \in \CC$ 的平方是整数, 那么全体形如 $x + sy$ ($x,y \in \ZZ$) 的数作成一个整环\period
+    $\ZZ$, $\FF$ 都是整环. 当然, 也有介于 $\ZZ$ 与 $\FF$ 之间的整环. 假如 $s \in \CC$ 的平方是整数, 那么全体形如 $x + sy$ ($x,y \in \ZZ$) 的数作成一个整环.
 \end{example}
 
 \begin{example}
     % cSpell: disable-next-line
-    看一个有限整环的例\period 设 $V$ \term{Vierergruppe}\myFN{A German word which means \textit{four-group}.} 是 $4$ 元集:
+    看一个有限整环的例. 设 $V$ \term{Vierergruppe}\myFN{A German word which means \textit{four-group}.} 是 $4$ 元集:
     \begin{align*}
-        V = \{\, 0,1,\tau,\tau^2 \,\}\period
+        V = \{\, 0,1,\tau,\tau^2 \,\}.
     \end{align*}
     加法与乘法由下面的运算表决定:
     \begin{align*}
@@ -1240,109 +1240,109 @@
             \tau^2 & 0 & \tau^2 & 1      & \tau   \\
         \end{array}
     \end{align*}
-    可以验证, $V$ 不但是一个环, 它还适合整环定义的条件 (i) (ii) (iii)\period 因此, $V$ 是整环\period
+    可以验证, $V$ 不但是一个环, 它还适合整环定义的条件 (i) (ii) (iii). 因此, $V$ 是整环.
 
-    在 $V$ 里, $1+1=0$, 这跟平常的加法有点不一样\period 换句话说, 这里的 $0$ 跟 $1$ 已经不是我们熟悉的数了\period
+    在 $V$ 里, $1+1=0$, 这跟平常的加法有点不一样. 换句话说, 这里的 $0$ 跟 $1$ 已经不是我们熟悉的数了.
 \end{example}
 
 \begin{remark}
-    整环 $D$ 有乘法幺元 $1$\period 因为 $D$ 是加群, $1$ 当然有相反元 $-1$\period 任取 $a \in D$\period 根据分配律,
+    整环 $D$ 有乘法幺元 $1$. 因为 $D$ 是加群, $1$ 当然有相反元 $-1$. 任取 $a \in D$. 根据分配律,
     \begin{align*}
-        0 = 0a = (1 + (-1))a = 1a + (-1)a = a + (-1)a \period
+        0 = 0a = (1 + (-1))a = 1a + (-1)a = a + (-1)a.
     \end{align*}
     又因为 $a$ 的相反元 $-a$ 适合
     \begin{align*}
         0 = a + (-a),
     \end{align*}
-    故由 (加法) 消去律知 $-a = (-1)a$\period
+    故由 (加法) 消去律知 $-a = (-1)a$.
 \end{remark}
 
 \begin{example}
-    全体偶数作成的集是交换环, 却不是整环\period
+    全体偶数作成的集是交换环, 却不是整环.
 \end{example}
 
 \begin{example}
-    再来看一个非整环例\period 考虑 $\ZZ^2$\period 设 $a,b,c,d \in \ZZ$\period 规定
+    再来看一个非整环例. 考虑 $\ZZ^2$. 设 $a,b,c,d \in \ZZ$. 规定
     \begin{align*}
          & (a,b) = (c,d) \iff a = b \text{ and } c = d, \\
          & (a,b) + (c,d) = (a+b,c+d),                   \\
-         & (a,b)(c,d) = (ac,bd)\period
+         & (a,b)(c,d) = (ac,bd).
     \end{align*}
-    可以验证, 在这二种运算下, $\ZZ^2$ 作成一个交换环, 其加法、乘法幺元分别是 $(0,0)$, $(1,1)$\period 可是
+    可以验证, 在这二种运算下, $\ZZ^2$ 作成一个交换环, 其加法、乘法幺元分别是 $(0,0)$, $(1,1)$. 可是
     \begin{align*}
-        (1,0) \neq (0,0), \quad (0,1) \neq (0,-1), \quad (1,0)(0,1) = (1,0)(0,-1) \period
+        (1,0) \neq (0,0), \quad (0,1) \neq (0,-1), \quad (1,0)(0,1) = (1,0)(0,-1).
     \end{align*}
-    也就是说, 乘法不适合消去律\period
+    也就是说, 乘法不适合消去律.
 \end{example}
 
 \begin{remark}
     可是, 如果这么定义乘法, 那么 $\ZZ^2$ 可作为一个整环:
     \begin{align*}
-        (a,b)(c,d) = (ac-bd,ad+bc)\period
+        (a,b)(c,d) = (ac-bd,ad+bc).
     \end{align*}
     事实上, 这就是复数乘法, 因为
     \begin{align*}
-        (a+ \ii b)(c+ \ii d) = (ac-bd) + \ii (ad+bc) \period
+        (a+ \ii b)(c+ \ii d) = (ac-bd) + \ii (ad+bc).
     \end{align*}
 \end{remark}
 
 \begin{remark}
-    整环 $D$ 有乘法幺元 $1$\period 任取 $a \in D$\period 我们定义
+    整环 $D$ 有乘法幺元 $1$. 任取 $a \in D$. 我们定义
     \begin{align*}
-        a^0 = 1 \period
+        a^0 = 1.
     \end{align*}
     我们已经知道, 当 $m$, $n$ 是正整数, $x \in D$ 时,
     \begin{align*}
-        x^m x^n = x^{m+n}, \quad (x^m)^n = x^{mn} \period
+        x^m x^n = x^{m+n}, \quad (x^m)^n = x^{mn}.
     \end{align*}
-    现在, 当 $m$, $n$ 是非负整数时, 上面的关系仍成立\period 并且, 既然 $D$ 的乘法适合交换律, 那么任取 $x$, $y \in D$, 必有
+    现在, 当 $m$, $n$ 是非负整数时, 上面的关系仍成立. 并且, 既然 $D$ 的乘法适合交换律, 那么任取 $x$, $y \in D$, 必有
     \begin{align*}
         (xy)^m = x^m y^m,
     \end{align*}
-    $m$ 可以是非负整数\period
+    $m$ 可以是非负整数.
 \end{remark}
 
 \begin{remark}
-    类似地, 可以定义子整环 \term{subdomain}\period 这里, 就直接用前面的等价刻画来描述它: ``$D$ 的非空子集 $S$ 是整环 $D$ 的子整环的一个必要与充分条件是: (i) $1 \in S$; (ii) 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$\period ''
+    类似地, 可以定义子整环 \term{subdomain}. 这里, 就直接用前面的等价刻画来描述它: ``$D$ 的非空子集 $S$ 是整环 $D$ 的子整环的一个必要与充分条件是: (i) $1 \in S$; (ii) 任取 $x,y \in S$, 必有 $x-y \in S$, $xy \in S$. ''
 \end{remark}
 
 \begin{example}
-    设 $D \subset \CC$, 且 $D$ 是整环\period 不难看出, $\ZZ \subset D$\period
+    设 $D \subset \CC$, 且 $D$ 是整环. 不难看出, $\ZZ \subset D$.
 \end{example}
 
 \subsubsection*{\Products}
 
 \begin{definition}
-    设 $f$ 是 $\ZZ$ 的非空子集 $S$ 到整环 $D$ 的函数\period 设 $p$, $q$ 是二个整数\period 如果 $p \leq q$, 则记
+    设 $f$ 是 $\ZZ$ 的非空子集 $S$ 到整环 $D$ 的函数. 设 $p$, $q$ 是二个整数. 如果 $p \leq q$, 则记
     \begin{align*}
-        \prod_{j = p}^{q} f(j) = f(p) \cdot f(p + 1) \cdot \cdots \cdot f(q)\period
+        \prod_{j = p}^{q} f(j) = f(p) \cdot f(p + 1) \cdot \cdots \cdot f(q).
     \end{align*}
-    也就是说, $\prod_{j = p}^{q} f(j)$ 就是 $q - (p - 1)$ 个元的积的一种简洁的表示法\period 如果 $p > q$, 约定 $\prod_{j = p}^{q} f(j) = 1$\period
+    也就是说, $\prod_{j = p}^{q} f(j)$ 就是 $q - (p - 1)$ 个元的积的一种简洁的表示法. 如果 $p > q$, 约定 $\prod_{j = p}^{q} f(j) = 1$.
 \end{definition}
 
 \begin{definition}
-    设 $n$ 是正整数\period 那么 $1$, $2$, $\cdots$, $n$ 的积是 $n$ 的阶乘 \term{factorial}:
+    设 $n$ 是正整数. 那么 $1$, $2$, $\cdots$, $n$ 的积是 $n$ 的阶乘 \term{factorial}:
     \begin{align*}
-        n! = \prod_{j = 1}^{n} j \period
+        n! = \prod_{j = 1}^{n} j.
     \end{align*}
-    顺便约定 $0! = 1$\period
+    顺便约定 $0! = 1$.
 \end{definition}
 
 \begin{remark}
     不难看出, 当 $n$ 是正整数时,
     \begin{align*}
-        n! = n \cdot (n-1)! \period
+        n! = n \cdot (n-1)!.
     \end{align*}
 \end{remark}
 
 \begin{example}
     不难验证, 下面是 $0$ 至 $9$ 的阶乘:
     \begin{align*}
-         & 0! = 1,       &  & 1! = 1,               \\
-         & 2! = 2,       &  & 3! = 6,               \\
-         & 4! = 24,      &  & 5! = 120,             \\
-         & 6! = 720,     &  & 7! = 5\,040,          \\
-         & 8! = 40\,320, &  & 9! = 362\,880 \period
+         & 0! = 1,       &  & 1! = 1,        \\
+         & 2! = 2,       &  & 3! = 6,        \\
+         & 4! = 24,      &  & 5! = 120,      \\
+         & 6! = 720,     &  & 7! = 5\,040,   \\
+         & 8! = 40\,320, &  & 9! = 362\,880.
     \end{align*}
 \end{example}
 
@@ -1352,169 +1352,169 @@
          & \prod_{j=p}^{q} (f(j) \cdot g(j)) = \prod_{j=p}^{q} f(j) \cdot \prod_{j=p}^{q} g(j), \\
          & \prod_{j=p}^{q} \prod_{i=m}^{n} f(i,j) = \prod_{i=m}^{n} \prod_{j=p}^{q} f(i,j),
     \end{align*}
-    其中, $\prod_{j=p}^{q} \prod_{i=m}^{n} f(i,j)$ 当然是 $\prod_{j=p}^{q} \left( \prod_{i=m}^{n} f(i,j) \right))$ 的简写\period
+    其中, $\prod_{j=p}^{q} \prod_{i=m}^{n} f(i,j)$ 当然是 $\prod_{j=p}^{q} \left( \prod_{i=m}^{n} f(i,j) \right))$ 的简写.
 \end{remark}
 
 \begin{remark}
-    回顾一下 $\sum$ 符号\period 我们已经知道
+    回顾一下 $\sum$ 符号. 我们已经知道
     \begin{align*}
-        \sum_{j=p}^{q} (f(j) + g(j)) = \sum_{j=p}^{q} f(j) + \sum_{j=p}^{q} g(j) \period
+        \sum_{j=p}^{q} (f(j) + g(j)) = \sum_{j=p}^{q} f(j) + \sum_{j=p}^{q} g(j).
     \end{align*}
-    因为整环有分配律, 故当 $c \in D$ 与变元 $j$ 无关时\myFN{这样的元称为常元 \term{constant}\period}
+    因为整环有分配律, 故当 $c \in D$ 与变元 $j$ 无关时\myFN{这样的元称为常元 \term{constant}.}
     \begin{align*}
-        \sum_{j=p}^{q} cf(j) = c\sum_{j=p}^{q} f(j) \period
+        \sum_{j=p}^{q} cf(j) = c\sum_{j=p}^{q} f(j).
     \end{align*}
     进而, 当 $c$, $d$ 都是常元时,
     \begin{align*}
-        \sum_{j=p}^{q} (cf(j) + dg(j)) = c\sum_{j=p}^{q} f(j) + d\sum_{j=p}^{q} g(j) \period
+        \sum_{j=p}^{q} (cf(j) + dg(j)) = c\sum_{j=p}^{q} f(j) + d\sum_{j=p}^{q} g(j).
     \end{align*}
 
     类似地, 当 $q \geq p$, $c$ 是常元时,
     \begin{align*}
-        \prod_{j=p}^{q} cf(j) = c^{q-p+1} \prod_{j=p}^{q} f(j) \period
+        \prod_{j=p}^{q} cf(j) = c^{q-p+1} \prod_{j=p}^{q} f(j).
     \end{align*}
 \end{remark}
 
 \begin{definition}
-    最后介绍一下双阶乘 \term{double factorial}\period 前 $n$ 个正偶数的积是 $2n$ 的双阶乘:
+    最后介绍一下双阶乘 \term{double factorial}. 前 $n$ 个正偶数的积是 $2n$ 的双阶乘:
     \begin{align*}
-        (2n)!! = \prod_{j=1}^{n} {2j} \period
+        (2n)!! = \prod_{j=1}^{n} {2j}.
     \end{align*}
     前 $n$ 个正奇数是 $2n-1$ 的双阶乘:
     \begin{align*}
-        (2n-1)!! = \prod_{j=1}^{n} {(2j-1)} \period
+        (2n-1)!! = \prod_{j=1}^{n} {(2j-1)}.
     \end{align*}
-    顺便约定 $0!! = (-1)!! = 1$\period
+    顺便约定 $0!! = (-1)!! = 1$.
 \end{definition}
 
 \begin{remark}
     不难看出, 对任意正整数 $m$, 都有
     \begin{align*}
-        m!! = m \cdot (m-2)!! \period
+        m!! = m \cdot (m-2)!!.
     \end{align*}
     双阶乘可以用阶乘表示:
     \begin{align*}
-         & (2n)!! = 2^n n!,                                               \\
-         & (2n-1)!! = \frac{(2n)!}{(2n)!!} = \frac{(2n)!}{2^n n!} \period
+         & (2n)!! = 2^n n!,                                        \\
+         & (2n-1)!! = \frac{(2n)!}{(2n)!!} = \frac{(2n)!}{2^n n!}.
     \end{align*}
     由此可得
     \begin{align*}
-        n!! \cdot (n-1)!! = n! \period
+        n!! \cdot (n-1)!! = n!.
     \end{align*}
 \end{remark}
 
 \begin{example}
     不难验证, 下面是 $1$ 至 $10$ 的双阶乘:
     \begin{align*}
-         & 1!! = 1,   &  & 2!! = 2,              \\
-         & 3!! = 3,   &  & 4!! = 8,              \\
-         & 5!! = 15,  &  & 6!! = 48,             \\
-         & 7!! = 105, &  & 8!! = 384,            \\
-         & 9!! = 945, &  & 10!! = 3\,840 \period
+         & 1!! = 1,   &  & 2!! = 2,       \\
+         & 3!! = 3,   &  & 4!! = 8,       \\
+         & 5!! = 15,  &  & 6!! = 48,      \\
+         & 7!! = 105, &  & 8!! = 384,     \\
+         & 9!! = 945, &  & 10!! = 3\,840.
     \end{align*}
 \end{example}
 
 \subsubsection*{\UnitsAndFields}
 
 \begin{definition}
-    设 $D$ 是整环\period 设 $x \in D$\period 若存在 $y \in D$ 使 $xy=1$, 则说 $x$ 是 $D$ 的单位 \term{unit}\period
+    设 $D$ 是整环. 设 $x \in D$. 若存在 $y \in D$ 使 $xy=1$, 则说 $x$ 是 $D$ 的单位 \term{unit}.
 \end{definition}
 
 \begin{remark}
-    不难看出, $D$ 至少有一个单位 $1$, 因为 $1 \cdot 1 = 1$\period 定义里的 $y$ 自然就是 $x$ 的 (乘法) 逆元, 其一般记为 $x^{-1}$\period $x^{-1}$ 当然也是单位\period 二个单位 $x,y$ 的积 $xy$ 也是单位: $(xy)(y^{-1}x^{-1})=1$\period 单位的乘法当然适合结合律\period 这样, $D$ 的单位作成一个 (乘法) 群\period 姑且叫 $D$ 的所有单位作成的集为单位群 \term{unit group} 吧!
+    不难看出, $D$ 至少有一个单位 $1$, 因为 $1 \cdot 1 = 1$. 定义里的 $y$ 自然就是 $x$ 的 (乘法) 逆元, 其一般记为 $x^{-1}$. $x^{-1}$ 当然也是单位. 二个单位 $x,y$ 的积 $xy$ 也是单位: $(xy)(y^{-1}x^{-1})=1$. 单位的乘法当然适合结合律. 这样, $D$ 的单位作成一个 (乘法) 群. 姑且叫 $D$ 的所有单位作成的集为单位群 \term{unit group} 吧!
 \end{remark}
 
 \begin{remark}
-    不难看出, $0$ 一定不是单位\period
+    不难看出, $0$ 一定不是单位.
 \end{remark}
 
 \begin{example}
-    看全体整数作成的整环 $\ZZ$\period 它恰有二个单位: $1$ 与 $-1$\period
+    看全体整数作成的整环 $\ZZ$. 它恰有二个单位: $1$ 与 $-1$.
 \end{example}
 
 \begin{example}
-    $\FF$ 也是整环\period 它有无限多个单位: 任意 $\FF^{\ast}$ 的元都是单位\period
+    $\FF$ 也是整环. 它有无限多个单位: 任意 $\FF^{\ast}$ 的元都是单位.
 \end{example}
 
 \begin{example}
-    前面的 $4$ 元集 $V$ 的非零元都是单位\period
+    前面的 $4$ 元集 $V$ 的非零元都是单位.
 \end{example}
 
 \begin{example}
-    现在看一个不那么平凡的例\period 设
+    现在看一个不那么平凡的例. 设
     \begin{align*}
-        D = \{\, x + y\sqrt{3} \mid x,y \in \ZZ \,\} \period
+        D = \{\, x + y\sqrt{3} \mid x,y \in \ZZ \,\}.
     \end{align*}
-    这个 $D$ (关于数的运算) 作成整环\period
+    这个 $D$ (关于数的运算) 作成整环.
 
-    首先, 我们说, 不存在有理数 $q$ 使 $q^2 = 3$\period 用反证法\period 设 $q = \frac{m}{n}$, $m$, $n$ 是非零整数\period 我们知道, 分数可以约分, 故可以假设 $3$ 不是 $m$ 与 $n$ 的公因子\period 这样
+    首先, 我们说, 不存在有理数 $q$ 使 $q^2 = 3$. 用反证法. 设 $q = \frac{m}{n}$, $m$, $n$ 是非零整数. 我们知道, 分数可以约分, 故可以假设 $3$ 不是 $m$ 与 $n$ 的公因子. 这样
     \begin{align*}
-        m^2 = 3n^2 \period
+        m^2 = 3n^2.
     \end{align*}
-    所以 $3$ 一定是 $m^2$ 的因子\period 因为
+    所以 $3$ 一定是 $m^2$ 的因子. 因为
     \begin{align*}
          & (3\ell)^2 = 3 \cdot 3\ell^2,                \\
          & (3\ell \pm 1)^2 = 3(3\ell^2 \pm 2\ell) + 1,
     \end{align*}
-    故由此可看出, $3$ 也是 $m$ 的因子\period 记 $m=3u$\period 这样
+    故由此可看出, $3$ 也是 $m$ 的因子. 记 $m=3u$. 这样
     \begin{align*}
-        3u^2 = n^2 \period
+        3u^2 = n^2.
     \end{align*}
-    所以 $3$ 也是 $n$ 的因子\period 这跟假设矛盾!
+    所以 $3$ 也是 $n$ 的因子. 这跟假设矛盾!
 
-    再说一下 $D$ 的二个元相等意味着什么\period 设 $a$, $b$, $c$, $d$ 都是整数\period 那么
+    再说一下 $D$ 的二个元相等意味着什么. 设 $a$, $b$, $c$, $d$ 都是整数. 那么
     \begin{align*}
-        a + b\sqrt{3} = c + d\sqrt{3} \implies (a-c)^2 = 3(d-b)^2 \period
+        a + b\sqrt{3} = c + d\sqrt{3} \implies (a-c)^2 = 3(d-b)^2.
     \end{align*}
     若 $d - b \neq 0$, 则 $\frac{a-c}{d-b}$ 是有理数, 且
     \begin{align*}
         \left( \frac{a-c}{d-b} \right)^2 = 3,
     \end{align*}
-    而这是荒谬的\period 所以 $d - b = 0$\period 这样 $a - c = 0$\period
+    而这是荒谬的. 所以 $d - b = 0$. 这样 $a - c = 0$.
 
-    现在再来看单位问题\period 若 $k$ 是高于 $1$ 的整数, 则 $k$ 不是 $D$ 的单位\period 反证法\period 若 $k$ 是单位, 则有 $c,d \in \ZZ$ 使
+    现在再来看单位问题. 若 $k$ 是高于 $1$ 的整数, 则 $k$ 不是 $D$ 的单位. 反证法. 若 $k$ 是单位, 则有 $c,d \in \ZZ$ 使
     \begin{align*}
         1 = k(c + d\sqrt{3}) = kc + kd\sqrt{3} \implies 1 = kc,
     \end{align*}
     矛盾!
 
-    $D$ 有无限多个单位\period 因为
+    $D$ 有无限多个单位. 因为
     \begin{align*}
         (2+\sqrt{3})(2-\sqrt{3})=1,
     \end{align*}
     故对任意正整数 $n$, 有
     \begin{align*}
-        (2+\sqrt{3})^n (2-\sqrt{3})^n=1 \period
+        (2+\sqrt{3})^n (2-\sqrt{3})^n=1.
     \end{align*}
-    所以, $(2 \pm \sqrt{3})^n$ 是单位\period
+    所以, $(2 \pm \sqrt{3})^n$ 是单位.
 \end{example}
 
 \begin{definition}
-    设 $F$ 是整环\period 若每个 $F$ 的不是 $0$ 的元都是 $F$ 的单位, 则说 $F$ 是域 \term{field}\period
+    设 $F$ 是整环. 若每个 $F$ 的不是 $0$ 的元都是 $F$ 的单位, 则说 $F$ 是域 \term{field}.
 \end{definition}
 
 \begin{example}
-    不难看出, $\FF$ 是域\period 这也解释了为什么我们用 $\FF$ 表示 $\QQ$, $\RR$, $\CC$ 之一\period
+    不难看出, $\FF$ 是域. 这也解释了为什么我们用 $\FF$ 表示 $\QQ$, $\RR$, $\CC$ 之一.
 \end{example}
 
 \begin{remark}
-    在域 $F$ 里, 只要 $a \neq 0$, 则 $a^{-1}$ 有意义\period 那么, 我们说 $\frac{b}{a}$ 就是 $ba^{-1} = a^{-1}b$ 的简写\period 不难验证, 当 $a,c \neq 0$ 时,
+    在域 $F$ 里, 只要 $a \neq 0$, 则 $a^{-1}$ 有意义. 那么, 我们说 $\frac{b}{a}$ 就是 $ba^{-1} = a^{-1}b$ 的简写. 不难验证, 当 $a,c \neq 0$ 时,
     \begin{align*}
-         & \frac{b}{a} = \frac{d}{c} \iff bc = da,              \\
-         & \frac{b}{a} \pm \frac{d}{c} = \frac{bc \pm da}{ac},  \\
-         & \frac{b}{a} \cdot \frac{d}{c} = \frac{bd}{ac}\period
+         & \frac{b}{a} = \frac{d}{c} \iff bc = da,             \\
+         & \frac{b}{a} \pm \frac{d}{c} = \frac{bc \pm da}{ac}, \\
+         & \frac{b}{a} \cdot \frac{d}{c} = \frac{bd}{ac}.
     \end{align*}
     若 $d \neq 0$, 则
     \begin{align*}
-        \frac{\frac{b}{a}}{\frac{d}{c}} = \frac{bc}{da}\period
+        \frac{\frac{b}{a}}{\frac{d}{c}} = \frac{bc}{da}.
     \end{align*}
-    这就是我们熟知的分数运算法则\period
+    这就是我们熟知的分数运算法则.
 \end{remark}
 
 \begin{remark}
-    类似地, 可以定义子域 \term{subfield}\period 这里, 就直接用前面的等价刻画来描述它: ``$F$ 的非空子集 $K$ 是域 $F$ 的子域的一个必要与充分条件是: (i) $1 \in K$; (ii) 任取 $x,y \in K$, $y \neq 0$, 必有 $x-y \in K$, $\frac{x}{y} \in K$\period ''
+    类似地, 可以定义子域 \term{subfield}. 这里, 就直接用前面的等价刻画来描述它: ``$F$ 的非空子集 $K$ 是域 $F$ 的子域的一个必要与充分条件是: (i) $1 \in K$; (ii) 任取 $x,y \in K$, $y \neq 0$, 必有 $x-y \in K$, $\frac{x}{y} \in K$. ''
 \end{remark}
 
 \begin{example}
-    设 $F \subset \CC$, 且 $F$ 是域\period 不难看出, $\QQ \subset F$\period
+    设 $F \subset \CC$, 且 $F$ 是域. 不难看出, $\QQ \subset F$.
 \end{example}

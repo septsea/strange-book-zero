@@ -2,77 +2,77 @@
 \addcontentsline{toc}{subsection}{\SomePropertiesOfIntegers}
 \markright{\SomePropertiesOfIntegers}
 
-本文的目标是补充一点整数的性质; 我们后面会用到这些东西\period
+本文的目标是补充一点整数的性质; 我们后面会用到这些东西.
 
-为尽可能多地照顾读者, 本文被加了一点细节\period
+为尽可能多地照顾读者, 本文被加了一点细节.
 
 在正式进入讨论前, 作者希望读者能回想起二件事:
 
 (i) 整数 $f$ 的绝对值是
 \begin{align*}
     |f| = \begin{cases}
-        f,  & \quad f \geq 0;     \\
-        -f, & \quad f < 0 \period
+        f,  & \quad f \geq 0; \\
+        -f, & \quad f < 0.
     \end{cases}
 \end{align*}
-若整数 $g$, $h$ 适合 $f = gh$, 则 $|f| = |g| \cdot |h|$\period
+若整数 $g$, $h$ 适合 $f = gh$, 则 $|f| = |g| \cdot |h|$.
 
-(ii) 整数的乘法适合消去律\period 设 $f$, $g$, $h$ 是整数\period 若 $f \neq 0$, 且 $fg = fh$, 则 $g = h$\period
+(ii) 整数的乘法适合消去律. 设 $f$, $g$, $h$ 是整数. 若 $f \neq 0$, 且 $fg = fh$, 则 $g = h$.
 
-我们先从整数的单位开始\period
+我们先从整数的单位开始.
 
 \begin{definition}
-    设 $f$ 是整数\period 若存在整数 $g$ 使 $fg = 1$, 则说 $f$ 是单位 \term{unit}\period $g$ 称为 $f$ 的逆 \term{inverse}\period
+    设 $f$ 是整数. 若存在整数 $g$ 使 $fg = 1$, 则说 $f$ 是单位 \term{unit}. $g$ 称为 $f$ 的逆 \term{inverse}.
 \end{definition}
 
 \begin{proposition}
-    $1$ 是单位\period
+    $1$ 是单位.
 \end{proposition}
 
 \begin{pf}
-    因为 $1 \cdot 1 = 1$\period
+    因为 $1 \cdot 1 = 1$.
 \end{pf}
 
 \begin{proposition}
-    $0$ 一定不是单位\period
+    $0$ 一定不是单位.
 \end{proposition}
 
 \begin{pf}
-    $0$ 与任何整数的积都是 $0$, 不等于 $1$\period
+    $0$ 与任何整数的积都是 $0$, 不等于 $1$.
 \end{pf}
 
 \begin{proposition}
-    设 $f$ 是单位\period 若整数 $g$, $h$ 适合 $fg = fh = 1$, 则 $g = h$\period
+    设 $f$ 是单位. 若整数 $g$, $h$ 适合 $fg = fh = 1$, 则 $g = h$.
 \end{proposition}
 
 \begin{pf}
     因为整数的乘法是交换的、结合的, 故
     \begin{align*}
-         & g = g1 = g(fh) = (gf)h = (fg)h = 1h = h \period \qedhere
+         & g = g1 = g(fh) = (gf)h = (fg)h = 1h = h. \qedhere
     \end{align*}
 \end{pf}
 
 \begin{definition}
-    设 $f$ 是单位\period 上个命题指出, $f$ 的逆一定是唯一的 (根据单位的定义, $f$ 的逆当然存在)\period 我们用 $f^{-1}$ 表示 $f$ 的逆\period
+    设 $f$ 是单位. 上个命题指出, $f$ 的逆一定是唯一的 (根据单位的定义, $f$ 的逆当然存在). 我们用 $f^{-1}$ 表示 $f$ 的逆.
 \end{definition}
 
 \begin{proposition}
-    设 $f$ 是单位\period $f$ 的逆 $f^{-1}$ 也是单位, 且 $(f^{-1})^{-1} = f$\period
+    设 $f$ 是单位. $f$ 的逆 $f^{-1}$ 也是单位, 且 $(f^{-1})^{-1} = f$.
 \end{proposition}
 
 \begin{pf}
-    因为 $f$ 是单位, 故存在整数 $f^{-1}$ 使 $ff^{-1} = 1$\period 因为乘法可交换, 故 $f^{-1} f = 1$\period 所以对整数 $f^{-1}$ 而言, 存在整数 $f$ 使 $f^{-1} f = 1$\period 由单位的定义, $f^{-1}$ 是单位\period 因为单位的逆唯一, 故 $f$ 是 $f^{-1}$ 的逆\period
+    因为 $f$ 是单位, 故存在整数 $f^{-1}$ 使 $ff^{-1} = 1$. 因为乘法可交换, 故 $f^{-1} f = 1$. 所以对整数 $f^{-1}$ 而言, 存在整数 $f$ 使 $f^{-1} f = 1$. 由单位的定义, $f^{-1}$ 是单位. 因为单位的逆唯一, 故 $f$ 是 $f^{-1}$ 的逆.
 \end{pf}
 
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是单位\period 则 $f_1 f_2 \cdots f_n$ 也是单位, 且
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是单位. 则 $f_1 f_2 \cdots f_n$ 也是单位, 且
     \begin{align*}
-        (f_1 f_2 \cdots f_n)^{-1} = f_n^{-1} \cdots f_2^{-1} f_1^{-1} \period
+        (f_1 f_2 \cdots f_n)^{-1} = f_n^{-1} \cdots f_2^{-1} f_1^{-1}.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    既然 $f_1$, $f_2$, $\cdots$, $f_n$ 是单位, 那么它们都有逆, 分别为 $f_1^{-1}$, $f_2^{-1}$, $\cdots$, $f_n^{-1}$\period 所以
+    既然 $f_1$, $f_2$, $\cdots$, $f_n$ 是单位, 那么它们都有逆, 分别为 $f_1^{-1}$, $f_2^{-1}$, $\cdots$, $f_n^{-1}$. 所以
     \begin{align*}
              & (f_1 f_2 \cdots f_{n-1} f_n) (f_n^{-1} f_{n-1}^{-1} \cdots f_2^{-1} f_1^{-1})   \\
         = {} & (f_1 f_2 \cdots f_{n-1}) (f_n f_n^{-1}) (f_{n-1}^{-1} \cdots f_2^{-1} f_1^{-1}) \\
@@ -80,165 +80,165 @@
         = {} & (f_1 f_2 \cdots f_{n-1}) (f_{n-1}^{-1} \cdots f_2^{-1} f_1^{-1})                \\
         = {} & \cdots \cdots \cdots \cdots                                                     \\
         = {} & f_1 f_1^{-1}                                                                    \\
-        = {} & 1 \period
+        = {} & 1.
     \end{align*}
-    所以, $f_1 f_2 \cdots f_n$ 是单位\period 因为单位的逆唯一, 故
+    所以, $f_1 f_2 \cdots f_n$ 是单位. 因为单位的逆唯一, 故
     \begin{align*}
-         & (f_1 f_2 \cdots f_n)^{-1} = f_n^{-1} \cdots f_2^{-1} f_1^{-1} \period \qedhere
+         & (f_1 f_2 \cdots f_n)^{-1} = f_n^{-1} \cdots f_2^{-1} f_1^{-1}. \qedhere
     \end{align*}
 \end{pf}
 
 \begin{definition}
-    整数的全体单位称为整数的单位群\period
+    整数的全体单位称为整数的单位群.
 \end{definition}
 
 \begin{proposition}
-    整数的单位群恰由 $1$ 与 $-1$ 作成\period
+    整数的单位群恰由 $1$ 与 $-1$ 作成.
 \end{proposition}
 
 \begin{pf}
-    $1$ 当然是单位\period 因为 $(-1) \cdot (-1) = 1$, 故 $-1$ 也是单位\period
+    $1$ 当然是单位. 因为 $(-1) \cdot (-1) = 1$, 故 $-1$ 也是单位.
 
-    设 $f$ 是单位\period 所以, 存在整数 $g$ 使 $fg = 1$\period 我们证明: $|f| = 1$\period
+    设 $f$ 是单位. 所以, 存在整数 $g$ 使 $fg = 1$. 我们证明: $|f| = 1$.
 
-    反证法\period 若 $|f| > 1$, 则 $|g| = \frac{1}{|f|} < 1$\period 因为 $g$ 是整数, 故 $|g|$ 是非负整数, 且 $|g| = 0$\period 所以, $g = 0$\period 但 $f0 = 0 \neq 1$, 矛盾! 若 $|f| < 1$, 类似地, 有 $f = 0$\period 但 $0g = 0 \neq 1$, 矛盾! 所以 $|f|$ 一定是 $1$\period
+    反证法. 若 $|f| > 1$, 则 $|g| = \frac{1}{|f|} < 1$. 因为 $g$ 是整数, 故 $|g|$ 是非负整数, 且 $|g| = 0$. 所以, $g = 0$. 但 $f0 = 0 \neq 1$, 矛盾! 若 $|f| < 1$, 类似地, 有 $f = 0$. 但 $0g = 0 \neq 1$, 矛盾! 所以 $|f|$ 一定是 $1$.
 
-    综上, 整数的单位恰有二个: $1$ 与 $-1$\period
+    综上, 整数的单位恰有二个: $1$ 与 $-1$.
 \end{pf}
 
 \begin{definition}
-    设 $t$ 是实数\period 称最大的且不超过 $t$ 的整数 $\lfloor t \rfloor$ 为 $t$ 的整数部分 \term{integer part}; $t - \lfloor t \rfloor$ 为 $t$ 的小数部分 \term{fractional part}\period
+    设 $t$ 是实数. 称最大的且不超过 $t$ 的整数 $\lfloor t \rfloor$ 为 $t$ 的整数部分 \term{integer part}; $t - \lfloor t \rfloor$ 为 $t$ 的小数部分 \term{fractional part}.
 \end{definition}
 
 \begin{example}
-    读者可能已经知道数学里有一个叫 $2\pi$ 的数\period 如果圆的半径为 $r$, 则圆的周长是 $2\pi r$, 圆的面积是 $\frac12 \cdot 2\pi r^2$\period 由定义, 知
+    读者可能已经知道数学里有一个叫 $2\pi$ 的数. 如果圆的半径为 $r$, 则圆的周长是 $2\pi r$, 圆的面积是 $\frac12 \cdot 2\pi r^2$. 由定义, 知
     \begin{align*}
-        \lfloor 2\pi \rfloor = 6 \period
+        \lfloor 2\pi \rfloor = 6.
     \end{align*}
     不过,
     \begin{align*}
         \lfloor -2\pi \rfloor = -7;
     \end{align*}
-    不仔细的读者很容易犯错哟\period
+    不仔细的读者很容易犯错哟.
 \end{example}
 
 \begin{proposition}
     对任意实数 $t$,
     \begin{align*}
-        0 \leq t - \lfloor t \rfloor < 1 \period
+        0 \leq t - \lfloor t \rfloor < 1.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    $0 \leq t - \lfloor t \rfloor$ 是显然的: $\lfloor t \rfloor$ 被定义为最大的且 ``不超过'' $t$ 的整数\period 另一半 $t - \lfloor t \rfloor < 1$ 可以这么看: 既然 $\lfloor t \rfloor$ 被定义为 ``最大的'' 且不超过 $t$ 的整数, 那么
+    $0 \leq t - \lfloor t \rfloor$ 是显然的: $\lfloor t \rfloor$ 被定义为最大的且 ``不超过'' $t$ 的整数. 另一半 $t - \lfloor t \rfloor < 1$ 可以这么看: 既然 $\lfloor t \rfloor$ 被定义为 ``最大的'' 且不超过 $t$ 的整数, 那么
     \begin{align*}
-        \lfloor t \rfloor + 1 > t \period
+        \lfloor t \rfloor + 1 > t.
     \end{align*}
-    这就是我们所需要的关系\period
+    这就是我们所需要的关系.
 \end{pf}
 
 我们知道, 非负整数有这样的性质:
 
 \begin{proposition}
-    设 $g$ 是正整数, $f$ 是非负整数\period 则必有一对非负整数 $q,r$ 使
+    设 $f$ 是正整数, $g$ 是非负整数. 则必有一对非负整数 $q,r$ 使
     \begin{align*}
-        f = qg + r, \quad 0 \leq r < g \period
+        g = qf + r, \quad 0 \leq r < f.
     \end{align*}
 \end{proposition}
 
-例如, 取 $g=5$, $f=23$\period 不难看出,
+例如, 取 $f=5$, $g=23$. 不难看出,
 \begin{align*}
-    23 = 4 \cdot 5 + 3 \period
+    23 = 4 \cdot 5 + 3.
 \end{align*}
 
-现在, 我们看一看为什么上面的命题是正确的\period 顺便一提, 我们可以抛弃一个假定: $f \geq 0$\period
+现在, 我们看一看为什么上面的命题是正确的. 顺便一提, 我们可以抛弃一个假定: $g \geq 0$.
 
-还是假定 $g$ 是正整数\period $\frac{f}{g}$ 是一个有理数, 当然也是实数\period 所以
+还是假定 $f$ 是正整数. $\frac{g}{f}$ 是一个有理数, 当然也是实数. 所以
 \begin{align*}
-    \frac{f}{g} = \underbrace{\left\lfloor \frac{f}{g} \right\rfloor}_{q} + \left( \frac{f}{g} - \left\lfloor \frac{f}{g} \right\rfloor \right) \period
+    \frac{g}{f} = \underbrace{\left\lfloor \frac{g}{f} \right\rfloor}_{q} + \left( \frac{g}{f} - \left\lfloor \frac{g}{f} \right\rfloor \right).
 \end{align*}
-二边同乘 $g$, 有
+二边同乘 $f$, 有
 \begin{align*}
-    f = g \cdot q + \underbrace{\left( f - g\left\lfloor \frac{f}{g} \right\rfloor \right)}_{r} \period
+    g = f \cdot q + \underbrace{\left( g - f\left\lfloor \frac{g}{f} \right\rfloor \right)}_{r}.
 \end{align*}
-显然 $q$ 与 $r$ 是整数\period 注意到 $0 \leq \frac{r}{g} < 1$, 所以 $0 \leq r < g$\period
+显然 $q$ 与 $r$ 是整数. 注意到 $0 \leq \frac{r}{f} < 1$, 所以 $0 \leq r < f$.
 
 换句话说, 我们证明了
 \begin{proposition}
-    设 $g$ 是正整数, $f$ 是整数\period 则必有一对整数 $q,r$ 使
+    设 $f$ 是正整数, $g$ 是整数. 则必有一对整数 $q,r$ 使
     \begin{align*}
-        f = qg + r, \quad 0 \leq r < g \period
+        g = qf + r, \quad 0 \leq r < f.
     \end{align*}
 \end{proposition}
 
-设 $g$ 是负整数\period 那么 $-g$ 是正整数\period 所以, 有一对整数 $q,r$ 使
+设 $f$ 是负整数. 那么 $-f$ 是正整数. 所以, 有一对整数 $q,r$ 使
 \begin{align*}
-    f = q(-g) + r, \quad 0 \leq r < -g \period
+    g = q(-f) + r, \quad 0 \leq r < -f.
 \end{align*}
 也就是
 \begin{align*}
-    f = (-q)g + r, \quad 0 \leq r < |g|,
+    g = (-q)f + r, \quad 0 \leq r < |f|,
 \end{align*}
 
 综上, 我们证明了 ``整数的带余除法'':
 \begin{proposition}
-    设 $g$ 是非零整数, $f$ 是整数\period 则必有一对整数 $q,r$ 使
+    设 $f$ 是非零整数, $g$ 是整数. 则必有一对整数 $q,r$ 使
     \begin{align*}
-        f = qg + r, \quad 0 \leq r < |g| \period
+        g = qf + r, \quad 0 \leq r < |f|.
     \end{align*}
 \end{proposition}
 
-还有一个小惊喜: 上述命题的 $q$ 与 $r$ 必定唯一\period 设
+还有一个小惊喜: 上述命题的 $q$ 与 $r$ 必定唯一. 设
 \begin{align*}
-     & q_1 g + r_1 = q_2 g + r_2,                       \\
-     & 0 \leq r_1 < |g|, \quad 0 \leq r_2 < |g| \period
+     & q_1 f + r_1 = q_2 f + r_2,                \\
+     & 0 \leq r_1 < |f|, \quad 0 \leq r_2 < |f|.
 \end{align*}
 这样
 \begin{align*}
-    |q_1 - q_2| |g| = |r_1 - r_2| \period
+    |q_1 - q_2| |f| = |r_1 - r_2|.
 \end{align*}
 不难看出
 \begin{align*}
-    0 - |g| < r_1 - r_2 < |g| + 0,
+    0 - |f| < r_1 - r_2 < |f| + 0,
 \end{align*}
 即
 \begin{align*}
-    |r_1 - r_2| < |g| \period
+    |r_1 - r_2| < |f|.
 \end{align*}
 从而
 \begin{align*}
-    |q_1 - q_2| = \frac{|r_1 - r_2|}{|g|} < \frac{|g|}{|g|} = 1 \period
+    |q_1 - q_2| = \frac{|r_1 - r_2|}{|f|} < \frac{|f|}{|f|} = 1.
 \end{align*}
 因为 $|q_1 - q_2|$ 是整数, 故
 \begin{align*}
-    |q_1 - q_2| = 0 \implies q_1 = q_2 \period
+    |q_1 - q_2| = 0 \implies q_1 = q_2.
 \end{align*}
 进而
 \begin{align*}
-    |r_1 - r_2| = |q_1 - q_2| |g| = 0 \implies r_1 = r_2 \period
+    |r_1 - r_2| = |q_1 - q_2| |f| = 0 \implies r_1 = r_2.
 \end{align*}
 
-请读者休息一会儿\period
+请读者休息一会儿.
 
 \myLine
 
-读者或许还记得 ``因子'' 与 ``公因子'' 的概念\period
+读者或许还记得 ``因子'' 与 ``公因子'' 的概念.
 \begin{definition}
-    设 $f$, $g$ 是整数\period 若存在整数 $h$ 使 $f=gh$, 则说 $g$ 是 $f$ 的因子 \term{factor}\period
+    设 $f$, $g$ 是整数. 若存在整数 $h$ 使 $f=gh$, 则说 $g$ 是 $f$ 的因子 \term{factor}.
 \end{definition}
 
 \begin{remark}
-    或许, 读者更熟悉 ``因数'', 而不是 ``因子''\period 毕竟, 在小学, 我们就已经接触了 ``因数''\period 之后我们还会利用多项式的带余除法作类似的讨论, 所以作者特地选用了更一般的词\period
+    或许, 读者更熟悉 ``因数'', 而不是 ``因子''. 毕竟, 在小学, 我们就已经接触了 ``因数''. 之后我们还会利用多项式的带余除法作类似的讨论, 所以作者特地选用了更一般的词.
 \end{remark}
 
 \begin{example}
-    (i) 单位是任意整数的因子; 单位的因子一定是单位\period
+    (i) 单位是任意整数的因子; 单位的因子一定是单位.
 
-    (ii) 任意整数都是 $0$ 的因子; 非零整数的因子一定不是 $0$\period
+    (ii) 任意整数都是 $0$ 的因子; 非零整数的因子一定不是 $0$.
 \end{example}
 
 \begin{proposition}
-    设 $f$, $g$, $h$ 是整数\period 因子适合如下性质:
+    设 $f$, $g$, $h$ 是整数. 因子适合如下性质:
 
     (i) $f$ 是 $f$ 的因子;
 
@@ -246,180 +246,180 @@
 
     (iii) 若 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则存在单位 $q$ 使 $f = qg$;
 
-    (iv) 设 $k$, $\ell$ 是整数\period 若 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 则 $h$ 是 $kf \pm \ell g$ 的因子;
+    (iv) 设 $k$, $\ell$ 是整数. 若 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 则 $h$ 是 $kf \pm \ell g$ 的因子;
 
-    (v) 若 $\varepsilon_1$, $\varepsilon_2$ 是单位, 且 $g$ 是 $f$ 的因子, 则 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子\period
+    (v) 若 $\varepsilon_1$, $\varepsilon_2$ 是单位, 且 $g$ 是 $f$ 的因子, 则 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子.
 \end{proposition}
 
 \begin{pf}
-    (i) 注意到 $f = 1f$, 其中 $1$ 是单位\period
+    (i) 注意到 $f = 1f$, 其中 $1$ 是单位.
 
-    (ii) 因为 $h$ 是 $g$ 的因子, 故存在整数 $p$ 使 $g = ph$\period 因为 $g$ 是 $f$ 的因子, 故存在整数 $q$ 使 $f = qg$\period 所以
+    (ii) 因为 $h$ 是 $g$ 的因子, 故存在整数 $p$ 使 $g = ph$. 因为 $g$ 是 $f$ 的因子, 故存在整数 $q$ 使 $f = qg$. 所以
     \begin{align*}
-        f = qg = q(ph) = (qp)h \period
+        f = qg = q(ph) = (qp)h.
     \end{align*}
-    因为 $qp$ 也是整数, 故 $h$ 是 $f$ 的因子\period
+    因为 $qp$ 也是整数, 故 $h$ 是 $f$ 的因子.
 
-    (iii) 若 $f = 0$, 则 $g = 0$, 当然有 $f = 1 g = 0$, 其中 $1$ 是单位\period 下设 $f \neq 0$\period
+    (iii) 若 $f = 0$, 则 $g = 0$, 当然有 $f = 1 g = 0$, 其中 $1$ 是单位. 下设 $f \neq 0$.
 
-    因为 $f$ 是 $g$ 的因子, 故存在整数 $p$ 使 $g = pf$; 因为 $g$ 是 $f$ 的因子, 故存在整数 $q$ 使 $f = qg$\period 所以
+    因为 $f$ 是 $g$ 的因子, 故存在整数 $p$ 使 $g = pf$; 因为 $g$ 是 $f$ 的因子, 故存在整数 $q$ 使 $f = qg$. 所以
     \begin{align*}
-        f = qg = q(pf) = (qp)f \period
+        f = qg = q(pf) = (qp)f.
     \end{align*}
     因为 $f \neq 0$, 故可从等式二边消去 $f$, 即
     \begin{align*}
-        1 = qp \period
+        1 = qp.
     \end{align*}
-    由此可知 $q$ 是单位\period
+    由此可知 $q$ 是单位.
 
-    (iv) 因为 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 故存在整数 $p$, $q$ 使 $f = ph$ 且 $g = qh$\period 所以
+    (iv) 因为 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 故存在整数 $p$, $q$ 使 $f = ph$ 且 $g = qh$. 所以
     \begin{align*}
-        kf \pm \ell g = k(ph) \pm \ell (qh) = (kp) h \pm (\ell q) h = (kp \pm \ell q) h \period
+        kf \pm \ell g = k(ph) \pm \ell (qh) = (kp) h \pm (\ell q) h = (kp \pm \ell q) h.
     \end{align*}
 
     (v) 若存在整数 $q$ 使 $f = gq$, 则
     \begin{align*}
-        \varepsilon_1 f = g(\varepsilon_1 q) = g(\varepsilon_2 \varepsilon_2^{-1}) (\varepsilon_1 q) = (g\varepsilon_2) (\varepsilon_2^{-1} \varepsilon_1 q) \period
+        \varepsilon_1 f = g(\varepsilon_1 q) = g(\varepsilon_2 \varepsilon_2^{-1}) (\varepsilon_1 q) = (g\varepsilon_2) (\varepsilon_2^{-1} \varepsilon_1 q).
     \end{align*}
-    因为单位的逆是整数, 且 (有限多个) 整数的积是整数, 故 $\varepsilon_2^{-1} \varepsilon_1 q$ 是整数\period 从而 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子\period
+    因为单位的逆是整数, 且 (有限多个) 整数的积是整数, 故 $\varepsilon_2^{-1} \varepsilon_1 q$ 是整数. 从而 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子.
 \end{pf}
 
-为方便, 我们定义一个新词\period
+为方便, 我们定义一个新词.
 
 \begin{definition}
-    设 $f$, $g$ 是整数\period 若存在单位 $\varepsilon$ 使 $f = \varepsilon g$, 则说 $f$ 是 $g$ 的相伴 \term{associate}\period 因为
+    设 $f$, $g$ 是整数. 若存在单位 $\varepsilon$ 使 $f = \varepsilon g$, 则说 $f$ 是 $g$ 的相伴 \term{associate}. 因为
     \begin{align*}
         g = 1g = (\varepsilon^{-1} \varepsilon) g = \varepsilon^{-1} (\varepsilon g) = \varepsilon^{-1} f,
     \end{align*}
-    故 $g$ 当然也是 $f$ 的相伴\period 所以, 我们说 $f$ 与 $g$ 相伴 \term{to be associate}\period
+    故 $g$ 当然也是 $f$ 的相伴. 所以, 我们说 $f$ 与 $g$ 相伴 \term{to be associate}.
 \end{definition}
 
-显然, 因为 $f = 1f$, 故 $f$ 与 $f$ 相伴\period 上面的文字已经说明 $f$ 与 $g$ 相伴相当于 $g$ 与 $f$ 相伴\period 我们还有下面的
+显然, 因为 $f = 1f$, 故 $f$ 与 $f$ 相伴. 上面的文字已经说明 $f$ 与 $g$ 相伴相当于 $g$ 与 $f$ 相伴. 我们还有下面的
 \begin{proposition}
-    设 $f$, $g$, $h$ 是整数\period 若 $f$ 与 $g$ 相伴, 且 $g$ 与 $h$ 相伴, 则 $f$ 与 $h$ 相伴\period
+    设 $f$, $g$, $h$ 是整数. 若 $f$ 与 $g$ 相伴, 且 $g$ 与 $h$ 相伴, 则 $f$ 与 $h$ 相伴.
 \end{proposition}
 
 \begin{pf}
-    因为 $f$ 与 $g$ 相伴, 故存在单位 $\varepsilon_1$ 使 $f = \varepsilon_1 g$\period 因为 $g$ 与 $h$ 相伴, 故存在单位 $\varepsilon_2$ 使 $g = \varepsilon_2 h$\period 所以
+    因为 $f$ 与 $g$ 相伴, 故存在单位 $\varepsilon_1$ 使 $f = \varepsilon_1 g$. 因为 $g$ 与 $h$ 相伴, 故存在单位 $\varepsilon_2$ 使 $g = \varepsilon_2 h$. 所以
     \begin{align*}
-        f = \varepsilon_1 g = \varepsilon_1 (\varepsilon_2 h) = (\varepsilon_1 \varepsilon_2) h \period
+        f = \varepsilon_1 g = \varepsilon_1 (\varepsilon_2 h) = (\varepsilon_1 \varepsilon_2) h.
     \end{align*}
-    因为 $\varepsilon_1 \varepsilon_2$ 是单位, 故 $f$ 与 $g$ 相伴\period
+    因为 $\varepsilon_1 \varepsilon_2$ 是单位, 故 $f$ 与 $g$ 相伴.
 \end{pf}
 
 根据 (iii), 我们有
 \begin{proposition}
-    设 $f$, $g$ 是整数\period $f$ 与 $g$ 相伴的一个必要与充分条件是 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子\period
+    设 $f$, $g$ 是整数. $f$ 与 $g$ 相伴的一个必要与充分条件是 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子.
 \end{proposition}
 
 \begin{definition}
-    设 $f$, $g$ 是整数\period 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common factor}\period
+    设 $f$, $g$ 是整数. 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common factor}.
 \end{definition}
 
 \begin{example}
-    单位是任意二个整数的公因子\period
+    单位是任意二个整数的公因子.
 \end{example}
 
-现在我们引出 ``最大公因子'' 的概念\period
+现在我们引出 ``最大公因子'' 的概念.
 
 \begin{definition}
-    设 $f$, $g$ 是整数\period 适合下述二性质的整数 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common factor}:
+    设 $f$, $g$ 是整数. 适合下述二性质的整数 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common factor}:
 
     (i) $d$ 是 $f$ 与 $g$ 的公因子;
 
-    (ii) 若 $e$ 是 $f$ 与 $g$ 的公因子, 则 $e$ 是 $d$ 的因子\period
+    (ii) 若 $e$ 是 $f$ 与 $g$ 的公因子, 则 $e$ 是 $d$ 的因子.
 \end{definition}
 
 \begin{remark}
-    或许, 读者更熟悉这句话 (小学里学到的定义): ``设 $f$, $g$ 是二个整数\period $f$ 与 $g$ 的公因数的最大者是 $f$ 与 $g$ 的最大公因数\period''
+    或许, 读者更熟悉这句话 (小学里学到的定义): ``设 $f$, $g$ 是二个整数. $f$ 与 $g$ 的公因数的最大者是 $f$ 与 $g$ 的最大公因数.''
 \end{remark}
 
 由定义立即可得
 \begin{proposition}
-    设 $f$, $g$ 是整数\period 若 $d_1$ 与 $d_2$ 都是 $f$ 与 $g$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴\period
+    设 $f$, $g$ 是整数. 若 $d_1$ 与 $d_2$ 都是 $f$ 与 $g$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
 \end{proposition}
 
 \begin{pf}
-    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子\period
+    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子.
 \end{pf}
 
 \begin{remark}
-    由此可见, 最大公因子不一定是唯一的\period 但这不是很重要\period
+    由此可见, 最大公因子不一定是唯一的. 但这不是很重要.
 \end{remark}
 
 \begin{example}
-    不难看出, $d = f$ 是 $0$ 与 $f$ 的最大公因子: (i) $d$ 是 $0$ 的因子, 且 $d$ 是 $f$ 的因子; (ii) 若 $e$ 是 $0$ 与 $f$ 的公因子, 则 $e$ 当然是 $d$ (即 $f$) 的因子\period
+    不难看出, $d = f$ 是 $0$ 与 $f$ 的最大公因子: (i) $d$ 是 $0$ 的因子, 且 $d$ 是 $f$ 的因子; (ii) 若 $e$ 是 $0$ 与 $f$ 的公因子, 则 $e$ 当然是 $d$ (即 $f$) 的因子.
 \end{example}
 
 \begin{example}
-    设 $\varepsilon$ 是单位\period 不难看出, $d = \varepsilon$ 是 $\varepsilon$ 与 $f$ 的最大公因子: (i) $d$ 是 $\varepsilon$ 的因子, 且 $d$ 是 $f$ 的因子; (ii) 若 $e$ 是 $\varepsilon$ 与 $f$ 的公因子, 则 $e$ 当然是 $d$ (即 $\varepsilon$) 的因子\period
+    设 $\varepsilon$ 是单位. 不难看出, $d = \varepsilon$ 是 $\varepsilon$ 与 $f$ 的最大公因子: (i) $d$ 是 $\varepsilon$ 的因子, 且 $d$ 是 $f$ 的因子; (ii) 若 $e$ 是 $\varepsilon$ 与 $f$ 的公因子, 则 $e$ 当然是 $d$ (即 $\varepsilon$) 的因子.
 \end{example}
 
 \begin{proposition}
-    设 $f$, $g$, $q$ 是整数\period 设 $f$ 与 $g$ 的最大公因子是 $d_1$; 设 $f - gq$ 与 $g$ 的最大公因子是 $d_2$\period 则 $d_1$ 与 $d_2$ 相伴\period
+    设 $f$, $g$, $q$ 是整数. 设 $f$ 与 $g$ 的最大公因子是 $d_1$; 设 $f - gq$ 与 $g$ 的最大公因子是 $d_2$. 则 $d_1$ 与 $d_2$ 相伴.
 \end{proposition}
 
 \begin{pf}
-    因为 $d_1$ 是 $f$ 与 $g$ 的公因子, 故 $d_1$ 是 $1 \cdot f - q \cdot g$ 的因子\period 这说明, $d_1$ 是 $f - gq$ 与 $g$ 的公因子\period 因为 $d_2$ 是 $f - gq$ 与 $g$ 的最大公因子, 故 $d_1$ 是 $d_2$ 的因子\period
+    因为 $d_1$ 是 $f$ 与 $g$ 的公因子, 故 $d_1$ 是 $1 \cdot f - q \cdot g$ 的因子. 这说明, $d_1$ 是 $f - gq$ 与 $g$ 的公因子. 因为 $d_2$ 是 $f - gq$ 与 $g$ 的最大公因子, 故 $d_1$ 是 $d_2$ 的因子.
 
-    因为 $d_2$ 是 $f - gq$ 与 $g$ 的公因子, 故 $d_2$ 是 $1 \cdot (f - gq) + q \cdot g$ 的因子\period 这说明, $d_2$ 是 $f$ 与 $g$ 的公因子\period 因为 $d_1$ 是 $f$ 与 $g$ 的最大公因子, 故 $d_2$ 是 $d_1$ 的因子\period
+    因为 $d_2$ 是 $f - gq$ 与 $g$ 的公因子, 故 $d_2$ 是 $1 \cdot (f - gq) + q \cdot g$ 的因子. 这说明, $d_2$ 是 $f$ 与 $g$ 的公因子. 因为 $d_1$ 是 $f$ 与 $g$ 的最大公因子, 故 $d_2$ 是 $d_1$ 的因子.
 
-    综上, $d_1$ 与 $d_2$ 相伴\period
+    综上, $d_1$ 与 $d_2$ 相伴.
 \end{pf}
 
 我们现在可以证明
 \begin{proposition}
-    设 $f$, $g$ 是整数\period $f$ 与 $g$ 的最大公因子一定存在\period
+    设 $f$, $g$ 是整数. $f$ 与 $g$ 的最大公因子一定存在.
 \end{proposition}
 
 \begin{pf}
-    无妨假定 $g$ 不是 $0$\period 所以, 根据带余除法, 有
+    无妨假定 $g$ 不是 $0$. 所以, 根据带余除法, 有
     \begin{align*}
-        f = gq_0 + r_0, \quad 0 \leq r_0 < |g| \period
+        f = gq_0 + r_0, \quad 0 \leq r_0 < |g|.
     \end{align*}
-    根据上一个命题, $r_0$ 与 $g$ 的最大公因子是 $f$ 与 $g$ 的最大公因子\period 若 $r_0 = 0$, 则 $g$ 就是 $0$ 与 $g$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_0 \neq 0$, 则
+    根据上一个命题, $r_0$ 与 $g$ 的最大公因子是 $f$ 与 $g$ 的最大公因子. 若 $r_0 = 0$, 则 $g$ 就是 $0$ 与 $g$ (从而也是 $f$ 与 $g$) 的最大公因子. 若 $r_0 \neq 0$, 则
     \begin{align*}
-        g = r_0 q_1 + r_1, \quad 0 \leq r_1 < r_0 \period
+        g = r_0 q_1 + r_1, \quad 0 \leq r_1 < r_0.
     \end{align*}
-    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $g$ 的最大公因子, 所以也是 $f$ 与 $g$ 的最大公因子\period 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $f$ 与 $g$) 的最大公因子\period 若 $r_1 \neq 0$, 则
+    根据上一个命题, $r_1$ 与 $r_0$ 的最大公因子是 $r_0$ 与 $g$ 的最大公因子, 所以也是 $f$ 与 $g$ 的最大公因子. 若 $r_1 = 0$, 则 $r_0$ 就是 $0$ 与 $r_0$ (从而也是 $f$ 与 $g$) 的最大公因子. 若 $r_1 \neq 0$, 则
     \begin{align*}
-        r_0 = r_1 q_2 + r_2, \quad 0 \leq r_2 < r_1 \period
+        r_0 = r_1 q_2 + r_2, \quad 0 \leq r_2 < r_1.
     \end{align*}
 
-    这个过程必定会在有限多步后停止\period 反证法\period 如果此过程可一直进行下去, 则我们可得到无限多个正整数 $r_0$, $r_1$, $\cdots$ 使
+    这个过程必定会在有限多步后停止. 反证法. 如果此过程可一直进行下去, 则我们可得到无限多个正整数 $r_0$, $r_1$, $\cdots$ 使
     \begin{align*}
-        |g| > r_0 > r_1 > \cdots > r_k > r_{k+1} > \cdots \period
+        |g| > r_0 > r_1 > \cdots > r_k > r_{k+1} > \cdots.
     \end{align*}
     可是, 不存在无限递降的正整数列 (低于 $|g|$ 的正整数至多有 $|g| - 1$ 个), 矛盾!
 
-    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$\period 根据上面的分析, 一定存在整数 $n$ 使
+    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$. 根据上面的分析, 一定存在整数 $n$ 使
     \begin{align*}
          & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 < r_{\ell} < |r_{\ell - 1}|, \quad \ell = 0,1,\cdots,n-2; \\
-         & r_{n - 3} = r_{n - 2} q_{n - 1} \period
+         & r_{n - 3} = r_{n - 2} q_{n - 1}.
     \end{align*}
-    $r_{n-2}$ 是 $0$ 与 $r_{n-2}$ 的最大公因子, 也是 $r_{n-2}$ 与 $r_{n-3}$ 的最大公因子, 也是 $r_{n-3}$ 与 $r_{n-4}$ 的最大公因子……也是 $r_{-2}$ 与 $r_{-1}$ 的最大公因子\period 所以, $r_{n-2}$ 是 $f$ 与 $g$ 的最大公因子\period
+    $r_{n-2}$ 是 $0$ 与 $r_{n-2}$ 的最大公因子, 也是 $r_{n-2}$ 与 $r_{n-3}$ 的最大公因子, 也是 $r_{n-3}$ 与 $r_{n-4}$ 的最大公因子……也是 $r_{-2}$ 与 $r_{-1}$ 的最大公因子. 所以, $r_{n-2}$ 是 $f$ 与 $g$ 的最大公因子.
 \end{pf}
 
-这个命题的证明过程事实上也给出了一个计算二个整数的最大公因子的算法\period
+这个命题的证明过程事实上也给出了一个计算二个整数的最大公因子的算法.
 
 \begin{example}
-    设 $f = 2\,116$, $g = 667$\period 我们来找一个 $f$ 与 $g$ 的最大公因子\period
+    设 $f = 2\,116$, $g = 667$. 我们来找一个 $f$ 与 $g$ 的最大公因子.
 
     不难作出如下计算:
     \begin{align*}
         2\,116 = {} & 667 \cdot 3 + 115, \\
         667    = {} & 115 \cdot 5 + 92,  \\
         115    = {} & 92 \cdot 1 + 23,   \\
-        92     = {} & 23 \cdot 4 \period
+        92     = {} & 23 \cdot 4.
     \end{align*}
-    所以, $23$ 是 $92$ 与 $115$ 的最大公因子, 是 $115$ 与 $667$ 的最大公因子, 是 $667$ 与 $2\,116$ 的最大公因子\period
+    所以, $23$ 是 $92$ 与 $115$ 的最大公因子, 是 $115$ 与 $667$ 的最大公因子, 是 $667$ 与 $2\,116$ 的最大公因子.
 
-    当然, 读者不难说明, $-23$ 是另一个最大公因子\period $\pm 23$ 是 $f$ 与 $g$ 唯二的最大公因子\period
+    当然, 读者不难说明, $-23$ 是另一个最大公因子. $\pm 23$ 是 $f$ 与 $g$ 唯二的最大公因子.
 \end{example}
 
 根据上面的计算, 我们有
 \begin{align*}
-    1 \cdot 115 + (-1) \cdot 92 = 23 \period
+    1 \cdot 115 + (-1) \cdot 92 = 23.
 \end{align*}
 又因为
 \begin{align*}
@@ -431,7 +431,7 @@
 \end{align*}
 即
 \begin{align*}
-    6 \cdot 115 + (-1) \cdot 667 = 23 \period
+    6 \cdot 115 + (-1) \cdot 667 = 23.
 \end{align*}
 又因为
 \begin{align*}
@@ -443,236 +443,236 @@
 \end{align*}
 即
 \begin{align*}
-    6 \cdot 2\,116 + (-19) \cdot 667 = 23 \period
+    6 \cdot 2\,116 + (-19) \cdot 667 = 23.
 \end{align*}
 
 一般地, 我们有
 \begin{proposition}
-    设 $f$, $g$ 是整数\period 设 $d$ 是 $f$ 与 $g$ 的最大公因子\period 存在整数 $s$ 与 $t$ 使
+    设 $f$, $g$ 是整数. 设 $d$ 是 $f$ 与 $g$ 的最大公因子. 存在整数 $s$ 与 $t$ 使
     \begin{align*}
-        sf + tg = d \period
+        sf + tg = d.
     \end{align*}
-    这个等式的一个名字是 Bézout 等式 \term{Bézout's identity}\period
+    这个等式的一个名字是 Bézout 等式 \term{Bézout's identity}.
 \end{proposition}
 
 \begin{pf}
-    若 $f=g=0$, 则可取 $s=t=0$\period 下设 $g \neq 0$\period
+    若 $f=g=0$, 则可取 $s=t=0$. 下设 $g \neq 0$.
 
-    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$\period 设存在整数 $n$ 使
+    为方便, 分别称 $f$ 与 $g$ 为 $r_{-2}$ 与 $r_{-1}$. 设存在整数 $n$ 使
     \begin{align*}
          & r_{\ell - 2} = r_{\ell - 1} q_{\ell} + r_{\ell}, \quad 0 < r_{\ell} < |r_{\ell - 1}|, \quad \ell = 0,1,\cdots,n-2; \\
-         & r_{n - 3} = r_{n - 2} q_{n - 1} \period
+         & r_{n - 3} = r_{n - 2} q_{n - 1}.
     \end{align*}
     为方便, 记
     \begin{align*}
-        r_{\ell} = 0, \quad \ell \geq n - 1 \period
+        r_{\ell} = 0, \quad \ell \geq n - 1.
     \end{align*}
 
     我们用数学归纳法证明辅助命题 $P(\ell)$: 任取非负整数 $\ell$, 必有二整数 $s$, $t$ 使
     \begin{align*}
-        r_\ell = sf + tg \period
+        r_\ell = sf + tg.
     \end{align*}
     $r_0$ 可写为
     \begin{align*}
-        r_0 = 1 r_{\ell - 2} + (-q_0) r_{\ell} = 1f + (-q_0)g \period
+        r_0 = 1 r_{\ell - 2} + (-q_0) r_{\ell} = 1f + (-q_0)g.
     \end{align*}
     $r_1$ 可写为
     \begin{align*}
-        r_1 = 1r_{-1} + (-q_1) r_0 = (-q_1) f + (1 + q_0 q_1) g \period
+        r_1 = 1r_{-1} + (-q_1) r_0 = (-q_1) f + (1 + q_0 q_1) g.
     \end{align*}
-    所以 $P(0)$ 与 $P(1)$ 正确\period 假定 $P(0)$, $P(1)$, $\cdots$, $P(k-1)$ 正确\period 我们的目标是: 推出 $P(k)$ 正确\period 若 $k \geq n-1$, 则
+    所以 $P(0)$ 与 $P(1)$ 正确. 假定 $P(0)$, $P(1)$, $\cdots$, $P(k-1)$ 正确. 我们的目标是: 推出 $P(k)$ 正确. 若 $k \geq n-1$, 则
     \begin{align*}
-        r_k = 0 = 0f + 0g \period
+        r_k = 0 = 0f + 0g.
     \end{align*}
     若 $k \leq n-2$, 则根据归纳假设, 存在整数 $u$, $v$, $z$, $w$ 使
     \begin{align*}
-        r_{k-2} = uf + vg, \quad r_{k-1} = zf + wg \period
+        r_{k-2} = uf + vg, \quad r_{k-1} = zf + wg.
     \end{align*}
     所以
     \begin{align*}
-        r_{k} = r_{k-2} - r_{k-1} q_k = (u - zq_k) f + (v - wq_k) g \period
+        r_{k} = r_{k-2} - r_{k-1} q_k = (u - zq_k) f + (v - wq_k) g.
     \end{align*}
-    因为 $u - zq_k$ 与 $v - wq_k$ 均为整数, 故 $P(k)$ 正确\period
+    因为 $u - zq_k$ 与 $v - wq_k$ 均为整数, 故 $P(k)$ 正确.
 
     所以, 存在整数 $s$, $t$ 使
     \begin{align*}
-        sf + tg = r_{n-2} \period
+        sf + tg = r_{n-2}.
     \end{align*}
-    因为 $r_{n-2}$ 与 $d$ 都是 $f$ 与 $g$ 的最大公因子, 故 $d = \varepsilon r_{n-2}$, 其中 $\varepsilon$ 是单位\period 所以
+    因为 $r_{n-2}$ 与 $d$ 都是 $f$ 与 $g$ 的最大公因子, 故 $d = \varepsilon r_{n-2}$, 其中 $\varepsilon$ 是单位. 所以
     \begin{align*}
-         & (\varepsilon s)f + (\varepsilon t)g = d \period \qedhere
+         & (\varepsilon s)f + (\varepsilon t)g = d. \qedhere
     \end{align*}
 \end{pf}
 
 有了最大公因子的概念, 我们可以引出 ``互素'':
 \begin{definition}
-    设 $f$, $g$ 是整数\period 若单位是 $f$ 与 $g$ 的最大公因子, 则称 $f$ 与 $g$ 互素 \term{to be relatively prime}\period
+    设 $f$, $g$ 是整数. 若单位是 $f$ 与 $g$ 的最大公因子, 则称 $f$ 与 $g$ 互素 \term{to be relatively prime}.
 \end{definition}
 
 \begin{example}
-    显然, 单位与任意整数都互素\period
+    显然, 单位与任意整数都互素.
 \end{example}
 
 下面给出一个极重要的命题:
 \begin{proposition}
-    设 $f$, $g$ 是整数\period $f$ 与 $g$ 互素的一个必要与充分条件是: 存在整数 $s$, $t$ 使
+    设 $f$, $g$ 是整数. $f$ 与 $g$ 互素的一个必要与充分条件是: 存在整数 $s$, $t$ 使
     \begin{align*}
-        sf + tg = 1 \period
+        sf + tg = 1.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    先看必要性\period 显然; 这是 Bézout 等式的结果\period
+    先看必要性. 显然; 这是 Bézout 等式的结果.
 
-    再看充分性\period 设 $d$ 是 $f$ 与 $g$ 的最大公因子\period 因为 $sf + tg = 1$, 故 $d$ 是 $1$ 的因子\period 这样, $d$ 一定是单位\period
+    再看充分性. 设 $d$ 是 $f$ 与 $g$ 的最大公因子. 因为 $sf + tg = 1$, 故 $d$ 是 $1$ 的因子. 这样, $d$ 一定是单位.
 \end{pf}
 
-下面是几个关于互素的性质\period
+下面是几个关于互素的性质.
 
 \begin{proposition}
-    设 $f$, $g$, $h$ 是整数\period 互素有如下性质:
+    设 $f$, $g$, $h$ 是整数. 互素有如下性质:
 
     (i) 若 $h$ 是 $fg$ 的因子, 且 $h$ 与 $f$ 互素, 则 $h$ 是 $g$ 的因子;
 
     (ii) 若 $f$ 与 $g$ 互素, 且 $f$ 与 $h$ 互素, 则 $f$ 与 $gh$ 互素;
 
-    (iii) 若 $f$ 是 $h$ 的因子, $g$ 是 $h$ 的因子, 且 $f$ 与 $g$ 互素, 则 $fg$ 是 $h$ 的因子\period
+    (iii) 若 $f$ 是 $h$ 的因子, $g$ 是 $h$ 的因子, 且 $f$ 与 $g$ 互素, 则 $fg$ 是 $h$ 的因子.
 \end{proposition}
 
 \begin{pf}
     (i) 因为 $h$ 与 $f$ 互素, 故存在整数 $s$ 与 $t$ 使
     \begin{align*}
-        sh + tf = 1 \period
+        sh + tf = 1.
     \end{align*}
     所以
     \begin{align*}
-        (gs)h + t(fg) = g \period
+        (gs)h + t(fg) = g.
     \end{align*}
-    因为 $h$ 是 $h$ 的因子, 且 $h$ 是 $fg$ 的因子, 故 $h$ 是 $g = (gs)h + t(fg)$ 的因子\period
+    因为 $h$ 是 $h$ 的因子, 且 $h$ 是 $fg$ 的因子, 故 $h$ 是 $g = (gs)h + t(fg)$ 的因子.
 
     (ii) 因为 $f$ 与 $g$ 互素, 故存在整数 $u$, $v$ 使
     \begin{align*}
-        uf + vg = 1 \period
+        uf + vg = 1.
     \end{align*}
     因为 $f$ 与 $h$ 互素, 故存在整数 $s$, $t$ 使
     \begin{align*}
-        sf + th = 1 \period
+        sf + th = 1.
     \end{align*}
     从而
     \begin{align*}
-        1 = (uf + vg)(sf + th) = (ufs + uth + vgs)f + (vt)(gh) \period
+        1 = (uf + vg)(sf + th) = (ufs + uth + vgs)f + (vt)(gh).
     \end{align*}
-    所以 $f$ 与 $gh$ 互素\period
+    所以 $f$ 与 $gh$ 互素.
 
-    (iii) 因为 $f$ 是 $h$ 的因子, 故存在整数 $p$ 使 $h = fp$\period 因为 $g$ 是 $h = fp$ 的因子, 且 $f$ 与 $g$ 互素, 故由 (i) 知 $g$ 是 $p$ 的因子\period 设 $p = gq$\period 这样
+    (iii) 因为 $f$ 是 $h$ 的因子, 故存在整数 $p$ 使 $h = fp$. 因为 $g$ 是 $h = fp$ 的因子, 且 $f$ 与 $g$ 互素, 故由 (i) 知 $g$ 是 $p$ 的因子. 设 $p = gq$. 这样
     \begin{align*}
         h = fp = f(gq) = (fg)q,
     \end{align*}
-    故 $fg$ 是 $h$ 的因子\period
+    故 $fg$ 是 $h$ 的因子.
 \end{pf}
 
-感谢您的阅读\period 请休息一会儿\period
+感谢您的阅读. 请休息一会儿.
 
 \myLine
 
-现在我们推广公因子、最大公因子、互素的概念\period
+现在我们推广公因子、最大公因子、互素的概念.
 
-前面, 我们讨论了二个整数的公因子、最大公因子、互素; 现在, 我们从量的角度推广\period
+前面, 我们讨论了二个整数的公因子、最大公因子、互素; 现在, 我们从量的角度推广.
 
 \begin{definition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子.
 \end{definition}
 
 \begin{remark}
-    我们并没有禁止 $n$ 取 $1$\period 同理, 一个整数也可以有 ``最大公因子''; 一个整数也可以 ``互素''\period
+    我们并没有禁止 $n$ 取 $1$. 同理, 一个整数也可以有 ``最大公因子''; 一个整数也可以 ``互素''.
 \end{remark}
 
 作为练习, 请读者证明
 \begin{proposition}
-    设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子\period
+    设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子.
 \end{proposition}
 
 \begin{definition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 适合下述二性质的整数 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子:
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. 适合下述二性质的整数 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子:
 
     (i) $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子;
 
-    (ii) 若 $e$ 是 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $e$ 是 $d$ 的因子\period
+    (ii) 若 $e$ 是 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $e$ 是 $d$ 的因子.
 \end{definition}
 
 由定义立即可得
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若 $d_1$ 与 $d_2$ 都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴\period
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. 若 $d_1$ 与 $d_2$ 都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
 \end{proposition}
 
 \begin{pf}
-    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子\period
+    因为 $d_1$ 是 $d_2$ 的因子, 且 $d_2$ 也是 $d_1$ 的因子.
 \end{pf}
 
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数.
 
     (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子存在;
 
     (ii) 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则存在整数 $u_1$, $u_2$, $\cdots$, $u_n$ 使
     \begin{align*}
-        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = d \period
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = d.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    (i) 对 $n$ 用数学归纳法\period 显然, $n = 1$ 或 $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在\period
+    (i) 对 $n$ 用数学归纳法. 显然, $n = 1$ 或 $n = 2$ 时, 命题成立. 设 $n = k$ ($k \geq 2$) 时命题成立, 即: $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子存在.
 
-    今看 $n = k+1$ 时的情形\period 令 $d_k$ 为 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 我们证明: $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period
+    今看 $n = k+1$ 时的情形. 令 $d_k$ 为 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子. 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子. 我们证明: $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子.
 
-    首先, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子\period $d$ 当然是 $f_{k+1}$ 的因子\period 固定某个 $1$ 至 $k$ 间的 $\ell$\period 因为 $d$ 是 $d_k$ 的因子, 而 $d_k$ 是 $f_{\ell}$ 的因子, 故 $d$ 是 $f_{\ell}$ 的因子\period 这样, $d$ 确为 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子\period
+    首先, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子. $d$ 当然是 $f_{k+1}$ 的因子. 固定某个 $1$ 至 $k$ 间的 $\ell$. 因为 $d$ 是 $d_k$ 的因子, 而 $d_k$ 是 $f_{\ell}$ 的因子, 故 $d$ 是 $f_{\ell}$ 的因子. 这样, $d$ 确为 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子.
 
-    其次, 若 $e$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子, 则 $e$ 当然是 $f_1$, $f_2$, $\cdots$, $f_{k}$ 的公因子, 故 $e$ 是 $d_k$ 的因子\period 又因为 $e$ 是 $f_{k+1}$ 的因子, 则 $e$ 是 $d_k$ 与 $f_{k+1}$ 的公因子\period 这样, $e$ 是 $d$ 的因子\period
+    其次, 若 $e$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的公因子, 则 $e$ 当然是 $f_1$, $f_2$, $\cdots$, $f_{k}$ 的公因子, 故 $e$ 是 $d_k$ 的因子. 又因为 $e$ 是 $f_{k+1}$ 的因子, 则 $e$ 是 $d_k$ 与 $f_{k+1}$ 的公因子. 这样, $e$ 是 $d$ 的因子.
 
-    根据最大公因子的定义, $d$ 一定是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 所以, $n = k+1$ 时, (i) 正确\period
+    根据最大公因子的定义, $d$ 一定是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子. 所以, $n = k+1$ 时, (i) 正确.
 
-    (ii) 对 $n$ 用数学归纳法\period 显然, $n = 1$ 或 $n = 2$ 时, 命题成立\period 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在整数 $u_1$, $u_2$, $\cdots$, $u_k$ 使
+    (ii) 对 $n$ 用数学归纳法. 显然, $n = 1$ 或 $n = 2$ 时, 命题成立. 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在整数 $u_1$, $u_2$, $\cdots$, $u_k$ 使
     \begin{align*}
-        u_1 f_1 + u_2 f_2 + \cdots + u_k f_k = d_k \period
+        u_1 f_1 + u_2 f_2 + \cdots + u_k f_k = d_k.
     \end{align*}
-    今看 $n = k+1$ 时的情形\period 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子\period 由 (i) 知, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子\period 由 Bézout 等式知, 存在整数 $u$, $u_{k+1}$ 使
+    今看 $n = k+1$ 时的情形. 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子. 由 (i) 知, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子. 由 Bézout 等式知, 存在整数 $u$, $u_{k+1}$ 使
     \begin{align*}
-        u d_k + u_{k+1} f_{k+1} = d \period
+        u d_k + u_{k+1} f_{k+1} = d.
     \end{align*}
     根据归纳假设, 存在整数 $v_1$, $v_2$, $\cdots$, $v_k$ 使
     \begin{align*}
-        v_1 f_1 + v_2 f_2 + \cdots + v_k f_k = d_k \period
+        v_1 f_1 + v_2 f_2 + \cdots + v_k f_k = d_k.
     \end{align*}
     这样
     \begin{align*}
-        (uv_1) f_1 + (uv_2) f_2 + \cdots + (uv_k) f_k + u_{k+1} f_{k+1} = d \period
+        (uv_1) f_1 + (uv_2) f_2 + \cdots + (uv_k) f_k + u_{k+1} f_{k+1} = d.
     \end{align*}
-    所以, $n = k+1$ 时, (ii) 正确\period
+    所以, $n = k+1$ 时, (ii) 正确.
 \end{pf}
 
 跟之前一样, 有了最大公因子的概念, 我们可以引出 ``互素'':
 \begin{definition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 若单位是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则称 $f_1$, $f_2$, $\cdots$, $f_n$ 互素\period
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. 若单位是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则称 $f_1$, $f_2$, $\cdots$, $f_n$ 互素.
 \end{definition}
 
-下面的命题也是十分自然的\period
+下面的命题也是十分自然的.
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 存在整数 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 存在整数 $u_1$, $u_2$, $\cdots$, $u_n$ 使
     \begin{align*}
-        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1 \period
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    先看必要性\period 显然; 这是上个命题的结果\period
+    先看必要性. 显然; 这是上个命题的结果.
 
-    再看充分性\period 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子\period 因为 $u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1$, 故 $d$ 是 $1$ 的因子\period 这样, $d$ 一定是单位\period
+    再看充分性. 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子. 因为 $u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1$, 故 $d$ 是 $1$ 的因子. 这样, $d$ 一定是单位.
 \end{pf}
 
-我们再讨论互素的一个性质\period
+我们再讨论互素的一个性质.
 
 \begin{proposition}
-    设整数 $f_1$, $f_2$, $\cdots$, $f_n$ 不全是零\period
+    设整数 $f_1$, $f_2$, $\cdots$, $f_n$ 不全是零.
 
     (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子 $d$ 不是零;
 
@@ -680,105 +680,105 @@
 
     (iii) 单位是 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子; 换句话说, $g_1$, $g_2$, $\cdots$, $g_n$ 互素;
 
-    (iv) 反过来, 若整数 $u_1$, $u_2$, $\cdots$, $u_n$ 互素, 则 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子\period
+    (iv) 反过来, 若整数 $u_1$, $u_2$, $\cdots$, $u_n$ 互素, 则 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子.
 \end{proposition}
 
 \begin{pf}
-    (i) 零一定不是非零整数的因子, 故零不是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 当然也不是最大公因子\period
+    (i) 零一定不是非零整数的因子, 故零不是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 当然也不是最大公因子.
 
-    (ii) 既然 $d$ 是最大公因子, 当然也是公因子\period 对 $f_{\ell}$ 而言, 由因子的定义, 知: 存在整数 $g_{\ell}$ 使 $f_{\ell} = dg_{\ell}$\period 现在看唯一性\period 假定 $f_{\ell} = dg_{\ell} = dg_{\ell}^{\prime}$\period 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $g_{\ell} = g_{\ell}^{\prime}$\period
+    (ii) 既然 $d$ 是最大公因子, 当然也是公因子. 对 $f_{\ell}$ 而言, 由因子的定义, 知: 存在整数 $g_{\ell}$ 使 $f_{\ell} = dg_{\ell}$. 现在看唯一性. 假定 $f_{\ell} = dg_{\ell} = dg_{\ell}^{\prime}$. 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $g_{\ell} = g_{\ell}^{\prime}$.
 
-    (iii) 设 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子是 $\delta$\period 这样, 由 (ii), 知: 对任意 $g_{\ell}$, 有整数 $h_{\ell}$ 使 $g_{\ell} = \delta h_{\ell}$\period 所以
+    (iii) 设 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子是 $\delta$. 这样, 由 (ii), 知: 对任意 $g_{\ell}$, 有整数 $h_{\ell}$ 使 $g_{\ell} = \delta h_{\ell}$. 所以
     \begin{align*}
-        f_{\ell} = dg_{\ell} = d(\delta h_{\ell}) = (d\delta) h_{\ell} \period
+        f_{\ell} = dg_{\ell} = d(\delta h_{\ell}) = (d\delta) h_{\ell}.
     \end{align*}
-    所以 $d\delta$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period 所以 $d\delta$ 是 $d$ 的因子\period $d$ 显然是 $d\delta$ 的因子, 故 $d\delta = \varepsilon d$, 其中 $\varepsilon$ 是单位\period 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $\delta = \varepsilon$\period
+    所以 $d\delta$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子. 所以 $d\delta$ 是 $d$ 的因子. $d$ 显然是 $d\delta$ 的因子, 故 $d\delta = \varepsilon d$, 其中 $\varepsilon$ 是单位. 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $\delta = \varepsilon$.
 
-    (iv) 若 $w = 0$, 命题显然成立: $0$, $0$, $\cdots$, $0$ 的最大公因子当然是 $0$\period 下设 $w \neq 0$\period
+    (iv) 若 $w = 0$, 命题显然成立: $0$, $0$, $\cdots$, $0$ 的最大公因子当然是 $0$. 下设 $w \neq 0$.
 
-    $w$ 显然是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的公因子\period 设 $ws$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子, 这里 $s$ 是某个整数\period 由 (ii), 对每个 $wu_{\ell}$, 都有整数 $q_{\ell}$ 使 $wu_{\ell} = wsq_{\ell}$\period 因为 $w \neq 0$, 故可从等式二边消去 $w$, 即 $u_{\ell} = sq_{\ell}$\period 这样, $s$ 是 $u_1$, $u_2$, $\cdots$, $u_n$ 的公因子, 故 $s$ 是单位的因子, 即 $s$ 是单位\period 所以 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子\period
+    $w$ 显然是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的公因子. 设 $ws$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子, 这里 $s$ 是某个整数. 由 (ii), 对每个 $wu_{\ell}$, 都有整数 $q_{\ell}$ 使 $wu_{\ell} = wsq_{\ell}$. 因为 $w \neq 0$, 故可从等式二边消去 $w$, 即 $u_{\ell} = sq_{\ell}$. 这样, $s$ 是 $u_1$, $u_2$, $\cdots$, $u_n$ 的公因子, 故 $s$ 是单位的因子, 即 $s$ 是单位. 所以 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子.
 \end{pf}
 
 \begin{example}
-    读者可能还记得, 有理数是全体形如 $\frac{p}{q}$ 的数, 其中 $p$, $q$ 为整数, 且 $q \neq 0$\period 我们说, 每一个有理数都可以写为 $\frac{m}{n}$, 其中 $m$ 为整数, $n$ 为正整数, 且 $m$ 与 $n$ 互素\period 通俗地说, 就是 ``每个分数\myFN{有理数也叫分数\period}都可以约分''\period 有了上面的整数知识, 我们可以解释为什么\period
+    读者可能还记得, 有理数是全体形如 $\frac{p}{q}$ 的数, 其中 $p$, $q$ 为整数, 且 $q \neq 0$. 我们说, 每一个有理数都可以写为 $\frac{m}{n}$, 其中 $m$ 为整数, $n$ 为正整数, 且 $m$ 与 $n$ 互素. 通俗地说, 就是 ``每个分数\myFN{有理数也叫分数.}都可以约分''. 有了上面的整数知识, 我们可以解释为什么.
 
-    任取有理数 $\frac{P}{Q}$\period 若 $Q < 0$, 则令 $q = -Q$, $p = -P$; 若 $Q > 0$, 则令 $q = Q$, $p = P$\period 所以
+    任取有理数 $\frac{P}{Q}$. 若 $Q < 0$, 则令 $q = -Q$, $p = -P$; 若 $Q > 0$, 则令 $q = Q$, $p = P$. 所以
     \begin{align*}
-        \frac{P}{Q} = \frac{p}{q}, \quad q > 0 \period
+        \frac{P}{Q} = \frac{p}{q}, \quad q > 0.
     \end{align*}
-    既然 $q \neq 0$, 那么 $p$ 与 $q$ 的最大公因子不是零\period 令 $d$ 是正的最大公因子\period 这样, 必有 (唯一的) 整数 $m$, $n$ 使 $p = dm$, $q = dn$\period 所以
+    既然 $q \neq 0$, 那么 $p$ 与 $q$ 的最大公因子不是零. 令 $d$ 是正的最大公因子. 这样, 必有 (唯一的) 整数 $m$, $n$ 使 $p = dm$, $q = dn$. 所以
     \begin{align*}
-        \frac{p}{q} = \frac{dm}{dn} = \frac{m}{n} \period
+        \frac{p}{q} = \frac{dm}{dn} = \frac{m}{n}.
     \end{align*}
-    因为 $q > 0$, $d > 0$, 故 $n > 0$\period 根据上个命题, $m$ 与 $n$ 互素\period
+    因为 $q > 0$, $d > 0$, 故 $n > 0$. 根据上个命题, $m$ 与 $n$ 互素.
 
-    这是一个相当常见的事实\period
+    这是一个相当常见的事实.
 \end{example}
 
 \begin{remark}
-    其实读者在小学或中学一定见过 (甚至用过) 本文的很多命题, 所以这些命题是自然的 (不凸兀的)\period 本文的目的有:
+    其实读者在小学或中学一定见过 (甚至用过) 本文的很多命题, 所以这些命题是自然的 (不凸兀的). 本文的目的有:
 
-    (i) 总结与 ``\HEADING '' (原作) 相关的整数性质\period 同人作还会讨论原作未讨论的多项式理论, 而部分内容要求读者了解整数的稍深的知识\period
+    (i) 总结与 ``\HEADING '' (原作) 相关的整数性质. 同人作还会讨论原作未讨论的多项式理论, 而部分内容要求读者了解整数的稍深的知识.
 
-    (ii) 相对系统地为读者展示初等数论初步 (的初步) 理论\period 本文相对独立; 或者说, 读者就算没读原作, 也可以只读 ``\SomePropertiesOfIntegers ''\period
+    (ii) 相对系统地为读者展示初等数论初步 (的初步) 理论. 本文相对独立; 或者说, 读者就算没读原作, 也可以只读 ``\SomePropertiesOfIntegers ''.
 
-    (iii) 杀作者的时间\period 这是最重要的点; 或者说, 上面二点都是胡扯\period
+    (iii) 杀作者的时间. 这是最重要的点; 或者说, 上面二点都是胡扯.
 
-    请读者休息一下\period 等会儿还有一点东西呢\period
+    请读者休息一下. 等会儿还有一点东西呢.
 \end{remark}
 
 \myLine
 
-现在, 我们讨论不可约的整数\period
+现在, 我们讨论不可约的整数.
 
 \begin{definition}
-    设整数 $f$ 既不是 $0$, 也不是单位\period
+    设整数 $f$ 既不是 $0$, 也不是单位.
 
-    (i) 若存在二个不全为单位的整数 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f$ 是可约的 \term{reducible}\period
+    (i) 若存在二个不全为单位的整数 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f$ 是可约的 \term{reducible}.
 
-    (ii) 若 $f$ 不是可约的, 则说 $f$ 是不可约的 \term{irreducible}\period 换言之, 若 $f$ 是不可约的, 则 ``整数 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''\period
+    (ii) 若 $f$ 不是可约的, 则说 $f$ 是不可约的 \term{irreducible}. 换言之, 若 $f$ 是不可约的, 则 ``整数 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''.
 \end{definition}
 
 \begin{remark}
-    或许, 读者还能记起素数\myFN{``素数'' 的一个同义词是 ``质数''\period} \term{prime number} 的定义:
+    或许, 读者还能记起素数\myFN{``素数'' 的一个同义词是 ``质数''.} \term{prime number} 的定义:
 
-    设整数 $f > 1$\period 若 ``正整数 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1 = 1$ 或 $f_2 = 1$'', 则 $f$ 是素数\period
+    设整数 $f > 1$. 若 ``正整数 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1 = 1$ 或 $f_2 = 1$'', 则 $f$ 是素数.
 
-    作者当然可以不用 ``不可约的整数''; 但是, 为了让读者更好地体会到整数与多项式的相似的地方, 作者还是使用了一般的词\period
+    作者当然可以不用 ``不可约的整数''; 但是, 为了让读者更好地体会到整数与多项式的相似的地方, 作者还是使用了一般的词.
 \end{remark}
 
 \begin{remark}
-    $0$ 或单位既不是可约的, 也不是不可约的\period
+    $0$ 或单位既不是可约的, 也不是不可约的.
 \end{remark}
 
 \begin{example}
-    $2$ 是不可约的\period
+    $2$ 是不可约的.
 
-    设整数 $f_1$, $f_2$ 适合 $f_1 f_2 = 2$\period 所以, $|f_1| |f_2| = 2$\period
+    设整数 $f_1$, $f_2$ 适合 $f_1 f_2 = 2$. 所以, $|f_1| |f_2| = 2$.
 
-    设 $|f_1| \leq |f_2|$\period 这样, 由 $|f_1|^2 \leq |f_1| |f_2| = 2$ 知 $|f_1| \leq 1$; 由 $|f_2|^2 \geq |f_1| |f_2| = 2$ 知 $|f_2| \geq 2$\period $f_1$ 当然不为零, 故 $|f_1|$ 一定是 $1$\period 所以 $f_1 = \pm 1$\period
+    设 $|f_1| \leq |f_2|$. 这样, 由 $|f_1|^2 \leq |f_1| |f_2| = 2$ 知 $|f_1| \leq 1$; 由 $|f_2|^2 \geq |f_1| |f_2| = 2$ 知 $|f_2| \geq 2$. $f_1$ 当然不为零, 故 $|f_1|$ 一定是 $1$. 所以 $f_1 = \pm 1$.
 
-    若设 $|f_1| > |f_2|$, 可得 $|f_1|^2 > 2$, 且 $|f_2|^2 < 2$\period 这样, 因为 $f_2$ 不为零, 有 $|f_2| = 1$\period 所以 $f_2 = \pm 1$\period
+    若设 $|f_1| > |f_2|$, 可得 $|f_1|^2 > 2$, 且 $|f_2|^2 < 2$. 这样, 因为 $f_2$ 不为零, 有 $|f_2| = 1$. 所以 $f_2 = \pm 1$.
 
-    不管怎么样, 我们已经证明了 ``整数 $f_1$, $f_2$ 使 $2 = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''\period 这样, $2$ 是不可约的\period
+    不管怎么样, 我们已经证明了 ``整数 $f_1$, $f_2$ 使 $2 = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''. 这样, $2$ 是不可约的.
 
-    类似地, 读者可 (几乎完全一样地) 证明: $3$ 是不可约的\period
+    类似地, 读者可 (几乎完全一样地) 证明: $3$ 是不可约的.
 \end{example}
 
 \begin{example}
-    $6$ 是可约的: $6 = 2 \cdot 3$, 而 $2$ 不是单位, $3$ 也不是单位\period
+    $6$ 是可约的: $6 = 2 \cdot 3$, 而 $2$ 不是单位, $3$ 也不是单位.
 \end{example}
 
 \begin{proposition}
-    设整数 $p$ 既不是 $0$, 也不是单位\period 设 $\varepsilon$ 是单位\period 若 $p$ 是不可约的, 则 $\varepsilon p$ 也是不可约的\period
+    设整数 $p$ 既不是 $0$, 也不是单位. 设 $\varepsilon$ 是单位. 若 $p$ 是不可约的, 则 $\varepsilon p$ 也是不可约的.
 \end{proposition}
 
 \begin{pf}
-    设二整数 $f_1$, $f_2$ 使 $\varepsilon p = f_1 f_2$\period 所以, $p = (\varepsilon^{-1} f_1) (f_2)$\period 因为 $p$ 是不可约的, 故 $\varepsilon^{-1} f_1$ 是单位或 $f_2$ 是单位\period 这也就是说, $f_1$ 是单位或 $f_2$ 是单位\period 所以, $\varepsilon p$ 是不可约的\period
+    设二整数 $f_1$, $f_2$ 使 $\varepsilon p = f_1 f_2$. 所以, $p = (\varepsilon^{-1} f_1) (f_2)$. 因为 $p$ 是不可约的, 故 $\varepsilon^{-1} f_1$ 是单位或 $f_2$ 是单位. 这也就是说, $f_1$ 是单位或 $f_2$ 是单位. 所以, $\varepsilon p$ 是不可约的.
 \end{pf}
 
 \begin{proposition}
-    设整数 $p$ 既不是 $0$, 也不是单位\period 下述四命题等价:
+    设整数 $p$ 既不是 $0$, 也不是单位. 下述四命题等价:
 
     (i) 若整数 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f_1$ 是单位或 $f_2$ 是单位;
 
@@ -786,105 +786,105 @@
 
     (iii) 若 $f$, $g$ 是整数, 且 $p$ 是 $fg$ 的因子, 则 $p$ 是 $f$ 的因子, 或 $p$ 是 $g$ 的因子;
 
-    (iv) 不存在整数 $f_1$, $f_2$ 使 $p = f_1 f_2$, 且 $|f_1| < |p|$, $|f_2| < |p|$\period
+    (iv) 不存在整数 $f_1$, $f_2$ 使 $p = f_1 f_2$, 且 $|f_1| < |p|$, $|f_2| < |p|$.
 \end{proposition}
 
 \begin{pf}
-    (i) $\Rightarrow$ (ii): 任取整数 $f$\period 设 $d$ 是 $p$ 与 $f$ 的最大公因子\period 所以, 存在整数 $g$ 使 $p = dg$\period 所以, $d$ 是单位或 $g$ 是单位\period 若 $d$ 是单位, 则单位是 $p$ 与 $f$ 的最大公因子, 即 $p$ 与 $f$ 互素; 若 $g$ 是单位, 则 $d = p g^{-1}$, 故 $p$ 是 $f$ 的因子\period
+    (i) $\Rightarrow$ (ii): 任取整数 $f$. 设 $d$ 是 $p$ 与 $f$ 的最大公因子. 所以, 存在整数 $g$ 使 $p = dg$. 所以, $d$ 是单位或 $g$ 是单位. 若 $d$ 是单位, 则单位是 $p$ 与 $f$ 的最大公因子, 即 $p$ 与 $f$ 互素; 若 $g$ 是单位, 则 $d = p g^{-1}$, 故 $p$ 是 $f$ 的因子.
 
-    若二者同时发生, 则 $d$ 是单位且 $g$ 是单位, 故 $p$ 也是单位\period 这与 $p$ 不是单位矛盾\period
+    若二者同时发生, 则 $d$ 是单位且 $g$ 是单位, 故 $p$ 也是单位. 这与 $p$ 不是单位矛盾.
 
-    (ii) $\Rightarrow$ (iii): 若 $p$ 是 $f$ 的因子, 则不必证了\period 今假设 $p$ 不是 $f$ 的因子\period 所以, $p$ 与 $f$ 互素\period 因为 $p$ 是 $fg$ 的因子, 故 $p$ 一定是 $g$ 的因子\period
+    (ii) $\Rightarrow$ (iii): 若 $p$ 是 $f$ 的因子, 则不必证了. 今假设 $p$ 不是 $f$ 的因子. 所以, $p$ 与 $f$ 互素. 因为 $p$ 是 $fg$ 的因子, 故 $p$ 一定是 $g$ 的因子.
 
-    (iii) $\Rightarrow$ (iv): 反证法\period 设 $p = f_1 f_2$, 且 $|f_1| < |p|$, $|f_2| < |p|$\period 因为 $p \neq 0$, 故 $f_1 \neq 0$, 且 $f_2 \neq 0$\period 所以, $|f_1| \geq 1$, 且 $|f_2| \geq 1$\period 既然 $p = f_1 f_2$, $p$ 当然是 $f_1 f_2$ 的因子\period 所以, $p$ 是 $f_1$ 的因子, 或 $p$ 是 $f_2$ 的因子\period 若 $p$ 是 $f_1$ 的因子, 则存在整数 $g_1$ 使 $f_1 = pg_1$\period 因为 $f_1 \neq 0$, 故 $g_1 \neq 0$\period 这样, $|g_1| \geq 1$\period 所以 $|f_1| = |p| |g_1| \geq |p|$\period 这与假定 $|f_1| < |p|$ 矛盾! 类似地, 若 $p$ 是 $f_2$ 的因子, 也有 $|f_2| \geq |p|$, 矛盾! 综上, 这样的 $f_1$ 与 $f_2$ 不存在\period
+    (iii) $\Rightarrow$ (iv): 反证法. 设 $p = f_1 f_2$, 且 $|f_1| < |p|$, $|f_2| < |p|$. 因为 $p \neq 0$, 故 $f_1 \neq 0$, 且 $f_2 \neq 0$. 所以, $|f_1| \geq 1$, 且 $|f_2| \geq 1$. 既然 $p = f_1 f_2$, $p$ 当然是 $f_1 f_2$ 的因子. 所以, $p$ 是 $f_1$ 的因子, 或 $p$ 是 $f_2$ 的因子. 若 $p$ 是 $f_1$ 的因子, 则存在整数 $g_1$ 使 $f_1 = pg_1$. 因为 $f_1 \neq 0$, 故 $g_1 \neq 0$. 这样, $|g_1| \geq 1$. 所以 $|f_1| = |p| |g_1| \geq |p|$. 这与假定 $|f_1| < |p|$ 矛盾! 类似地, 若 $p$ 是 $f_2$ 的因子, 也有 $|f_2| \geq |p|$, 矛盾! 综上, 这样的 $f_1$ 与 $f_2$ 不存在.
 
-    (iv) $\Rightarrow$ (i): 这说明: 若整数 $f_1$, $f_2$ 使 $p = f_1 f_2$, 则 $|f_1| \geq |p|$ 或 $|f_2| \geq |p|$\period 若 $|f_1| \geq |p|$, 则 $|p| = |f_1| |f_2| \geq |p| |f_2|$, 故 $|f_2| \leq 1$ (因为 $p \neq 0$, 故 $|p| \neq 0$, 从而可从不等式二边消去正因子), 即 $f_2 = \pm 1$ (因为 $f_2$ 不能为 $0$), 即 $f_2$ 是单位\period 类似地, 若 $|f_2| \geq |p|$, 则 $f_1$ 是单位\period
+    (iv) $\Rightarrow$ (i): 这说明: 若整数 $f_1$, $f_2$ 使 $p = f_1 f_2$, 则 $|f_1| \geq |p|$ 或 $|f_2| \geq |p|$. 若 $|f_1| \geq |p|$, 则 $|p| = |f_1| |f_2| \geq |p| |f_2|$, 故 $|f_2| \leq 1$ (因为 $p \neq 0$, 故 $|p| \neq 0$, 从而可从不等式二边消去正因子), 即 $f_2 = \pm 1$ (因为 $f_2$ 不能为 $0$), 即 $f_2$ 是单位. 类似地, 若 $|f_2| \geq |p|$, 则 $f_1$ 是单位.
 \end{pf}
 
 \begin{remark}
     利用 (iii) 与数学归纳法, 读者可得如下结论 (作为练习):
 
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period 设整数 $p$ 是不可约的\period 若 $p$ 是 $f_1 f_2 \cdots f_n$ 的因子, 则存在 $1$ 至 $n$ 间的整数 $\ell$, 使 $p$ 是 $f_{\ell}$ 的因子\period
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. 设整数 $p$ 是不可约的. 若 $p$ 是 $f_1 f_2 \cdots f_n$ 的因子, 则存在 $1$ 至 $n$ 间的整数 $\ell$, 使 $p$ 是 $f_{\ell}$ 的因子.
 \end{remark}
 
 \begin{remark}
-    设整数 $f$ 既不是 $0$, 也不是单位\period (iv) 表明, ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个整数 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $|f_1| < |f|$, $|f_2| < |f|$''\period
+    设整数 $f$ 既不是 $0$, 也不是单位. (iv) 表明, ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个整数 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $|f_1| < |f|$, $|f_2| < |f|$''.
 \end{remark}
 
-下面是关于不可约的整数的积的命题\period
+下面是关于不可约的整数的积的命题.
 
 \begin{proposition}
-    设整数 $p_1$, $p_2$, $\cdots$, $p_m$, $q_1$, $q_2$, $\cdots$, $q_n$ 都是不可约的\period 设
+    设整数 $p_1$, $p_2$, $\cdots$, $p_m$, $q_1$, $q_2$, $\cdots$, $q_n$ 都是不可约的. 设
     \begin{align*}
-        p_1 p_2 \cdots p_m = q_1 q_2 \cdots q_n \period
+        p_1 p_2 \cdots p_m = q_1 q_2 \cdots q_n.
     \end{align*}
 
     (i) $m = n$;
 
-    (ii) 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_m$ (注意, $n = m$) 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴 (注意: 调换顺序后的 $q_{\ell}$ 不一定跟原来的 $q_{\ell}$ 相等!)\period
+    (ii) 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_m$ (注意, $n = m$) 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴 (注意: 调换顺序后的 $q_{\ell}$ 不一定跟原来的 $q_{\ell}$ 相等!).
 \end{proposition}
 
 \begin{pf}
-    对等式左侧的不可约的整数的数目 $m$ 用数学归纳法\period 当 $m = 1$ 时, 有
+    对等式左侧的不可约的整数的数目 $m$ 用数学归纳法. 当 $m = 1$ 时, 有
     \begin{align*}
-        p_1 = q_1 q_2 \cdots q_n \period
+        p_1 = q_1 q_2 \cdots q_n.
     \end{align*}
 
-    先证明: $n = 1$\period 反证法\period 设 $n > 1$\period 因为 $p_1 = q_1 q_2 \cdots q_n$, 故 $p_1$ 是某个 $q_i$ 的因子 ($i$ 是某个 $1$ 至 $n$ 间的整数)\period 因为乘法可交换, 不失一般性, 设 $p_1$ 是 $q_1$ 的因子\period 因为 $q_1$ 是不可约的, 且 $q_1$ 与 $p_1$ 不是互素的, 故 $q_1$ 也是 $p_1$ 的因子\period 所以, 存在单位 $\varepsilon$ 使 $q_1 = \varepsilon p_1$\period 进而
+    先证明: $n = 1$. 反证法. 设 $n > 1$. 因为 $p_1 = q_1 q_2 \cdots q_n$, 故 $p_1$ 是某个 $q_i$ 的因子 ($i$ 是某个 $1$ 至 $n$ 间的整数). 因为乘法可交换, 不失一般性, 设 $p_1$ 是 $q_1$ 的因子. 因为 $q_1$ 是不可约的, 且 $q_1$ 与 $p_1$ 不是互素的, 故 $q_1$ 也是 $p_1$ 的因子. 所以, 存在单位 $\varepsilon$ 使 $q_1 = \varepsilon p_1$. 进而
     \begin{align*}
-        p_1 = (\varepsilon p_1) q_2 \cdots q_n = p_1 (\varepsilon q_2) \cdots q_n \period
+        p_1 = (\varepsilon p_1) q_2 \cdots q_n = p_1 (\varepsilon q_2) \cdots q_n.
     \end{align*}
     因为 $p_1 \neq 0$, 故可从等式二边消去 $p_1$, 即
     \begin{align*}
-        1 = (\varepsilon q_2) \cdots q_n \period
+        1 = (\varepsilon q_2) \cdots q_n.
     \end{align*}
-    因为 $q_2$ 是不可约的, 故 $\varepsilon q_2$ 也是不可约的\period 上式表明, $\varepsilon q_2$ 是 $1$ 的因子, 故 $\varepsilon q_2$ 是单位\period 这与假定矛盾! 所以, $n$ 不可大于 $1$\period 这样, $n = 1$\period
+    因为 $q_2$ 是不可约的, 故 $\varepsilon q_2$ 也是不可约的. 上式表明, $\varepsilon q_2$ 是 $1$ 的因子, 故 $\varepsilon q_2$ 是单位. 这与假定矛盾! 所以, $n$ 不可大于 $1$. 这样, $n = 1$.
 
-    既然 $n = 1$, 那么 $p_1 = q_1$\period 所以, 不必调换顺序即可知 $p_1$ 与 $q_1$ 相伴\period
+    既然 $n = 1$, 那么 $p_1 = q_1$. 所以, 不必调换顺序即可知 $p_1$ 与 $q_1$ 相伴.
 
-    所以, $m=1$ 时, 命题成立\period
+    所以, $m=1$ 时, 命题成立.
 
-    假定 $m=k$ 时, 命题成立\period 现在看 $m=k+1$ 时的情形\period 设 $p_1$, $p_2$, $\cdots$, $p_k$, $p_{k+1}$, $q_1$, $q_2$, $\cdots$, $q_n$ 是不可约的\period 设
+    假定 $m=k$ 时, 命题成立. 现在看 $m=k+1$ 时的情形. 设 $p_1$, $p_2$, $\cdots$, $p_k$, $p_{k+1}$, $q_1$, $q_2$, $\cdots$, $q_n$ 是不可约的. 设
     \begin{align*}
-        p_1 p_2 \cdots p_k p_{k+1} = q_1 q_2 \cdots q_n \period
+        p_1 p_2 \cdots p_k p_{k+1} = q_1 q_2 \cdots q_n.
     \end{align*}
-    因为 $p_1$ 是 $q_1 q_2 \cdots q_n$ 的因子, 故 $p_1$ 是某个 $q_j$ 的因子 ($j$ 是某个 $1$ 至 $n$ 间的整数)\period 因为乘法可交换, 不失一般性, 设 $p_1$ 是 $q_1$ 的因子\period 因为 $q_1$ 是不可约的, 且 $q_1$ 与 $p_1$ 不是互素的, 故 $q_1$ 也是 $p_1$ 的因子\period 所以, 存在单位 $\varepsilon^{\prime}$ 使 $q_1 = \varepsilon^{\prime} p_1$\period 进而
+    因为 $p_1$ 是 $q_1 q_2 \cdots q_n$ 的因子, 故 $p_1$ 是某个 $q_j$ 的因子 ($j$ 是某个 $1$ 至 $n$ 间的整数). 因为乘法可交换, 不失一般性, 设 $p_1$ 是 $q_1$ 的因子. 因为 $q_1$ 是不可约的, 且 $q_1$ 与 $p_1$ 不是互素的, 故 $q_1$ 也是 $p_1$ 的因子. 所以, 存在单位 $\varepsilon^{\prime}$ 使 $q_1 = \varepsilon^{\prime} p_1$. 进而
     \begin{align*}
-        p_1 p_2 \cdots p_k p_{k+1} = (\varepsilon^{\prime} p_1) q_2 \cdots q_n = p_1 (\varepsilon^{\prime} q_2) \cdots q_n \period
+        p_1 p_2 \cdots p_k p_{k+1} = (\varepsilon^{\prime} p_1) q_2 \cdots q_n = p_1 (\varepsilon^{\prime} q_2) \cdots q_n.
     \end{align*}
     因为 $p_1 \neq 0$, 故可从等式二边消去 $p_1$, 即
     \begin{align*}
-        p_2 \cdots p_k p_{k+1} = (\varepsilon^{\prime} q_2) \cdots q_n \period
+        p_2 \cdots p_k p_{k+1} = (\varepsilon^{\prime} q_2) \cdots q_n.
     \end{align*}
-    因为 $q_2$ 是不可约的, 故 $\varepsilon^{\prime} q_2$ 也是不可约的\period 上式左侧的不可约的整数的数目是 $k$\period 根据归纳假设, $n-1 = k$, 即 $n = k+1$\period 这证明了 $m=k+1$ 时 (i) 成立\period
+    因为 $q_2$ 是不可约的, 故 $\varepsilon^{\prime} q_2$ 也是不可约的. 上式左侧的不可约的整数的数目是 $k$. 根据归纳假设, $n-1 = k$, 即 $n = k+1$. 这证明了 $m=k+1$ 时 (i) 成立.
 
-    前面已证得, 适当地调换 $q_1$, $q_2$, $\cdots$, $q_n$ 的顺序, 可使 $p_1$ 与 $q_1$ 相伴\period 根据归纳假设, 可以适当地调换 $\varepsilon^{\prime} q_2$, $\cdots$, $q_{k+1}$ (注意, $n = k+1$) 的顺序, 使任取 $3$ 至 $k+1$ 间的整数 $u$, $p_u$ 与 $q_u$ 相伴\period 当然 $p_2$ 与 $\varepsilon^{\prime} q_2$ 也相伴\period 因为 $\varepsilon^{\prime} q_2$ 与 $q_2$ 相伴, 所以 $p_2$ 与 $q_2$ 相伴\period 把这些事实放在一块儿, 就是: 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_{k+1}$ 的顺序, 使任取 $1$ 至 $k+1$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴\period 这样, $m = k+1$ 时, (ii) 成立\period
+    前面已证得, 适当地调换 $q_1$, $q_2$, $\cdots$, $q_n$ 的顺序, 可使 $p_1$ 与 $q_1$ 相伴. 根据归纳假设, 可以适当地调换 $\varepsilon^{\prime} q_2$, $\cdots$, $q_{k+1}$ (注意, $n = k+1$) 的顺序, 使任取 $3$ 至 $k+1$ 间的整数 $u$, $p_u$ 与 $q_u$ 相伴. 当然 $p_2$ 与 $\varepsilon^{\prime} q_2$ 也相伴. 因为 $\varepsilon^{\prime} q_2$ 与 $q_2$ 相伴, 所以 $p_2$ 与 $q_2$ 相伴. 把这些事实放在一块儿, 就是: 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_{k+1}$ 的顺序, 使任取 $1$ 至 $k+1$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴. 这样, $m = k+1$ 时, (ii) 成立.
 \end{pf}
 
 \begin{proposition}
-    设整数 $f$ 既不是 $0$, 也不是单位\period 存在不可约的整数 $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    设整数 $f$ 既不是 $0$, 也不是单位. 存在不可约的整数 $p_1$, $p_2$, $\cdots$, $p_m$ 使
     \begin{align*}
-        f = p_1 p_2 \cdots p_m \period
+        f = p_1 p_2 \cdots p_m.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    对 $f$ 的绝对值 $N$ 用数学归纳法\period 因为 $f$ 既不是 $0$, 也不是单位, 故 $N \geq 2$\period $N = 2$ 时, $f = \pm 2$\period 我们已经知道, $2$ 是不可约的; 所以, $-2$ 也是不可约的\period 这样, $f$ 是不可约的, 故存在不可约的整数 $p_1 = f$ 使 $f = p_1$\period 这样, $N = 2$ 时, 命题成立\period
+    对 $f$ 的绝对值 $N$ 用数学归纳法. 因为 $f$ 既不是 $0$, 也不是单位, 故 $N \geq 2$. $N = 2$ 时, $f = \pm 2$. 我们已经知道, $2$ 是不可约的; 所以, $-2$ 也是不可约的. 这样, $f$ 是不可约的, 故存在不可约的整数 $p_1 = f$ 使 $f = p_1$. 这样, $N = 2$ 时, 命题成立.
 
-    设 $N \leq k$ ($k \geq 2$) 时, 命题成立\period 考虑 $N = k+1$\period 若 $f$ 是不可约的, 则存在不可约的整数 $p_1 = f$ 使 $f = p_1$\period 若 $f$ 是可约的, 则存在二整数 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $|f_1| < |f|$, $|f_2| < |f|$\period 所以 $|f_1| \leq |f| - 1 = k$, $|f_2| \leq |f| - 1 = k$\period 根据归纳假设, 存在不可约的整数 $p_1$, $p_2$, $\cdots$, $p_i$, $p_{i+1}$, $p_{i+2}$, $\cdots$, $p_m$ 使
+    设 $N \leq k$ ($k \geq 2$) 时, 命题成立. 考虑 $N = k+1$. 若 $f$ 是不可约的, 则存在不可约的整数 $p_1 = f$ 使 $f = p_1$. 若 $f$ 是可约的, 则存在二整数 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $|f_1| < |f|$, $|f_2| < |f|$. 所以 $|f_1| \leq |f| - 1 = k$, $|f_2| \leq |f| - 1 = k$. 根据归纳假设, 存在不可约的整数 $p_1$, $p_2$, $\cdots$, $p_i$, $p_{i+1}$, $p_{i+2}$, $\cdots$, $p_m$ 使
     \begin{align*}
-        f_1 = p_1 p_2 \cdots p_i, \quad f_2 = p_{i+1} p_{i+2} \cdots p_m \period
+        f_1 = p_1 p_2 \cdots p_i, \quad f_2 = p_{i+1} p_{i+2} \cdots p_m.
     \end{align*}
     所以
     \begin{align*}
-        f = f_1 f_2 = p_1 p_2 \cdots p_i p_{i+1} p_{i+2} \cdots p_m \period
+        f = f_1 f_2 = p_1 p_2 \cdots p_i p_{i+1} p_{i+2} \cdots p_m.
     \end{align*}
-    故 $N = k+1$ 时, 命题也成立\period
+    故 $N = k+1$ 时, 命题也成立.
 \end{pf}
 
 合并上二个命题, 可得 ``算术基本定理'' \term{the fundamental theorem of arithmetic}:
 \begin{proposition}
-    设整数 $f$ 既不是 $0$, 也不是单位\period
+    设整数 $f$ 既不是 $0$, 也不是单位.
 
     (i) 存在不可约的整数 $p_1$, $p_2$, $\cdots$, $p_m$ 使
     \begin{align*}
@@ -895,83 +895,83 @@
     \begin{align*}
         f = q_1 q_2 \cdots q_m = s_1 s_2 \cdots s_n,
     \end{align*}
-    则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴 (注意: 调换顺序后的 $s_\ell$ 不一定跟原来的 $s_\ell$ 相等!)\period
+    则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴 (注意: 调换顺序后的 $s_\ell$ 不一定跟原来的 $s_\ell$ 相等!).
 \end{proposition}
 
-设整数 $f$ 既不是 $0$, 也不是单位\period 利用上个命题, 我们可以方便地定出 $f$ 的因子\period
+设整数 $f$ 既不是 $0$, 也不是单位. 利用上个命题, 我们可以方便地定出 $f$ 的因子.
 
 \begin{proposition}
-    设整数 $f$ 既不是 $0$, 也不是单位\period 设 $p_1$, $p_2$, $\cdots$, $p_m$ 是不可约的整数, 且
+    设整数 $f$ 既不是 $0$, 也不是单位. 设 $p_1$, $p_2$, $\cdots$, $p_m$ 是不可约的整数, 且
     \begin{align*}
-        f = p_1 p_2 \cdots p_m \period
+        f = p_1 p_2 \cdots p_m.
     \end{align*}
     $f$ 的因子必为
     \begin{align*}
         \varepsilon p_{j_1} p_{j_2} \cdots p_{j_s} \tag*{(\myStar)},
     \end{align*}
-    其中 $\varepsilon$ 是单位, $j_1$, $j_2$, $\cdots$, $j_s$ 是 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 ($s$ 可取 $0$; 此时, 这就是单位)\period
+    其中 $\varepsilon$ 是单位, $j_1$, $j_2$, $\cdots$, $j_s$ 是 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 ($s$ 可取 $0$; 此时, 这就是单位).
 \end{proposition}
 
 \begin{pf}
-    从 $1$, $2$, $\cdots$, $m$ 中选出 $s$ 个不同的数 $j_1$, $j_2$, $\cdots$, $j_s$, 那么还剩 $m-s$ 个数未被挑选\period 记这 $m-s$ 个数为 $j_{s+1}$, $\cdots$, $j_m$\period 由于
+    从 $1$, $2$, $\cdots$, $m$ 中选出 $s$ 个不同的数 $j_1$, $j_2$, $\cdots$, $j_s$, 那么还剩 $m-s$ 个数未被挑选. 记这 $m-s$ 个数为 $j_{s+1}$, $\cdots$, $j_m$. 由于
     \begin{align*}
         f
         = {} & p_1 p_2 \cdots p_m                                                                          \\
         = {} & (p_{j_1} p_{j_2} \cdots p_{j_s}) (p_{j_{s+1}} \cdots p_{j_m})                               \\
         = {} & (\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}) (\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}),
     \end{align*}
-    且 $\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}$ 是整数, 故 $\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}$ 是 $f$ 的因子\period
+    且 $\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}$ 是整数, 故 $\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}$ 是 $f$ 的因子.
 
-    设 $g$ 是 $f$ 的因子\period 我们证明: $g$ 一定能写为 (\myStar) 的形式\period
+    设 $g$ 是 $f$ 的因子. 我们证明: $g$ 一定能写为 (\myStar) 的形式.
 
-    首先, $g$ 一定不是 $0$\period 若 $g$ 是单位, 取 $s = 0$, $g$ 即可写为 (\myStar) 的形式\period 现在设 $g$ 既不是 $0$, 也不是单位\period
+    首先, $g$ 一定不是 $0$. 若 $g$ 是单位, 取 $s = 0$, $g$ 即可写为 (\myStar) 的形式. 现在设 $g$ 既不是 $0$, 也不是单位.
 
-    设整数 $h$ 使 $f = gh$\period $h$ 当然不是 $0$\period 若 $h$ 是单位, 则
+    设整数 $h$ 使 $f = gh$. $h$ 当然不是 $0$. 若 $h$ 是单位, 则
     \begin{align*}
-        g = h^{-1} f = h^{-1} p_1 p_2 \cdots p_m \period
+        g = h^{-1} f = h^{-1} p_1 p_2 \cdots p_m.
     \end{align*}
-    $h^{-1}$ 也是单位, 且 $1$, $2$, $\cdots$, $m$ 当然是 $1$, $2$, $\cdots$, $m$ 中 $m$ 个不同的数\period
+    $h^{-1}$ 也是单位, 且 $1$, $2$, $\cdots$, $m$ 当然是 $1$, $2$, $\cdots$, $m$ 中 $m$ 个不同的数.
 
     若 $h$ 不是单位, 则存在不可约的整数 $q_1$, $q_2$, $\cdots$, $q_s$, $q_{s+1}$, $\cdots$, $q_n$ 使
     \begin{align*}
-        g = q_1 q_2 \cdots q_s, \quad h = q_{s+1} \cdots q_n \period
+        g = q_1 q_2 \cdots q_s, \quad h = q_{s+1} \cdots q_n.
     \end{align*}
     所以
     \begin{align*}
-        f = gh = q_1 q_2 \cdots q_s q_{s+1} \cdots q_n \period
+        f = gh = q_1 q_2 \cdots q_s q_{s+1} \cdots q_n.
     \end{align*}
-    从而 $n = m$, 且可以适当地调换 $p_1$, $p_2$, $\cdots$, $p_m$ 的顺序, 使任取 $1$, $2$, $\cdots$, $m$ 中的数 $\ell$, $q_\ell$ 与 $p_\ell$ 相伴\period 但是, 我们注意到, 调换后的 $p_{\ell}$ 跟题设的 $p_{\ell}$ 不一定是相等的, 所以我们稍微变通一下\period
+    从而 $n = m$, 且可以适当地调换 $p_1$, $p_2$, $\cdots$, $p_m$ 的顺序, 使任取 $1$, $2$, $\cdots$, $m$ 中的数 $\ell$, $q_\ell$ 与 $p_\ell$ 相伴. 但是, 我们注意到, 调换后的 $p_{\ell}$ 跟题设的 $p_{\ell}$ 不一定是相等的, 所以我们稍微变通一下.
 
     我们把 $s$ 个不可约的整数 $q_1$, $q_2$, $\cdots$, $q_s$ 写在左边, 把 $m$ 个不可约的整数 $p_1$, $p_2$, $\cdots$, $p_m$ 写在右边:
     \begin{align*}
-        q_1, q_2, \cdots, q_s; \qquad p_1, p_2, \cdots, p_m \period
+        q_1, q_2, \cdots, q_s; \qquad p_1, p_2, \cdots, p_m.
     \end{align*}
-    对 $q_1$ 而言, 肯定有整数 $j_1$ 使 $q_1$ 不与 $p_i$ ($i < j_1$) 相伴 (从左向右看诸 $p_\ell$ 即可), 但 $q_1$ 与 $p_{j_1}$ 相伴\period 也就是说, 存在单位 $\varepsilon_1$ 使 $q_1 = \varepsilon_1 p_1$\period 去掉左边的 $q_1$ 与右边的 $p_{j_1}$, 有
+    对 $q_1$ 而言, 肯定有整数 $j_1$ 使 $q_1$ 不与 $p_i$ ($i < j_1$) 相伴 (从左向右看诸 $p_\ell$ 即可), 但 $q_1$ 与 $p_{j_1}$ 相伴. 也就是说, 存在单位 $\varepsilon_1$ 使 $q_1 = \varepsilon_1 p_1$. 去掉左边的 $q_1$ 与右边的 $p_{j_1}$, 有
     \begin{align*}
-        q_2, \cdots, q_s; \qquad p_1, \cdots, p_{j_1 - 1}, p_{j_1 + 1}, \cdots, p_m \period
+        q_2, \cdots, q_s; \qquad p_1, \cdots, p_{j_1 - 1}, p_{j_1 + 1}, \cdots, p_m.
     \end{align*}
-    类似地, 对 $q_2$ 而言, 肯定有整数 $j_2$ 使 $q_2$ 不与 $p_i$ ($i < j_2$, $i \neq j_1$) 相伴, 但 $q_2$ 与 $p_{j_2}$ 相伴\period 也就是说, 存在单位 $\varepsilon_2$ 使 $q_2 = \varepsilon_2 p_{j_2}$\period
+    类似地, 对 $q_2$ 而言, 肯定有整数 $j_2$ 使 $q_2$ 不与 $p_i$ ($i < j_2$, $i \neq j_1$) 相伴, 但 $q_2$ 与 $p_{j_2}$ 相伴. 也就是说, 存在单位 $\varepsilon_2$ 使 $q_2 = \varepsilon_2 p_{j_2}$.
 
-    反复地执行此事, 可知: 存在 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 $j_1$, $j_2$, $\cdots$, $j_s$, 存在 $s$ 个单位 $\varepsilon_1$, $\varepsilon_2$, $\cdots$, $\varepsilon_s$ 使 $q_\ell = \varepsilon_s p_{j_\ell}$\period 所以
+    反复地执行此事, 可知: 存在 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 $j_1$, $j_2$, $\cdots$, $j_s$, 存在 $s$ 个单位 $\varepsilon_1$, $\varepsilon_2$, $\cdots$, $\varepsilon_s$ 使 $q_\ell = \varepsilon_s p_{j_\ell}$. 所以
     \begin{align*}
         f
         = {} & q_1 q_2 \cdots q_s                                                                \\
         = {} & (\varepsilon_1 p_{j_1}) (\varepsilon_2 p_{j_2}) \cdots (\varepsilon_s p_{j_s})    \\
         = {} & (\varepsilon_1 \varepsilon_2 \cdots \varepsilon_s) p_{j_1} p_{j_2} \cdots p_{j_s} \\
-        = {} & \varepsilon p_{j_1} p_{j_2} \cdots p_{j_s} \period \qedhere
+        = {} & \varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}. \qedhere
     \end{align*}
 \end{pf}
 
-我们以一个简单的命题结束本文\period
+我们以一个简单的命题结束本文.
 
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数\period $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 任取不可约的整数 $p$, 存在某个 $f_i$, 使 $p$ 不是 $f_i$ 的因子\period
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整数. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 任取不可约的整数 $p$, 存在某个 $f_i$, 使 $p$ 不是 $f_i$ 的因子.
 \end{proposition}
 
 \begin{pf}
-    先看必要性\period 反证法\period 假定结论不成立, 即: 存在不可约的整数 $p$, 使任取 $f_i$, $p$ 是 $f_i$ 的因子\period 这样, $p$ 就是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子\period 所以, $p$ 是单位的因子\period 矛盾!
+    先看必要性. 反证法. 假定结论不成立, 即: 存在不可约的整数 $p$, 使任取 $f_i$, $p$ 是 $f_i$ 的因子. 这样, $p$ 就是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子. 所以, $p$ 是单位的因子. 矛盾!
 
-    再看充分性\period 还是反证法\period 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位\period 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的整数都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的整数 $p_0$, 使 $p_0$ 是 $d$ 的因子\period 所以, 存在不可约的整数 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子\period 矛盾!
+    再看充分性. 还是反证法. 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位. 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的整数都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的整数 $p_0$, 使 $p_0$ 是 $d$ 的因子. 所以, 存在不可约的整数 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子. 矛盾!
 \end{pf}
 
-本文就到这里\period 再见, 亲爱的读者朋友!
+本文就到这里. 再见, 亲爱的读者朋友!

@@ -4,23 +4,23 @@
 
 本节讨论求和公式 \term{summation formula} 问题: 设 $f(x) \in \FF[x]$, 求
 \begin{align*}
-    S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1) \period
+    S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1).
 \end{align*}
 
 \begin{example}
-    相信大家应该听说过德意志数学家 Carl Friedrich Gauß\period 1787 年, Gauß 还只是一个 10 岁的孩子\period 据说, 当时他的数学教师给全班同学出了这样的算术题:
+    相信大家应该听说过德意志数学家 Carl Friedrich Gauß. 1787 年, Gauß 还只是一个 10 岁的孩子. 据说, 当时他的数学教师给全班同学出了这样的算术题:
     \begin{align*}
         1 + 2 + 3 + \cdots + 100 = ?
     \end{align*}
-    这里, 后一个数比前一个数多 $1$, 且共有 $100$ 个数\period 教师刚写完问题, Gauß 就算出, 答案是 $5\,050$\period 他的同学还在一个一个地加, 算了很久, 还没算对\period
+    这里, 后一个数比前一个数多 $1$, 且共有 $100$ 个数. 教师刚写完问题, Gauß 就算出, 答案是 $5\,050$. 他的同学还在一个一个地加, 算了很久, 还没算对.
 
     Gauß 是怎么快速算出答案的呢? 设
     \begin{align*}
-        S = 1 + 2 + 3 + \cdots + 100 \period
+        S = 1 + 2 + 3 + \cdots + 100.
     \end{align*}
     因为加法适合交换律, 故
     \begin{align*}
-        S = 100 + 99 + 98 + \cdots + 1 \period
+        S = 100 + 99 + 98 + \cdots + 1.
     \end{align*}
     所以
     \begin{align*}
@@ -29,28 +29,28 @@
         = {} & \underbrace{101 + 101 + 101 + \cdots + 101}
         _{\text{a hundred $101$'s}}                                 \\
         = {} & 100 \cdot 101                                        \\
-        = {} & 10\,100 \period
+        = {} & 10\,100.
     \end{align*}
     由此可得
     \begin{align*}
-        S = \frac{10\,100}{2} = 5\,050 \period
+        S = \frac{10\,100}{2} = 5\,050.
     \end{align*}
 
     如果记 $f(x) = x + 1$, 则
     \begin{align*}
         S
-        = {} & 1 + 2 + 3 + \cdots + 100                  \\
-        = {} & f(0) + f(1) + f(2) + \cdots + f(100 - 1)  \\
-        = {} & \sum_{\ell = 0}^{100 - 1} f(\ell) \period
+        = {} & 1 + 2 + 3 + \cdots + 100                 \\
+        = {} & f(0) + f(1) + f(2) + \cdots + f(100 - 1) \\
+        = {} & \sum_{\ell = 0}^{100 - 1} f(\ell).
     \end{align*}
 
-    考虑更一般的情形\period 设 $f(x) = a + bx$\period 记
+    考虑更一般的情形. 设 $f(x) = a + bx$. 记
     \begin{align*}
-        S(n) = f(0) + f(1) + \cdots + f(n-1) \period
+        S(n) = f(0) + f(1) + \cdots + f(n-1).
     \end{align*}
     类似地, 把右侧倒着写:
     \begin{align*}
-        S(n) = f(n-1) + f(n-1) + \cdots + f(0) \period
+        S(n) = f(n-1) + f(n-1) + \cdots + f(0).
     \end{align*}
     因为
     \begin{align*}
@@ -64,19 +64,19 @@
     \end{align*}
     即
     \begin{align*}
-        S(n) = \frac{n(2a + b(n - 1))}{2} = \left(a - \frac{b}{2}\right) n + \frac{b}{2} n^2 \period
+        S(n) = \frac{n(2a + b(n - 1))}{2} = \left(a - \frac{b}{2}\right) n + \frac{b}{2} n^2.
     \end{align*}
     我们还可以看出: $S(n)$ 是多项式, 且
     \begin{align*}
-        \deg S(n) = \deg f(n) + 1 \period
+        \deg S(n) = \deg f(n) + 1.
     \end{align*}
 \end{example}
 
-上面讨论了当 $f(x)$ 的次不高于 $1$ 时如何求 $S(n)$\period 那么, 当 $f(x)$ 的次高于 $1$ 时, 怎么找 $S(n)$? 它还是多项式吗?
+上面讨论了当 $f(x)$ 的次不高于 $1$ 时如何求 $S(n)$. 那么, 当 $f(x)$ 的次高于 $1$ 时, 怎么找 $S(n)$? 它还是多项式吗?
 
-在求和前, 我们看 $S(n)$ 适合什么性质\period $S(n)$ 是 $f(0)$, $f(1)$, $\cdots$, $f(n-1)$ 这 $n$ 个数的和\period 因为 $0$ 个数的和是 $0$, 故 $S(0) = 0$\period 同时, 不难看出, $S(n+1)$ 比 $S(n)$ 多出 $f(n)$, 也即
+在求和前, 我们看 $S(n)$ 适合什么性质. $S(n)$ 是 $f(0)$, $f(1)$, $\cdots$, $f(n-1)$ 这 $n$ 个数的和. 因为 $0$ 个数的和是 $0$, 故 $S(0) = 0$. 同时, 不难看出, $S(n+1)$ 比 $S(n)$ 多出 $f(n)$, 也即
 \begin{align*}
-    S(n+1) - S(n) = f(n) \period
+    S(n+1) - S(n) = f(n).
 \end{align*}
 反过来, 设 $\NN$ 到 $\FF$ 的函数 $W(n)$ 适合 $W(0) = 0$ 与 $W(n+1) - W(n) = f(n)$, 则
 \begin{align*}
@@ -85,37 +85,37 @@
     = {} & \sum_{\ell = 0}^{n - 1} W(\ell+1) - \sum_{\ell = 0}^{n - 1} W(\ell) \\
     = {} & \sum_{\ell = 1}^{n} W(\ell) - \sum_{\ell = 0}^{n - 1} W(\ell)       \\
     = {} & W(n) - W(0)                                                         \\
-    = {} & W(n) \period
+    = {} & W(n).
 \end{align*}
 这样, 任给 $f(x) \in \FF[x]$, 若我们能找到适合条件 $S(0) = 0$ 与 $S(x+1) - S(x) = f(x)$ 的多项式, 则
 \begin{align*}
-    \sum_{\ell = 0}^{n - 1} f(\ell) = S(n) \period
+    \sum_{\ell = 0}^{n - 1} f(\ell) = S(n).
 \end{align*}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $m$ 次多项式\period 存在唯一的 $m+1$ 次多项式 $F(x) \in \FF[x]$ 适合条件:
+    设 $f(x) \in \FF[x]$ 是 $m$ 次多项式. 存在唯一的 $m+1$ 次多项式 $F(x) \in \FF[x]$ 适合条件:
 
     (i) $F(0) = 0$;
 
-    (ii) $F(x + 1) - F(x) = f(x)$\period
+    (ii) $F(x + 1) - F(x) = f(x)$.
 \end{proposition}
 
 \begin{pf}
-    先看存在性\period 若 $f(x) = 0$, 则 $F(x) = 0$ 显然适合 (i) (ii), 且
+    先看存在性. 若 $f(x) = 0$, 则 $F(x) = 0$ 显然适合 (i) (ii), 且
     \begin{align*}
-        \deg F(x) = -\infty = -\infty + 1 = \deg f(x) + 1 \period
+        \deg F(x) = -\infty = -\infty + 1 = \deg f(x) + 1.
     \end{align*}
-    设 $m \geq 0$\period 根据广义二项系数的性质, 存在 $m+1$ 个 $\FF$ 中元 $c_0$, $\cdots$, $c_{m}$ 使
+    设 $m \geq 0$. 根据广义二项系数的性质, 存在 $m+1$ 个 $\FF$ 中元 $c_0$, $\cdots$, $c_{m}$ 使
     \begin{align*}
-        f(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell}, \quad c_{m} \neq 0 \period
+        f(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell}, \quad c_{m} \neq 0.
     \end{align*}
     (读者可思考: 若 $c_{m} = 0$, $f(x)$ 还能是 $m$ 次多项式吗?) 作多项式
     \begin{align*}
-        F(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell+1} \in \FF[x] \period
+        F(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell+1} \in \FF[x].
     \end{align*}
-    显然 $\deg F(x) = m + 1$\period 验证 (i):
+    显然 $\deg F(x) = m + 1$. 验证 (i):
     \begin{align*}
-        F(0) = \sum_{\ell = 0}^{m} c_\ell \binom{0}{\ell+1} = \sum_{\ell = 0}^{m} 0 = 0 \period
+        F(0) = \sum_{\ell = 0}^{m} c_\ell \binom{0}{\ell+1} = \sum_{\ell = 0}^{m} 0 = 0.
     \end{align*}
     验证 (ii):
     \begin{align*}
@@ -123,37 +123,37 @@
         = {} & \sum_{\ell = 0}^{m} c_\ell \binom{x+1}{\ell+1} - \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell+1} \\
         = {} & \sum_{\ell = 0}^{m} c_\ell \left( \binom{x+1}{\ell+1} - \binom{x}{\ell+1} \right)             \\
         = {} & \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell}                                                    \\
-        = {} & f(x) \period
+        = {} & f(x).
     \end{align*}
 
-    再看唯一性\period 设 $G(x) \in \FF[x]$ 是 $m+1$ 次多项式, 并适合条件 $G(0) = 0$ 与 $G(x + 1) - G(x) = f(x)$\period 作
+    再看唯一性. 设 $G(x) \in \FF[x]$ 是 $m+1$ 次多项式, 并适合条件 $G(0) = 0$ 与 $G(x + 1) - G(x) = f(x)$. 作
     \begin{align*}
-        H(x) = F(x) - G(x) \period
+        H(x) = F(x) - G(x).
     \end{align*}
-    则 $H(0) = 0$, $H(x + 1) - H(x) = 0$\period 所以, $r$ 为非负整数时, $H(r) = 0$\period 从而 $H(x)$ 一定是零多项式, 即 $F(x) = G(x)$\period
+    则 $H(0) = 0$, $H(x + 1) - H(x) = 0$. 所以, $r$ 为非负整数时, $H(r) = 0$. 从而 $H(x)$ 一定是零多项式, 即 $F(x) = G(x)$.
 \end{pf}
 
 \begin{example}
-    记 $f(x) = x^2$\period 我们求
+    记 $f(x) = x^2$. 我们求
     \begin{align*}
-        S(n) = f(0) + f(1) + \cdots + f(n-1) = \sum_{\ell = 0}^{n - 1} f(\ell) \period
+        S(n) = f(0) + f(1) + \cdots + f(n-1) = \sum_{\ell = 0}^{n - 1} f(\ell).
     \end{align*}
-    由上个命题可知, 存在唯一的次为 $3$ 的多项式 $F(x)$ 使 $F(0) = 0$, $F(x + 1) - F(x) = f(x)$, 且 $S(n) = F(n)$\period
+    由上个命题可知, 存在唯一的次为 $3$ 的多项式 $F(x)$ 使 $F(0) = 0$, $F(x + 1) - F(x) = f(x)$, 且 $S(n) = F(n)$.
 
-    可以用插值的思想求 $F(x)$\period 取 $x_0$, $x_1$, $x_2$, $x_3$ 为 $0$, $1$, $-1$, $2$\period 不难算出:
+    可以用插值的思想求 $F(x)$. 取 $x_0$, $x_1$, $x_2$, $x_3$ 为 $0$, $1$, $-1$, $2$. 不难算出:
     \begin{align*}
-         & y_{0} = F(0) = 0,                      \\
-         & y_{1} = F(1) = F(0) + f(0) = 0,        \\
-         & y_{2} = F(-1) = F(0) - f(-1) = -1,     \\
-         & y_{3} = F(2) = F(1) + f(1) = 1 \period
+         & y_{0} = F(0) = 0,                  \\
+         & y_{1} = F(1) = F(0) + f(0) = 0,    \\
+         & y_{2} = F(-1) = F(0) - f(-1) = -1, \\
+         & y_{3} = F(2) = F(1) + f(1) = 1.
     \end{align*}
     注意到 $y_0 = y_1 = 0$, 故可以考虑 Lagrange 插值 (只要算 $L_2 (x)$ 与 $L_3 (x)$):
     \begin{align*}
          & L_2 (x) = \frac{(x - 0)(x - 1)(x - 2)}{(-1 - 0)(-1 - 1)(-1 - 2)} = -\frac{x(x-1)(x-2)}{6}, \\
          & L_3 (x) = \frac{(x - 0)(x - 1)(x + 1)}{(2 - 0)(2 - 1)(2 + 1)} = \frac{x(x-1)(x+1)}{6},     \\
-         & F(x) = y_2 L_2 (x) + y_3 L_3 (x) = \frac{x(x-1)(2x-1)}{6} \period
+         & F(x) = y_2 L_2 (x) + y_3 L_3 (x) = \frac{x(x-1)(2x-1)}{6}.
     \end{align*}
-    当然, 也可利用 Newton 插值\period 作出差商表:
+    当然, 也可利用 Newton 插值. 作出差商表:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{c|cccc}
@@ -169,16 +169,16 @@
         = {} & [0] + [0,1] (x - 0) + [0,1,-1] (x - 0)(x - 1)    \\
              & \qquad \qquad + [0,1,-1,2] (x - 0)(x - 1)(x + 1) \\
         = {} & -\frac{1}{2} x(x-1) + \frac{1}{3} x(x-1)(x+1)    \\
-        = {} & \frac{x(x-1)(2x-1)}{6} \period
+        = {} & \frac{x(x-1)(2x-1)}{6}.
     \end{align*}
 
     综上, 我们有
     \begin{align*}
-        \sum_{\ell = 0}^{n - 1} \ell^2 = 0^2 + 1^2 + \cdots + (n-1)^2 = \frac{n(n-1)(2n-1)}{6} \period
+        \sum_{\ell = 0}^{n - 1} \ell^2 = 0^2 + 1^2 + \cdots + (n-1)^2 = \frac{n(n-1)(2n-1)}{6}.
     \end{align*}
 \end{example}
 
-其实, 我们可以在此处结束本节\period 设 $f(x)$ 是 $n$ 次多项式\period 上面的命题告诉我们, 存在唯一的 $n+1$ 次多项式 $F(x)$ 使 $F(0) = 0$, $F(x + 1) - F(x) = f(x)$, 且 $S(n) = F(n)$\period 利用这些条件, 可以确定 $F(x)$ 在 $n+2$ 个整数点处的值, 从而可用插值公式求出 $F(x)$\period 不过, 为了使实操容易一些, 我们还得多研究一点\period
+其实, 我们可以在此处结束本节. 设 $f(x)$ 是 $n$ 次多项式. 上面的命题告诉我们, 存在唯一的 $n+1$ 次多项式 $F(x)$ 使 $F(0) = 0$, $F(x + 1) - F(x) = f(x)$, 且 $S(n) = F(n)$. 利用这些条件, 可以确定 $F(x)$ 在 $n+2$ 个整数点处的值, 从而可用插值公式求出 $F(x)$. 不过, 为了使实操容易一些, 我们还得多研究一点.
 
 由上个命题的证明过程, 有
 
@@ -189,121 +189,121 @@
     \end{align*}
     则
     \begin{align*}
-        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = c_0 \binom{n}{1} + c_1 \binom{n}{2} + \cdots + c_m \binom{n}{m + 1} \period
+        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = c_0 \binom{n}{1} + c_1 \binom{n}{2} + \cdots + c_m \binom{n}{m + 1}.
     \end{align*}
 \end{proposition}
 
-由此可见, 若我们能把 $f(x)$ 写为广义二项系数的线性组合, 则寻找 $S(n)$ 的过程将十分简单\period 接下来, 我们讨论怎么方便地把多项式写为广义二项系数的线性组合\period
+由此可见, 若我们能把 $f(x)$ 写为广义二项系数的线性组合, 则寻找 $S(n)$ 的过程将十分简单. 接下来, 我们讨论怎么方便地把多项式写为广义二项系数的线性组合.
 
 \begin{definition}
-    设 $f(x) \in \FF[x]$\period 定义 $f(x)$ 的差分 \term{difference} 为
+    设 $f(x) \in \FF[x]$. 定义 $f(x)$ 的差分 \term{difference} 为
     \begin{align*}
-        \Delta f(x) = f(x+1) - f(x) \in \FF[x]\period
+        \Delta f(x) = f(x+1) - f(x) \in \FF[x].
     \end{align*}
 
-    设 $t \in \FF$\period 我们把
+    设 $t \in \FF$. 我们把
     \begin{align*}
         f(t+1) - f(t) \in \FF
     \end{align*}
-    也写为 $\Delta f(t)$\period
+    也写为 $\Delta f(t)$.
 \end{definition}
 
 \begin{example}
-    取 $f(x) = x^2 + x - 1$\period 则
+    取 $f(x) = x^2 + x - 1$. 则
     \begin{align*}
         f(x + 1) = (x + 1)^2 + (x + 1) - 1 = x^2 + 3x + 1,
     \end{align*}
     故
     \begin{align*}
-        \Delta f(x) = 2x + 2 \period
+        \Delta f(x) = 2x + 2.
     \end{align*}
     所以
     \begin{align*}
-        \Delta f(332) = 2 \cdot 332 + 2 = 666 \period
+        \Delta f(332) = 2 \cdot 332 + 2 = 666.
     \end{align*}
 \end{example}
 
 \begin{proposition}
-    设 $k$ 是整数\period 则
+    设 $k$ 是整数. 则
     \begin{align*}
-        \Delta \binom{x}{k} = \binom{x}{k - 1} \period
+        \Delta \binom{x}{k} = \binom{x}{k - 1}.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    也许, 这就是所谓的 ``新瓶装旧酒'' 吧! 不过, 为了方便, 我们还是单独列出来\period
+    也许, 这就是所谓的 ``新瓶装旧酒'' 吧! 不过, 为了方便, 我们还是单独列出来.
 \end{pf}
 
 回忆一下, 微商适合如下二条性质:
 
 (i) $(cf(x))^{\prime} = c f^{\prime} (x)$;
 
-(ii) $(f(x) \pm g(x))^{\prime} = f^{\prime} (x) \pm g^{\prime} (x)$\period
+(ii) $(f(x) \pm g(x))^{\prime} = f^{\prime} (x) \pm g^{\prime} (x)$.
 
-差分也有类似的性质\period
+差分也有类似的性质.
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$\period 则
+    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$. 则
 
     (i) $\Delta (cf(x)) = c \Delta f(x)$;
 
-    (ii) $\Delta (f(x) \pm g(x)) = \Delta f(x) \pm \Delta g(x)$\period
+    (ii) $\Delta (f(x) \pm g(x)) = \Delta f(x) \pm \Delta g(x)$.
 
     由 (i) (ii) 与数学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
     \begin{align*}
         \Delta \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
-        = \sum_{\ell = 0}^{k-1} c_\ell \Delta f_\ell (x) \period
+        = \sum_{\ell = 0}^{k-1} c_\ell \Delta f_\ell (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    老样子, 我们证明 (i) (ii), 将剩下的推论留给读者作练习\period 设
+    老样子, 我们证明 (i) (ii), 将剩下的推论留给读者作练习. 设
 
-    (i) 设 $p(x) = cf(x)$\period 则
+    (i) 设 $p(x) = cf(x)$. 则
     \begin{align*}
         \Delta (cf(x))
-        = {} & \Delta p(x)           \\
-        = {} & p(x+1) - p(x)         \\
-        = {} & cf(x+1) - cf(x)       \\
-        = {} & c(f(x+1) - f(x))      \\
-        = {} & c \Delta f(x) \period
+        = {} & \Delta p(x)      \\
+        = {} & p(x+1) - p(x)    \\
+        = {} & cf(x+1) - cf(x)  \\
+        = {} & c(f(x+1) - f(x)) \\
+        = {} & c \Delta f(x).
     \end{align*}
 
-    (ii) 设 $q(x) = f(x) \pm g(x)$\period 则
+    (ii) 设 $q(x) = f(x) \pm g(x)$. 则
     \begin{align*}
         \Delta (f(x) \pm g(x))
-        = {} & \Delta q(x)                                  \\
-        = {} & q(x+1) - q(x)                                \\
-        = {} & (f(x+1) \pm g(x+1)) - (f(x) \pm g(x))        \\
-        = {} & (f(x+1) - f(x)) \pm (g(x+1) - g(x))          \\
-        = {} & \Delta f(x) \pm \Delta g(x) \period \qedhere
+        = {} & \Delta q(x)                           \\
+        = {} & q(x+1) - q(x)                         \\
+        = {} & (f(x+1) \pm g(x+1)) - (f(x) \pm g(x)) \\
+        = {} & (f(x+1) - f(x)) \pm (g(x+1) - g(x))   \\
+        = {} & \Delta f(x) \pm \Delta g(x). \qedhere
     \end{align*}
 \end{pf}
 
 \begin{definition}
-    设 $f(x) \in \FF[x]$\period 记
+    设 $f(x) \in \FF[x]$. 记
     \begin{align*}
         \Delta^0 f(x) = f(x) \in \FF[x],
     \end{align*}
-    并称其为 $f(x)$ 的 $0$ 级差分 \term{zeroth-order difference}\period $1$ 级差分就是差分:
+    并称其为 $f(x)$ 的 $0$ 级差分 \term{zeroth-order difference}. $1$ 级差分就是差分:
     \begin{align*}
-        \Delta^1 f(x) = \Delta f(x) = \Delta (\Delta^0 f(x)) \in \FF[x] \period
+        \Delta^1 f(x) = \Delta f(x) = \Delta (\Delta^0 f(x)) \in \FF[x].
     \end{align*}
     $1$ 级差分的差分是 $2$ 级差分:
     \begin{align*}
-        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) \in \FF[x] \period
+        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) \in \FF[x].
     \end{align*}
     $2$ 级差分的差分是 $3$ 级差分:
     \begin{align*}
-        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) \in \FF[x] \period
+        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) \in \FF[x].
     \end{align*}
     一般地, $e$ 级差分就是 $e - 1$ 级差分的差分:
     \begin{align*}
-        \Delta^e f(x) = \Delta (\Delta^{e-1} f(x)) \in \FF[x] \period
+        \Delta^e f(x) = \Delta (\Delta^{e-1} f(x)) \in \FF[x].
     \end{align*}
-    高级差分可指代任意 $e$ 级差分, 此处 $e > 1$\period
+    高级差分可指代任意 $e$ 级差分, 此处 $e > 1$.
 
-    设 $t \in \FF$\period 既然 $\Delta^e f(x)$ 是某个多项式
+    设 $t \in \FF$. 既然 $\Delta^e f(x)$ 是某个多项式
     \begin{align*}
         v_0 + v_1 x + \cdots + v_s x^s \in \FF[x],
     \end{align*}
@@ -311,17 +311,17 @@
     \begin{align*}
         v_0 + v_1 t + \cdots + v_s t^s \in \FF
     \end{align*}
-    简单地写为 $\Delta^e f(t)$\period
+    简单地写为 $\Delta^e f(t)$.
 \end{definition}
 
 \begin{example}
     设
     \begin{align*}
-        f(x) = 2x^3 + 3x^2 + 5x + 7 \period
+        f(x) = 2x^3 + 3x^2 + 5x + 7.
     \end{align*}
     根据定义, $f(x)$ 的 $0$ 级差分就是自己:
     \begin{align*}
-        \Delta^0 f(x) = 2x^3 + 3x^2 + 5x + 7 \period
+        \Delta^0 f(x) = 2x^3 + 3x^2 + 5x + 7.
     \end{align*}
     因为
     \begin{align*}
@@ -335,11 +335,11 @@
     \begin{align*}
         f(x+1)
         = {} & 2(x+1)^3 + 3(x+1)^2 + 5(x+1) + 7 \\
-        = {} & 2x^3 + 9x^2 + 17x + 17 \period
+        = {} & 2x^3 + 9x^2 + 17x + 17.
     \end{align*}
     从而 $f(x)$ 的 $1$ 级差分是
     \begin{align*}
-        \Delta^1 f(x) = \Delta f(x) = f(x+1) - f(x) = 6x^2 + 12x + 10 \period
+        \Delta^1 f(x) = \Delta f(x) = f(x+1) - f(x) = 6x^2 + 12x + 10.
     \end{align*}
     因为
     \begin{align*}
@@ -347,7 +347,7 @@
     \end{align*}
     故 $f(x)$ 的 $2$ 级差分是
     \begin{align*}
-        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) = \Delta^1 f(x+1) - \Delta^1 f(x) = 12x + 18 \period
+        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) = \Delta^1 f(x+1) - \Delta^1 f(x) = 12x + 18.
     \end{align*}
     因为
     \begin{align*}
@@ -355,7 +355,7 @@
     \end{align*}
     故 $f(x)$ 的 $3$ 级差分是
     \begin{align*}
-        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) = \Delta^2 f(x+1) - \Delta^2 f(x) = 12 \period
+        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) = \Delta^2 f(x+1) - \Delta^2 f(x) = 12.
     \end{align*}
     因为
     \begin{align*}
@@ -363,11 +363,11 @@
     \end{align*}
     故 $f(x)$ 的 $4$ 级差分是
     \begin{align*}
-        \Delta^4 f(x) = \Delta (\Delta^3 f(x)) = \Delta^3 f(x+1) - \Delta^3 f(x) = 0 \period
+        \Delta^4 f(x) = \Delta (\Delta^3 f(x)) = \Delta^3 f(x+1) - \Delta^3 f(x) = 0.
     \end{align*}
     读者不难验证: 对任意超出 $3$ 的整数 $e$, 必有
     \begin{align*}
-        \Delta^e f(x) = 0 \period
+        \Delta^e f(x) = 0.
     \end{align*}
 
     由上面的计算, 可知
@@ -376,118 +376,118 @@
          & \Delta^1 f(1) = 6 \cdot 1^2 + 12 \cdot 1^2 + 10 = 28,           \\
          & \Delta^2 f(1) = 12 \cdot 1 + 18 = 30,                           \\
          & \Delta^3 f(1) = 12,                                             \\
-         & \Delta^e f(1) = 0 \quad (e > 3) \period
+         & \Delta^e f(1) = 0 \quad (e > 3).
     \end{align*}
 \end{example}
 
 高级差分适合如下性质:
 
 \begin{proposition}
-    设 $e$ 是非负整数\period 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    设 $e$ 是非负整数. 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
     \begin{align*}
         \Delta^e \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
-        = \sum_{\ell = 0}^{k-1} c_\ell \Delta^e f_\ell (x) \period
+        = \sum_{\ell = 0}^{k-1} c_\ell \Delta^e f_\ell (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 我们把具体过程留给读者当练习\period
+    用数学归纳法. 我们把具体过程留给读者当练习.
 \end{pf}
 
 \begin{proposition}
-    设 $e$ 是非负整数\period 设 $k$ 是整数\period 则
+    设 $e$ 是非负整数. 设 $k$ 是整数. 则
     \begin{align*}
-        \Delta^e \binom{x}{k} = \binom{x}{k - e} \period
+        \Delta^e \binom{x}{k} = \binom{x}{k - e}.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 我们把具体过程留给读者当练习\period
+    用数学归纳法. 我们把具体过程留给读者当练习.
 \end{pf}
 
 \begin{proposition}
-    设 $e$ 是非负整数\period 设 $f(x) \in \FF[x]$\period 则
+    设 $e$ 是非负整数. 设 $f(x) \in \FF[x]$. 则
     \begin{align*}
-        \Delta^e f(x) = \sum_{k = 0}^{e} (-1)^{e-k} \binom{e}{k} f(x+k) \period
+        \Delta^e f(x) = \sum_{k = 0}^{e} (-1)^{e-k} \binom{e}{k} f(x+k).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
     当 $e = 0$ 时, 左侧是 $f(x)$, 右侧是
     \begin{align*}
-        (-1)^0 \binom{0}{0} f(x+0) = f(x) \period
+        (-1)^0 \binom{0}{0} f(x+0) = f(x).
     \end{align*}
     当 $e = 1$ 时, 左侧是 $f(x+1) - f(x)$, 右侧是
     \begin{align*}
-        (-1)^1 \binom{1}{0} f(x+0) + (-1)^0 \binom{1}{1} f(x+1) = -f(x) + f(x+1) \period
+        (-1)^1 \binom{1}{0} f(x+0) + (-1)^0 \binom{1}{1} f(x+1) = -f(x) + f(x+1).
     \end{align*}
-    所以, 命题对 $e=0$ 或 $e=1$ 成立\period
+    所以, 命题对 $e=0$ 或 $e=1$ 成立.
 
     设命题对 $e = \ell \geq 1$ 成立, 即
     \begin{align*}
-        \Delta^{\ell} f(x) = \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+k) \period
+        \Delta^{\ell} f(x) = \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+k).
     \end{align*}
     则 $e = \ell + 1$ 时,
     \begin{align*}
-             & \Delta^{\ell + 1} f(x)                                                          \\
-        = {} & \Delta (\Delta^{\ell} f(x))                                                     \\
-        = {} & \Delta^{\ell} f(x+1) - \Delta^{\ell} f(x)                                       \\
+             & \Delta^{\ell + 1} f(x)                                                     \\
+        = {} & \Delta (\Delta^{\ell} f(x))                                                \\
+        = {} & \Delta^{\ell} f(x+1) - \Delta^{\ell} f(x)                                  \\
         = {} & \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+1+k)
-        - \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+k)                             \\
-        = {} & \sum_{k = 0}^{\ell} (-1)^{(\ell+1)-(k+1)} \binom{\ell}{k+1-1} f(x+k+1)          \\
-             & \qquad \qquad + \sum_{k = 0}^{\ell} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)      \\
+        - \sum_{k = 0}^{\ell} (-1)^{\ell-k} \binom{\ell}{k} f(x+k)                        \\
+        = {} & \sum_{k = 0}^{\ell} (-1)^{(\ell+1)-(k+1)} \binom{\ell}{k+1-1} f(x+k+1)     \\
+             & \qquad \qquad + \sum_{k = 0}^{\ell} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k) \\
         = {} & \sum_{k = 1}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell}{k-1} f(x+k)
-        + \sum_{k = 0}^{\ell} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)                           \\
+        + \sum_{k = 0}^{\ell} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)                      \\
         = {} & \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell}{k-1} f(x+k)
-        + \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)                         \\
+        + \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k)                    \\
         = {} & \sum_{k = 0}^{\ell+1} \left( (-1)^{\ell+1-k} \binom{\ell}{k-1} f(x+k)
-        + (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k) \right)                                       \\
+        + (-1)^{\ell+1-k} \binom{\ell}{k} f(x+k) \right)                                  \\
         = {} & \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \left( \binom{\ell}{k-1}
-        + \binom{\ell}{k} \right) f(x+k)                                                       \\
-        = {} & \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell+1}{k} f(x+k) \period \qedhere
+        + \binom{\ell}{k} \right) f(x+k)                                                  \\
+        = {} & \sum_{k = 0}^{\ell+1} (-1)^{\ell+1-k} \binom{\ell+1}{k} f(x+k). \qedhere
     \end{align*}
 \end{pf}
 
 我们再补充一个跟广义二项系数有关的性质:
 
 \begin{proposition}
-    设 $k$ 是整数\period 则
+    设 $k$ 是整数. 则
     \begin{align*}
         \binom{0}{k} = \begin{cases}
-            1, & \quad k = 0;           \\
-            0, & \quad k \neq 0 \period
+            1, & \quad k = 0;    \\
+            0, & \quad k \neq 0.
         \end{cases}
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    显然\period
+    显然.
 \end{pf}
 
-设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的多项式\period 我们知道, $f(x)$ 一定可以写为广义二项系数的线性组合:
+设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的多项式. 我们知道, $f(x)$ 一定可以写为广义二项系数的线性组合:
 \begin{align*}
-    f(x) = \sum_{k = 0}^{m} c_{k} \binom{x}{k} \period
+    f(x) = \sum_{k = 0}^{m} c_{k} \binom{x}{k}.
 \end{align*}
 对左右二侧求 $e$ 级差分 ($e \leq m$), 有
 \begin{align*}
-    \Delta^e f(x) = \sum_{k = 0}^{m} c_{k} \binom{x}{k - e} \period
+    \Delta^e f(x) = \sum_{k = 0}^{m} c_{k} \binom{x}{k - e}.
 \end{align*}
 用 $0$ 替换 $x$, 有
 \begin{align*}
-    \Delta^e f(0) = \sum_{k = 0}^{m} c_{k} \binom{0}{k - e} = c_{e} \period
+    \Delta^e f(0) = \sum_{k = 0}^{m} c_{k} \binom{0}{k - e} = c_{e}.
 \end{align*}
 所以
 \begin{align*}
     f(x)
     = {} & \sum_{k = 0}^{m} \Delta^k f(0) \binom{x}{k}                                                   \\
     = {} & \Delta^0 f(0) \binom{x}{0} + \Delta^1 f(0) \binom{x}{1} + \cdots + \Delta^m f(0) \binom{x}{m} \\
-    = {} & f(0) + \Delta f(0) \binom{x}{1} + \cdots + \Delta^m f(0) \binom{x}{m} \period
+    = {} & f(0) + \Delta f(0) \binom{x}{1} + \cdots + \Delta^m f(0) \binom{x}{m}.
 \end{align*}
 
 我们已经证明了
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的多项式\period 则
+    设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的多项式. 则
     \begin{align*}
         f(x)
         = {} & \sum_{k = 0}^{m} \Delta^k f(0) \binom{x}{k}                                                   \\
@@ -496,7 +496,7 @@
     \end{align*}
     所以
     \begin{align*}
-        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) \binom{n}{1} + \Delta f(0) \binom{n}{2} + \cdots + \Delta^{m} f(0) \binom{n}{m + 1} \period
+        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) \binom{n}{1} + \Delta f(0) \binom{n}{2} + \cdots + \Delta^{m} f(0) \binom{n}{m + 1}.
     \end{align*}
 \end{proposition}
 
@@ -504,32 +504,32 @@
 \begin{align*}
     \Delta^k f(0) = \sum_{u = 0}^{k} (-1)^{k-u} \binom{k}{u} f(u),
 \end{align*}
-故计算 $\Delta^k f(0)$ 需要用到 $f(0)$, $f(1)$, $\cdots$, $f(k)$ 这 $k+1$ 个数\period 也就是说, 计算 $\Delta^0 f(0)$, $\Delta^1 f(0)$, $\cdots$, $\Delta^m f(0)$ 需要用到 $f(0)$, $f(1)$, $\cdots$, $f(m)$ 这 $m+1$ 个数\period
+故计算 $\Delta^k f(0)$ 需要用到 $f(0)$, $f(1)$, $\cdots$, $f(k)$ 这 $k+1$ 个数. 也就是说, 计算 $\Delta^0 f(0)$, $\Delta^1 f(0)$, $\cdots$, $\Delta^m f(0)$ 需要用到 $f(0)$, $f(1)$, $\cdots$, $f(m)$ 这 $m+1$ 个数.
 
-下面我们举几个具体的例, 帮助读者消化这种求和方法\period
+下面我们举几个具体的例, 帮助读者消化这种求和方法.
 
 \begin{example}
-    设 $f(x) = x^2 + x - 1$\period 求
+    设 $f(x) = x^2 + x - 1$. 求
     \begin{align*}
-        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1) \period
+        S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1).
     \end{align*}
 
-    这里, $m = 2$\period 所以, 我们计算 $f(0)$, $f(1)$, $f(2)$:
+    这里, $m = 2$. 所以, 我们计算 $f(0)$, $f(1)$, $f(2)$:
     \begin{align*}
-        f(0) = -1, \quad f(1) = 1, \quad f(2) = 5 \period
+        f(0) = -1, \quad f(1) = 1, \quad f(2) = 5.
     \end{align*}
     由此, 不难算出:
     \begin{align*}
-         & \Delta^0 f(0) = f(0) = -1,                                \\
-         & \Delta^1 f(0) = f(1) - f(0) = 2,                          \\
-         & \Delta^1 f(1) = f(2) - f(1) = 4,                          \\
-         & \Delta^2 f(0) = \Delta^1 f(1) - \Delta^1 f(0) = 2 \period
+         & \Delta^0 f(0) = f(0) = -1,                         \\
+         & \Delta^1 f(0) = f(1) - f(0) = 2,                   \\
+         & \Delta^1 f(1) = f(2) - f(1) = 4,                   \\
+         & \Delta^2 f(0) = \Delta^1 f(1) - \Delta^1 f(0) = 2.
     \end{align*}
     所以
     \begin{align*}
         f(x)
         = {} & f(0) + \Delta f(0) \binom{x}{1} + \Delta^2 f(0) \binom{x}{2} \\
-        = {} & -1 + 2 \binom{x}{1} + 2 \binom{x}{2} \period
+        = {} & -1 + 2 \binom{x}{1} + 2 \binom{x}{2}.
     \end{align*}
     从而
     \begin{align*}
@@ -537,10 +537,10 @@
         = {} & \sum_{\ell = 0}^{n - 1} f(\ell)                   \\
         = {} & -1 \binom{n}{1} + 2 \binom{n}{2} + 2 \binom{n}{3} \\
         = {} & -n + n(n-1) + \frac{n(n-1)(n-2)}{3}               \\
-        = {} & \frac{n(n+2)(n-2)}{3} \period
+        = {} & \frac{n(n+2)(n-2)}{3}.
     \end{align*}
 
-    实操时, 往往用名为 ``差分表'' 的表进行计算\period 当 $m = 2$ 时, 它长这样:
+    实操时, 往往用名为 ``差分表'' 的表进行计算. 当 $m = 2$ 时, 它长这样:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{ccc}
@@ -563,9 +563,9 @@
 \begin{example}
     求前 $n$ 个非负整数的立方和
     \begin{align*}
-        S(n) = 0^3 + 1^3 + \cdots + (n-1)^3 = \sum_{\ell = 0}^{n - 1} \ell^3 \period
+        S(n) = 0^3 + 1^3 + \cdots + (n-1)^3 = \sum_{\ell = 0}^{n - 1} \ell^3.
     \end{align*}
-    取 $f(x) = x^3$\period 这里, $m = 3$\period 画出 $m = 3$ 时的差分表:
+    取 $f(x) = x^3$. 这里, $m = 3$. 画出 $m = 3$ 时的差分表:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{cccc}
@@ -577,7 +577,7 @@
     \end{align*}
     $\Delta^{0} f(t)$ 就是 $f(t)$:
     \begin{align*}
-        f(0) = 0, \quad f(1) = 1, \quad f(2) = 8, \quad f(3) = 27 \period
+        f(0) = 0, \quad f(1) = 1, \quad f(2) = 8, \quad f(3) = 27.
     \end{align*}
     写在表上, 就是
     \begin{align*}
@@ -591,9 +591,9 @@
     \end{align*}
     由此可确定 $1$ 级差分:
     \begin{align*}
-         & \Delta^{1} f(2) = f(3) - f(2) = 19,       \\
-         & \Delta^{1} f(1) = f(2) - f(1) = 7,        \\
-         & \Delta^{1} f(0) = f(1) - f(0) = 1 \period
+         & \Delta^{1} f(2) = f(3) - f(2) = 19, \\
+         & \Delta^{1} f(1) = f(2) - f(1) = 7,  \\
+         & \Delta^{1} f(0) = f(1) - f(0) = 1.
     \end{align*}
     写在表上, 就是
     \begin{align*}
@@ -607,8 +607,8 @@
     \end{align*}
     类似地, 可确定 $2$ 级差分:
     \begin{align*}
-         & \Delta^{2} f(1) = \Delta^{1} f(2) - \Delta^{1} f(1) = 12,       \\
-         & \Delta^{2} f(0) = \Delta^{1} f(1) - \Delta^{1} f(0) = 6 \period
+         & \Delta^{2} f(1) = \Delta^{1} f(2) - \Delta^{1} f(1) = 12, \\
+         & \Delta^{2} f(0) = \Delta^{1} f(1) - \Delta^{1} f(0) = 6.
     \end{align*}
     写在表上, 就是
     \begin{align*}
@@ -622,7 +622,7 @@
     \end{align*}
     最后, 可确定 $3$ 级差分:
     \begin{align*}
-         & \Delta^{3} f(0) = \Delta^{2} f(1) - \Delta^{2} f(0) = 6 \period
+         & \Delta^{3} f(0) = \Delta^{2} f(1) - \Delta^{2} f(0) = 6.
     \end{align*}
     写在表上, 就是
     \begin{align*}
@@ -638,7 +638,7 @@
     \begin{align*}
         f(x)
         = {} & f(0) + \Delta f(0) \binom{x}{1} + \Delta^2 f(0) \binom{x}{2} + \Delta^3 f(0) \binom{x}{3} \\
-        = {} & \binom{x}{1} + 6 \binom{x}{2} + 6 \binom{x}{3} \period
+        = {} & \binom{x}{1} + 6 \binom{x}{2} + 6 \binom{x}{3}.
     \end{align*}
     从而
     \begin{align*}
@@ -648,28 +648,28 @@
         = {} & \frac{n(n-1)}{2} + n(n-1)(n-2) + \frac{n(n-1)(n-2)(n-3)}{4} \\
         = {} & \frac{n(n-1)}{4} (2 + 4(n-2) + (n-2)(n-3))                  \\
         = {} & \frac{n(n-1)}{4} n(n-1)                                     \\
-        = {} & \left( \frac{n(n-1)}{2} \right)^2 \period
+        = {} & \left( \frac{n(n-1)}{2} \right)^2.
     \end{align*}
 \end{example}
 
 \begin{remark}
     回忆一下, 前 $n$ 个非负整数的和
     \begin{align*}
-        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2} \period
+        0 + 1 + \cdots + (n - 1) = \frac{n(n-1)}{2}.
     \end{align*}
     上面的例告诉我们,
     \begin{align*}
-        0^3 + 1^3 + \cdots + (n - 1)^3 = (0 + 1 + \cdots + (n - 1))^2 \period
+        0^3 + 1^3 + \cdots + (n - 1)^3 = (0 + 1 + \cdots + (n - 1))^2.
     \end{align*}
-    所以, 前 $n$ 个非负整数的立方和等于前 $n$ 个非负整数的和的平方\period
+    所以, 前 $n$ 个非负整数的立方和等于前 $n$ 个非负整数的和的平方.
 \end{remark}
 
 \begin{example}
     求前 $n$ 个非负整数的 $4$ 次幂和
     \begin{align*}
-        S(n) = 0^4 + 1^4 + \cdots + (n-1)^4 = \sum_{\ell = 0}^{n - 1} \ell^4 \period
+        S(n) = 0^4 + 1^4 + \cdots + (n-1)^4 = \sum_{\ell = 0}^{n - 1} \ell^4.
     \end{align*}
-    取 $f(x) = x^4$\period 这里, $m = 4$\period 画出 $m = 4$ 时的差分表:
+    取 $f(x) = x^4$. 这里, $m = 4$. 画出 $m = 4$ 时的差分表:
     \begin{align*}
         \arraycolsep=0.25cm
         \begin{array}{ccccc}
@@ -737,7 +737,7 @@
     \begin{align*}
         f(x)
         = {} & f(0) + \Delta f(0) \binom{x}{1} + \Delta^2 f(0) \binom{x}{2} + \Delta^3 f(0) \binom{x}{3} + \Delta^4 f(0) \binom{x}{4} \\
-        = {} & \binom{x}{1} + 14 \binom{x}{2} + 36 \binom{x}{3} + 24 \binom{x}{4} \period
+        = {} & \binom{x}{1} + 14 \binom{x}{2} + 36 \binom{x}{3} + 24 \binom{x}{4}.
     \end{align*}
     从而
     \begin{align*}
@@ -756,6 +756,6 @@
         = {} & \frac{n(n-1)}{120} (2n-1) (3((2n)^2 + 2n + 1) - 9(2n + 1) + 2)          \\
         = {} & \frac{n(n-1)(2n-1)}{120} (12n^2 - 12n - 4)                              \\
         = {} & \frac{n(n-1)(2n-1)}{30} (3n^2 - 3n - 1)                                 \\
-        = {} & \frac{n(n-1)(2n-1)(3n^2 - 3n - 1)}{30} \period
+        = {} & \frac{n(n-1)(2n-1)(3n^2 - 3n - 1)}{30}.
     \end{align*}
 \end{example}

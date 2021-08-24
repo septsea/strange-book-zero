@@ -5,73 +5,73 @@
 我们知道, 非负整数有这样的性质:
 
 \begin{proposition}
-    设 $n$ 是正整数, $m$ 是非负整数\period 则必有一对非负整数 $q,r$ 使
+    设 $n$ 是正整数, $m$ 是非负整数. 则必有一对非负整数 $q,r$ 使
     \begin{align*}
-        m = qn + r, \quad 0 \leq r < n \period
+        m = qn + r, \quad 0 \leq r < n.
     \end{align*}
 \end{proposition}
 
-例如, 取 $n=5$, $m=23$\period 不难看出,
+例如, 取 $n=5$, $m=23$. 不难看出,
 \begin{align*}
-    23 = 4 \cdot 5 + 3 \period
+    23 = 4 \cdot 5 + 3.
 \end{align*}
 
-多项式也有类似的性质哟\period
+多项式也有类似的性质哟.
 
 \begin{proposition}
     设
     \begin{align*}
         f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in D[x],
     \end{align*}
-    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在 $q(x), r(x) \in D[x]$ 使
+    且 $a_n$ 是 $D$ 的单位. 对任意 $g(x) \in D[x]$, 存在 $q(x), r(x) \in D[x]$ 使
     \begin{align*}
-        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n \period
+        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n.
     \end{align*}
-    一般称其为带余除法: $q(x)$ 就是商 \term{quotient}; $r(x)$ 就是余式 \term{remainder}\period
+    一般称其为带余除法: $q(x)$ 就是商 \term{quotient}; $r(x)$ 就是余式 \term{remainder}.
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 记 $\deg g(x) = m$\period 若 $m<n$, 则 $q(x) = 0$, $r(x) = g(x)$ 适合要求\period 所以, 命题对不高于 $n-1$ 的 $m$ 都成立\period
+    用数学归纳法. 记 $\deg g(x) = m$. 若 $m<n$, 则 $q(x) = 0$, $r(x) = g(x)$ 适合要求. 所以, 命题对不高于 $n-1$ 的 $m$ 都成立.
 
-    设 $m \leq \ell$ ($\ell \geq n-1$) 时, 命题成立\period 考虑 $m=\ell+1$ 的情形\period 此时, 设
+    设 $m \leq \ell$ ($\ell \geq n-1$) 时, 命题成立. 考虑 $m=\ell+1$ 的情形. 此时, 设
     \begin{align*}
-        g(x) = b_{\ell + 1} x^{\ell} + b_{\ell} x^{\ell} + \cdots + b_0 \in D[x] \period
+        g(x) = b_{\ell + 1} x^{\ell} + b_{\ell} x^{\ell} + \cdots + b_0 \in D[x].
     \end{align*}
     作一个跟 $g(x)$ 有着共同首项的多项式:
     \begin{align*}
-        s(x) = {} & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} f(x)                                                                                      \\
-        = {}      & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} (a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0)                                                \\
-        = {}      & b_{\ell + 1} a_n^{-1} (a_n x^{\ell + 1} + a_{n-1} x^{\ell} + \cdots + a_0 x^{\ell + 1 - n})                                      \\
-        = {}      & b_{\ell + 1} (x^{\ell + 1} + a_n^{-1} a_{n-1} x^{\ell} + \cdots + a_n^{-1} a_0 x^{\ell + 1 - n})                                 \\
-        = {}      & b_{\ell + 1} x^{\ell + 1} + b_{\ell + 1} a_n^{-1} a_{n-1} x^{\ell} + \cdots + b_{\ell + 1} a_n^{-1} a_0 x^{\ell + 1 - n} \period
+        s(x) = {} & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} f(x)                                                                               \\
+        = {}      & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} (a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0)                                         \\
+        = {}      & b_{\ell + 1} a_n^{-1} (a_n x^{\ell + 1} + a_{n-1} x^{\ell} + \cdots + a_0 x^{\ell + 1 - n})                               \\
+        = {}      & b_{\ell + 1} (x^{\ell + 1} + a_n^{-1} a_{n-1} x^{\ell} + \cdots + a_n^{-1} a_0 x^{\ell + 1 - n})                          \\
+        = {}      & b_{\ell + 1} x^{\ell + 1} + b_{\ell + 1} a_n^{-1} a_{n-1} x^{\ell} + \cdots + b_{\ell + 1} a_n^{-1} a_0 x^{\ell + 1 - n}.
     \end{align*}
-    因为 $a_n$ 是单位, 故 $s(x) \in D[x]$\period 设 $r_1 (x) = g(x) - s(x) \in D[x]$\period 这样, $r_1 (x)$ 的次不高于 $\ell$\period 根据归纳假设, 有 $q_2 (x)$, $r_2(x) \in D[x]$ 使
+    因为 $a_n$ 是单位, 故 $s(x) \in D[x]$. 设 $r_1 (x) = g(x) - s(x) \in D[x]$. 这样, $r_1 (x)$ 的次不高于 $\ell$. 根据归纳假设, 有 $q_2 (x)$, $r_2(x) \in D[x]$ 使
     \begin{align*}
-        r_1 (x) = q_2 (x) f(x) + r_2 (x), \quad \deg r_2 (x) < n \period
+        r_1 (x) = q_2 (x) f(x) + r_2 (x), \quad \deg r_2 (x) < n.
     \end{align*}
     所以
     \begin{align*}
         g(x)
-        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)                     \\
-        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_2 (x) f(x) + r_2 (x)      \\
-        = {} & (b_{\ell+1} a_n^{-1} x^{\ell+1-n} + q_2 (x)) f(x) + r_2 (x) \period
+        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + r_1 (x)                \\
+        = {} & b_{\ell+1} a_n^{-1} x^{\ell+1-n} f(x) + q_2 (x) f(x) + r_2 (x) \\
+        = {} & (b_{\ell+1} a_n^{-1} x^{\ell+1-n} + q_2 (x)) f(x) + r_2 (x).
     \end{align*}
-    记 $q(x) = b_{\ell+1} a_n^{-1} x^{\ell+1-n} + q_2 (x)$, $r(x) = r_2 (x)$, 则 $q(x)$, $r(x)$ 适合要求\period 所以, $m \leq \ell + 1$ 时, 命题成立\period 根据数学归纳法, 命题成立\period
+    记 $q(x) = b_{\ell+1} a_n^{-1} x^{\ell+1-n} + q_2 (x)$, $r(x) = r_2 (x)$, 则 $q(x)$, $r(x)$ 适合要求. 所以, $m \leq \ell + 1$ 时, 命题成立. 根据数学归纳法, 命题成立.
 \end{pf}
 
 \begin{example}
-    取 $\FF[x]$ 的二元 $f(x) = 2(x-1)^2 (x+2)$, $g(x) = 8x^6 + 1$\period 我们来找一对多项式 $q(x), r(x) \in \FF[x]$ 使
+    取 $\FF[x]$ 的二元 $f(x) = 2(x-1)^2 (x+2)$, $g(x) = 8x^6 + 1$. 我们来找一对多项式 $q(x), r(x) \in \FF[x]$ 使
     \begin{align*}
-        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < \deg f(x) \period
+        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < \deg f(x).
     \end{align*}
     不难看出, $f(x)$ 的次是 3, 且
     \begin{align*}
-        f(x) = 2(x^2 - 2x + 1)(x+2) = 2x^3 - 6x + 4\period
+        f(x) = 2(x^2 - 2x + 1)(x+2) = 2x^3 - 6x + 4.
     \end{align*}
 
-    我们按上面证明的方法寻找 $q(x)$ 与 $r(x)$\period $a_3 = 2$ 是 $\FF$ 的单位, 且 $a_3^{-1} = \frac12$\period 取
+    我们按上面证明的方法寻找 $q(x)$ 与 $r(x)$. $a_3 = 2$ 是 $\FF$ 的单位, 且 $a_3^{-1} = \frac12$. 取
     \begin{align*}
-        q_1 (x) = 8\cdot \frac12 \cdot x^{6-3} = 4x^3 \period
+        q_1 (x) = 8\cdot \frac12 \cdot x^{6-3} = 4x^3.
     \end{align*}
     则
     \begin{align*}
@@ -79,11 +79,11 @@
         = {} & g(x) - q_1(x) f(x)                  \\
         = {} & (8x^6 + 1) - 4x^3 (2x^3 - 6x + 4)   \\
         = {} & (8x^6 + 1) - (8x^6 - 24x^4 + 16x^3) \\
-        = {} & 24x^4 - 16x^3 + 1 \period
+        = {} & 24x^4 - 16x^3 + 1.
     \end{align*}
-    $r_1 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
+    $r_1 (x)$ 的次仍不低于 $3$. 因此, 再来一次. 取
     \begin{align*}
-        q_2 (x) = 24 \cdot \frac12 \cdot x^{4-3} = 12x \period
+        q_2 (x) = 24 \cdot \frac12 \cdot x^{4-3} = 12x.
     \end{align*}
     则
     \begin{align*}
@@ -91,11 +91,11 @@
         = {} & r_1 (x) - q_2(x) f(x)                     \\
         = {} & (24x^4 - 16x^3 + 1) - 12x (2x^3 - 6x + 4) \\
         = {} & (24x^4 - 16x^3 + 1) - (24x^4 - 72x + 48x) \\
-        = {} & -16x^3 + 72x^2 - 48x + 1 \period
+        = {} & -16x^3 + 72x^2 - 48x + 1.
     \end{align*}
-    $r_2 (x)$ 的次仍不低于 $3$\period 因此, 再来一次\period 取
+    $r_2 (x)$ 的次仍不低于 $3$. 因此, 再来一次. 取
     \begin{align*}
-        q_3 (x) = -16 \cdot \frac12 \cdot x^{3-3} = -8 \period
+        q_3 (x) = -16 \cdot \frac12 \cdot x^{3-3} = -8.
     \end{align*}
     则
     \begin{align*}
@@ -103,98 +103,98 @@
         = {} & r_2 (x) - q_3(x) f(x)                             \\
         = {} & (-16x^3 + 72x^2 - 48x + 1) - (-8) (2x^3 - 6x + 4) \\
         = {} & (-16x^3 + 72x^2 - 48x + 1) - (-16x^3 + 48x - 32)  \\
-        = {} & 72x^2 - 96x + 33 \period
+        = {} & 72x^2 - 96x + 33.
     \end{align*}
-    $r_3 (x)$ 的次低于 $3$\period 这样
+    $r_3 (x)$ 的次低于 $3$. 这样
     \begin{align*}
         g(x)
         = {} & q_1 (x) f(x) + r_1 (x)                               \\
         = {} & q_1 (x) f(x) + q_2 (x) f(x) + r_2 (x)                \\
         = {} & q_1 (x) f(x) + q_2 (x) f(x) + q_3 (x) f(x) + r_3 (x) \\
         = {} & (q_1 (x) + q_2 (x) + q_3 (x)) f(x) + r_3 (x)         \\
-        = {} & (4x^3 + 12x - 8) f(x) + (72x^2 - 96x + 33) \period
+        = {} & (4x^3 + 12x - 8) f(x) + (72x^2 - 96x + 33).
     \end{align*}
     也就是说,
     \begin{align*}
-        q(x) = 4x^3 + 12x - 8, \quad r(x) = 72x^2 - 96x + 33 \period
+        q(x) = 4x^3 + 12x - 8, \quad r(x) = 72x^2 - 96x + 33.
     \end{align*}
 \end{example}
 
 \begin{remark}
-    带余除法要求 $f(x)$ 的首项系数是单位是有必要的\period
+    带余除法要求 $f(x)$ 的首项系数是单位是有必要的.
 
-    在上面的例里, $f(x)$ 与 $g(x)$ 可以看成 $\ZZ[x]$ 的元, 但 $2$ 不是 $\ZZ$ 的单位\period 虽然最终所得 $q(x)$, $r(x)$ 也是 $\ZZ[x]$ 的元, 但这并不是一定会出现的\period 我们看下面的简单例\period
+    在上面的例里, $f(x)$ 与 $g(x)$ 可以看成 $\ZZ[x]$ 的元, 但 $2$ 不是 $\ZZ$ 的单位. 虽然最终所得 $q(x)$, $r(x)$ 也是 $\ZZ[x]$ 的元, 但这并不是一定会出现的. 我们看下面的简单例.
 
-    考虑 $\ZZ[x]$ 的多项式 $f(x)=2x$\period 设
+    考虑 $\ZZ[x]$ 的多项式 $f(x)=2x$. 设
     \begin{align*}
          & r(x) = r_0,                            \\
          & q(x) = q_0 + q_1 x + \cdots + q_p x^p, \\
          & g(x) = g_0 + g_1 x + \cdots + g_s x^s,
     \end{align*}
-    且 $r_0$, $q_0$, $\cdots$, $q_p$, $g_0$, $\cdots$, $g_s \in \ZZ$, $q_p$, $g_s \neq 0$\period 若 $g(x) = q(x)f(x) + r(x)$, 则
+    且 $r_0$, $q_0$, $\cdots$, $q_p$, $g_0$, $\cdots$, $g_s \in \ZZ$, $q_p$, $g_s \neq 0$. 若 $g(x) = q(x)f(x) + r(x)$, 则
     \begin{align*}
-        g_0 + g_1 x + \cdots + g_s x^s = r_0 + 2q_0 x + 2q_1 x^2 + \cdots + 2q_p x^{p+1} \period
+        g_0 + g_1 x + \cdots + g_s x^s = r_0 + 2q_0 x + 2q_1 x^2 + \cdots + 2q_p x^{p+1}.
     \end{align*}
     所以
     \begin{align*}
-         & p = s - 1,                                 \\
-         & r_0 = g_0,                                 \\
-         & 2q_{i-1} = g_i, \quad i=1,\cdots,s \period
+         & p = s - 1,                          \\
+         & r_0 = g_0,                          \\
+         & 2q_{i-1} = g_i, \quad i=1,\cdots,s.
     \end{align*}
-    这说明, $g(x)$ 的 $i$ 项系数 ($i=1,\cdots,s$) 必须是偶数\period 所以, 不存在 $q(x)$, $r(x) \in \ZZ[x]$ 使
+    这说明, $g(x)$ 的 $i$ 项系数 ($i=1,\cdots,s$) 必须是偶数. 所以, 不存在 $q(x)$, $r(x) \in \ZZ[x]$ 使
     \begin{align*}
-        1 + 3x + x^2 = q(x) \cdot 2x + r(x), \quad \deg r(x) < 1 \period
+        1 + 3x + x^2 = q(x) \cdot 2x + r(x), \quad \deg r(x) < 1.
     \end{align*}
 \end{remark}
 
-我们知道, 用一个正整数除非负整数, 所得的余数与商是唯一的\period 比方说, $5$ 除 $23$ 的余数只能是 $3$\period
+我们知道, 用一个正整数除非负整数, 所得的余数与商是唯一的. 比方说, $5$ 除 $23$ 的余数只能是 $3$.
 
-多项式也有类似的性质哟\period 不过, 我们需要借助另一个命题的帮助\period
+多项式也有类似的性质哟. 不过, 我们需要借助另一个命题的帮助.
 
 \begin{proposition}
-    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$\period 若 $D$ 上 $x$ 的 $2$ 个多项式 $q(x)$, $r(x)$ 适合
+    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$. 若 $D$ 上 $x$ 的 $2$ 个多项式 $q(x)$, $r(x)$ 适合
     \begin{align*}
         q(x) f(x) + r(x) = 0, \quad \deg r(x) < \deg f(x),
     \end{align*}
     则必有
     \begin{align*}
-        q(x) = r(x) = 0 \period
+        q(x) = r(x) = 0.
     \end{align*}
-    通俗地说, 二个非零多项式的积的次不可能变低\period
+    通俗地说, 二个非零多项式的积的次不可能变低.
 \end{proposition}
 
 \begin{pf}
     题设条件即
     \begin{align*}
-        -q(x) f(x) = r(x) \period
+        -q(x) f(x) = r(x).
     \end{align*}
-    反证法\period 若 $-q(x) \neq 0$, 则 $\deg (-q(x)) \geq 0$\period 从而
+    反证法. 若 $-q(x) \neq 0$, 则 $\deg (-q(x)) \geq 0$. 从而
     \begin{align*}
-        \deg r(x) = \deg (-q(x)) + \deg f(x) \geq \deg f(x) \period
+        \deg r(x) = \deg (-q(x)) + \deg f(x) \geq \deg f(x).
     \end{align*}
     可是,
     \begin{align*}
         \deg r(x) < \deg f(x),
     \end{align*}
-    矛盾! 故 $-q(x) = 0$\period 这样, $r(x) = 0$\period
+    矛盾! 故 $-q(x) = 0$. 这样, $r(x) = 0$.
 \end{pf}
 
 \begin{proposition}
-    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$\period 若 $D$ 上 $x$ 的 $4$ 个多项式 $q_1 (x)$, $r_1 (x)$, $q_2 (x)$, $r_2 (x)$ 适合
+    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$. 若 $D$ 上 $x$ 的 $4$ 个多项式 $q_1 (x)$, $r_1 (x)$, $q_2 (x)$, $r_2 (x)$ 适合
     \begin{align*}
          & q_1 (x) f(x) + r_1 (x) = q_2 (x) f(x) + r_2 (x),          \\
          & \deg r_1 (x) < \deg f(x), \quad \deg r_2 (x) < \deg f(x),
     \end{align*}
     则必有
     \begin{align*}
-        q_1 (x) = q_2 (x), \quad r_1 (x) = r_2 (x) \period
+        q_1 (x) = q_2 (x), \quad r_1 (x) = r_2 (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
     记
     \begin{align*}
-        Q(x) = q_1 (x) - q_2 (x), \quad R(x) = r_1 (x) - r_2 (x) \period
+        Q(x) = q_1 (x) - q_2 (x), \quad R(x) = r_1 (x) - r_2 (x).
     \end{align*}
     题设条件即
     \begin{align*}
@@ -202,18 +202,18 @@
     \end{align*}
     也就是
     \begin{align*}
-        Q(x) f(x) + R(x) = 0 \period
+        Q(x) f(x) + R(x) = 0.
     \end{align*}
     注意到
     \begin{align*}
         \deg R(x)
         =    {} & \deg (r_1 (x) - r_2 (x))                  \\
         \leq {} & \max \{\, \deg r_1 (x), \deg r_2 (x) \,\} \\
-        <    {} & \deg f(x) \period
+        <    {} & \deg f(x).
     \end{align*}
-    根据上个命题, $Q(x) = R(x) = 0$\period 所以
+    根据上个命题, $Q(x) = R(x) = 0$. 所以
     \begin{align*}
-         & q_1 (x) = q_2 (x), \quad r_1 (x) = r_2 (x) \period \qedhere
+         & q_1 (x) = q_2 (x), \quad r_1 (x) = r_2 (x). \qedhere
     \end{align*}
 \end{pf}
 
@@ -224,12 +224,12 @@
     \begin{align*}
         f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 \in D[x],
     \end{align*}
-    且 $a_n$ 是 $D$ 的单位\period 对任意 $g(x) \in D[x]$, 存在唯一的 $q(x), r(x) \in D[x]$ 使
+    且 $a_n$ 是 $D$ 的单位. 对任意 $g(x) \in D[x]$, 存在唯一的 $q(x), r(x) \in D[x]$ 使
     \begin{align*}
-        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n \period
+        g(x) = q(x) f(x) + r(x), \quad \deg r(x) < n.
     \end{align*}
-    一般称其为带余除法: $q(x)$ 就是商; $r(x)$ 就是余式\period 并且, 当 $f(x)$ 的次不高于 $g(x)$ 的次时, $f(x)$, $g(x)$, $q(x)$ 间还有如下的次关系:
+    一般称其为带余除法: $q(x)$ 就是商; $r(x)$ 就是余式. 并且, 当 $f(x)$ 的次不高于 $g(x)$ 的次时, $f(x)$, $g(x)$, $q(x)$ 间还有如下的次关系:
     \begin{align*}
-        \deg g(x) = \deg (g(x) - r(x)) = \deg q(x) + \deg f(x) \period
+        \deg g(x) = \deg (g(x) - r(x)) = \deg q(x) + \deg f(x).
     \end{align*}
 \end{proposition}

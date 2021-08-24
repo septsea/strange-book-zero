@@ -2,26 +2,26 @@
 \addcontentsline{toc}{subsection}{\DerivativesRevisited}
 \markright{\DerivativesRevisited}
 
-本节将再讨论多项式的微商\period
+本节将再讨论多项式的微商.
 
 在讨论微商前, 让我们捡起在 ``\GeneralizedBinomialCoefficients '' 节里没用过的二项展开:
 
 \begin{proposition}
-    设 $r$, $s \in \FF[x]$\period 设 $n$ 是非负整数\period 则
+    设 $r$, $s \in \FF[x]$. 设 $n$ 是非负整数. 则
     \begin{align*}
-        (r + s)^{n} = \sum_{k = 0}^{n} \binom{n}{k} r^{n - k} s^{k} \period
+        (r + s)^{n} = \sum_{k = 0}^{n} \binom{n}{k} r^{n - k} s^{k}.
     \end{align*}
-    此式称为二项展开\period
+    此式称为二项展开.
 \end{proposition}
 
 \begin{remark}
-    等式右侧的 $\binom{n}{k}$ 称为二项系数 \term{binomial coefficient}\period 事实上, $\binom{n}{k}$ 一开始就是为讨论 $(r+s)^n$ 的展开而生的\period
+    等式右侧的 $\binom{n}{k}$ 称为二项系数 \term{binomial coefficient}. 事实上, $\binom{n}{k}$ 一开始就是为讨论 $(r+s)^n$ 的展开而生的.
 \end{remark}
 
 \begin{example}
     在中学, 我们学过完全平方和公式:
     \begin{align*}
-        (r + s)^2 = r^2 + 2rs + s^2 \period
+        (r + s)^2 = r^2 + 2rs + s^2.
     \end{align*}
     在二项展开里, 取 $n = 2$, 就可以得到这个公式:
     \begin{align*}
@@ -29,7 +29,7 @@
          & \begin{aligned}
             (r + s)^2
             = {} & 1r^2 s^0 + 2r^1 s^1 + 1r^0 s^2 \\
-            = {} & r^2 + 2rs + s^2 \period
+            = {} & r^2 + 2rs + s^2.
         \end{aligned}
     \end{align*}
 
@@ -39,7 +39,7 @@
         = {} & (1+x)^2 (1+x)         \\
         = {} & (1+2x+x^2) (1+x)      \\
         = {} & 1+2x+x^2 + x+2x^2+x^3 \\
-        = {} & 1+3x+3x^2+x^3 \period
+        = {} & 1+3x+3x^2+x^3.
     \end{align*}
     在二项展开里, 取 $n = 3$:
     \begin{align*}
@@ -47,27 +47,27 @@
          & \begin{aligned}
             (r+s)^3
             = {} & 1r^3 s^0 + 3r^2 s^1 + 3r^1 s^2 + 1r^0 s^3 \\
-            = {} & r^3 + 3r^2 s + 3r s^2 + s^3 \period
+            = {} & r^3 + 3r^2 s + 3r s^2 + s^3.
         \end{aligned}
     \end{align*}
     用 $1$, $x$ 替换 $r$, $s$, 有
     \begin{align*}
         (1+x)^3
         = {} & 1^3 + 3 \cdot 1^2 x + 3 \cdot 1 x^2 + x^3 \\
-        = {} & 1 + 3x + 3x^2 + x^3 \period
+        = {} & 1 + 3x + 3x^2 + x^3.
     \end{align*}
 \end{example}
 
-设 $c \in \FF$\period 在 ``\PolynomialEquality '' 节, 我们用 $1$, $x-c$, $(x-c)^2$, $\cdots$, $(x-c)^n$ 引出线性无关, 并证明了
+设 $c \in \FF$. 在 ``\PolynomialEquality '' 节, 我们用 $1$, $x-c$, $(x-c)^2$, $\cdots$, $(x-c)^n$ 引出线性无关, 并证明了
 
 \begin{proposition}
-    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n \in \FF$\period 设 $c \in \FF$\period 再设
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n \in \FF$. 设 $c \in \FF$. 再设
     \begin{align*}
-        f(x) = \sum_{i = 0}^n a_i (x-c)^i, \quad g(x) = \sum_{i = 0}^n b_i (x-c)^i \period
+        f(x) = \sum_{i = 0}^n a_i (x-c)^i, \quad g(x) = \sum_{i = 0}^n b_i (x-c)^i.
     \end{align*}
     则 $f(x)=g(x)$ 的一个必要与充分条件是
     \begin{align*}
-        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n \period
+        a_0 = b_0, \quad a_1 = b_1, \quad \cdots, \quad a_n = b_n.
     \end{align*}
     并且, 任取
     \begin{align*}
@@ -75,15 +75,15 @@
     \end{align*}
     必存在 $v_0$, $v_1$, $\cdots$, $v_n \in \FF$ 使
     \begin{align*}
-        f(x) = \sum_{i = 0}^n v_i (x-c)^i \period
+        f(x) = \sum_{i = 0}^n v_i (x-c)^i.
     \end{align*}
 \end{proposition}
 
 利用二项展开, 有
 \begin{align*}
     x^i
-    = {} & (c + (x - c))^i                                           \\
-    = {} & \sum_{j = 0}^{i} \binom{i}{j} c^{i - j} (x-c)^{j} \period
+    = {} & (c + (x - c))^i                                    \\
+    = {} & \sum_{j = 0}^{i} \binom{i}{j} c^{i - j} (x-c)^{j}.
 \end{align*}
 由此, 我们可以把任意多项式
 \begin{align*}
@@ -91,15 +91,15 @@
 \end{align*}
 写为
 \begin{align*}
-    f(x) = \sum_{i = 0}^n v_i (x-c)^i \in \FF[x] \period
+    f(x) = \sum_{i = 0}^n v_i (x-c)^i \in \FF[x].
 \end{align*}
 
 \begin{example}
     设
     \begin{align*}
-        f(x) = x^3 - 6x^2 + 15x - 12 \period
+        f(x) = x^3 - 6x^2 + 15x - 12.
     \end{align*}
-    取 $c = 2$\period 利用二项展开, 有
+    取 $c = 2$. 利用二项展开, 有
     \begin{align*}
          & \begin{aligned}
             x^3
@@ -113,7 +113,7 @@
             = {} & 1 \cdot 2^2 + 2 \cdot 2^1 (x-2) + 1 \cdot 2^0 (x-2)^2 \\
             = {} & 4 + 4(x-2) + (x-2)^2,
         \end{aligned} \\
-         & x = 2 + (x-2) \period
+         & x = 2 + (x-2).
     \end{align*}
     所以
     \begin{align*}
@@ -122,65 +122,65 @@
         = {} & 8 + 12(x-2) + 6(x-2)^2 + (x-2)^3   \\
              & \qquad - 6(4 + 4(x-2) + (x-2)^2)   \\
              & \qquad \qquad + 15(2 + (x-2)) - 12 \\
-        = {} & (x-2)^3 + 3(x-2) + 2 \period
+        = {} & (x-2)^3 + 3(x-2) + 2.
     \end{align*}
 \end{example}
 
-现在, 读者可能不再那么不熟悉二项展开了\period 我们正式重述微商\period 不过, 我们并不会完全照搬 ``\Derivatives '' 节\period
+现在, 读者可能不再那么不熟悉二项展开了. 我们正式重述微商. 不过, 我们并不会完全照搬 ``\Derivatives '' 节.
 
 \begin{definition}
     设
     \begin{align*}
-        f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \in \FF[x] \period
+        f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \in \FF[x].
     \end{align*}
     $f(x)$ 的微商是多项式
     \begin{align*}
-        Df(x) = 0 + 1a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1} \in \FF[x] \period
+        Df(x) = 0 + 1a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1} \in \FF[x].
     \end{align*}
-    设 $t \in \FF$\period 我们把
+    设 $t \in \FF$. 我们把
     \begin{align*}
         0 + 1a_1 + 2a_2 t + \cdots + (n-1)a_{n-1} t^{n-2} + na_n t^{n-1} \in \FF
     \end{align*}
-    简单地写为 $Df(t)$\period
+    简单地写为 $Df(t)$.
 \end{definition}
 
 \begin{remark}
-    若 $f(x) = c$, $c \in \FF$, 则 $Df(x)$ 为零多项式\period
+    若 $f(x) = c$, $c \in \FF$, 则 $Df(x)$ 为零多项式.
 \end{remark}
 
 \begin{remark}
-    读者可能会注意到我们在这里换了个记号\period 之前, 我们用 $f^{\prime} (x)$ 或 $(f(x))^{\prime}$ 表示多项式 $f(x)$ 的微商——那个时候, 我们还是在抽象的整环 $D$ 上讨论问题\period 现在, 我们在熟悉的 $\FF$ 里讨论问题\period 读者已经很久都没见到 $D$ 了吧? 从此节开始, 我们用 $D$ 记号表示微商\period 所以, $D$ 将不表示整环\period
+    读者可能会注意到我们在这里换了个记号. 之前, 我们用 $f^{\prime} (x)$ 或 $(f(x))^{\prime}$ 表示多项式 $f(x)$ 的微商——那个时候, 我们还是在抽象的整环 $D$ 上讨论问题. 现在, 我们在熟悉的 $\FF$ 里讨论问题. 读者已经很久都没见到 $D$ 了吧? 从此节开始, 我们用 $D$ 记号表示微商. 所以, $D$ 将不表示整环.
 \end{remark}
 
 \begin{example}
-    取 $f(x) = x^6 - x^3 + 1 \in \FF[x]$\period 则
+    取 $f(x) = x^6 - x^3 + 1 \in \FF[x]$. 则
     \begin{align*}
-        Df(x) = 6x^5 - 3x^2 \period
+        Df(x) = 6x^5 - 3x^2.
     \end{align*}
 \end{example}
 
-下面的命题也是老朋友了\period
+下面的命题也是老朋友了.
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$\period 则
+    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$. 则
 
     (i) $D(cf(x)) = c Df(x)$;
 
-    (ii) $D(f(x) \pm g(x)) = Df(x) \pm Dg(x)$\period
+    (ii) $D(f(x) \pm g(x)) = Df(x) \pm Dg(x)$.
 
     由 (i) (ii) 与数学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
     \begin{align*}
-        D \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right) = \sum_{\ell = 0}^{k-1} c_\ell Df_\ell (x) \period
+        D \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right) = \sum_{\ell = 0}^{k-1} c_\ell Df_\ell (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    本来我们不必重复证明这些命题\period 不过, 为了让读者更好地熟悉 $D$ 记号, 我们还是在此处证明 (i) (ii), 并将剩下的推论留给读者作练习\period 设
+    本来我们不必重复证明这些命题. 不过, 为了让读者更好地熟悉 $D$ 记号, 我们还是在此处证明 (i) (ii), 并将剩下的推论留给读者作练习. 设
     \begin{align*}
          & f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n, \\
          & g(x) = b_0 + b_1 x + b_2 x^2 + \cdots + b_{n-1} x^{n-1} + b_n x^n
     \end{align*}
-    是 $\FF[x]$ 中二个元\period
+    是 $\FF[x]$ 中二个元.
 
     (i) $cf(x)$ 就是多项式
     \begin{align*}
@@ -193,7 +193,7 @@
         = {} & ca_1 + 2ca_2 x + \cdots + (n-1)ca_{n-1} x^{n-2} + nca_n x^{n-1}    \\
         = {} & ca_1 + c2a_2 x + \cdots + c(n-1)a_{n-1} x^{n-2} + cna_n x^{n-1}    \\
         = {} & c(a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1})     \\
-        = {} & cDf(x) \period
+        = {} & cDf(x).
     \end{align*}
 
     (ii) $f(x) \pm g(x)$ 就是多项式
@@ -213,21 +213,21 @@
         + (na_n x^{n-1} \pm nb_n x^{n-1})                                                      \\
         = {} & (a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1})                   \\
              & \qquad \qquad \pm (b_1 + 2b_2 x + \cdots + (n-1)b_{n-1} x^{n-2} + nb_n x^{n-1}) \\
-        = {} & Df(x) \pm Dg(x) \period \qedhere
+        = {} & Df(x) \pm Dg(x). \qedhere
     \end{align*}
 \end{pf}
 
 \begin{example}
     取
     \begin{align*}
-        f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1 \period
+        f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1.
     \end{align*}
     不难得到
     \begin{align*}
-        Df (x) = 3x^2, \quad Dg (x) = 2x + 1 \period
+        Df (x) = 3x^2, \quad Dg (x) = 2x + 1.
     \end{align*}
 
-    (i) $4g(x)$ 也是多项式, 当然可以有微商\period 因为
+    (i) $4g(x)$ 也是多项式, 当然可以有微商. 因为
     \begin{align*}
         4g(x) = 4x^2 + 4x - 4,
     \end{align*}
@@ -237,10 +237,10 @@
     \end{align*}
     这刚好是 $4Dg(x)$:
     \begin{align*}
-        4Dg(x) = 4(2x + 1) = 8x + 4 \period
+        4Dg(x) = 4(2x + 1) = 8x + 4.
     \end{align*}
 
-    (ii) $f(x) + g(x)$ 也是多项式\period 因为
+    (ii) $f(x) + g(x)$ 也是多项式. 因为
     \begin{align*}
         f(x) + g(x) = x^3 + 2 + x^2 + x - 1 = x^3 + x^2 + x + 1,
     \end{align*}
@@ -250,36 +250,36 @@
     \end{align*}
     而这刚好是 $Df(x) + Dg(x)$:
     \begin{align*}
-        Df(x) + Dg(x) = 3x^2 + 2x + 1 \period
+        Df(x) + Dg(x) = 3x^2 + 2x + 1.
     \end{align*}
 \end{example}
 
-前面讲差商与差分时, 我们引入了高级差商与高级差分\period 类似地, 我们引入高级微商\period
+前面讲差商与差分时, 我们引入了高级差商与高级差分. 类似地, 我们引入高级微商.
 
 \begin{definition}
-    设 $f(x) \in \FF[x]$\period 记
+    设 $f(x) \in \FF[x]$. 记
     \begin{align*}
         D^0 f(x) = f(x) \in \FF[x],
     \end{align*}
-    并称其为 $f(x)$ 的 $0$ 级微商 \term{zeroth-order derivative}\period $1$ 级微商就是微商:
+    并称其为 $f(x)$ 的 $0$ 级微商 \term{zeroth-order derivative}. $1$ 级微商就是微商:
     \begin{align*}
-        D^1 f(x) = D f(x) = D (D^0 f(x)) \in \FF[x] \period
+        D^1 f(x) = D f(x) = D (D^0 f(x)) \in \FF[x].
     \end{align*}
     $1$ 级微商的微商是 $2$ 级微商:
     \begin{align*}
-        D^2 f(x) = D (D^1 f(x)) \in \FF[x] \period
+        D^2 f(x) = D (D^1 f(x)) \in \FF[x].
     \end{align*}
     $2$ 级微商的微商是 $3$ 级微商:
     \begin{align*}
-        D^3 f(x) = D (D^2 f(x)) \in \FF[x] \period
+        D^3 f(x) = D (D^2 f(x)) \in \FF[x].
     \end{align*}
     一般地, $e$ 级微商就是 $e - 1$ 级微商的微商:
     \begin{align*}
-        D^e f(x) = D (D^{e-1} f(x)) \in \FF[x] \period
+        D^e f(x) = D (D^{e-1} f(x)) \in \FF[x].
     \end{align*}
-    高级微商可指代任意 $e$ 级微商, 此处 $e > 1$\period
+    高级微商可指代任意 $e$ 级微商, 此处 $e > 1$.
 
-    设 $t \in \FF$\period 既然 $D^e f(x)$ 是某个多项式
+    设 $t \in \FF$. 既然 $D^e f(x)$ 是某个多项式
     \begin{align*}
         v_0 + v_1 x + \cdots + v_s x^s \in \FF[x],
     \end{align*}
@@ -287,131 +287,131 @@
     \begin{align*}
         v_0 + v_1 t + \cdots + v_s t^s \in \FF
     \end{align*}
-    简单地写为 $D^e f(t)$\period
+    简单地写为 $D^e f(t)$.
 \end{definition}
 
 \begin{example}
     设
     \begin{align*}
-        f(x) = 2x^3 + 3x^2 + 5x + 7 \period
+        f(x) = 2x^3 + 3x^2 + 5x + 7.
     \end{align*}
     根据定义, $f(x)$ 的 $0$ 级微商就是自己:
     \begin{align*}
-        D^0 f(x) = 2x^3 + 3x^2 + 5x + 7 \period
+        D^0 f(x) = 2x^3 + 3x^2 + 5x + 7.
     \end{align*}
     $f(x)$ 的 $1$ 级微商是
     \begin{align*}
-        D^1 f(x) = Df(x) = 6x^2 + 6x + 5 \period
+        D^1 f(x) = Df(x) = 6x^2 + 6x + 5.
     \end{align*}
     $f(x)$ 的 $2$ 级微商是
     \begin{align*}
-        D^2 f(x) = D(D^1 f(x)) = 12x + 6 \period
+        D^2 f(x) = D(D^1 f(x)) = 12x + 6.
     \end{align*}
     $f(x)$ 的 $3$ 级微商是
     \begin{align*}
-        D^3 f(x) = D(D^2 f(x)) = 12 \period
+        D^3 f(x) = D(D^2 f(x)) = 12.
     \end{align*}
     $f(x)$ 的 $4$ 级微商是
     \begin{align*}
-        D^4 f(x) = D(D^3 f(x)) = 0 \period
+        D^4 f(x) = D(D^3 f(x)) = 0.
     \end{align*}
     读者不难验证: 对任意超出 $3$ 的整数 $e$, 必有
     \begin{align*}
-        D^e f(x) = 0 \period
+        D^e f(x) = 0.
     \end{align*}
 \end{example}
 
 类似地, 高级微商适合如下性质:
 
 \begin{proposition}
-    设 $e$ 是非负整数\period 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    设 $e$ 是非负整数. 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
     \begin{align*}
         D^e \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
-        = \sum_{\ell = 0}^{k-1} c_\ell D^e f_\ell (x) \period
+        = \sum_{\ell = 0}^{k-1} c_\ell D^e f_\ell (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 我们把具体过程留给读者当练习\period
+    用数学归纳法. 我们把具体过程留给读者当练习.
 \end{pf}
 
 % cSpell: disable-next-line
-当初我们为得到 Vandermonde 恒等式与二项展开, 我们引入了临时工具 $r^{[k]}$\period 现在, 类似地, 为了更方便地讨论多项式的高级微商, 我们引入
+当初我们为得到 Vandermonde 恒等式与二项展开, 我们引入了临时工具 $r^{[k]}$. 现在, 类似地, 为了更方便地讨论多项式的高级微商, 我们引入
 
 \begin{definition}
-    设 $m$ 为整数\period 设 $r \in \FF[x]$\period 定义
+    设 $m$ 为整数. 设 $r \in \FF[x]$. 定义
     \begin{align*}
         q_m (r) = \begin{cases}
-            \frac{1}{m!} r^m, & \quad m > 0;        \\
-            1,                & \quad m = 0;        \\
-            0,                & \quad m < 0 \period
+            \frac{1}{m!} r^m, & \quad m > 0; \\
+            1,                & \quad m = 0; \\
+            0,                & \quad m < 0.
         \end{cases}
     \end{align*}
 \end{definition}
 
-设 $k$ 是整数\period 我们知道
+设 $k$ 是整数. 我们知道
 \begin{align*}
-    \Delta \binom{x}{k} = \binom{x}{k - 1} \period
+    \Delta \binom{x}{k} = \binom{x}{k - 1}.
 \end{align*}
 类似地, 我们有
 
 \begin{proposition}
-    设 $m$ 为整数\period 则
+    设 $m$ 为整数. 则
     \begin{align*}
-        D q_m (x) = q_{m-1} (x) \period
+        D q_m (x) = q_{m-1} (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
     $m > 0$ 时,
     \begin{align*}
-        D q_m (x) = m \cdot \frac{x^{m-1}}{m!} = \frac{x^{m-1}}{(m-1)!} = q_{m-1} (x) \period
+        D q_m (x) = m \cdot \frac{x^{m-1}}{m!} = \frac{x^{m-1}}{(m-1)!} = q_{m-1} (x).
     \end{align*}
-    $m \leq 0$ 时, $q_m (x) = a$, 这里 $a \in \FF$\period 故
+    $m \leq 0$ 时, $q_m (x) = a$, 这里 $a \in \FF$. 故
     \begin{align*}
-         & D q_m (x) = 0 = q_{m-1} (x) \period \qedhere
+         & D q_m (x) = 0 = q_{m-1} (x). \qedhere
     \end{align*}
 \end{pf}
 
 由此可得
 
 \begin{proposition}
-    设 $e$ 是非负整数\period 设 $m$ 为整数\period 则
+    设 $e$ 是非负整数. 设 $m$ 为整数. 则
     \begin{align*}
-        D^e q_m (x) = q_{m-e} (x) \period
+        D^e q_m (x) = q_{m-e} (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 我们把具体过程留给读者当练习\period
+    用数学归纳法. 我们把具体过程留给读者当练习.
 \end{pf}
 
-现在, 我们看高级微商与二项展开的关系\period
+现在, 我们看高级微商与二项展开的关系.
 
-固定某 $c \in \FF$\period 固定某非负整数 $n$\period 任取不高于 $n$ 的非负整数 $i$\period 则
+固定某 $c \in \FF$. 固定某非负整数 $n$. 任取不高于 $n$ 的非负整数 $i$. 则
 \begin{align*}
     q_{i} (x)
     = {} & \frac{1}{i!} \sum_{j = 0}^{i} \binom{i}{j} c^{i - j} (x-c)^{j}           \\
     = {} & \frac{1}{i!} \sum_{j = 0}^{i} \frac{i!}{(i - j)! j!} c^{i - j} (x-c)^{j} \\
     = {} & \frac{1}{i!} \sum_{j = 0}^{i} i! q_{i-j} (c) q_{j} (x-c)                 \\
     = {} & \sum_{j = 0}^{i} q_{i-j} (c) q_{j} (x-c)                                 \\
-    = {} & \sum_{j = 0}^{n} q_{i-j} (c) q_{j} (x-c) \period
+    = {} & \sum_{j = 0}^{n} q_{i-j} (c) q_{j} (x-c).
 \end{align*}
 任取次不高于 $n$ 的多项式
 \begin{align*}
-    f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x] \period
+    f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x].
 \end{align*}
 设
 \begin{align*}
-    b_\ell = \ell! a_\ell \quad (\ell = 0,1,\cdots,n) \period
+    b_\ell = \ell! a_\ell \quad (\ell = 0,1,\cdots,n).
 \end{align*}
 则
 \begin{align*}
-    f(x) = b_0 q_0 (x) + b_1 q_1 (x) + \cdots + b_n q_n (x) \period
+    f(x) = b_0 q_0 (x) + b_1 q_1 (x) + \cdots + b_n q_n (x).
 \end{align*}
 不难看出, 当 $j$ 是非负整数时,
 \begin{align*}
-    D^j f(x) = b_0 q_{0-j} (x) + b_1 q_{1-j} (x) + \cdots + b_n q_{n-j} (x) \period
+    D^j f(x) = b_0 q_{0-j} (x) + b_1 q_{1-j} (x) + \cdots + b_n q_{n-j} (x).
 \end{align*}
 所以
 \begin{align*}
@@ -423,84 +423,84 @@
     = {} & \sum_{j = 0}^{n} \left( \sum_{i = 0}^{n} b_i q_{i-j} (c) \right)
     q_{j} (x-c)                                                             \\
     = {} & \sum_{j = 0}^{n} D^j f(c) q_{j} (x-c)                            \\
-    = {} & \sum_{j = 0}^{n} \frac{D^j f(c)}{j!} (x-c)^j \period
+    = {} & \sum_{j = 0}^{n} \frac{D^j f(c)}{j!} (x-c)^j.
 \end{align*}
 
 我们已经证明了
 
 \begin{proposition}
-    设 $n$ 是非负整数\period 设 $f(x)$ 是次不高于 $n$ 的多项式\period 设 $c \in \FF$\period 则 Taylor 公式 \term{Taylor's formula} 成立:
+    设 $n$ 是非负整数. 设 $f(x)$ 是次不高于 $n$ 的多项式. 设 $c \in \FF$. 则 Taylor 公式 \term{Taylor's formula} 成立:
     \begin{align*}
-        f(x) = \sum_{j = 0}^{n} \frac{D^j f(c)}{j!} (x-c)^j \period
+        f(x) = \sum_{j = 0}^{n} \frac{D^j f(c)}{j!} (x-c)^j.
     \end{align*}
 \end{proposition}
 
 \begin{remark}
-    我们可以说, Taylor 公式是二项展开的推广\period 也可以说, 二项展开是 Taylor 公式的特例\period
+    我们可以说, Taylor 公式是二项展开的推广. 也可以说, 二项展开是 Taylor 公式的特例.
 \end{remark}
 
 \begin{remark}
     取 $c = 0$, 有
     \begin{align*}
-        f(x) = \sum_{j = 0}^{n} \frac{D^j f(0)}{j!} x^j \period
+        f(x) = \sum_{j = 0}^{n} \frac{D^j f(0)}{j!} x^j.
     \end{align*}
     读者可能会注意到, 上式的形式与
     \begin{align*}
         f(x) = \sum_{k = 0}^{n} \Delta^k f(0) \binom{x}{k}
     \end{align*}
-    的形式十分相似\period
+    的形式十分相似.
 \end{remark}
 
 \begin{remark}
-    以后我们不用 $q_m (r)$ 记号了\period
+    以后我们不用 $q_m (r)$ 记号了.
 \end{remark}
 
 \begin{remark}
-    我们提一个读者可能已经注意到的事实\period 设 $n$ 是非负整数\period 则 $n$ 次多项式的 $n$ 级微商不是 $0$, 但 $n+1$ 级微商是 $0$\period 这也解释了为什么在 Taylor 公式里, 我们只要求 $n$ 不低于 $f(x)$ 的次\period
+    我们提一个读者可能已经注意到的事实. 设 $n$ 是非负整数. 则 $n$ 次多项式的 $n$ 级微商不是 $0$, 但 $n+1$ 级微商是 $0$. 这也解释了为什么在 Taylor 公式里, 我们只要求 $n$ 不低于 $f(x)$ 的次.
 \end{remark}
 
 \begin{example}
-    取 $n = 3$\period 设
+    取 $n = 3$. 设
     \begin{align*}
-        f(x) = x^3 - 6x^2 + 15x - 12 \period
+        f(x) = x^3 - 6x^2 + 15x - 12.
     \end{align*}
     则 $f(x)$ 的次不高于 $n$, 且
     \begin{align*}
          & D^0 f(x) = f(x) = x^3 - 6x^2 + 15x - 12, \\
          & D^1 f(x) = D f(x) = 3x^2 - 12x + 15,     \\
          & D^2 f(x) = D (D f(x)) = 6x - 12,         \\
-         & D^3 f(x) = D (D^2 f(x)) = 6 \period
+         & D^3 f(x) = D (D^2 f(x)) = 6.
     \end{align*}
-    取 $c = 2$\period 则
+    取 $c = 2$. 则
     \begin{align*}
          & D^0 f(2) = 2^3 - 6 \cdot 2^2 + 15 \cdot 2 - 12 = 2, \\
          & D^1 f(2) = 3 \cdot 2^2 - 12 \cdot 2 + 15 = 3,       \\
          & D^2 f(2) = 6 \cdot 2 - 12 = 0,                      \\
-         & D^3 f(2) = 6 \period
+         & D^3 f(2) = 6.
     \end{align*}
     根据 Taylor 公式,
     \begin{align*}
         f(x)
         = {} & 2 + \frac{3}{1!} (x-2) + \frac{0}{2!} (x-2)^2 + \frac{6}{3!} (x-2)^3 \\
-        = {} & 2 + 3(x-2) + (x-2)^3 \period
+        = {} & 2 + 3(x-2) + (x-2)^3.
     \end{align*}
 \end{example}
 
 Taylor 公式一个用途是证明
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$\period 则
+    设 $f(x)$, $g(x) \in \FF[x]$. 则
     \begin{align*}
-        D(f(x) g(x)) = Df(x) \cdot g(x) + f(x) \cdot Dg(x) \period \tag*{(\myStar)}
+        D(f(x) g(x)) = Df(x) \cdot g(x) + f(x) \cdot Dg(x). \tag*{(\myStar)}
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    设 $h(x) = f(x)g(x)$\period 取整数 $n$ 使 $\deg f(x) \leq n$, $\deg g(x) \leq n$, $\deg h(x) \leq n$, 且 $1 \leq n$\period 任取 $c \in \FF$\period 则
+    设 $h(x) = f(x)g(x)$. 取整数 $n$ 使 $\deg f(x) \leq n$, $\deg g(x) \leq n$, $\deg h(x) \leq n$, 且 $1 \leq n$. 任取 $c \in \FF$. 则
     \begin{align*}
-         & f(x) = \sum_{i = 0}^{n} \frac{D^i f(c)}{i!} (x-c)^i,        \\
-         & g(x) = \sum_{j = 0}^{n} \frac{D^j g(c)}{j!} (x-c)^j,        \\
-         & h(x) = \sum_{k = 0}^{n} \frac{D^k h(c)}{k!} (x-c)^k \period
+         & f(x) = \sum_{i = 0}^{n} \frac{D^i f(c)}{i!} (x-c)^i, \\
+         & g(x) = \sum_{j = 0}^{n} \frac{D^j g(c)}{j!} (x-c)^j, \\
+         & h(x) = \sum_{k = 0}^{n} \frac{D^k h(c)}{k!} (x-c)^k.
     \end{align*}
     不过, 既然 $h(x)$ 是 $f(x)$ 与 $g(x)$ 的积, 也应有
     \begin{align*}
@@ -509,21 +509,21 @@ Taylor 公式一个用途是证明
     其中
     \begin{align*}
         s_k
-        = {} & \sum_{i = 0}^{k} \frac{D^i f(c)}{i!} \cdot \frac{D^{k-i} g(c)}{(k-i)!}   \\
-        = {} & \frac{1}{k!} \sum_{i = 0}^{k} \binom{k}{i} D^i f(c) D^{k-i} g(c) \period
+        = {} & \sum_{i = 0}^{k} \frac{D^i f(c)}{i!} \cdot \frac{D^{k-i} g(c)}{(k-i)!} \\
+        = {} & \frac{1}{k!} \sum_{i = 0}^{k} \binom{k}{i} D^i f(c) D^{k-i} g(c).
     \end{align*}
     所以, 任取不超过 $n$ 的非负整数 $k$, 必有
     \begin{align*}
-                 & s_k = \frac{D^k h(c)}{k!}                                              \\
-        \implies & D^k h(c) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(c) D^{k-i} g(c) \period
+                 & s_k = \frac{D^k h(c)}{k!}                                       \\
+        \implies & D^k h(c) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(c) D^{k-i} g(c).
     \end{align*}
     作多项式
     \begin{align*}
-        E(x) = D^k h(x) - \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x) \period
+        E(x) = D^k h(x) - \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x).
     \end{align*}
-    上面的推理告诉我们, 任取 $c \in \FF$, 必有 $E(c) = 0$\period 所以 $E(x)$ 一定是零多项式, 即
+    上面的推理告诉我们, 任取 $c \in \FF$, 必有 $E(c) = 0$. 所以 $E(x)$ 一定是零多项式, 即
     \begin{align*}
-        D^k h(x) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x) \period
+        D^k h(x) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x).
     \end{align*}
     取 $k=1$, 有
     \begin{align*}
@@ -531,26 +531,26 @@ Taylor 公式一个用途是证明
         = {} & D^1 h(x)                                              \\
         = {} & \sum_{i = 0}^{1} \binom{1}{i} D^i f(x) D^{1-i} g(x)   \\
         = {} & 1 \cdot D^0 f(x) D^1 g(x) + 1 \cdot D^1 f(x) D^0 g(x) \\
-        = {} & Df(x) \cdot g(x) + f(x) \cdot Dg(x) \period \qedhere
+        = {} & Df(x) \cdot g(x) + f(x) \cdot Dg(x). \qedhere
     \end{align*}
 \end{pf}
 
 \begin{remark}
     事实上, 我们得到了高级微商的 Leibniz 公式 \term{Leibniz's formula}: 若 $k$ 是非负整数, 且 $f(x)$, $g(x) \in \FF[x]$, 则
     \begin{align*}
-        D^k (f(x)g(x)) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x) \period
+        D^k (f(x)g(x)) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x).
     \end{align*}
-    不过, 在本文里, 我们用不到这个公式\period
+    不过, 在本文里, 我们用不到这个公式.
 \end{remark}
 
 \begin{example}
     取
     \begin{align*}
-        f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1 \period
+        f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1.
     \end{align*}
     不难得到
     \begin{align*}
-        Df (x) = 3x^2, \quad Dg (x) = 2x + 1 \period
+        Df (x) = 3x^2, \quad Dg (x) = 2x + 1.
     \end{align*}
 
     $f(x)$ 与 $g(x)$ 的积
@@ -559,14 +559,14 @@ Taylor 公式一个用途是证明
     \end{align*}
     的微商是
     \begin{align*}
-        D(f(x) g(x)) = 5x^4 + 4x^3 - 3x^2 + 4x + 2 \period
+        D(f(x) g(x)) = 5x^4 + 4x^3 - 3x^2 + 4x + 2.
     \end{align*}
     如果用上面的 (\myStar) 计算, 就是
     \begin{align*}
              & Df (x) g(x) + f(x) Dg (x)                \\
         = {} & 3x^2 (x^2 + x - 1) + (x^3 + 2) (2x + 1)  \\
         = {} & 3x^4 + 3x^3 - 3x^2 + 2x^4 + x^3 + 4x + 2 \\
-        = {} & 5x^4 + 4x^3 - 3x^2 + 4x + 2 \period
+        = {} & 5x^4 + 4x^3 - 3x^2 + 4x + 2.
     \end{align*}
 \end{example}
 
@@ -577,59 +577,59 @@ Taylor 公式一个用途是证明
     \begin{align*}
              & D(f_0 (x) f_1 (x) \cdots f_{k-1} (x))                                              \\
         = {} & Df_0 (x) f_1 (x) \cdots f_{k-1} (x) + f_0 (x) Df_1 (x) \cdots f_{k-1} (x) + \cdots \\
-             & \qquad \qquad + f_0 (x) f_1 (x) \cdots Df_{k-1} (x) \period
+             & \qquad \qquad + f_0 (x) f_1 (x) \cdots Df_{k-1} (x).
     \end{align*}
     取 $f_0 (x) = f_1 (x) = \cdots = f_{k-1} (x) = f(x)$ 知
     \begin{align*}
-        D((f(x))^k) = k(f(x))^{k-1} Df(x) \period
+        D((f(x))^k) = k(f(x))^{k-1} Df(x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    用数学归纳法\period 我们把具体过程留给读者当练习\period
+    用数学归纳法. 我们把具体过程留给读者当练习.
 \end{pf}
 
 \begin{example}
-    设 $f(x) = (x^2 + x - 1)^{666}$\period 求 $Df(x)$\period
+    设 $f(x) = (x^2 + x - 1)^{666}$. 求 $Df(x)$.
 
-    取 $g(x) = x^2 + x - 1$\period 显然, $f(x) = (g(x))^{666}$\period 所以
+    取 $g(x) = x^2 + x - 1$. 显然, $f(x) = (g(x))^{666}$. 所以
     \begin{align*}
         Df(x)
-        = {} & D((g(x))^{666})                          \\
-        = {} & 666 (g(x))^{666 - 1} Dg(x)               \\
-        = {} & 666 (x^2 + x - 1)^{665} (2x + 1)         \\
-        = {} & 666 (2x + 1) (x^2 + x - 1)^{665} \period
+        = {} & D((g(x))^{666})                   \\
+        = {} & 666 (g(x))^{666 - 1} Dg(x)        \\
+        = {} & 666 (x^2 + x - 1)^{665} (2x + 1)  \\
+        = {} & 666 (2x + 1) (x^2 + x - 1)^{665}.
     \end{align*}
 \end{example}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$\period 则 $f(x)$ 与 $g(x)$ 的复合的微商适合链规则:
+    设 $f(x)$, $g(x) \in \FF[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的微商适合链规则:
     \begin{align*}
-        D(g \circ f) (x) = (Dg \circ f)(x) Df (x) \period
+        D(g \circ f) (x) = (Dg \circ f)(x) Df (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    可看 ``\Derivatives '' 节的相应内容\period
+    可看 ``\Derivatives '' 节的相应内容.
 \end{pf}
 
 \begin{example}
-    设 $f(x) = (x^2 + x - 1)^5 + 3 (x^2 + x - 1)^4 - 1$\period 求 $Df(x)$\period
+    设 $f(x) = (x^2 + x - 1)^5 + 3 (x^2 + x - 1)^4 - 1$. 求 $Df(x)$.
 
-    取 $g(x) = x^5 + 3x^4 - 1$ 与 $h(x) = x^2 + x - 1$\period 则
+    取 $g(x) = x^5 + 3x^4 - 1$ 与 $h(x) = x^2 + x - 1$. 则
     \begin{align*}
          & Dg(x) = 5x^4 + 12x^3 = x^3 (5x + 12), \\
-         & Dh(x) = 2x + 1 \period
+         & Dh(x) = 2x + 1.
     \end{align*}
     显然,
     \begin{align*}
-        f(x) = g(h(x)) = (g \circ h) (x) \period
+        f(x) = g(h(x)) = (g \circ h) (x).
     \end{align*}
     所以
     \begin{align*}
         Df(x)
-        = {} & (Dg \circ h)(x) Dh(x)                            \\
-        = {} & (x^2 + x - 1)^3 (5(x^2 + x - 1) + 12) (2x + 1)   \\
-        = {} & (2x + 1) (5x^2 + 5x + 7) (x^2 + x - 1)^3 \period
+        = {} & (Dg \circ h)(x) Dh(x)                          \\
+        = {} & (x^2 + x - 1)^3 (5(x^2 + x - 1) + 12) (2x + 1) \\
+        = {} & (2x + 1) (5x^2 + 5x + 7) (x^2 + x - 1)^3.
     \end{align*}
 \end{example}

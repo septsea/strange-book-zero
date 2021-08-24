@@ -2,31 +2,31 @@
 \addcontentsline{toc}{subsection}{\SyntheticDivision}
 \markright{\SyntheticDivision}
 
-本文的目标是为读者介绍带余除法的一个特殊情况——综合除法 \term{synthetic division}\period 当然, 细心的读者一定不会只学到综合除法\period
+本文的目标是为读者介绍带余除法的一个特殊情况——综合除法 \term{synthetic division}. 当然, 细心的读者一定不会只学到综合除法.
 
-还是老样子: ``数'' 一定是复数 (或实数、有理数); ``多项式'' 的系数一定是数\period
+还是老样子: ``数'' 一定是复数 (或实数、有理数); ``多项式'' 的系数一定是数.
 
-前面, 我们讨论了多项式的一些性质\period 我们没有在 ``\HEADING '' 里讨论那些性质, 是因为当时我们不需要 ``因子'' ``公因子'' ``最大公因子'' 等概念\period 读者应该还记得, 多项式的微商、多项式的根、插值、广义二项系数、求和公式等内容是我们讨论的重点\period 现在, 我们的方向变了很多\period
+前面, 我们讨论了多项式的一些性质. 我们没有在 ``\HEADING '' 里讨论那些性质, 是因为当时我们不需要 ``因子'' ``公因子'' ``最大公因子'' 等概念. 读者应该还记得, 多项式的微商、多项式的根、插值、广义二项系数、求和公式等内容是我们讨论的重点. 现在, 我们的方向变了很多.
 
 在讨论多项式的根时, 我们曾经为读者介绍过这个命题:
 \begin{proposition}
-    设 $f(x)$ 是 $n$ 次多项式 ($n \geq 1$), $a$ 是数\period 则存在 $n-1$ 次多项式 $q(x)$ 使
+    设 $f(x)$ 是 $n$ 次多项式 ($n \geq 1$), $a$ 是数. 则存在 $n-1$ 次多项式 $q(x)$ 使
     \begin{align*}
-        f(x) = q(x) (x-a) + f(a) \period
+        f(x) = q(x) (x-a) + f(a).
     \end{align*}
-    根据带余除法, 这样的 $q(x)$ 一定是唯一的\period
+    根据带余除法, 这样的 $q(x)$ 一定是唯一的.
 \end{proposition}
 
-这是带余除法的推论\period 我们当时并不关心 $q(x)$ 是什么; 我们只关心这个 $q(x)$ 不但存在, 且唯一\period 我们用它建立了多项式与多项式函数的联系: (系数为数的) 多项式与多项式函数没有本质区别\period 但现在, 我们不但关心 $q(x)$ 到底是什么, 我们还要给出一种方便计算 $q(x)$ 的方法——这就是综合除法所干的事情\period
+这是带余除法的推论. 我们当时并不关心 $q(x)$ 是什么; 我们只关心这个 $q(x)$ 不但存在, 且唯一. 我们用它建立了多项式与多项式函数的联系: (系数为数的) 多项式与多项式函数没有本质区别. 但现在, 我们不但关心 $q(x)$ 到底是什么, 我们还要给出一种方便计算 $q(x)$ 的方法——这就是综合除法所干的事情.
 
-综合除法, 原则上, 当然也可以放在 ``\SomePropertiesOfPolynomials '' 里讨论\period 不过, 作者为了让 ``\SomePropertiesOfIntegers '' 与 ``\SomePropertiesOfPolynomials '' 的结构一致, 作者决定专门写二篇文讨论多项式独有的东西: 综合除法与重因子\period 这么安排, 还有一个好处: 消除了过长的文给读者带来的压力\period
+综合除法, 原则上, 当然也可以放在 ``\SomePropertiesOfPolynomials '' 里讨论. 不过, 作者为了让 ``\SomePropertiesOfIntegers '' 与 ``\SomePropertiesOfPolynomials '' 的结构一致, 作者决定专门写二篇文讨论多项式独有的东西: 综合除法与重因子. 这么安排, 还有一个好处: 消除了过长的文给读者带来的压力.
 
 \begin{example}
-    设 $f(x) = x^6 + x^3 + 1$\period 我们计算 $x - 2$ 除 $f(x)$\period
+    设 $f(x) = x^6 + x^3 + 1$. 我们计算 $x - 2$ 除 $f(x)$.
 
-    我们先用普通的带余除法试试看\period 显然, $\deg (x-2) = 1$\period 这里, $x - 2$ 的首项系数为 $1$, 所以我们的计算并不会很复杂\period 取
+    我们先用普通的带余除法试试看. 显然, $\deg (x-2) = 1$. 这里, $x - 2$ 的首项系数为 $1$, 所以我们的计算并不会很复杂. 取
     \begin{align*}
-        q_1 (x) = 1 \cdot 1^{-1} \cdot x^{6-1} = x^5 \period
+        q_1 (x) = 1 \cdot 1^{-1} \cdot x^{6-1} = x^5.
     \end{align*}
     则
     \begin{align*}
@@ -34,11 +34,11 @@
         = {} & f(x) - q_1 (x) (x - 2)         \\
         = {} & (x^6 + x^3 + 1) - x^5 (x - 2)  \\
         = {} & (x^6 + x^3 + 1) - (x^6 - 2x^5) \\
-        = {} & 2x^5 + x^3 + 1 \period
+        = {} & 2x^5 + x^3 + 1.
     \end{align*}
-    $r_1 (x)$ 的次仍不低于 $1$\period 因此, 再来一次\period 取
+    $r_1 (x)$ 的次仍不低于 $1$. 因此, 再来一次. 取
     \begin{align*}
-        q_2 (x) = 2 \cdot 1^{-1} \cdot x^{5-1} = 2x^4 \period
+        q_2 (x) = 2 \cdot 1^{-1} \cdot x^{5-1} = 2x^4.
     \end{align*}
     则
     \begin{align*}
@@ -46,11 +46,11 @@
         = {} & r_1 (x) - q_2 (x) (x - 2)        \\
         = {} & (2x^5 + x^3 + 1) - 2x^4 (x - 2)  \\
         = {} & (2x^5 + x^3 + 1) - (2x^5 - 4x^4) \\
-        = {} & 4x^4 + x^3 + 1 \period
+        = {} & 4x^4 + x^3 + 1.
     \end{align*}
-    $r_2 (x)$ 的次仍不低于 $1$\period 因此, 再来一次\period 取
+    $r_2 (x)$ 的次仍不低于 $1$. 因此, 再来一次. 取
     \begin{align*}
-        q_3 (x) = 4 \cdot 1^{-1} \cdot x^{4-1} = 4x^3 \period
+        q_3 (x) = 4 \cdot 1^{-1} \cdot x^{4-1} = 4x^3.
     \end{align*}
     则
     \begin{align*}
@@ -58,11 +58,11 @@
         = {} & r_2 (x) - q_3 (x) (x - 2)        \\
         = {} & (4x^4 + x^3 + 1) - 4x^3 (x - 2)  \\
         = {} & (4x^4 + x^3 + 1) - (4x^4 - 8x^3) \\
-        = {} & 9x^3 + 1 \period
+        = {} & 9x^3 + 1.
     \end{align*}
-    $r_3 (x)$ 的次仍不低于 $1$\period 因此, 再来一次\period 取
+    $r_3 (x)$ 的次仍不低于 $1$. 因此, 再来一次. 取
     \begin{align*}
-        q_4 (x) = 9 \cdot 1^{-1} \cdot x^{3-1} = 9x^2 \period
+        q_4 (x) = 9 \cdot 1^{-1} \cdot x^{3-1} = 9x^2.
     \end{align*}
     则
     \begin{align*}
@@ -70,11 +70,11 @@
         = {} & r_3 (x) - q_4 (x) (x - 2)   \\
         = {} & (9x^3 + 1) - 9x^2 (x - 2)   \\
         = {} & (9x^3 + 1) - (9x^3 - 18x^2) \\
-        = {} & 18x^2 + 1 \period
+        = {} & 18x^2 + 1.
     \end{align*}
-    $r_4 (x)$ 的次仍不低于 $1$\period 因此, 再来一次\period 取
+    $r_4 (x)$ 的次仍不低于 $1$. 因此, 再来一次. 取
     \begin{align*}
-        q_5 (x) = 18 \cdot 1^{-1} \cdot x^{2-1} = 18x \period
+        q_5 (x) = 18 \cdot 1^{-1} \cdot x^{2-1} = 18x.
     \end{align*}
     则
     \begin{align*}
@@ -82,11 +82,11 @@
         = {} & r_4 (x) - q_5 (x) (x - 2)   \\
         = {} & (18x^2 + 1) - 18x (x - 2)   \\
         = {} & (18x^2 + 1) - (18x^2 - 36x) \\
-        = {} & 36x + 1 \period
+        = {} & 36x + 1.
     \end{align*}
-    $r_5 (x)$ 的次仍不低于 $1$\period 因此, 再来一次\period 取
+    $r_5 (x)$ 的次仍不低于 $1$. 因此, 再来一次. 取
     \begin{align*}
-        q_6 (x) = 36 \cdot 1^{-1} \cdot x^{1-1} = 36 \period
+        q_6 (x) = 36 \cdot 1^{-1} \cdot x^{1-1} = 36.
     \end{align*}
     则
     \begin{align*}
@@ -94,9 +94,9 @@
         = {} & r_5 (x) - q_6 (x) (x - 2) \\
         = {} & (36x + 1) - 36 (x - 2)    \\
         = {} & (36x + 1) - (36x - 72)    \\
-        = {} & 73 \period
+        = {} & 73.
     \end{align*}
-    $r_6 (x)$ 的次低于 $1$\period 这样
+    $r_6 (x)$ 的次低于 $1$. 这样
     \begin{align*}
              & f(x)                                                                        \\
         = {} & q_1 (x) (x-2) + r_1 (x)                                                     \\
@@ -108,10 +108,10 @@
         = {} & q_1 (x) (x-2) + q_2 (x) (x-2) + q_3 (x) (x-2) + q_4 (x) (x-2)               \\
              & \qquad + q_5 (x) (x-2) + q_6 (x) (x-2) + r_6 (x)                            \\
         = {} & (q_1 (x) + q_2 (x) + q_3 (x) + q_4 (x) + q_5 (x) + q_6 (x)) (x-2) + r_6 (x) \\
-        = {} & (x^5 + 2x^4 + 4x^3 + 9x^2 + 18x + 36) (x-2) + 73 \period
+        = {} & (x^5 + 2x^4 + 4x^3 + 9x^2 + 18x + 36) (x-2) + 73.
     \end{align*}
     也就是说,
     \begin{align*}
-        q(x) = x^5 + 2x^4 + 4x^3 + 9x^2 + 18x + 36, \quad f(2) = r_6 (x) = 73 \period
+        q(x) = x^5 + 2x^4 + 4x^3 + 9x^2 + 18x + 36, \quad f(2) = r_6 (x) = 73.
     \end{align*}
 \end{example}

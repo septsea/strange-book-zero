@@ -2,99 +2,99 @@
 \addcontentsline{toc}{subsection}{\DefinitionOfPolynomials}
 \markright{\DefinitionOfPolynomials}
 
-现在开始介绍多项式\period
+现在开始介绍多项式.
 
 \begin{definition}
-    设 $D$ 是整环\period 设 $x$ 是不在 $D$ 里的任意一个文字\period 形如
+    设 $D$ 是整环. 设 $x$ 是不在 $D$ 里的任意一个文字. 形如
     \begin{align*}
         f(x) = a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in D,\ a_n \neq 0)
     \end{align*}
-    的表达式称为 $D$ 上 $x$ 的一个多项式 \term{polynomial in $x$ over $D$}\period $n$ 称为其次 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次项 \term{the $i^\text{th}$ term}\period $f(x)$ 的次可写为 $\deg f(x)$\period
+    的表达式称为 $D$ 上 $x$ 的一个多项式 \term{polynomial in $x$ over $D$}. $n$ 称为其次 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次项 \term{the $i^\text{th}$ term}. $f(x)$ 的次可写为 $\deg f(x)$.
 
-    若二个多项式的次与各同次系数均相等, 则二者相等\period
+    若二个多项式的次与各同次系数均相等, 则二者相等.
 
-    多项式的系数为 $0$ 的项可以不写\period
+    多项式的系数为 $0$ 的项可以不写.
 
-    约定 $0 \in D$ 也是多项式, 称为零多项式\period 零多项式的次是 $-\infty$\period 任取整数 $m$, 约定
+    约定 $0 \in D$ 也是多项式, 称为零多项式. 零多项式的次是 $-\infty$. 任取整数 $m$, 约定
     \begin{align*}
-         & -\infty = -\infty, \quad -\infty < m,                               \\
-         & -\infty + m = m + (-\infty) = -\infty + (-\infty) = -\infty \period
+         & -\infty = -\infty, \quad -\infty < m,                        \\
+         & -\infty + m = m + (-\infty) = -\infty + (-\infty) = -\infty.
     \end{align*}
-    当然, 还约定, 零多项式只跟自己相等\period 换句话说,
+    当然, 还约定, 零多项式只跟自己相等. 换句话说,
     \begin{align*}
         a_0 x^0 + a_1 x^1 + \cdots + a_n x^n = 0
     \end{align*}
     的一个必要与充分条件是
     \begin{align*}
-        a_0 = a_1 = \cdots = a_n = 0 \period
+        a_0 = a_1 = \cdots = a_n = 0.
     \end{align*}
 
     $D$ 上 $x$ 的所有多项式作成的集是 $D[x]$:
     \begin{align*}
-        D[x] = \{\, a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \mid n \in \NN,\ a_0,a_1,\cdots,a_n \in D \,\} \period
+        D[x] = \{\, a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \mid n \in \NN,\ a_0,a_1,\cdots,a_n \in D \,\}.
     \end{align*}
 
-    文字 $x$ 只是一个符号, 它与 $D$ 的元的和与积都是形式的\period 我们说, $x$ 是不定元 \term{indeterminate}\period
+    文字 $x$ 只是一个符号, 它与 $D$ 的元的和与积都是形式的. 我们说, $x$ 是不定元 \term{indeterminate}.
 \end{definition}
 
 \begin{example}
-    $0y^0 + 1y^1 + (-1)y^2 + 0y^3 + (-7)y^4 \in \ZZ[y]$ 是一个 $4$ 次多项式\period 顺便一提, 一般把 $y^1$ 写为 $y$\period 这个多项式的一个更普通的写法是
+    $0y^0 + 1y^1 + (-1)y^2 + 0y^3 + (-7)y^4 \in \ZZ[y]$ 是一个 $4$ 次多项式. 顺便一提, 一般把 $y^1$ 写为 $y$. 这个多项式的一个更普通的写法是
     \begin{align*}
-        y - y^2 - 7y^4 \period
+        y - y^2 - 7y^4.
     \end{align*}
 
-    也许 $y^0$ 看起来有些奇怪\period 如上所言, 这只是一个形式上的表达式\period 我们之后再处理这个小细节\period
+    也许 $y^0$ 看起来有些奇怪. 如上所言, 这只是一个形式上的表达式. 我们之后再处理这个小细节.
 \end{example}
 
 \begin{example}
-    $z^0 + z + z^{\frac{3}{2}}$ 不是 $z$ 的多项式\period
+    $z^0 + z + z^{\frac{3}{2}}$ 不是 $z$ 的多项式.
 \end{example}
 
 \begin{example}
-    考虑 $\ZZ$ 与 $\ZZ[x]$\period 设
+    考虑 $\ZZ$ 与 $\ZZ[x]$. 设
     \begin{align*}
         f(x) = ax^0 + x + 2x^2 - x^4 - bx^5, \quad g(x) = cx + dx^2 - x^4 - 3x^5,
     \end{align*}
-    其中 $a$, $b$, $c$, $d$ 都是整数\period 那么, $f(x) = g(x)$ 相当于
+    其中 $a$, $b$, $c$, $d$ 都是整数. 那么, $f(x) = g(x)$ 相当于
     \begin{align*}
         a = 0, \quad 1 = c, \quad 2 = d, \quad 0 = 0, \quad -1 = -1, \quad -b = -3,
     \end{align*}
     也就是
     \begin{align*}
-        a = 0, \quad b = 3, \quad c = 1, \quad d = 2 \period
+        a = 0, \quad b = 3, \quad c = 1, \quad d = 2.
     \end{align*}
 \end{example}
 
 \begin{remark}
-    文字 $x$ 的意义在数学中是不断进化的 \term{evolving}\period 在中小学里, $x$ 是未知元 \term{unknown}: 虽然它是待求的, 但是它是一个具体的数\period 后来在函数里, $x$ 表示变元 \term{variable}, 不过它的取值范围是确定的\period 在上面的定义里, $x$ 仅仅是一个文字, 成为不定元\period
+    文字 $x$ 的意义在数学中是不断进化的 \term{evolving}. 在中小学里, $x$ 是未知元 \term{unknown}: 虽然它是待求的, 但是它是一个具体的数. 后来在函数里, $x$ 表示变元 \term{variable}, 不过它的取值范围是确定的. 在上面的定义里, $x$ 仅仅是一个文字, 成为不定元.
 \end{remark}
 
-下面考虑多项式的运算\period 先从加法开始\period
+下面考虑多项式的运算. 先从加法开始.
 
 \begin{definition}
     设
     \begin{align*}
         f(x) = a_0 x^0 + a_1 x + \cdots + a_n x^n, \quad g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n
     \end{align*}
-    是 $D[x]$ 的元\period 规定加法如下:
+    是 $D[x]$ 的元. 规定加法如下:
     \begin{align*}
-        f(x) + g(x) = (a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n \period
+        f(x) + g(x) = (a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n.
     \end{align*}
 \end{definition}
 
 \begin{example}
-    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$\period 先改写一下:
+    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$. 先改写一下:
     \begin{align*}
-        f(x) = 1x^0 + 0x + 2x^2 + 0x^3, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3 \period
+        f(x) = 1x^0 + 0x + 2x^2 + 0x^3, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3.
     \end{align*}
     所以
     \begin{align*}
-        f(x) + g(x) = -2x^0 + 4x + 2x^2 - x^3 \period
+        f(x) + g(x) = -2x^0 + 4x + 2x^2 - x^3.
     \end{align*}
 \end{example}
 
 \begin{proposition}
-    $D[x]$ 作成加群\period
+    $D[x]$ 作成加群.
 \end{proposition}
 
 \begin{pf}
@@ -104,118 +104,118 @@
         g(x) = {} & b_0 x^0 + b_1 x + \cdots + b_n x^n, \\
         h(x) = {} & c_0 x^0 + c_1 x + \cdots + c_n x^n
     \end{align*}
-    是 $D[x]$ 的元\period 根据加法的定义, $+$ 显然是 $D[x]$ 的二元运算\period 因为 $D$ 的加法适合交换律, 故
+    是 $D[x]$ 的元. 根据加法的定义, $+$ 显然是 $D[x]$ 的二元运算. 因为 $D$ 的加法适合交换律, 故
     \begin{align*}
         g(x) + f(x)
         = {} & (b_0 + a_0) x^0 + (b_1 + a_1) x + \cdots + (b_n + a_n) x^n \\
         = {} & (a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n \\
-        = {} & f(x) + g(x) \period
+        = {} & f(x) + g(x).
     \end{align*}
-    也就是说, $D[x]$ 的加法适合交换律\period
+    也就是说, $D[x]$ 的加法适合交换律.
 
     注意到
     \begin{align*}
-             & (f(x) + g(x)) + h(x)                                                                 \\
-        = {} & ((a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n)                         \\
-             & \qquad + (c_0 x^0 + c_1 x + \cdots + c_n x^n)                                        \\
-        = {} & ((a_0 + b_0) + c_0) x^0 + ((a_1 + b_1) + c_1) x + \cdots + ((a_n + b_n) + c_n) x^n   \\
-        = {} & (a_0 + b_0 + c_0) x^0 + (a_1 + b_1 + c_1) x + \cdots + (a_n + b_n + c_n) x^n \period
+             & (f(x) + g(x)) + h(x)                                                               \\
+        = {} & ((a_0 + b_0) x^0 + (a_1 + b_1) x + \cdots + (a_n + b_n) x^n)                       \\
+             & \qquad + (c_0 x^0 + c_1 x + \cdots + c_n x^n)                                      \\
+        = {} & ((a_0 + b_0) + c_0) x^0 + ((a_1 + b_1) + c_1) x + \cdots + ((a_n + b_n) + c_n) x^n \\
+        = {} & (a_0 + b_0 + c_0) x^0 + (a_1 + b_1 + c_1) x + \cdots + (a_n + b_n + c_n) x^n.
     \end{align*}
-    类似地, 计算 $f(x) + (g(x) + h(x))$ 也可以得到一样的结果\period 也就是说, $D[x]$ 的加法适合结合律\period
+    类似地, 计算 $f(x) + (g(x) + h(x))$ 也可以得到一样的结果. 也就是说, $D[x]$ 的加法适合结合律.
 
     零多项式可以写为
     \begin{align*}
-        0 = 0x^0 + 0x + \cdots + 0x^n \period
+        0 = 0x^0 + 0x + \cdots + 0x^n.
     \end{align*}
     这样
     \begin{align*}
         0 + f(x)
         = {} & (0 + a_0) x^0 + (0 + a_1) x + \cdots + (0 + a_n) x^n \\
         = {} & a_0 x^0 + a_1 x + \cdots + a_n x^n                   \\
-        = {} & f(x) \period
+        = {} & f(x).
     \end{align*}
-    类似地, $f(x) + 0 = f(x)$\period
+    类似地, $f(x) + 0 = f(x)$.
 
     记
     \begin{align*}
-        \underline{f}(x) = (-a_0) x^0 + (-a_1) x + \cdots + (-a_n) x^n \period
+        \underline{f}(x) = (-a_0) x^0 + (-a_1) x + \cdots + (-a_n) x^n.
     \end{align*}
     这样
     \begin{align*}
         \underline{f}(x) + f(x)
         = {} & (-a_0 + a_0) x^0 + (-a_1 + a_1) x + \cdots + (-a_n + a_n) x^n \\
         = {} & 0 x^0 + 0 x + \cdots + 0 x^n                                  \\
-        = {} & 0 \period
+        = {} & 0.
     \end{align*}
-    类似地, $f(x) + \underline{f}(x) = 0$\period 以后, 我们把这个 $\underline{f}(x)$ 用普通的符号写为
+    类似地, $f(x) + \underline{f}(x) = 0$. 以后, 我们把这个 $\underline{f}(x)$ 用普通的符号写为
     \begin{align*}
-        -f(x) = -a_0 x^0 - a_1 x - \cdots - a_n x^n \period
+        -f(x) = -a_0 x^0 - a_1 x - \cdots - a_n x^n.
     \end{align*}
 
-    综上, $D[x]$ 是加群\period
+    综上, $D[x]$ 是加群.
 \end{pf}
 
 \begin{definition}
-    设 $f(x)$, $g(x) \in D[x]$\period 规定减法如下:
+    设 $f(x)$, $g(x) \in D[x]$. 规定减法如下:
     \begin{align*}
-        f(x) - g(x) = f(x) + (-g(x)) \period
+        f(x) - g(x) = f(x) + (-g(x)).
     \end{align*}
 \end{definition}
 
 \begin{remark}
-    可以看出, $f(x) \pm g(x)$ 的次既不会超出 $f(x)$ 的次, 也不会超出 $g(x)$ 的次\period 用符号写出来, 就是
+    可以看出, $f(x) \pm g(x)$ 的次既不会超出 $f(x)$ 的次, 也不会超出 $g(x)$ 的次. 用符号写出来, 就是
     \begin{align*}
-        \deg (f(x) \pm g(x)) \leq \max \{\, \deg f(x), \deg g(x) \,\} \period
+        \deg (f(x) \pm g(x)) \leq \max \{\, \deg f(x), \deg g(x) \,\}.
     \end{align*}
     若 $\deg f(x) > \deg g(x)$, 则
     \begin{align*}
-        \deg (f(x) \pm g(x)) = \deg f(x) \period
+        \deg (f(x) \pm g(x)) = \deg f(x).
     \end{align*}
     类似地, 若 $\deg f(x) < \deg g(x)$, 则
     \begin{align*}
-        \deg (f(x) \pm g(x)) = \deg g(x) \period
+        \deg (f(x) \pm g(x)) = \deg g(x).
     \end{align*}
 \end{remark}
 
 \begin{remark}
-    既然 $D[x]$ 是加群, 且每个 $a_i x^i$ ($i = 0,1,\cdots,n$) 都可以看成是多项式, 那么多项式的项的次序是不重要的\period 前面的写法称为升次排列 \term{ascending order}\period 下面的写法称为降次排列 \term{descending order}:
+    既然 $D[x]$ 是加群, 且每个 $a_i x^i$ ($i = 0,1,\cdots,n$) 都可以看成是多项式, 那么多项式的项的次序是不重要的. 前面的写法称为升次排列 \term{ascending order}. 下面的写法称为降次排列 \term{descending order}:
     \begin{align*}
-        a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 x^0 \period
+        a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0 x^0.
     \end{align*}
-    这跟中学里接触的多项式是一样的\period
+    这跟中学里接触的多项式是一样的.
 
-    (非零) 多项式的最高次非零项是首项 \term{leading term}\period 它的系数是此多项式的首项系数 \term{the coefficient of the leading term}\period
+    (非零) 多项式的最高次非零项是首项 \term{leading term}. 它的系数是此多项式的首项系数 \term{the coefficient of the leading term}.
 \end{remark}
 
 \begin{example}
-    $y - y^2 - 7y^4 \in \ZZ[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$, 且其首项系数是 $-7$\period
+    $y - y^2 - 7y^4 \in \ZZ[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$, 且其首项系数是 $-7$.
 \end{example}
 
-现在考虑乘法\period
+现在考虑乘法.
 
 \begin{definition}
     设
     \begin{align*}
         f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m, \quad g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n
     \end{align*}
-    是 $D[x]$ 的元\period 规定乘法如下:
+    是 $D[x]$ 的元. 规定乘法如下:
     \begin{align*}
         f(x) g(x) = c_0 x^0 + c_1 x + \cdots + c_{m+n} x^{m+n},
     \end{align*}
     其中
     \begin{align*}
-        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
+        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0.
     \end{align*}
-    且约定 $i > m$ 时 $a_i = 0$, $j > n$ 时 $b_j = 0$\period 在这个约定下, 不难看出, $\ell > m+n$ 时, $c_\ell = 0$\period 所以, 我们至少有
+    且约定 $i > m$ 时 $a_i = 0$, $j > n$ 时 $b_j = 0$. 在这个约定下, 不难看出, $\ell > m+n$ 时, $c_\ell = 0$. 所以, 我们至少有
     \begin{align*}
-        \deg f(x)g(x) \leq \deg f(x) + \deg g(x) \period
+        \deg f(x)g(x) \leq \deg f(x) + \deg g(x).
     \end{align*}
 \end{definition}
 
 \begin{example}
-    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$\period 先改写一下:
+    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$. 先改写一下:
     \begin{align*}
-        f(x) = 1x^0 + 0x + 2x^2, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3 \period
+        f(x) = 1x^0 + 0x + 2x^2, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3.
     \end{align*}
     所以
     \begin{align*}
@@ -224,26 +224,26 @@
          & c_2 = 1 \cdot 0 + 0 \cdot 4 + 2 \cdot (-3) = -6, \\
          & c_3 = 1 \cdot (-1) + 0 \cdot 0 + 2 \cdot 4 = 7,  \\
          & c_4 = 0 \cdot (-1) + 2 \cdot 0 = 0,              \\
-         & c_5 = 2 \cdot (-1) = -2 \period
+         & c_5 = 2 \cdot (-1) = -2.
     \end{align*}
     所以
     \begin{align*}
-        f(x) g(x) = -3x^0 + 4x - 6x^2 + 7x^3 - 2x^5 \period
+        f(x) g(x) = -3x^0 + 4x - 6x^2 + 7x^3 - 2x^5.
     \end{align*}
 \end{example}
 
 \begin{example}
     设
     \begin{align*}
-        f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m \period
+        f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m.
     \end{align*}
-    是 $D[x]$ 的元\period 零多项式可以写为
+    是 $D[x]$ 的元. 零多项式可以写为
     \begin{align*}
         0 = 0x^0,
     \end{align*}
     由此易知
     \begin{align*}
-        0f(x) = f(x)0 = 0\period
+        0f(x) = f(x)0 = 0.
     \end{align*}
 \end{example}
 
@@ -252,67 +252,67 @@
     \begin{align*}
         f(x) = a_0 x^0 + a_1 x + \cdots + a_m x^m, \quad g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n
     \end{align*}
-    是 $D[x]$ 的元, 且 $a_m \neq 0$, $b_n \neq 0$\period 这样, $f(x)g(x)$ 的 $m+n$ 次项就是 $cx^{m+n}$, 其中
+    是 $D[x]$ 的元, 且 $a_m \neq 0$, $b_n \neq 0$. 这样, $f(x)g(x)$ 的 $m+n$ 次项就是 $cx^{m+n}$, 其中
     \begin{align*}
         c
         = {} & a_0 b_{m+n} + \cdots + a_{m-1} b_{n+1} + a_m b_n + a_{m+1} b_{n-1} + \cdots + a_{m+n}b_n \\
         = {} & 0 + \cdots + 0 + a_m b_n + 0 + \cdots + 0                                                \\
-        = {} & a_m b_n \period
+        = {} & a_m b_n.
     \end{align*}
-    因为 $a_m \neq 0$, $b_n \neq 0$, 所以 $a_m b_n \neq 0$ (反证法: 若 $a_m b_n = 0 = a_m 0$, 因为 $a_m \neq 0$, 根据 $D$ 的消去律, 得 $b_n = 0$, 矛盾!)\period 所以
+    因为 $a_m \neq 0$, $b_n \neq 0$, 所以 $a_m b_n \neq 0$ (反证法: 若 $a_m b_n = 0 = a_m 0$, 因为 $a_m \neq 0$, 根据 $D$ 的消去律, 得 $b_n = 0$, 矛盾!). 所以
     \begin{align*}
-        \deg f(x) g(x) = \deg f(x) + \deg g(x) \period
+        \deg f(x) g(x) = \deg f(x) + \deg g(x).
     \end{align*}
-    可以验证, 若 $f$ 或 $g$ 的任意一个是 $0$, 这个关系也对\period
+    可以验证, 若 $f$ 或 $g$ 的任意一个是 $0$, 这个关系也对.
 \end{remark}
 
 \begin{remark}
     设
     \begin{align*}
-         & f(x) = px^m = a_0 + a_1 x + \cdots + a_m x^m,        \\
-         & g(x) = qx^n = b_0 + b_1 x + \cdots + b_n x^n \period
+         & f(x) = px^m = a_0 + a_1 x + \cdots + a_m x^m, \\
+         & g(x) = qx^n = b_0 + b_1 x + \cdots + b_n x^n.
     \end{align*}
-    当 $i \neq m$ 时, $a_i = 0$; 当 $i=m$ 时, $a_i = p \neq 0$\period 当 $j \neq n$ 时, $b_j = 0$; 当 $j=n$ 时, $b_j = q \neq 0$\period 现在考虑这二个多项式的积
+    当 $i \neq m$ 时, $a_i = 0$; 当 $i=m$ 时, $a_i = p \neq 0$. 当 $j \neq n$ 时, $b_j = 0$; 当 $j=n$ 时, $b_j = q \neq 0$. 现在考虑这二个多项式的积
     \begin{align*}
         f(x)g(x) = c_0 + c_1 x + \cdots + c_{m+n} x^{m+n},
     \end{align*}
     其中
     \begin{align*}
-        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0 \period
+        c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0.
     \end{align*}
-    我们来看什么时候 $a_\ell b_{k - \ell}$ 不是 $0$\period 这相当于要求 $a_\ell$ 跟 $b_{k - \ell}$ 都不是 $0$, 所以
+    我们来看什么时候 $a_\ell b_{k - \ell}$ 不是 $0$. 这相当于要求 $a_\ell$ 跟 $b_{k - \ell}$ 都不是 $0$, 所以
     \begin{align*}
         \ell = m, \quad k - \ell = n,
     \end{align*}
     也就是
     \begin{align*}
-        \ell = m, \quad k = m + n \period
+        \ell = m, \quad k = m + n.
     \end{align*}
     所以, 当 $k \neq m+n$ 时, $c_k = 0$; 当 $k = m+n$ 时,
     \begin{align*}
-        c_{m+n} = a_m b_n = pq \neq 0\period
+        c_{m+n} = a_m b_n = pq \neq 0.
     \end{align*}
     所以, 任取 $m$, $n \in \NN$, 必有
     \begin{align*}
-        (px^m) (qx^n) = (pq) x^{m+n} \period
+        (px^m) (qx^n) = (pq) x^{m+n}.
     \end{align*}
     特别地, 取 $p=q=1$, 有
     \begin{align*}
-        x^m x^n = x^{m+n} \period
+        x^m x^n = x^{m+n}.
     \end{align*}
     这里提醒读者: 这个式是形式上的表达式, 其内涵与中学的 ``同底数幂相乘, 底数不变, 指数相加'' 的内涵是不一样的!
 
-    顺便一提, 若 $p$ 跟 $q$ 的一个是 $0$, 则每个 $c_k$ 全为 $0$, 故此时积是零多项式, 此式仍成立\period
+    顺便一提, 若 $p$ 跟 $q$ 的一个是 $0$, 则每个 $c_k$ 全为 $0$, 故此时积是零多项式, 此式仍成立.
 \end{remark}
 
 \begin{proposition}
-    $D[x]$ 作成整环\period 所以, $D[x]$ 的一个名字就是 (整环) $D$ 上 ($x$) 的多项式 (整) 环\period
+    $D[x]$ 作成整环. 所以, $D[x]$ 的一个名字就是 (整环) $D$ 上 ($x$) 的多项式 (整) 环.
 \end{proposition}
 
 \begin{pf}
-    已经知道, $D[x]$ 是加群\period 下面先说明 $D[x]$ 是交换环\period
+    已经知道, $D[x]$ 是加群. 下面先说明 $D[x]$ 是交换环.
 
-    根据定义, 多项式的乘法还是多项式, 也就是说, 乘法是二元运算\period
+    根据定义, 多项式的乘法还是多项式, 也就是说, 乘法是二元运算.
 
     设
     \begin{align*}
@@ -320,17 +320,17 @@
          & g(x) = b_0 x^0 + b_1 x + \cdots + b_n x^n, \\
          & h(x) = u_0 x^0 + u_1 x + \cdots + u_s x^s
     \end{align*}
-    是 $D[x]$ 的元\period 则
+    是 $D[x]$ 的元. 则
     \begin{align*}
          & f(x) g(x) = c_0 x^0 + c_1 x + \cdots + c_{m+n} x^{m+n}, \\
          & g(x) f(x) = d_0 x^0 + d_1 x + \cdots + d_{n+m} x^{n+m},
     \end{align*}
     其中
     \begin{align*}
-         & c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0,        \\
-         & d_k = b_0 a_k + b_1 a_{k-1} + \cdots + b_k a_0 \period
+         & c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0, \\
+         & d_k = b_0 a_k + b_1 a_{k-1} + \cdots + b_k a_0.
     \end{align*}
-    因为 $D$ 的乘法适合交换律, 加法适合交换律与结合律, 故 $c_k = d_k$\period 这样, $D[x]$ 的乘法适合交换律\period
+    因为 $D$ 的乘法适合交换律, 加法适合交换律与结合律, 故 $c_k = d_k$. 这样, $D[x]$ 的乘法适合交换律.
 
     不难算出
     \begin{align*}
@@ -341,14 +341,14 @@
     其中
     \begin{align*}
         v_t
-        = {} & (\text{the sum of all $a_i b_j u_r$'s with $i+j+r=t$})                                  \\
-        = {} & a_0 b_0 u_t + a_0 b_1 u_{t-1} + \cdots + a_0 b_t u_0 + a_1 b_0 u_{t-1} + \cdots \period
+        = {} & (\text{the sum of all $a_i b_j u_r$'s with $i+j+r=t$})                           \\
+        = {} & a_0 b_0 u_t + a_0 b_1 u_{t-1} + \cdots + a_0 b_t u_0 + a_1 b_0 u_{t-1} + \cdots.
     \end{align*}
-    类似地, 计算 $f(x) (g(x) h(x))$ 也可以得到一样的结果\period 也就是说, $D[x]$ 的乘法适合结合律\period
+    类似地, 计算 $f(x) (g(x) h(x))$ 也可以得到一样的结果. 也就是说, $D[x]$ 的乘法适合结合律.
 
-    现在验证分配律\period 前面已经看到, 多项式的乘法是交换的, 所以只要验证一个分配律即可\period 不失一般性, 设 $s=n$\period 这样
+    现在验证分配律. 前面已经看到, 多项式的乘法是交换的, 所以只要验证一个分配律即可. 不失一般性, 设 $s=n$. 这样
     \begin{align*}
-        g(x) + h(x) = (b_0 + u_0) x^0 + (b_1 + u_1) x + \cdots + (b_n + u_n) x^n \period
+        g(x) + h(x) = (b_0 + u_0) x^0 + (b_1 + u_1) x + \cdots + (b_n + u_n) x^n.
     \end{align*}
     所以
     \begin{align*}
@@ -357,34 +357,34 @@
     其中
     \begin{align*}
         p_k
-        = {} & a_0 (b_k + c_k) + a_1 (b_{k-1} + c_{k-1}) + \cdots + a_k (b_0 + c_0)                            \\
-        = {} & (a_0 b_k + a_0 c_k) + (a_1 b_{k-1} + a_1 c_{k-1}) + \cdots + (a_k b_0 + a_k c_0)                \\
-        = {} & (a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0) + (a_0 c_k + a_1 c_{k-1} + \cdots + a_k c_0) \period
+        = {} & a_0 (b_k + c_k) + a_1 (b_{k-1} + c_{k-1}) + \cdots + a_k (b_0 + c_0)                     \\
+        = {} & (a_0 b_k + a_0 c_k) + (a_1 b_{k-1} + a_1 c_{k-1}) + \cdots + (a_k b_0 + a_k c_0)         \\
+        = {} & (a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0) + (a_0 c_k + a_1 c_{k-1} + \cdots + a_k c_0).
     \end{align*}
-    不难看出, 这就是 $f(x)g(x)$ 的 $k$ 次系数与 $f(x)h(x)$ 的 $k$ 次系数的和\period 这样, $D[x]$ 的加法与乘法适合分配律\period 至此, 我们知道, $D[x]$ 是交换环\period
+    不难看出, 这就是 $f(x)g(x)$ 的 $k$ 次系数与 $f(x)h(x)$ 的 $k$ 次系数的和. 这样, $D[x]$ 的加法与乘法适合分配律. 至此, 我们知道, $D[x]$ 是交换环.
 
-    交换环离整环还差二步: 一是乘法幺元, 二是消去律\period 先看消去律\period 若 $f(x)g(x) = f(x)h(x)$, $f(x) \neq 0$, 根据分配律,
+    交换环离整环还差二步: 一是乘法幺元, 二是消去律. 先看消去律. 若 $f(x)g(x) = f(x)h(x)$, $f(x) \neq 0$, 根据分配律,
     \begin{align*}
-        0 = f(x)g(x) - f(x)h(x) = f(x) (g(x) - h(x)) \period
+        0 = f(x)g(x) - f(x)h(x) = f(x) (g(x) - h(x)).
     \end{align*}
-    如果 $g(x) - h(x) \neq 0$, 则 $g(x) - h(x)$ 的次不是 $-\infty$\period $f(x)$ 的次不是 $-\infty$, 故 $f(x)(g(x) - h(x))$ 的次不是 $-\infty$\period 换句话说, $f(x)(g(x) - h(x)) \neq 0$, 矛盾!
+    如果 $g(x) - h(x) \neq 0$, 则 $g(x) - h(x)$ 的次不是 $-\infty$. $f(x)$ 的次不是 $-\infty$, 故 $f(x)(g(x) - h(x))$ 的次不是 $-\infty$. 换句话说, $f(x)(g(x) - h(x)) \neq 0$, 矛盾!
 
-    再看乘法幺元\period 设
+    再看乘法幺元. 设
     \begin{align*}
-        e(x) = x^0 \period
+        e(x) = x^0.
     \end{align*}
     不难算出
     \begin{align*}
-        e(x) f(x) = f(x) e(x) = f(x) \period
+        e(x) f(x) = f(x) e(x) = f(x).
     \end{align*}
 
-    综上, $D[x]$ 是整环\period
+    综上, $D[x]$ 是整环.
 \end{pf}
 
 \begin{example}
     在前面, 我们直接用定义计算了下面二个多项式的积:
     \begin{align*}
-        f(x) = x^0 + 2x^2, \quad g(x) = -3x^0 + 4x - x^3 \period
+        f(x) = x^0 + 2x^2, \quad g(x) = -3x^0 + 4x - x^3.
     \end{align*}
     现在, 我们利用
     \begin{align*}
@@ -397,52 +397,52 @@
         = {} & x^0 (-3x^0 + 4x - x^3) + 2x^2 (-3x^0 + 4x - x^3)                \\
         = {} & -3x^{0+0} + 4x^{0+1} - x^{0+3} - 6x^{2+0} + 8x^{2+1} - 2x^{2+3} \\
         = {} & -3x^0 + 4x - x^3 - 6x^2 + 8x^3 - 2x^5                           \\
-        = {} & -3x^0 + 4x - 6x^2 + 7x^3 - 2x^5 \period
+        = {} & -3x^0 + 4x - 6x^2 + 7x^3 - 2x^5.
     \end{align*}
-    这跟之前的结果是一致的\period
+    这跟之前的结果是一致的.
 \end{example}
 
 \begin{definition}
-    设 $m \in \NN$\period 多项式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
+    设 $m \in \NN$. 多项式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
     \begin{align*}
-        (f(x))^m = \underbrace{f(x) \cdot f(x) \cdot \cdots \cdot f(x)}_{\text{$m$ $f(x)$'s}} \period
+        (f(x))^m = \underbrace{f(x) \cdot f(x) \cdot \cdots \cdot f(x)}_{\text{$m$ $f(x)$'s}}.
     \end{align*}
-    既然 $D[x]$ 是整环, 那么前面的幂规则都适用\period 具体地说, 设 $m$, $n \in \NN$, $f(x)$, $g(x) \in D[x]$, 则
+    既然 $D[x]$ 是整环, 那么前面的幂规则都适用. 具体地说, 设 $m$, $n \in \NN$, $f(x)$, $g(x) \in D[x]$, 则
     \begin{align*}
-         & (f(x))^m (f(x))^n = (f(x))^{m+n},         \\
-         & ((f(x))^m)^n = (f(x))^{mn},               \\
-         & (f(x) g(x))^m = (f(x))^m (g(x))^m \period
+         & (f(x))^m (f(x))^n = (f(x))^{m+n},  \\
+         & ((f(x))^m)^n = (f(x))^{mn},        \\
+         & (f(x) g(x))^m = (f(x))^m (g(x))^m.
     \end{align*}
     前面, 我们知道
     \begin{align*}
-        x^m x^n = x^{m+n} \period
+        x^m x^n = x^{m+n}.
     \end{align*}
-    当时, 我们还说, 这跟中学的 ``同底数幂相乘, 底数不变, 指数相加'' 有着不一样的内涵\period 有了 ``幂'' 这个概念后, 我们发现, $x^m$ 的确可以视为 $m$ 个 $x$ 的积\period
+    当时, 我们还说, 这跟中学的 ``同底数幂相乘, 底数不变, 指数相加'' 有着不一样的内涵. 有了 ``幂'' 这个概念后, 我们发现, $x^m$ 的确可以视为 $m$ 个 $x$ 的积.
 \end{definition}
 
 \begin{remark}
-    以后, 我们把 $x^0$ 写为 $1$\period 换句话说, 代替
+    以后, 我们把 $x^0$ 写为 $1$. 换句话说, 代替
     \begin{align*}
         a_0 x^0 + a_1 x + \cdots + a_n x^n,
     \end{align*}
     我们写
     \begin{align*}
-        a_0 + a_1 x + \cdots + a_n x^n \period
+        a_0 + a_1 x + \cdots + a_n x^n.
     \end{align*}
 
-    这儿还有一件事儿值得一提\period 考虑
+    这儿还有一件事儿值得一提. 考虑
     \begin{align*}
-        D_0 = \{\, ax^0 \mid a \in D \,\} \subset D[x] \period
+        D_0 = \{\, ax^0 \mid a \in D \,\} \subset D[x].
     \end{align*}
-    任取 $D_0$ 的二元 $ax^0$, $bx^0$\period 首先, $ax^0 = bx^0$ 的一个必要与充分条件是 $a=b$\period 然后, 不难看出,
+    任取 $D_0$ 的二元 $ax^0$, $bx^0$. 首先, $ax^0 = bx^0$ 的一个必要与充分条件是 $a=b$. 然后, 不难看出,
     \begin{align*}
-        ax^0 + bx^0 = (a+b)x^0, \quad (ax^0)(bx^0) = (ab)x^0 \period
+        ax^0 + bx^0 = (a+b)x^0, \quad (ax^0)(bx^0) = (ab)x^0.
     \end{align*}
-    由此可以看出, $D_0$ 与 $D$ ``几乎完全一样''\period 用摩登 \term{modern} 数学的话来说, ``$D_0$ 与 $D$ 是天然同构的 \term{naturally isomorphic}''\period
+    由此可以看出, $D_0$ 与 $D$ ``几乎完全一样''. 用摩登 \term{modern} 数学的话来说, ``$D_0$ 与 $D$ 是天然同构的 \term{naturally isomorphic}''.
 
-    我们不打算深究这一点\period 上面, 我们把 $x^0$ 写为 $1$; 反过来, $D$ 的元 $a$ 也可以理解为是多项式 $ax^0$\period 这跟中学的习惯是一致的\period
+    我们不打算深究这一点. 上面, 我们把 $x^0$ 写为 $1$; 反过来, $D$ 的元 $a$ 也可以理解为是多项式 $ax^0$. 这跟中学的习惯是一致的.
 
-    最后, 我们指出: 既然非零的 $c \in D$ 可视为 $0$ 次多项式, 那么 $cf(x)$ 也是多项式\period 如果
+    最后, 我们指出: 既然非零的 $c \in D$ 可视为 $0$ 次多项式, 那么 $cf(x)$ 也是多项式. 如果
     \begin{align*}
         f(x) = a_0 + a_1 x + \cdots + a_n x^n,
     \end{align*}
@@ -452,6 +452,6 @@
     \end{align*}
     且
     \begin{align*}
-        \deg cf(x) = \deg f(x) \period
+        \deg cf(x) = \deg f(x).
     \end{align*}
 \end{remark}
