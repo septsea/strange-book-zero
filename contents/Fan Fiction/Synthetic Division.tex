@@ -114,4 +114,294 @@
     \begin{align*}
         q(x) = x^5 + 2x^4 + 4x^3 + 9x^2 + 18x + 36, \quad f(2) = r_6 (x) = 73.
     \end{align*}
+
+    读者可能感到疲劳. 的确, 作者自己都快要睡着了. 这些文字打出来, 作者可再算九遍了吧.
+\end{example}
+
+我们稍稍分析一下. 设 $a$ 为数. 设 $f(x)$ 的次为 $n$, 且 $n \geq 1$ (若 $n < 1$, 则 $x-a$ 除 $f(x)$ 的商与余式分别是 $0$ 与 $f(x)$). 所以, 商的次是 $n-1$, 且余式 (可认为) 是数. 所以, 我们可以待定系数. 具体地说, 设
+\begin{align*}
+    f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0,
+\end{align*}
+且
+\begin{align*}
+    f(x) = (x - a) (b_{n-1} x^{n-1} + b_{n-2} x^{n-2} + \cdots + b_0) + b_{-1}.
+\end{align*}
+上式可写为
+\begin{align*}
+    f(x)
+    = {} & b_{n-1} x^n + (b_{n-2} - ab_{n-1}) x^{n-1} + \cdots + (b_{j-1} - ab_j) x^j \\
+         & \qquad + \cdots + (b_0 - ab_1) x + (b_{-1} - ab_0).
+\end{align*}
+比较系数, 有
+\begin{align*}
+     & a_n = b_{n-1},                                           \\
+     & a_{n-1} = b_{n-2} - ab_{n-1},                            \\
+     & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots, \\
+     & a_j = b_{j-1} - ab_j \quad (0 \leq j < n),               \\
+     & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots, \\
+     & a_1 = b_0 - ab_1,                                        \\
+     & a_0 = b_{-1} - ab_0.
+\end{align*}
+由此解出
+\begin{align*}
+    \tag*{(R)} \begin{aligned}
+         & b_{n-1} = a_n,                                     \\
+         & b_{j-1} = ab_j + a_j \quad (j = n-1,n-2,\cdots,0).
+    \end{aligned}
+\end{align*}
+
+\begin{remark}
+    或许, 读者觉得 $b_{j-1} = ab_j + a_j$ 的右侧还有 ``未知的'' $b_j$, 因此作者 ``并没有解出 $b_{n-1}$, $b_{n-2}$, $\cdots$, $b_0$, $b_{-1}$''. 事实上, 作者在后面也写了, $j$ 取 $n-1$, $n-2$, $\cdots$, $0$. 因为 $b_{n-1}$ 已知 (它就是 $a_n$), 故可求出 $b_{n-2} = ab_{n-1} + a_{n-1} = a_n a + a_{n-1}$. 所以, 读者可接着求出 $b_{n-3} = ab_{n-2} + a_{n-2} = a_n a^2 + a_{n-1} a + a_{n-2}$. 也就是说, $b_{n-1}$, $b_{n-2}$, $\cdots$, $b_0$, $b_{-1}$ 是按次序被求出的数. 当然, 作者知道, 肯定有读者不服. 作为参考, 作者也给出一个直接的表达式.
+
+    一般地, $b_{n-1}$, $b_{n-2}$, $\cdots$, $b_0$, $b_{-1}$ 的具体的表达式如下:
+    \begin{align*}
+        \tag*{(E)} \begin{aligned}
+             & b_{n-1} = a_n,                                                                        \\
+             & b_{n-2} = a_n a + a_{n-1},                                                            \\
+             & b_{n-3} = a_n a^2 + a_{n-1} a + a_{n-2},                                              \\
+             & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,  \\
+             & b_{j} = a_n a^{n-1-j} + a_{n-1} a^{n-1-j-1} + \cdots + a_{j+1} \quad (-1 \leq j < n), \\
+             & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots,  \\
+             & b_{0} = a_n a^{n-1} + a_{n-1} a^{n-2} + \cdots + a_1,                                 \\
+             & b_{-1} = a_n a^n + a_{n-1} a^{n-1} + \cdots + a_1 a + a_0.
+        \end{aligned}
+    \end{align*}
+\end{remark}
+
+\begin{example}
+    还是取 $f(x) = x^6 + x^3 + 1$. 我们计算 $x - 2$ 除 $f(x)$. 这里, $a = 2$.
+
+    如果利用公式 (R), 则
+    \begin{align*}
+         & b_5 = a_6 = 1,            \\
+         & b_4 = ab_5 + a_5 = 2,     \\
+         & b_3 = ab_4 + a_4 = 4,     \\
+         & b_2 = ab_3 + a_3 = 9,     \\
+         & b_1 = ab_2 + a_2 = 18,    \\
+         & b_0 = ab_1 + a_1 = 36,    \\
+         & b_{-1} = ab_0 + a_0 = 73.
+    \end{align*}
+    故
+    \begin{align*}
+        f(x)
+        = {} & (x - a)(b_5 x^5 + b_4 x^4 + b_3 x^3 + b_2 x^2 + b_1 x + b_0) + b_{-1} \\
+        = {} & (x^5 + 2x^4 + 4x^3 + 9x^2 + 18x + 36) (x-2) + 73.
+    \end{align*}
+
+    可是, 如果用公式 (E), 则
+    \begin{align*}
+         & b_5 = a_6 = 1,                                                        \\
+         & b_4 = a_6 a + a_5 = a = 2,                                            \\
+         & b_3 = a_6 a^2 + a_5 a + a_4 = a^2 = 4,                                \\
+         & b_2 = a_6 a^3 + a_5 a^2 + a_4 a + a_3 = a^3 + 1 = 9,                  \\
+         & b_1 = a_6 a^4 + a_5 a^3 + a_4 a^2 + a_3 a + a_2 = a^4 + a = 18,       \\
+         & b_0 = a_6 a^5 + a_5 a^4 + a_4 a^3 + a_3 a^2 + a_2 a = a^5 + a^2 = 36, \\
+         & \begin{aligned}
+            b_{-1}
+            = {} & a_6 a^6 + a_5 a^5 + a_4 a^4 + a_3 a^3 + a_2 a^2 + a_1 a + a_0 \\
+            = {} & a^6 + a^3 + 1                                                 \\
+            = {} & 73.
+        \end{aligned}
+    \end{align*}
+    结果当然是一样的. 不过, 读者是否感觉, 公式 (E) 不如公式 (R) 简单? 公式 (R) 里, 后一个数 ($b_{j-1}$) 都是 $f(x)$ 的某个系数 ($a_j$) 加前一个数 ($b_j$) 乘 $a$; 公式 (E) 里, 越到后面, 表达式越长. 作者挑选的 $f(x)$ 的 $1$, $2$, $4$, $5$ 次系数都是 $0$, 所以还不是那么可怕. 但如果作者挑选的多项式的系数全都不是 $0$ 呢?
+
+    这就是作者推荐公式 (R) 的理由.
+\end{example}
+
+\myLine
+
+下面我们来看看综合除法的应用.
+
+读者可能已经注意到了, $b_{-1} = f(a)$. 这是正确的: 因为商与余式是唯一的. 所以, 如果不关心 $b_{-1}$ 之前的数 $b_{n-1}$, $b_{n-2}$, $\cdots$, $b_1$, $b_0$ 的意义, 我们可得到计算多项式在点 $a$ 的值的 Horner 算法\myFN{在西方, 一般用不列颠数学家 William George Horner 的名字命名此算法; 在中国, 一般用中国数学家秦九韶的名字命名此算法. 换句话说, 在大多数汉语文献里, 此算法叫秦九韶算法.} \term{Horner's algorithm}:
+\begin{proposition}
+    设 $a$ 是数. 设 $n$ 是正整数. 设
+    \begin{align*}
+        f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0.
+    \end{align*}
+    按如下规则作 $n$ 个数 $b_{n-1}$, $b_{n-2}$, $\cdots$, $b_0$, $b_{-1}$:
+    \begin{align*}
+         & b_{n-1} = a_n,                                     \\
+         & b_{j-1} = ab_j + a_j \quad (j = n-1,n-2,\cdots,0).
+    \end{align*}
+    则 $b_{-1} = f(a)$.
+\end{proposition}
+
+\begin{example}
+    设
+    \begin{align*}
+        f(x) = 8 x^8 - 12 x^7 - 2 x^6 + 43 x^5 - 78 x^4 + 77 x^3 - 46 x^2 + 15 x - 2.
+    \end{align*}
+    设 $a = 3$. 求 $f(a)$.
+
+    读者可以试试直接将 $x$ 替换为 $a$. 不难看出, 计算 $a_j a^j$ 需 $j + 1$ 次乘法 ($j \geq 1$), 故直接将 $x$ 替换为 $a$, 需 $9 + 8 + 7 + \cdots + 2 + 0 = 35$ 次乘法. 最后, 把 $9$ 个数相加, 需 $8$ 次加法. 挑战有点大; 请有兴趣的读者这么算一算.
+
+    再试试上个命题所说的方法:
+    \begin{align*}
+         & b_7 = a_8 = 8,                 \\
+         & b_6 = ab_7 + a_7 = 12,         \\
+         & b_5 = ab_6 + a_6 = 34,         \\
+         & b_4 = ab_5 + a_5 = 145,        \\
+         & b_3 = ab_4 + a_4 = 357,        \\
+         & b_2 = ab_3 + a_3 = 1\,148,     \\
+         & b_1 = ab_2 + a_2 = 3\,398,     \\
+         & b_0 = ab_1 + a_1 = 10\,209,    \\
+         & b_{-1} = ab_0 + a_0 = 30\,625.
+    \end{align*}
+    由此可见, 每步
+    \begin{align*}
+        b_{j-1} = ab_j + a_j \quad (j = 7, 6, \cdots, 0)
+    \end{align*}
+    需 $1$ 次乘法与 $1$ 次加法. $j$ 从 $7$ 降到 $0$, 故有 $8$ 步. 所以, 用此方法, 需 $8$ 次乘法与 $8$ 次加法.
+
+    现在, 读者应该能体会到此法的威力了.
+\end{example}
+
+\myLine
+
+我们还可利用综合除法得到一个很有用的乘法公式.
+
+设 $n$ 是正整数. 设
+\begin{align*}
+    f(x) = x^n = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0.
+\end{align*}
+则
+\begin{align*}
+    a_n = 1, \quad a_{n-1} = a_{n-2} = \cdots = a_1 = a_0 = 0.
+\end{align*}
+设 $a$ 是某个非零的数. 设
+\begin{align*}
+    f(x) = (x - a) (b_{n-1} x^{n-1} + b_{n-2} x^{n-2} + \cdots + b_0) + b_{-1}.
+\end{align*}
+根据综合除法, 知
+\begin{align*}
+     & b_{n-1} = a_n,                                                      \\
+     & b_{j-1} = ab_j + a_j \quad (j = n-1,n-2,\cdots,0). \tag*{(\myStar)}
+\end{align*}
+由于 $0 \leq j < n$ 时 $a_j = 0$, 故 (\myStar) 变为
+\begin{align*}
+    b_{j-1} = ab_j.
+\end{align*}
+二侧同乘 $a^{j-1}$, 得
+\begin{align*}
+    a^j b_j = a^{j-1} b_{j-1}, \quad 0 \leq j < n.
+\end{align*}
+由此可知
+\begin{align*}
+    a^{-1} b_{-1} = \cdots = a^{j-1} b_{j-1} = a^j b_j = a^{j+1} b_{j+1} = \cdots = a^{n-1} b_{n-1} = a^{n-1}.
+\end{align*}
+所以
+\begin{align*}
+    a^j b_j = a^{n-1}, \quad -1 \leq j < n.
+\end{align*}
+所以
+\begin{align*}
+    b_j = a^{n-1-j}, \quad -1 \leq j < n.
+\end{align*}
+所以
+\begin{align*}
+    x^n = (x - a)(x^{n-1} + ax^{n-2} + \cdots + a^{n-2}x + a^{n-1}) + a^n.
+\end{align*}
+此式也可写为
+\begin{align*}
+    x^n - a^n = (x - a)(x^{n-1} + ax^{n-2} + \cdots + a^{n-2}x + a^{n-1}).
+\end{align*}
+我们得到了重要的乘法公式:
+\begin{proposition}
+    设 $n$ 是正整数. 设 $a$ 是数, 且 $a \neq 0$. 则
+    \begin{align*}
+        x^n - a^n = (x - a)(x^{n-1} + ax^{n-2} + \cdots + a^{n-2}x + a^{n-1}).
+    \end{align*}
+\end{proposition}
+
+值得一提的是, 这个公式可推广为
+\begin{proposition}
+    设 $f$, $g$ 是多项式. 设 $n$ 是正整数. 则
+    \begin{align*}
+        f^n - g^n = (f - g)(f^{n-1} + f^{n-2} g + \cdots + f^{n-i} g^{i-1} + \cdots + g^{n-1}).
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    记
+    \begin{align*}
+        P = f^{n-1} + f^{n-2} g + \cdots + f^{n-i} g^{i-1} + \cdots + g^{n-1}.
+    \end{align*}
+    则
+    \begin{align*}
+         & fP = f^n + f^{n-1} g + f^{n-2} g^2 + \cdots + fg^{n-1},                    \\
+         & gP = \hphantom{f^n + {}} f^{n-1}g + f^{n-2} g^2 + \cdots + fg^{n-1} + g^n.
+    \end{align*}
+    从而
+    \begin{align*}
+         & (f - g)P = fP - gP = f^n - g^n. \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{example}
+    设 $n = 2$. 则
+    \begin{align*}
+        f^2 - g^2 = (f - g)(f + g).
+    \end{align*}
+    这就是平方差公式. 类似地, 取 $n = 3$. 则
+    \begin{align*}
+        f^3 - g^3 = (f - g)(f^2 + fg + g^2).
+    \end{align*}
+    这就是立方差公式. 若把 $g$ 换为 $-g$, 则
+    \begin{align*}
+         & f^3 - (-g)^3 = f^3 + g^3,                                   \\
+         & (f - (-g))(f^2 + f(-g) + (-g)^2) = (f + g)(f^2 - fg + g^2).
+    \end{align*}
+    由此可得立方和公式:
+    \begin{align*}
+        f^3 + g^3 = (f + g)(f^2 - fg + g^2).
+    \end{align*}
+\end{example}
+
+最后, 我们以一个稍复杂的 (但有用的) 例结束本文.
+
+\begin{example}
+    设 $f$, $g$, $h$ 都是多项式. 则
+    \begin{align*}
+             & f^3 + g^3 + h^3 - 3fgh                                        \\
+        = {} & (f + g)(f^2 - fg + g^2) + h^3 - 3fgh                          \\
+        = {} & (f + g)(f^2 + 2fg + g^2 - 3fg) + h^3 - 3fgh                   \\
+        = {} & (f + g)(f^2 + 2fg + g^2) - (f + g)(3fg) + h^3 - 3fgh          \\
+        = {} & (f + g)^3 + h^3 - (3fg(f + g) + 3fgh)                         \\
+        = {} & (f + g + h)((f + g)^2 - (f + g)h + h^2) - (f + g + h)(3fg)    \\
+        = {} & (f + g + h)(f^2 + 2fg + g^2 - fh - gh + h^2 - 3fg)            \\
+        = {} & (f + g + h)\underbrace{(f^2 + g^2 + h^2 - fg - fh - gh)}_{P}.
+    \end{align*}
+    由此, 我们得到了新的公式:
+    \begin{align*}
+        f^3 + g^3 + h^3 - 3fgh = (f + g + h)(f^2 + g^2 + h^2 - fg - fh - gh).
+    \end{align*}
+
+    若假定 $f$, $g$, $h$ 都是复系数多项式, 我们还可以对 $P$ 下手:
+    \begin{align*}
+             & f^2 + g^2 + h^2 - fg - fh - gh                                                                                                                                                                                \\
+        = {} & f^2 - 2f \cdot \frac{g+h}{2} + (g^2 - gh + h^2)                                                                                                                                                               \\
+        = {} & f^2 - 2f \cdot \frac{g+h}{2} + \frac{(g+h)^2}{4} + (g^2 - gh + h^2) - \left( \frac{g^2}{4} + \frac{2gh}{4} + \frac{h^2}{4} \right)                                                                            \\
+        = {} & \left( f - \frac{g}{2} - \frac{h}{2} \right)^2 + \frac{3}{4} (g^2 - 2gh + h^2)                                                                                                                                \\
+        = {} & \left( f - \frac{g}{2} - \frac{h}{2} \right)^2 - \left( \frac{\ii \sqrt{3}}{2} (g - h) \right)^2                                                                                                              \\
+        = {} & \left( f - \frac{g}{2} - \frac{h}{2} + \ii \sqrt{3}\, \frac{g}{2} - \ii \sqrt{3}\, \frac{h}{2} \right) \left( f - \frac{g}{2} - \frac{h}{2} - \ii \sqrt{3}\, \frac{g}{2} + \ii \sqrt{3}\, \frac{h}{2} \right) \\
+        = {} & \left( f + \frac{-1 + \ii \sqrt{3}}{2} g + \frac{-1 - \ii \sqrt{3}}{2} h \right) \left( f + \frac{-1 - \ii \sqrt{3}}{2} g + \frac{-1 + \ii \sqrt{3}}{2} h \right).
+    \end{align*}
+    记
+    \begin{align*}
+        \omega = \frac{-1 + \ii \sqrt{3}}{2}.
+    \end{align*}
+    则
+    \begin{align*}
+        \omega^2 = \frac{(-1)^2 + 2(-1) \ii \sqrt{3} + 3\ii^2}{4} = \frac{-1 - \ii \sqrt{3}}{2}.
+    \end{align*}
+    故
+    \begin{align*}
+             & f^2 + g^2 + h^2 - fg - fh - gh                                                                                                                                    \\
+        = {} & \left( f + \frac{-1 + \ii \sqrt{3}}{2} g + \frac{-1 - \ii \sqrt{3}}{2} h \right) \left( f + \frac{-1 - \ii \sqrt{3}}{2} g + \frac{-1 + \ii \sqrt{3}}{2} h \right) \\
+        = {} & (f + \omega g + \omega^2 h) (f + \omega^2 g + \omega h).
+    \end{align*}
+    所以
+    \begin{align*}
+        f^3 + g^3 + h^3 - 3fgh = (f + g + h) (f + \omega g + \omega^2 h) (f + \omega^2 g + \omega h).
+    \end{align*}
 \end{example}

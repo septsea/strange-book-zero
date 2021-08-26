@@ -2,4 +2,121 @@
 \addcontentsline{toc}{subsection}{\MultipleFactors}
 \markright{\MultipleFactors}
 
-To be continued.
+本文将为读者介绍多项式的重因子.
+
+在正式进入本文的讨论前, 作者带领读者回忆一下微商.
+
+设
+\begin{align*}
+    f = a_0 + a_1 x + a_2 x^2 + \cdots + a_i x^i + \cdots + a_n x^n
+\end{align*}
+是多项式. $f$ 的微商也是多项式:
+\begin{align*}
+    Df = 0 + a_1 + 2a_2 x + \cdots + i a_i x^{i-1} + \cdots + n a_n x^{n-1}.
+\end{align*}
+由此可知: 若 $f$ 是数, 则 $Df$ 是 $0$; 若 $f$ 的次 $n \geq 1$, 则 $Df$ 的次为 $n - 1$.
+
+设 $a$, $b$ 是数; 设 $f$, $g$ 是多项式; 设 $m$ 是正整数. 微商有如下运算规则:
+\begin{align*}
+     & D(af + bg) = aDf + bDg,          \\
+     & D(fg) = Df \cdot g + f \cdot Dg, \\
+     & D(f^m) = mf^{m-1} Df.
+\end{align*}
+
+\begin{example}
+    设 $f = x^8 + x^4 + 1$, $g = 3x^2 - 9x + 1$. 不难算出
+    \begin{align*}
+        Df = 8x^7 + 4x^3, \quad Dg = 6x - 9.
+    \end{align*}
+
+    (i) $f$ 与 $g$ 的和:
+    \begin{align*}
+        f + g = x^8 + x^4 + 3x^2 - 9x,
+    \end{align*}
+    故
+    \begin{align*}
+        D(f + g) = 8x^7 + 4x^3 + 6x - 9.
+    \end{align*}
+    这恰好与 $Df + Dg$ 相等.
+
+    (ii) $f$ 与 $g$ 的积:
+    \begin{align*}
+        fg
+        = {} & x^8 g + x^4 g + g                                            \\
+        = {} & (3x^10 - 9x^9 + x^8) + (3x^6 - 9x^5 + x^4) + (3x^2 - 9x + 1) \\
+        = {} & 3x^10 - 9x^9 + x^8 + 3x^6 - 9x^5 + x^4 + 3x^2 - 9x + 1.
+    \end{align*}
+    故
+    \begin{align*}
+        D(fg) = 30x^9 - 81x^8 + 8x^7 + 18x^5 - 45x^4 + 4x^3 + 6x - 9.
+    \end{align*}
+    而
+    \begin{align*}
+         & \begin{aligned}
+            Df \cdot g
+            = {} & (8x^7 + 4x^3) (3x^2 - 9x + 1)            \\
+            = {} & 24 x^9-72 x^8+8 x^7+12 x^5-36 x^4+4 x^3, \\
+        \end{aligned}  \\
+         & \begin{aligned}
+            f \cdot Dg
+            = {} & (x^8 + x^4 + 1) (6x - 9)       \\
+            = {} & 6 x^9-9 x^8+6 x^5-9 x^4+6 x-9,
+        \end{aligned}
+    \end{align*}
+    故
+    \begin{align*}
+        Df \cdot g + f \cdot Dg = 30 x^9-81 x^8+8 x^7+18 x^5-45 x^4+4 x^3+6 x-9.
+    \end{align*}
+    这与 $D(fg)$ 一致.
+
+    (iii) 不难算出
+    \begin{align*}
+         & (x^2 + x + 1)^2 = x^4+2 x^3+3 x^2+2 x+1,             \\
+         & (x^2 + x + 1)^3 = x^6+3 x^5+6 x^4+7 x^3+6 x^2+3 x+1,
+    \end{align*}
+    故
+    \begin{align*}
+         & f^2 = (x^8 + x^4 + 1)^2 = x^{16}+2 x^{12}+3 x^8+2 x^4+1,                   \\
+         & f^3 = (x^8 + x^4 + 1)^3 = x^{24}+3 x^{20}+6 x^{16}+7 x^{12}+6 x^8+3 x^4+1.
+    \end{align*}
+    所以
+    \begin{align*}
+        D(f^3) = 24 x^{23}+60 x^{19}+96 x^{15}+84 x^{11}+48 x^7+12 x^3.
+    \end{align*}
+    因为
+    \begin{align*}
+        3f^2 Df
+        = {} & 3(x^8 + x^4 + 1)^2 (8x^7 + 4x^3)                       \\
+        = {} & 12 x^3 (2x^4 + 1) (x^{16}+2 x^{12}+3 x^8+2 x^4+1)      \\
+        = {} & 12 x^3 (2 x^{20}+5 x^{16}+8 x^{12}+7 x^8+4 x^4+1)      \\
+        = {} & 24 x^{23}+60 x^{19}+96 x^{15}+84 x^{11}+48 x^7+12 x^3,
+    \end{align*}
+    故
+    \begin{align*}
+        D(f^3) = 3f^2 Df.
+    \end{align*}
+\end{example}
+
+温习微商后, 我们进入本文的正题.
+
+\begin{definition}
+    设 $p$ 是不可约的多项式. 设 $m$ 是非负整数. 设 $f$ 是多项式. 若 $p^m$ 是 $f$ 的因子, 但 $p^{m+1}$ 不是 $f$ 的因子, 则 $p$ 是 $f$ 的 $m$ 重因子. 若 $m = 0$, $p$ 当然不是 $f$ 的因子; 若 $m = 1$, 则 $p$ 是 $f$ 的单因子 \term{simple factor}; 若 $m \geq 2$, 则 $p$ 是 $f$ 的重因子 \term{multiple factor}.
+\end{definition}
+
+\begin{proposition}
+    设 $p$ 是不可约的多项式. 设 $m$ 是非负整数. 设 $f$ 是多项式. $p$ 是 $f$ 的 $m$ 重因子的一个必要与充分条件是: 存在多项式 $g$ 使 $f = p^m g$, 且 $p$ 不是 $g$ 的因子.
+\end{proposition}
+
+\begin{pf}
+    先看必要性. 设 $p$ 是 $f$ 的 $m$ 重因子. 所以, $p^m$ 是 $f$ 的因子, 也就是说, 存在多项式 $h$ 使 $f = p^m h$. 我们的目标是: 证明 $p$ 不是 $h$ 的因子. 用反证法. 若存在多项式 $\ell$ 使 $h = p\ell$, 则 $f = p^{m+1} \ell$. 所以, $p^{m+1}$ 是 $f$ 的因子. 不过, 既然 $p$ 是 $f$ 的 $m$ 重因子, $p^{m+1}$ 不是 $f$ 的因子. 矛盾!
+
+    再看充分性. 设多项式 $g$ 使 $f = p^m g$, 且 $p$ 不是 $g$ 的因子. 所以, $p^m$ 是 $f$ 的因子. 我们的目标是: 证明 $p^{m+1}$ 不是 $f$ 的因子. 还是用反证法. 若多项式 $k$ 使 $f = p^{m+1} k$, 则 $p^{m+1} k = p^m g$. 因为 $p \neq 0$, 故 $p^m \neq 0$, 从而可从等式二边消去 $p^m$. 即 $pk = g$. 所以, $p$ 是 $g$ 的因子. 矛盾!
+\end{pf}
+
+\begin{example}
+    设 $f = (x + 1) (x^2 - 3)^2 (x^2 + 4)^3$.
+
+    若视 $f$ 为有理系数多项式, 则 $x+1$, $x^2 - 3$, $x^2 + 4$ 都是不可约的\myFN{$x+1$ 的次为 $1$, 故它是不可约的. 若有理系数多项式 $x^2 + b$ 是可约的, 则存在有理数 $s$, $t$ 使 $x^2 + b = (x - s)(x - t)$. 比较系数, 有 $s+t=0$, $st = b$. 所以 $s^2 = t^2 = -b$. 当 $b = -3$ 时, $s^2 = t^2 = 3$. 不过, 有理数的平方一定不是 $3$, 故 $x^2 - 3$ 是不可约的. 同理, $b = 4$ 时, $s^2 = t^2 = -4$. 有理数的平方一定是非负的, 故 $x^2 + 4$ 也是不可约的. 顺便一提, 因为实数的平方也是非负的, 故就算视 $x^2 + 4$ 为实系数多项式, 它也不是可约的.}. 由此易知: $x+1$ 是 $f$ 的 $1$ 重因子 (亦即单因子); $x^2 - 3$ 是 $f$ 的 $2$ 重因子; $x^2 + 4$ 是 $f$ 的 $3$ 重因子; $x^2 - 3$ 与 $x^2 + 4$ 都是 $f$ 的重因子; 不跟 $x+1$, $x^2 - 3$ 或 $x^2 + 4$ 相伴的不可约的多项式都是 $f$ 的 $0$ 重因子.
+
+    To be continued.
+\end{example}
