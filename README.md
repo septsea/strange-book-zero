@@ -4,7 +4,7 @@ Written in `LaTeX`, this is a strange book discussing basic stuffs of polynomial
 
 Direct Links for the PDF File:
 
-- [https://gitee.com/septsea/strange-book-zero/raw/main/main.pdf](https://gitee.com/septsea/strange-book-zero/raw/main/main.pdf)
+- [https://cdn.jsdelivr.net/gh/septsea/strange-book-zero/main.pdf](https://cdn.jsdelivr.net/gh/septsea/strange-book-zero/main.pdf)
 - [https://github.com/septsea/strange-book-zero/raw/main/main.pdf](https://github.com/septsea/strange-book-zero/raw/main/main.pdf)
 
 ---
