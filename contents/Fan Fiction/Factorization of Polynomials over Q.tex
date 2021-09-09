@@ -86,9 +86,169 @@ To be completed.
     也是 $f$ 的因子分解. 此时, 我们视 $(x-1)^3$ (或 $(5x-20)^2$) 为 $3$ 个 $x-1$ 的积 (或 $2$ 个 $5x-20$ 的积), 而不是一个不可约的多项式!
 \end{remark}
 
-事实上, 我们已经在 ``\RationalRootsOfPolynomialsOverQ '' ``\FactorsOfHigherDegreeOfPolynomialsOverQ '' 里讨论过因子分解的方法了——我们讨论了如何寻找有理系数多项式的不可约的因子. 仔细的读者可能注意到, 我们一直在说 ``试写某多项式为 (若干个) 不可约的多项式的积'', 而不是直接说 ``因子分解某多项式''——这是因为我们还未明确 ``因子分解'' 的确切含义.
+事实上, 我们已经在 ``\RationalRootsOfPolynomialsOverQ '' ``\FactorsOfHigherDegreeOfPolynomialsOverQ '' 里讨论过因子分解的方法了——我们讨论了如何寻找有理系数多项式的不可约的因子. 仔细的读者可能注意到, 我们一直在说 ``试写某多项式为 (若干个) 不可约的多项式的积'', 而不是直接说 ``因子分解某多项式''——这是因为我们还未明确 ``因子分解'' 的确切含义. 毕竟, 在中学, ``因式分解'' 只要求将多项式写为几个多项式的积, 并没有明确地要求这几个多项式适合哪些条件 (顶多说 ``不可再分解'').
 
-一个好想法是从重因子入手. 设 $f(x) \neq 0$. 读者可能还能记起, 若 $M(x)$ 是 $f(x)$ 与 $Df(x)$ 的最大公因子, 则 $f(x)$ 有重因子的一个必要与充分条件是 $M(x)$ 不是单位. 进一步, 若 $h(x)$ 适合 $f(x) = h(x)M(x)$, 则 $h(x)$ 与 $f(x)$ 有相同的不可约的因子, 但 $h(x)$ 无重因子. 这有什么好处呢? 当时作者在 ``\MultipleFactors '' 里没说此性质的好处. 现在, 请读者看下面的例.
+作者将在本文介绍更多的因子分解多项式的方法.
+
+事实上, 有二个基本的方法, 我们一直在用——不过, 我们没有正式地提到它们.
+
+一个方法是提取公因子. 设 $f$, $g_1$, $g_2$, $\cdots$, $g_n$. 因为多项式适合乘法分配律, 故
+\begin{align*}
+    f \cdot (g_1 + g_2 + \cdots + g_n) = fg_1 + fg_2 + \cdots + fg_n.
+\end{align*}
+将此等式的左、右二侧互换, 有
+\begin{align*}
+    fg_1 + fg_2 + \cdots + fg_n = f(g_1 + g_2 + \cdots + g_n).
+\end{align*}
+
+\begin{example}
+    设 $f(x) = x^4 - 2x^2$. 不难看出
+    \begin{align*}
+        f(x)
+        = {} & x^2 \cdot x^2 - x^2 \cdot 2 \\
+        = {} & x^2 (x^2 - 2).
+    \end{align*}
+    我们说, 视 $x^2$ 为 $2$ 个 $x$ 的积 $x \cdot x$ 的简写. 根据 Eisenstein 判别法, $x^2 - 2$ 是不可约的. 所以 $x^2 (x^2 - 2)$ 是 $f(x)$ 的因子分解. 当然, 若读者喜欢使 $0$ 次系数非负, $-x^2 (2 - x^2)$ 也是可以的.
+\end{example}
+
+另一个方法是套用公式. 我们在中学, 学过 ``平方差公式'' ``完全平方公式'':
+\begin{align*}
+     & f^2 - g^2 = (f + g) (f - g),      \\
+     & f^2 \pm 2 fg + g^2 = (f \pm g)^2,
+\end{align*}
+其中 $f$, $g$ 是任意的多项式. 在 ``\GeneralizedBinomialCoefficients '', 我们接触了二项展开:
+\begin{align*}
+    (f + g)^n = f^n + \binom{n}{1} f^{n-1} g + \cdots + \binom{n}{i} f^{n-i} g^i + \cdots + g^n.
+\end{align*}
+``完全平方公式'' 就是取二项展开的 $n$ 为 $2$ 所得的式. 在 ``\SyntheticDivision '', 我们还接触了
+\begin{align*}
+    f^n - g^n = (f - g)(f^{n-1} + f^{n-2} g + \cdots + f^{n-i} g^{i-1} + \cdots + g^{n-1}).
+\end{align*}
+``平方差公式'' 就是取上式的 $n$ 为 $2$ 所得的式.
+
+\begin{example}
+    设 $f(x) = 4x^2 - 4x + 1$. 则
+    \begin{align*}
+        f(x)
+        = {} & (2x)^2 + 2 (2x) (-1) + (-1)^2 \\
+        = {} & (2x + (-1))^2                 \\
+        = {} & (2x - 1)^2.
+    \end{align*}
+    我们当然也可以用找有理根的方法因子分解 $f(x)$.
+\end{example}
+
+\begin{example}
+    设 $f(x) = 18 - 2x^2$. 则
+    \begin{align*}
+        f(x)
+        = {} & 2 \cdot 9 + 2 \cdot (-x^2) \\
+        = {} & 2(9 + (-x^2))              \\
+        = {} & 2(3^2 - x^2)               \\
+        = {} & 2(3 + x)(3 - x).
+    \end{align*}
+    我们当然也可以用找有理根的方法因子分解 $f(x)$. 喜欢使非单位的因子的首项系数为正数的读者也可写
+    \begin{align*}
+        f(x) = (-2) (x + 3) (x - 3).
+    \end{align*}
+
+    注意到, 我们不但套用了公式, 还提取了公因子.
+\end{example}
+
+\begin{example}
+    设 $f(x) = x^4 + x^2 + 1$. 则
+    \begin{align*}
+        f(x)
+        = {} & x^4 + 2x^2 + 1 - x^2               \\
+        = {} & (x^2)^2 + 2x^2 \cdot 1 + 1^2 - x^2 \\
+        = {} & (x^2 + 1)^2 - x^2                  \\
+        = {} & (x^2 + 1 + x) (x^2 + 1 - x).
+    \end{align*}
+    不难判断, $x^2 \pm x + 1$ 是不可约的.
+
+    注意到, 我们同时套用了二个乘法公式.
+\end{example}
+
+\begin{example}
+    设 $f(x) = x^4 - 16$. 则
+    \begin{align*}
+        f(x)
+        = {} & (x^2)^2 - (4)^2            \\
+        = {} & (x^2 + 4) (x^2 - 4)        \\
+        = {} & (x^2 + 4) (x^2 - 2^2)      \\
+        = {} & (x^2 + 4) (x + 2) (x - 2).
+    \end{align*}
+    不难判断, $x^2 + 4$ 是不可约的. 当然, 我们也可以这样:
+    \begin{align*}
+        f(x)
+        = {} & x^4 - 2^4                                       \\
+        = {} & (x - 2) (x^3 + x^2 \cdot 2 + x \cdot 2^2 + 2^3) \\
+        = {} & (x - 2) (x^3 + 2x^2 + 4x + 8)                   \\
+        = {} & (x - 2) (x^2 (x + 2) + 4 (x + 2))               \\
+        = {} & (x - 2) (x^2 + 4) (x + 2).
+    \end{align*}
+\end{example}
+
+\begin{example}
+    设 $f(x) = ax^2 + bx + c$, 且 $a \neq 0$. 我们可以配方:
+    \begin{align*}
+        f(x)
+        = {} & a \left( x^2 + \frac{b}{a} x \right) + c                                          \\
+        = {} & a \left( x^2 + 2x \frac{b}{2a} \right) + c                                        \\
+        = {} & a \left( x^2 + 2x \frac{b}{2a} + \frac{b^2}{4a^2} \right) - \frac{ab^2}{4a^2} + c \\
+        = {} & a \left( x + \frac{b}{2a} \right)^2 - a \frac{b^2 - 4ac}{4a^2}                    \\
+        = {} & a \left( \left( x + \frac{b}{2a} \right)^2 - \frac{b^2 - 4ac}{4a^2} \right).
+    \end{align*}
+    若 $b^2 - 4ac$ 是有理数 $r$ 的平方, 则
+    \begin{align*}
+        f(x)
+        = {} & a \left( \left( x + \frac{b}{2a} \right)^2 - \frac{r^2}{4a^2} \right)              \\
+        = {} & a \left( \left( x + \frac{b}{2a} \right)^2 - \left( \frac{r}{2a} \right)^2 \right) \\
+        = {} & a \left( x + \frac{b + r}{2a} \right) \left( x + \frac{b - r}{2a} \right)          \\
+        = {} & a \left( x - \frac{-b - r}{2a} \right) \left( x - \frac{-b + r}{2a} \right).
+    \end{align*}
+    由此可见, $f(x)$ 的二个根是
+    \begin{align*}
+        \frac{-b \pm r}{2a} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+    \end{align*}
+
+    这是 $2$ 次式的一种通用的因子分解法. 当然, 读者可能也还记得, 在 ``\FactorsOfHigherDegreeOfPolynomialsOverQ '' 里, 我们有
+    \begin{align*}
+        ax^2 + bx + c = \frac{1}{4a} ((2ax + b)^2 + (4ac - b^2)).
+    \end{align*}
+    感兴趣的读者可自行比较此式与
+    \begin{align*}
+        ax^2 + bx + c = a \left( \left( x + \frac{b}{2a} \right)^2 - \frac{b^2 - 4ac}{4a^2} \right).
+    \end{align*}
+\end{example}
+
+\begin{example}
+    设 $f(x) = 4x^2 - 4x - 3$. 则
+    \begin{align*}
+        f(x)
+        = {} & (2x)^2 + 2 (2x) (-1) - 3                   \\
+        = {} & (2x)^2 + 2 (2x) (-1) + (-1)^2 - (-1)^2 - 3 \\
+        = {} & (2x)^2 + 2 (2x) (-1) + (-1)^2 - 2^2        \\
+        = {} & (2x + (-1))^2 - 2^2                        \\
+        = {} & (2x + (-1) + 2) (2x + (-1) - 2)            \\
+        = {} & (2x + 1) (2x - 3).
+    \end{align*}
+
+    ``具体的式, 具体地分析.'' 显然, 我们没有必要再将 $4x^2$ 的 $4$ 写出来了——毕竟, $4 \left(x^2 - x - \frac{3}{4} \right)$ 涉及稍繁的不是整数的有理数的运算.
+\end{example}
+
+还有一个公式值得一提:
+\begin{align*}
+    f^3 + g^3 + h^3 - 3fgh = (f + g + h)(f^2 + g^2 + h^2 - fg - fh - gh),
+\end{align*}
+其中, $f$, $g$, $h$ 都是多项式. 感兴趣的读者可自行再\myFN{见 ``\SyntheticDivision ''.}推出此式.
+
+读者可以看到, 提取公因子法与套用公式法可简化因子分解. 读者应灵活地运用算学知识因子分解多项式. 我们在因子分解 $x^{15} - 1$ 时就用到了乘法公式. 当然, $x^{n+1} + x^n - 2$ 也是.
+
+接下来, 作者将为读者展现一个可选的方法. 为什么说 ``可选'' 呢? 因为运算不少. 请读者休息片刻.
+
+\myLine
+
+设 $f(x) \neq 0$. 读者可能还能记起, 若 $M(x)$ 是 $f(x)$ 与 $Df(x)$ 的最大公因子, 则 $f(x)$ 有重因子的一个必要与充分条件是 $M(x)$ 不是单位. 进一步, 若 $h(x)$ 适合 $f(x) = h(x)M(x)$, 则 $h(x)$ 与 $f(x)$ 有相同的不可约的因子, 但 $h(x)$ 无重因子. 这有什么好处呢? 当时作者在 ``\MultipleFactors '' 里没说此性质的好处. 现在, 请读者看下面的例.
 
 \begin{example}
     设 $f(x) = x^6-2 x^5-8 x^4+14 x^3+11 x^2-28 x+12$. 我们先试着找 $1$ 次因子 (也就是有理根). 首先, $x$ 不是 $f(x)$ 的因子. 因为 $f(x)$ 的首项系数是单位, 故 $f(x)$ 的有理根一定是整数 $v$, 且 $v$ 还是 $0$ 次系数 $12$ 的因子. 所以, $v$ 可能是
@@ -199,6 +359,22 @@ To be completed.
     \end{align*}
 \end{example}
 
+\begin{example}
+    再看 $f(x) = x^{15} - 1$. 还是老样子, 先看看 $f(x)$ 是否有重因子. 事实上, 对任意正整数 $n$, $x^n - 1$ 都不会有重因子:
+    \begin{align*}
+        (-1) (x^n - 1) + \frac{x}{n} (nx^{n-1}) = 1.
+    \end{align*}
+    也就是说, $x^n - 1$ 与其微商 $nx^{n-1}$ 是互素的.
+
+    此事实有什么用呢? 读者可能还记得: 当时, 在 ``\FactorsOfHigherDegreeOfPolynomialsOverQ'' 里, 我们因子分解 $f(x)$ 时, 用了二遍乘法公式, 得
+    \begin{align*}
+        f(x)
+        = {} & (x-1) (x^2+x+1) (x^4+x^3+x^2+x+1)                           \\
+             & \qquad \cdot \underbrace{(x^8-x^7+x^5-x^4+x^3-x+1)}_{r(x)}.
+    \end{align*}
+    在 $r(x)$ 前的三个多项式都是不可约的; 我们还得继续因子分解 $r(x)$, 是不? 我们先从 $1$ 次因子开始寻找, 是吧? 我们知道, 若 $r(x)$ 有有理根, 则 $r(x)$ 的有理根只能是 $\pm 1$. 我们当初作了二遍综合除法, 对不? 现在, 我们换一个视角判断. 因为 $f(x)$ 无重因子, 故 $1$ 不可能是 $r(x)$ 的有理根; 至于 $-1$, 可以用 $f(x)$ 判断: $f(-1) = -2$, 故 $-1$ 也不是 $r(x)$ 的有理根. 至于 $r(1)$ 与 $r(-1)$, 直接将 $r(x)$ 的 $x$ 换为 $\pm 1$ 即可——我们都知道, $1$ 的整数次幂是 $1$, $-1$ 的奇数次幂是 $-1$, 且 $-1$ 的偶数次幂是 $1$——也就是说, 不需要综合除法, 也能算出 $r(1)$ 与 $r(-1)$.
+\end{example}
+
 综上, 欲因子分解 $f(x)$, 可以这样:
 
 (i) 求 $Df(x)$.
@@ -213,10 +389,6 @@ To be completed.
 
 (vi) 合并 $h(x)$ 与 $M(x)$ 的因子分解, 即得 $f(x)$ 的因子分解.
 
-不过, 读者可能会想: 我们该如何因子分解 $h(x)$ 呢? 如果 $h(x)$ 有有理根, 那还不是很大的问题; 如果 $h(x)$ 无有理根, 我们又不会了! 就算重因子可帮助我们找高次因子, 但它找出的高次因子不一定是不可约的. 我们还得研究 $h(x)$, 从而得出 $M(x)$ 的因子分解. 下面, 作者将讨论此问题.
+对于特殊的 $f(x)$, 其微商可能很简单 (如 $x^n - 1$), 故我们很快就能判断出 $f(x)$ 是否有重因子; 对于稍一般的 $f(x)$, 计算 $f(x)$ 与 $Df(x)$ 的一个最大公因子将是一件麻烦的事——所以, 这是可选的. 当然, 对于计算机而言, 找最大公因子不是难题——不过, 这就不是我们所讨论的话题了.
 
-读者辛苦了! 请读者休息一会儿, 并复习 ``\Interpolation '' 的知识.
-
-\myLine
-
-前面, 我们了解了如何用重因子试探多项式的因子. 如果 $f(x)$ 没有重因子, 怎么办? 所以, 我们需要别的方法.
+感谢读者能读到这里!
