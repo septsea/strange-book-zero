@@ -145,7 +145,7 @@
     "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
     "latex-workshop.view.pdf.invertMode.enabled": "auto",
     "latex-workshop.view.pdf.invert": 0.9,
-    "latex-workshop.view.pdf.trim": 3,
+    // "latex-workshop.view.pdf.trim": 3,
     "latex-workshop.view.pdf.viewer": "external",
     "latex-workshop.view.pdf.external.viewer.args": [
         "%PDF%"
