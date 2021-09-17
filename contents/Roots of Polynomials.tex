@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{\RootsOfPolynomials}
 \markright{\RootsOfPolynomials}
 
-我们回顾一下熟悉的多项式函数.
+我们回顾一下熟悉的整式函数.
 
 \begin{definition}
     设 $a_0, a_1, \cdots, a_n \in D$. 称
@@ -10,15 +10,15 @@
          & D \to D, \tag*{$f \colon$}               \\
          & t \mapsto a_0 + a_1 t + \cdots + a_n t^n
     \end{align*}
-    为 $D$ 的多项式函数 \term{polynomial function}. 我们也说, 这个 $f$ 是由 $D$ 上 $x$ 的多项式
+    为 $D$ 的整式函数 \term{polynomial function}. 我们也说, 这个 $f$ 是由 $D$ 上 $x$ 的整式
     \begin{align*}
         f(x) = a_0 + a_1 x + \cdots + a_n x^n
     \end{align*}
-    诱导的多项式函数 \term{the polynomial function induced by $f$}. 不难看出, 若二个多项式相等, 则其诱导的多项式函数也相等.
+    诱导的整式函数 \term{the polynomial function induced by $f$}. 不难看出, 若二个整式相等, 则其诱导的整式函数也相等.
 \end{definition}
 
 \begin{definition}
-    设 $f$ 与 $g$ 是 $D$ 的二个多项式函数. 二者的和 $f+g$ 定义为
+    设 $f$ 与 $g$ 是 $D$ 的二个整式函数. 二者的和 $f+g$ 定义为
     \begin{align*}
          & D \to D, \tag*{$f+g \colon$} \\
          & t \mapsto f(t) + g(t).
@@ -30,7 +30,7 @@
     \end{align*}
 \end{definition}
 
-设 $f$, $g$ 是 $D$ 的二个多项式函数:
+设 $f$, $g$ 是 $D$ 的二个整式函数:
 \begin{align*}
      & D \to D, \tag*{$f \colon$}                \\
      & t \mapsto a_0 + a_1 t + \cdots + a_n t^n, \\
@@ -51,9 +51,9 @@
 由此可得下面的命题:
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in D[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的多项式函数. 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的多项式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的多项式函数.
+    设 $f(x)$, $g(x) \in D[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数. 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的整式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的整式函数.
 
-    通俗地说, 若多项式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立.
+    通俗地说, 若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立.
 \end{proposition}
 
 \begin{example}
@@ -71,19 +71,19 @@
 \end{example}
 
 \begin{remark}
-    我们已经知道, 多项式确定多项式函数. 自然地, 有这样的问题: 多项式函数能否确定多项式? 一般情况下, 这个问题的答案是 no.
+    我们已经知道, 整式确定整式函数. 自然地, 有这样的问题: 整式函数能否确定整式? 一般情况下, 这个问题的答案是 no.
 
-    考虑 $4$ 元集 $V$. 作 $V$ 上 $x$ 的二个多项式:
+    考虑 $4$ 元集 $V$. 作 $V$ 上 $x$ 的二个整式:
     \begin{align*}
         f(x) = x^4 - x, \quad g(x) = 0.
     \end{align*}
-    显然, 这是二个不相等的多项式. 但是, 任取 $t \in V$, 都有
+    显然, 这是二个不相等的整式. 但是, 任取 $t \in V$, 都有
     \begin{align*}
         t^4 - t = 0.
     \end{align*}
-    因此, $f(x)$ 与 $g(x)$ 诱导的多项式函数是同一函数!
+    因此, $f(x)$ 与 $g(x)$ 诱导的整式函数是同一函数!
 
-    不过, 在某些场合下, 多项式函数可以确定多项式. 之后我们还会提到这一点.
+    不过, 在某些场合下, 整式函数可以确定整式. 之后我们还会提到这一点.
 \end{remark}
 
 \begin{remark}
@@ -91,9 +91,9 @@
     \begin{align*}
         f(t) = a_0 + a_1 t + \cdots + a_n t^n.
     \end{align*}
-    并称 $f(t)$ 是多项式 $f(x)$ 在点 \term{point} $t$ 的值. 至少, 一方通行 \term{one-way traffic} 是没问题的.
+    并称 $f(t)$ 是整式 $f(x)$ 在点 \term{point} $t$ 的值. 至少, 一方通行 \term{one-way traffic} 是没问题的.
 
-    顺便一提, $f(x)$ 的微商也是多项式:
+    顺便一提, $f(x)$ 的微商也是整式:
     \begin{align*}
         f^{\prime} (x) = a_1 + 2a_2 x + \cdots + na_n x^{n-1}.
     \end{align*}
@@ -104,10 +104,10 @@
     简单地写为 $f^{\prime} (t)$.
 \end{remark}
 
-了解了多项式与多项式函数的关系后, 下面的这个命题就不会太凸兀了.
+了解了整式与整式函数的关系后, 下面的这个命题就不会太凸兀了.
 
 \begin{proposition}
-    设 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a \in D$. 则存在 $n-1$ 次多项式 $q(x)$ ($\in D[x]$) 使
+    设 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \geq 1$), $a \in D$. 则存在 $n-1$ 次整式 $q(x)$ ($\in D[x]$) 使
     \begin{align*}
         f(x) = q(x) (x-a) + f(a).
     \end{align*}
@@ -142,23 +142,23 @@
     \begin{align*}
         f(b) - f(a) = (b-a)r.
     \end{align*}
-    所以, 若 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$. 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$).
+    所以, 若 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$. 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$).
 
-    举个简单的例. 我们说, 不存在系数为整数的多项式 $f(x)$ 使 $f(1) = f(-1) + 1$. 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
+    举个简单的例. 我们说, 不存在系数为整数的整式 $f(x)$ 使 $f(1) = f(-1) + 1$. 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
     \begin{align*}
         1 = f(1) - f(-1) = (1 - (-1))r = 2r,
     \end{align*}
     而 $1$ 不是偶数, 矛盾.
 \end{remark}
 
-现在, 我们讨论多项式的根的基本性质.
+现在, 我们讨论整式的根的基本性质.
 
 \begin{definition}
-    设 $f(x)$ 是 $D$ 上 $x$ 的多项式. 若有 $a \in D$ 使 $f(a) = 0$, 则说 $a$ 是 (多项式) $f(x)$ 的根 \term{root}.
+    设 $f(x)$ 是 $D$ 上 $x$ 的整式. 若有 $a \in D$ 使 $f(a) = 0$, 则说 $a$ 是 (整式) $f(x)$ 的根 \term{root}.
 \end{definition}
 
 \begin{example}
-    设 $D \subset \CC$, 且 $\ZZ \subset D$. 看 $D$ 上 $x$ 的多项式
+    设 $D \subset \CC$, 且 $\ZZ \subset D$. 看 $D$ 上 $x$ 的整式
     \begin{align*}
         f(x) = (2x-1)(x+1)(x^2 - 3)(x^2 + 1)(x^2 + 4).
     \end{align*}
@@ -166,7 +166,7 @@
 \end{example}
 
 \begin{example}
-    再来一个例. 看 $D$ 上 $x$ 的多项式
+    再来一个例. 看 $D$ 上 $x$ 的整式
     \begin{align*}
         f(x) = x^2 + x - 1.
     \end{align*}
@@ -176,15 +176,15 @@
 \begin{remark}
     设 $a,b \in D$, 且 $a \neq 0$.
 
-    若 $f(x) = a$, 则 $f(x)$ 无根. 换句话说, 零次多项式至多有零个根.
+    若 $f(x) = a$, 则 $f(x)$ 无根. 换句话说, 零次整式至多有零个根.
 
-    再设 $f(x) = ax + b$ 是 $1$ 次多项式. 若存在 $c \in D$ 使 $b = ac$, 则 $f(x)$ 有一个根 $-c$. 并且, $f(x)$ 也不会有另一个根 (若 $at_1 + b = at_2 + b$, 则 $at_1 = at_2$, 故 $t_1 = t_2$). 若这样的 $c$ 不存在, 则 $f(x)$ 无根 (反设 $f(x)$ 有根 $d$, 则由 $ad + b = 0$ 知 $b = a(-d)$, 矛盾). 换句话说, $1$ 次多项式至多有一个根.
+    再设 $f(x) = ax + b$ 是 $1$ 次整式. 若存在 $c \in D$ 使 $b = ac$, 则 $f(x)$ 有一个根 $-c$. 并且, $f(x)$ 也不会有另一个根 (若 $at_1 + b = at_2 + b$, 则 $at_1 = at_2$, 故 $t_1 = t_2$). 若这样的 $c$ 不存在, 则 $f(x)$ 无根 (反设 $f(x)$ 有根 $d$, 则由 $ad + b = 0$ 知 $b = a(-d)$, 矛盾). 换句话说, $1$ 次整式至多有一个根.
 
-    结合上面的二个例, 我们猜想: $n$ 次多项式 ($n \in \NN$) 至多有 $n$ 个 (不同的) 根. 幸运的事儿是, 这个猜想是正确的.
+    结合上面的二个例, 我们猜想: $n$ 次整式 ($n \in \NN$) 至多有 $n$ 个 (不同的) 根. 幸运的事儿是, 这个猜想是正确的.
 \end{remark}
 
 \begin{proposition}
-    设 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \geq 1$). $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次多项式 $q(x)$ ($\in D[x]$) 使
+    设 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \geq 1$). $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次整式 $q(x)$ ($\in D[x]$) 使
     \begin{align*}
         f(x) = q(x) (x-a).
     \end{align*}
@@ -196,18 +196,18 @@
     \begin{align*}
         f(a) = q(a) (a-a) = 0.
     \end{align*}
-    再看必要性. 设 $f(a)=0$. 根据上面的命题, 存在 $n-1$ 次多项式 $q(x) \in D[x]$ 使
+    再看必要性. 设 $f(a)=0$. 根据上面的命题, 存在 $n-1$ 次整式 $q(x) \in D[x]$ 使
     \begin{align*}
          & f(x) = q(a) (x-a) + f(a) = q(a) (x-a). \qedhere
     \end{align*}
 \end{pf}
 
 \begin{proposition}
-    设 $f(x) \in D[x]$ 是 $n$ 次多项式 ($n \in \NN$). 则 $f(x)$ 至多有 $n$ 个不同的根.
+    设 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \in \NN$). 则 $f(x)$ 至多有 $n$ 个不同的根.
 \end{proposition}
 
 \begin{pf}
-    $n = 0$ 或 $n = 1$ 时, 我们已经知道这是对的. 用算学归纳法. 假设 $\ell$ 次多项式至多有 $\ell$ 个不同的根. 看 $\ell + 1$ 次多项式 $f(x)$. 如果它没有根, 当然至多有 $\ell + 1$ 个不同的根. 如果它有一个根 $a$, 则存在 $\ell$ 次多项式 $q(x)$ 使
+    $n = 0$ 或 $n = 1$ 时, 我们已经知道这是对的. 用算学归纳法. 假设 $\ell$ 次整式至多有 $\ell$ 个不同的根. 看 $\ell + 1$ 次整式 $f(x)$. 如果它没有根, 当然至多有 $\ell + 1$ 个不同的根. 如果它有一个根 $a$, 则存在 $\ell$ 次整式 $q(x)$ 使
     \begin{align*}
         f(x) = q(x) (x-a).
     \end{align*}
@@ -225,15 +225,15 @@
     \begin{align*}
         f(t_0) = f(t_1) = \cdots = f(t_n) = 0,
     \end{align*}
-    则 $f(x)$ 必为零多项式. 通俗地说, 次不高于 $n$ (且系数为整环的元) 的多项式不可能有 $n$ 个以上的互不相同的根, 除非这个多项式是零.
+    则 $f(x)$ 必为零整式. 通俗地说, 次不高于 $n$ (且系数为整环的元) 的整式不可能有 $n$ 个以上的互不相同的根, 除非这个整式是零.
 \end{proposition}
 
 \begin{pf}
-    反证法. 设 $f(x)$ 不是零多项式. 设 $f(x)$ 的次为 $m$, 则 $0 \leq m \leq n$. 根据上个命题, $f(x)$ 至多有 $m$ 个不同的根, 这与题设矛盾! 故 $f(x) = 0$.
+    反证法. 设 $f(x)$ 不是零整式. 设 $f(x)$ 的次为 $m$, 则 $0 \leq m \leq n$. 根据上个命题, $f(x)$ 至多有 $m$ 个不同的根, 这与题设矛盾! 故 $f(x) = 0$.
 \end{pf}
 
 \begin{remark}
-    再看前面提到的 $4$ 元集 $V$. 可以看出, 因为 $V$ 的元 ``不够多'', 所以出现了取零值的非零多项式.
+    再看前面提到的 $4$ 元集 $V$. 可以看出, 因为 $V$ 的元 ``不够多'', 所以出现了取零值的非零整式.
 \end{remark}
 
 此事实的一个推论是:
@@ -248,11 +248,11 @@
     \begin{align*}
         f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
     \end{align*}
-    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为整环的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等.
+    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为整环的元) 的二个整式若在多于 $n$ 处取一样的值, 则这二个整式相等.
 \end{proposition}
 
 \begin{pf}
-    考虑 $h(x) = f(x) - g(x)$. 则 $\deg h(x) \leq n$. $h(x)$ 有 $n+1$ 个不同的根. 根据上个命题, $h(x)$ 是零多项式. 这样, $f(x) = g(x)$.
+    考虑 $h(x) = f(x) - g(x)$. 则 $\deg h(x) \leq n$. $h(x)$ 有 $n+1$ 个不同的根. 根据上个命题, $h(x)$ 是零整式. 这样, $f(x) = g(x)$.
 \end{pf}
 
 在中学, 我们学过解 $1$ 元 $2$ 次方程 $at^2 + bt + c = 0$ ($a$, $b$, $c$ 为实数, 且 $a \neq 0$) 的一种方法: 直接套用公式
@@ -276,7 +276,7 @@ $$
 根据根的定义, $-\frac{b}{2a} \in \RR$ 是 $f(x)$ 的根. 我们发现, 这个根 ``出现了'' $2$ 次, 是重复的. 我们给这样的根一个特殊点的称呼.
 
 \begin{definition}
-    设 $a \in D$ 是多项式 $f(x) \in D[x]$ 的根. 那么, 存在唯一的多项式 $q(x) \in D[x]$ 使
+    设 $a \in D$ 是整式 $f(x) \in D[x]$ 的根. 那么, 存在唯一的整式 $q(x) \in D[x]$ 使
     \begin{align*}
         f(x) = (x - a) q(x).
     \end{align*}
@@ -284,7 +284,7 @@ $$
 \end{definition}
 
 \begin{example}
-    看 $\ZZ$ 上 $x$ 的多项式
+    看 $\ZZ$ 上 $x$ 的整式
     \begin{align*}
         f(x) = (x^2 - 3)(x^2 + 2)(x - 1)^2 (x + 2).
     \end{align*}
@@ -300,7 +300,7 @@ $$
 \end{example}
 
 \begin{proposition}
-    设 $a \in D$ 是多项式 $f(x) \in D[x]$ 的根. 则:
+    设 $a \in D$ 是整式 $f(x) \in D[x]$ 的根. 则:
 
     (i) 若 $a$ 是 $f(x)$ 的重根, 则 $a$ 是 $f^{\prime} (x)$ 的根;
 

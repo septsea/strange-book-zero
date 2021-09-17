@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{\Derivatives}
 \markright{\Derivatives}
 
-本节讨论多项式的微商.
+本节讨论整式的微商.
 
 在本节, 我们会将一些容易证明的命题留给读者练习. 读者可乘此机会让自己熟悉证明命题的过程与算学归纳法.
 
@@ -11,7 +11,7 @@
     \begin{align*}
         f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \in D[x].
     \end{align*}
-    $f(x)$ 的微商 \term{derivative} 是多项式
+    $f(x)$ 的微商 \term{derivative} 是整式
     \begin{align*}
         f^{\prime}(x) = 0 + 1a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1} \in D[x].
     \end{align*}
@@ -95,7 +95,7 @@
 \end{definition}
 
 \begin{remark}
-    可以看到, $f(x)$ 与 $g(x)$ 的复合仍为多项式. 设
+    可以看到, $f(x)$ 与 $g(x)$ 的复合仍为整式. 设
     \begin{align*}
         h(x) = d_0 + d_1 x + \cdots + d_s x^s \in D[x].
     \end{align*}
@@ -115,7 +115,7 @@
         = {} & d_0 + d_1 (g \circ f) (x) + \cdots + d_s ((g \circ f) (x))^s   \\
         = {} & (h \circ (g \circ f)) (x).
     \end{align*}
-    换句话说, 多项式的复合适合结合律.
+    换句话说, 整式的复合适合结合律.
 \end{remark}
 
 \begin{example}
@@ -128,7 +128,7 @@
          & (g \circ f) (x) = g(f(x)) = b_0 + b_1 (x-c) + \cdots + b_n (x-c)^n, \\
          & (f \circ g) (x) = f(g(x)) = -c + b_0 + b_1 x + \cdots + b_n x^n.
     \end{align*}
-    这表明: 多项式的复合一般不交换.
+    这表明: 整式的复合一般不交换.
 \end{example}
 
 下面的命题相当显然了.
@@ -171,7 +171,7 @@
     \begin{align*}
         p(h(x)) = c_0 + c_1 h(x) + \cdots + c_n (h(x))^n.
     \end{align*}
-    根据多项式的运算律, 有
+    根据整式的运算律, 有
     \begin{align*}
              & f(h(x)) + g(h(x))                                                                   \\
         = {} & (a_0 + a_1 h(x) + \cdots + a_n (h(x))^n) + (b_0 + b_1 h(x) + \cdots + b_n (h(x))^n) \\
@@ -192,7 +192,7 @@
     \begin{align*}
         q(h(x)) = d_0 + d_1 h(x) + \cdots + d_{2n} (h(x))^{2n}.
     \end{align*}
-    根据多项式的运算律, 有
+    根据整式的运算律, 有
     \begin{align*}
              & f(h(x)) g(h(x))                                                                               \\
         = {} & (a_0 + a_1 h(x) + \cdots + a_n (h(x))^n) (b_0 + b_1 h(x) + \cdots + b_n (h(x))^n)             \\
@@ -215,7 +215,7 @@
         f^{\prime} (x) = 3x^2, \quad g^{\prime} (x) = 2x + 1.
     \end{align*}
 
-    (i) $4g(x)$ 也是多项式, 当然可以有微商. 因为
+    (i) $4g(x)$ 也是整式, 当然可以有微商. 因为
     \begin{align*}
         4g(x) = 4x^2 + 4x - 4,
     \end{align*}
@@ -228,7 +228,7 @@
         4g^{\prime} (x) = 4(2x + 1) = 8x + 4.
     \end{align*}
 
-    (ii) $f(x) + g(x)$ 也是多项式. 因为
+    (ii) $f(x) + g(x)$ 也是整式. 因为
     \begin{align*}
         f(x) + g(x) = x^3 + 2 + x^2 + x - 1 = x^3 + x^2 + x + 1,
     \end{align*}
@@ -266,7 +266,7 @@
     \end{align*}
     是 $D[x]$ 中二个元.
 
-    (i) $cf(x)$ 就是多项式
+    (i) $cf(x)$ 就是整式
     \begin{align*}
         ca_0 + ca_1 x + ca_2 x^2 + \cdots + ca_{n-1} x^{n-1} + ca_n x^n,
     \end{align*}
@@ -280,7 +280,7 @@
         = {} & cf^{\prime} (x).
     \end{align*}
 
-    (ii) $f(x) \pm g(x)$ 就是多项式
+    (ii) $f(x) \pm g(x)$ 就是整式
     \begin{align*}
          & (a_0 \pm b_0) + (a_1 \pm b_1) x + (a_2 \pm b_2) x^2 + \cdots       \\
          & \qquad \qquad + (a_{n-1} \pm b_{n-1}) x^{n-1} + (a_n \pm b_n) x^n,
@@ -414,7 +414,7 @@
     \end{align*}
 \end{example}
 
-也许这不太能体现 (\myStar) 的作用: 算二个多项式积的微商时, 先拆再算好像没什么不方便的. 的确如此. 可是 (\myStar) 的推论
+也许这不太能体现 (\myStar) 的作用: 算二个整式积的微商时, 先拆再算好像没什么不方便的. 的确如此. 可是 (\myStar) 的推论
 \begin{align*}
     ((f(x))^k)^{\prime} = k(f(x))^{k-1} f^{\prime}(x)
 \end{align*}

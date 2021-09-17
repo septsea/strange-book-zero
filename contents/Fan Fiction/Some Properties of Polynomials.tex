@@ -2,21 +2,23 @@
 \addcontentsline{toc}{subsection}{\SomePropertiesOfPolynomials}
 \markright{\SomePropertiesOfPolynomials}
 
-本文的目标是补充一点多项式的性质; 我们后面会用到这些东西.
+本文的目标是补充一点整式的性质; 我们后面会用到这些东西.
 
 为尽可能多地照顾读者, 本文被加了一点细节.
 
-$\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全体系数为 $\FF$ 的元的多项式作成的集. 在本文 ``\SomePropertiesOfPolynomials '' 里, 我们约定: ``多项式'' 都是 $\FF[x]$ 的元, 而 ``数'' 都是 $\FF$ 的元 (当然也是多项式). ``整数'' 还是读者熟悉的整数; 当然, 这也是多项式.
+$\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全体系数为 $\FF$ 的元的整式作成的集. 在本文 ``\SomePropertiesOfPolynomials '' 里, 我们约定: ``整式'' 都是 $\FF[x]$ 的元, 而 ``数'' 都是 $\FF$ 的元 (当然也是整式). ``整数'' 还是读者熟悉的整数; 当然, 这也是整式.
 
-读者可能还记得, 我们写多项式时, 一般都会带 ``$(x)$'' 记号:
+整式与整数类似. 不过, 整式与整数也有一些不同. 整数一定是整式, 但整式不一定是整数. 而且, 整式的系数的范围变大或变小时, 有些结论在变化; 当然, 也有一些结论是不变的. 本文讨论的内容会稍多一些.
+
+读者可能还记得, 我们写整式时, 一般都会带 ``$(x)$'' 记号:
 \begin{align*}
     f(x) = a_0 + a_1 x + \cdots + a_n x^n.
 \end{align*}
-这个记号的优点有: (i) 清楚地表示出多项式的不定元为 $x$; (ii) 若 $t$ 是数, 可用 $f(t)$ 表示数
+这个记号的优点有: (i) 清楚地表示出整式的不定元为 $x$; (ii) 若 $t$ 是数, 可用 $f(t)$ 表示数
 \begin{align*}
     a_0 + a_1 t + \cdots + a_n t^n;
 \end{align*}
-(iii) 若 $g(x)$ 是多项式, 可用 $f(g(x))$ 表示多项式
+(iii) 若 $g(x)$ 是整式, 可用 $f(g(x))$ 表示整式
 \begin{align*}
     a_0 + a_1 g(x) + \cdots + a_n (g(x))^n.
 \end{align*}
@@ -28,30 +30,30 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 为方便, 我们定义一些词.
 
 \begin{definition}
-    设 $f$ 是多项式. 若 $f$ 的系数都是复数, 则 $f$ 是复系数多项式 \term{polynomial with complex coefficients}; 若 $f$ 的系数都是实数, 则 $f$ 是实系数多项式 \term{polynomial with real coefficients}; 若 $f$ 的系数都是有理数, 则 $f$ 是有理系数多项式 \term{polynomial with rational coefficients}; 若 $f$ 的系数都是整数, 则 $f$ 是整系数多项式 \term{polynomial with integral coefficients}.
+    设 $f$ 是整式. 若 $f$ 的系数都是复数, 则 $f$ 是复系数整式 \term{polynomial with complex coefficients}; 若 $f$ 的系数都是实数, 则 $f$ 是实系数整式 \term{polynomial with real coefficients}; 若 $f$ 的系数都是有理数, 则 $f$ 是有理系数整式 \term{polynomial with rational coefficients}; 若 $f$ 的系数都是整数, 则 $f$ 是整系数整式 \term{polynomial with integral coefficients}.
 \end{definition}
 
 \begin{remark}
-    我们提醒读者: 因为实数是复数, 故实系数多项式当然是复系数多项式; 因为有理数是实数, 故有理系数多项式当然是实系数多项式; 因为整数是有理数, 故整系数多项式当然是有理系数多项式.
+    我们提醒读者: 因为实数是复数, 故实系数整式当然是复系数整式; 因为有理数是实数, 故有理系数整式当然是实系数整式; 因为整数是有理数, 故整系数整式当然是有理系数整式.
 
-    以 $x^2 + 3$ 为例. 当我们讨论复系数多项式 $x^2 + 3$ 时, 我们允许不是实数的复数出现, 所以 ``$x^2 + 3$ 可写为二个 $1$ 次多项式的积'' 是对的\myFN{因为 $x^2 + 3 = x^2 - (\sqrt{3} \ii)^2 = (x + \sqrt{3} \ii) (x - \sqrt{3} \ii)$.} 但是, 当我们讨论有理系数多项式 $x^2 + 3$ 时, 我们不允许不是有理数的复数出现, 所以 ``$x^2 + 3$ 可写为二个 $1$ 次多项式的积'' 是错的.
+    以 $x^2 + 3$ 为例. 当我们讨论复系数整式 $x^2 + 3$ 时, 我们允许不是实数的复数出现, 所以 ``$x^2 + 3$ 可写为二个 $1$ 次整式的积'' 是对的\myFN{因为 $x^2 + 3 = x^2 - (\sqrt{3} \ii)^2 = (x + \sqrt{3} \ii) (x - \sqrt{3} \ii)$.}. 但是, 当我们讨论有理系数整式 $x^2 + 3$ 时, 我们不允许不是有理数的复数出现, 所以 ``$x^2 + 3$ 可写为二个 $1$ 次整式的积'' 是错的.
 
-    所以, 明确多项式的系数范围是有必要的. 不过, 正如前面所说, 我们讨论系数为 $\FF$ 的多项式, 而 $\FF$ 可以是 $\QQ$, 可以是 $\RR$, 也可以是 $\CC$. 所以, 读者不必 (在本文) 过于关注这件小事. 不同的系数的范围引起的差别主要体现在可约的与不可约的多项式上.
+    所以, 明确整式的系数范围是有必要的. 不过, 正如前面所说, 我们讨论系数为 $\FF$ 的整式, 而 $\FF$ 可以是 $\QQ$, 可以是 $\RR$, 也可以是 $\CC$. 所以, 读者不必 (在本文) 过于关注这件小事. 不同的系数的范围引起的差别主要体现在可约的与不可约的整式上.
 \end{remark}
 
 在正式进入讨论前, 作者希望读者能回想起二件事:
 
-(i) 多项式 $f$ 的次用 $\deg f$ 表示. 零多项式的次是 $-\infty$. 若多项式 $g$, $h$ 适合 $f = gh$, 则
+(i) 整式 $f$ 的次用 $\deg f$ 表示. 零整式的次是 $-\infty$. 若整式 $g$, $h$ 适合 $f = gh$, 则
 \begin{align*}
     \deg f = \deg g + \deg h.
 \end{align*}
 
-(ii) 多项式的乘法适合消去律. 设 $f$, $g$, $h$ 是多项式. 若 $f \neq 0$, 且 $fg = fh$, 则 $g = h$.
+(ii) 整式的乘法适合消去律. 设 $f$, $g$, $h$ 是整式. 若 $f \neq 0$, 且 $fg = fh$, 则 $g = h$.
 
-我们先从多项式的单位开始.
+我们先从整式的单位开始.
 
 \begin{definition}
-    设 $f$ 是多项式. 若存在多项式 $g$ 使 $fg = 1$, 则说 $f$ 是单位 \term{unit}. $g$ 称为 $f$ 的逆 \term{inverse}.
+    设 $f$ 是整式. 若存在整式 $g$ 使 $fg = 1$, 则说 $f$ 是单位 \term{unit}. $g$ 称为 $f$ 的逆 \term{inverse}.
 \end{definition}
 
 \begin{proposition}
@@ -67,15 +69,15 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{proposition}
 
 \begin{pf}
-    $0$ 与任何多项式的积都是 $0$, 不等于 $1$.
+    $0$ 与任何整式的积都是 $0$, 不等于 $1$.
 \end{pf}
 
 \begin{proposition}
-    设 $f$ 是单位. 若多项式 $g$, $h$ 适合 $fg = fh = 1$, 则 $g = h$.
+    设 $f$ 是单位. 若整式 $g$, $h$ 适合 $fg = fh = 1$, 则 $g = h$.
 \end{proposition}
 
 \begin{pf}
-    因为多项式的乘法是交换的、结合的, 故
+    因为整式的乘法是交换的、结合的, 故
     \begin{align*}
          & g = g1 = g(fh) = (gf)h = (fg)h = 1h = h. \qedhere
     \end{align*}
@@ -90,7 +92,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{proposition}
 
 \begin{pf}
-    因为 $f$ 是单位, 故存在多项式 $f^{-1}$ 使 $ff^{-1} = 1$. 因为乘法可交换, 故 $f^{-1} f = 1$. 所以对多项式 $f^{-1}$ 而言, 存在多项式 $f$ 使 $f^{-1} f = 1$. 由单位的定义, $f^{-1}$ 是单位. 因为单位的逆唯一, 故 $f$ 是 $f^{-1}$ 的逆.
+    因为 $f$ 是单位, 故存在整式 $f^{-1}$ 使 $ff^{-1} = 1$. 因为乘法可交换, 故 $f^{-1} f = 1$. 所以对整式 $f^{-1}$ 而言, 存在整式 $f$ 使 $f^{-1} f = 1$. 由单位的定义, $f^{-1}$ 是单位. 因为单位的逆唯一, 故 $f$ 是 $f^{-1}$ 的逆.
 \end{pf}
 
 \begin{proposition}
@@ -118,27 +120,27 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{pf}
 
 \begin{definition}
-    多项式的全体单位称为多项式的单位群.
+    整式的全体单位称为整式的单位群.
 \end{definition}
 
 \begin{proposition}
-    多项式的单位群恰由全体非零数作成.
+    整式的单位群恰由全体非零数作成.
 \end{proposition}
 
 \begin{pf}
     每个非零数 $c$ 都有倒数 $\frac{1}{c}$. $\frac{1}{c}$ 也是非零数, 故由 $c \cdot \frac{1}{c} = 1$ 可知 $c$ 是单位.
 
-    设 $f$ 是单位. 所以, 存在多项式 $g$ 使 $fg = 1$. 我们证明: $\deg f = 0$.
+    设 $f$ 是单位. 所以, 存在整式 $g$ 使 $fg = 1$. 我们证明: $\deg f = 0$.
 
-    这很容易. 因为 $fg = 1$, 故 $\deg f + \deg g = \deg 1 = 0$. 显然 $\deg f$ 与 $\deg g$ 都是非负整数. 这样, $\deg f = 0$. 零次多项式就是非零数.
+    这很容易. 因为 $fg = 1$, 故 $\deg f + \deg g = \deg 1 = 0$. 显然 $\deg f$ 与 $\deg g$ 都是非负整数. 这样, $\deg f = 0$. 零次整式就是非零数.
 
-    综上, 多项式的单位群恰由全体非零数作成.
+    综上, 整式的单位群恰由全体非零数作成.
 \end{pf}
 
-读者可能还记得, 多项式也有带余除法:
+读者可能还记得, 整式也有带余除法:
 
 \begin{proposition}
-    设 $f$ 是非零多项式. 对任意多项式 $g$, 存在唯一的一对多项式 $q, r$ 使
+    设 $f$ 是非零整式. 对任意整式 $g$, 存在唯一的一对整式 $q$, $r$ 使
     \begin{align*}
         g = q f + r, \quad \deg r < \deg f.
     \end{align*}
@@ -155,17 +157,56 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \myLine
 
 \begin{definition}
-    设 $f$, $g$ 是多项式. 若存在多项式 $h$ 使 $f=gh$, 则说 $g$ 是 $f$ 的因子 \term{factor}.
+    设 $f$, $g$ 是整式. 若存在整式 $h$ 使 $f=gh$, 则说 $g$ 是 $f$ 的因子 \term{factor}.
 \end{definition}
 
 \begin{example}
-    (i) 单位是任意多项式的因子; 单位的因子一定是单位.
+    (i) 单位是任意整式的因子; 单位的因子一定是单位.
 
-    (ii) 任意多项式都是 $0$ 的因子; 非零多项式的因子一定不是 $0$.
+    (ii) 任意整式都是 $0$ 的因子; 非零整式的因子一定不是 $0$.
 \end{example}
 
+设 $f$, $g$ 是整式, 且 $g \neq 0$. 根据带余除法, 存在整式 $h$, $r$ 使
+\begin{align*}
+    f = gh + r, \quad \deg r < \deg g.
+\end{align*}
+若 $r = 0$, 则 $f = gh$, 故 $g$ 是 $f$ 的因子. 反过来, 若 $g$ 是 $f$ 的因子, 则存在整式 $h^{\prime}$ 使
+\begin{align*}
+    f = gh^{\prime} = gh^{\prime} + 0.
+\end{align*}
+根据带余除法的唯一性, $g$ 除 $f$ 的余式一定是 $0$. 所以, 我们有
 \begin{proposition}
-    设 $f$, $g$, $h$ 是多项式. 因子适合如下性质:
+    设 $f$, $g$ 是整式, 且 $g \neq 0$. $g$ 是 $f$ 的因子的一个必要与充分条件是: $g$ 除 $f$ 的余式为 $0$.
+\end{proposition}
+这就是带余除法与因子的关系.
+
+因为整式的带余除法不因系数的范围变大而改变, 根据带余除法与因子的关系, 我们有
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    (i) 若存在 $K$ 上的整式 $h$, 使 $f = gh$, 则当然存在 $E$ 上的整式 $h^{\prime}$, 使 $f = gh^{\prime}$ (不难看出, 取 $h^{\prime}$ 为 $h$ 即可).
+
+    (ii) 若任取 $K$ 上的整式 $h$, 都有 $f \neq gh$, 则任取 $E$ 上的整式 $h^{\prime}$, 都有 $f \neq gh^{\prime}$.
+
+    简单地说, 问题 ``$g$ 是否是 $f$ 的因子'' 的回答不因系数的范围扩大而改变.
+\end{proposition}
+
+\begin{pf}
+    (i) 显然.
+
+    (ii) 若 $g = 0$, 我们说 $f \neq 0$. 用反证法. 若 $f = 0$, 则存在整式 $h = 0$ 使 $f = gh$, 矛盾! 任取 $E$ 上的整式 $h^{\prime}$, 则 $gh^{\prime} = 0 \neq f$.
+
+    若 $g \neq 0$, 我们用 $g$ 除 $f$. 因为 $f$, $g$ 是 $K$ 上的整式, 故存在 $K$ 上的整式 $q$, $r$ 使
+    \begin{align*}
+        f = gh + r, \quad \deg r < \deg g.
+    \end{align*}
+    因为整式的带余除法不因系数的范围变大而改变, 故这也是 $E$ 上的整式 $f$, $g$ 的带余除法. 也就是说, 在 $E$ 上的整式中, $g$ 除 $f$ 的余式仍不是 $0$. 所以, 不存在 $E$ 上的整式 $h^{\prime}$, 使 $f = gh^{\prime}$ (若这样的 $h^{\prime}$ 存在, 就跟 ``$g$ 除 $f$ 的余式仍不是 $0$'' 矛盾).
+\end{pf}
+
+下面是因子的基本的性质.
+
+\begin{proposition}
+    设 $f$, $g$, $h$ 是整式. 因子适合如下性质:
 
     (i) $f$ 是 $f$ 的因子;
 
@@ -173,7 +214,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
     (iii) 若 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则存在单位 $q$ 使 $f = qg$;
 
-    (iv) 设 $k$, $\ell$ 是多项式. 若 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 则 $h$ 是 $kf \pm \ell g$ 的因子;
+    (iv) 设 $k$, $\ell$ 是整式. 若 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 则 $h$ 是 $kf \pm \ell g$ 的因子;
 
     (v) 若 $\varepsilon_1$, $\varepsilon_2$ 是单位, 且 $g$ 是 $f$ 的因子, 则 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子.
 \end{proposition}
@@ -181,15 +222,15 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \begin{pf}
     (i) 注意到 $f = 1f$, 其中 $1$ 是单位.
 
-    (ii) 因为 $h$ 是 $g$ 的因子, 故存在多项式 $p$ 使 $g = ph$. 因为 $g$ 是 $f$ 的因子, 故存在多项式 $q$ 使 $f = qg$. 所以
+    (ii) 因为 $h$ 是 $g$ 的因子, 故存在整式 $p$ 使 $g = ph$. 因为 $g$ 是 $f$ 的因子, 故存在整式 $q$ 使 $f = qg$. 所以
     \begin{align*}
         f = qg = q(ph) = (qp)h.
     \end{align*}
-    因为 $qp$ 也是多项式, 故 $h$ 是 $f$ 的因子.
+    因为 $qp$ 也是整式, 故 $h$ 是 $f$ 的因子.
 
     (iii) 若 $f = 0$, 则 $g = 0$, 当然有 $f = 1 g = 0$, 其中 $1$ 是单位. 下设 $f \neq 0$.
 
-    因为 $f$ 是 $g$ 的因子, 故存在多项式 $p$ 使 $g = pf$; 因为 $g$ 是 $f$ 的因子, 故存在多项式 $q$ 使 $f = qg$. 所以
+    因为 $f$ 是 $g$ 的因子, 故存在整式 $p$ 使 $g = pf$; 因为 $g$ 是 $f$ 的因子, 故存在整式 $q$ 使 $f = qg$. 所以
     \begin{align*}
         f = qg = q(pf) = (qp)f.
     \end{align*}
@@ -199,22 +240,22 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \end{align*}
     由此可知 $q$ 是单位.
 
-    (iv) 因为 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 故存在多项式 $p$, $q$ 使 $f = ph$ 且 $g = qh$. 所以
+    (iv) 因为 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 故存在整式 $p$, $q$ 使 $f = ph$ 且 $g = qh$. 所以
     \begin{align*}
         kf \pm \ell g = k(ph) \pm \ell (qh) = (kp) h \pm (\ell q) h = (kp \pm \ell q) h.
     \end{align*}
 
-    (v) 若存在多项式 $q$ 使 $f = gq$, 则
+    (v) 若存在整式 $q$ 使 $f = gq$, 则
     \begin{align*}
         \varepsilon_1 f = g(\varepsilon_1 q) = g(\varepsilon_2 \varepsilon_2^{-1}) (\varepsilon_1 q) = (g\varepsilon_2) (\varepsilon_2^{-1} \varepsilon_1 q).
     \end{align*}
-    因为单位的逆是多项式, 且 (有限多个) 多项式的积是多项式, 故 $\varepsilon_2^{-1} \varepsilon_1 q$ 是多项式. 从而 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子.
+    因为单位的逆是整式, 且 (有限多个) 整式的积是整式, 故 $\varepsilon_2^{-1} \varepsilon_1 q$ 是整式. 从而 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子.
 \end{pf}
 
 为方便, 我们定义一个新词.
 
 \begin{definition}
-    设 $f$, $g$ 是多项式. 若存在单位 $\varepsilon$ 使 $f = \varepsilon g$, 则说 $f$ 是 $g$ 的相伴 \term{associate}. 因为
+    设 $f$, $g$ 是整式. 若存在单位 $\varepsilon$ 使 $f = \varepsilon g$, 则说 $f$ 是 $g$ 的相伴 \term{associate}. 因为
     \begin{align*}
         g = 1g = (\varepsilon^{-1} \varepsilon) g = \varepsilon^{-1} (\varepsilon g) = \varepsilon^{-1} f,
     \end{align*}
@@ -223,7 +264,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 显然, 因为 $f = 1f$, 故 $f$ 与 $f$ 相伴. 上面的文字已经说明 $f$ 与 $g$ 相伴相当于 $g$ 与 $f$ 相伴. 我们还有下面的
 \begin{proposition}
-    设 $f$, $g$, $h$ 是多项式. 若 $f$ 与 $g$ 相伴, 且 $g$ 与 $h$ 相伴, 则 $f$ 与 $h$ 相伴.
+    设 $f$, $g$, $h$ 是整式. 若 $f$ 与 $g$ 相伴, 且 $g$ 与 $h$ 相伴, 则 $f$ 与 $h$ 相伴.
 \end{proposition}
 
 \begin{pf}
@@ -234,13 +275,51 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     因为 $\varepsilon_1 \varepsilon_2$ 是单位, 故 $f$ 与 $g$ 相伴.
 \end{pf}
 
-根据 (iii), 我们有
+根据因子的性质 (iii), 我们有
 \begin{proposition}
-    设 $f$, $g$ 是多项式. $f$ 与 $g$ 相伴的一个必要与充分条件是 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子.
+    设 $f$, $g$ 是整式. $f$ 与 $g$ 相伴的一个必要与充分条件是 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子.
 \end{proposition}
 
+由此, 不难得到
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    (i) 若存在 $K$ 的单位 $\varepsilon$, 使 $f = g\varepsilon$, 则当然存在 $E$ 上的单位 $\varepsilon^{\prime}$, 使 $f = g\varepsilon^{\prime}$ (不难看出, 取 $\varepsilon^{\prime}$ 为 $\varepsilon$ 即可).
+
+    (ii) 若任取 $K$ 的单位 $\varepsilon$, 都有 $f \neq g\varepsilon$, 则任取 $E$ 上的单位 $\varepsilon^{\prime}$, 都有 $f \neq g\varepsilon^{\prime}$.
+
+    简单地说, 问题 ``$g$ 是否与 $f$ 相伴'' 的回答不因系数的范围扩大而改变.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f \neq 0$. 存在唯一的整式 $f_\mathrm{m}$ 使 $f_\mathrm{m}$ 与 $f$ 相伴, 且 $f_\mathrm{m}$ 的首项系数为 $1$. 这样的 $f_\mathrm{m}$ 就是 $f$ 的首一的相伴 \term{the monic associate}.
+\end{proposition}
+
+\begin{pf}
+    先看存在性. 设
+    \begin{align*}
+        f = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0,
+    \end{align*}
+    且 $a_n \neq 0$. 作
+    \begin{align*}
+        g = x^n + \frac{a_{n-1}}{a_n} x^{n-1} + \cdots + \frac{a_1}{a_n} x + \frac{a_0}{a_n}.
+    \end{align*}
+    不难看出, $f = a_n g$, 且 $g$ 的首项系数为 $1$. 因为 $a_n$ 是单位, 故 $g$ 与 $f$ 相伴. 取 $f_\mathrm{m}$ 为 $g$ 即可.
+
+    再看唯一性. 设 $g$, $h$ 都是 $f$ 的首一的相伴. 也就是说, 存在单位 $\varepsilon_1$, $\varepsilon_2$ 使
+    \begin{align*}
+        \varepsilon_1 g = \varepsilon_2 h.
+    \end{align*}
+    设
+    \begin{align*}
+         & g = x^u + a_{u-1} x^{u-1} + \cdots + a_1 x + a_0, \\
+         & h = x^v + b_{v-1} x^{v-1} + \cdots + b_1 x + b_0.
+    \end{align*}
+    $\varepsilon_1 g$ 与 $\varepsilon_2 h$ 的次分别是 $u$, $v$, 故 $u = v$; $\varepsilon_1 g$ 与 $\varepsilon_2 h$ 的首项系数分别是 $\varepsilon_1$, $\varepsilon_2$, 故 $\varepsilon_1 = \varepsilon_2$. 从等式的二侧消去 $\varepsilon_1$, 有 $g = h$.
+\end{pf}
+
 \begin{definition}
-    设 $f$, $g$ 是多项式. 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common factor}.
+    设 $f$, $g$ 是整式. 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子 \term{common factor}.
 \end{definition}
 
 \begin{remark}
@@ -248,13 +327,13 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{remark}
 
 \begin{example}
-    单位是任意二个多项式的公因子.
+    单位是任意二个整式的公因子.
 \end{example}
 
 现在我们引出 ``最大公因子'' 的概念.
 
 \begin{definition}
-    设 $f$, $g$ 是多项式. 适合下述二性质的多项式 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common factor}:
+    设 $f$, $g$ 是整式. 适合下述二性质的整式 $d$ 是 $f$ 与 $g$ 的最大公因子 \term{greatest common factor}:
 
     (i) $d$ 是 $f$ 与 $g$ 的公因子;
 
@@ -267,7 +346,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 由定义立即可得
 \begin{proposition}
-    设 $f$, $g$ 是多项式. 若 $d_1$ 与 $d_2$ 都是 $f$ 与 $g$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
+    设 $f$, $g$ 是整式. 若 $d_1$ 与 $d_2$ 都是 $f$ 与 $g$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
 \end{proposition}
 
 \begin{pf}
@@ -287,7 +366,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{example}
 
 \begin{proposition}
-    设 $f$, $g$, $q$ 是多项式. 设 $f$ 与 $g$ 的最大公因子是 $d_1$; 设 $f - gq$ 与 $g$ 的最大公因子是 $d_2$. 则 $d_1$ 与 $d_2$ 相伴.
+    设 $f$, $g$, $q$ 是整式. 设 $f$ 与 $g$ 的最大公因子是 $d_1$; 设 $f - gq$ 与 $g$ 的最大公因子是 $d_2$. 则 $d_1$ 与 $d_2$ 相伴.
 \end{proposition}
 
 \begin{pf}
@@ -300,7 +379,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 我们现在可以证明
 \begin{proposition}
-    设 $f$, $g$ 是多项式. $f$ 与 $g$ 的最大公因子一定存在.
+    设 $f$, $g$ 是整式. $f$ 与 $g$ 的最大公因子一定存在.
 \end{proposition}
 
 \begin{pf}
@@ -331,7 +410,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     $r_{n-2}$ 是 $0$ 与 $r_{n-2}$ 的最大公因子, 也是 $r_{n-2}$ 与 $r_{n-3}$ 的最大公因子, 也是 $r_{n-3}$ 与 $r_{n-4}$ 的最大公因子……也是 $r_{-2}$ 与 $r_{-1}$ 的最大公因子. 所以, $r_{n-2}$ 是 $f$ 与 $g$ 的最大公因子.
 \end{pf}
 
-这个命题的证明过程事实上也给出了一个计算二个多项式的最大公因子的算法 (``辗转相除法'').
+这个命题的证明过程事实上也给出了一个计算二个整式的最大公因子的算法 (``辗转相除法'').
 
 \begin{example}
     设 $f = x^5 + 3x + 1$, $g = x^2 - x - 1$. 我们来找一个 $f$ 与 $g$ 的最大公因子.
@@ -366,7 +445,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 一般地, 我们有
 \begin{proposition}
-    设 $f$, $g$ 是多项式. 设 $d$ 是 $f$ 与 $g$ 的最大公因子. 存在多项式 $s$ 与 $t$ 使
+    设 $f$, $g$ 是整式. 设 $d$ 是 $f$ 与 $g$ 的最大公因子. 存在整式 $s$ 与 $t$ 使
     \begin{align*}
         sf + tg = d.
     \end{align*}
@@ -386,7 +465,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
         r_{\ell} = 0, \quad \ell \geq n - 1.
     \end{align*}
 
-    我们用算学归纳法证明辅助命题 $P(\ell)$: 任取非负整数 $\ell$, 必有二多项式 $s$, $t$ 使
+    我们用算学归纳法证明辅助命题 $P(\ell)$: 任取非负整数 $\ell$, 必有二整式 $s$, $t$ 使
     \begin{align*}
         r_\ell = sf + tg.
     \end{align*}
@@ -402,7 +481,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \begin{align*}
         r_k = 0 = 0f + 0g.
     \end{align*}
-    若 $k \leq n-2$, 则根据归纳假设, 存在多项式 $u$, $v$, $z$, $w$ 使
+    若 $k \leq n-2$, 则根据归纳假设, 存在整式 $u$, $v$, $z$, $w$ 使
     \begin{align*}
         r_{k-2} = uf + vg, \quad r_{k-1} = zf + wg.
     \end{align*}
@@ -410,9 +489,9 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \begin{align*}
         r_{k} = r_{k-2} - r_{k-1} q_k = (u - zq_k) f + (v - wq_k) g.
     \end{align*}
-    因为 $u - zq_k$ 与 $v - wq_k$ 均为多项式, 故 $P(k)$ 正确.
+    因为 $u - zq_k$ 与 $v - wq_k$ 均为整式, 故 $P(k)$ 正确.
 
-    所以, 存在多项式 $s$, $t$ 使
+    所以, 存在整式 $s$, $t$ 使
     \begin{align*}
         sf + tg = r_{n-2}.
     \end{align*}
@@ -422,9 +501,38 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \end{align*}
 \end{pf}
 
+\begin{proposition}
+    设 $f$, $g$ 是整式, 且 $f$, $g$ 不全是 $0$. 存在唯一的整式 $d_\mathrm{m}$, 使:
+
+    (i) $d_\mathrm{m}$ 是 $f$ 与 $g$ 的最大公因子;
+
+    (ii) $d_\mathrm{m}$ 的首项系数为 $1$.
+\end{proposition}
+
+\begin{pf}
+    先看存在性. 设 $d$ 是 $f$ 与 $g$ 的最大公因子. 这样, $d \neq 0$. 考虑 $d$ 的首一的相伴 $d_\mathrm{m}$. 它的首项系数是 $1$; 它也是 $f$ 与 $g$ 的最大公因子.
+
+    再看唯一性. 设 $d_1$, $d_2$ 都适合条件 (i) (ii). 因为 (i), $d_1$ 与 $d_2$ 相伴; 因为 (ii), $d_1 = d_2$.
+\end{pf}
+
+由此, 我们有
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    (i) 设 $f = g = 0$. 则 $f$ 与 $g$ 的最大公因子是 $0$. 不管在哪儿 ($K$ 还是 $E$), 它都是 $0$.
+
+    (ii) 设 $f$, $g$ 不全是 $0$. 设 $d_K$ 是 $K$ 上的整式, 首项系数为 $1$, 且是 $f$ 与 $g$ 的最大公因子. 设 $d_E$ 是 $E$ 上的整式, 首项系数为 $1$, 且是 $f$ 与 $g$ 的最大公因子. 则 $d_K = d_E$. 简单地说, (不全是 $0$ 的) 整式 $f$, $g$ 的首项系数为 $1$ 的最大公因子不因系数的范围扩大而改变.
+\end{proposition}
+
+\begin{pf}
+    (i) 显然.
+
+    (ii) $d_K$ 当然也是 $E$ 上的整式. 由上个命题, $d_K = d_E$.
+\end{pf}
+
 有了最大公因子的概念, 我们可以引出 ``互素'':
 \begin{definition}
-    设 $f$, $g$ 是多项式. 若单位是 $f$ 与 $g$ 的最大公因子, 则称 $f$ 与 $g$ 互素 \term{to be relatively prime}.
+    设 $f$, $g$ 是整式. 若单位是 $f$ 与 $g$ 的最大公因子, 则称 $f$ 与 $g$ 互素 \term{to be relatively prime}.
 \end{definition}
 
 \begin{remark}
@@ -432,12 +540,20 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{remark}
 
 \begin{example}
-    显然, 单位与任意多项式都互素.
+    显然, 单位与任意整式都互素.
 \end{example}
+
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    若 $f$ 与 $g$ 在 $K$ 上的整式中互素, 则 $f$ 与 $g$ 的首项系数为 $1$ 的最大公因子是 $1$. 因为首项系数为 $1$ 的最大公因子不因系数的范围扩大而改变, 故 $f$ 与 $g$ 在 $E$ 上的整式中也互素.
+
+    简单地说, 问题 ``$f$ 是否与 $g$ 互素'' 的回答不因系数的范围扩大而改变.
+\end{proposition}
 
 下面给出一个极重要的命题:
 \begin{proposition}
-    设 $f$, $g$ 是多项式. $f$ 与 $g$ 互素的一个必要与充分条件是: 存在多项式 $s$, $t$ 使
+    设 $f$, $g$ 是整式. $f$ 与 $g$ 互素的一个必要与充分条件是: 存在整式 $s$, $t$ 使
     \begin{align*}
         sf + tg = 1.
     \end{align*}
@@ -452,7 +568,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 下面是几个关于互素的性质.
 
 \begin{proposition}
-    设 $f$, $g$, $h$ 是多项式. 互素有如下性质:
+    设 $f$, $g$, $h$ 是整式. 互素有如下性质:
 
     (i) 若 $h$ 是 $fg$ 的因子, 且 $h$ 与 $f$ 互素, 则 $h$ 是 $g$ 的因子;
 
@@ -462,7 +578,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{proposition}
 
 \begin{pf}
-    (i) 因为 $h$ 与 $f$ 互素, 故存在多项式 $s$ 与 $t$ 使
+    (i) 因为 $h$ 与 $f$ 互素, 故存在整式 $s$ 与 $t$ 使
     \begin{align*}
         sh + tf = 1.
     \end{align*}
@@ -472,11 +588,11 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \end{align*}
     因为 $h$ 是 $h$ 的因子, 且 $h$ 是 $fg$ 的因子, 故 $h$ 是 $g = (gs)h + t(fg)$ 的因子.
 
-    (ii) 因为 $f$ 与 $g$ 互素, 故存在多项式 $u$, $v$ 使
+    (ii) 因为 $f$ 与 $g$ 互素, 故存在整式 $u$, $v$ 使
     \begin{align*}
         uf + vg = 1.
     \end{align*}
-    因为 $f$ 与 $h$ 互素, 故存在多项式 $s$, $t$ 使
+    因为 $f$ 与 $h$ 互素, 故存在整式 $s$, $t$ 使
     \begin{align*}
         sf + th = 1.
     \end{align*}
@@ -486,7 +602,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \end{align*}
     所以 $f$ 与 $gh$ 互素.
 
-    (iii) 因为 $f$ 是 $h$ 的因子, 故存在多项式 $p$ 使 $h = fp$. 因为 $g$ 是 $h = fp$ 的因子, 且 $f$ 与 $g$ 互素, 故由 (i) 知 $g$ 是 $p$ 的因子. 设 $p = gq$. 这样
+    (iii) 因为 $f$ 是 $h$ 的因子, 故存在整式 $p$ 使 $h = fp$. 因为 $g$ 是 $h = fp$ 的因子, 且 $f$ 与 $g$ 互素, 故由 (i) 知 $g$ 是 $p$ 的因子. 设 $p = gq$. 这样
     \begin{align*}
         h = fp = f(gq) = (fg)q,
     \end{align*}
@@ -499,23 +615,23 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 现在我们推广公因子、最大公因子、互素的概念.
 
-前面, 我们讨论了二个多项式的公因子、最大公因子、互素; 现在, 我们从量的角度推广.
+前面, 我们讨论了二个整式的公因子、最大公因子、互素; 现在, 我们从量的角度推广.
 
 \begin{definition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子.
 \end{definition}
 
 \begin{remark}
-    我们并没有禁止 $n$ 取 $1$: 一个多项式的 ``公因子'' 当然是它的因子. 同理, 一个多项式也可以有 ``最大公因子''; 一个多项式也可以 ``互素''.
+    我们并没有禁止 $n$ 取 $1$: 一个整式的 ``公因子'' 当然是它的因子. 同理, 一个整式也可以有 ``最大公因子''; 一个整式也可以 ``互素''.
 \end{remark}
 
 作为练习, 请读者证明
 \begin{proposition}
-    设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子.
+    设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子.
 \end{proposition}
 
 \begin{definition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. 适合下述二性质的多项式 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子:
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. 适合下述二性质的整式 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子:
 
     (i) $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子;
 
@@ -524,7 +640,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 由定义立即可得
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. 若 $d_1$ 与 $d_2$ 都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. 若 $d_1$ 与 $d_2$ 都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
 \end{proposition}
 
 \begin{pf}
@@ -532,11 +648,11 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{pf}
 
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式.
 
     (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子存在;
 
-    (ii) 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则存在多项式 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    (ii) 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则存在整式 $u_1$, $u_2$, $\cdots$, $u_n$ 使
     \begin{align*}
         u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = d.
     \end{align*}
@@ -553,15 +669,15 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
     根据最大公因子的定义, $d$ 一定是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子. 所以, $n = k+1$ 时, (i) 正确.
 
-    (ii) 对 $n$ 用算学归纳法. 显然, $n = 1$ 或 $n = 2$ 时, 命题成立. 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在多项式 $u_1$, $u_2$, $\cdots$, $u_k$ 使
+    (ii) 对 $n$ 用算学归纳法. 显然, $n = 1$ 或 $n = 2$ 时, 命题成立. 设 $n = k$ ($k \geq 2$) 时命题成立, 即: 若 $d_k$ 是 $f_1$, $f_2$, $\cdots$, $f_k$ 的最大公因子, 则存在整式 $u_1$, $u_2$, $\cdots$, $u_k$ 使
     \begin{align*}
         u_1 f_1 + u_2 f_2 + \cdots + u_k f_k = d_k.
     \end{align*}
-    今看 $n = k+1$ 时的情形. 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子. 由 (i) 知, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子. 由 Bézout 等式知, 存在多项式 $u$, $u_{k+1}$ 使
+    今看 $n = k+1$ 时的情形. 令 $d$ 为 $d_k$ 与 $f_{k+1}$ 的最大公因子. 由 (i) 知, $d$ 是 $f_1$, $f_2$, $\cdots$, $f_k$, $f_{k+1}$ 的最大公因子. 由 Bézout 等式知, 存在整式 $u$, $u_{k+1}$ 使
     \begin{align*}
         u d_k + u_{k+1} f_{k+1} = d.
     \end{align*}
-    根据归纳假设, 存在多项式 $v_1$, $v_2$, $\cdots$, $v_k$ 使
+    根据归纳假设, 存在整式 $v_1$, $v_2$, $\cdots$, $v_k$ 使
     \begin{align*}
         v_1 f_1 + v_2 f_2 + \cdots + v_k f_k = d_k.
     \end{align*}
@@ -574,12 +690,12 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 跟之前一样, 有了最大公因子的概念, 我们可以引出 ``互素'':
 \begin{definition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. 若单位是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则称 $f_1$, $f_2$, $\cdots$, $f_n$ 互素.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. 若单位是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则称 $f_1$, $f_2$, $\cdots$, $f_n$ 互素.
 \end{definition}
 
 下面的命题也是十分自然的.
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 存在多项式 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 存在整式 $u_1$, $u_2$, $\cdots$, $u_n$ 使
     \begin{align*}
         u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1.
     \end{align*}
@@ -592,7 +708,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{pf}
 
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$, $f$ 是多项式. 若 $f_1$ 与 $f$ 互素, $f_2$ 与 $f$ 互素……$f_n$ 与 $f$ 互素, 则 $f_1 f_2 \cdots f_n$ 与 $f$ 互素.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$, $f$ 是整式. 若 $f_1$ 与 $f$ 互素, $f_2$ 与 $f$ 互素……$f_n$ 与 $f$ 互素, 则 $f_1 f_2 \cdots f_n$ 与 $f$ 互素.
 \end{proposition}
 
 \begin{pf}
@@ -600,23 +716,23 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{pf}
 
 \begin{proposition}
-    设多项式 $f_1$, $f_2$, $\cdots$, $f_n$ 不全是零.
+    设整式 $f_1$, $f_2$, $\cdots$, $f_n$ 不全是零.
 
     (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子 $d$ 不是零;
 
-    (ii) 任取 $1$ 至 $n$ 间的整数 $\ell$, 必有 (唯一的) 多项式 $g_\ell$ 使 $f_\ell = dg_\ell$;
+    (ii) 任取 $1$ 至 $n$ 间的整数 $\ell$, 必有 (唯一的) 整式 $g_\ell$ 使 $f_\ell = dg_\ell$;
 
     (iii) 单位是 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子; 换句话说, $g_1$, $g_2$, $\cdots$, $g_n$ 互素;
 
-    (iv) 反过来, 若多项式 $u_1$, $u_2$, $\cdots$, $u_n$ 互素, 则 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子.
+    (iv) 反过来, 若整式 $u_1$, $u_2$, $\cdots$, $u_n$ 互素, 则 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子.
 \end{proposition}
 
 \begin{pf}
-    (i) 零一定不是非零多项式的因子, 故零不是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 当然也不是最大公因子.
+    (i) 零一定不是非零整式的因子, 故零不是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 当然也不是最大公因子.
 
-    (ii) 既然 $d$ 是最大公因子, 当然也是公因子. 对 $f_{\ell}$ 而言, 由因子的定义, 知: 存在多项式 $g_{\ell}$ 使 $f_{\ell} = dg_{\ell}$. 现在看唯一性. 假定 $f_{\ell} = dg_{\ell} = dg_{\ell}^{\prime}$. 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $g_{\ell} = g_{\ell}^{\prime}$.
+    (ii) 既然 $d$ 是最大公因子, 当然也是公因子. 对 $f_{\ell}$ 而言, 由因子的定义, 知: 存在整式 $g_{\ell}$ 使 $f_{\ell} = dg_{\ell}$. 现在看唯一性. 假定 $f_{\ell} = dg_{\ell} = dg_{\ell}^{\prime}$. 因为 $d \neq 0$, 故可从等式二边消去 $d$, 即 $g_{\ell} = g_{\ell}^{\prime}$.
 
-    (iii) 设 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子是 $\delta$. 这样, 由 (ii), 知: 对任意 $g_{\ell}$, 有多项式 $h_{\ell}$ 使 $g_{\ell} = \delta h_{\ell}$. 所以
+    (iii) 设 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子是 $\delta$. 这样, 由 (ii), 知: 对任意 $g_{\ell}$, 有整式 $h_{\ell}$ 使 $g_{\ell} = \delta h_{\ell}$. 所以
     \begin{align*}
         f_{\ell} = dg_{\ell} = d(\delta h_{\ell}) = (d\delta) h_{\ell}.
     \end{align*}
@@ -624,13 +740,13 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
     (iv) 若 $w = 0$, 命题显然成立: $0$, $0$, $\cdots$, $0$ 的最大公因子当然是 $0$. 下设 $w \neq 0$.
 
-    $w$ 显然是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的公因子. 设 $ws$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子, 这里 $s$ 是某个多项式. 由 (ii), 对每个 $wu_{\ell}$, 都有多项式 $q_{\ell}$ 使 $wu_{\ell} = wsq_{\ell}$. 因为 $w \neq 0$, 故可从等式二边消去 $w$, 即 $u_{\ell} = sq_{\ell}$. 这样, $s$ 是 $u_1$, $u_2$, $\cdots$, $u_n$ 的公因子, 故 $s$ 是单位的因子, 即 $s$ 是单位. 所以 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子.
+    $w$ 显然是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的公因子. 设 $ws$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子, 这里 $s$ 是某个整式. 由 (ii), 对每个 $wu_{\ell}$, 都有整式 $q_{\ell}$ 使 $wu_{\ell} = wsq_{\ell}$. 因为 $w \neq 0$, 故可从等式二边消去 $w$, 即 $u_{\ell} = sq_{\ell}$. 这样, $s$ 是 $u_1$, $u_2$, $\cdots$, $u_n$ 的公因子, 故 $s$ 是单位的因子, 即 $s$ 是单位. 所以 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子.
 \end{pf}
 
 互素的一个特殊情形是 PRP.
 
 \begin{definition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式 ($n \geq 2$). 若任取 $1$ 至 $n$ 间的二个不同的整数 $i$, $j$, 都有 $f_i$ 与 $f_j$ 互素, 则 $f_1$, $f_2$, $\cdots$, $f_n$ PRP\myFN{因为作者的汉语不是很好, 所以作者用英语缩写表示这个概念. 作为参考, 作者用英语定义 PRP: A list of polynomials $p_1$, $p_2$, $\cdots$, $p_n$ is said to be \textit{pairwise relatively prime} if $p_i$ and $p_j$ are relatively prime for any two distinct integers $i$, $j$ in $\{\,1,2,\cdots,n\,\}$.} \term{to be pairwise relatively prime}.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式 ($n \geq 2$). 若任取 $1$ 至 $n$ 间的二个不同的整数 $i$, $j$, 都有 $f_i$ 与 $f_j$ 互素, 则 $f_1$, $f_2$, $\cdots$, $f_n$ PRP\myFN{因为作者的汉语不是很好, 所以作者用英语缩写表示这个概念. 作为参考, 作者用英语定义 PRP: A list of polynomials $p_1$, $p_2$, $\cdots$, $p_n$ is said to be \textit{pairwise relatively prime} if $p_i$ and $p_j$ are relatively prime for any two distinct integers $i$, $j$ in $\{\,1,2,\cdots,n\,\}$.} \term{to be pairwise relatively prime}.
 
     为方便, 若 $f$ 是单位, 我们也说 ``$f$ PRP'' (这相当于定义了 $n = 1$ 时 PRP 的意义).
 \end{definition}
@@ -641,7 +757,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 一般地, 我们有
 \begin{proposition}
-    设多项式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 则 $f_1$, $f_2$, $\cdots$, $f_n$ 互素.
+    设整式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 则 $f_1$, $f_2$, $\cdots$, $f_n$ 互素.
 \end{proposition}
 
 \begin{pf}
@@ -661,13 +777,13 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{example}
 
 \begin{proposition}
-    设多项式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 设 $m_1$, $m_2$, $\cdots$, $m_n$ 是非负整数. 记 $F_i = f_i^{m_i}$, $i$ 是 $1$ 至 $n$ 间的整数. 则 $F_1$, $F_2$, $\cdots$, $F_n$ 也 PRP.
+    设整式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 设 $m_1$, $m_2$, $\cdots$, $m_n$ 是非负整数. 记 $F_i = f_i^{m_i}$, $i$ 是 $1$ 至 $n$ 间的整数. 则 $F_1$, $F_2$, $\cdots$, $F_n$ 也 PRP.
 \end{proposition}
 
 \begin{pf}
     根据 PRP 的定义, 我们只需证: 若 $f$ 与 $g$ 互素, 且 $s$, $t$ 是非负整数, 则 $f^s$ 与 $g^t$ 互素.
 
-    若 $s = 0$ 或 $t = 0$, 因为 $1$ 与任意多项式都互素, 故此时显然. 下设 $s \geq 1$ 且 $t \geq 1$.
+    若 $s = 0$ 或 $t = 0$, 因为 $1$ 与任意整式都互素, 故此时显然. 下设 $s \geq 1$ 且 $t \geq 1$.
 
     我们先证: $f^s$ 与 $g$ 互素. 因为 $f$ 与 $g$ 互素, $f$ 与 $g$ 互素……$f$ 与 $g$ 互素 ($s$ 个 ``$f$ 与 $g$ 互素''), 故 $f^s = \underbrace{f \cdot f \cdots f}_{\text{$s$ $f$'s}}$ 与 $g$ 互素.
 
@@ -675,7 +791,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{pf}
 
 \begin{proposition}
-    设多项式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 则 $f_1 f_2 \cdots f_{i-1}$ 与 $f_i$ 互素 ($i$ 是 $1$, $2$, $\cdots$, $n$ 中的数). 我们约定: $0$ 个多项式的和为 $0$, 而 $0$ 个多项式的积为 $1$. 所以, $i = 1$ 时, $1$ 当然与 $f_1$ 互素.
+    设整式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 则 $f_1 f_2 \cdots f_{i-1}$ 与 $f_i$ 互素 ($i$ 是 $1$, $2$, $\cdots$, $n$ 中的数). 我们约定: $0$ 个整式的和为 $0$, 而 $0$ 个整式的积为 $1$. 所以, $i = 1$ 时, $1$ 当然与 $f_1$ 互素.
 \end{proposition}
 
 \begin{pf}
@@ -683,15 +799,15 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{pf}
 
 \begin{remark}
-    设六多项式 $f_1$, $f_2$, $\cdots$, $f_6$ PRP. 作者问: $f_1 f_4 f_6$ 与 $f_3$ 互素吗? 当然了. 为什么呢?
+    设六整式 $f_1$, $f_2$, $\cdots$, $f_6$ PRP. 作者问: $f_1 f_4 f_6$ 与 $f_3$ 互素吗? 当然了. 为什么呢?
 
     既然 $f_1$, $f_2$, $\cdots$, $f_6$ PRP, 那么 $f_1$, $f_4$, $f_6$, $f_3$, $f_2$, $f_5$ 也 PRP, 对不对? 令 $g_1 = f_1$, $g_2 = f_4$, $g_3 = f_6$, $g_4 = f_3$, $g_5 = f_2$, $g_6 = f_5$, 则 $g_1$, $g_2$, $\cdots$, $g_6$ PRP. 所以, 根据刚证过的命题, $g_1 g_2 g_3$ 与 $g_4$ 互素. 因为 $g_1 g_2 g_3 = f_1 f_4 f_6$, $g_4 = f_3$, 故 $f_1 f_4 f_6$ 与 $f_3$ 互素.
 
-    本评注的目的是告诉读者, 不要死学作者所讲述的知识. 读者要灵活运用所学的知识, 并逐渐适应 ``显然'' ``当然'' 等词语. 的确, 作者可以写得更详细, 但这没有必要. ``学而不思则罔, 思而不学则殆.'' 读者一定要边学边想! 还有, 如果读者真地想学作者讲述的知识, 作者建议读者不要狼吞虎咽. 相信作者; 作者不会害读者的!\myFN{敏锐的读者应该注意到了: 此评注是从 ``\SomePropertiesOfIntegers '' 复制过来的; ``六整数'' 被替换为 ``六多项式''; 别的没变.}
+    本评注的目的是告诉读者, 不要死学作者所讲述的知识. 读者要灵活运用所学的知识, 并逐渐适应 ``显然'' ``当然'' 等词语. 的确, 作者可以写得更详细, 但这没有必要. ``学而不思则罔, 思而不学则殆.'' 读者一定要边学边想! 还有, 如果读者真地想学作者讲述的知识, 作者建议读者不要狼吞虎咽. 相信作者; 作者不会害读者的!\myFN{敏锐的读者应该注意到了: 此评注是从 ``\SomePropertiesOfIntegers '' 复制过来的; ``六整数'' 被替换为 ``六整式''; 别的没变.}
 \end{remark}
 
 \begin{proposition}
-    设多项式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 若 $f_1$, $f_2$, $\cdots$, $f_i$ 都是 $f$ 的因子, 则 $f_1 f_2 \cdots f_i$ 也是 $f$ 的因子 ($i$ 是 $1$, $2$, $\cdots$, $n$ 中的数). 特别地, $i = n$ 时, $f_1 f_2 \cdots f_n$ 是 $f$ 的因子.
+    设整式 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 若 $f_1$, $f_2$, $\cdots$, $f_i$ 都是 $f$ 的因子, 则 $f_1 f_2 \cdots f_i$ 也是 $f$ 的因子 ($i$ 是 $1$, $2$, $\cdots$, $n$ 中的数). 特别地, $i = n$ 时, $f_1 f_2 \cdots f_n$ 是 $f$ 的因子.
 \end{proposition}
 
 \begin{pf}
@@ -700,14 +816,14 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 \myLine
 
-现在, 我们讨论不可约的多项式.
+现在, 我们讨论不可约的整式.
 
 \begin{definition}
-    设多项式 $f$ 既不是 $0$, 也不是单位.
+    设整式 $f$ 既不是 $0$, 也不是单位.
 
-    (i) 若存在二个不全为单位的多项式 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f$ 是可约的 \term{reducible}.
+    (i) 若存在二个不全为单位的整式 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f$ 是可约的 \term{reducible}.
 
-    (ii) 若 $f$ 不是可约的, 则说 $f$ 是不可约的 \term{irreducible}. 换言之, 若 $f$ 是不可约的, 则 ``多项式 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''.
+    (ii) 若 $f$ 不是可约的, 则说 $f$ 是不可约的 \term{irreducible}. 换言之, 若 $f$ 是不可约的, 则 ``整式 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''.
 \end{definition}
 
 \begin{remark}
@@ -717,11 +833,11 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \begin{example}
     设 $t$ 是数. 则 $x-t$ 是不可约的.
 
-    设多项式 $f_1$, $f_2$ 适合 $f_1 f_2 = x-t$. 所以, $\deg f_1 + \deg f_2 = \deg (x-t) = 1$.
+    设整式 $f_1$, $f_2$ 适合 $f_1 f_2 = x-t$. 所以, $\deg f_1 + \deg f_2 = \deg (x-t) = 1$.
 
     $f_1$ 与 $f_2$ 当然是非零的. 这样, $\deg f_1$ 与 $\deg f_2$ 都是非负整数. 所以, $\deg f_1$ 与 $\deg f_2$ 必定有一个是 $0$, 另一个是 $1$. 无妨假设 $\deg f_1 = 0$. 所以 $f_1$ 是非零数. 所以 $f_1$ 是单位. 类似地, 若 $\deg f_2 = 0$, 则 $f_2$ 是单位.
 
-    不管怎么样, 我们已经证明了 ``多项式 $f_1$, $f_2$ 使 $x-t = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''. 这样, $x-t$ 是不可约的.
+    不管怎么样, 我们已经证明了 ``整式 $f_1$, $f_2$ 使 $x-t = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''. 这样, $x-t$ 是不可约的.
 \end{example}
 
 \begin{example}
@@ -729,75 +845,75 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{example}
 
 \begin{remark}
-    作者在此有必要提醒读者: 不可约的多项式与多项式的系数所在范围密切相关.
+    作者在此有必要提醒读者: 不可约的整式与整式的系数所在范围密切相关.
 
-    我们看 $f = x^2 - 2$. 显然, 读者在中学可能已经知道, ``这没法再 (在有理数范围里) `分解' 了''. 的确, $f$ 作为有理系数多项式是不可约的. 不过, 如果视 $f$ 为实系数多项式, 则可继续将 $f$ 写为 $(x + \sqrt2) (x - \sqrt2)$. 类似地, 若视 $g = x^2 + 1$ 为实系数多项式, 则 $g$ ``也没办法再 (在实数范围里) `分解' 了''. 可是, 若视 $g$ 为复系数多项式, 则 $g = (x + \ii) (x - \ii)$.
+    我们看 $f = x^2 - 2$. 显然, 读者在中学可能已经知道, ``这没法再 (在有理数范围里) `分解' 了''. 的确, $f$ 作为有理系数整式是不可约的. 不过, 如果视 $f$ 为实系数整式, 则可继续将 $f$ 写为 $(x + \sqrt2) (x - \sqrt2)$. 类似地, 若视 $g = x^2 + 1$ 为实系数整式, 则 $g$ ``也没办法再 (在实数范围里) `分解' 了''. 可是, 若视 $g$ 为复系数整式, 则 $g = (x + \ii) (x - \ii)$.
 
-    所以, 除非语境明确 (或者系数所在范围无关紧要), 我们总是说 ``某多项式作为有理 (实、复) 系数多项式是不可约的''.
+    所以, 除非语境明确 (或者系数所在范围无关紧要), 我们总是说 ``某整式作为有理 (实、复) 系数整式是不可约的''.
 \end{remark}
 
 \begin{proposition}
-    设多项式 $p$ 既不是 $0$, 也不是单位. 设 $\varepsilon$ 是单位. 若 $p$ 是不可约的, 则 $\varepsilon p$ 也是不可约的.
+    设整式 $p$ 既不是 $0$, 也不是单位. 设 $\varepsilon$ 是单位. 若 $p$ 是不可约的, 则 $\varepsilon p$ 也是不可约的.
 \end{proposition}
 
 \begin{pf}
-    设二多项式 $f_1$, $f_2$ 使 $\varepsilon p = f_1 f_2$. 所以, $p = (\varepsilon^{-1} f_1) (f_2)$. 因为 $p$ 是不可约的, 故 $\varepsilon^{-1} f_1$ 是单位或 $f_2$ 是单位. 这也就是说, $f_1$ 是单位或 $f_2$ 是单位. 所以, $\varepsilon p$ 是不可约的.
+    设二整式 $f_1$, $f_2$ 使 $\varepsilon p = f_1 f_2$. 所以, $p = (\varepsilon^{-1} f_1) (f_2)$. 因为 $p$ 是不可约的, 故 $\varepsilon^{-1} f_1$ 是单位或 $f_2$ 是单位. 这也就是说, $f_1$ 是单位或 $f_2$ 是单位. 所以, $\varepsilon p$ 是不可约的.
 \end{pf}
 
 \begin{example}
-    由上个命题可知: $1$ 次多项式一定是不可约的.
+    由上个命题可知: $1$ 次整式一定是不可约的.
 \end{example}
 
 \begin{proposition}
-    设多项式 $p$ 既不是 $0$, 也不是单位. 下述四命题等价:
+    设整式 $p$ 既不是 $0$, 也不是单位. 下述四命题等价:
 
-    (i) 若多项式 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f_1$ 是单位或 $f_2$ 是单位;
+    (i) 若整式 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f_1$ 是单位或 $f_2$ 是单位;
 
-    (ii) 对任意多项式 $f$, 要么 $p$ 是 $f$ 的因子, 要么 $p$ 与 $f$ 互素 (二者不会同时发生);
+    (ii) 对任意整式 $f$, 要么 $p$ 是 $f$ 的因子, 要么 $p$ 与 $f$ 互素 (二者不会同时发生);
 
-    (iii) 若 $f$, $g$ 是多项式, 且 $p$ 是 $fg$ 的因子, 则 $p$ 是 $f$ 的因子, 或 $p$ 是 $g$ 的因子;
+    (iii) 若 $f$, $g$ 是整式, 且 $p$ 是 $fg$ 的因子, 则 $p$ 是 $f$ 的因子, 或 $p$ 是 $g$ 的因子;
 
-    (iv) 不存在多项式 $f_1$, $f_2$ 使 $p = f_1 f_2$, 且 $\deg f_1 < \deg p$, $\deg f_2 < \deg p$.
+    (iv) 不存在整式 $f_1$, $f_2$ 使 $p = f_1 f_2$, 且 $\deg f_1 < \deg p$, $\deg f_2 < \deg p$.
 \end{proposition}
 
 \begin{pf}
-    (i) $\Rightarrow$ (ii): 任取多项式 $f$. 设 $d$ 是 $p$ 与 $f$ 的最大公因子. 所以, 存在多项式 $g$ 使 $p = dg$. 所以, $d$ 是单位或 $g$ 是单位. 若 $d$ 是单位, 则单位是 $p$ 与 $f$ 的最大公因子, 即 $p$ 与 $f$ 互素; 若 $g$ 是单位, 则 $d = p g^{-1}$, 故 $p$ 是 $f$ 的因子.
+    (i) $\Rightarrow$ (ii): 任取整式 $f$. 设 $d$ 是 $p$ 与 $f$ 的最大公因子. 所以, 存在整式 $g$ 使 $p = dg$. 所以, $d$ 是单位或 $g$ 是单位. 若 $d$ 是单位, 则单位是 $p$ 与 $f$ 的最大公因子, 即 $p$ 与 $f$ 互素; 若 $g$ 是单位, 则 $d = p g^{-1}$, 故 $p$ 是 $f$ 的因子.
 
     若二者同时发生, 则 $d$ 是单位且 $g$ 是单位, 故 $p$ 也是单位. 这与 $p$ 不是单位矛盾.
 
     (ii) $\Rightarrow$ (iii): 若 $p$ 是 $f$ 的因子, 则不必证了. 今假设 $p$ 不是 $f$ 的因子. 所以, $p$ 与 $f$ 互素. 因为 $p$ 是 $fg$ 的因子, 故 $p$ 一定是 $g$ 的因子.
 
-    (iii) $\Rightarrow$ (iv): 反证法. 设 $p = f_1 f_2$, 且 $\deg f_1 < \deg p$, $\deg f_2 < \deg p$. 因为 $p \neq 0$, 故 $f_1 \neq 0$, 且 $f_2 \neq 0$. 所以, $\deg f_1 \geq 0$, 且 $\deg f_2 \geq 0$. 既然 $p = f_1 f_2$, $p$ 当然是 $f_1 f_2$ 的因子. 所以, $p$ 是 $f_1$ 的因子, 或 $p$ 是 $f_2$ 的因子. 若 $p$ 是 $f_1$ 的因子, 则存在多项式 $g_1$ 使 $f_1 = pg_1$. 因为 $f_1 \neq 0$, 故 $g_1 \neq 0$. 这样, $\deg g_1 \geq 0$. 所以 $\deg f_1 = \deg p + \deg g_1 \geq \deg p$. 这与假定 $\deg f_1 < \deg p$ 矛盾! 类似地, 若 $p$ 是 $f_2$ 的因子, 也有 $\deg f_2 \geq \deg p$, 矛盾! 综上, 这样的 $f_1$ 与 $f_2$ 不存在.
+    (iii) $\Rightarrow$ (iv): 反证法. 设 $p = f_1 f_2$, 且 $\deg f_1 < \deg p$, $\deg f_2 < \deg p$. 因为 $p \neq 0$, 故 $f_1 \neq 0$, 且 $f_2 \neq 0$. 所以, $\deg f_1 \geq 0$, 且 $\deg f_2 \geq 0$. 既然 $p = f_1 f_2$, $p$ 当然是 $f_1 f_2$ 的因子. 所以, $p$ 是 $f_1$ 的因子, 或 $p$ 是 $f_2$ 的因子. 若 $p$ 是 $f_1$ 的因子, 则存在整式 $g_1$ 使 $f_1 = pg_1$. 因为 $f_1 \neq 0$, 故 $g_1 \neq 0$. 这样, $\deg g_1 \geq 0$. 所以 $\deg f_1 = \deg p + \deg g_1 \geq \deg p$. 这与假定 $\deg f_1 < \deg p$ 矛盾! 类似地, 若 $p$ 是 $f_2$ 的因子, 也有 $\deg f_2 \geq \deg p$, 矛盾! 综上, 这样的 $f_1$ 与 $f_2$ 不存在.
 
-    (iv) $\Rightarrow$ (i): 这说明: 若多项式 $f_1$, $f_2$ 使 $p = f_1 f_2$, 则 $\deg f_1 \geq \deg p$ 或 $\deg f_2 \geq \deg p$. 若 $\deg f_1 \geq \deg p$, 则 $\deg p = \deg f_1 + \deg f_2 \geq \deg p + \deg f_2$, 故 $\deg f_2 \leq 0$, 即 $f_2$ 是非零数, 即 $f_2$ 是单位. 类似地, 若 $\deg f_2 \geq \deg p$, 则 $f_1$ 是单位.
+    (iv) $\Rightarrow$ (i): 这说明: 若整式 $f_1$, $f_2$ 使 $p = f_1 f_2$, 则 $\deg f_1 \geq \deg p$ 或 $\deg f_2 \geq \deg p$. 若 $\deg f_1 \geq \deg p$, 则 $\deg p = \deg f_1 + \deg f_2 \geq \deg p + \deg f_2$, 故 $\deg f_2 \leq 0$, 即 $f_2$ 是非零数, 即 $f_2$ 是单位. 类似地, 若 $\deg f_2 \geq \deg p$, 则 $f_1$ 是单位.
 \end{pf}
 
 \begin{remark}
     利用 (iii) 与算学归纳法, 读者可得如下结论 (作为练习):
 
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. 设多项式 $p$ 是不可约的. 若 $p$ 是 $f_1 f_2 \cdots f_n$ 的因子, 则存在 $1$ 至 $n$ 间的整数 $\ell$, 使 $p$ 是 $f_{\ell}$ 的因子.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. 设整式 $p$ 是不可约的. 若 $p$ 是 $f_1 f_2 \cdots f_n$ 的因子, 则存在 $1$ 至 $n$ 间的整数 $\ell$, 使 $p$ 是 $f_{\ell}$ 的因子.
 \end{remark}
 
 \begin{remark}
-    设多项式 $f$ 既不是 $0$, 也不是单位. (iv) 表明, ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个多项式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $\deg f_1 < \deg f$, $\deg f_2 < \deg f$''.
+    设整式 $f$ 既不是 $0$, 也不是单位. (iv) 表明, ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个整式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $\deg f_1 < \deg f$, $\deg f_2 < \deg f$''.
 
     事实上, $\deg f_1 \geq 1$, 且 $\deg f_2 \geq 1$. 反证法. 设 $\deg f_1 < 1$. 因为 $f \neq 0$, 故 $f_1 \neq 0$, 即 $\deg f_1 \geq 0$. 所以 $\deg f_1 = 0$. 所以 $\deg f_2 = 0 + \deg f_2 = \deg f_1 + \deg f_2 = \deg f > \deg f_2$. 这是矛盾! 类似地, 若 $\deg f_2 < 1$, 则 $\deg f_1 = \deg f > \deg f_1$. 这也是矛盾.
 
-    综上, 我们得到了一个更好用的命题: ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个多项式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $1 \leq \deg f_1 < \deg f$, $1 \leq \deg f_2 < \deg f$''.
+    综上, 我们得到了一个更好用的命题: ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个整式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $1 \leq \deg f_1 < \deg f$, $1 \leq \deg f_2 < \deg f$''.
 \end{remark}
 
 \begin{remark}
-    设 $p$, $q$ 是不可约的多项式. 要么 $p$ 是 $q$ 的相伴, 要么 $p$ 与 $q$ 互素 (二者不会同时发生).
+    设 $p$, $q$ 是不可约的整式. 要么 $p$ 是 $q$ 的相伴, 要么 $p$ 与 $q$ 互素 (二者不会同时发生).
 
     为什么呢? 若 $p$ 与 $q$ 互素, 则不必论证了. 所以, 我们假定 $p$ 与 $q$ 不互素. 所以 $p$ 一定是 $q$ 的因子 (因为 $p$ 是不可约的), 且 $q$ 一定是 $p$ 的因子 (因为 $q$ 是不可约的). 所以, $p$ 与 $q$ 相伴.
 
     若 $p$ 与 $q$ 相伴, 且 $p$ 与 $q$ 互素, 则有单位 $\varepsilon$ 使 $q = p\varepsilon$. 故 $p$ 是 $p$ 与 $q$ 的公因子. 从而 $p$ 是单位的因子. 所以 $p$ 是单位. 这跟 $p$ 是不可约的矛盾!
 \end{remark}
 
-下面是关于不可约的多项式的积的命题.
+下面是关于不可约的整式的积的命题.
 
 \begin{proposition}
-    设多项式 $p_1$, $p_2$, $\cdots$, $p_m$, $q_1$, $q_2$, $\cdots$, $q_n$ 都是不可约的. 设
+    设整式 $p_1$, $p_2$, $\cdots$, $p_m$, $q_1$, $q_2$, $\cdots$, $q_n$ 都是不可约的. 设
     \begin{align*}
         p_1 p_2 \cdots p_m = q_1 q_2 \cdots q_n.
     \end{align*}
@@ -808,7 +924,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 \end{proposition}
 
 \begin{pf}
-    对等式左侧的不可约的多项式的数目 $m$ 用算学归纳法. 当 $m = 1$ 时, 有
+    对等式左侧的不可约的整式的数目 $m$ 用算学归纳法. 当 $m = 1$ 时, 有
     \begin{align*}
         p_1 = q_1 q_2 \cdots q_n.
     \end{align*}
@@ -839,22 +955,22 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \begin{align*}
         p_2 \cdots p_k p_{k+1} = (\varepsilon^{\prime} q_2) \cdots q_n.
     \end{align*}
-    因为 $q_2$ 是不可约的, 故 $\varepsilon^{\prime} q_2$ 也是不可约的. 上式左侧的不可约的多项式的数目是 $k$. 根据归纳假设, $n-1 = k$, 即 $n = k+1$. 这证明了 $m=k+1$ 时 (i) 成立.
+    因为 $q_2$ 是不可约的, 故 $\varepsilon^{\prime} q_2$ 也是不可约的. 上式左侧的不可约的整式的数目是 $k$. 根据归纳假设, $n-1 = k$, 即 $n = k+1$. 这证明了 $m=k+1$ 时 (i) 成立.
 
     前面已证得, 适当地调换 $q_1$, $q_2$, $\cdots$, $q_n$ 的顺序, 可使 $p_1$ 与 $q_1$ 相伴. 根据归纳假设, 可以适当地调换 $\varepsilon^{\prime} q_2$, $\cdots$, $q_{k+1}$ (注意, $n = k+1$) 的顺序, 使任取 $3$ 至 $k+1$ 间的整数 $u$, $p_u$ 与 $q_u$ 相伴. 当然 $p_2$ 与 $\varepsilon^{\prime} q_2$ 也相伴. 因为 $\varepsilon^{\prime} q_2$ 与 $q_2$ 相伴, 所以 $p_2$ 与 $q_2$ 相伴. 把这些事实放在一块儿, 就是: 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_{k+1}$ 的顺序, 使任取 $1$ 至 $k+1$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴. 这样, $m = k+1$ 时, (ii) 成立.
 \end{pf}
 
 \begin{proposition}
-    设多项式 $f$ 既不是 $0$, 也不是单位. 存在不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    设整式 $f$ 既不是 $0$, 也不是单位. 存在不可约的整式 $p_1$, $p_2$, $\cdots$, $p_m$ 使
     \begin{align*}
         f = p_1 p_2 \cdots p_m.
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    对 $f$ 的次 $N$ 用算学归纳法. 因为 $f$ 既不是 $0$, 也不是单位, 故 $N \geq 1$. $N = 1$ 时, $f = ax + b$, 这里 $a$, $b$ 是数, 且 $a \neq 0$. 我们已经知道, $1$ 次多项式是不可约的. 这样, $f$ 是不可约的, 故存在不可约的多项式 $p_1 = f$ 使 $f = p_1$. 这样, $N = 1$ 时, 命题成立.
+    对 $f$ 的次 $N$ 用算学归纳法. 因为 $f$ 既不是 $0$, 也不是单位, 故 $N \geq 1$. $N = 1$ 时, $f = ax + b$, 这里 $a$, $b$ 是数, 且 $a \neq 0$. 我们已经知道, $1$ 次整式是不可约的. 这样, $f$ 是不可约的, 故存在不可约的整式 $p_1 = f$ 使 $f = p_1$. 这样, $N = 1$ 时, 命题成立.
 
-    设 $N \leq k$ ($k \geq 1$) 时, 命题成立. 考虑 $N = k+1$. 若 $f$ 是不可约的, 则存在不可约的多项式 $p_1 = f$ 使 $f = p_1$. 若 $f$ 是可约的, 则存在二多项式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $1 \leq \deg f_1 < \deg f$, $1 \leq \deg f_2 < \deg f$. 所以 $\deg f_1 \leq \deg f - 1 = k$, $\deg f_2 \leq \deg f - 1 = k$. 根据归纳假设, 存在不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_i$, $p_{i+1}$, $p_{i+2}$, $\cdots$, $p_m$ 使
+    设 $N \leq k$ ($k \geq 1$) 时, 命题成立. 考虑 $N = k+1$. 若 $f$ 是不可约的, 则存在不可约的整式 $p_1 = f$ 使 $f = p_1$. 若 $f$ 是可约的, 则存在二整式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $1 \leq \deg f_1 < \deg f$, $1 \leq \deg f_2 < \deg f$. 所以 $\deg f_1 \leq \deg f - 1 = k$, $\deg f_2 \leq \deg f - 1 = k$. 根据归纳假设, 存在不可约的整式 $p_1$, $p_2$, $\cdots$, $p_i$, $p_{i+1}$, $p_{i+2}$, $\cdots$, $p_m$ 使
     \begin{align*}
         f_1 = p_1 p_2 \cdots p_i, \quad f_2 = p_{i+1} p_{i+2} \cdots p_m.
     \end{align*}
@@ -867,24 +983,24 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 
 合并上二个命题, 可得
 \begin{proposition}
-    设多项式 $f$ 既不是 $0$, 也不是单位.
+    设整式 $f$ 既不是 $0$, 也不是单位.
 
-    (i) 存在不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    (i) 存在不可约的整式 $p_1$, $p_2$, $\cdots$, $p_m$ 使
     \begin{align*}
         f = p_1 p_2 \cdots p_m;
     \end{align*}
 
-    (ii) 若 $q_1$, $q_2$, $\cdots$, $q_m$, $s_1$, $s_2$, $\cdots$, $s_n$ 是不可约的多项式, 且
+    (ii) 若 $q_1$, $q_2$, $\cdots$, $q_m$, $s_1$, $s_2$, $\cdots$, $s_n$ 是不可约的整式, 且
     \begin{align*}
         f = q_1 q_2 \cdots q_m = s_1 s_2 \cdots s_n,
     \end{align*}
     则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴 (注意: 调换顺序后的 $s_\ell$ 不一定跟原来的 $s_\ell$ 相等!).
 \end{proposition}
 
-设多项式 $f$ 既不是 $0$, 也不是单位. 利用上个命题, 我们可以方便地定出 $f$ 的因子.
+设整式 $f$ 既不是 $0$, 也不是单位. 利用上个命题, 我们可以方便地定出 $f$ 的因子.
 
 \begin{proposition}
-    设多项式 $f$ 既不是 $0$, 也不是单位. 设 $p_1$, $p_2$, $\cdots$, $p_m$ 是不可约的多项式, 且
+    设整式 $f$ 既不是 $0$, 也不是单位. 设 $p_1$, $p_2$, $\cdots$, $p_m$ 是不可约的整式, 且
     \begin{align*}
         f = p_1 p_2 \cdots p_m.
     \end{align*}
@@ -903,19 +1019,19 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
         = {} & (p_{j_1} p_{j_2} \cdots p_{j_s}) (p_{j_{s+1}} \cdots p_{j_m})                               \\
         = {} & (\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}) (\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}),
     \end{align*}
-    且 $\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}$ 是多项式, 故 $\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}$ 是 $f$ 的因子.
+    且 $\varepsilon^{-1} p_{j_{s+1}} \cdots p_{j_m}$ 是整式, 故 $\varepsilon p_{j_1} p_{j_2} \cdots p_{j_s}$ 是 $f$ 的因子.
 
     设 $g$ 是 $f$ 的因子. 我们证明: $g$ 一定能写为 (\myStar) 的形式.
 
     首先, $g$ 一定不是 $0$. 若 $g$ 是单位, 取 $s = 0$, $g$ 即可写为 (\myStar) 的形式. 现在设 $g$ 既不是 $0$, 也不是单位.
 
-    设多项式 $h$ 使 $f = gh$. $h$ 当然不是 $0$. 若 $h$ 是单位, 则
+    设整式 $h$ 使 $f = gh$. $h$ 当然不是 $0$. 若 $h$ 是单位, 则
     \begin{align*}
         g = h^{-1} f = h^{-1} p_1 p_2 \cdots p_m.
     \end{align*}
     $h^{-1}$ 也是单位, 且 $1$, $2$, $\cdots$, $m$ 当然是 $1$, $2$, $\cdots$, $m$ 中 $m$ 个不同的数.
 
-    若 $h$ 不是单位, 则存在不可约的多项式 $q_1$, $q_2$, $\cdots$, $q_s$, $q_{s+1}$, $\cdots$, $q_n$ 使
+    若 $h$ 不是单位, 则存在不可约的整式 $q_1$, $q_2$, $\cdots$, $q_s$, $q_{s+1}$, $\cdots$, $q_n$ 使
     \begin{align*}
         g = q_1 q_2 \cdots q_s, \quad h = q_{s+1} \cdots q_n.
     \end{align*}
@@ -925,7 +1041,7 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
     \end{align*}
     从而 $n = m$, 且可以适当地调换 $p_1$, $p_2$, $\cdots$, $p_m$ 的顺序, 使任取 $1$, $2$, $\cdots$, $m$ 中的数 $\ell$, $q_\ell$ 与 $p_\ell$ 相伴. 但是, 我们注意到, 调换后的 $p_{\ell}$ 跟题设的 $p_{\ell}$ 不一定是相等的, 所以我们稍微变通一下.
 
-    我们把 $s$ 个不可约的多项式 $q_1$, $q_2$, $\cdots$, $q_s$ 写在左边, 把 $m$ 个不可约的多项式 $p_1$, $p_2$, $\cdots$, $p_m$ 写在右边:
+    我们把 $s$ 个不可约的整式 $q_1$, $q_2$, $\cdots$, $q_s$ 写在左边, 把 $m$ 个不可约的整式 $p_1$, $p_2$, $\cdots$, $p_m$ 写在右边:
     \begin{align*}
         q_1, q_2, \cdots, q_s; \qquad p_1, p_2, \cdots, p_m.
     \end{align*}
@@ -947,17 +1063,17 @@ $\FF$ 表示全体有理数 (或实数、复数) 作成的集. $\FF[x]$ 是全�
 我们以一个简单的命题结束本文.
 
 \begin{proposition}
-    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是多项式. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 任取不可约的多项式 $p$, 存在某个 $f_i$, 使 $p$ 不是 $f_i$ 的因子.
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是整式. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 任取不可约的整式 $p$, 存在某个 $f_i$, 使 $p$ 不是 $f_i$ 的因子.
 \end{proposition}
 
 \begin{pf}
-    先看必要性. 反证法. 假定结论不成立, 即: 存在不可约的多项式 $p$, 使任取 $f_i$, $p$ 是 $f_i$ 的因子. 这样, $p$ 就是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子. 所以, $p$ 是单位的因子. 矛盾!
+    先看必要性. 反证法. 假定结论不成立, 即: 存在不可约的整式 $p$, 使任取 $f_i$, $p$ 是 $f_i$ 的因子. 这样, $p$ 就是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子. 所以, $p$ 是单位的因子. 矛盾!
 
-    再看充分性. 还是反证法. 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位. 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的多项式都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的多项式 $p_0$, 使 $p_0$ 是 $d$ 的因子. 所以, 存在不可约的多项式 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子. 矛盾!
+    再看充分性. 还是反证法. 假定结论不成立, 即: 设 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 且 $d$ 不是单位. 若 $d$ 是 $0$, 则 $f_1$, $f_2$, $\cdots$, $f_n$ 全是 $0$, 故任意的不可约的整式都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 矛盾! 若 $d$ 不是 $0$, 也不是单位, 那么一定存在不可约的整式 $p_0$, 使 $p_0$ 是 $d$ 的因子. 所以, 存在不可约的整式 $p_0$, 使任取 $f_i$, $p_0$ 是 $f_i$ 的因子. 矛盾!
 \end{pf}
 
 \begin{remark}
-    作者说一件不是很重要的事. 事实上, 本文改编自 ``\SomePropertiesOfIntegers ''. 作者干了这么几件事: (i) 将大量的 ``整数'' 替换为 ``多项式''; (ii) 修改一些细节; (iii) 修改了几个例. (i) 是最容易的, 而 (iii) 是最繁的.
+    作者说一件不是很重要的事. 事实上, 本文改编自 ``\SomePropertiesOfIntegers ''. 作者干了这么几件事: (i) 将大量的 ``整数'' 替换为 ``整式''; (ii) 修改一些细节; (iii) 修改了几个例. (i) 是最容易的, 而 (iii) 是最繁的.
 \end{remark}
 
 本文就到这里. 再见, 亲爱的读者朋友!

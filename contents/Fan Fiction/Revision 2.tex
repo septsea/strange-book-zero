@@ -1,0 +1,330 @@
+\subsection*{\Revision{2}}
+\addcontentsline{toc}{subsection}{\Revision{2}}
+\markright{\Revision{2}}
+
+本文的目标是帮助读者回顾所学的知识.
+
+本文不会有新的东西. 我们又开始复习了. 这次, 我们要复习五篇文的内容. 有点大; 请读者忍一下.
+
+当然, 读者要清楚一个事实: ``\Revision{2}'' 的整式的系数都是有理数. 这很重要.
+
+我们先复习因子分解. 不过, 作者不说怎么具体地进行因子分解.
+
+\begin{proposition}
+    设 $N$ 是非负整数. 存在不可约的整数 $p$ 使 $|p| > N$. 通俗地说, 有无限多个不可约的整数.
+\end{proposition}
+
+\begin{proposition}
+    设 $N$ 是非负整数. 存在不可约的 (有理系数) 整式 $p$ 使 $\deg p > N$. 通俗地说, 有无限多个不可约的整数.
+\end{proposition}
+
+\begin{remark}
+    同时复习整数与整式的相似的性质是有好处的.
+\end{remark}
+
+\begin{proposition}
+    设 $f$ 既不是 $0$, 也不是单位. 若 $p$ 是最小的高于 $1$ 的 $f$ 的因子, 则 $p$ 是不可约的.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$ 既不是 $0$, 也不是单位. 设 $p$ 是 $f$ 的因子, $p$ 不是单位, 且 $N = \deg p$. 若 $f$ 没有次低于 $N$ 且不是单位的因子, 则 $p$ 是不可约的.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$ 是整数. 设整数 $f_1$, $f_2$ 适合 $f = f_1 f_2$. 设 $|f_1| \leq |f_2|$. 则 $|f_1| \leq \sqrt{|f|}$.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$ 是整式. 设整式 $f_1$, $f_2$ 适合 $f = f_1 f_2$. 设 $\deg f_1 \leq \deg f_2$. 则 $\deg f_1 \leq \frac{1}{2} \deg f$.
+\end{proposition}
+
+\begin{proposition}
+    设正整数 $p$ 是不可约的. 则 $p = 2$, 或 $p = 3$, 或存在正整数 $k$ 使 $p = 6k \pm 1$.
+\end{proposition}
+
+\begin{remark}
+    不可约的 (有理系数) 整式也可以有类似的结论. 设 $p$ 是不可约的. 存在整式 $q$ 与非零的数 $c$ 使 $p = xq + c$. 不过, 这就不像 ``$6k \pm 1$'' 那么有用了……
+\end{remark}
+
+沿用 ``\Revision{0}'' 的记号, 用 $I$ 表示整数或整式. 由此, 我们可写出如下定义.
+
+\begin{definition}
+    设 $I$ 的元 $f \neq 0$. 那么, $f$ 一定可写为 (至多一个) 单位与有限多个 (可以是零个) 不可约的 $I$ 的元的积, 即: 存在单位 $\varepsilon$ 与不可约的 $I$ 的元 $p_1$, $p_2$, $\cdots$, $p_s$ ($s$ 可为 $0$; 此时, $f$ 是单位) 使
+    \begin{align*}
+        f = \varepsilon p_1 p_2 \cdots p_s.
+    \end{align*}
+    上式右侧即为 $f$ 的因子分解. 动词短语 ``写 $f$ 为单位与有限多个不可约的 $I$ 的元的积'' 的一个简单的称呼是 ``因子分解 $f$''.
+\end{definition}
+
+作者给读者留点习题. 请读者自行总结如何用试除法判断一个整数是否是可约的. 请读者自行总结如何用试除法写出整数的因子分解.
+
+\begin{remark}
+    任给正实数 $t$. 只有有限多个整数 $n$ 适合条件 $|n| < t$ 的整数 $n$——这是整数的试除法的地基.
+\end{remark}
+
+下面的命题与整数的因子有关.
+
+\begin{proposition}
+    设整数 $f \neq 0$. 设 $\varepsilon$ 是单位, $q_1$, $q_2$, $\cdots$, $q_s$ 是互不相伴的不可约的整数 ($s$ 可取 $0$; 此时, $f$ 是单位), $r_1$, $r_2$, $\cdots$, $r_s$ 是正整数, 且
+    \begin{align*}
+        f = \varepsilon q_1^{r_1} q_2^{r_2} \cdots q_s^{r_s}.
+    \end{align*}
+
+    (i) $f$ 的因子一定形如
+    \begin{align*}
+        \varepsilon^{\prime} q_1^{t_1} q_2^{t_2} \cdots q_s^{t_s},
+    \end{align*}
+    其中 $\varepsilon^{\prime}$ 是单位, $t_i$ 是不高于 $r_i$ 的非负整数 ($i=1$, $2$, $\cdots$, $s$).
+
+    (ii) $f$ 至多有
+    \begin{align*}
+        n = (1 + r_1) (1 + r_2) \cdots (1 + r_s)
+    \end{align*}
+    个互不相伴的因子. 因为整数恰有二个单位, 故 $f$ 有 $2n$ 个因子.
+\end{proposition}
+
+因子分解就说到这里. 下面, 我们将复习整系数整式与有理系数整式的知识.
+
+\begin{definition}
+    设
+    \begin{align*}
+        f = a_0 + a_1 x + \cdots + a_n x^n.
+    \end{align*}
+    若系数 $a_0$, $a_1$, $\cdots$, $a_n$ 都是整数, 且整数 $a_0$, $a_1$, $\cdots$, $a_n$ 互素, 则 $f$ 是本原的.
+\end{definition}
+
+\begin{proposition}
+    设 $f$ 是有理系数整式, 且 $f$ 不是零.
+
+    (i) $f$ 一定可以写为有理数 $c_f$ 与本原的整式 $f^{\ast}$ 的积, 即 $f = c_f f^{\ast}$;
+
+    (ii) 若有理数 $r$ 与本原的整式 $g$ 适合 $f = rg$, 必有 $r = \varepsilon c_f$, $g = \varepsilon^{-1} f^{\ast}$, 其中 $\varepsilon = \pm 1$.
+
+    $c_f$ 称为 $f$ 的容量; $f^{\ast}$ 称为 $f$ 的本原的相伴.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f$, $g$, $h$ 的系数都是整数. 设 $f = gh$.
+
+    (i) 若 $f$ 是本原的, 则 $g$ 与 $h$ 也是本原的;
+
+    (ii) 若 $g$ 与 $h$ 是本原的, 则 $f$ 也是本原的.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f$, $g$ 的系数都是整数.
+
+    (i) 若 $g$ 是本原的, 且存在整式 $h$ 使 $f = gh$, 则 $h$ 的系数也都是整数;
+
+    (ii) 在 (i) 的基础上, 若还假定 $f$ 也是本原的, 则 $h$ 也是本原的.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f$ 的系数都是整数. 设 $f$ 可写为二个有理系数整式 $g$, $h$ 的积. 则 $f$ 可写为
+    \begin{align*}
+        f = c_f g^{\ast} h^{\ast}.
+    \end{align*}
+    上式应这么理解: 存在 $g$ 的某个本原的相伴 $g^{\ast}$, 存在 $h$ 的某个本原的相伴 $h^{\ast}$, 存在 $f$ 的某个容量 $c_f$, 使上式成立.
+\end{proposition}
+
+\begin{proposition}
+    设 $p$ 是素数. 若 $j$ 是低于 $p$ 的正整数, 则 $p$ 是 (广义) 二项系数 $\binom{p}{j}$ 的因子.
+\end{proposition}
+
+\begin{proposition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是有理系数整式, 且 $n \geq 1$, $a_n \neq 0$ (这表明, $f(x)$ 不是 $0$, 也不是整式的单位, 且 $f(x)$ 的次为 $n$). 设 $\alpha$, $\beta$ 是有理数, 且 $\alpha \neq 0$. 设
+    \begin{align*}
+        g(x) = f(\alpha x + \beta) = a_0 + a_1 (\alpha x + \beta) + \cdots + a_n (\alpha x + \beta)^n.
+    \end{align*}
+    显然, $g(x)$ 也是有理系数整式, 且次仍为 $n$ ($g(x)$ 的次不超过 $n$, 且其 $n$ 次系数 $a_n \alpha^n \neq 0$). 因为
+    \begin{align*}
+        x = \alpha \cdot \left( \frac{1}{\alpha} x + \frac{-\beta}{\alpha} \right) + \beta,
+    \end{align*}
+    故
+    \begin{align*}
+        f(x) = f\left( \alpha \cdot \left( \frac{1}{\alpha} x + \frac{-\beta}{\alpha} \right) + \beta \right) = g\left( \frac{1}{\alpha} x + \frac{-\beta}{\alpha} \right).
+    \end{align*}
+    这里, $\frac{1}{\alpha}$, $\frac{-\beta}{\alpha}$ 当然也是有理数, 且 $\frac{1}{\alpha} \neq 0$.
+
+    (i) 若 $f(x)$ 是可约的, 则 $g(x)$ 是可约的;
+
+    (ii) 若 $g(x)$ 是可约的, 则 $f(x)$ 是可约的.
+
+    简单点说, ``$f(x)$ 是可约的 (不可约的)'' 的一个必要与充分条件是: ``$f(\alpha x + \beta)$ ($\alpha$, $\beta$ 是有理数, 且 $\alpha \neq 0$) 是可约的 (不可约的)''.
+\end{proposition}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是整式, $a_n \neq 0$, 且 $a_0 \neq 0$. $f(x)$ 的反整式是
+    \begin{align*}
+        f^{\mathrm{r}} (x) = a_n + a_{n-1} x + \cdots + a_0 x^n.
+    \end{align*}
+    也就是说, $f^{\mathrm{r}} (x)$ 的 $j$ 次系数是 $a_{n-j}$ ($j = 0,1,\cdots,n$).
+
+    请读者注意: 上面的 $f(x)$ 的 $0$ 次系数不是 $0$. 如果 $a_0 = 0$, 它的反整式是未定义的.
+\end{definition}
+
+\begin{proposition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是整式, $a_n \neq 0$, 且 $a_0 \neq 0$.
+
+    (i) $f(x)$ 的反整式 $f^{\mathrm{r}} (x)$ 的次仍为 $n$;
+
+    (ii) $f^{\mathrm{r}}(x)$ 的反整式 $(f^{\mathrm{r}})^{\mathrm{r}} (x)$ 是 $f(x)$;
+
+    (iii) 若 $t$ 是非零数, 则
+    \begin{align*}
+        f^{\mathrm{r}} (t) = t^n f \left( \frac{1}{t} \right).
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n,    \\
+         & f_1 (x) = p_0 + p_1 x + \cdots + p_u x^u, \\
+         & f_2 (x) = q_0 + q_1 x + \cdots + q_v x^v
+    \end{align*}
+    是整式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $a_0 \neq 0$. 设
+    \begin{align*}
+        f(x) = f_1 (x) f_2 (x).
+    \end{align*}
+
+    (i) $u + v = n$;
+
+    (ii) $p_0 \neq 0$, $q_0 \neq 0$;
+
+    (iii) $f^{\mathrm{r}} (x) = f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x)$.
+\end{proposition}
+
+\begin{proposition}
+    设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n,    \\
+         & f_1 (x) = p_0 + p_1 x + \cdots + p_u x^u, \\
+         & f_2 (x) = q_0 + q_1 x + \cdots + q_v x^v
+    \end{align*}
+    是整式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $p_0 \neq 0$, $q_0 \neq 0$, $a_0 \neq 0$. 设
+    \begin{align*}
+        f^{\mathrm{r}} (x) = f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x).
+    \end{align*}
+    则
+    \begin{align*}
+        f(x) = f_1 (x) f_2 (x).
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f(x)$ 既不是 $0$, 也不是单位, 且 $0$ 次系数不为 $0$. ``$f(x)$ 是可约的 (不可约的)'' 的一个必要与充分条件是: ``反整式 $f^{\mathrm{r}} (x)$ 是可约的 (不可约的)''.
+\end{proposition}
+
+\begin{proposition}
+    设整式
+    \begin{align*}
+        f = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    的系数都是整数. 若存在不可约的整数 $p$ 适合如下三条件, 则 $f$ 是不可约的:
+
+    (i) $p$ 不是 $a_n$ 的因子 (这说明 $a_n \neq 0$);
+
+    (ii) $p$ 是 $a_{n-1}$, $a_{n-2}$, $\cdots$, $a_0$ 的因子;
+
+    (iii) $p^2$ 不是 $a_0$ 的因子 (这说明 $a_0 \neq 0$).
+\end{proposition}
+
+\begin{proposition}
+    设整式
+    \begin{align*}
+        f = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    的系数都是整数. 若存在不可约的整数 $p$ 适合如下三条件, 则 $f$ 是不可约的:
+
+    (i) $p$ 不是 $a_0$ 的因子 (这说明 $a_0 \neq 0$);
+
+    (ii) $p$ 是 $a_1$, $a_2$, $\cdots$, $a_n$ 的因子;
+
+    (iii) $p^2$ 不是 $a_n$ 的因子 (这说明 $a_n \neq 0$).
+\end{proposition}
+
+\begin{proposition}
+    设 $q$ 是素数. 则
+    \begin{align*}
+        f(x) = 1 + x + \cdots + x^{q-2} + x^{q-1}
+    \end{align*}
+    是不可约的.
+\end{proposition}
+
+下面我们复习如何找 (有理系数) 整式的因子.
+
+\begin{definition}
+    设 $f(x)$ 是有理系数整式. 若有理数 $a$ 适合 $f(a) = 0$, 则 $a$ 是 $f(x)$ 的有理根.
+\end{definition}
+
+\begin{proposition}
+    设 $a$, $b$ 是有理数, 且 $a \neq 0$. $-\frac{b}{a}$ 是 $f(x) = ax + b$ 的有理根.
+\end{proposition}
+
+\begin{proposition}
+    设整数 $u$, $v$ 互素, 且 $u \neq 0$. 这样, $g = ux - v$ 是本原的 $1$ 次整式. 设 $f$ 是整系数整式. 若 $g$ 是 $f$ 的因子, 则 $u$ 是 $f$ 的首项系数的因子, 且 $v$ 是 $f$ 的 $0$ 次系数的因子.
+\end{proposition}
+
+\begin{proposition}
+    设整数 $u$, $v$ 互素, 且 $u \neq 0$. 设 $f$ 是整系数整式. 若 $\frac{v}{u}$ 是 $f$ 的根, 则 $u$ 是 $f$ 的首项系数的因子, 且 $v$ 是 $f$ 的 $0$ 次系数的因子.
+\end{proposition}
+
+\begin{proposition}
+    设整数 $u$, $v$ 互素, 且 $u \neq 0$. 这样, $g(x) = ux - v$ 是本原的 $1$ 次整式. 设 $f(x)$ 是整系数整式. 若 $g(x)$ 是 $f(x)$ 的因子, 则 $v - u$ 是 $f(1)$ 的因子, 且 $v + u$ 是 $f(-1)$ 的因子.
+\end{proposition}
+
+\begin{proposition}
+    设整数 $u$, $v$ 互素, 且 $u \neq 0$. 设 $f(x)$ 是整系数整式. 若 $\frac{v}{u}$ 是 $f(x)$ 的根, 则 $v - u$ 是 $f(1)$ 的因子, 且 $v + u$ 是 $f(-1)$ 的因子.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$ 是整系数整式, 且其首项系数是 $\pm 1$. 若有理数 $r$ 是 $f$ 的根, 则 $r$ 一定是整数, 且 $r$ 是 $f$ 的 $0$ 次系数的因子.
+\end{proposition}
+
+\begin{proposition}
+    设 $n$ 是正整数. 设 $m$ 是整数, 且不存在整数 $s$ 使 $s^n = m$. 不存在有理数 $r$ 使 $r^n = m$. 由此, $\sqrt{2}$, $\sqrt[3]{2}$ 都不是有理数.
+\end{proposition}
+
+\begin{proposition}
+    若 $f$ 的次为 $2$ (或 $3$), 则 ``$f$ 是可约的'' 的一个必要与充分条件是 ``$f$ 有有理根''; ``$f$ 是不可约的'' 的一个必要与充分条件是 ``$f$ 无有理根''.
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x) = ax^2 + bx + c$, 其中 $a$, $b$, $c$ 是有理数, 且 $a \neq 0$. ``$f(x)$ 是可约的'' 的一个必要与充分条件是 ``$\Delta = b^2 - 4ac$ 是有理数的平方''.
+\end{proposition}
+
+\begin{proposition}
+    设 $f(x) = x^3 + ax^2 + bx + 1$, 其中 $a$, $b$ 是整数. 若 $f(1)$ 与 $f(-1)$ 都不是 $0$, 则 $f(x)$ 是不可约的.
+\end{proposition}
+
+请读者自行总结用插值法探整式的因子的方法.
+
+请读者自行总结如何因子分解有理系数整式.
+
+\begin{proposition}
+    设 $f(x) = x^{15} - 1$. 则
+    \begin{align*}
+        f(x)
+        = {} & (x-1) (x^2+x+1) (x^4+x^3+x^2+x+1)       \\
+             & \qquad \cdot (x^8-x^7+x^5-x^4+x^3-x+1).
+    \end{align*}
+\end{proposition}
+
+设 $g(x) = x^{15} + 1$. 请读者试写出 $g(x)$ 的因子分解.
+
+设 $h(x) = x^{30} - 1$. 请读者试写出 $h(x)$ 的因子分解.
+
+好. 读者休息吧.

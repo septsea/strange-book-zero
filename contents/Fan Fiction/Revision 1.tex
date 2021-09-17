@@ -1,0 +1,151 @@
+\subsection*{\Revision{1}}
+\addcontentsline{toc}{subsection}{\Revision{1}}
+\markright{\Revision{1}}
+
+本文的目标是帮助读者回顾所学的知识.
+
+本文不会有新的东西. 我们又开始复习了. 不过, 不像 ``\Revision{0}'', 这次的 ``\Revision{1}'' 不会有特别多的知识.
+
+\begin{proposition}
+    设 $a$ 为数. 我们用 $x-a$ 除 $f(x)$. 设 $f(x)$ 的次为 $n$, 且 $n \geq 1$ (若 $n < 1$, 则 $x-a$ 除 $f(x)$ 的商与余式分别是 $0$ 与 $f(x)$). 所以, 商的次是 $n-1$, 且余式 (可认为) 是数. 这样, 我们可以待定系数. 具体地说, 设
+    \begin{align*}
+        f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0,
+    \end{align*}
+    且
+    \begin{align*}
+        f(x) = (x - a) (b_{n-1} x^{n-1} + b_{n-2} x^{n-2} + \cdots + b_0) + b_{-1}.
+    \end{align*}
+    上式可写为
+    \begin{align*}
+        f(x)
+        = {} & b_{n-1} x^n + (b_{n-2} - ab_{n-1}) x^{n-1} + \cdots + (b_{j-1} - ab_j) x^j \\
+             & \qquad + \cdots + (b_0 - ab_1) x + (b_{-1} - ab_0).
+    \end{align*}
+    比较系数, 有
+    \begin{align*}
+         & a_n = b_{n-1},                                           \\
+         & a_{n-1} = b_{n-2} - ab_{n-1},                            \\
+         & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots, \\
+         & a_j = b_{j-1} - ab_j \quad (0 \leq j < n),               \\
+         & \cdots \cdots \cdots \cdots \cdots \cdots \cdots \cdots, \\
+         & a_1 = b_0 - ab_1,                                        \\
+         & a_0 = b_{-1} - ab_0.
+    \end{align*}
+    由此解出
+    \begin{align*}
+         & b_{n-1} = a_n,                                     \\
+         & b_{j-1} = ab_j + a_j \quad (j = n-1,n-2,\cdots,0).
+    \end{align*}
+    这就是 $1$ 次式除整式的综合除法.
+\end{proposition}
+
+如果不关心 $b_{-1}$ 之前的数 $b_{n-1}$, $b_{n-2}$, $\cdots$, $b_1$, $b_0$ 的意义, 我们可得到计算整式在点 $a$ 的值的秦九韶算法:
+\begin{proposition}
+    设 $a$ 是数. 设 $n$ 是正整数. 设
+    \begin{align*}
+        f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0.
+    \end{align*}
+    按如下规则作 $n$ 个数 $b_{n-1}$, $b_{n-2}$, $\cdots$, $b_0$, $b_{-1}$:
+    \begin{align*}
+         & b_{n-1} = a_n,                                     \\
+         & b_{j-1} = ab_j + a_j \quad (j = n-1,n-2,\cdots,0).
+    \end{align*}
+    则 $b_{-1} = f(a)$.
+\end{proposition}
+
+下面的乘法公式很有用.
+\begin{proposition}
+    设 $f$, $g$ 是整式. 设 $n$ 是正整数. 则
+    \begin{align*}
+        f^n - g^n = (f - g)(f^{n-1} + f^{n-2} g + \cdots + f^{n-i} g^{i-1} + \cdots + g^{n-1}).
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    下面是中学算学的三个乘法公式. 设 $f$, $g$ 是整式.
+
+    (i) 平方差公式: $f^2 - g^2 = (f - g)(f + g)$.
+
+    (ii) 立方差公式: $f^3 - g^3 = (f - g)(f^2 + fg + g^2)$.
+
+    (ii) 立方和公式: $f^3 + g^3 = (f + g)(f^2 - fg + g^2)$.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$, $g$, $h$ 都是整式. 则
+    \begin{align*}
+        f^3 + g^3 + h^3 - 3fgh = (f + g + h)(f^2 + g^2 + h^2 - fg - fh - gh).
+    \end{align*}
+    若 $f$, $g$, $h$ 都是复系数整式, 则
+    \begin{align*}
+        f^3 + g^3 + h^3 - 3fgh = (f + g + h) (f + \omega g + \omega^2 h) (f + \omega^2 g + \omega h),
+    \end{align*}
+    其中 $\omega = \frac{-1 + \ii \sqrt{3}}{2}$.
+\end{proposition}
+
+\begin{definition}
+    设 $p$ 是不可约的整式. 设 $m$ 是非负整数. 设整式 $f \neq 0$. 若 $p^m$ 是 $f$ 的因子, 但 $p^{m+1}$ 不是 $f$ 的因子, 则 $p$ 是 $f$ 的 $m$ 重因子. 若 $m = 0$, $p$ 当然不是 $f$ 的因子; 若 $m = 1$, 则 $p$ 是 $f$ 的单因子; 若 $m \geq 2$, 则 $p$ 是 $f$ 的重因子.
+\end{definition}
+
+\begin{remark}
+    请读者思考: 这样的 $m$ 是否存在? 为什么?
+\end{remark}
+
+\begin{proposition}
+    设 $p$ 是不可约的整式. 设 $m$ 是非负整数. 设整式 $f \neq 0$. $p$ 是 $f$ 的 $m$ 重因子的一个必要与充分条件是: 存在整式 $g$ 使 $f = p^m g$, 且 $p$ 不是 $g$ 的因子.
+\end{proposition}
+
+\begin{remark}
+    $f$ 的重因子 (究竟是什么) 与系数的范围有关. 这跟之前讨论不可约的整式时是类似的.
+\end{remark}
+
+\begin{proposition}
+    设 $p$ 是不可约的整式. 设整式 $f \neq 0$. $p$ 是 $f$ 的重因子的一个必要与充分条件是: $p^2$ 是 $f$ 的因子.
+\end{proposition}
+
+\begin{proposition}
+    设 $p$ 是不可约的整式. $p$ 一定不是 $Dp$ 的因子.
+\end{proposition}
+
+下面的命题揭示了微商与重因子的关系.
+
+\begin{proposition}
+    设 $p$ 是不可约的整式. 设 $m$ 是正整数. 设整式 $f \neq 0$. 若 $p$ 是 $f$ 的 $m$ 重因子, 则 $p$ 是 $Df$ 的 $m-1$ 重因子. 由此可见:
+
+    (i) 若 $p$ 是 $f$ 的单因子 ($m = 1$), 则 $p$ 不是 $Df$ 的因子;
+
+    (ii) 若 $p$ 是 $f$ 的重因子 ($m \geq 2$), 则 $p$ 也是 $Df$ 的因子;
+
+    (iii) $p$ 是 $f$ 的重因子的一个必要与充分条件是: $p$ 是 $f$ 与 $Df$ 的公因子.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f \neq 0$. 设 $M$ 是 $f$ 与 $Df$ 的最大公因子. 设整式 $h$ 适合 $f = hM$.
+
+    (i) $M$ 的不可约的因子都是 $f$ 的重因子.
+
+    (ii) $f$ 的不可约的因子都是 $h$ 的因子.
+
+    (iii) $h$ 无重因子.
+
+    这就是所谓的 ``去重''.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f \neq 0$. $f$ 无重因子的一个必要与充分条件是: $f$ 与 $Df$ 互素.
+\end{proposition}
+
+因为问题 ``$f$ 是否与 $g$ 互素'' 的回答不因系数的范围扩大而改变, 故我们有
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    (i) 设 $f$ 作为 $K$ 上的整式有重因子. 所以, $f$ 与 $Df$ 在 $K$ 上的整式中不互素. 所以, $f$ 与 $Df$ 在 $E$ 上的整式中不互素. 所以, $f$ 作为 $E$ 上的整式有重因子.
+
+    (ii) 设 $f$ 作为 $K$ 上的整式无重因子. 所以, $f$ 与 $Df$ 在 $K$ 上的整式中互素. 所以, $f$ 与 $Df$ 在 $E$ 上的整式中互素. 所以, $f$ 作为 $E$ 上的整式无重因子.
+
+    简单地说, 问题 ``$f$ 是否有重因子'' 的回答不因系数的范围扩大而改变.
+\end{proposition}
+
+``\Revision{1}'' 的知识或许难一些; 但是, 如果读者消化了 ``\Revision{0}'', 那么 ``\Revision{1}'' 就不会那么难了.
+
+读者就复习到这里吧. 休息.

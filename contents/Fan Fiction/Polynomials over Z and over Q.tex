@@ -2,12 +2,12 @@
 \addcontentsline{toc}{subsection}{\PolynomialsOverZAndOverQ}
 \markright{\PolynomialsOverZAndOverQ}
 
-在 ``\SomePropertiesOfIntegers '' 与 ``\SomePropertiesOfPolynomials '' 里, 我们系统地介绍了整数与 (系数为 $\FF$ 的元的) 多项式的一些性质. 它们有一个共同点: 都可以作带余除法. 因为带余除法, 我们证明了最大公因子的存在性与 Bézout 等式; 因为最大公因子与 Bézout 等式, 我们考察了互素, 进而考虑了不可约的整数 (多项式).
+在 ``\SomePropertiesOfIntegers '' 与 ``\SomePropertiesOfPolynomials '' 里, 我们系统地介绍了整数与 (系数为 $\FF$ 的元的) 整式的一些性质. 它们有一个共同点: 都可以作带余除法. 因为带余除法, 我们证明了最大公因子的存在性与 Bézout 等式; 因为最大公因子与 Bézout 等式, 我们考察了互素, 进而考虑了不可约的整数 (整式).
 
-读者可能注意到, 在 ``\SomePropertiesOfPolynomials '' 里, 我们没有讨论整系数多项式. 为什么没讨论呢? 读者可以想一想, 整系数多项式是否还有带余除法.
+读者可能注意到, 在 ``\SomePropertiesOfPolynomials '' 里, 我们没有讨论整系数整式. 为什么没讨论呢? 读者可以想一想, 整系数整式是否还有带余除法.
 
 \begin{example}
-    以 $f = x^2 + 1$, $g = 2x$ 为例. 设存在整系数多项式 $q$, $r$ 使
+    以 $f = x^2 + 1$, $g = 2x$ 为例. 设存在整系数整式 $q$, $r$ 使
     \begin{align*}
         f = gq + r, \quad \deg r < \deg g = 1.
     \end{align*}
@@ -25,15 +25,15 @@
     \end{align*}
     问题来了: 哪个整数乘 $2$ 等于 $1$? 所以这样的 $q$ 不存在.
 
-    当然, 如果读者视 $f$, $g$, $q$, $r$ 为有理系数多项式, 立即可得
+    当然, 如果读者视 $f$, $g$, $q$, $r$ 为有理系数整式, 立即可得
     \begin{align*}
         q = \frac{1}{2}x, \quad r = 1.
     \end{align*}
 \end{example}
 
-在 ``\SomePropertiesOfPolynomials '' 里, 我们把 ``\SomePropertiesOfIntegers '' 的套路几乎原封不动地搬了过来. 不过, 由于整系数多项式不一定有带余除法, 故我们没法 ``偷懒地'' 讨论整系数多项式.
+在 ``\SomePropertiesOfPolynomials '' 里, 我们把 ``\SomePropertiesOfIntegers '' 的套路几乎原封不动地搬了过来. 不过, 由于整系数整式不一定有带余除法, 故我们没法 ``偷懒地'' 讨论整系数整式.
 
-但情况不是特别糟. 首先, 整数是有理数, 故整系数多项式是有理系数多项式. 其次, 读者知道, 有理数是二个整数的比 (分母不为零). 取不为零的有理系数多项式
+但情况不是特别糟. 首先, 整数是有理数, 故整系数整式是有理系数整式. 其次, 读者知道, 有理数是二个整数的比 (分母不为零). 取不为零的有理系数整式
 \begin{align*}
     f = \frac{p_0}{q_0} + \frac{p_1}{q_1} x + \cdots + \frac{p_n}{q_n} x^n,
 \end{align*}
@@ -49,7 +49,7 @@
 \begin{align*}
     f = \frac{p_0 Q_0}{Q} + \frac{p_1 Q_1}{Q} x + \cdots + \frac{p_n Q_n}{Q} x^n.
 \end{align*}
-设 $d$ 是整数 (而不是多项式) $p_0 Q_0$, $p_1 Q_1$, $\cdots$, $p_n Q_n$ 的最大公因子. 这样, 存在整数 $m_0$, $m_1$, $\cdots$, $m_n$ 使
+设 $d$ 是整数 (而不是整式) $p_0 Q_0$, $p_1 Q_1$, $\cdots$, $p_n Q_n$ 的最大公因子. 这样, 存在整数 $m_0$, $m_1$, $\cdots$, $m_n$ 使
 \begin{align*}
     p_0 Q_0 = d m_0, \quad p_1 Q_1 = d m_1, \quad \cdots, \quad p_n Q_n = d m_n.
 \end{align*}
@@ -101,11 +101,11 @@
     \end{align*}
 \end{example}
 
-上面假定 $f \neq 0$; 现在考虑 $0$. 显然 $0 = 0 \cdot 1$, 其中 $1$ 是整系数多项式, 且其系数互素.
+上面假定 $f \neq 0$; 现在考虑 $0$. 显然 $0 = 0 \cdot 1$, 其中 $1$ 是整系数整式, 且其系数互素.
 
-上面的文字说明: 有理系数多项式 $f$ 总可以写为一个有理数 $c_f$ 与一个整系数多项式 $f^{\ast}$ 的积, 且 $f^{\ast}$ 的系数互素.
+上面的文字说明: 有理系数整式 $f$ 总可以写为一个有理数 $c_f$ 与一个整系数整式 $f^{\ast}$ 的积, 且 $f^{\ast}$ 的系数互素.
 
-因此, 我们可以借助有理系数多项式讨论整系数多项式.
+因此, 我们可以借助有理系数整式讨论整系数整式.
 
 \begin{definition}
     设
@@ -116,11 +116,11 @@
 \end{definition}
 
 \begin{proposition}
-    设 $f$ 是有理系数多项式, 且 $f$ 不是零.
+    设 $f$ 是有理系数整式, 且 $f$ 不是零.
 
-    (i) $f$ 一定可以写为有理数 $c_f$ 与本原的多项式 $f^{\ast}$ 的积, 即 $f = c_f f^{\ast}$;
+    (i) $f$ 一定可以写为有理数 $c_f$ 与本原的整式 $f^{\ast}$ 的积, 即 $f = c_f f^{\ast}$;
 
-    (ii) 若有理数 $r$ 与本原的多项式 $g$ 适合 $f = rg$, 必有 $r = \varepsilon c_f$, $g = \varepsilon^{-1} f^{\ast}$, 其中 $\varepsilon = \pm 1$.
+    (ii) 若有理数 $r$ 与本原的整式 $g$ 适合 $f = rg$, 必有 $r = \varepsilon c_f$, $g = \varepsilon^{-1} f^{\ast}$, 其中 $\varepsilon = \pm 1$.
 
     $c_f$ 称为 $f$ 的容量 \term{content}; $f^{\ast}$ 称为 $f$ 的本原的相伴 \term{primitive associate}.
 \end{proposition}
@@ -128,7 +128,7 @@
 \begin{pf}
     (i) 显然.
 
-    (ii) 设 $c_f f^{\ast} = r g$, 其中 $c_f$, $r$ 是有理数, $f^{\ast}$, $g$ 是本原的多项式. 不难看出, $f$ 的次一定等于 $g$ 的次. 设
+    (ii) 设 $c_f f^{\ast} = r g$, 其中 $c_f$, $r$ 是有理数, $f^{\ast}$, $g$ 是本原的整式. 不难看出, $f$ 的次一定等于 $g$ 的次. 设
     \begin{align*}
         f^{\ast} = {} & s_0 + s_1 x + \cdots + s_n x^n, \\
         g = {}        & t_0 + t_1 x + \cdots + t_n x^n.
@@ -153,11 +153,11 @@
 \end{pf}
 
 \begin{remark}
-    我们可以这么叙述我们刚才证明的命题: 若忽略 (整数的) 单位的区别, 有理系数多项式可唯一地写为有理数与本原的多项式的积.
+    我们可以这么叙述我们刚才证明的命题: 若忽略 (整数的) 单位的区别, 有理系数整式可唯一地写为有理数与本原的整式的积.
 \end{remark}
 
 \begin{proposition}
-    设多项式 $f$, $g$, $h$ 的系数都是整数. 设 $f = gh$.
+    设整式 $f$, $g$, $h$ 的系数都是整数. 设 $f = gh$.
 
     (i) 若 $f$ 是本原的, 则 $g$ 与 $h$ 也是本原的;
 
@@ -165,14 +165,14 @@
 \end{proposition}
 
 \begin{pf}
-    (i) 反证法. 因为乘法可交换, 故不失一般性, 设 $g$ 不是本原的. 这样, 存在整系数多项式 $\ell$ 与不是 (整数的) 单位的整数 $t$, 使 $g = t\ell$. 这样, $f = t \cdot (\ell h)$. 所以 $t$ 是 $f$ 的所有系数的公因子, 故 $t$ 是 (整数的) 单位的公因子, 即 $t$ 也是 (整数的) 单位. 矛盾!
+    (i) 反证法. 因为乘法可交换, 故不失一般性, 设 $g$ 不是本原的. 这样, 存在整系数整式 $\ell$ 与不是 (整数的) 单位的整数 $t$, 使 $g = t\ell$. 这样, $f = t \cdot (\ell h)$. 所以 $t$ 是 $f$ 的所有系数的公因子, 故 $t$ 是 (整数的) 单位的公因子, 即 $t$ 也是 (整数的) 单位. 矛盾!
 
     (ii) 任取不可约的整数 $p$. 我们证明: 存在 $f$ 的系数 $c$, 使 $p$ 不是 $c$ 的因子. 设
     \begin{align*}
          & g = g_m x^m + g_{m-1} x^{m-1} + \cdots + g_0, \\
          & h = h_n x^n + h_{n-1} x^{n-1} + \cdots + h_0
     \end{align*}
-    是二个本原的多项式. 所以, 从次高的项往次低的项看, 一定存在二个整数 $s$, $t$ 使 $p$ 是 $g_m$, $g_{m-1}$, $\cdots$, $g_{s+1}$, $h_n$, $h_{n-1}$, $\cdots$, $h_{t+1}$ 的因子, 但 $p$ 不是 $g_s$ 的因子, 且 $p$ 不是 $h_t$ 的因子. 我们看 $f$ 的 $s+t$ 次系数:
+    是二个本原的整式. 所以, 从次高的项往次低的项看, 一定存在二个整数 $s$, $t$ 使 $p$ 是 $g_m$, $g_{m-1}$, $\cdots$, $g_{s+1}$, $h_n$, $h_{n-1}$, $\cdots$, $h_{t+1}$ 的因子, 但 $p$ 不是 $g_s$ 的因子, 且 $p$ 不是 $h_t$ 的因子. 我们看 $f$ 的 $s+t$ 次系数:
     \begin{align*}
         f_{s+t}
         = {} & g_s h_t + g_{s+1} h_{t-1} + \cdots + g_{s+t} h_0  \\
@@ -182,15 +182,15 @@
 \end{pf}
 
 \begin{proposition}
-    设多项式 $f$, $g$ 的系数都是整数.
+    设整式 $f$, $g$ 的系数都是整数.
 
-    (i) 若 $g$ 是本原的, 且存在多项式 $h$ 使 $f = gh$, 则 $h$ 的系数也都是整数;
+    (i) 若 $g$ 是本原的, 且存在整式 $h$ 使 $f = gh$, 则 $h$ 的系数也都是整数;
 
     (ii) 在 (i) 的基础上, 若还假定 $f$ 也是本原的, 则 $h$ 也是本原的.
 \end{proposition}
 
 \begin{pf}
-    (i) $f$ 与 $g$ 当然可以视为有理系数多项式. 由带余除法知, $h$ 至少也是有理系数多项式. 将 $h$ 写为 $c_h h^{\ast}$, 其中 $c_h$ 是某有理数, $h$ 是本原的多项式. 所以
+    (i) $f$ 与 $g$ 当然可以视为有理系数整式. 由带余除法知, $h$ 至少也是有理系数整式. 将 $h$ 写为 $c_h h^{\ast}$, 其中 $c_h$ 是某有理数, $h$ 是本原的整式. 所以
     \begin{align*}
         f = gh = g(c_h h^{\ast}) = c_h (g h^{\ast}).
     \end{align*}
@@ -198,7 +198,7 @@
     \begin{align*}
         f = c_f f^{\ast},
     \end{align*}
-    其中 $c_f$ 是整数 (因为 $f$ 的系数都是整数), 且 $f^{\ast}$ 是本原的多项式. 所以, 存在 (整数的) 单位 $\varepsilon$, 使
+    其中 $c_f$ 是整数 (因为 $f$ 的系数都是整数), 且 $f^{\ast}$ 是本原的整式. 所以, 存在 (整数的) 单位 $\varepsilon$, 使
     \begin{align*}
         c_h = \varepsilon c_f, \quad g h^{\ast} = \varepsilon^{-1} f^{\ast}.
     \end{align*}
@@ -212,7 +212,7 @@
 \end{pf}
 
 \begin{proposition}
-    设多项式 $f$ 的系数都是整数. 设 $f$ 可写为二个有理系数多项式 $g$, $h$ 的积. 则 $f$ 可写为
+    设整式 $f$ 的系数都是整数. 设 $f$ 可写为二个有理系数整式 $g$, $h$ 的积. 则 $f$ 可写为
     \begin{align*}
         f = c_f g^{\ast} h^{\ast}.
     \end{align*}
@@ -220,7 +220,7 @@
 \end{proposition}
 
 \begin{pf}
-    设 $f = c_f f^{\ast}$, $g = c_g g^{\ast}$, $h = c_h h^{\ast}$, 其中 $f^{\ast}$, $g^{\ast}$, $h^{\ast}$ 都是本原的多项式, $c_g$ 与 $c_h$ 使有理数, 且 $c_f$ (由题设) 是整数. 因为 $f = gh$, 故
+    设 $f = c_f f^{\ast}$, $g = c_g g^{\ast}$, $h = c_h h^{\ast}$, 其中 $f^{\ast}$, $g^{\ast}$, $h^{\ast}$ 都是本原的整式, $c_g$ 与 $c_h$ 使有理数, 且 $c_f$ (由题设) 是整数. 因为 $f = gh$, 故
     \begin{align*}
         c_f f^{\ast} = (c_g c_h) (g^{\ast} h^{\ast}).
     \end{align*}
@@ -235,7 +235,7 @@
 \end{pf}
 
 \begin{remark}
-    设多项式 $f$ 的系数都是整数. 上个命题表明: 若 $f$ 可写为二个有理系数多项式的积, 则 $f$ 可写为二个整系数多项式的积. 反过来, 因为整数是有理数, 故若 $f$ 可写为二个整系数多项式的积, $f$ 当然可写为二个有理系数多项式的积. 每个有理系数多项式都可写为有理数与本原的多项式的积. 所以, 我们可以借整数的性质研究有理系数多项式是否是可约的.
+    设整式 $f$ 的系数都是整数. 上个命题表明: 若 $f$ 可写为二个有理系数整式的积, 则 $f$ 可写为二个整系数整式的积. 反过来, 因为整数是有理数, 故若 $f$ 可写为二个整系数整式的积, $f$ 当然可写为二个有理系数整式的积. 每个有理系数整式都可写为有理数与本原的整式的积. 所以, 我们可以借整数的性质研究有理系数整式是否是可约的.
 \end{remark}
 
 \myLine
@@ -268,18 +268,18 @@
     但是, 这与假定 $\ell < p$ 矛盾. 彳亍. 完了.
 \end{pf}
 
-前面, 我们讨论多项式的性质时, 为了简单, 我们把 $f(x)$, $g(x)$, $h(x)$, $\cdots$ 写为 $f$, $g$, $h$, $\cdots$. 现在, 因为我们需要多项式的复合, 我们需要写出被省略的 ``$(x)$''.
+前面, 我们讨论整式的性质时, 为了简单, 我们把 $f(x)$, $g(x)$, $h(x)$, $\cdots$ 写为 $f$, $g$, $h$, $\cdots$. 现在, 因为我们需要整式的复合, 我们需要写出被省略的 ``$(x)$''.
 
 \begin{proposition}
     设
     \begin{align*}
         f(x) = a_0 + a_1 x + \cdots + a_n x^n
     \end{align*}
-    是有理系数多项式, 且 $n \geq 1$, $a_n \neq 0$ (这表明, $f(x)$ 不是 $0$, 也不是多项式的单位, 且 $f(x)$ 的次为 $n$). 设 $\alpha$, $\beta$ 是有理数, 且 $\alpha \neq 0$. 设
+    是有理系数整式, 且 $n \geq 1$, $a_n \neq 0$ (这表明, $f(x)$ 不是 $0$, 也不是整式的单位, 且 $f(x)$ 的次为 $n$). 设 $\alpha$, $\beta$ 是有理数, 且 $\alpha \neq 0$. 设
     \begin{align*}
         g(x) = f(\alpha x + \beta) = a_0 + a_1 (\alpha x + \beta) + \cdots + a_n (\alpha x + \beta)^n.
     \end{align*}
-    显然, $g(x)$ 也是有理系数多项式, 且次仍为 $n$ ($g(x)$ 的次不超过 $n$, 且其 $n$ 次系数 $a_n \alpha^n \neq 0$). 因为
+    显然, $g(x)$ 也是有理系数整式, 且次仍为 $n$ ($g(x)$ 的次不超过 $n$, 且其 $n$ 次系数 $a_n \alpha^n \neq 0$). 因为
     \begin{align*}
         x = \alpha \cdot \left( \frac{1}{\alpha} x + \frac{-\beta}{\alpha} \right) + \beta,
     \end{align*}
@@ -289,12 +289,11 @@
     \end{align*}
     这里, $\frac{1}{\alpha}$, $\frac{-\beta}{\alpha}$ 当然也是有理数, 且 $\frac{1}{\alpha} \neq 0$.
 
-    (i) 若 $f(x)$ 是可约的\myFN{
-        这里的 ``可约的'' 是指 $f(x)$ 作为有理系数多项式是可约的 (也就是说, 这是 ``\SomePropertiesOfPolynomials '' 里的 ``可约的''). 作者不打算讨论详细讨论整系数多项式的 ``可约的'' 的含义; 相反, 作者决定只在脚注里简单地提一提.
+    (i) 若 $f(x)$ 是可约的\myFN{这里的 ``可约的'' 是指 $f(x)$ 作为有理系数整式是可约的 (也就是说, 这是 ``\SomePropertiesOfPolynomials '' 里的 ``可约的''). 作者不打算讨论详细讨论整系数整式的 ``可约的'' 的含义; 相反, 作者决定只在脚注里简单地提一提.
 
-        设 $f$ 是整系数多项式. 若存在整系数多项式 $g$ 使 $fg = 1$, 则说 $f$ 是整系数多项式的单位. 由此, 读者可以证明: 整系数多项式的单位恰为 $1$, $-1$——这跟有理系数多项式的单位很不一样.
+        设 $f$ 是整系数整式. 若存在整系数整式 $g$ 使 $fg = 1$, 则说 $f$ 是整系数整式的单位. 由此, 读者可以证明: 整系数整式的单位恰为 $1$, $-1$——这跟有理系数整式的单位很不一样.
 
-        设 $f$ 是整系数多项式, 且 $f$ 既不是 $0$, 也不是单位. $f$ 作为整系数多项式是可约的, 是指存在二个不是单位的 (整系数) 多项式 $f_1$, $f_2$, 使 $f = f_1 f_2$. 所以, 若把 $4x$ 视为整系数多项式, $4x$ 是可约的: $4 = 4 \cdot x$, 且 $4$ 与 $x$ 都不是 (整系数多项式的) 单位. 但若视 $4x$ 为有理系数多项式, 则 $4x$ 当然是不可约的.
+        设 $f$ 是整系数整式, 且 $f$ 既不是 $0$, 也不是单位. $f$ 作为整系数整式是可约的, 是指存在二个不是单位的 (整系数) 整式 $f_1$, $f_2$, 使 $f = f_1 f_2$. 所以, 若把 $4x$ 视为整系数整式, $4x$ 是可约的: $4 = 4 \cdot x$, 且 $4$ 与 $x$ 都不是 (整系数整式的) 单位. 但若视 $4x$ 为有理系数整式, 则 $4x$ 当然是不可约的.
 
         作者不希望这些小差异影响读者. 而且, 这不是什么很重要的点.
     }, 则 $g(x)$ 是可约的;
@@ -307,7 +306,7 @@
 \begin{pf}
     事实上, 我们只要证明 (i). (ii) 的证明就是把 (i) 的证明里的 $f$ 与 $g$ 互换, 且 $\alpha$, $\beta$ 分别换为 $\frac{1}{\alpha}$, $\frac{-\beta}{\alpha}$.
 
-    设 $f(x)$ 是可约的. 所以, 存在二个不是单位的 (次高于 $0$ 的) 多项式 $f_1 (x)$, $f_2 (x)$ 使
+    设 $f(x)$ 是可约的. 所以, 存在二个不是单位的 (次高于 $0$ 的) 整式 $f_1 (x)$, $f_2 (x)$ 使
     \begin{align*}
         f(x) = f_1 (x) f_2 (x).
     \end{align*}
@@ -329,7 +328,7 @@
 
     设 $g(x) = f(x^2) = x^2 + 4$. 我们证明: $g(x)$ 是不可约的.
 
-    反证法. 假定存在二个有理系数多项式 $g_1 (x)$, $g_2 (x)$ 使
+    反证法. 假定存在二个有理系数整式 $g_1 (x)$, $g_2 (x)$ 使
     \begin{align*}
         g(x) = g_1 (x) g_2 (x),
     \end{align*}
@@ -376,7 +375,7 @@
     \end{align*}
     且 $x^4 \pm 2x^2 + 2$ 不是单位, 故 $\ell (x)$ 是可约的.
 
-    作者举这个例的目的是提醒读者: 上个命题的 $\alpha x + \beta$ 不能改为较高次的多项式; 否则, 命题不一定成立.
+    作者举这个例的目的是提醒读者: 上个命题的 $\alpha x + \beta$ 不能改为较高次的整式; 否则, 命题不一定成立.
 \end{remark}
 
 \begin{definition}
@@ -384,13 +383,13 @@
     \begin{align*}
         f(x) = a_0 + a_1 x + \cdots + a_n x^n
     \end{align*}
-    是多项式, $a_n \neq 0$, 且 $a_0 \neq 0$. $f(x)$ 的反多项式 \term{reciprocal polynomial} 是
+    是整式, $a_n \neq 0$, 且 $a_0 \neq 0$. $f(x)$ 的反整式 \term{reciprocal polynomial} 是
     \begin{align*}
         f^{\mathrm{r}} (x) = a_n + a_{n-1} x + \cdots + a_0 x^n.
     \end{align*}
     也就是说, $f^{\mathrm{r}} (x)$ 的 $j$ 次系数是 $a_{n-j}$ ($j = 0,1,\cdots,n$).
 
-    请读者注意: 上面的 $f(x)$ 的 $0$ 次系数不是 $0$. 如果 $a_0 = 0$, 它的反多项式是未定义的.
+    请读者注意: 上面的 $f(x)$ 的 $0$ 次系数不是 $0$. 如果 $a_0 = 0$, 它的反整式是未定义的.
 \end{definition}
 
 \begin{example}
@@ -428,11 +427,11 @@
     \begin{align*}
         f(x) = a_0 + a_1 x + \cdots + a_n x^n
     \end{align*}
-    是多项式, $a_n \neq 0$, 且 $a_0 \neq 0$.
+    是整式, $a_n \neq 0$, 且 $a_0 \neq 0$.
 
-    (i) $f(x)$ 的反多项式 $f^{\mathrm{r}} (x)$ 的次仍为 $n$;
+    (i) $f(x)$ 的反整式 $f^{\mathrm{r}} (x)$ 的次仍为 $n$;
 
-    (ii) $f^{\mathrm{r}}(x)$ 的反多项式 $(f^{\mathrm{r}})^{\mathrm{r}} (x)$ 是 $f(x)$;
+    (ii) $f^{\mathrm{r}}(x)$ 的反整式 $(f^{\mathrm{r}})^{\mathrm{r}} (x)$ 是 $f(x)$;
 
     (iii) 若 $t$ 是非零数, 则
     \begin{align*}
@@ -441,7 +440,7 @@
 \end{proposition}
 
 \begin{pf}
-    (i) $f(x)$ 的反多项式是
+    (i) $f(x)$ 的反整式是
     \begin{align*}
         f^{\mathrm{r}} (x) = a_n + a_{n-1} x + \cdots + a_0 x^n.
     \end{align*}
@@ -451,11 +450,11 @@
     \begin{align*}
         b_j = a_{n - j}, \quad j = 0,1,\cdots,n.
     \end{align*}
-    则 $f(x)$ 的反多项式可写为
+    则 $f(x)$ 的反整式可写为
     \begin{align*}
         f^{\mathrm{r}} (x) = b_0 + b_1 x + \cdots + b_n x^n.
     \end{align*}
-    因为 $b_0 = a_n \neq 0$, 且 $b_n = a_0 \neq 0$, 故 $f^{\mathrm{r}}(x)$ 的反多项式是
+    因为 $b_0 = a_n \neq 0$, 且 $b_n = a_0 \neq 0$, 故 $f^{\mathrm{r}}(x)$ 的反整式是
     \begin{align*}
         (f^{\mathrm{r}})^{\mathrm{r}} (x)
         = {} & b_n + b_{n-1} x + \cdots + b_0 x^n \\
@@ -486,7 +485,7 @@
          & f_1 (x) = p_0 + p_1 x + \cdots + p_u x^u, \\
          & f_2 (x) = q_0 + q_1 x + \cdots + q_v x^v
     \end{align*}
-    是多项式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $a_0 \neq 0$. 设
+    是整式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $a_0 \neq 0$. 设
     \begin{align*}
         f(x) = f_1 (x) f_2 (x).
     \end{align*}
@@ -503,7 +502,7 @@
 
     (ii) 因为 $f(x) = f_1 (x) f_2 (x)$, 故 $p_0 q_0 = a_0$. 因为 $a_0 \neq 0$, 故 $p_0 \neq 0$, $q_0 \neq 0$.
 
-    (iii) 因为 $a_0 \neq 0$, $p_0 \neq 0$, $q_0 \neq 0$, 故 $f(x)$, $f_1 (x)$, $f_2 (x)$ 都有反多项式:
+    (iii) 因为 $a_0 \neq 0$, $p_0 \neq 0$, $q_0 \neq 0$, 故 $f(x)$, $f_1 (x)$, $f_2 (x)$ 都有反整式:
     \begin{align*}
          & f^{\mathrm{r}} (x) = a_n + a_{n-1} x + \cdots + a_0 x^n,   \\
          & f_1^{\mathrm{r}} (x) = p_u + p_{u-1} x + \cdots + p_0 x^u, \\
@@ -523,7 +522,7 @@
         = {} & t^n f \left( \frac{1}{t} \right) - t^n f \left( \frac{1}{t} \right)                                      \\
         = {} & 0.
     \end{align*}
-    这说明, 多项式 $E(x)$ 有无限多个根. 所以, $E(x)$ 一定是零多项式, 即
+    这说明, 整式 $E(x)$ 有无限多个根. 所以, $E(x)$ 一定是零整式, 即
     \begin{align*}
          & f^{\mathrm{r}} (x) = f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x). \qedhere
     \end{align*}
@@ -536,7 +535,7 @@
          & f_1 (x) = p_0 + p_1 x + \cdots + p_u x^u, \\
          & f_2 (x) = q_0 + q_1 x + \cdots + q_v x^v
     \end{align*}
-    是多项式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $p_0 \neq 0$, $q_0 \neq 0$, $a_0 \neq 0$. 设
+    是整式, 其中 $p_u \neq 0$, $q_v \neq 0$, $a_n \neq 0$ 且 $p_0 \neq 0$, $q_0 \neq 0$, $a_0 \neq 0$. 设
     \begin{align*}
         f^{\mathrm{r}} (x) = f_1^{\mathrm{r}} (x) f_2^{\mathrm{r}} (x).
     \end{align*}
@@ -547,12 +546,12 @@
 \end{proposition}
 
 \begin{pf}
-    因为 ($0$ 次系数不为 $0$ 的) 多项式 $g$ 的反多项式的反多项式是 $g$, 故由上命题知本命题也对.
+    因为 ($0$ 次系数不为 $0$ 的) 整式 $g$ 的反整式的反整式是 $g$, 故由上命题知本命题也对.
 \end{pf}
 
 跟前面的 ``$\alpha x + \beta$'' 类似, 我们有
 \begin{proposition}
-    设多项式 $f(x)$ 既不是 $0$, 也不是单位, 且 $0$ 次系数不为 $0$. ``$f(x)$ 是可约的 (不可约的)'' 的一个必要与充分条件是: ``反多项式 $f^{\mathrm{r}} (x)$ 是可约的 (不可约的)''.
+    设整式 $f(x)$ 既不是 $0$, 也不是单位, 且 $0$ 次系数不为 $0$. ``$f(x)$ 是可约的 (不可约的)'' 的一个必要与充分条件是: ``反整式 $f^{\mathrm{r}} (x)$ 是可约的 (不可约的)''.
 \end{proposition}
 
 \begin{pf}
@@ -570,7 +569,7 @@
 下述命题一般被称为 Eisenstein 判别法 \term{Eisenstein criterion}. 当然了, 此命题仅仅是 ``$f$ 是不可约的'' 的一个充分条件哟.
 
 \begin{proposition}
-    设多项式
+    设整式
     \begin{align*}
         f = a_0 + a_1 x + \cdots + a_n x^n
     \end{align*}
@@ -578,13 +577,13 @@
 
     (i) $p$ 不是 $a_n$ 的因子 (这说明 $a_n \neq 0$);
 
-    (ii) $p$ 是 $a_{n-1}$, $a_{n-2}$, $\cdots$, $a_0$ 的因子.
+    (ii) $p$ 是 $a_{n-1}$, $a_{n-2}$, $\cdots$, $a_0$ 的因子;
 
     (iii) $p^2$ 不是 $a_0$ 的因子 (这说明 $a_0 \neq 0$).
 \end{proposition}
 
 \begin{pf}
-    用反证法. 设二个 (系数都是整数的\myFN{这个假定是没有问题的. 若 $f$ 是可约的, 则存在二个不是单位的有理系数多项式 $g$, $h$ 使 $f = gh$. $g$ 的本原的相伴一定不是单位; $h$ 的本原的相伴也一定不是单位. 所以, 存在 $f$ 的某个容量 $c_f$, $g$ 的某个本原的相伴 $g^{\ast}$, $h$ 的某个本原的相伴 $h^{\ast}$, 使 $f = c_f g^{\ast} h^{\ast}$. 因为 $c_f$ 是整数, 故 $\ell = c_f g^{\ast}$ 是整系数多项式. 所以, $f$ 可写为二个不是单位的整系数多项式 $\ell$, $h^{\ast}$ 的积.}) 的多项式 $g$, $h$ 使 $f = gh$, 其中
+    用反证法. 设二个 (系数都是整数的\myFN{这个假定是没有问题的. 若 $f$ 是可约的, 则存在二个不是单位的有理系数整式 $g$, $h$ 使 $f = gh$. $g$ 的本原的相伴一定不是单位; $h$ 的本原的相伴也一定不是单位. 所以, 存在 $f$ 的某个容量 $c_f$, $g$ 的某个本原的相伴 $g^{\ast}$, $h$ 的某个本原的相伴 $h^{\ast}$, 使 $f = c_f g^{\ast} h^{\ast}$. 因为 $c_f$ 是整数, 故 $\ell = c_f g^{\ast}$ 是整系数整式. 所以, $f$ 可写为二个不是单位的整系数整式 $\ell$, $h^{\ast}$ 的积.}) 的整式 $g$, $h$ 使 $f = gh$, 其中
     \begin{align*}
          & g = g_0 + g_1 x + \cdots + g_\ell x^\ell, \\
          & h = h_0 + h_1 x + \cdots + h_m x^m
@@ -601,11 +600,11 @@
 我们用几个例帮助读者消化此判别法.
 
 \begin{example}
-    我们可以随手写出任意次的不可约的多项式: $x^n + p$, 这里 $p$ 是某个不可约的整数, 且 $n$ 是正整数.
+    我们可以随手写出任意次的不可约的整式: $x^n + p$, 这里 $p$ 是某个不可约的整数, 且 $n$ 是正整数.
 \end{example}
 
 \begin{example}
-    设 $h = x^{m+1} + x^n - 2$, 其中 $m$ 是正整数. 所以, $h$ 的次不低于 $2$. 所以, $h$ 既不是 $0$, 也不是单位. 这样, $h$ 一定可以写为不可约的多项式的积. 我们试写 $h$ 为不可约的多项式的积.
+    设 $h = x^{m+1} + x^n - 2$, 其中 $m$ 是正整数. 所以, $h$ 的次不低于 $2$. 所以, $h$ 既不是 $0$, 也不是单位. 这样, $h$ 一定可以写为不可约的整式的积. 我们试写 $h$ 为不可约的整式的积.
 
     读者可能还记得
     \begin{align*}
@@ -629,19 +628,19 @@
              & \qquad + (x - 1)(x^{m-1} + x^{m-2} + \cdots + 1)                  \\
         = {} & (x - 1)\underbrace{(x^m + 2x^{m-1} + 2x^{m-2} + \cdots + 2)}_{q}.
     \end{align*}
-    显然 $x-1$ 是不可约的. 我们再看看 $q$ 是不是可约的. 读者不难看出, 取 $p = 2$, 则 $p$ (与 $q$) 适合 Eisenstein 判别法的三条件, 故 $q$ 是不可约的. 所以, $h$ 可写为二个不可约的多项式的积: $(x - 1) \cdot q$.
+    显然 $x-1$ 是不可约的. 我们再看看 $q$ 是不是可约的. 读者不难看出, 取 $p = 2$, 则 $p$ (与 $q$) 适合 Eisenstein 判别法的三条件, 故 $q$ 是不可约的. 所以, $h$ 可写为二个不可约的整式的积: $(x - 1) \cdot q$.
 \end{example}
 
 \begin{example}
     设 $f = -7 + 9x + 3x^6$. 不难看出, 不存在不可约的整数 $p$ 适合 Eisenstein 判别法的三条件.
 
-    因为 (不是单位的) 多项式与其反多项式 (若存在) 要么都是可约的, 要么都是不可约的, 所以我们可以试试\myFN{只是 ``试试''; 不一定管用哟.}反多项式. $f$ 的 $0$ 次系数不是 $0$, 故 $f$ 的反多项式存在, 且 $f^{\mathrm{r}} = 3 + 9x^5 - 7x^6$. 由此可见, 取 $p = 3$, 则 $p$ (与 $f^{\mathrm{r}}$) 适合 Eisenstein 判别法的三条件, 故 $f^{\mathrm{r}}$ 是不可约的. 从而 $f$ 也是不可约的.
+    因为 (不是单位的) 整式与其反整式 (若存在) 要么都是可约的, 要么都是不可约的, 所以我们可以试试\myFN{只是 ``试试''; 不一定管用哟.}反整式. $f$ 的 $0$ 次系数不是 $0$, 故 $f$ 的反整式存在, 且 $f^{\mathrm{r}} = 3 + 9x^5 - 7x^6$. 由此可见, 取 $p = 3$, 则 $p$ (与 $f^{\mathrm{r}}$) 适合 Eisenstein 判别法的三条件, 故 $f^{\mathrm{r}}$ 是不可约的. 从而 $f$ 也是不可约的.
 \end{example}
 
 一般地, 下面的 Eisenstein 判别法的变体成立:
 
 \begin{proposition}
-    设多项式
+    设整式
     \begin{align*}
         f = a_0 + a_1 x + \cdots + a_n x^n
     \end{align*}
@@ -649,13 +648,13 @@
 
     (i) $p$ 不是 $a_0$ 的因子 (这说明 $a_0 \neq 0$);
 
-    (ii) $p$ 是 $a_1$, $a_2$, $\cdots$, $a_n$ 的因子.
+    (ii) $p$ 是 $a_1$, $a_2$, $\cdots$, $a_n$ 的因子;
 
     (iii) $p^2$ 不是 $a_n$ 的因子 (这说明 $a_n \neq 0$).
 \end{proposition}
 
 \begin{pf}
-    考虑 $f$ 的反多项式 $f^{\mathrm{r}}$. 对 $f^{\mathrm{r}}$ 施行 Eisenstein 判别法, 可知 $f^{\mathrm{r}}$ 是不可约的. 故 $f$ 也是不可约的. (作者邀请感兴趣的读者补全细节.)
+    考虑 $f$ 的反整式 $f^{\mathrm{r}}$. 对 $f^{\mathrm{r}}$ 施行 Eisenstein 判别法, 可知 $f^{\mathrm{r}}$ 是不可约的. 故 $f$ 也是不可约的. (作者邀请感兴趣的读者补全细节.)
 \end{pf}
 
 我们用一个经典的例结束本文.
@@ -667,7 +666,7 @@
     \end{align*}
     我们证明: $f(x)$ 是不可约的.
 
-    显然, 不存在不可约的整数 $p$ 适合 Eisenstein 判别法的三条件. 反多项式也没有帮助: $f(x)$ 的反多项式刚好是 $f(x)$. 我们试试 ``$\alpha x + \beta$'' 吧.
+    显然, 不存在不可约的整数 $p$ 适合 Eisenstein 判别法的三条件. 反整式也没有帮助: $f(x)$ 的反整式刚好是 $f(x)$. 我们试试 ``$\alpha x + \beta$'' 吧.
 
     考虑
     \begin{align*}

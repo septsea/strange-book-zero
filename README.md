@@ -2,10 +2,29 @@
 
 Written in `LaTeX`, this is a strange book discussing basic stuffs of polynomials.
 
+这是一本用 `LaTeX` 写的讨论整式的基本的东西的奇怪的书。
+
+Well, the book is in Chinese. Readers are assumed to be familiar with elementary school math.
+
+嘛，本书用汉语写的。作者假定读者熟悉初中算学哟。
+
 Direct Links for the PDF File:
 
-- [https://cdn.jsdelivr.net/gh/septsea/strange-book-zero/main.pdf](https://cdn.jsdelivr.net/gh/septsea/strange-book-zero/main.pdf)
+- [https://wwa.lanzoui.com/b010t829a with the extraction code `2333`](https://wwa.lanzoui.com/b010t829a)
 - [https://github.com/septsea/strange-book-zero/raw/main/main.pdf](https://github.com/septsea/strange-book-zero/raw/main/main.pdf)
+
+可携带文档格式文件的直链如下：
+
+- [https://wwa.lanzoui.com/b010t829a 提取的暗号为 `2333'](https://wwa.lanzoui.com/b010t829a)
+- [https://github.com/septsea/strange-book-zero/raw/main/main.pdf](https://github.com/septsea/strange-book-zero/raw/main/main.pdf)
+
+Enter one of the links to download the book.
+
+进入一个链接以下载本书。
+
+The following tells you how to compile the source code. If you just want to read it, ignore it safely.
+
+下面告诉您怎么编译源代码。如果您只是想读这本书，您放心地忽略它吧！
 
 ---
 

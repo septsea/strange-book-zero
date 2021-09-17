@@ -5,7 +5,7 @@
 我们知道, 非负整数有这样的性质:
 
 \begin{proposition}
-    设 $f$ 是正整数, $g$ 是非负整数. 则必有一对非负整数 $q,r$ 使
+    设 $f$ 是正整数, $g$ 是非负整数. 则必有一对非负整数 $q$, $r$ 使
     \begin{align*}
         g = qf + r, \quad 0 \leq r < f.
     \end{align*}
@@ -16,7 +16,7 @@
     23 = 4 \cdot 5 + 3.
 \end{align*}
 
-多项式也有类似的性质哟.
+整式也有类似的性质哟.
 
 \begin{proposition}
     设
@@ -37,7 +37,7 @@
     \begin{align*}
         g(x) = b_{\ell + 1} x^{\ell} + b_{\ell} x^{\ell} + \cdots + b_0 \in D[x].
     \end{align*}
-    作一个跟 $g(x)$ 有着共同首项的多项式:
+    作一个跟 $g(x)$ 有着共同首项的整式:
     \begin{align*}
         s(x) = {} & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} f(x)                                                                               \\
         = {}      & b_{\ell + 1} a_n^{-1} x^{\ell + 1 - n} (a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0)                                         \\
@@ -60,7 +60,7 @@
 \end{pf}
 
 \begin{example}
-    取 $\FF[x]$ 的二元 $f(x) = 2(x-1)^2 (x+2)$, $g(x) = 8x^6 + 1$. 我们来找一对多项式 $q(x), r(x) \in \FF[x]$ 使
+    取 $\FF[x]$ 的二元 $f(x) = 2(x-1)^2 (x+2)$, $g(x) = 8x^6 + 1$. 我们来找一对整式 $q(x), r(x) \in \FF[x]$ 使
     \begin{align*}
         g(x) = q(x) f(x) + r(x), \quad \deg r(x) < \deg f(x).
     \end{align*}
@@ -125,7 +125,7 @@
 
     在上面的例里, $f(x)$ 与 $g(x)$ 可以看成 $\ZZ[x]$ 的元, 但 $2$ 不是 $\ZZ$ 的单位. 虽然最终所得 $q(x)$, $r(x)$ 也是 $\ZZ[x]$ 的元, 但这并不是一定会出现的. 我们看下面的简单例.
 
-    考虑 $\ZZ[x]$ 的多项式 $f(x)=2x$. 设
+    考虑 $\ZZ[x]$ 的整式 $f(x)=2x$. 设
     \begin{align*}
          & r(x) = r_0,                            \\
          & q(x) = q_0 + q_1 x + \cdots + q_p x^p, \\
@@ -149,10 +149,10 @@
 
 我们知道, 用一个正整数除\myFN{$f$ 除 $g$ 意味着 $g$ 除以 $f$, 也就是 $g \div f$.}非负整数, 所得的余数与商是唯一的. 比方说, $5$ 除 $23$ 的余数只能是 $3$.
 
-多项式也有类似的性质哟. 不过, 我们需要借助另一个命题的帮助.
+整式也有类似的性质哟. 不过, 我们需要借助另一个命题的帮助.
 
 \begin{proposition}
-    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$. 若 $D$ 上 $x$ 的 $2$ 个多项式 $q(x)$, $r(x)$ 适合
+    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$. 若 $D$ 上 $x$ 的 $2$ 个整式 $q(x)$, $r(x)$ 适合
     \begin{align*}
         q(x) f(x) + r(x) = 0, \quad \deg r(x) < \deg f(x),
     \end{align*}
@@ -160,7 +160,7 @@
     \begin{align*}
         q(x) = r(x) = 0.
     \end{align*}
-    通俗地说, 二个非零多项式的积的次不可能变低.
+    通俗地说, 二个非零整式的积的次不可能变低.
 \end{proposition}
 
 \begin{pf}
@@ -180,7 +180,7 @@
 \end{pf}
 
 \begin{proposition}
-    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$. 若 $D$ 上 $x$ 的 $4$ 个多项式 $q_1 (x)$, $r_1 (x)$, $q_2 (x)$, $r_2 (x)$ 适合
+    设 $f(x) \in D[x]$, 且 $f(x) \neq 0$. 若 $D$ 上 $x$ 的 $4$ 个整式 $q_1 (x)$, $r_1 (x)$, $q_2 (x)$, $r_2 (x)$ 适合
     \begin{align*}
          & q_1 (x) f(x) + r_1 (x) = q_2 (x) f(x) + r_2 (x),          \\
          & \deg r_1 (x) < \deg f(x), \quad \deg r_2 (x) < \deg f(x),
@@ -233,3 +233,41 @@
         \deg g(x) = \deg (g(x) - r(x)) = \deg q(x) + \deg f(x).
     \end{align*}
 \end{proposition}
+
+最后, 我们指出一个有用的事实.
+
+设 $D$, $E$ 是整环, 且 $D \subset E$ (也就是说, $D$ 是 $E$ 的子整环). 设 $f(x)$, $g(x) \in D[x]$, 且 $f(x) \neq 0$. 设 $D$ 上的整式 $q_1 (x)$, $r_1 (x)$ 适合
+\begin{align*}
+    g(x) = q_1 (x) f(x) + r_1 (x), \quad \deg r_1 (x) < \deg f(x).
+\end{align*}
+因为 $D$ 的元都是 $E$ 的元, 故 $f(x)$, $g(x)$ 当然可认为是 $E$ 上的整式. 设 $E$ 上的整式 $q_2 (x)$, $r_2 (x)$ 适合
+\begin{align*}
+    g(x) = q_2 (x) f(x) + r_2 (x), \quad \deg r_2 (x) < \deg f(x).
+\end{align*}
+我们说, $q_1 (x) = q_2 (x)$, 且 $r_1 (x) = r_2 (x)$. 为什么呢? 因为 $D$ 的元都是 $E$ 的元, 故 $q_1 (x)$, $r_1 (x)$ 当然可认为是 $E$ 上的整式. 这样, 根据前面的命题, 必有
+\begin{align*}
+    q_2 (x) = q_1 (x), \quad r_2 (x) = r_1 (x).
+\end{align*}
+由此可见: $q_2 (x)$, $r_2 (x) \in D[x]$. 这有什么用处呢?
+
+在前面的例里, 我们知道, 不存在 $q(x)$, $r(x) \in \ZZ[x]$, 使
+\begin{align*}
+    1 + 3x + x^2 = q(x) \cdot 2x + r(x), \quad \deg r(x) < 1.
+\end{align*}
+当初, 我们根据整式的相等的定义, 再根据奇偶性, 得出了这个判断. 现在我们可以简便地作出推理. 用反证法. 假设这样的 $q(x)$, $r(x) \in \ZZ[x]$ 是存在的, 也就是
+\begin{align*}
+    1 + 3x + x^2 = q(x) \cdot 2x + r(x), \quad \deg r(x) < 1.
+\end{align*}
+我们考虑 $\QQ[x]$. $\ZZ$, $\QQ$ 都是整环, 且 $\ZZ \subset \QQ$. $1+3x+x^2$ 与 $2x$ 当然是 $\QQ$ 上的整式. 我们不难算出
+\begin{align*}
+    1 + 3x + x^2 = {\underbrace{\left( \frac{3}{2} + \frac{1}{2}x \right)}_{v(x)}} \cdot 2x + \underbrace{1}_{u(x)}, \quad \deg u(x) = 0 < 1.
+\end{align*}
+由此可见, $v(x) = q(x)$, 且 $r(x) = u(x)$. 但是, $v(x) \notin \ZZ[x]$. 矛盾! 所以, 这样的 $q(x)$, $r(x)$ 不存在!
+
+不过, 对 $1 + 4x + 2x^2$ 与 $2x$ 而言, 我们有
+\begin{align*}
+    1 + 4x + 2x^2 = (2 + x) \cdot 2x + 1, \quad \deg 1 < 1.
+\end{align*}
+我们知道, 若视 $1 + 4x + 2x^2$ 与 $2x$ 是 $\ZZ$ 上的整式, 则因为 $2x$ 的首项系数不是 $\ZZ$ 的单位, 我们无法直接用 ($\ZZ[x]$ 的) 带余除法算 $2x$ 除 $1 + 4x + 2x^2$. 若考虑 $\QQ$ 与 $\QQ[x]$, 我们可以算出上面的式. 很凑巧地, $2 + x$ 与 $1$ 都是 $\ZZ$ 上的整式, 故, 具体地说, 我们可在 $\ZZ[x]$ 算 $2x$ 除 $1 + 4x + 2x^2$; 作为对比, 我们不可在 $\ZZ[x]$ 算 $2x$ 除 $1 + 3x + x^2$.
+
+不正式地说, 若 $D$, $E$ 是整环, 且 $D \subset E$, 则 $E$ 是 $D$ 的 ``扩大'' \term{extension}. 由此, 我们有: 整式的带余除法不因系数的范围变大而改变.

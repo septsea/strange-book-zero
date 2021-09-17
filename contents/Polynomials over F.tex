@@ -2,11 +2,11 @@
 \addcontentsline{toc}{subsection}{\PolynomialsOverF}
 \markright{\PolynomialsOverF}
 
-我们在前几节讨论的都是整环 $D$ 上的多项式, 所以它们看上去是有些抽象的. 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个. 细心的读者会注意到我们在前几节未使用 $\sum$ 符号: 这是为了让读者没那么困难地适应多项式理论. 从本节起, 我们会较多地使用这个 $\sum$. 读者也可以乘此机会让自己熟悉它. 当然, 我们偶尔也会使用 $\prod$ 符号.
+我们在前几节讨论的都是整环 $D$ 上的整式, 所以它们看上去是有些抽象的. 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个. 细心的读者会注意到我们在前几节未使用 $\sum$ 符号: 这是为了让读者没那么困难地适应整式理论. 从本节起, 我们会较多地使用这个 $\sum$. 读者也可以乘此机会让自己熟悉它. 当然, 我们偶尔也会使用 $\prod$ 符号.
 
 本节并没有什么新的知识. 读者可以乘此机会温习一下所学内容. 我们将重述一些定义与命题. 我们在学校学算学的时候, 也会有复习课. 就当本节就是 ``复习节'' 吧!
 
-先从多项式的定义与运算开始.
+先从整式的定义与运算开始.
 
 \begin{definition}
     设 $x$ 是不在 $\FF$ 里的任意一个文字. 形如
@@ -15,18 +15,18 @@
         = {} & \sum_{i=0}^n a_i x^i                                                                       \\
         = {} & a_0 + a_1 x + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in \FF,\ a_n \neq 0)
     \end{align*}
-    的表达式称为 $\FF$ 上 $x$ 的一个多项式. $n$ 称为其次, $a_i$ 称为其 $i$ 次系数, $a_i x^i$ 称为其 $i$ 次项. $f(x)$ 的次可写为 $\deg f(x)$.
+    的表达式称为 $\FF$ 上 $x$ 的一个整式. $n$ 称为其次, $a_i$ 称为其 $i$ 次系数, $a_i x^i$ 称为其 $i$ 次项. $f(x)$ 的次可写为 $\deg f(x)$.
 
-    若二个多项式的次与各同次系数均相等, 则二者相等.
+    若二个整式的次与各同次系数均相等, 则二者相等.
 
-    多项式的系数为 $0$ 的项可以不写.
+    整式的系数为 $0$ 的项可以不写.
 
-    约定 $0 \in \FF$ 也是多项式, 称为零多项式. 零多项式的次是 $-\infty$. 任取整数 $m$, 约定
+    约定 $0 \in \FF$ 也是整式, 称为零整式. 零整式的次是 $-\infty$. 任取整数 $m$, 约定
     \begin{align*}
          & -\infty = -\infty, \quad -\infty < m,                        \\
          & -\infty + m = m + (-\infty) = -\infty + (-\infty) = -\infty.
     \end{align*}
-    当然, 还约定, 零多项式只跟自己相等. 换句话说,
+    当然, 还约定, 零整式只跟自己相等. 换句话说,
     \begin{align*}
         \sum_{i=0}^n a_i x^i = 0
     \end{align*}
@@ -35,7 +35,7 @@
         a_0 = a_1 = \cdots = a_n = 0.
     \end{align*}
 
-    $\FF$ 上 $x$ 的所有多项式作成的集是 $\FF[x]$:
+    $\FF$ 上 $x$ 的所有整式作成的集是 $\FF[x]$:
     \begin{align*}
         \FF[x] = \left\{\, \sum_{i=0}^n a_i x^i \,\,\middle|\,\, n \in \NN,\ a_0,a_1,\cdots,a_n \in \FF \,\right\}.
     \end{align*}
@@ -61,9 +61,9 @@
 
     (ii) $(f(x) + g(x)) + h(x)$ = $f(x) + (g(x) + h(x))$;
 
-    (iii) 存在多项式 $0$ 使 $0 + f(x) = f(x) + 0 = f(x)$;
+    (iii) 存在整式 $0$ 使 $0 + f(x) = f(x) + 0 = f(x)$;
 
-    (iv) 存在多项式 $-f(x)$ 使 $-f(x) + f(x) = f(x) + (-f(x)) = 0$;
+    (iv) 存在整式 $-f(x)$ 使 $-f(x) + f(x) = f(x) + (-f(x)) = 0$;
 
     (v) $f(x) + g(x) = g(x) + f(x)$.
 \end{proposition}
@@ -108,7 +108,7 @@
         \sum_{j=0}^{n} a_{n-j} x^{n-j} = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_0.
     \end{align*}
 
-    (非零) 多项式的最高次非零项是首项. 它的系数是此多项式的首项系数.
+    (非零) 整式的最高次非零项是首项. 它的系数是此整式的首项系数.
 \end{definition}
 
 \begin{definition}
@@ -143,7 +143,7 @@
 
     (vii) $(f(x) g(x)) h(x) = f(x) (g(x) h(x))$;
 
-    (viii) 存在多项式 $1$ 使 $1f(x) = f(x)1 = f(x)$;
+    (viii) 存在整式 $1$ 使 $1f(x) = f(x)1 = f(x)$;
 
     (ix) $(-1)f(x) = -f(x)$;
 
@@ -163,15 +163,15 @@
 \end{proposition}
 
 \begin{remark}
-    $\FF[x]$ 的一个名字就是 (域) $\FF$ 上 ($x$) 的多项式环.
+    $\FF[x]$ 的一个名字就是 (域) $\FF$ 上 ($x$) 的整式环.
 \end{remark}
 
 \begin{definition}
-    设 $m \in \NN$. 多项式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
+    设 $m \in \NN$. 整式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
     \begin{align*}
         (f(x))^m = \underbrace{f(x) \cdot f(x) \cdot \cdots \cdot f(x)}_{\text{$m$ $f(x)$'s}} = \prod_{\ell = 0}^{m-1} f(x).
     \end{align*}
-    设 $m$, $n \in \NN$, $f(x)$, $g(x) \in \FF[x]$, 则多项式的幂适合如下规则:
+    设 $m$, $n \in \NN$, $f(x)$, $g(x) \in \FF[x]$, 则整式的幂适合如下规则:
     \begin{align*}
          & (f(x))^m (f(x))^n = (f(x))^{m+n},  \\
          & ((f(x))^m)^n = (f(x))^{mn},        \\
@@ -180,16 +180,16 @@
 \end{definition}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$. 非零的 $c \in \FF$ 是 $0$ 次多项式, 那么
+    设 $f(x) \in \FF[x]$. 非零的 $c \in \FF$ 是 $0$ 次整式, 那么
     \begin{align*}
         \deg cf(x) = \deg f(x).
     \end{align*}
 \end{proposition}
 
-再来看多项式的带余除法. 因为 $\FF$ 的每个非零元都是 $\FF$ 的单位, 所以有
+再来看整式的带余除法. 因为 $\FF$ 的每个非零元都是 $\FF$ 的单位, 所以有
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是非零多项式. 对任意 $g(x) \in \FF[x]$, 存在唯一的 $q(x), r(x) \in \FF[x]$ 使
+    设 $f(x) \in \FF[x]$ 是非零整式. 对任意 $g(x) \in \FF[x]$, 存在唯一的 $q(x), r(x) \in \FF[x]$ 使
     \begin{align*}
         g(x) = q(x) f(x) + r(x), \quad \deg r(x) < \deg f(x).
     \end{align*}
@@ -199,16 +199,28 @@
     \end{align*}
 \end{proposition}
 
-可以看到, 在 $\FF[x]$ 里, 带余除法的适用范围更广了.
+可以看到, 在 $\FF[x]$ 里, 带余除法的适用范围更广了. 我们还得到了一个有用的事实.
 
-下面回顾多项式的相等. 我们借助 ``线性无关'' 讨论相等问题.
+\begin{proposition}
+    整式的带余除法不因系数的范围变大而改变. 具体地说, 设 $E$, $K$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $K \subset E$. 设 $f(x)$, $g(x) \in K[x]$, 且 $f(x) \neq 0$. 设 $K$ 上的整式 $q_1 (x)$, $r_1 (x)$ 适合
+    \begin{align*}
+        g(x) = q_1 (x) f(x) + r_1 (x), \quad \deg r_1 (x) < \deg f(x).
+    \end{align*}
+    因为 $K$ 的元都是 $E$ 的元, 故 $f(x)$, $g(x)$ 当然可认为是 $E$ 上的整式. 设 $E$ 上的整式 $q_2 (x)$, $r_2 (x)$ 适合
+    \begin{align*}
+        g(x) = q_2 (x) f(x) + r_2 (x), \quad \deg r_2 (x) < \deg f(x).
+    \end{align*}
+    则 $q_1 (x) = q_2 (x)$, 且 $r_1 (x) = r_2 (x)$.
+\end{proposition}
+
+下面回顾整式的相等. 我们借助 ``线性无关'' 讨论相等问题.
 
 \begin{definition}
     设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$. 设 $c_0$, $c_1$, $\cdots$, $c_n \in \FF$. 我们说
     \begin{align*}
         \sum_{i = 0}^{n} c_i p_i (x)
     \end{align*}
-    是多项式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合. $c_0$, $c_1$, $\cdots$, $c_n$ 就是此线性组合的系数.
+    是整式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合. $c_0$, $c_1$, $\cdots$, $c_n$ 就是此线性组合的系数.
 
     若不存在一组不全为 $0$ 的 $\FF$ 中元 $d_0$, $d_1$, $\cdots$, $d_n$ 使
     \begin{align*}
@@ -222,11 +234,11 @@
 \end{definition}
 
 \begin{proposition}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次多项式. 则:
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次整式. 则:
 
     (i) $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的;
 
-    (ii) 任意次不高于 $n$ 的多项式都可唯一地写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合.
+    (ii) 任意次不高于 $n$ 的整式都可唯一地写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合.
 \end{proposition}
 
 由于 $\FF$ 的每个非零元都是单位, 上面的命题的结论变强了. 下面的例体现了这一点.
@@ -236,7 +248,7 @@
     \begin{align*}
         p_0 (x) = -1, \quad p_1 (x) = 2x, \quad p_2 (x) = 3x^2.
     \end{align*}
-    这三个多项式是线性无关的. 考虑 $f(x) = 3 + x - 2x^2$. 设 $c_0$, $c_1$, $c_2 \in \FF$ 使
+    这三个整式是线性无关的. 考虑 $f(x) = 3 + x - 2x^2$. 设 $c_0$, $c_1$, $c_2 \in \FF$ 使
     \begin{align*}
         3 + x - 2x^2 = c_0 \cdot (-1) + c_1 \cdot 2x + c_2 \cdot 3x^2.
     \end{align*}
@@ -274,14 +286,14 @@
     \end{align*}
 \end{proposition}
 
-我们看看多项式的微商.
+我们看看整式的微商.
 
 \begin{definition}
     设
     \begin{align*}
         f(x) = \sum_{i = 0}^{n} a_i x^i \in \FF[x].
     \end{align*}
-    $f(x)$ 的微商是多项式
+    $f(x)$ 的微商是整式
     \begin{align*}
         f^{\prime}(x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \in \FF[x].
     \end{align*}
@@ -289,7 +301,7 @@
 \end{definition}
 
 \begin{remark}
-    若 $f(x) = c$, $c \in \FF$, 则 $f^{\prime} (x)$ 为零多项式.
+    若 $f(x) = c$, $c \in \FF$, 则 $f^{\prime} (x)$ 为零整式.
 \end{remark}
 
 \begin{definition}
@@ -305,7 +317,7 @@
 \end{definition}
 
 \begin{proposition}
-    多项式的复合适合结合律. 具体地说, 设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$, 则
+    整式的复合适合结合律. 具体地说, 设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$, 则
     \begin{align*}
         ((h \circ g) \circ f)(x) = (h \circ (g \circ f))(x).
     \end{align*}
@@ -366,7 +378,7 @@
     \end{align*}
 \end{proposition}
 
-最后, 我们回顾多项式函数与多项式的根.
+最后, 我们回顾整式函数与整式的根.
 
 \begin{definition}
     设 $a_0, a_1, \cdots, a_n \in \FF$. 称
@@ -374,15 +386,15 @@
          & \FF \to \FF, \tag*{$f \colon$}   \\
          & t \mapsto \sum_{i = 0}^n a_i t^i
     \end{align*}
-    为 $\FF$ 的多项式函数. 我们也说, 这个 $f$ 是由 $\FF$ 上 $x$ 的多项式
+    为 $\FF$ 的整式函数. 我们也说, 这个 $f$ 是由 $\FF$ 上 $x$ 的整式
     \begin{align*}
         f(x) = \sum_{i = 0}^n a_i x^i
     \end{align*}
-    诱导的多项式函数. 不难看出, 若二个多项式相等, 则其诱导的多项式函数也相等.
+    诱导的整式函数. 不难看出, 若二个整式相等, 则其诱导的整式函数也相等.
 \end{definition}
 
 \begin{definition}
-    设 $f$ 与 $g$ 是 $\FF$ 的二个多项式函数. 二者的和 $f+g$ 定义为
+    设 $f$ 与 $g$ 是 $\FF$ 的二个整式函数. 二者的和 $f+g$ 定义为
     \begin{align*}
          & \FF \to \FF, \tag*{$f+g \colon$} \\
          & t \mapsto f(t) + g(t).
@@ -394,7 +406,7 @@
     \end{align*}
 \end{definition}
 
-设 $f$, $g$ 是 $\FF$ 的二个多项式函数:
+设 $f$, $g$ 是 $\FF$ 的二个整式函数:
 \begin{align*}
      & \FF \to \FF, \tag*{$f \colon$}  \\
      & t \mapsto \sum_{i=0}^n a_i t^i, \\
@@ -411,9 +423,9 @@
 由此可得下面的命题:
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的多项式函数. 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的多项式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的多项式函数.
+    设 $f(x)$, $g(x) \in \FF[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数. 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的整式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的整式函数.
 
-    通俗地说, 若多项式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $\FF$ 的元 $t$, 这样的关系仍成立.
+    通俗地说, 若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $\FF$ 的元 $t$, 这样的关系仍成立.
 \end{proposition}
 
 \begin{definition}
@@ -425,9 +437,9 @@
     \begin{align*}
         \sum_{i=0}^n a_i t^i
     \end{align*}
-    简单地写为 $f(t)$, 并称其为多项式 $f(x)$ 在点 $t$ 的值.
+    简单地写为 $f(t)$, 并称其为整式 $f(x)$ 在点 $t$ 的值.
 
-    顺便一提, $f(x)$ 的微商也是多项式:
+    顺便一提, $f(x)$ 的微商也是整式:
     \begin{align*}
         f^{\prime} (x) = \sum_{i = 1}^{n} i a_i x^{i - 1}.
     \end{align*}
@@ -441,7 +453,7 @@
 下面是带余除法的推论. 它在根的讨论里起了重要的作用.
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式 ($n \geq 1$), $a \in \FF$. 则存在 $n-1$ 次多项式 $q(x)$ ($\in \FF[x]$) 使
+    设 $f(x) \in \FF[x]$ 是 $n$ 次整式 ($n \geq 1$), $a \in \FF$. 则存在 $n-1$ 次整式 $q(x)$ ($\in \FF[x]$) 使
     \begin{align*}
         f(x) = q(x) (x-a) + f(a).
     \end{align*}
@@ -449,11 +461,11 @@
 \end{proposition}
 
 \begin{definition}
-    设 $f(x)$ 是 $\FF$ 上 $x$ 的多项式. 若有 $a \in \FF$ 使 $f(a) = 0$, 则说 $a$ 是 (多项式) $f(x)$ 的根.
+    设 $f(x)$ 是 $\FF$ 上 $x$ 的整式. 若有 $a \in \FF$ 使 $f(a) = 0$, 则说 $a$ 是 (整式) $f(x)$ 的根.
 \end{definition}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式 ($n \geq 1$). $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次多项式 $q(x)$ ($\in \FF[x]$) 使
+    设 $f(x) \in \FF[x]$ 是 $n$ 次整式 ($n \geq 1$). $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次整式 $q(x)$ ($\in \FF[x]$) 使
     \begin{align*}
         f(x) = q(x) (x-a).
     \end{align*}
@@ -461,11 +473,11 @@
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $n$ 次多项式 ($n \in \NN$). 则 $f(x)$ 至多有 $n$ 个不同的根.
+    设 $f(x) \in \FF[x]$ 是 $n$ 次整式 ($n \in \NN$). 则 $f(x)$ 至多有 $n$ 个不同的根.
 \end{proposition}
 
 \begin{remark}
-    在上节, 我们知道, 整环 $D$ 上的多项式 $f(x) = ax + b$ ($a \neq 0$) 不一定有根. 可是, 在域 $\FF$ 里, $f(x)$ 就有根 $-\frac{b}{a}$.
+    在上节, 我们知道, 整环 $D$ 上的整式 $f(x) = ax + b$ ($a \neq 0$) 不一定有根. 可是, 在域 $\FF$ 里, $f(x)$ 就有根 $-\frac{b}{a}$.
 \end{remark}
 
 \begin{proposition}
@@ -477,7 +489,7 @@
     \begin{align*}
         f(t_0) = f(t_1) = \cdots = f(t_n) = 0,
     \end{align*}
-    则 $f(x)$ 必为零多项式. 通俗地说, 次不高于 $n$ (且系数为 $\FF$ 的元) 的多项式不可能有 $n$ 个以上的互不相同的根, 除非这个多项式是零.
+    则 $f(x)$ 必为零整式. 通俗地说, 次不高于 $n$ (且系数为 $\FF$ 的元) 的整式不可能有 $n$ 个以上的互不相同的根, 除非这个整式是零.
 \end{proposition}
 
 \begin{proposition}
@@ -489,11 +501,11 @@
     \begin{align*}
         f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
     \end{align*}
-    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个多项式若在多于 $n$ 处取一样的值, 则这二个多项式相等.
+    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个整式若在多于 $n$ 处取一样的值, 则这二个整式相等.
 \end{proposition}
 
 \begin{definition}
-    设 $a \in \FF$ 是多项式 $f(x) \in \FF[x]$ 的根. 那么, 存在唯一的多项式 $q(x) \in \FF[x]$ 使
+    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 那么, 存在唯一的整式 $q(x) \in \FF[x]$ 使
     \begin{align*}
         f(x) = (x - a) q(x).
     \end{align*}
@@ -501,7 +513,7 @@
 \end{definition}
 
 \begin{proposition}
-    设 $a \in \FF$ 是多项式 $f(x) \in \FF[x]$ 的根. 则:
+    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 则:
 
     (i) 若 $a$ 是 $f(x)$ 的重根, 则 $a$ 是 $f^{\prime} (x)$ 的根;
 
@@ -513,7 +525,7 @@
 下面是一些新命题. 由于 $\FF$ 里有无限多个元, 所以
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = 0$, 则 $f(x)$ 必为零多项式. 通俗地说, 系数为 $\FF$ 的元的多项式不可能有无限多个根, 除非这个多项式是零.
+    设 $f(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = 0$, 则 $f(x)$ 必为零整式. 通俗地说, 系数为 $\FF$ 的元的整式不可能有无限多个根, 除非这个整式是零.
 \end{proposition}
 
 \begin{pf}
@@ -523,19 +535,19 @@
 由此立得
 
 \begin{proposition}
-    设 $f(x),g(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = g(t)$, 则 $f(x)$ 与 $g(x)$ 是二个相同的多项式. 通俗地说, 若系数为 $\FF$ 的元的二个多项式在无限多个地方有相同的取值, 则这二个多项式必相等.
+    设 $f(x),g(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = g(t)$, 则 $f(x)$ 与 $g(x)$ 是二个相同的整式. 通俗地说, 若系数为 $\FF$ 的元的二个整式在无限多个地方有相同的取值, 则这二个整式必相等.
 \end{proposition}
 
 \begin{pf}
     考虑 $h(x) = f(x) - g(x)$, 并利用上个命题.
 \end{pf}
 
-前面已经知道, 多项式确定多项式函数. 利用上面的命题, 我们有
+前面已经知道, 整式确定整式函数. 利用上面的命题, 我们有
 
 \begin{proposition}
-    $\FF$ 上的多项式与 $\FF$ 的多项式函数是一一对应的: 不但二个不同的 $\FF$ 上的多项式给出二个不同的 $\FF$ 的多项式函数, 而且二个不同的 $\FF$ 的多项式函数给出二个不同的 $\FF$ 上的多项式.
+    $\FF$ 上的整式与 $\FF$ 的整式函数是一一对应的: 不但二个不同的 $\FF$ 上的整式给出二个不同的 $\FF$ 的整式函数, 而且二个不同的 $\FF$ 的整式函数给出二个不同的 $\FF$ 上的整式.
 \end{proposition}
 
 \begin{remark}
-    以后, 我们不再区分 ``多项式'' 与 ``多项式函数''. 从现在开始, 读者可以认为本文接下来讨论的 ``多项式'' 跟中学里的多项式是同一事物.
+    以后, 我们不再区分 ``整式'' 与 ``整式函数''. 从现在开始, 读者可以认为本文接下来讨论的 ``整式'' 跟中学里的整式是同一事物.
 \end{remark}

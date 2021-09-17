@@ -68,7 +68,7 @@
 \begin{proposition}
     广义二项系数适合如下性质:
 
-    (i) $n \geq 0$ 时, $\binom{x}{n}$ 是首项系数为 $\frac{1}{n!}$ 的 $n$ 次多项式, 前 $n$ 个非负整数恰为其根, 且
+    (i) $n \geq 0$ 时, $\binom{x}{n}$ 是首项系数为 $\frac{1}{n!}$ 的 $n$ 次整式, 前 $n$ 个非负整数恰为其根, 且
     \begin{align*}
         \binom{n}{n} = 1;
     \end{align*}
@@ -95,11 +95,11 @@
 \end{proposition}
 
 \begin{pf}
-    (i) $\binom{x}{0} = 1$ 是 $0$ 次多项式, 无根, 首项系数为 $1$, 且 $\binom{0}{0} = 1$. $n > 0$ 时,
+    (i) $\binom{x}{0} = 1$ 是 $0$ 次整式, 无根, 首项系数为 $1$, 且 $\binom{0}{0} = 1$. $n > 0$ 时,
     \begin{align*}
         \binom{x}{n} = \frac{1}{n!} (x - 0)(x - 1) \cdots (x - (n-1)),
     \end{align*}
-    故 $\binom{x}{n}$ 是首项系数为 $\frac{1}{n!}$ 的 $n$ 次多项式, 且 $0$, $1$, $\cdots$, $n-1$ 恰为 $\binom{x}{n}$ 的根. 最后, 不难验证
+    故 $\binom{x}{n}$ 是首项系数为 $\frac{1}{n!}$ 的 $n$ 次整式, 且 $0$, $1$, $\cdots$, $n-1$ 恰为 $\binom{x}{n}$ 的根. 最后, 不难验证
     \begin{align*}
         \binom{n}{n} = \frac{(n-0)(n-1) \cdots (n - (n-1))}{n!} = 1.
     \end{align*}
@@ -178,7 +178,7 @@
 \begin{proposition}
     设 $n$ 是非负整数. 广义二项系数适合如下性质:
 
-    (vi) 任意次不高于 $n$ 的多项式都可唯一地写为 $\binom{x}{0}$, $\binom{x}{1}$, $\cdots$, $\binom{x}{n}$ 的线性组合;
+    (vi) 任意次不高于 $n$ 的整式都可唯一地写为 $\binom{x}{0}$, $\binom{x}{1}$, $\cdots$, $\binom{x}{n}$ 的线性组合;
 
     (vii) 设 $c_0$, $c_1$, $\cdots$, $c_n \in \FF$. 设
     \begin{align*}
@@ -207,7 +207,7 @@
 \end{pf}
 
 \begin{example}
-    我们知道, 若多项式 $f(x)$ 的系数全为整数, 则 $t \in \ZZ$ 时 $f(t) \in \ZZ$. 不过, 反过来就不对了. 在中学, 读者也许知道 $n$ 是整数时 $\frac{n(n+1)}{2}$ 也是整数: $n$ 与 $n+1$ 必一奇一偶, 故积是偶数, 从而被 $2$ 除后仍为整数. 现在可以这么看:
+    我们知道, 若整式 $f(x)$ 的系数全为整数, 则 $t \in \ZZ$ 时 $f(t) \in \ZZ$. 不过, 反过来就不对了. 在中学, 读者也许知道 $n$ 是整数时 $\frac{n(n+1)}{2}$ 也是整数: $n$ 与 $n+1$ 必一奇一偶, 故积是偶数, 从而被 $2$ 除后仍为整数. 现在可以这么看:
     \begin{align*}
         \frac{n(n+1)}{2} = \frac{(n+1)(n+1-1)}{2} = \binom{n+1}{2}.
     \end{align*}

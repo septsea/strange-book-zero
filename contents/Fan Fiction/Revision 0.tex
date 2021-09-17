@@ -1,0 +1,515 @@
+\subsection*{\Revision{0}}
+\addcontentsline{toc}{subsection}{\Revision{0}}
+\markright{\Revision{0}}
+
+本文的目标是帮助读者回顾所学的知识.
+
+本文不会有新的东西.
+
+为方便, 我们用 $I$ 表示 ``整数集'' 或 ``整式集''\myFN{I 就是 integral domain 的第零个字母.}; 相应地, ``$f$ 是整数'' 或 ``$f$ 是整式'' 统称 ``$f$ 是 $I$ 的元''. 这里的 ``整式'' 是系数是 $\FF$ 的元的整式 (也即 $\FF$ 上的整式)——毕竟, 整系数整式不一定有带余除法, 故没法像 $\FF$ 上的整式那样讨论整系数整式.
+
+作者会列出定义与命题. 读者可试着写出命题的证明. 读者不必写出与作者的证明完全一样的证明; 但是, 读者至少要能使推理说服自己.
+
+在正式进入复习前, 作者希望读者能回想起三件事:
+
+(i) 整数 $f$ 的绝对值是
+\begin{align*}
+    |f| = \begin{cases}
+        f,  & \quad f \geq 0; \\
+        -f, & \quad f < 0.
+    \end{cases}
+\end{align*}
+若整数 $g$, $h$ 适合 $f = gh$, 则 $|f| = |g| \cdot |h|$.
+
+(ii) 整式 $f$ 的次用 $\deg f$ 表示. 零整式的次是 $-\infty$. 若整式 $g$, $h$ 适合 $f = gh$, 则
+\begin{align*}
+    \deg f = \deg g + \deg h.
+\end{align*}
+
+(iii) $I$ 的乘法适合消去律. 设 $f$, $g$, $h$ 是 $I$ 的元. 若 $f \neq 0$, 且 $fg = fh$, 则 $g = h$.
+
+好. 先从 $I$ 的单位开始.
+
+\begin{definition}
+    设 $f$ 是 $I$ 的元. 若存在 $I$ 的元 $g$ 使 $fg = 1$, 则说 $f$ 是单位. $g$ 称为 $f$ 的逆.
+\end{definition}
+
+\begin{proposition}
+    $1$ 是单位.
+\end{proposition}
+
+\begin{proposition}
+    $0$ 一定不是单位.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$ 是单位. 若 $I$ 的元 $g$, $h$ 适合 $fg = fh = 1$, 则 $g = h$.
+\end{proposition}
+
+\begin{definition}
+    设 $f$ 是单位. 上个命题指出, $f$ 的逆一定是唯一的 (根据单位的定义, $f$ 的逆当然存在). 我们用 $f^{-1}$ 表示 $f$ 的逆.
+\end{definition}
+
+\begin{proposition}
+    设 $f$ 是单位. $f$ 的逆 $f^{-1}$ 也是单位, 且 $(f^{-1})^{-1} = f$.
+\end{proposition}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是单位. 则 $f_1 f_2 \cdots f_n$ 也是单位, 且
+    \begin{align*}
+        (f_1 f_2 \cdots f_n)^{-1} = f_n^{-1} \cdots f_2^{-1} f_1^{-1}.
+    \end{align*}
+\end{proposition}
+
+\begin{definition}
+    $I$ 的全体单位称为 $I$ 的单位群.
+\end{definition}
+
+\begin{proposition}
+    (i) 整数的单位群恰由 $1$ 与 $-1$ 作成.
+
+    (ii) 整式的单位群恰由全体非零数作成.
+\end{proposition}
+
+\begin{remark}
+    虽然整数与整式很相似, 但有的时候我们不得不单独地写出整数与整式适合的性质.
+\end{remark}
+
+整数与整式都有带余除法.
+
+\begin{proposition}
+    设 $f$ 是非零整数. 对任意整数 $g$, 存在唯一的一对整数 $q$, $r$ 使
+    \begin{align*}
+        g = qf + r, \quad 0 \leq r < |f|.
+    \end{align*}
+    一般称其为带余除法: $q$ 就是商; $r$ 就是余数.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$ 是非零整式. 对任意整式 $g$, 存在唯一的一对整式 $q$, $r$ 使
+    \begin{align*}
+        g = q f + r, \quad \deg r < \deg f.
+    \end{align*}
+    一般称其为带余除法: $q$ 就是商; $r$ 就是余式.
+\end{proposition}
+
+在 $I$ 里, 概念 ``因子'' 很重要——它给出了 $I$ 的很多性质.
+
+\begin{definition}
+    设 $f$, $g$ 是 $I$ 的元. 若存在 $I$ 的元 $h$ 使 $f=gh$, 则说 $g$ 是 $f$ 的因子.
+\end{definition}
+
+\begin{proposition}
+    (i) 单位是任意 $I$ 的元的因子; 单位的因子一定是单位.
+
+    (ii) 任意 $I$ 的元都是 $0$ 的因子; 非零的 $I$ 的元的因子一定不是 $0$.
+\end{proposition}
+
+带余除法与因子有密切的关系.
+
+\begin{proposition}
+    设 $f$, $g$ 是 $I$ 的元, 且 $g \neq 0$. $g$ 是 $f$ 的因子的一个必要与充分条件是: $g$ 除 $f$ 的余数 (余式) 为 $0$.
+\end{proposition}
+
+下面是因子的基本的性质.
+
+\begin{proposition}
+    设 $f$, $g$, $h$ 是 $I$ 的元. 因子适合如下性质:
+
+    (i) $f$ 是 $f$ 的因子;
+
+    (ii) 若 $h$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则 $h$ 是 $f$ 的因子;
+
+    (iii) 若 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子, 则存在单位 $q$ 使 $f = qg$;
+
+    (iv) 设 $k$, $\ell$ 是 $I$ 的元. 若 $h$ 是 $f$ 的因子, 且 $h$ 是 $g$ 的因子, 则 $h$ 是 $kf \pm \ell g$ 的因子;
+
+    (v) 若 $\varepsilon_1$, $\varepsilon_2$ 是单位, 且 $g$ 是 $f$ 的因子, 则 $\varepsilon_2 g$ 是 $\varepsilon_1 f$ 的因子.
+\end{proposition}
+
+为方便, 我们定义一个新词.
+
+\begin{definition}
+    设 $f$, $g$ 是 $I$ 的元. 若存在单位 $\varepsilon$ 使 $f = \varepsilon g$, 则说 $f$ 是 $g$ 的相伴. 因为
+    \begin{align*}
+        g = 1g = (\varepsilon^{-1} \varepsilon) g = \varepsilon^{-1} (\varepsilon g) = \varepsilon^{-1} f,
+    \end{align*}
+    故 $g$ 当然也是 $f$ 的相伴. 所以, 我们说 $f$ 与 $g$ 相伴.
+\end{definition}
+
+显然, 因为 $f = 1f$, 故 $f$ 与 $f$ 相伴. 上面的文字已经说明 $f$ 与 $g$ 相伴相当于 $g$ 与 $f$ 相伴. 我们还有下面的
+\begin{proposition}
+    设 $f$, $g$, $h$ 是 $I$ 的元. 若 $f$ 与 $g$ 相伴, 且 $g$ 与 $h$ 相伴, 则 $f$ 与 $h$ 相伴.
+\end{proposition}
+
+根据因子的性质 (iii), 我们有
+\begin{proposition}
+    设 $f$, $g$ 是 $I$ 的元. $f$ 与 $g$ 相伴的一个必要与充分条件是 $f$ 是 $g$ 的因子, 且 $g$ 是 $f$ 的因子.
+\end{proposition}
+
+\begin{definition}
+    设 $f$, $g$ 是 $I$ 的元. 若 $d$ 是 $f$ 的因子, 且 $d$ 是 $g$ 的因子, 则 $d$ 是 $f$ 与 $g$ 的公因子.
+\end{definition}
+
+\begin{remark}
+    若 $d$ 是 $f$ 与 $g$ 的公因子, 则 $d$ 当然也是 $g$ 与 $f$ 的公因子. 换句话说, 公因子与次序无关.
+\end{remark}
+
+\begin{proposition}
+    单位是任意二个整式的公因子.
+\end{proposition}
+
+现在我们引出 ``最大公因子'' 的概念.
+
+\begin{definition}
+    设 $f$, $g$ 是 $I$ 的元. 适合下述二性质的 $I$ 的元 $d$ 是 $f$ 与 $g$ 的最大公因子:
+
+    (i) $d$ 是 $f$ 与 $g$ 的公因子;
+
+    (ii) 若 $e$ 是 $f$ 与 $g$ 的公因子, 则 $e$ 是 $d$ 的因子.
+\end{definition}
+
+\begin{remark}
+    若 $d$ 是 $f$ 与 $g$ 的最大公因子, 则 $d$ 当然也是 $g$ 与 $f$ 的最大公因子. 换句话说, 最大公因子与次序无关. 这是因为公因子与次序无关.
+\end{remark}
+
+由定义立即可得
+\begin{proposition}
+    设 $f$, $g$ 是 $I$ 的元. 若 $d_1$ 与 $d_2$ 都是 $f$ 与 $g$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
+\end{proposition}
+
+\begin{remark}
+    由此可见, 最大公因子不一定是唯一的. 但这不是很重要.
+\end{remark}
+
+\begin{proposition}
+    设 $f$ 是 $I$ 的元.
+
+    (i) $f$ 是 $0$ 与 $f$ 的最大公因子.
+
+    (ii) 设 $\varepsilon$ 是单位. $\varepsilon$ 是 $\varepsilon$ 与 $f$ 的最大公因子.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$, $g$, $q$ 是 $I$ 的元. 设 $f$ 与 $g$ 的最大公因子是 $d_1$; 设 $f - gq$ 与 $g$ 的最大公因子是 $d_2$. 则 $d_1$ 与 $d_2$ 相伴.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$, $g$ 是 $I$ 的元. $f$ 与 $g$ 的最大公因子一定存在.
+\end{proposition}
+
+\begin{proposition}
+    ``辗转相除法'' 是计算 $I$ 的二个元的最大公因子的一个方法.
+\end{proposition}
+
+根据辗转相除法, 我们有
+\begin{proposition}
+    设 $f$, $g$ 是 $I$ 的元. 设 $d$ 是 $f$ 与 $g$ 的最大公因子. 存在 $I$ 的元 $s$ 与 $t$ 使
+    \begin{align*}
+        sf + tg = d.
+    \end{align*}
+    这个等式的一个名字是 Bézout 等式.
+\end{proposition}
+
+有了最大公因子的概念, 我们可以引出 ``互素'':
+\begin{definition}
+    设 $f$, $g$ 是 $I$ 的元. 若单位是 $f$ 与 $g$ 的最大公因子, 则称 $f$ 与 $g$ 互素.
+\end{definition}
+
+\begin{remark}
+    因为最大公因子与次序无关, 故互素也与次序无关. 换句话说, ``$f$ 与 $g$ 互素'' 相当于 ``$g$ 与 $f$ 互素''.
+\end{remark}
+
+\begin{proposition}
+    显然, 单位与 $I$ 的任意元都互素.
+\end{proposition}
+
+下面的命题极重要:
+\begin{proposition}
+    设 $f$, $g$ 是 $I$ 的元. $f$ 与 $g$ 互素的一个必要与充分条件是: 存在 $I$ 的元 $s$, $t$ 使
+    \begin{align*}
+        sf + tg = 1.
+    \end{align*}
+\end{proposition}
+
+下面是几个关于互素的性质.
+
+\begin{proposition}
+    设 $f$, $g$, $h$ 是 $I$ 的元. 互素有如下性质:
+
+    (i) 若 $h$ 是 $fg$ 的因子, 且 $h$ 与 $f$ 互素, 则 $h$ 是 $g$ 的因子;
+
+    (ii) 若 $f$ 与 $g$ 互素, 且 $f$ 与 $h$ 互素, 则 $f$ 与 $gh$ 互素;
+
+    (iii) 若 $f$ 是 $h$ 的因子, $g$ 是 $h$ 的因子, 且 $f$ 与 $g$ 互素, 则 $fg$ 是 $h$ 的因子.
+\end{proposition}
+
+现在我们推广公因子、最大公因子、互素的概念.
+
+前面, 我们讨论了 $I$ 的二个元的公因子、最大公因子、互素; 现在, 我们从量的角度推广.
+
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. 若 $d$ 是 $f_1$ 的因子, $d$ 是 $f_2$ 的因子……$d$ 是 $f_n$ 的因子, 则 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子.
+\end{definition}
+
+\begin{remark}
+    我们并没有禁止 $n$ 取 $1$: $I$ 的一个元的 ``公因子'' 当然是它的因子. 同理, $I$ 的一个元也可以有 ``最大公因子''; $I$ 的一个元也可以 ``互素''.
+\end{remark}
+
+\begin{proposition}
+    设 $k_1$, $k_2$, $\cdots$, $k_n$, $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $d$ 是 $k_1 f_1 + k_2 f_2 + \cdots + k_n f_n$ 的因子.
+\end{proposition}
+
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. 适合下述二性质的 $I$ 的元 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子:
+
+    (i) $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子;
+
+    (ii) 若 $e$ 是 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的公因子, 则 $e$ 是 $d$ 的因子.
+\end{definition}
+
+由定义立即可得
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. 若 $d_1$ 与 $d_2$ 都是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则 $d_1$ 与 $d_2$ 相伴.
+\end{proposition}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元.
+
+    (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子存在;
+
+    (ii) 若 $d$ 是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则存在 $I$ 的元 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = d.
+    \end{align*}
+\end{proposition}
+
+跟之前一样, 有了最大公因子的概念, 我们可以引出 ``互素'':
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. 若单位是 $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子, 则称 $f_1$, $f_2$, $\cdots$, $f_n$ 互素.
+\end{definition}
+
+下面的命题也是十分自然的.
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 存在 $I$ 的元 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    \begin{align*}
+        u_1 f_1 + u_2 f_2 + \cdots + u_n f_n = 1.
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$, $f$ 是 $I$ 的元. 若 $f_1$ 与 $f$ 互素, $f_2$ 与 $f$ 互素……$f_n$ 与 $f$ 互素, 则 $f_1 f_2 \cdots f_n$ 与 $f$ 互素.
+\end{proposition}
+
+\begin{proposition}
+    设 $I$ 的元 $f_1$, $f_2$, $\cdots$, $f_n$ 不全是零.
+
+    (i) $f_1$, $f_2$, $\cdots$, $f_n$ 的最大公因子 $d$ 不是零;
+
+    (ii) 任取 $1$ 至 $n$ 间的整数 $\ell$, 必有 (唯一的) $I$ 的元 $g_\ell$ 使 $f_\ell = dg_\ell$;
+
+    (iii) 单位是 $g_1$, $g_2$, $\cdots$, $g_n$ 的最大公因子; 换句话说, $g_1$, $g_2$, $\cdots$, $g_n$ 互素;
+
+    (iv) 反过来, 若 $I$ 的元 $u_1$, $u_2$, $\cdots$, $u_n$ 互素, 则 $w$ 是 $wu_1$, $wu_2$, $\cdots$, $wu_n$ 的最大公因子.
+\end{proposition}
+
+互素的一个特殊情形是 PRP.
+
+\begin{definition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元 ($n \geq 2$). 若任取 $1$ 至 $n$ 间的二个不同的整数 $i$, $j$, 都有 $f_i$ 与 $f_j$ 互素, 则 $f_1$, $f_2$, $\cdots$, $f_n$ PRP.
+
+    为方便, 若 $f$ 是单位, 我们也说 ``$f$ PRP'' (这相当于定义了 $n = 1$ 时 PRP 的意义).
+\end{definition}
+
+\begin{proposition}
+    设 $I$ 的元 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 则 $f_1$, $f_2$, $\cdots$, $f_n$ 互素. 不过, 反过来就不一定了.
+\end{proposition}
+
+\begin{proposition}
+    设 $I$ 的元 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 设 $m_1$, $m_2$, $\cdots$, $m_n$ 是非负整数. 记 $F_i = f_i^{m_i}$, $i$ 是 $1$ 至 $n$ 间的整数. 则 $F_1$, $F_2$, $\cdots$, $F_n$ 也 PRP.
+\end{proposition}
+
+\begin{proposition}
+    设 $I$ 的元 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 则 $f_1 f_2 \cdots f_{i-1}$ 与 $f_i$ 互素 ($i$ 是 $1$, $2$, $\cdots$, $n$ 中的数). 我们约定: $I$ 的 $0$ 个元的和为 $0$, 而 $I$ 的 $0$ 个元的积为 $1$. 所以, $i = 1$ 时, $1$ 当然与 $f_1$ 互素.
+\end{proposition}
+
+\begin{proposition}
+    设 $I$ 的元 $f_1$, $f_2$, $\cdots$, $f_n$ PRP. 若 $f_1$, $f_2$, $\cdots$, $f_i$ 都是 $f$ 的因子, 则 $f_1 f_2 \cdots f_i$ 也是 $f$ 的因子 ($i$ 是 $1$, $2$, $\cdots$, $n$ 中的数). 特别地, $i = n$ 时, $f_1 f_2 \cdots f_n$ 是 $f$ 的因子.
+\end{proposition}
+
+现在, 我们讨论不可约的 $I$ 的元.
+
+\begin{definition}
+    设 $I$ 的元 $f$ 既不是 $0$, 也不是单位.
+
+    (i) 若存在二个不全为单位的 $I$ 的元 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f$ 是可约的.
+
+    (ii) 若 $f$ 不是可约的, 则说 $f$ 是不可约的. 换言之, 若 $f$ 是不可约的, 则 ``$I$ 的元 $f_1$, $f_2$ 使 $f = f_1 f_2$'' 可推出 ``$f_1$ 是单位或 $f_2$ 是单位''.
+\end{definition}
+
+\begin{remark}
+    $0$ 或单位既不是可约的, 也不是不可约的.
+\end{remark}
+
+\begin{proposition}
+    (i) $2$ 与 $-2$ 是不可约的整数.
+
+    (ii) 次为 $1$ 的整式是不可约的整式.
+\end{proposition}
+
+\begin{proposition}
+    设 $I$ 的元 $p$ 既不是 $0$, 也不是单位. 设 $\varepsilon$ 是单位. 若 $p$ 是不可约的, 则 $\varepsilon p$ 也是不可约的.
+\end{proposition}
+
+\begin{proposition}
+    设整数 $p$ 既不是 $0$, 也不是单位. 下述四命题等价:
+
+    (i) 若整数 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f_1$ 是单位或 $f_2$ 是单位;
+
+    (ii) 对任意整数 $f$, 要么 $p$ 是 $f$ 的因子, 要么 $p$ 与 $f$ 互素 (二者不会同时发生);
+
+    (iii) 若 $f$, $g$ 是整数, 且 $p$ 是 $fg$ 的因子, 则 $p$ 是 $f$ 的因子, 或 $p$ 是 $g$ 的因子;
+
+    (iv) 不存在整数 $f_1$, $f_2$ 使 $p = f_1 f_2$, 且 $|f_1| < |p|$, $|f_2| < |p|$.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $p$ 既不是 $0$, 也不是单位. 下述四命题等价:
+
+    (i) 若整式 $f_1$, $f_2$ 使 $f = f_1 f_2$, 则 $f_1$ 是单位或 $f_2$ 是单位;
+
+    (ii) 对任意整式 $f$, 要么 $p$ 是 $f$ 的因子, 要么 $p$ 与 $f$ 互素 (二者不会同时发生);
+
+    (iii) 若 $f$, $g$ 是整式, 且 $p$ 是 $fg$ 的因子, 则 $p$ 是 $f$ 的因子, 或 $p$ 是 $g$ 的因子;
+
+    (iv) 不存在整式 $f_1$, $f_2$ 使 $p = f_1 f_2$, 且 $\deg f_1 < \deg p$, $\deg f_2 < \deg p$.
+\end{proposition}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. 设 $I$ 的元 $p$ 是不可约的. 若 $p$ 是 $f_1 f_2 \cdots f_n$ 的因子, 则存在 $1$ 至 $n$ 间的整数 $\ell$, 使 $p$ 是 $f_{\ell}$ 的因子.
+\end{proposition}
+
+\begin{proposition}
+    (i) 设整数 $f$ 既不是 $0$, 也不是单位. ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个整数 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $|f_1| < |f|$, $|f_2| < |f|$''.
+
+    (ii) 设整式 $f$ 既不是 $0$, 也不是单位. ``$f$ 是可约的'' 的一个必要与充分条件是 ``存在二个整式 $f_1$, $f_2$, 使 $f = f_1 f_2$, 且 $\deg f_1 < \deg f$, $\deg f_2 < \deg f$''.
+\end{proposition}
+
+\begin{proposition}
+    设 $p$, $q$ 是不可约的 $I$ 的元. 要么 $p$ 是 $q$ 的相伴, 要么 $p$ 与 $q$ 互素 (二者不会同时发生).
+\end{proposition}
+
+下面是关于不可约的 $I$ 的元的积的命题.
+
+\begin{proposition}
+    设 $I$ 的元 $p_1$, $p_2$, $\cdots$, $p_m$, $q_1$, $q_2$, $\cdots$, $q_n$ 都是不可约的. 设
+    \begin{align*}
+        p_1 p_2 \cdots p_m = q_1 q_2 \cdots q_n.
+    \end{align*}
+
+    (i) $m = n$;
+
+    (ii) 可以适当地调换 $q_1$, $q_2$, $\cdots$, $q_m$ (注意, $n = m$) 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $p_{\ell}$ 与 $q_{\ell}$ 相伴 (注意: 调换顺序后的 $q_{\ell}$ 不一定跟原来的 $q_{\ell}$ 相等!).
+\end{proposition}
+
+\begin{proposition}
+    设 $I$ 的元 $f$ 既不是 $0$, 也不是单位. 存在不可约的 $I$ 的元 $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    \begin{align*}
+        f = p_1 p_2 \cdots p_m.
+    \end{align*}
+\end{proposition}
+
+合并上二个命题, 可得
+\begin{proposition}
+    设 $I$ 的元 $f$ 既不是 $0$, 也不是单位.
+
+    (i) 存在不可约的 $I$ 的元 $p_1$, $p_2$, $\cdots$, $p_m$ 使
+    \begin{align*}
+        f = p_1 p_2 \cdots p_m;
+    \end{align*}
+
+    (ii) 若 $q_1$, $q_2$, $\cdots$, $q_m$, $s_1$, $s_2$, $\cdots$, $s_n$ 是不可约的 $I$ 的元, 且
+    \begin{align*}
+        f = q_1 q_2 \cdots q_m = s_1 s_2 \cdots s_n,
+    \end{align*}
+    则 $m = n$, 且可以适当地调换 $s_1$, $s_2$, $\cdots$, $s_m$ 的顺序, 使任取 $1$ 至 $m$ 间的整数 $\ell$, $q_\ell$ 与 $s_\ell$ 相伴 (注意: 调换顺序后的 $s_\ell$ 不一定跟原来的 $s_\ell$ 相等!).
+\end{proposition}
+
+\begin{proposition}
+    设 $I$ 的元 $f$ 既不是 $0$, 也不是单位. 设 $p_1$, $p_2$, $\cdots$, $p_m$ 是不可约的整式, 且
+    \begin{align*}
+        f = p_1 p_2 \cdots p_m.
+    \end{align*}
+    $f$ 的因子必为
+    \begin{align*}
+        \varepsilon p_{j_1} p_{j_2} \cdots p_{j_s},
+    \end{align*}
+    其中 $\varepsilon$ 是单位, $j_1$, $j_2$, $\cdots$, $j_s$ 是 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 ($s$ 可取 $0$; 此时, 这就是单位).
+\end{proposition}
+
+\begin{proposition}
+    设 $f_1$, $f_2$, $\cdots$, $f_n$ 是 $I$ 的元. $f_1$, $f_2$, $\cdots$, $f_n$ 互素的一个必要与充分条件是: 任取不可约的 $I$ 的元 $p$, 存在某个 $f_i$, 使 $p$ 不是 $f_i$ 的因子.
+\end{proposition}
+
+\myLine
+
+最后, 我们讨论一些整式特有的命题.
+
+整式与整数类似. 不过, 整式与整数也有一些不同. 整数一定是整式, 但整式不一定是整数. 而且, 整式的系数的范围变大或变小时, 有些结论在变化; 当然, 也有一些结论是不变的.
+
+\begin{definition}
+    设 $f$ 是整式. 若 $f$ 的系数都是复数, 则 $f$ 是复系数整式; 若 $f$ 的系数都是实数, 则 $f$ 是实系数整式; 若 $f$ 的系数都是有理数, 则 $f$ 是有理系数整式; 若 $f$ 的系数都是整数, 则 $f$ 是整系数整式.
+\end{definition}
+
+因为整式的带余除法不因系数的范围变大而改变, 根据带余除法与因子的关系, 我们有
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    (i) 若存在 $K$ 上的整式 $h$, 使 $f = gh$, 则当然存在 $E$ 上的整式 $h^{\prime}$, 使 $f = gh^{\prime}$ (不难看出, 取 $h^{\prime}$ 为 $h$ 即可).
+
+    (ii) 若任取 $K$ 上的整式 $h$, 都有 $f \neq gh$, 则任取 $E$ 上的整式 $h^{\prime}$, 都有 $f \neq gh^{\prime}$.
+
+    简单地说, 问题 ``$g$ 是否是 $f$ 的因子'' 的回答不因系数的范围扩大而改变.
+\end{proposition}
+
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    (i) 若存在 $K$ 的单位 $\varepsilon$, 使 $f = g\varepsilon$, 则当然存在 $E$ 上的单位 $\varepsilon^{\prime}$, 使 $f = g\varepsilon^{\prime}$ (不难看出, 取 $\varepsilon^{\prime}$ 为 $\varepsilon$ 即可).
+
+    (ii) 若任取 $K$ 的单位 $\varepsilon$, 都有 $f \neq g\varepsilon$, 则任取 $E$ 上的单位 $\varepsilon^{\prime}$, 都有 $f \neq g\varepsilon^{\prime}$.
+
+    简单地说, 问题 ``$g$ 是否与 $f$ 相伴'' 的回答不因系数的范围扩大而改变.
+\end{proposition}
+
+\begin{proposition}
+    设整式 $f \neq 0$. 存在唯一的整式 $f_\mathrm{m}$ 使 $f_\mathrm{m}$ 与 $f$ 相伴, 且 $f_\mathrm{m}$ 的首项系数为 $1$. 这样的 $f_\mathrm{m}$ 就是 $f$ 的首一的相伴.
+\end{proposition}
+
+\begin{proposition}
+    设 $f$, $g$ 是整式, 且 $f$, $g$ 不全是 $0$. 存在唯一的整式 $d_\mathrm{m}$, 使:
+
+    (i) $d_\mathrm{m}$ 是 $f$ 与 $g$ 的最大公因子;
+
+    (ii) $d_\mathrm{m}$ 的首项系数为 $1$.
+\end{proposition}
+
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    (i) 设 $f = g = 0$. 则 $f$ 与 $g$ 的最大公因子是 $0$. 不管在哪儿 ($K$ 还是 $E$), 它都是 $0$.
+
+    (ii) 设 $f$, $g$ 不全是 $0$. 设 $d_K$ 是 $K$ 上的整式, 首项系数为 $1$, 且是 $f$ 与 $g$ 的最大公因子. 设 $d_E$ 是 $E$ 上的整式, 首项系数为 $1$, 且是 $f$ 与 $g$ 的最大公因子. 则 $d_K = d_E$. 简单地说, (不全是 $0$ 的) 整式 $f$, $g$ 的首项系数为 $1$ 的最大公因子不因系数的范围扩大而改变.
+\end{proposition}
+
+\begin{proposition}
+    设 $K$, $E$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $E$ 的范围不比 $K$ 的范围窄. 设 $f$ 与 $g$ 是 $K$ 上的整式.
+
+    若 $f$ 与 $g$ 在 $K$ 上的整式中互素, 则 $f$ 与 $g$ 的首项系数为 $1$ 的最大公因子是 $1$. 因为首项系数为 $1$ 的最大公因子不因系数的范围扩大而改变, 故 $f$ 与 $g$ 在 $E$ 上的整式中也互素.
+
+    简单地说, 问题 ``$f$ 是否与 $g$ 互素'' 的回答不因系数的范围扩大而改变.
+\end{proposition}
+
+姑且复习到这里吧. 本文没有练习 (作者自己写练习, 还得准备练习的解答, 对吧?). 不过, 读者可以参考 ``高等代数'' ``初等数论'' 教材; 也可以参考成册的习题集. 本文当然不是教材; 本文只是算学普及文罢了.
+
+辛苦了, 读者! Take a break, will you?

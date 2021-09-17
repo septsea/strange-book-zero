@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{\DerivativesRevisited}
 \markright{\DerivativesRevisited}
 
-本节将再讨论多项式的微商.
+本节将再讨论整式的微商.
 
 在讨论微商前, 让我们捡起在 ``\GeneralizedBinomialCoefficients '' 节里没用过的二项展开:
 
@@ -85,7 +85,7 @@
     = {} & (c + (x - c))^i                                    \\
     = {} & \sum_{j = 0}^{i} \binom{i}{j} c^{i - j} (x-c)^{j}.
 \end{align*}
-由此, 我们可以把任意多项式
+由此, 我们可以把任意整式
 \begin{align*}
     f(x) = \sum_{i = 0}^n u_i x^i \in \FF[x]
 \end{align*}
@@ -133,7 +133,7 @@
     \begin{align*}
         f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \in \FF[x].
     \end{align*}
-    $f(x)$ 的微商是多项式
+    $f(x)$ 的微商是整式
     \begin{align*}
         Df(x) = 0 + 1a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1} \in \FF[x].
     \end{align*}
@@ -145,11 +145,11 @@
 \end{definition}
 
 \begin{remark}
-    若 $f(x) = c$, $c \in \FF$, 则 $Df(x)$ 为零多项式.
+    若 $f(x) = c$, $c \in \FF$, 则 $Df(x)$ 为零整式.
 \end{remark}
 
 \begin{remark}
-    读者可能会注意到我们在这里换了个记号. 之前, 我们用 $f^{\prime} (x)$ 或 $(f(x))^{\prime}$ 表示多项式 $f(x)$ 的微商——那个时候, 我们还是在抽象的整环 $D$ 上讨论问题. 现在, 我们在熟悉的 $\FF$ 里讨论问题. 读者已经很久都没见到 $D$ 了吧? 从此节开始, 我们用 $D$ 记号表示微商. 所以, $D$ 将不表示整环.
+    读者可能会注意到我们在这里换了个记号. 之前, 我们用 $f^{\prime} (x)$ 或 $(f(x))^{\prime}$ 表示整式 $f(x)$ 的微商——那个时候, 我们还是在抽象的整环 $D$ 上讨论问题. 现在, 我们在熟悉的 $\FF$ 里讨论问题. 读者已经很久都没见到 $D$ 了吧? 从此节开始, 我们用 $D$ 记号表示微商. 所以, $D$ 将不表示整环.
 \end{remark}
 
 \begin{example}
@@ -182,7 +182,7 @@
     \end{align*}
     是 $\FF[x]$ 中二个元.
 
-    (i) $cf(x)$ 就是多项式
+    (i) $cf(x)$ 就是整式
     \begin{align*}
         ca_0 + ca_1 x + ca_2 x^2 + \cdots + ca_{n-1} x^{n-1} + ca_n x^n,
     \end{align*}
@@ -196,7 +196,7 @@
         = {} & cDf(x).
     \end{align*}
 
-    (ii) $f(x) \pm g(x)$ 就是多项式
+    (ii) $f(x) \pm g(x)$ 就是整式
     \begin{align*}
          & (a_0 \pm b_0) + (a_1 \pm b_1) x + (a_2 \pm b_2) x^2 + \cdots       \\
          & \qquad \qquad + (a_{n-1} \pm b_{n-1}) x^{n-1} + (a_n \pm b_n) x^n,
@@ -227,7 +227,7 @@
         Df (x) = 3x^2, \quad Dg (x) = 2x + 1.
     \end{align*}
 
-    (i) $4g(x)$ 也是多项式, 当然可以有微商. 因为
+    (i) $4g(x)$ 也是整式, 当然可以有微商. 因为
     \begin{align*}
         4g(x) = 4x^2 + 4x - 4,
     \end{align*}
@@ -240,7 +240,7 @@
         4Dg(x) = 4(2x + 1) = 8x + 4.
     \end{align*}
 
-    (ii) $f(x) + g(x)$ 也是多项式. 因为
+    (ii) $f(x) + g(x)$ 也是整式. 因为
     \begin{align*}
         f(x) + g(x) = x^3 + 2 + x^2 + x - 1 = x^3 + x^2 + x + 1,
     \end{align*}
@@ -279,7 +279,7 @@
     \end{align*}
     高级微商可指代任意 $e$ 级微商, 此处 $e > 1$.
 
-    设 $t \in \FF$. 既然 $D^e f(x)$ 是某个多项式
+    设 $t \in \FF$. 既然 $D^e f(x)$ 是某个整式
     \begin{align*}
         v_0 + v_1 x + \cdots + v_s x^s \in \FF[x],
     \end{align*}
@@ -336,7 +336,7 @@
 \end{pf}
 
 % cSpell: disable-next-line
-当初我们为得到 Vandermonde 恒等式与二项展开, 我们引入了临时工具 $r^{[k]}$. 现在, 类似地, 为了更方便地讨论多项式的高级微商, 我们引入
+当初我们为得到 Vandermonde 恒等式与二项展开, 我们引入了临时工具 $r^{[k]}$. 现在, 类似地, 为了更方便地讨论整式的高级微商, 我们引入
 
 \begin{definition}
     设 $m$ 为整数. 设 $r \in \FF[x]$. 定义
@@ -397,7 +397,7 @@
     = {} & \sum_{j = 0}^{i} q_{i-j} (c) q_{j} (x-c)                                 \\
     = {} & \sum_{j = 0}^{n} q_{i-j} (c) q_{j} (x-c).
 \end{align*}
-任取次不高于 $n$ 的多项式
+任取次不高于 $n$ 的整式
 \begin{align*}
     f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x].
 \end{align*}
@@ -429,7 +429,7 @@
 我们已经证明了
 
 \begin{proposition}
-    设 $n$ 是非负整数. 设 $f(x)$ 是次不高于 $n$ 的多项式. 设 $c \in \FF$. 则 Taylor 公式 \term{Taylor's formula} 成立:
+    设 $n$ 是非负整数. 设 $f(x)$ 是次不高于 $n$ 的整式. 设 $c \in \FF$. 则 Taylor 公式 \term{Taylor's formula} 成立:
     \begin{align*}
         f(x) = \sum_{j = 0}^{n} \frac{D^j f(c)}{j!} (x-c)^j.
     \end{align*}
@@ -456,7 +456,7 @@
 \end{remark}
 
 \begin{remark}
-    我们提一个读者可能已经注意到的事实. 设 $n$ 是非负整数. 则 $n$ 次多项式的 $n$ 级微商不是 $0$, 但 $n+1$ 级微商是 $0$. 这也解释了为什么在 Taylor 公式里, 我们只要求 $n$ 不低于 $f(x)$ 的次.
+    我们提一个读者可能已经注意到的事实. 设 $n$ 是非负整数. 则 $n$ 次整式的 $n$ 级微商不是 $0$, 但 $n+1$ 级微商是 $0$. 这也解释了为什么在 Taylor 公式里, 我们只要求 $n$ 不低于 $f(x)$ 的次.
 \end{remark}
 
 \begin{example}
@@ -517,11 +517,11 @@ Taylor 公式一个用途是证明
                  & s_k = \frac{D^k h(c)}{k!}                                       \\
         \implies & D^k h(c) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(c) D^{k-i} g(c).
     \end{align*}
-    作多项式
+    作整式
     \begin{align*}
         E(x) = D^k h(x) - \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x).
     \end{align*}
-    上面的推理告诉我们, 任取 $c \in \FF$, 必有 $E(c) = 0$. 所以 $E(x)$ 一定是零多项式, 即
+    上面的推理告诉我们, 任取 $c \in \FF$, 必有 $E(c) = 0$. 所以 $E(x)$ 一定是零整式, 即
     \begin{align*}
         D^k h(x) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x).
     \end{align*}
