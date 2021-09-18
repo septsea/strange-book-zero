@@ -2,4 +2,612 @@
 \addcontentsline{toc}{subsection}{\RationalExpressions}
 \markright{\RationalExpressions}
 
-To be continued.
+在前面, 我们深入地讨论了整数与整式. 现在, 我们讨论有理式.
+
+不正式地说, 有理式就是二个整式的比 (分母不为零). 我们已经知道, 有理数是二个整数的比 (分母不为零); 这么看来, 就像整数与整式很相似那样, 有理数与有理式也会很相似.
+
+有理数是怎么来的? 据说, 很久很久以前, 有二个天使\myFN{一个叫 Mostima, 一个叫 Exusiai.}在重樱 \term{the Sakura Empire} 观光: 一个青发天使 \term{an angel with blue hair}, 一个赤发天使 \term{an angel with red hair}. 二个天使很饿. 不过, 很幸运, 她们找到了 \ding{200} 个应急食品 \term{nine paimons}. 如果平分应急食品, 那么, 按当时的习惯, 每个天使只能得到四个应急食品——因为还剩一个应急食品不够二个天使分. 但天使终究是天使; 天使可不是笨蛋! 因为她们实在是太饿了, 于是, 她们想出了聪明的方法: 打开最后一个应急食品, 再平分它. 通俗地说, 每个天使又获得了 ``半个应急食品''. 用算学描述此事, 就是每个天使获得了 $4 + \frac{1}{2}$ 个应急食品, 也就是 $\frac{9}{2}$ 个应急食品. $\frac{p}{a}$ 就是有理数——分子 $p$ 表示应急食品的数目, 分母 $a$ 表示天使的数目. $\frac{p}{a}$ 就是将 $p$ 个应急食品平分给 $a$ 个天使后, 每个天使得到的应急食品的量.
+
+\begin{proposition}
+    设 $I$ 表示整数或整式. 设 $f$, $g$, $u$, $v$ 是 $I$ 的 $4$ 元.
+
+    $I$ 的 ``相等'' 适合如下性质\myFN{我们之前可能没提到此事. 毕竟, 我们知道, 数的相等适合此三律; 整式的相等归结为 ``次相等'' 与 ``对应的系数相等'', 故整式的相等也适合此三律. 不过, 在讨论有理式时, ``相等'' 会不太一样, 但仍适合此三律.}:
+
+    (R) 反射律 \term{reflexive law}: $f = f$.
+
+    (S) 对称律 \term{symmetric law}: 若 $f = g$, 则 $g = f$.
+
+    (T) 推移律 \term{transitive law}: 若 $f = g$, 且 $g = u$, 则 $f = u$.
+
+    $I$ 的 ``加法'' 适合如下性质:
+
+    (A0) $f + g$ 也是 $I$ 的元.\myFN{此事与 (M0) 的意义是: 加法与乘法是 ``闭的''——不会 ``跳出'' $I$ 的圈子.}
+
+    (A1) 若 $f = u$, $g = v$, 则 $f + g = u + v$.\myFN{我们之前可能没提到此事. (A1) 与 (M1) 的意义是: 相同的输入 \term{input} 给出相同的输出 \term{output}. 对于整数, 这就是读者在中学学到的 ``二个等式可相加'' ``二个等式可相乘''. 设 $f = a_0 + a_1 x + \cdots + a_n x^n$, $g = b_0 + b_1 x + \cdots + b_n x^n$, $u = c_0 + c_1 x + \cdots + c_n x^n$, $v = d_0 + d_1 x + \cdots + d_n x^n$. 若 $f = u$, $g = v$, 则 $a_i = c_i$, $b_i = d_i$. $f + g$ 的 $i$ 次系数是 $a_i + b_i$, 这恰好是 $c_i + d_i$, 也就是 $u + v$ 的 $i$ 次系数. $fg$ 的 $k$ 次系数是 $a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0$, 这恰好是 $c_0 d_k + c_1 d_{k-1} + \cdots + c_k d_0$, 也就是 $uv$ 的 $k$ 次系数.}
+
+    (A2) 加法交换律: $f + g = g + f$.
+
+    (A3) 加法结合律: $(f + g) + u = f + (g + u)$.
+
+    (A4) 零: 存在一个称为 ``$0$'' 的 $I$ 的元, 使 $0 + f = f$.
+
+    (A5) 相反元: 存在一个称为 ``$-f$'' 的 $I$ 的元, 使 $-f + f = 0$.
+
+    $I$ 的 ``乘法'' 适合如下性质:
+
+    (M0) $fg$ 也是 $I$ 的元.
+
+    (M1) 若 $f = u$, $g = v$, 则 $fg = uv$.
+
+    (M2) 乘法交换律: $fg = gf$.
+
+    (M3) 乘法结合律: $(f \cdot g) \cdot u = f \cdot (g \cdot u)$.
+
+    (M4) 幺: 存在一个称为 ``$1$'' 的 $I$ 的元, 使 $1 \cdot f = f$.
+
+    (M5) 乘法消去律: 若 $f \neq 0$, 且 $fg = fu$, 则 $g = u$.
+
+    $I$ 的加法与乘法不是孤立的:
+
+    (D) 分配律: $f \cdot (g + u) = fg + fu$.
+\end{proposition}
+
+我们约定, 在不会产生歧义的情况下, 乘号可省略. 比如, $1 \cdot f$ 当然可写为 $1f$. 我们还约定: 乘法的 ``优先级'' 高于加法. 比如, $f \cdot g + f \cdot u$ 是 $(f \cdot g) + (f \cdot u)$ 的简写.
+
+由 (A4) 可知, 零是唯一的. 假定有二个零: $0$ 与 $0^{\prime}$. 因为 $0$ 是零, 故 $0 + 0^{\prime} = 0^{\prime}$. 因为 $0^{\prime}$ 是零, 故 $0 + 0^{\prime} = 0^{\prime} + 0 = 0$. 所以 $0^{\prime} = 0$.
+
+由 (A5) 知, 一个元的相反元是唯一的. 设 $f_1$, $f_2$ 适合 $f_1 + f = 0$, 且 $f_2 + f = 0$. 所以
+\begin{align*}
+    f_1
+    = {} & 0 + f_1 = (f_2 + f) + f_1 = f_2 + (f + f_1) \\
+    = {} & f_2 + (f_1 + f) = f_2 + 0 = 0 + f_2         \\
+    = {} & f_2.
+\end{align*}
+
+由 (M4) 可知, 幺是唯一的. 假定有二个幺: $1$ 与 $1^{\prime}$. 因为 $1$ 是幺, 故 $1 \cdot 1^{\prime} = 1^{\prime}$. 因为 $1^{\prime}$ 是幺, 故 $1 \cdot 1^{\prime} = 1^{\prime} \cdot 1 = 1$. 所以 $1^{\prime} = 1$.
+
+可由 (D) 推出 $0f = 0$. 根据 $0$ 的定义, $0 + 0 = 0$. 所以
+\begin{align*}
+    0f = f0 = f(0 + 0) = f0 + f0 = 0f + 0f.
+\end{align*}
+从而
+\begin{align*}
+    0f
+    = {} & 0 + 0f = (-0f + 0f) + 0f          \\
+    = {} & {-0f} + (0f + 0f) = -0f + 0f = 0.
+\end{align*}
+
+由 (D), 我们可推出 $-(fg) = (-f)g$. 因为
+\begin{align*}
+    0 = 0g = (-f + f)g = g(-f + f) = g(-f) + gf = (-f)g + fg,
+\end{align*}
+故 $(-f)g$ 就是 $fg$ 的相反元 $-(fg)$.
+
+整数离有理数就差一点点. 我们也知道, 对任意高于 $1$ 的整数 $m$, 都不存在整数 $n$, 使 $mn = 1$——通俗地说, $1$ 个应急食品没法 ``完整地'' 平分给 $m$ 个天使. 但是, 有理数填补了此八哥 \term{bug}. 具体地说, 就是
+\begin{proposition}
+    (i) 有理数的 ``相等'' 适合 (R) (S) (T).
+
+    (ii) 有理数的 ``加法'' 适合 (A0) 至 (A5). 当然, ``$I$ 的元'' 得改为 ``有理数''.
+
+    (iii) 有理数的 ``乘法'' 适合 (M0) 至 (M4). 当然, ``$I$ 的元'' 得改为 ``有理数''.
+
+    (iv) 有理数的加法与乘法仍适合分配律.
+
+    (v) 有理数的乘法额外适合如下性质: 任取不是零的有理数 $f$, 必有有理数 $f^{-1}$ 使 $f^{-1} f = 1$.
+\end{proposition}
+
+读者可能注意到, (iii) 没说有理数的乘法适合 (M5). 但事实上, (iii) 可以保证 (M5) 是正确的. 设 $f$, $g$, $u$ 是有理数. 若 $fg = fu$, 且 $f \neq 0$, 则
+\begin{align*}
+     & g = 1g = (f^{-1} f) g = f^{-1} (fg), \\
+     & u = 1u = (f^{-1} f) u = f^{-1} (fu).
+\end{align*}
+由此, 不难看出, 因为 $fg = fu$, 故 $g = u$. 因为整数是有理数, 故限定 $f$, $g$, $u$ 为整数时 ($f \neq 0$), (v) 可推出整数乘法的 (M5).
+
+适合 $f^{-1} f = 1$ 的有理数 $f^{-1}$ 是 $f$ 的倒数. 我们知道, 非零的有理数总是有倒数的——我们也希望非零的有理式都有 ``倒元''. 这么看来, 如果整数的乘法不适合消去律, 那么非零的有理数也不会有倒数! 读者可用反证法使自己相信这一点.
+
+整式的乘法的 (M5) 能否保证非零的有理式有倒元? 不好说——毕竟, 我们还没严格地说明有理式是什么. 不过, 这的确是对的.
+
+现在, 我们正式地定义有理式.
+
+\begin{proposition}
+    设 $f$, $g$ 是整式, 且 $f \neq 0$. 形如 $\frac{g}{f}$ 的文字是有理式 \term{rational expression}.
+\end{proposition}
+
+\begin{remark}
+    请读者注意: 现在 $\frac{g}{f}$ 只是文字——这就跟当初我们定义整式一样, $a_0 x^0 + a_1 x^1 + \cdots + a_n x^n$ 只是用文字 $x$ 及 ``加号'' 连结的文字而已. $x$ 不是数! 类似地, $\frac{g}{f}$ 中间的 ``$\frac{\ast}{\ast}$'' 也只是文字罢了——读者完全可用 $(f,g)$ 表示它.
+\end{remark}
+
+\begin{example}
+    $\frac{2}{x-1}$ 就是有理式. 当然, $\frac{x-1}{2}$ 也是有理式.
+\end{example}
+
+接下来, 我们定义有理式的相等.
+
+我们看看有理数的相等是什么. 设 $a$, $b$, $c$, $d$ 是整数, 且 $a$, $c$ 不是零. 若 $\frac{b}{a} = \frac{d}{c}$, 去分母, 就有 $bc = ad$. 类似地, 若 $bc = ad$, 则 $\frac{b}{a} \cdot c = d$, 故 $\frac{b}{a} = \frac{d}{c}$. 所以, 我们定义
+\begin{definition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f$, $u$ 不是零. $\frac{g}{f} = \frac{v}{u}$ 定义为 $gu = fv$.
+\end{definition}
+
+\begin{example}
+    设 $r = \frac{x}{x - 1}$, $s = \frac{x^2 + x}{x^2 - 1}$. 因为 $x(x^2 - 1) = x^3 - x$, 且 $(x - 1)(x^2 + x) = x^3 - x$, 故 $r = s$.
+\end{example}
+
+这个 ``相等'', 它适合相等三律吗?
+
+我们设 $f$, $g$, $u$, $v$, $p$, $q$ 是整式, 且 $f$, $u$, $p$ 不是零.
+
+(R): 自己等于自己吗? 或者说, $\frac{g}{f} = \frac{g}{f}$ 吗? 根据定义, 就是, $gf = fg$ 吗? 因为乘法交换律, 由此可见, 有理式的相等也适合 (R).
+
+(S): 若 $\frac{g}{f} = \frac{v}{u}$, 则 $\frac{v}{u} = \frac{g}{f}$ 吗? $\frac{g}{f} = \frac{v}{u}$ 相当于 $gu = fv$; $\frac{v}{u} = \frac{g}{f}$ 相当于 $vf = ug$. 我们的目标是: 由 $gu = fv$ 推出 $vf = ug$. 因为整式的相等适合 (S), 故 $fv = gu$. 因为乘法交换律, 故 $gu = ug$. 因为整式的相等适合 (T), 故 $fv = ug$. 因为乘法交换律, 故 $vf = fv$. 因为整式的相等适合 (T), 故 $vf = ug$. 由此可见, 有理式的相等也适合 (S).
+
+(T): 若 $\frac{g}{f} = \frac{v}{u}$, 且 $\frac{v}{u} = \frac{q}{p}$, 则 $\frac{g}{f} = \frac{q}{p}$ 吗? $\frac{g}{f} = \frac{v}{u}$ 相当于 $gu = fv$; $\frac{v}{u} = \frac{q}{p}$ 相当于 $vp = uq$; $\frac{g}{f} = \frac{q}{p}$ 相当于 $gp = fq$. 我们由 $gu = fv$ 与 $vp = uq$ 推出 $gp = fq$. 注意到
+\begin{align*}
+     & u(gp) = (ug)p = (gu)p = (fv)p,                 \\
+     & u(fq) = (uf)q = (fu)q = f(uq) = f(vp) = (fv)p.
+\end{align*}
+也就是说, $u(gp) = u(fq)$. 因为 $u \neq 0$, 根据整式的乘法消去律, 我们有 $gp = fq$. 由此可见, 有理式的相等也适合 (T).
+
+\begin{proposition}
+    设 $r$, $s$, $t$ 是有理式. 有理式的相等适合如下性质:
+
+    (R) 反射律: $r = r$.
+
+    (S) 对称律: 若 $r = s$, 则 $s = r$.
+
+    (T) 推移律: 若 $r = s$, 且 $s = t$, 则 $r = t$.
+\end{proposition}
+
+根据有理式的相等, 我们有 ``有理式的基本性质''.
+\begin{proposition}
+    设 $f$, $g$, $h$ 是整式, 且 $f$, $h$ 不是零. 则
+    \begin{align*}
+        \frac{g}{f} = \frac{gh}{fh} = \frac{hg}{hf}.
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    $fh \neq 0$, 故 $\frac{gh}{fh}$ 也是有理式. 因为
+    \begin{align*}
+        g(fh) = (gf)h = (fg)h = f(gh),
+    \end{align*}
+    故 $\frac{g}{f} = \frac{gh}{fh}$.
+
+    类似地, 读者可证明 $\frac{g}{f} = \frac{hg}{hf}$.
+\end{pf}
+
+\begin{example}
+    设 $r = \frac{2x^2 - 2}{x^4 - 1}$. 因为 $2x^2 - 2 = 2(x^2 - 1)$, $x^4 - 1 = (x^2 + 1)(x^2 - 1)$, 且 $x^2 - 1 \neq 0$, 故 $r = \frac{2}{x^2 + 1}$.
+\end{example}
+
+接下来, 考虑有理式的加法.
+
+还是看有理数怎么加. 设 $a$, $b$, $c$, $d$ 是整数, 且 $a$, $c$ 不是零. 设 $t = \frac{b}{a} + \frac{d}{c}$. 去分母, 有 $act = bc + ad$. 这样, $t = \frac{bc + ad}{ac}$. 所以, 我们定义
+\begin{definition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f$, $u$ 不是零. 有理式的加法定义为
+    \begin{align*}
+        \frac{g}{f} + \frac{v}{u} = \frac{gu + fv}{fu}.
+    \end{align*}
+\end{definition}
+
+\begin{example}
+    设 $r = \frac{1}{x}$, $s = \frac{x}{1}$. 则
+    \begin{align*}
+        r + s = \frac{1}{x} + \frac{x}{1} = \frac{1 \cdot 1 + x \cdot x}{x \cdot 1} = \frac{1 + x^2}{x}.
+    \end{align*}
+\end{example}
+
+
+现在我们逐一验证有理式的加法是否适合 (A0) 至 (A5).
+
+我们设 $f$, $g$, $u$, $v$, $p$, $q$, $m$, $n$ 是整式, 且 $f$, $u$, $p$, $m$ 不是零.
+
+(A0): $\frac{g}{f} + \frac{v}{u}$ 是不是有理式? 因为 $gu + fv$ 与 $fu$ 是整式, 且 $fu \neq 0$, 故 $\frac{gu + fv}{fu}$ 也是有理式.
+
+(A1): 设 $\frac{g}{f} = \frac{q}{p}$, 且 $\frac{v}{u} = \frac{n}{m}$. 我们问, $\frac{g}{f} + \frac{v}{u} = \frac{q}{p} + \frac{n}{m}$ 吗? 根据有理式的加法的定义, 就是问是否有
+\begin{align*}
+    \frac{gu + fv}{fu} = \frac{qm + pn}{pm}.
+\end{align*}
+根据有理式的相等的定义, 就是问是否有
+\begin{align*}
+    (gu + fv)(pm) = (fu)(qm + pn).
+\end{align*}
+已知的条件相当于
+\begin{align*}
+    gp = fq, \quad vm = un.
+\end{align*}
+所以
+\begin{align*}
+    (gu + fv)(pm)
+    = {} & (pm)(gu + fv)       \\
+    = {} & (pm)(gu) + (pm)(fv) \\
+    = {} & (gu)(pm) + (fv)(pm) \\
+    = {} & ((gu)p)m + f(v(pm)) \\
+    = {} & (g(up))m + f(v(mp)) \\
+    = {} & (g(pu))m + f((vm)p) \\
+    = {} & ((gp)u)m + f((vm)p) \\
+    = {} & ((fq)u)m + f((un)p) \\
+    = {} & (f(qu))m + f(u(np)) \\
+    = {} & (f(uq))m + f(u(pn)) \\
+    = {} & ((fu)q)m + (fu)(pn) \\
+    = {} & (fu)(qm) + (fu)(pn) \\
+    = {} & (fu)(qm + pn).
+\end{align*}
+
+(A2): 直接验证:
+\begin{align*}
+    \frac{g}{f} + \frac{v}{u}
+    = {} & \frac{gu + fv}{fu}         \\
+    = {} & \frac{ug + vf}{uf}         \\
+    = {} & \frac{vf + ug}{uf}         \\
+    = {} & \frac{v}{u} + \frac{g}{f}.
+\end{align*}
+
+(A3): 直接验证:
+\begin{align*}
+    \left( \frac{g}{f} + \frac{v}{u} \right) + \frac{q}{p}
+    = {} & \frac{gu + fv}{fu} + \frac{q}{p}                        \\
+    = {} & \frac{(gu + fv)p + (fu)q}{(fu)p}                        \\
+    = {} & \frac{p(gu + fv) + f(uq)}{f(up)}                        \\
+    = {} & \frac{p(gu) + p(fv) + f(uq)}{f(up)}                     \\
+    = {} & \frac{(gu)p + (fv)p + f(uq)}{f(up)}                     \\
+    = {} & \frac{g(up) + f(vp) + f(uq)}{f(up)}                     \\
+    = {} & \frac{g(up) + f(vp + uq)}{f(up)}                        \\
+    = {} & \frac{g}{f} + \frac{vp + uq}{up}                        \\
+    = {} & \frac{g}{f} + \left( \frac{v}{u} + \frac{q}{p} \right).
+\end{align*}
+
+(A4): 我们定义零为 $\frac{0}{p}$, 其中 $p$ 是任意的非零的整式. 我们看这个零的定义是否合理 (任取二个零, 它们应相等). 任取二个零 $\frac{0}{p}$ 与 $\frac{0}{m}$. 因为 $0m = 0$, $p0 = 0p = 0$, 故 $\frac{0}{p} = \frac{0}{m}$. 既然所有的零是相等的, 我们用 $0$ 表示零. 所以
+\begin{align*}
+    0 + \frac{g}{f}
+    = {} & \frac{0}{f} + \frac{g}{f} = \frac{0f + fg}{ff} \\
+    = {} & \frac{0 + fg}{ff} = \frac{fg}{ff}              \\
+    = {} & \frac{g}{f}.
+\end{align*}
+
+(A5): 我们定义 $\frac{g}{f}$ 的相反元为 $\frac{-g}{f}$. 我们看这个相反元的定义是否合理 (任取二个有理式, 它们应有相同的相反元). 假定 $\frac{g}{f} = \frac{v}{u}$, 则 $gu = fv$, 故
+\begin{align*}
+    (-g)u = -(gu) = -(fv) = -(vf) = (-v)f = f(-v).
+\end{align*}
+由此可知 $\frac{-g}{f} = \frac{-v}{u}$. 既然有理式的相反元是相等的, 我们用 $-\frac{g}{f}$ 表示 $\frac{g}{f}$ 的相反元. 所以
+\begin{align*}
+    -\frac{g}{f} + \frac{g}{f}
+    = {} & \frac{-g}{f} + \frac{g}{f}    \\
+    = {} & \frac{(-g)f + fg}{ff}         \\
+    = {} & \frac{f(-g) + fg}{ff}         \\
+    = {} & \frac{f(-g + g)}{ff}          \\
+    = {} & \frac{f0}{ff} = \frac{0f}{ff} \\
+    = {} & \frac{0}{ff} = 0.
+\end{align*}
+
+有了加法与相反元, 我们不难定义减法.
+\begin{definition}
+    设 $r$, $s$ 是有理式. 有理式的减法定义为
+    \begin{align*}
+        r - s = r + (-s).
+    \end{align*}
+\end{definition}
+
+读者可自行证明: 若 $r = t$, $s = w$, 则 $r - s = t - w$. 我们作了大部分工作; 读者只要用减法的定义与加法、相反元的性质就可证明这一点.
+
+\begin{proposition}
+    设 $r$, $s$, $t$, $w$ 是有理式. 有理式的加法适合如下性质:
+
+    (A0) $r + s$ 也是有理式.
+
+    (A1) 若 $r = t$, $s = w$, 则 $r + s = t + w$.
+
+    (A2) 加法交换律: $r + s = s + r$.
+
+    (A3) 加法结合律: $(r + s) + t = r + (s + t)$.
+
+    (A4) 零: 存在一个称为 ``$0$'' 的有理式, 使 $0 + r = r$.
+
+    (A5) 相反元: 存在一个称为 ``$-r$'' 的有理式, 使 $-r + r = 0$.
+\end{proposition}
+
+接下来, 考虑有理式的乘法.
+
+还是看有理数怎么乘. 设 $a$, $b$, $c$, $d$ 是整数, 且 $a$, $c$ 不是零. 设 $t = \frac{b}{a} \cdot \frac{d}{c}$. 去分母, 有 $act = bd$. 这样, $t = \frac{bd}{ac}$. 所以, 我们定义
+\begin{definition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f$, $u$ 不是零. 有理式的乘法定义为
+    \begin{align*}
+        \frac{g}{f} \cdot \frac{v}{u} = \frac{gv}{fu}.
+    \end{align*}
+\end{definition}
+
+\begin{example}
+    设 $r = \frac{1}{x^2 + 1}$, $s = \frac{x^2 + 1}{x^3 + 1}$. 则
+    \begin{align*}
+        rs = \frac{1 \cdot (x^2 + 1)}{(x^2 + 1)(x^3 + 1)} = \frac{(x^2 + 1) \cdot 1}{(x^2 + 1)(x^3 + 1)} = \frac{1}{x^3 + 1}.
+    \end{align*}
+\end{example}
+
+现在我们逐一验证有理式的乘法是否适合 (M0) 至 (M4).
+
+我们设 $f$, $g$, $u$, $v$, $p$, $q$, $m$, $n$ 是整式, 且 $f$, $u$, $p$, $m$ 不是零.
+
+(M0): $\frac{g}{f} \cdot \frac{v}{u}$ 是不是有理式? 因为 $gv$ 与 $fu$ 是整式, 且 $fu \neq 0$, 故 $\frac{gv}{fu}$ 也是有理式.
+
+(M1): 设 $\frac{g}{f} = \frac{q}{p}$, 且 $\frac{v}{u} = \frac{n}{m}$. 我们问, $\frac{g}{f} \cdot \frac{v}{u} = \frac{q}{p} \cdot \frac{n}{m}$ 吗? 根据有理式的加法的定义, 就是问是否有
+\begin{align*}
+    \frac{gv}{fu} = \frac{qn}{pm}.
+\end{align*}
+根据有理式的相等的定义, 就是问是否有
+\begin{align*}
+    (gv)(pm) = (fu)(qn)
+\end{align*}
+已知的条件相当于
+\begin{align*}
+    gp = fq, \quad vm = un.
+\end{align*}
+所以
+\begin{align*}
+    (gv)(pm)
+    = {} & ((gv)p)m = (g(vp))m \\
+    = {} & (g(pv))m = ((gp)v)m \\
+    = {} & (gp)(vm) = (fq)(un) \\
+    = {} & ((fq)u)n = (f(qu))n \\
+    = {} & (f(uq))n = ((fu)q)n \\
+    = {} & (fu)(qn).
+\end{align*}
+
+(M2): 直接验证:
+\begin{align*}
+    \frac{g}{f} \cdot \frac{v}{u} = \frac{gv}{fu} = \frac{vg}{uf} = \frac{v}{u} \cdot \frac{g}{f}.
+\end{align*}
+
+(M3): 直接验证:
+\begin{align*}
+    \left( \frac{g}{f} \cdot \frac{v}{u} \right) \cdot \frac{q}{p}
+    = {} & \frac{gv}{fu} \cdot \frac{q}{p}                                 \\
+    = {} & \frac{(gv)q}{(fu)p}                                             \\
+    = {} & \frac{g(vq)}{f(up)}                                             \\
+    = {} & \frac{g}{f} \cdot \frac{vq}{up}                                 \\
+    = {} & \frac{g}{f} \cdot \left( \frac{v}{u} \cdot \frac{q}{p} \right).
+\end{align*}
+
+(M4): 我们定义幺为 $\frac{p}{p}$, 其中 $p$ 是任意的非零的整式. 我们看这个幺的定义是否合理 (任取二个幺, 它们应相等). 任取二个幺 $\frac{p}{p}$ 与 $\frac{m}{m}$. 因为 $pm = pm$, 故 $\frac{p}{p} = \frac{m}{m}$. 既然所有的幺是相等的, 我们用 $1$ 表示幺. 所以
+\begin{align*}
+    1 \cdot \frac{g}{f} = \frac{f}{f} \cdot \frac{g}{f} = \frac{fg}{ff} = \frac{g}{f}.
+\end{align*}
+
+所以, 有理式的乘法确实适合 (M0) 至 (M4).
+
+我们知道, 非零的有理式有倒数. 类似地, 对任意非零的有理式 $\frac{g}{f}$, 我们定义其倒元为 $\frac{f}{g}$. 因为 $\frac{g}{f} \neq 0$, 故 $g \neq 0$; 从而 $\frac{f}{g}$ 也是有理式. 类似地, 我们看这个倒元的定义是否合理 (任取二个非零的有理式, 它们应有相同的倒元). 假定 $\frac{g}{f} = \frac{v}{u}$, 则 $gu = fv$, 故 $fv = gu$. 因为 $\frac{g}{f} \neq 0$, 且 $\frac{v}{u} \neq 0$, 故 $g \neq 0$, 且 $v \neq 0$. 所以 $\frac{f}{g} = \frac{u}{v}$. 既然非零的有理式的倒元是相等的, 我们用 $\left( \frac{g}{f} \right)^{-1}$ 表示 $\frac{g}{f}$ 的倒元. 所以
+\begin{align*}
+    \left( \frac{g}{f} \right)^{-1} \cdot \frac{g}{f} = \frac{f}{g} \cdot \frac{g}{f} = \frac{fg}{gf} = \frac{fg}{fg} = 1.
+\end{align*}
+
+有了乘法与倒元, 我们不难定义除法.
+
+\begin{definition}
+    设 $r$, $s$ 是有理式, 且 $s \neq 0$. 有理式的除法定义为
+    \begin{align*}
+        r \div s = rs^{-1}.
+    \end{align*}
+\end{definition}
+
+读者可自行证明: 若 $r = t$, $s = w$, 且 $s \neq 0$, $w \neq 0$, 则 $r \div s = t \div w$. 我们作了大部分工作; 读者只要用除法的定义与乘法、倒元的性质就可证明这一点.
+
+\begin{proposition}
+    设 $r$, $s$, $t$, $w$ 是有理式. 有理式的乘法适合如下性质:
+
+    (M0) $rs$ 也是有理式.
+
+    (M1) 若 $r = t$, $s = w$, 则 $rs = tw$.
+
+    (M2) 乘法交换律: $rs = sr$.
+
+    (M3) 乘法结合律: $(rs)t = r(st)$.
+
+    (M4) 幺: 存在一个称为 ``$1$'' 的有理式, 使 $1r = r$.
+
+    (M5)$^{\prime}$ 倒元: 若 $r \neq 0$, 则存在一个称为 ``$r^{-1}$'' 的有理式, 使 $r^{-1} r = 1$.
+\end{proposition}
+
+加法与乘法还有一座桥——分配律:
+\begin{align*}
+    \frac{g}{f} \cdot \left( \frac{v}{u} + \frac{q}{p} \right)
+    = {} & \frac{g}{f} \cdot \frac{vp + uq}{up}                           \\
+    = {} & \frac{g(vp + uq)}{f(up)}                                       \\
+    = {} & \frac{f(g(vp + uq))}{f(f(up))}                                 \\
+    = {} & \frac{(fg)(vp + uq)}{f((fu)p)}                                 \\
+    = {} & \frac{(fg)(vp) + (fg)(uq)}{(f(fu))p}                           \\
+    = {} & \frac{((fg)v)p + ((fg)u)q}{((fu)f)p}                           \\
+    = {} & \frac{(f(gv))p + (f(gu))q}{(fu)(fp)}                           \\
+    = {} & \frac{((gv)f)p + (f(ug))q}{(fu)(fp)}                           \\
+    = {} & \frac{(gv)(fp) + ((fu)g)q}{(fu)(fp)}                           \\
+    = {} & \frac{(gv)(fp) + (fu)(gq)}{(fu)(fp)}                           \\
+    = {} & \frac{gv}{fu} + \frac{gq}{fp}                                  \\
+    = {} & \frac{g}{f} \cdot \frac{v}{u} + \frac{g}{f} \cdot \frac{q}{p}.
+\end{align*}
+
+\begin{proposition}
+    设 $r$, $s$, $t$ 是有理式. 则
+    \begin{align*}
+        r (s + t) = rs + rt.
+    \end{align*}
+\end{proposition}
+
+我们作出的有理式的确像有理数那样适合相等、加法、乘法的性质; 不仅如此, 任取不是零的有理式 $r$, 必有有理式 $r^{-1}$ 使 $r^{-1} r = 1$. 由此, 读者可自行证明: 若 $r$, $s$, $t$ 是有理式, $r \neq 0$, 且 $rs = rt$, 则 $s = t$.
+
+不过, 还有一些小细节.
+
+整式是不是有理式? 我们知道, 整数是有理数. 从定义上看, 整式似乎不是有理式——因为整式的形式跟有理式不一样. 不过, 由此能草率地断定整式真地不是有理式吗? 我们看看 $\frac{2}{x} + \frac{2x-2}{x}$ 是什么. 根据加法的定义,
+\begin{align*}
+    \frac{2}{x} + \frac{2x-2}{x} = \frac{2x + x(2x-2)}{x^2} = \frac{2x^2}{x^2} = \frac{2}{1}.
+\end{align*}
+或许, 读者很想写 $\frac{2}{1}$ 为 $2$. 的确——我们把 $\frac{0}{p}$ 写为 $0$, 把 $\frac{p}{p}$ 写为 $1$; 自然地, 为什么 $\frac{2}{1}$ 不能写为 $2$ 呢? 如果不能, 那我们似乎也不该写 $\frac{0}{p}$ 为 $0$, 是吧? $ax^0$ 可写为 $a$, $x^1$ 可写为 $x$, 那 $\frac{2}{1}$ 也可写为 $2$. 下面的命题说明, 这么写的确是有道理的.
+
+\begin{proposition}
+    固定某非零的整式 $d$. 设 $f$, $g$ 是整式. 则
+
+    (i) $f = g$ 的一个必要与充分条件是: $\frac{fd}{d} = \frac{gd}{d}$.
+
+    (ii) 若 $f + g = s$, 则 $\frac{fd}{d} + \frac{gd}{d} = \frac{sd}{d}$.
+
+    (iii) 若 $fg = p$, 则 $\frac{fd}{d} \cdot \frac{gd}{d} = \frac{pd}{d}$.
+\end{proposition}
+
+\begin{pf}
+    (i) 设 $f = g$. 则 $(fd)d = f(dd) = g(dd) = (gd)d = d(gd)$, 故 $\frac{fd}{d} = \frac{gd}{d}$. 反过来, 设 $\frac{fd}{d} = \frac{gd}{d}$. 则 $(fd)d = d(gd)$. 因为 $(fd)d = f(dd) = (dd)f$, $d(gd) = d(dg) = (dd)g$, 故 $(dd)f = (dd)g$. 因为 $d \neq 0$, 故 $dd \neq 0$, 故 $f = g$.
+
+    (ii) 依加法的定义,
+    \begin{align*}
+        \frac{fd}{d} + \frac{gd}{d}
+        = {} & \frac{(fd)d + d(gd)}{dd} = \frac{f(dd) + d(dg)}{dd} \\
+        = {} & \frac{(dd)f + (dd)g}{dd} = \frac{(dd)(f + g)}{dd}   \\
+        = {} & \frac{(dd)s}{dd} = \frac{d(ds)}{dd}                 \\
+        = {} & \frac{d(sd)}{dd} = \frac{sd}{d}.
+    \end{align*}
+
+    (ii) 依乘法的定义,
+    \begin{align*}
+        \frac{fd}{d} \cdot \frac{gd}{d}
+        = {} & \frac{(fd)(gd)}{dd} = \frac{(fd)(dg)}{dd} \\
+        = {} & \frac{((fd)d)g}{dd} = \frac{(f(dd))g}{dd} \\
+        = {} & \frac{f((dd)g)}{dd} = \frac{f(g(dd))}{dd} \\
+        = {} & \frac{(fg)(dd)}{dd} = \frac{p(dd)}{dd}    \\
+        = {} & \frac{(pd)d}{dd} = \frac{pd}{d}. \qedhere
+    \end{align*}
+\end{pf}
+
+由此可见, 虽然 $f$ 与 $\frac{fd}{d}$ 的内涵是不一样的, 但我们可视二者等同. 也就是说, 我们约定, $\frac{fd}{d} = f$. 此约定是自然的: 对任意非零的整数 $a$ 与任意整数 $b$, 也有 $\frac{ba}{a} = b$.
+
+还有一个细节. 我们用 $\frac{g}{f}$ 表示有理式. 我们一般也用 $\frac{\ast}{\ast}$ 表示除法: 比如, $9 \div 2 = \frac{9}{2}$. 那么, 在有理式里, $\ast \div \ast$ 与 $\frac{\ast}{\ast}$ 有什么关联吗? 或者说, 我们选用的 $\frac{\ast}{\ast}$ 记号合理吗?
+
+\begin{proposition}
+    设 $f$, $g$ 是整式, 且 $f \neq 0$. 则
+    \begin{align*}
+        \frac{g}{f} = g \div f.
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    固定某非零的整式 $d$. 我们可视 $g$, $f$ 为 $\frac{gd}{d}$, $\frac{fd}{d}$. 所以
+    \begin{align*}
+        g \div f
+        = {} & \frac{gd}{d} \div \frac{fd}{d}
+        = \frac{gd}{d} \cdot \left( \frac{fd}{d} \right)^{-1} \\
+        = {} & \frac{gd}{d} \cdot \frac{d}{fd}
+        = \frac{(gd)d}{d(fd)}                                 \\
+        = {} & \frac{g(dd)}{(fd)d}
+        = \frac{g(dd)}{f(dd)}                                 \\
+        = {} & \frac{g}{f}. \qedhere
+    \end{align*}
+\end{pf}
+
+所以, 有理式的 $\ast \div \ast$ 与 $\frac{\ast}{\ast}$ 可认为是除法的二种表示. 既然当 $g$, $f$ 是整式时 ($f \neq 0$), $g \div f$ 与 $\frac{g}{f}$ 一致, 我们无妨放宽 $\frac{\ast}{\ast}$ 的使用范围——
+\begin{definition}
+    设 $r$, $s$ 是有理式, 且 $s \neq 0$. 定义
+    \begin{align*}
+        \frac{r}{s} = r \div s = rs^{-1}.
+    \end{align*}
+\end{definition}
+
+读者在中学算学里已经不怎么见到 $\ast \div \ast$ 了 (小学算学里, $\ast \div \ast$ 还是比较常见的). 所以, 改 $\ast \div \ast$ 为 $\frac{\ast}{\ast}$ 不是没有道理的.
+
+有理式的除法与有理式有类似的性质.
+
+\begin{proposition}
+    设 $r$, $s$, $t$, $w$ 是有理式, 且 $s \neq 0$, $w \neq 0$.
+
+    (i) $\frac{r}{s} = \frac{t}{w}$ 的一个必要与充分条件是 $rw = st$.
+
+    (ii) $\frac{r}{s} = \frac{rw}{sw} = \frac{wr}{ws}$.
+
+    (iii) $\frac{r}{s} + \frac{t}{w} = \frac{rw + st}{sw}$.
+
+    (iv) $\frac{r}{s} \cdot \frac{t}{w} = \frac{rt}{sw}$.
+\end{proposition}
+
+\begin{remark}
+    读者要注意一件事. 在定义有理式的时候, $\frac{\ast}{\ast}$ 只不过是由二个整式作成的文字; 但现在 $\frac{\ast}{\ast}$ 是除法式 $\ast \div \ast$ 的一种写法, 故这些关系是 ``新的''.
+\end{remark}
+
+\begin{pf}
+    (i) 注意到
+    \begin{align*}
+        \frac{r}{s} = \frac{t}{w}
+        \iff {} & rs^{-1} = tw^{-1}         \\
+        \iff {} & (rs^{-1}) s = (tw^{-1}) s \\
+        \iff {} & r(s^{-1} s) = t(w^{-1} s) \\
+        \iff {} & r1 = t(sw^{-1})           \\
+        \iff {} & (r1)w = (t(sw^{-1}))w     \\
+        \iff {} & r(1w) = t((sw^{-1})w)     \\
+        \iff {} & rw = t(s(w^{-1}w))        \\
+        \iff {} & rw = (ts)(w^{-1}w)        \\
+        \iff {} & rw = (ts)1                \\
+        \iff {} & rw = 1(ts)                \\
+        \iff {} & rw = st.
+    \end{align*}
+
+    (ii) 因为
+    \begin{align*}
+        r(sw) = r(ws) = (rw)s = s(rw),
+    \end{align*}
+    由 (i) 知, $\frac{r}{s} = \frac{rw}{sw}$.
+
+    类似地, 读者可证明 $\frac{r}{s} = \frac{wr}{ws}$.
+
+    (iii) 设 $S = \frac{r}{s} + \frac{t}{w}$. 则
+    \begin{align*}
+                & S = \frac{r}{s} + \frac{t}{w}            \\
+        \iff {} & S = rs^{-1} + tw^{-1}                    \\
+        \iff {} & sS = s(rs^{-1} + tw^{-1})                \\
+        \iff {} & sS = s(rs^{-1}) + s(tw^{-1})             \\
+        \iff {} & sS = s(s^{-1}r) + (st)w^{-1}             \\
+        \iff {} & sS = (ss^{-1}) r + (st) w^{-1}           \\
+        \iff {} & sS = (s^{-1}s) r + w^{-1} (st)           \\
+        \iff {} & sS = 1r + w^{-1} (st)                    \\
+        \iff {} & sS = r + w^{-1} (st)                     \\
+        \iff {} & w(sS) = w(r + w^{-1} (st))               \\
+        \iff {} & (ws)S = wr + w(w^{-1} (st))              \\
+        \iff {} & (sw)S = rw + (ww^{-1}) (st)              \\
+        \iff {} & (sw)S = rw + (w^{-1}w) (st)              \\
+        \iff {} & (sw)S = rw + 1(st)                       \\
+        \iff {} & (sw)S = rw + st                          \\
+        \iff {} & (sw)^{-1} ((sw) S) = (sw)^{-1} (rw + st) \\
+        \iff {} & ((sw)^{-1} (sw)) S = (rw + st) (sw)^{-1} \\
+        \iff {} & 1S = (rw + st)(sw)^{-1}                  \\
+        \iff {} & S = \frac{rw + st}{sw}.
+    \end{align*}
+
+    (iv) 设 $P = \frac{r}{s} \cdot \frac{t}{w}$. 则
+    \begin{align*}
+                & P = \frac{r}{s} \cdot \frac{t}{w}  \\
+        \iff {} & P = (rs^{-1}) (tw^{-1})            \\
+        \iff {} & P = (rs^{-1}) (w^{-1}t)            \\
+        \iff {} & P = ((rs^{-1}) w^{-1}) t           \\
+        \iff {} & P = (r (s^{-1} w^{-1})) t          \\
+        \iff {} & P = ((s^{-1} w^{-1}) r) t          \\
+        \iff {} & P = (s^{-1} w^{-1}) (rt)           \\
+        \iff {} & P = (w^{-1} s^{-1}) (rt)           \\
+        \iff {} & wP = w ((w^{-1} s^{-1}) (rt))      \\
+        \iff {} & wP = (w (w^{-1} s^{-1})) (rt)      \\
+        \iff {} & wP = ((ww^{-1}) s^{-1}) (rt)       \\
+        \iff {} & wP = ((w^{-1}w) s^{-1}) (rt)       \\
+        \iff {} & wP = (1s^{-1}) (rt)                \\
+        \iff {} & wP = s^{-1} (rt)                   \\
+        \iff {} & s(wP) = s(s^{-1} (rt))             \\
+        \iff {} & (sw)P = (ss^{-1}) (rt)             \\
+        \iff {} & (sw)P = (s^{-1}s) (rt)             \\
+        \iff {} & (sw)P = 1(rt)                      \\
+        \iff {} & (sw)P = rt                         \\
+        \iff {} & (sw)^{-1} ((sw)P) = (sw)^{-1} (rt) \\
+        \iff {} & ((sw)^{-1} (sw))P = (rt) (sw)^{-1} \\
+        \iff {} & 1P = (rt) (sw)^{-1}                \\
+        \iff {} & P = \frac{rt}{sw}. \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{example}
+    设 $r = \frac{2}{x}$, $s = \frac{x}{x^2 - 1}$. 则
+    \begin{align*}
+        \frac{r}{s} = \frac{r \cdot x \cdot (x^2 - 1)}{s \cdot x \cdot (x^2 - 1)} = \frac{2(x^2 - 1)}{x^2}.
+    \end{align*}
+\end{example}
+
+还有一点值得我们注意. 我们作有理式时, 我们并不关心整式是什么——我们只关心整式适合的运算律. 作为一个挑战, 读者可用完全一致的套路从整数作出有理数.
+
+本文就说到这里. 感谢读者的阅读.

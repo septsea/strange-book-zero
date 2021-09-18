@@ -15,7 +15,7 @@ Direct Links for the PDF File:
 
 可携带文档格式文件的直链如下：
 
-- [https://wwa.lanzoui.com/b010t829a 提取的暗号为 `2333'](https://wwa.lanzoui.com/b010t829a)
+- [https://wwa.lanzoui.com/b010t829a 提取的暗号为 `2333`](https://wwa.lanzoui.com/b010t829a)
 - [https://github.com/septsea/strange-book-zero/raw/main/main.pdf](https://github.com/septsea/strange-book-zero/raw/main/main.pdf)
 
 Enter one of the links to download the book.
