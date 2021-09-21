@@ -1,12 +1,14 @@
-\subsection*{\RationalExpressions}
-\addcontentsline{toc}{subsection}{\RationalExpressions}
-\markright{\RationalExpressions}
+\subsection*{\DefinitionOfRationalExpressions}
+\addcontentsline{toc}{subsection}{\DefinitionOfRationalExpressions}
+\markright{\DefinitionOfRationalExpressions}
 
 在前面, 我们深入地讨论了整数与整式. 现在, 我们讨论有理式.
 
 不正式地说, 有理式就是二个整式的比 (分母不为零). 我们已经知道, 有理数是二个整数的比 (分母不为零); 这么看来, 就像整数与整式很相似那样, 有理数与有理式也会很相似.
 
 有理数是怎么来的? 据说, 很久很久以前, 有二个天使\myFN{一个叫 Mostima, 一个叫 Exusiai.}在重樱 \term{the Sakura Empire} 观光: 一个青发天使 \term{an angel with blue hair}, 一个赤发天使 \term{an angel with red hair}. 二个天使很饿. 不过, 很幸运, 她们找到了 \ding{200} 个应急食品 \term{nine paimons}. 如果平分应急食品, 那么, 按当时的习惯, 每个天使只能得到四个应急食品——因为还剩一个应急食品不够二个天使分. 但天使终究是天使; 天使可不是笨蛋! 因为她们实在是太饿了, 于是, 她们想出了聪明的方法: 打开最后一个应急食品, 再平分它. 通俗地说, 每个天使又获得了 ``半个应急食品''. 用算学描述此事, 就是每个天使获得了 $4 + \frac{1}{2}$ 个应急食品, 也就是 $\frac{9}{2}$ 个应急食品. $\frac{p}{a}$ 就是有理数——分子 $p$ 表示应急食品的数目, 分母 $a$ 表示天使的数目. $\frac{p}{a}$ 就是将 $p$ 个应急食品平分给 $a$ 个天使后, 每个天使得到的应急食品的量.
+
+以后, ``整式'' 都是指系数为 $\FF$ 的元的整式; 如果我们想说整式 $f$ 的系数全是整数, 我们会说形如 ``$f$ 是整系数的'' 或 ``$f$ 是整系数整式'' 的话.
 
 \begin{proposition}
     设 $I$ 表示整数或整式. 设 $f$, $g$, $u$, $v$ 是 $I$ 的 $4$ 元.
@@ -21,7 +23,7 @@
 
     $I$ 的 ``加法'' 适合如下性质:
 
-    (A0) $f + g$ 也是 $I$ 的元.\myFN{此事与 (M0) 的意义是: 加法与乘法是 ``闭的''——不会 ``跳出'' $I$ 的圈子.}
+    (A0)\myFN{\textit{A} stands for \textit{addition}.} $f + g$ 也是 $I$ 的元.\myFN{此事与 (M0) 的意义是: 加法与乘法是 ``闭的''——不会 ``跳出'' $I$ 的圈子.}
 
     (A1) 若 $f = u$, $g = v$, 则 $f + g = u + v$.\myFN{我们之前可能没提到此事. (A1) 与 (M1) 的意义是: 相同的输入 \term{input} 给出相同的输出 \term{output}. 对于整数, 这就是读者在中学学到的 ``二个等式可相加'' ``二个等式可相乘''. 设 $f = a_0 + a_1 x + \cdots + a_n x^n$, $g = b_0 + b_1 x + \cdots + b_n x^n$, $u = c_0 + c_1 x + \cdots + c_n x^n$, $v = d_0 + d_1 x + \cdots + d_n x^n$. 若 $f = u$, $g = v$, 则 $a_i = c_i$, $b_i = d_i$. $f + g$ 的 $i$ 次系数是 $a_i + b_i$, 这恰好是 $c_i + d_i$, 也就是 $u + v$ 的 $i$ 次系数. $fg$ 的 $k$ 次系数是 $a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0$, 这恰好是 $c_0 d_k + c_1 d_{k-1} + \cdots + c_k d_0$, 也就是 $uv$ 的 $k$ 次系数.}
 
@@ -35,7 +37,7 @@
 
     $I$ 的 ``乘法'' 适合如下性质:
 
-    (M0) $fg$ 也是 $I$ 的元.
+    (M0)\myFN{\textit{M} stands for \textit{multiplication}.} $fg$ 也是 $I$ 的元.
 
     (M1) 若 $f = u$, $g = v$, 则 $fg = uv$.
 
@@ -49,7 +51,7 @@
 
     $I$ 的加法与乘法不是孤立的:
 
-    (D) 分配律: $f \cdot (g + u) = fg + fu$.
+    (D)\myFN{\textit{D} stands for \textit{distributivity}.} 分配律: $f \cdot (g + u) = fg + fu$.
 \end{proposition}
 
 我们约定, 在不会产生歧义的情况下, 乘号可省略. 比如, $1 \cdot f$ 当然可写为 $1f$. 我们还约定: 乘法的 ``优先级'' 高于加法. 比如, $f \cdot g + f \cdot u$ 是 $(f \cdot g) + (f \cdot u)$ 的简写.
@@ -77,11 +79,11 @@
     = {} & {-0f} + (0f + 0f) = -0f + 0f = 0.
 \end{align*}
 
-由 (D), 我们可推出 $-(fg) = (-f)g$. 因为
+由 (D), 我们可推出 $-fg = (-f)g$, 这里 $-fg$ 是 $-(fg)$ 的简写. 因为
 \begin{align*}
     0 = 0g = (-f + f)g = g(-f + f) = g(-f) + gf = (-f)g + fg,
 \end{align*}
-故 $(-f)g$ 就是 $fg$ 的相反元 $-(fg)$.
+故 $(-f)g$ 就是 $fg$ 的相反元 $-fg$.
 
 整数离有理数就差一点点. 我们也知道, 对任意高于 $1$ 的整数 $m$, 都不存在整数 $n$, 使 $mn = 1$——通俗地说, $1$ 个应急食品没法 ``完整地'' 平分给 $m$ 个天使. 但是, 有理数填补了此八哥 \term{bug}. 具体地说, 就是
 \begin{proposition}
@@ -109,9 +111,9 @@
 
 现在, 我们正式地定义有理式.
 
-\begin{proposition}
+\begin{definition}
     设 $f$, $g$ 是整式, 且 $f \neq 0$. 形如 $\frac{g}{f}$ 的文字是有理式 \term{rational expression}.
-\end{proposition}
+\end{definition}
 
 \begin{remark}
     请读者注意: 现在 $\frac{g}{f}$ 只是文字——这就跟当初我们定义整式一样, $a_0 x^0 + a_1 x^1 + \cdots + a_n x^n$ 只是用文字 $x$ 及 ``加号'' 连结的文字而已. $x$ 不是数! 类似地, $\frac{g}{f}$ 中间的 ``$\frac{\ast}{\ast}$'' 也只是文字罢了——读者完全可用 $(f,g)$ 表示它.
@@ -431,6 +433,21 @@
 
 我们作出的有理式的确像有理数那样适合相等、加法、乘法的性质; 不仅如此, 任取不是零的有理式 $r$, 必有有理式 $r^{-1}$ 使 $r^{-1} r = 1$. 由此, 读者可自行证明: 若 $r$, $s$, $t$ 是有理式, $r \neq 0$, 且 $rs = rt$, 则 $s = t$.
 
+当然, 下面的命题也是对的:
+\begin{proposition}
+    设 $r$, $s$ 是有理式. 则:
+
+    (i) $0r = r0 = 0$.
+
+    (ii) $-rs = (-r)s$.
+
+    (iii) 取 (ii) 的 $r = 1$, 有 $-s = -1s = (-1)s$.
+\end{proposition}
+
+\begin{pf}
+    照搬本文开头的讨论即可.
+\end{pf}
+
 不过, 还有一些小细节.
 
 整式是不是有理式? 我们知道, 整数是有理数. 从定义上看, 整式似乎不是有理式——因为整式的形式跟有理式不一样. 不过, 由此能草率地断定整式真地不是有理式吗? 我们看看 $\frac{2}{x} + \frac{2x-2}{x}$ 是什么. 根据加法的定义,
@@ -518,7 +535,15 @@
 
     (iii) $\frac{r}{s} + \frac{t}{w} = \frac{rw + st}{sw}$.
 
-    (iv) $\frac{r}{s} \cdot \frac{t}{w} = \frac{rt}{sw}$.
+    (iv) $-\frac{r}{s} = \frac{-r}{s}$.
+
+    (v) $\frac{r}{s} - \frac{t}{w} = \frac{rw - st}{sw}$.
+
+    (vi) $\frac{r}{s} \cdot \frac{t}{w} = \frac{rt}{sw}$.
+
+    (vii) $\left( \frac{s}{w} \right)^{-1} = \frac{w}{s}$.
+
+    (viii) $\frac{s}{s} = 1$.
 \end{proposition}
 
 \begin{remark}
@@ -573,7 +598,25 @@
         \iff {} & S = \frac{rw + st}{sw}.
     \end{align*}
 
-    (iv) 设 $P = \frac{r}{s} \cdot \frac{t}{w}$. 则
+    (iv) 设 $N = -\frac{r}{s}$. 则
+    \begin{align*}
+                & N = -\frac{r}{s}  \\
+        \iff {} & N = -(rs^{-1})    \\
+        \iff {} & N = (-r)s^{-1}    \\
+        \iff {} & N = \frac{-r}{s}.
+    \end{align*}
+
+    (v) 利用 (iii), (iv), 有
+    \begin{align*}
+        \frac{r}{s} - \frac{t}{w}
+        = {} & \frac{r}{s} + \frac{-t}{w} \\
+        = {} & \frac{rw + s(-t)}{sw}      \\
+        = {} & \frac{rw + (-t)s}{sw}      \\
+        = {} & \frac{rw - ts}{sw}         \\
+        = {} & \frac{rw - st}{sw}.
+    \end{align*}
+
+    (vi) 设 $P = \frac{r}{s} \cdot \frac{t}{w}$. 则
     \begin{align*}
                 & P = \frac{r}{s} \cdot \frac{t}{w}  \\
         \iff {} & P = (rs^{-1}) (tw^{-1})            \\
@@ -597,7 +640,29 @@
         \iff {} & (sw)^{-1} ((sw)P) = (sw)^{-1} (rt) \\
         \iff {} & ((sw)^{-1} (sw))P = (rt) (sw)^{-1} \\
         \iff {} & 1P = (rt) (sw)^{-1}                \\
-        \iff {} & P = \frac{rt}{sw}. \qedhere
+        \iff {} & P = \frac{rt}{sw}.
+    \end{align*}
+
+    (vii) 设 $R = \left( \frac{s}{w} \right)^{-1}$. 则
+    \begin{align*}
+                & R = \left( \frac{s}{w} \right)^{-1}                \\
+        \iff {} & R = \left( sw^{-1} \right)^{-1}                    \\
+        \iff {} & R(sw^{-1}) = \left( sw^{-1} \right)^{-1} (sw^{-1}) \\
+        \iff {} & (Rs)w^{-1} = 1                                     \\
+        \iff {} & ((Rs)w^{-1})w = 1w                                 \\
+        \iff {} & (Rs)(w^{-1}w) = w                                  \\
+        \iff {} & (sR)1 = w                                          \\
+        \iff {} & 1(sR) = w                                          \\
+        \iff {} & sR = w                                             \\
+        \iff {} & s^{-1} (sR) = s^{-1} w                             \\
+        \iff {} & (s^{-1} s)R = ws^{-1}                              \\
+        \iff {} & 1R = ws^{-1}                                       \\
+        \iff {} & R = \frac{w}{s}.
+    \end{align*}
+
+    (viii) 或许这是最简单的命题了:
+    \begin{align*}
+         & \frac{s}{s} = ss^{-1} = s^{-1}s = 1. \qedhere
     \end{align*}
 \end{pf}
 
@@ -608,6 +673,6 @@
     \end{align*}
 \end{example}
 
-还有一点值得我们注意. 我们作有理式时, 我们并不关心整式是什么——我们只关心整式适合的运算律. 作为一个挑战, 读者可用完全一致的套路从整数作出有理数.
+还有一点值得我们注意. 我们作有理式时, 我们并不关心整式是什么——我们只关心整式适合的运算律. 作为一个挑战, 读者可用完全相同的套路从整数作出有理数.
 
-本文就说到这里. 感谢读者的阅读.
+本文就到这里. 感谢读者的阅读.

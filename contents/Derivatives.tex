@@ -58,7 +58,7 @@
             \tau^2 & 0 & \tau^2 & 1      & \tau   \\
         \end{array}
     \end{align*}
-    在前面 (``\Prerequisites '' 节的 ``\Domains '' 小节), 我们知道, $V$ 是整环. 任取 $a \in V$, 都有
+    在前面 (``\Prerequisites'' 节的 ``\Domains'' 小节), 我们知道, $V$ 是整环. 任取 $a \in V$, 都有
     \begin{align*}
         2 \cdot a = a + a = 0.
     \end{align*}
@@ -205,6 +205,13 @@
 
 \end{pf}
 
+我们得到了如下命题:
+\begin{proposition}
+    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为整式 $h(x)$, 这样的关系仍成立.
+\end{proposition}
+
+下面, 我们来了解微商的运算法则. 先看一个例.
+
 \begin{example}
     考虑 $\ZZ$ 与 $\ZZ[x]$. 取
     \begin{align*}
@@ -243,7 +250,6 @@
 \end{example}
 
 一般地, 我们有
-
 \begin{proposition}
     设 $f(x)$, $g(x) \in D[x]$, $c \in D$. 则
 
@@ -469,10 +475,10 @@
     \begin{align*}
         (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x).
     \end{align*}
-    链规则也可写为
-    \begin{align*}
-        (g(f(x)))^{\prime} = g^{\prime} (f(x)) f^{\prime} (x).
-    \end{align*}
+    % 链规则也可写为
+    % \begin{align*}
+    %     (g(f(x)))^{\prime} = g^{\prime} (f(x)) f^{\prime} (x).
+    % \end{align*}
 \end{proposition}
 
 \begin{pf}
