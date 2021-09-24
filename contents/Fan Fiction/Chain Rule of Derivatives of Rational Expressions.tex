@@ -1,0 +1,86 @@
+\subsection*{\ChainRuleOfDerivativesOfRationalExpressions}
+\addcontentsline{toc}{subsection}{\ChainRuleOfDerivativesOfRationalExpressions}
+\markright{\ChainRuleOfDerivativesOfRationalExpressions}
+
+本文介绍有理式的微商的链规则 \term{the chain rule}.
+
+原则上, 本文应该在 ``\OperationsOnRationalExprsssions'' 里. 不过, 本文的运算不像加法、减法、乘法、除法、幂那么基础. 为了不让一篇文过难 (为了对读者友好一些), 作者决定另开一篇文.
+
+本文是选读内容. 非选读文 (即必读文) 不会提及选读文的内容. 选读文之间也会尽量独立. 如果一篇选读文需要别的选读文的知识, 作者会明确地指出读者需要读哪些选读文. 比方说, 本文假定读者已经读过 ``\CompositionOfRationalExpressions'' 与 ``\DerivativesOfRationalExpressions''.
+
+换句话说, 读者可放心地跳过本文.
+
+\myLine
+
+我们刚学了有理式的微商. 所以, 作者就不在这里重述那些运算律了.
+
+我们也学过整式的微商的链规则:
+
+\begin{proposition}
+    设 $f$, $g$ 是整式. $f$ 与 $g$ 的复合的微商适合链规则:
+    \begin{align*}
+        D(g \circ f) = (Dg \circ f) \cdot Df.
+    \end{align*}
+\end{proposition}
+
+本文的任务就是将 ``整式'' 推广为 ``有理式''. 不过, 慢慢来. 先试着替换内层的 $f$——也就是说, 我们先考虑有理式 $r$ 与整式 $g$ 的复合.
+
+\begin{proposition}
+    设 $r$ 是有理式; 设 $g$ 是整式. $r$ 与 $g$ 的复合的微商适合链规则:
+    \begin{align*}
+        D(g \circ r) = (Dg \circ r) \cdot Dr.
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    设
+    \begin{align*}
+        g = b_0 + b_1 x + b_2 x^2 + \cdots + b_{n-1} x^{n-1} + b_n x^n.
+    \end{align*}
+    则
+    \begin{align*}
+        g \circ r = b_0 + b_1 r + b_2 r^2 + \cdots + b_{n-1} r^{n-1} + b_n r^n.
+    \end{align*}
+    所以
+    \begin{align*}
+             & D(g \circ r)                                                                             \\
+        = {} & b_1 Dr + b_2 D(r^2) + \cdots + b_{n-1} D(r^{n-1}) + b_n D(r^n)                           \\
+        = {} & b_1 Dr + b_2 \cdot 2rDr + \cdots + b_{n-1} \cdot (n-1)r^{n-2} Dr + b_n \cdot nr^{n-1} Dr \\
+        = {} & b_1 Dr + 2b_2 r Dr + \cdots + (n-1)b_{n-1} r^{n-2} Dr + nb_n r^{n-1} Dr                  \\
+        = {} & (b_1 + 2b_2 r + \cdots + (n-1)b_{n-1} r^{n-2} + nb_n r^{n-1}) \cdot Dr                   \\
+        = {} & (Dg \circ r) \cdot Dr. \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{remark}
+    事实上, 此命题的证明跟整式的复合的链规则没有任何区别.
+\end{remark}
+
+现在, 我们可以证明有理式的复合的链规则了.
+
+\begin{proposition}
+    设 $r$, $s$ 是有理式. 若 $s \circ r$ 存在, 则 $r$ 与 $s$ 的复合的微商适合链规则:
+    \begin{align*}
+        D(s \circ r) = (Ds \circ r) \cdot Dr.
+    \end{align*}
+    特别地, 若 $r$ 不是数, 则 $s \circ r$ 一定存在——故 $D(s \circ r)$ 亦存在.
+\end{proposition}
+
+\begin{pf}
+    设整式 $f$, $g$ 适合 $f \neq 0$, $s = \frac{g}{f}$, 且 $f \circ r \neq 0$. 则
+    \begin{align*}
+        s \circ r = \frac{g \circ r}{f \circ r}.
+    \end{align*}
+    所以
+    \begin{align*}
+             & D(s \circ r)                                                                                            \\
+        = {} & \frac{D(g \circ r) \cdot (f \circ r) - (g \circ r) \cdot D(f \circ r)}{(f \circ r)^2}                   \\
+        = {} & \frac{(Dg \circ r) \cdot Dr \cdot (f \circ r) - (g \circ r) \cdot (Df \circ r) \cdot Dr}{(f \circ r)^2} \\
+        = {} & \frac{((Dg \circ r) \cdot (f \circ r) - (g \circ r) \cdot (Df \circ r)) \cdot Dr}{(f \circ r)^2}        \\
+        = {} & \frac{(Dg \circ r) \cdot (f \circ r) - (g \circ r) \cdot (Df \circ r)}{(f \circ r)^2} \cdot Dr          \\
+        = {} & \frac{(Dg \cdot f - g \cdot Df) \circ r}{f^2 \circ r} \cdot Dr                                          \\
+        = {} & (Ds \circ r) \cdot Dr. \qedhere
+    \end{align*}
+\end{pf}
+
+我们就到这里结束吧. 感谢读者的阅读.

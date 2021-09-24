@@ -1,0 +1,417 @@
+\subsection*{\CompositionOfRationalExpressions}
+\addcontentsline{toc}{subsection}{\CompositionOfRationalExpressions}
+\markright{\CompositionOfRationalExpressions}
+
+我们讨论有理式的复合.
+
+原则上, 本文应该在 ``\OperationsOnRationalExprsssions'' 里. 不过, 本文的运算不像加法、减法、乘法、除法、幂那么基础. 为了不让一篇文过难 (为了对读者友好一些), 作者决定另开一篇文.
+
+本文是选读内容. 非选读文 (即必读文) 不会提及选读文的内容.
+
+换句话说, 读者可放心地跳过本文.
+
+\myLine
+
+我们学了有理式与整式的复合.
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是整式. 设 $r(x)$ 是有理式. 定义
+    \begin{align*}
+        (f \circ r)(x) = f(r(x)) = a_0 + a_1 r(x) + \cdots + a_n (r(x))^n.
+    \end{align*}
+    这称为有理式 $r(x)$ 与整式 $f(x)$ 的复合. 显然, $(f \circ r)(x)$ 仍为有理式.
+
+    在语境明确的情况下, ``$(x)$'' 可不写出.
+\end{definition}
+
+\begin{proposition}
+    设 $f$, $g$ 是整式, 且 $r$ 是有理式.
+
+    (i) 若 $f = g$, 则 $f \circ r = g \circ r$.
+
+    (ii) 若 $f + g = s$, 则 $f \circ r + g \circ r = s \circ r$.
+
+    (iii) 若 $fg = p$, 则 $(f \circ r) \cdot (g \circ r) = p \circ r$.
+\end{proposition}
+
+\begin{proposition}
+    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为有理式 $r(x)$, 这样的关系仍成立.
+\end{proposition}
+
+本文的目的是进一步地推广复合适用的范围.
+
+作者还是先给出定义.
+
+\begin{definition}
+    设 $r(x)$, $s(x)$ 是有理式.
+
+    (i) 若存在整式 $f(x)$, $g(x)$ 适合 $g(x) \neq 0$, $s(x) = \frac{g(x)}{f(x)}$, 且 $(f \circ r)(x) = f(r(x)) \neq 0$, 定义
+    \begin{align*}
+        (s \circ r)(x) = s(r(x)) = \frac{(g \circ r)(x)}{(f \circ r)(x)} = \frac{g(r(x))}{f(r(x))}.
+    \end{align*}
+    这称为有理式 $r(x)$ 与 $s(x)$ 的复合 \term{composition of rational expressions $r(x)$ and $s(x)$}. 显然, $(s \circ r)(x)$ 仍为有理式.
+
+    在语境明确的情况下, ``$(x)$'' 可不写出.
+
+    (ii) 若这样的 $f(x)$, $g(x)$ 不存在, 则 $(s \circ r)(x)$ 是未定义的 (或者说, ``不存在的'').
+\end{definition}
+
+其实, 作者给出的有理式与有理式的复合的定义还是有点小八哥的. ``若存在整式 $f(x)$, $g(x)$……''——这样的整式可能不止一对 (如果存在). 问题就是: 相等的输入能否给出相等的输出? 假如 $r^{\prime} = r$, 不难由有理式与整式的复合的定义看出, 因为 $(r^{\prime})^k = r^k$, 故 $g \circ r = g \circ r^{\prime}$, $f \circ r = f \circ r^{\prime}$. 真正关键的是: 不同的 $f$, $g$ 能否给出相同的结果.
+
+\begin{proposition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f \neq 0$, $u \neq 0$. 设 $r$ 是有理式. 若 $f \circ r \neq 0$, 且 $u \circ r \neq 0$, 则
+    \begin{align*}
+        \frac{g \circ r}{f \circ r} = \frac{v \circ r}{u \circ r}.
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    因为 $\frac{g}{f} = \frac{v}{u}$, 故 $gu = fv$. 所以
+    \begin{align*}
+        (g \circ r) \cdot (u \circ r) = (f \circ r) \cdot (v \circ r).
+    \end{align*}
+    因为 $f \circ r \neq 0$, 且 $u \circ r \neq 0$, 故
+    \begin{align*}
+         & \frac{g \circ r}{f \circ r} = \frac{v \circ r}{u \circ r}. \qedhere
+    \end{align*}
+\end{pf}
+
+接下来, 我们可证明
+\begin{proposition}
+    设 $r$, $s$, $t$ 是有理式. 若 $s \circ r$ 存在, 且 $s = t$, 则 $t \circ r$ 存在, 且
+    \begin{align*}
+        s \circ r = t \circ r.
+    \end{align*}
+    当然, 若 $s \circ r$ 不存在, 则 $t \circ r$ 也不存在.
+\end{proposition}
+
+\begin{remark}
+    所以, 有理式的复合也适合 ``相同的输入给出相同的输出''——不论复合是否存在.
+\end{remark}
+
+\begin{pf}
+    设 $s \circ r$ 存在. 所以, 存在一对整式 $f$, $g$ 适合 $s = \frac{g}{f}$, $f \neq 0$, 且 $f \circ r \neq 0$. 因为 $s = t$, 故 $t = \frac{g}{f}$. 所以, $t \circ r$ 亦存在, 且 $t \circ r = s \circ r$.
+
+    设 $s \circ r$ 不存在. 我们要说明, $t \circ r$ 也不存在. 用反证法. 假如 $t \circ r$ 存在. 因为 $t = s$, 故我们可用完全一样的方法证明 $s \circ r$ 也存在. 矛盾!
+\end{pf}
+
+\begin{remark}
+    若 $s$ 是整式 $\frac{fq}{q}$, 且 $q \neq 0$, $q \circ r \neq 0$, 则
+    \begin{align*}
+        s \circ r = \frac{(fq) \circ r}{q \circ r} = \frac{(f \circ r) \cdot (q \circ r)}{q \circ r} = q \circ r.
+    \end{align*}
+    所以, 有理式与有理式的复合并不与有理式与整式的复合冲突.
+\end{remark}
+
+
+还有一点, 这个定义或许有些不自然——的确, 它不像有理式与整式的复合那样, 直接替换 $s(x)$ 的 $x$ 为 $r(x)$ 即可. 我们还要关心复合是否存在. 但, 不管怎么样, 我们看一些例.
+
+在下面的四个例里, 设 $s = \frac{1}{x+1}$, $t = \frac{x-1}{x^2-1}$. 注意到, $s = t$. 设 $f_1 = x+1$, $f_2 = x^2 - 1$.
+
+\begin{example}
+    取 $r = \frac{1}{x}$. 那么 $f_1 \circ r = \frac{1}{x} + 1 \neq 0$, 且 $f_2 \circ r = \frac{1}{x^2} - 1 \neq 0$. 所以, 根据定义,
+    \begin{align*}
+         & s \circ r = \frac{1}{1/x + 1} = \frac{x}{1 + x},                                   \\
+         & t \circ r = \frac{1/x - 1}{1/x^2 - 1} = \frac{x - x^2}{1 - x^2} = \frac{x}{1 + x}.
+    \end{align*}
+    由此可见, $s \circ r = t \circ r$ 的确是正确的.
+\end{example}
+
+\begin{example}
+    还是取 $r = \frac{1}{x}$. 不过, 我们试算 $r \circ s$. 不难算出
+    \begin{align*}
+        r \circ s = \frac{1}{1/(1 + x)} = 1 + x \neq s \circ r.
+    \end{align*}
+    由此可见, 一般来说, 有理式的复合不适合交换律.
+\end{example}
+
+\begin{example}
+    取 $r = 1$. 因为 $f_1 \circ r = 2 \neq 0$, 故 $s \circ r = \frac{1}{2}$. 不过, $f_2 \circ r = 0$. 但是, 按照我们的定义, $s = t$, $s \circ r$ 存在, 故 $t \circ r$ 也存在, 且 $t \circ r = s \circ r$.
+\end{example}
+
+\begin{example}
+    取 $r = -1$. 我们说明, $s \circ r$ 不存在. 这样, $t \circ r$ 也不存在.
+
+    用反证法. 设存在整式 $f$, $g$ 使 $\frac{g}{f} = \frac{1}{x+1}$, 且 $f \circ r \neq 0$. 根据有理式相等的定义, $g \cdot (x+1) = f \cdot 1$, 即 $f = (x+1) g$. 所以
+    \begin{align*}
+        f \circ r = (r+1) \cdot (g \circ r) = 0 \cdot (g \circ r) = 0.
+    \end{align*}
+    所以, 这样的 $f$, $g$ 不存在!
+\end{example}
+
+看来, 我们得研究什么时候有理式的复合存在.
+
+先从一个简单的命题开始.
+
+\begin{proposition}
+    设 $f$ 是非零的整式. 设 $r$ 是有理式. 若 $f \circ r = 0$, 则 $r$ 是 $f$ 的根.
+\end{proposition}
+
+\begin{pf}
+    我们写 $r$ 为最简形 $\frac{v}{u}$; 也就是说, $r = \frac{v}{u}$, 整式 $u$, $v$ 互素, 且 $u \neq 0$.
+
+    设
+    \begin{align*}
+        f = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0
+    \end{align*}
+    是整式, 且 $a_n \neq 0$. 我们先说明, $n \geq 1$. 用反证法. 若 $n = 0$, 则 $f = a_0 \neq 0$, 故 $f \circ r = a_0 \neq 0$, 矛盾!
+
+    根据有理式与整式的复合的定义, 有
+    \begin{align*}
+        f \circ r
+        = {} & a_n r^n + a_{n-1} r^{n-1} + \cdots + a_1 r + a_0                                                              \\
+        = {} & a_n \left( \frac{v}{u} \right)^n + a_{n-1} \left( \frac{v}{u} \right)^{n-1} + \cdots + a_1 \frac{v}{u} + a_0.
+    \end{align*}
+    因为 $f \circ r = 0$, 故
+    \begin{align*}
+        0 = a_n \left( \frac{v}{u} \right)^n + a_{n-1} \left( \frac{v}{u} \right)^{n-1} + \cdots + a_1 \frac{v}{u} + a_0.
+    \end{align*}
+    等式二侧同乘 $u^n$, 有
+    \begin{align*}
+        0 = a_n v^n + a_{n-1} v^{n-1} u + \cdots + a_{i} v^{i} u^{n-i} + \cdots + a_1 v u^{n-1} + a_0 u^n.
+    \end{align*}
+    上式可改写为
+    \begin{align*}
+        -a_n v^n = u (a_{n-1} v^{n-1} + \cdots + a_{i} v^{i} u^{n-i-1} + \cdots + a_1 v u^{n-2} + a_0 u^{n-1}).
+    \end{align*}
+    上式右侧是 $u$ 的因子, 故上式左侧也是 $u$ 的因子. 因为 $u$ 与 $v$ 互素, 故 $u$ 与 $-v^n$ 互素. 所以 $u$ 是 $a_n$ 的因子. 因为 $a_n$ 是非零的数, 故 $u$ 也是非零的数. 所以, $r$ 是整式. 下证 $r$ 是数.
+
+    用反证法. 设 $\deg r = \ell$. 因为 $r$ 不是数, 故 $\ell \geq 1$. 我们看 $\deg {a_i r^i}$. 因为 $\deg r^i = i\ell$, $\deg a_i \leq 0$, 故 $\deg {a_i r^i} \leq i\ell$. 不过, 由于 $a_n \neq 0$, 所以 $\deg {a_n r^n} = n\ell$. 这样, 根据次的关系, $\deg {(f \circ r)} = n\ell$. 所以 $\deg {(f \circ r)} \geq \ell \geq 1$, 故 $f \circ r \neq 0$, 矛盾!
+
+    所以, $r$ 一定是数. 既然 $r$ 是数, 根据整式的根的定义, $r$ 就是 $f$ 的根.
+\end{pf}
+
+由此立得
+\begin{proposition}
+    设 $f$ 是非零的整式. 设 $r$ 是有理式.
+
+    (i) 若 $r$ 不是数, 必有 $f \circ r \neq 0$. 通俗地说, 不是数的有理式与整式的复合一定不是零.
+
+    (ii) 若 $r$ 是数, 那么当 $r$ 是 $f$ 的根时, 显然 $f \circ r = 0$ (根的定义); 当 $r$ 不是 $f$ 的根时, $f \circ r \neq 0$ (上个命题与反证法).
+\end{proposition}
+
+现在我们可以给出有理式的复合存在的一个必要与充分条件.
+
+设 $s$ 是有理式. 我们写 $s$ 为最简形 $\frac{G}{F}$; 也就是说, $s = \frac{G}{F}$, 整式 $F$, $G$ 互素, 且 $F \neq 0$.
+
+$s \circ r$ 不存在, 意味着对任意适合条件 $s = \frac{g}{f}$, $f \neq 0$ 的整式 $f$, $g$, 必有 $f \circ r = 0$. 所以 $F \circ r = 0$.
+
+反过来, 若 $F \circ r = 0$, 我们说明 $s \circ r$ 不存在.
+
+首先, $r$ 是数.
+
+先说明 $G \circ r \neq 0$. 用反证法. 设 $G \circ r = 0$. 既然 $F$, $G$ 互素, 则有整式 $u$, $v$ 使 $Fu + Gv = 1$. 所以
+\begin{align*}
+    (F \circ r) \cdot (u \circ r) + (G \circ r) \cdot (v \circ r) = 1 \circ r,
+\end{align*}
+即 $0 + 0 = 1$, 矛盾!
+
+再说明 $s \circ r$ 不存在. 用反证法. 若存在整式 $f$, $g$ 使 $s = \frac{g}{f}$, $f \neq 0$, 且 $f \circ r \neq 0$. 根据有理式相等的定义, $Gf = Fg$. 所以
+\begin{align*}
+    (G \circ r) \cdot (f \circ r) = (F \circ r) \cdot (g \circ r) = 0.
+\end{align*}
+因为 $G \circ r \neq 0$, 故 $f \circ r = 0$ (消去律). 矛盾!
+
+综上, 我们有
+\begin{proposition}
+    设 $s$ 是有理式. 设 $r$ 是有理式. 设 $s$ 的一个最简形为 $\frac{G}{F}$; 也就是说, 设 $s = \frac{G}{F}$, 整式 $F$, $G$ 互素, 且 $F \neq 0$.
+
+    (i) 若 $r$ 不是数, 则因 $F \circ r \neq 0$, 故 $s \circ r$ 一定存在.
+
+    (ii) 若 $r$ 是数, 则 $s \circ r$ 存在的一个必要与充分条件是: $r$ 不是 $F$ 的根.
+
+    (iii) $s \circ r$ 存在的一个必要与充分条件是: $F \circ r \neq 0$.
+\end{proposition}
+
+我们总结一下.
+
+\begin{definition}
+    设 $r$, $s$ 是有理式.
+
+    (i) 若存在整式 $f$, $g$ 适合 $g \neq 0$, $s = \frac{g}{f}$, 且 $f \circ r \neq 0$, 定义
+    \begin{align*}
+        s \circ r = \frac{g \circ r}{f \circ r}.
+    \end{align*}
+    这称为有理式 $r$ 与 $s$ 的复合. 显然, $s \circ r$ 仍为有理式.
+
+    (ii) 若这样的 $f$, $g$ 不存在, 则 $s \circ r$ 是未定义的 (或者说, ``不存在的'').
+\end{definition}
+
+\begin{proposition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f \neq 0$, $u \neq 0$. 设 $r$ 是有理式. 若 $f \circ r \neq 0$, 且 $u \circ r \neq 0$, 则
+    \begin{align*}
+        \frac{g \circ r}{f \circ r} = \frac{v \circ r}{u \circ r}.
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $r$, $s$, $t$ 是有理式. 若 $s \circ r$ 存在, 且 $s = t$, 则 $t \circ r$ 存在, 且
+    \begin{align*}
+        s \circ r = t \circ r.
+    \end{align*}
+    当然, 若 $s \circ r$ 不存在, 则 $t \circ r$ 也不存在.
+\end{proposition}
+
+\begin{proposition}
+    设 $s$ 是有理式. 设 $r$ 是有理式. 设 $s$ 的一个最简形为 $\frac{G}{F}$; 也就是说, 设 $s = \frac{G}{F}$, 整式 $F$, $G$ 互素, 且 $F \neq 0$.
+
+    (i) 若 $r$ 不是数, 则因 $F \circ r \neq 0$, 故 $s \circ r$ 一定存在.
+
+    (ii) 若 $r$ 是数, 则 $s \circ r$ 存在的一个必要与充分条件是: $r$ 不是 $F$ 的根.
+
+    (iii) $s \circ r$ 存在的一个必要与充分条件是: $F \circ r \neq 0$.
+\end{proposition}
+
+请读者休息一会儿.
+
+\myLine
+
+有了前面的充分准备, 我们总算可以进一步地讨论有理式的复合了.
+
+先看下面的命题. 这个命题, 或许, 对读者而言, 不是很陌生.
+
+\begin{proposition}
+    设 $r$, $s$, $t$ 是有理式. 设 $s \circ r$, $t \circ r$ 都存在.
+
+    (i) 若 $s = t$, 则 $s \circ r = t \circ r$.
+
+    (ii) 若 $s + t = S$, 则 $S \circ r$ 存在, 且 $s \circ r + t \circ r = S \circ r$.
+
+    (iii) 若 $st = P$, 则 $P \circ r$ 存在, 且 $(s \circ r) \cdot (t \circ r) = P \circ r$.
+\end{proposition}
+
+\begin{pf}
+    设整式 $f$, $g$, $u$, $v$ 适合 $s = \frac{g}{f}$, $t = \frac{v}{u}$, $f \neq 0$, $u \neq 0$, $f \circ r \neq 0$, $u \circ r \neq 0$. 所以 $(f \circ r) \cdot (u \circ r) \neq 0$. 作整式 $j = fu$. 所以 $j \circ r \neq 0$.
+
+    (i) 作者不必再证一次吧?
+
+    (ii) $S = s + t = \frac{gu + fv}{j}$. 作整式 $k_1 = gu + fv$. 因为 $j \circ r \neq 0$, 故 $S \circ r$ 存在. 则
+    \begin{align*}
+        S \circ r
+        = {} & \frac{k_1 \circ r}{j \circ r}                                                                       \\
+        = {} & \frac{(g \circ r) \cdot (u \circ r) + (f \circ r) \cdot (v \circ r)}{(f \circ r) \cdot (u \circ r)} \\
+        = {} & \frac{g \circ r}{f \circ r} + \frac{v \circ r}{u \circ r}                                           \\
+        = {} & s \circ r + t \circ r.
+    \end{align*}
+
+    (iii) $P = st = \frac{gv}{j}$. 作整式 $k_2 = gv$. 因为 $j \circ r \neq 0$, 故 $P \circ r$ 存在. 则
+    \begin{align*}
+        P \circ r
+        = {} & \frac{k_2 \circ r}{j \circ r}                                       \\
+        = {} & \frac{(g \circ r) \cdot (v \circ r)}{(f \circ r) \cdot (u \circ r)} \\
+        = {} & \frac{g \circ r}{f \circ r} \cdot \frac{v \circ r}{u \circ r}       \\
+        = {} & (s \circ r) \cdot (t \circ r). \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{proposition}
+    设 $s$, $t$ 是有理式, 且 $t \neq 0$. 设 $s \circ r$, $t \circ r$ 均存在, 且 $t \circ r \neq 0$. 设 $h = \frac{s}{t}$. 则 $h \circ r$ 也存在, 且
+    \begin{align*}
+        h \circ r = \frac{s \circ r}{t \circ r}.
+    \end{align*}
+\end{proposition}
+
+\begin{remark}
+    此命题与定义似乎很相似, 但它们是不一样的!
+\end{remark}
+
+\begin{pf}
+    我们先说明: 若 $t \neq 0$, 且 $t \circ r \neq 0$, 则 $t^{-1} \circ r$ 也存在, 且 $t^{-1} \circ r = (t \circ r)^{-1}$.
+
+    设整式 $f$, $g$ 适合 $f \neq 0$, $t = \frac{g}{f}$, $f \circ r \neq 0$. 因为 $t \neq 0$, 故 $g \neq 0$. 因为 $t \circ r = {(g \circ r)}/{(f \circ r)}$, 且 $t \circ r \neq 0$, 故 $g \circ f \neq 0$.
+
+    现在我们看 $t^{-1} \circ r$ 是否存在. 因为 $t^{-1} = \frac{f}{g}$, 且 $g \neq 0$, $g \circ r \neq 0$, 故 $t^{-1} \circ r$ 存在, 且 $t^{-1} \circ r = {(f \circ r)}/{(g \circ r)}$. 由此易知, $(t \circ r) \cdot (t^{-1} \circ r) = 1$.
+
+    有了这个结论, 命题的证明就容易多了:
+    \begin{align*}
+        h \circ r
+        = {} & (s t^{-1}) \circ r                    \\
+        = {} & (s \circ r) \cdot (t^{-1} \circ r)    \\
+        = {} & (s \circ r) \cdot (t \circ r)^{-1}    \\
+        = {} & \frac{s \circ r}{t \circ r}. \qedhere
+    \end{align*}
+\end{pf}
+
+我们知道, 整式的复合适合结合律; 类似地, 有理式的复合 (部分地) 适合结合律.
+
+我们需要一个预备命题.
+\begin{proposition}
+    设 $r$, $s$ 是有理式, 且 $r$, $s$ 都不是数. 则 $s \circ r$ 存在, 且 $s \circ r$ 也不是数.
+\end{proposition}
+
+\begin{pf}
+    设整式 $f$, $g$ 适合 $f \neq 0$, $s = \frac{g}{f}$. 因为 $r$ 不是数, 故 $f \circ r \neq 0$, 从而 $s \circ r$ 存在.
+
+    现在, 我们要证明: $s \circ r$ 不是数. 用反证法. 假如 $s \circ r = k$, $k$ 是某个数, 则
+    \begin{align*}
+        \frac{g \circ r}{f \circ r} = k \implies g \circ r = k \cdot (f \circ r).
+    \end{align*}
+    所以
+    \begin{align*}
+        0
+        = {} & g \circ r - k \cdot (f \circ r)              \\
+        = {} & g \circ r + (-k) \cdot (f \circ r)           \\
+        = {} & g \circ r + ((-k) \circ r) \cdot (f \circ r) \\
+        = {} & g \circ r + ((-k)f) \circ r                  \\
+        = {} & g \circ r + (-kf) \circ r                    \\
+        = {} & (g - kf) \circ r.
+    \end{align*}
+    $g - kf$ 也是整式. 因为 $s = \frac{g}{f}$ 不是数, 故 $g - kf \neq 0$. 因为 $r$ 不是数, 故 $(g - kf) \circ r \neq 0$. 这是矛盾!
+\end{pf}
+
+现在, 我们至少可对特殊情况证明结合律了.
+
+\begin{proposition}
+    设 $r$, $s$, $t$ 是有理式, 且 $r$, $s$, $t$ 都不是数.
+
+    (i) $t \circ s$, $s \circ r$, $(t \circ s) \circ r$, $t \circ (s \circ r)$ 都存在, 且它们都不是数.
+
+    (ii) $(t \circ s) \circ r = t \circ (s \circ r)$.
+\end{proposition}
+
+\begin{pf}
+    (i) 显然 (上个命题).
+
+    (ii) 设整式 $f(x)$, $g(x)$, $u(x)$, $v(x)$ 适合 $f(x) \neq 0$, $u(x) \neq 0$, $t(x) = \frac{g(x)}{f(x)}$, $s(x) = \frac{v(x)}{u(x)}$. 所以
+    \begin{align*}
+        (t \circ s)(x) = t(s(x)) = \frac{g(s(x))}{f(s(x))} = \frac{g(v(x)/u(x))}{f(v(x)/u(x))}.
+    \end{align*}
+    从而
+    \begin{align*}
+        (t \circ (s \circ r))(x) = t((s \circ r)(x)) = \frac{g((s \circ r)(x))}{f((s \circ r)(x))} = \frac{g(v(r(x))/u(r(x)))}{f(v(r(x))/u(r(x)))}.
+    \end{align*}
+    最后, 注意到
+    \begin{align*}
+         & ((t \circ s) \circ r)(x) = (t \circ s)(r(x)) = \frac{g(v(r(x))/u(r(x)))}{f(v(r(x))/u(r(x)))}. \qedhere
+    \end{align*}
+\end{pf}
+
+最后, 我们也讨论一下 $t$, $s$, $r$ 中某个是数的情况吧.
+
+设 $t$ 是数. 那么, 对任意有理式 $R$, 都有 $t \circ R = t$. 所以, 若 $s \circ r$ 存在, 则
+\begin{align*}
+     & t \circ (s \circ r) = t,             \\
+     & (t \circ s) \circ r = t \circ r = t.
+\end{align*}
+
+设 $s$ 是数. 那么, 若 $t \circ s$ 存在, 则
+\begin{align*}
+     & t \circ (s \circ r) = t \circ s, \\
+     & (t \circ s) \circ r = t \circ s.
+\end{align*}
+
+设 $r$ 是数. 那么, $s \circ r = s(r(x))$ 若存在, 也是数. 所以 $t \circ (s \circ r) = t(s(r(x)))$ 若存在, 也是数. 若 $t \circ s$, $(t \circ s) \circ r$ 都存在, 则 $(t \circ s) \circ r = (t \circ s)(r(x)) = t(s(r(x)))$.
+
+我们并不是说, $r$, $s$, $t$ 里有数时, 结合律就一定不对了——如果增加一些假定, 结合律仍是对的. 不过, 没什么意思. $s \circ r$ 的内层 $r$ 是数时, $s \circ r$ 是数, 或者不存在; $s \circ r$ 的外层 $s$ 是数时, $s \circ r$ 就是 $s$. 换句话说, 数在复合里具有 ``传染性''.
+
+我们讨论的 ``特殊情况'' 就是不平凡的. 首先, 不是数的有理式的复合一定存在, 且不是数——读者可用 ``封闭'' 形容这一点. 然后, 在这种特殊的情况下, 我们有结合律. 最后, 注意到, $x$ 适合 $x \circ r = r \circ x = r$.
+
+作者承认, 本文很抽象——作者自己写本文时也想了很久. 本文或许对初学者不友好; 作者也在本文开头指出, 这是选读内容. 希望读者不要因为不懂本文而垂头丧气——作者自己写本文时也几乎写不下去. 没关系的.
+
+算学书里, 标了 ``选读'' 或 ``Optional'' 的内容往往会比较深 (跟别的比起来), 跳过这些内容并没有什么损失.
+
+本文结束. 谢谢读者的阅读.

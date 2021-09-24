@@ -1,0 +1,282 @@
+\subsection*{\DerivativesOfRationalExpressions}
+\addcontentsline{toc}{subsection}{\DerivativesOfRationalExpressions}
+\markright{\DerivativesOfRationalExpressions}
+
+本文介绍有理式的微商.
+
+原则上, 本文应该在 ``\OperationsOnRationalExprsssions'' 里. 不过, 本文的运算不像加法、减法、乘法、除法、幂那么基础. 为了不让一篇文过难 (为了对读者友好一些), 作者决定另开一篇文.
+
+本文是选读内容. 非选读文 (即必读文) 不会提及选读文的内容. 选读文之间也会尽量独立. 比方说, 本文不需要 ``\CompositionOfRationalExpressions'' 的任何知识. 如果一篇选读文需要别的选读文的知识, 作者会明确地指出读者需要读哪些选读文.
+
+换句话说, 读者可放心地跳过本文.
+
+\myLine
+
+我们学了整式的微商.
+
+设
+\begin{align*}
+    f = a_0 + a_1 x + a_2 x^2 + \cdots + a_i x^i + \cdots + a_n x^n
+\end{align*}
+是整式. $f$ 的微商也是整式:
+\begin{align*}
+    Df = 0 + a_1 + 2a_2 x + \cdots + i a_i x^{i-1} + \cdots + n a_n x^{n-1}.
+\end{align*}
+由此可知: 若 $f$ 是数, 则 $Df$ 是 $0$; 若 $f$ 的次 $n \geq 1$, 则 $Df$ 的次为 $n - 1$.
+
+根据整式的相等的定义, 不难看出: 若 $f = g$, 则 $Df = Dg$.
+
+设 $a$, $b$ 是数; 设 $f$, $g$ 是整式; 设 $m$ 是正整数. 微商有如下运算规则:
+\begin{align*}
+     & D(af + bg) = aDf + bDg,          \\
+     & D(fg) = Df \cdot g + f \cdot Dg, \\
+     & D(f^m) = mf^{m-1} Df.
+\end{align*}
+
+有理式的微商是什么呢? 有理式的微商还适合这些运算规则吗?
+
+如果不回答前一个问题, 那么后一个问题是没有意义的——不知道有理式的微商是什么, 又怎么知道有理式的微商是否适合这些运算规则?
+
+我们假设已定义有理式的微商. 假定有理式的微商适合这些规则. 设 $f$, $g$ 是整式, 且 $f \neq 0$. 显然, $g = \frac{g}{f} \cdot f$. 那么
+\begin{align*}
+    Dg = D \left( \frac{g}{f} \cdot f \right) = D\left( \frac{g}{f} \right) \cdot f + \frac{g}{f} \cdot Df.
+\end{align*}
+由此可知
+\begin{align*}
+    D \left( \frac{g}{f} \right) = \frac{Dg \cdot f - g \cdot Df}{f^2}.
+\end{align*}
+也就是说, 我们定义的有理式的微商至少要适合上式.
+
+不过, 适合这个关系, 就能断定有理式的微商适合我们熟悉的运算规则吗? 不好说. 但, 不管怎么样, 先试试看!
+
+\begin{definition}
+    设 $f$, $g$ 是整式, 且 $f \neq 0$. 定义有理式 $\frac{g}{f}$ 的微商 \term{derivative} 为
+    \begin{align*}
+        D \left( \frac{g}{f} \right) = \frac{Dg \cdot f - g \cdot Df}{f^2}.
+    \end{align*}
+\end{definition}
+
+这个定义合理吗? 或者说, 相同的输入能否给出相同的输出? 这个问题看着小, 实则很重要. 整式的相等很简单, 故整式的微商的相等也不复杂 (所以, 当初我们没管相同的输入是否能给出相同的输出这件事); 但, 有理式的相等稍繁, 故有理式的微商的相等可能稍繁 (如果相同的有理式有着不一样的微商, 那么这个微商不是什么好东西!).
+
+具体地说, 设 $f$, $g$, $u$, $v$ 是整式, 且 $f \neq 0$, $u \neq 0$, $\frac{g}{f} = \frac{v}{u}$. 我们希望证明
+\begin{align*}
+    \frac{Dg \cdot f - g \cdot Df}{f^2} = \frac{Dv \cdot u - v \cdot Du}{u^2}.
+\end{align*}
+这相当于
+\begin{align*}
+    \underbrace{(Dg \cdot f - g \cdot Df) \cdot u^2}_{L} = \underbrace{f^2 \cdot (Dv \cdot u - v \cdot Du)}_{R},
+\end{align*}
+也就是 $L - R = 0$. 已知的条件相当于 $gu = fv$, 也就是 $gu - fv = 0$. 我们借此事证明 $L - R = 0$:
+\begin{align*}
+    L - R
+    = {} & (Dg \cdot f - g \cdot Df) \cdot u^2 - f^2 \cdot (Dv \cdot u - v \cdot Du) \\
+    = {} & (Dg \cdot fu - gu \cdot Df) \cdot u - (Dv \cdot uf - vf \cdot Du) \cdot f \\
+    = {} & (Dg \cdot fu - fv \cdot Df) \cdot u - (Dv \cdot uf - gu \cdot Du) \cdot f \\
+    = {} & (Dg \cdot u - v \cdot Df) \cdot fu - (Dv \cdot f - g \cdot Du) \cdot fu   \\
+    = {} & (Dg \cdot u - v \cdot Df - Dv \cdot f + g \cdot Du) \cdot fu              \\
+    = {} & ((Dg \cdot u + g \cdot Du) - (Df \cdot v + f \cdot Dv)) \cdot fu          \\
+    = {} & (D(gu) - D(fv)) \cdot fu                                                  \\
+    = {} & D(gu - fv) \cdot fu                                                       \\
+    = {} & D0 \cdot fu                                                               \\
+    = {} & 0.
+\end{align*}
+
+\begin{remark}
+    若存在整式 $q$ 使 $g = fq$, 则
+    \begin{align*}
+        D \left( \frac{fq}{f} \right)
+        = {} & \frac{D(fq) \cdot f - fq \cdot Df}{f^2}                     \\
+        = {} & \frac{(Df \cdot q + f \cdot Dq) \cdot f - fq \cdot Df}{f^2} \\
+        = {} & \frac{f^2 \cdot Dq}{f^2}                                    \\
+        = {} & Dq.
+    \end{align*}
+    也就是说, 若某有理式 $r$ 是整式, 则视 $r$ 为有理式算出的微商 $d_1$ 与视 $r$ 为整式算出的微商 $d_2$ 相等.
+\end{remark}
+
+我们计算几个有理式的微商.
+
+\begin{example}
+    设 $r = \frac{x + 1}{x^2 + 1}$. 我们计算 $Dr$.
+
+    直接使用定义:
+    \begin{align*}
+             & D \left( \frac{x + 1}{x^2 + 1} \right)                                  \\
+        = {} & \frac{D(x + 1) \cdot (x^2 + 1) - (x + 1) \cdot D(x^2 + 1)}{(x^2 + 1)^2} \\
+        = {} & \frac{(x^2 + 1) - (x + 1) \cdot 2x}{(x^2 + 1)^2}                        \\
+        = {} & \frac{1 - 2x - x^2}{(1 + x^2)^2}.
+    \end{align*}
+\end{example}
+
+\begin{example}
+    设 $n$ 是整数. 计算 $x^n$ 的微商.
+
+    假如 $n$ 是正整数, 那么 $Dx^n = nx^{n-1}$.
+
+    如果 $n = 0$, 那么 $Dx^n = 0$. 敏锐的读者会发现, 我们也可写 $0 = 0x^{0-1}$. 总之, 在 $n$ 是非负整数时, $Dx^n = nx^{n-1}$.
+
+    现在设 $n$ 是负整数. 那么 $-n$ 就是正整数. 所以
+    \begin{align*}
+             & Dx^n                                                 \\
+        = {} & D \left( \frac{1}{x^{-n}} \right)                    \\
+        = {} & \frac{D1 \cdot x^{-n} - 1 \cdot Dx^{-n}}{(x^{-n})^2} \\
+        = {} & \frac{-1 (-n) x^{-n-1}}{x^{-2n}}                     \\
+        = {} & n x^{-n-1} (x^{-2n})^{-1}                            \\
+        = {} & n x^{-n-1} x^{2n}                                    \\
+        = {} & n x^{n-1}.
+    \end{align*}
+
+    综上, 当 $n$ 是整数时, $Dx^n = nx^{n-1}$.
+\end{example}
+
+现在我们可以探索一下有理式的微商的性质. 先从简单的开始.
+
+\begin{proposition}
+    设 $r$, $s$ 是有理式, $c$ 是数. 则
+
+    (i) $D(cr) = c Dr$;
+
+    (ii) $D(r \pm s) = Dr \pm Ds$.
+
+    由 (i) (ii) 与算学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1}$ 是数, 且 $r_0$, $r_1$, $\cdots$, $r_{k-1}$ 是有理式时,
+    \begin{align*}
+             & D \left( c_0 r_0 + c_1 r_1 + \cdots + c_{k-1} r_{k-1} \right) \\
+        = {} & c_0 Dr_0 + c_1 Dr_1 + \cdots + c_{k-1} Dr_{k-1}.
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    我们证明 (i) (ii), 并将剩下的推论留给读者作练习.
+
+    设整式 $f$, $g$, $u$, $v$ 适合 $f \neq 0$, $g \neq 0$, $r = \frac{g}{f}$, $s = \frac{v}{u}$.
+
+    (i) $cr$ 就是 $\frac{cg}{f}$. 所以
+    \begin{align*}
+             & D(cr)                                                   \\
+        = {} & D \left( \frac{cg}{f} \right)                           \\
+        = {} & \frac{D(cg) \cdot f - cg \cdot Df}{f^2}                 \\
+        = {} & \frac{c \cdot (Dg \cdot f) - c \cdot (g \cdot Df)}{f^2} \\
+        = {} & \frac{c \cdot (Dg \cdot f - g \cdot Df)}{f^2}           \\
+        = {} & c \cdot \frac{Dg \cdot f - g \cdot Df}{f^2}             \\
+        = {} & cDr.
+    \end{align*}
+
+    (ii) $r \pm s$ 就是 $\frac{gu \pm fv}{fu}$. 所以
+    \begin{align*}
+             & D(r \pm s)                                                                                        \\
+        = {} & D \left( \frac{gu \pm fv}{fu} \right)                                                             \\
+        = {} & \frac{D(gu \pm fv) \cdot fu - (gu \pm fv) \cdot D(fu)}{(fu)^2}                                    \\
+        = {} & \frac{(D(gu) \pm D(fv)) \cdot fu - (gu \pm fv) \cdot D(fu)}{(fu)^2}                               \\
+        = {} & \frac{(D(gu) \cdot fu \pm D(fv) \cdot fu) - (gu \cdot D(fu) \pm fv \cdot D(fu))}{(fu)^2}          \\
+        = {} & \frac{(D(gu) \cdot fu - gu \cdot D(fu)) \pm (D(fv) \cdot fu - fv \cdot D(fu))}{(fu)^2}            \\
+        = {} & \frac{D(gu) \cdot fu - gu \cdot D(fu)}{(fu)^2} \pm \frac{D(fv) \cdot fu - fv \cdot D(fu)}{(fu)^2} \\
+        = {} & D \left( \frac{gu}{fu} \right) \pm D \left( \frac{fv}{fu} \right)                                 \\
+        = {} & D \left( \frac{g}{f} \right) \pm D \left( \frac{v}{u} \right)                                     \\
+        = {} & Dr \pm Ds. \qedhere
+    \end{align*}
+\end{pf}
+
+再看稍复杂的性质.
+
+\begin{proposition}
+    设 $r$, $s$ 是有理式. 则.
+    \begin{align*}
+        D(rs) = Dr \cdot s + r \cdot Ds. \tag*{(\myStar)}
+    \end{align*}
+    由 (\myStar) 与算学归纳法可知: 当 $r_0$, $r_1$, $\cdots$, $r_{k-1}$ 是有理式时,
+    \begin{align*}
+             & D(r_0 r_1 \cdots r_{k-1})                                                \\
+        = {} & Dr_0 \cdot r_1 \cdots r_{k-1} + r_0 \cdot Dr_1 \cdots r_{k-1} x + \cdots \\
+             & \qquad \qquad + r_0 r_1 \cdots Dr_{k-1}.
+    \end{align*}
+    取 $r_0 = r_1 = \cdots = r_{k-1} = r$ 知
+    \begin{align*}
+        D(r^k) = kr^{k-1} Dr.
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    我们证明 (\myStar), 将剩下的二个式留给读者作练习.
+
+    设整式 $f$, $g$, $u$, $v$ 适合 $f \neq 0$, $g \neq 0$, $r = \frac{g}{f}$, $s = \frac{v}{u}$.
+
+    $rs$ 就是 $\frac{gv}{fu}$. 所以
+    \begin{align*}
+             & D(rs)                                                                                                         \\
+        = {} & D \left( \frac{gv}{fu} \right)                                                                                \\
+        = {} & \frac{D(gv) \cdot fu - gv \cdot D(fu)}{(fu)^2}                                                                \\
+        = {} & \frac{(Dg \cdot v + g \cdot Dv) \cdot fu - gv \cdot (Df \cdot u + f \cdot Du)}{(fu)^2}                        \\
+        = {} & \frac{Dg \cdot vfu + gfu \cdot Dv - Df \cdot gvu - gvf \cdot Du}{(fu)(fu)}                                    \\
+        = {} & \frac{(Dg \cdot f \cdot vu - g \cdot Df \cdot vu) + (gf \cdot Dv \cdot u - gf \cdot v \cdot Du)}{f^2 u^2}     \\
+        = {} & \frac{(Dg \cdot f - g \cdot Df) \cdot vu + gf \cdot (Dv \cdot u - v \cdot Du)}{f^2 u^2}                       \\
+        = {} & \frac{(Dg \cdot f - g \cdot Df) \cdot vu}{f^2 uu} + \frac{gf \cdot (Dv \cdot u - v \cdot Du)}{ff u^2}         \\
+        = {} & \frac{(Dg \cdot f - g \cdot Df) \cdot v}{f^2 u} + \frac{g \cdot (Dv \cdot u - v \cdot Du)}{f u^2}             \\
+        = {} & \frac{Dg \cdot f - g \cdot Df}{f^2} \cdot \frac{v}{u} + \frac{g}{f} \cdot \frac{Dv \cdot u - v \cdot Du}{u^2} \\
+        = {} & Dr \cdot s + r \cdot Ds. \qedhere
+    \end{align*}
+\end{pf}
+
+到此, 我们知道, 整式的微商的加、乘规则及其推论, 在有理式的微商里也适用.
+
+不过, 有理式有整式没有的运算——除法. 自然地, 有理式除有理式的微商也会有运算规则. 它是什么呢?
+
+当初, 我们定义有理式的加法、乘法是
+\begin{align*}
+     & \frac{g}{f} + \frac{v}{u} = \frac{gu + fv}{fu}, \\
+     & \frac{g}{f} \cdot \frac{v}{u} = \frac{gv}{fu},
+\end{align*}
+其中 $f$, $g$, $u$, $v$ 是整式, 且 $f \neq 0$, $u \neq 0$. 我们利用定义, 证明有理式的加法、乘法也适合整式里熟悉的运算律, 并定义了除法. 再用运算律, 我们证明了
+\begin{align*}
+     & \frac{r}{s} + \frac{t}{w} = \frac{rw + st}{sw}, \\
+     & \frac{r}{s} \cdot \frac{t}{w} = \frac{rt}{sw},
+\end{align*}
+其中 $r$, $s$, $t$, $w$ 是有理式, 且 $s \neq 0$, $w \neq 0$. 从形式上看, 这跟定义没什么区别——这可认为是定义的拓展 (但这绝不是定义).
+
+由此, 我们有理由猜测
+\begin{proposition}
+    设 $r$, $s$ 是有理式, 且 $s \neq 0$. 则
+    \begin{align*}
+        D \left( \frac{r}{s} \right) = \frac{Dr \cdot s - r \cdot Ds}{s^2}.
+    \end{align*}
+\end{proposition}
+
+这的确是正确的; 我们试着给一个证明.
+\begin{pf}
+    $\frac{r}{s}$ 可写为 $rs^{-1}$. 为此, 我们要找 $Ds^{-1}$. 有了它, 我们就可以用 ``乘规则'' 算出 $D(rs^{-1})$.
+
+    设整式 $f$, $g$ 适合 $f \neq 0$, $s = \frac{g}{f}$. 因为 $s \neq 0$, 故 $g \neq 0$. 所以 $s^{-1} = \frac{f}{g}$. 根据定义,
+    \begin{align*}
+        Ds^{-1}
+        = {} & \frac{Df \cdot g - f \cdot Dg}{g^2} = \frac{(g \cdot Df - Dg \cdot f)/(-f^2)}{g^2/(-f^2)} \\
+        = {} & \frac{Ds}{-s^2} = \frac{-Ds}{s^2}.
+    \end{align*}
+    由此可知
+    \begin{align*}
+        D \left( \frac{r}{s} \right)
+        = {} & D(rs^{-1})                                         \\
+        = {} & Dr \cdot s^{-1} + r \cdot Ds^{-1}                  \\
+        = {} & \frac{Dr}{s} + r \cdot \frac{-Ds}{s^2}             \\
+        = {} & \frac{Dr \cdot s}{s^2} + \frac{r \cdot (-Ds)}{s^2} \\
+        = {} & \frac{Dr \cdot s - r \cdot Ds}{s^2}. \qedhere
+    \end{align*}
+\end{pf}
+
+为方便, 我们不正式地总结一下本节的内容.
+\begin{proposition}
+    整式的微商是
+    \begin{align*}
+        D(a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n) = a_1 + 2a_2 x + \cdots + na_n x^{n-1}.
+    \end{align*}
+
+    设 $a$, $b$ 是数; 设 $r$, $s$ 是有理式; 设 $m$ 是正整数. 有理式的微商适合如下运算规则:
+    \begin{align*}
+         & D(ar + bs) = aDr + bDs,          \\
+         & D(rs) = Dr \cdot s + r \cdot Ds, \\
+         & D(r^m) = mr^{m-1} Dr.
+    \end{align*}
+    若 $s \neq 0$, 则
+    \begin{align*}
+        D \left( \frac{r}{s} \right) = \frac{Dr \cdot s - r \cdot Ds}{s^2}.
+    \end{align*}
+\end{proposition}
+
+读者, 休息一会儿吧.
