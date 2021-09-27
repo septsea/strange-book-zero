@@ -1,8 +1,8 @@
-\subsection*{\DerivativesOfRationalExpressions}
-\addcontentsline{toc}{subsection}{\DerivativesOfRationalExpressions}
-\markright{\DerivativesOfRationalExpressions}
+\subsection*{\FluxionsOfRationalExpressions}
+\addcontentsline{toc}{subsection}{\FluxionsOfRationalExpressions}
+\markright{\FluxionsOfRationalExpressions}
 
-本文介绍有理式的微商.
+本文介绍有理式的流数.
 
 原则上, 本文应该在 ``\OperationsOnRationalExprsssions'' 里. 不过, 本文的运算不像加法、减法、乘法、除法、幂那么基础. 为了不让一篇文过难 (为了对读者友好一些), 作者决定另开一篇文.
 
@@ -12,13 +12,13 @@
 
 \myLine
 
-我们学了整式的微商.
+我们学了整式的流数.
 
 设
 \begin{align*}
     f = a_0 + a_1 x + a_2 x^2 + \cdots + a_i x^i + \cdots + a_n x^n
 \end{align*}
-是整式. $f$ 的微商也是整式:
+是整式. $f$ 的流数也是整式:
 \begin{align*}
     Df = 0 + a_1 + 2a_2 x + \cdots + i a_i x^{i-1} + \cdots + n a_n x^{n-1}.
 \end{align*}
@@ -26,18 +26,18 @@
 
 根据整式的相等的定义, 不难看出: 若 $f = g$, 则 $Df = Dg$.
 
-设 $a$, $b$ 是数; 设 $f$, $g$ 是整式; 设 $m$ 是正整数. 微商有如下运算规则:
+设 $a$, $b$ 是数; 设 $f$, $g$ 是整式; 设 $m$ 是正整数. 流数有如下运算规则:
 \begin{align*}
      & D(af + bg) = aDf + bDg,          \\
      & D(fg) = Df \cdot g + f \cdot Dg, \\
      & D(f^m) = mf^{m-1} Df.
 \end{align*}
 
-有理式的微商是什么呢? 有理式的微商还适合这些运算规则吗?
+有理式的流数是什么呢? 有理式的流数还适合这些运算规则吗?
 
-如果不回答前一个问题, 那么后一个问题是没有意义的——不知道有理式的微商是什么, 又怎么知道有理式的微商是否适合这些运算规则?
+如果不回答前一个问题, 那么后一个问题是没有意义的——不知道有理式的流数是什么, 又怎么知道有理式的流数是否适合这些运算规则?
 
-我们假设已定义有理式的微商. 假定有理式的微商适合这些规则. 设 $f$, $g$ 是整式, 且 $f \neq 0$. 显然, $g = \frac{g}{f} \cdot f$. 那么
+我们假设已定义有理式的流数. 假定有理式的流数适合这些规则. 设 $f$, $g$ 是整式, 且 $f \neq 0$. 显然, $g = \frac{g}{f} \cdot f$. 那么
 \begin{align*}
     Dg = D \left( \frac{g}{f} \cdot f \right) = D\left( \frac{g}{f} \right) \cdot f + \frac{g}{f} \cdot Df.
 \end{align*}
@@ -45,18 +45,18 @@
 \begin{align*}
     D \left( \frac{g}{f} \right) = \frac{Dg \cdot f - g \cdot Df}{f^2}.
 \end{align*}
-也就是说, 我们定义的有理式的微商至少要适合上式.
+也就是说, 我们定义的有理式的流数至少要适合上式.
 
-不过, 适合这个关系, 就能断定有理式的微商适合我们熟悉的运算规则吗? 不好说. 但, 不管怎么样, 先试试看!
+不过, 适合这个关系, 就能断定有理式的流数适合我们熟悉的运算规则吗? 不好说. 但, 不管怎么样, 先试试看!
 
 \begin{definition}
-    设 $f$, $g$ 是整式, 且 $f \neq 0$. 定义有理式 $\frac{g}{f}$ 的微商 \term{derivative} 为
+    设 $f$, $g$ 是整式, 且 $f \neq 0$. 定义有理式 $\frac{g}{f}$ 的流数 \term{fluxion} 为
     \begin{align*}
         D \left( \frac{g}{f} \right) = \frac{Dg \cdot f - g \cdot Df}{f^2}.
     \end{align*}
 \end{definition}
 
-这个定义合理吗? 或者说, 相同的输入能否给出相同的输出? 这个问题看着小, 实则很重要. 整式的相等很简单, 故整式的微商的相等也不复杂 (所以, 当初我们没管相同的输入是否能给出相同的输出这件事); 但, 有理式的相等稍繁, 故有理式的微商的相等可能稍繁 (如果相同的有理式有着不一样的微商, 那么这个微商不是什么好东西!).
+这个定义合理吗? 或者说, 相同的输入能否给出相同的输出? 这个问题看着小, 实则很重要. 整式的相等很简单, 故整式的流数的相等也不复杂 (所以, 当初我们没管相同的输入是否能给出相同的输出这件事); 但, 有理式的相等稍繁, 故有理式的流数的相等可能稍繁 (如果相同的有理式有着不一样的流数, 那么这个流数不是什么好东西!).
 
 具体地说, 设 $f$, $g$, $u$, $v$ 是整式, 且 $f \neq 0$, $u \neq 0$, $\frac{g}{f} = \frac{v}{u}$. 我们希望证明
 \begin{align*}
@@ -90,10 +90,10 @@
         = {} & \frac{f^2 \cdot Dq}{f^2}                                    \\
         = {} & Dq.
     \end{align*}
-    也就是说, 若某有理式 $r$ 是整式, 则视 $r$ 为有理式算出的微商 $d_1$ 与视 $r$ 为整式算出的微商 $d_2$ 相等.
+    也就是说, 若某有理式 $r$ 是整式, 则视 $r$ 为有理式算出的流数 $d_1$ 与视 $r$ 为整式算出的流数 $d_2$ 相等.
 \end{remark}
 
-我们计算几个有理式的微商.
+我们计算几个有理式的流数.
 
 \begin{example}
     设 $r = \frac{x + 1}{x^2 + 1}$. 我们计算 $Dr$.
@@ -108,7 +108,7 @@
 \end{example}
 
 \begin{example}
-    设 $n$ 是整数. 计算 $x^n$ 的微商.
+    设 $n$ 是整数. 计算 $x^n$ 的流数.
 
     假如 $n$ 是正整数, 那么 $Dx^n = nx^{n-1}$.
 
@@ -128,7 +128,7 @@
     综上, 当 $n$ 是整数时, $Dx^n = nx^{n-1}$.
 \end{example}
 
-现在我们可以探索一下有理式的微商的性质. 先从简单的开始.
+现在我们可以探索一下有理式的流数的性质. 先从简单的开始.
 
 \begin{proposition}
     设 $r$, $s$ 是有理式, $c$ 是数. 则
@@ -184,18 +184,21 @@
     \end{align*}
     由 (\myStar) 与算学归纳法可知: 当 $r_0$, $r_1$, $\cdots$, $r_{k-1}$ 是有理式时,
     \begin{align*}
-             & D(r_0 r_1 \cdots r_{k-1})                                                \\
-        = {} & Dr_0 \cdot r_1 \cdots r_{k-1} + r_0 \cdot Dr_1 \cdots r_{k-1} x + \cdots \\
-             & \qquad \qquad + r_0 r_1 \cdots Dr_{k-1}.
+             & D(r_0 r_1 \cdots r_{k-1})                                                                                                 \\
+        = {} & Dr_0 \cdot r_1 \cdots r_{k-1} + r_0 \cdot Dr_1 \cdot r_2 \cdots r_{k-1} + \cdots + r_0 r_1 \cdots r_{k-2} \cdot Dr_{k-1}.
     \end{align*}
     取 $r_0 = r_1 = \cdots = r_{k-1} = r$ 知
     \begin{align*}
         D(r^k) = kr^{k-1} Dr.
     \end{align*}
+    顺便一提, 若 $r_0$, $r_1$, $\cdots$, $r_{k-1}$ 均不为 $0$, 则
+    \begin{align*}
+        \frac{D(r_0 r_1 \cdots r_{k-1})}{r_0 r_1 \cdots r_{k-1}} = \frac{Dr_0}{r_0} + \frac{Dr_1}{r_1} + \cdots + \frac{Dr_{k-1}}{r_{k-1}}.
+    \end{align*}
 \end{proposition}
 
 \begin{pf}
-    我们证明 (\myStar), 将剩下的二个式留给读者作练习.
+    我们证明 (\myStar), 将剩下的三个式留给读者作练习.
 
     设整式 $f$, $g$, $u$, $v$ 适合 $f \neq 0$, $g \neq 0$, $r = \frac{g}{f}$, $s = \frac{v}{u}$.
 
@@ -215,9 +218,9 @@
     \end{align*}
 \end{pf}
 
-到此, 我们知道, 整式的微商的加、乘规则及其推论, 在有理式的微商里也适用.
+到此, 我们知道, 整式的流数的加、乘规则及其推论, 在有理式的流数里也适用.
 
-不过, 有理式有整式没有的运算——除法. 自然地, 有理式除有理式的微商也会有运算规则. 它是什么呢?
+不过, 有理式有整式没有的运算——除法. 自然地, 有理式除有理式的流数也会有运算规则. 它是什么呢?
 
 当初, 我们定义有理式的加法、乘法是
 \begin{align*}
@@ -262,12 +265,12 @@
 
 为方便, 我们不正式地总结一下本节的内容.
 \begin{proposition}
-    整式的微商是
+    整式的流数是
     \begin{align*}
         D(a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n) = a_1 + 2a_2 x + \cdots + na_n x^{n-1}.
     \end{align*}
 
-    设 $a$, $b$ 是数; 设 $r$, $s$ 是有理式; 设 $m$ 是正整数. 有理式的微商适合如下运算规则:
+    设 $a$, $b$ 是数; 设 $r$, $s$ 是有理式; 设 $m$ 是正整数. 有理式的流数适合如下运算规则:
     \begin{align*}
          & D(ar + bs) = aDr + bDs,          \\
          & D(rs) = Dr \cdot s + r \cdot Ds, \\

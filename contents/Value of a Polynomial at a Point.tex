@@ -1,0 +1,269 @@
+\subsection*{\ValueOfAPolynomialAtAPoint}
+\addcontentsline{toc}{subsection}{\ValueOfAPolynomialAtAPoint}
+\markright{\ValueOfAPolynomialAtAPoint}
+
+本节讨论整式在一点的值, 并顺便讨论整式函数.
+
+我们先从整式在一点的值开始.
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n \in D[x].
+    \end{align*}
+    设 $t \in D$. 我们把 $D$ 的元
+    \begin{align*}
+        a_0 + a_1 t + \cdots + a_n t^n
+    \end{align*}
+    简单地写为 $f(t)$, 并称其为整式 $f(x)$ 在点 \term{point} $t$ 的值.
+
+    顺便一提, $f(x)$ 的流数也是整式:
+    \begin{align*}
+        f^{\prime} (x) = a_1 + 2a_2 x + \cdots + na_n x^{n-1}.
+    \end{align*}
+    我们把
+    \begin{align*}
+        a_1 + 2a_2 t + \cdots + na_n t^{n-1} \in D
+    \end{align*}
+    简单地写为 $f^{\prime} (t)$.
+\end{definition}
+
+\begin{example}
+    取 $t = 10$. 设 $f(x) = x^2 - x - 1 \in \ZZ[x]$. 因为 $10^2 - 10 - 1 = 89$, 故 $f(10) = 89$. 不难算出 $f^{\prime} (x) = 2x - 1$. 因为 $2 \cdot 10 - 1 = 19$, 故 $f^{\prime} (10) = 19$.
+\end{example}
+
+整式在一点的值适合如下性质:
+\begin{proposition}
+    设 $t \in D$. 设 $f(x)$, $g(x) \in D[x]$.
+
+    (i) 若 $f(x) = g(x)$, 则 $f(t) = g(t)$.
+
+    (ii) 若 $p(x) = f(x) + g(x)$, 则 $p(t) = f(t) + g(t)$.
+
+    (iii) 若 $q(x) = f(x) g(x)$, 则 $q(t) = f(t) g(t)$.
+\end{proposition}
+
+\begin{pf}
+    设 $t \in D$. 设
+    \begin{align*}
+         & f(x) = a_0 + a_1 x + \cdots + a_n x^n, \\
+         & g(x) = b_0 + b_1 x + \cdots + b_n x^n
+    \end{align*}
+    是 $D[x]$ 中二个元. 这样,
+    \begin{align*}
+         & f(t) = a_0 + a_1 t + \cdots + a_n t^n, \\
+         & g(t) = b_0 + b_1 t + \cdots + b_n t^n.
+    \end{align*}
+
+    (i) 若 $f(x) = g(x)$, 则对任意 $0$ 至 $n$ 间的整数 $i$, 都有 $a_i = b_i$. 所以
+    \begin{align*}
+        f(t)
+        = {} & a_0 + a_1 t + \cdots + a_n t^n \\
+        = {} & b_0 + b_1 t + \cdots + b_n t^n \\
+        = {} & g(t).
+    \end{align*}
+
+    (ii) 根据整式的加法的定义, 有
+    \begin{align*}
+        p(x) = f(x) + g(x) = c_0 + c_1 x + \cdots + c_n x^n,
+    \end{align*}
+    其中
+    \begin{align*}
+        c_i = a_i + b_i, \quad i = 0,1,\cdots,n.
+    \end{align*}
+    所以
+    \begin{align*}
+        p(t) = c_0 + c_1 t + \cdots + c_n t^n.
+    \end{align*}
+    根据 $D$ 的运算律, 有
+    \begin{align*}
+             & f(t) + g(t)                                                         \\
+        = {} & (a_0 + a_1 t + \cdots + a_n t^n) + (b_0 + b_1 t + \cdots + b_n t^n) \\
+        = {} & (a_0 + b_0) + (a_1 + b_1) t + \cdots + (a_n + b_n) t^n              \\
+        = {} & c_0 + c_1 t + \cdots + c_n t^n                                      \\
+        = {} & p(t).
+    \end{align*}
+
+    (iii) 根据整式的乘法的定义, 有
+    \begin{align*}
+        q(x) = f(x) g(x) = d_0 + d_1 x + \cdots + d_{2n} x^{2n},
+    \end{align*}
+    其中
+    \begin{align*}
+        d_i = a_0 b_i + a_1 b_{i-1} + \cdots + a_i b_0, \quad i = 0,1,\cdots,2n.
+    \end{align*}
+    所以
+    \begin{align*}
+        q(t) = d_0 + d_1 t + \cdots + d_{2n} t^{2n}.
+    \end{align*}
+    根据 $D$ 的运算律, 有
+    \begin{align*}
+             & f(t) g(t)                                                                        \\
+        = {} & (a_0 + a_1 t + \cdots + a_n t^n) (b_0 + b_1 t + \cdots + b_n t^n)                \\
+        = {} & (a_0 b_0) + (a_0 b_1 + a_1 b_0) t + \cdots + (a_n b_n) t^{2n}                    \\
+        = {} & (a_0 b_0) + (a_0 b_1 + a_1 b_0) t + \cdots + (a_0 b_{2n} + a_1 b_{2n-1} + \cdots \\
+             & \qquad + a_n b_n + a_{n+1} b_{n-1} + \cdots + a_{2n} b_0) t^{2n}                 \\
+        = {} & c_0 + c_1 t + \cdots + c_{2n} t^{2n}                                             \\
+        = {} & q(t). \qedhere
+    \end{align*}
+\end{pf}
+
+我们得到了如下命题:
+\begin{proposition}
+    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立.
+\end{proposition}
+
+\begin{example}
+    考虑 $\FF$ 与 $\FF[x]$. 前面, 利用带余除法, 得到关系
+    \begin{align*}
+        8x^6 + 1 = (4x^3 + 12x - 8) \cdot 2(x-1)^2 (x+2) + (72x^2 - 96x + 33).
+    \end{align*}
+    这里 $x$ 只是一个文字, 不是数! 但是, 上面的命题告诉我们, 可以把 $x$ 看成一个数. 比如, 由上面的式可以立即看出, $8t^6 + 1$ 与 $72t^2 - 96t + 33$ 在 $t = 1$ 或 $t = -2$ 时值是一样的.
+\end{example}
+
+\begin{remark}
+    或许, 读者认为整式在一点的值的性质是理所当然的. 不过, 事实并非如此. 读者应注意到, 是 $D$ 的加法与乘法运算律支撑这一事实, 而不是别的.
+
+    对于这样的式, 我们不能将 $x$ 改写为 $\FF$ 的元 $t$:
+    \begin{align*}
+        \deg 3x^2 < \deg 2x^3.
+    \end{align*}
+    可以看到, 若 $t=0$, 则 $3t^2 = 2t^3 = 0$, 而 $0$ 的次是 $-\infty$; 若 $t \neq 0$, 则 $3t^2$ 与 $2t^3$ 都是非零数, 次都是 $0$. 为什么不能在此处换 $x$ 为数呢? 这是因为整式的次并不是由加法与乘法计算得到的关系.
+\end{remark}
+
+有了上面的讨论, 我们可方便地讨论整式函数.
+
+\begin{definition}
+    设 $f(x) \in D[x]$. 称函数
+    \begin{align*}
+         & D \to D, \tag*{$f_\mathrm{f} \colon$} \\
+         & t \mapsto f(t)
+    \end{align*}
+    为 $D$ 的整式函数 \term{polynomial function}. 我们也说, 这个函数是由 $D$ 上 $x$ 的整式 $f(x)$ 诱导的整式函数 \term{the polynomial function induced by $f(x)$}.
+\end{definition}
+
+读者在中学算学里接触的 $1$ 次函数、$2$ 次函数都是整式函数.
+
+\begin{example}
+    设 $f(x) = 2x + 3 \in \RR[x]$. $f(x)$ 诱导的整式函数是
+    \begin{align*}
+         & \RR \to \RR,             \\
+         & t \mapsto f(t) = 2t + 3.
+    \end{align*}
+\end{example}
+
+\begin{example}
+    设 $f(x) = x^2 + x - 1 \in \RR[x]$. $f(x)$ 诱导的整式函数是
+    \begin{align*}
+         & \RR \to \RR,                  \\
+         & t \mapsto f(t) = t^2 + t - 1.
+    \end{align*}
+\end{example}
+
+\begin{example}
+    下面的函数当然也是 $D$ 的整式函数:
+    \begin{align*}
+         & D \to D,     \\
+         & t \mapsto 0.
+    \end{align*}
+    显然, 零整式诱导的函数跟这个函数相等.
+\end{example}
+
+\begin{definition}
+    设 $f_\mathrm{f}$ 与 $g_\mathrm{f}$ 是 $D$ 的二个整式函数. 二者的和 $f_\mathrm{f} + g_\mathrm{f}$ 定义为
+    \begin{align*}
+         & D \to D, \tag*{$f_\mathrm{f} + g_\mathrm{f} \colon$} \\
+         & t \mapsto f_\mathrm{f} (t) + g_\mathrm{f} (t).
+    \end{align*}
+    二者的积 $f_\mathrm{f} \, g_\mathrm{f}$ 定义为
+    \begin{align*}
+         & D \to D, \tag*{$f_\mathrm{f} \, g_\mathrm{f} \colon$} \\
+         & t \mapsto f_\mathrm{f} (t) g_\mathrm{f} (t).
+    \end{align*}
+\end{definition}
+
+\begin{remark}
+    这里的 $f_{\mathrm{f}} (t)$ 是 $D$ 的元 $t$ 在函数 $f_{\mathrm{f}}$ 下的象 $i$. 根据函数 $f_{\mathrm{f}}$ 的定义, $i$ 就是 $f(t)$.
+
+    我们顺便看看 $f(x)$, $f(t)$, $f_\mathrm{f} (t)$ 的区别.
+
+    因为在本文里, $x$ 是不定元, 故 $f(x)$ 总是表示 $D$ 上 $x$ 的整式.
+
+    在本文里, $t$ 一般是 $D$ 的元, 故当 $t$ 是 $D$ 的元时, $f(t)$ 也是 $D$ 的元.
+
+    $f_\mathrm{f} (t)$ 表示 ``$t$ 在整式 $f(x)$ 诱导的整式函数 $f_\mathrm{f}$ 下的象'', 所以它也是 $D$ 的元. 一般地, $f_\mathrm{f} (t) = f(t)$.
+\end{remark}
+
+利用整式在一点的值的性质, 我们立得
+\begin{proposition}
+    设 $f(x)$, $g(x) \in D[x]$. 设 $f_\mathrm{f}$, $g_\mathrm{f}$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数.
+
+    (i) 若 $f(x) = g(x)$, 则 $f_\mathrm{f} = g_\mathrm{f}$ (函数的相等).
+
+    (ii) $f(x) + g(x)$ 诱导整式函数 $f_\mathrm{f} + g_\mathrm{f}$.
+
+    (iii) $f(x) g(x)$ 诱导整式函数 $f_\mathrm{f} \, g_\mathrm{f}$.
+\end{proposition}
+
+\begin{remark}
+    我们已经知道, 整式确定整式函数. 自然地, 有这样的问题: 整式函数能否确定整式? 一般情况下, 这个问题的答案是 no.
+
+    考虑 $4$ 元集 $V$. 作 $V$ 上 $x$ 的二个整式:
+    \begin{align*}
+        f(x) = x^4 - x, \quad g(x) = 0.
+    \end{align*}
+    显然, 这是二个不相等的整式. 但是, 任取 $t \in V$, 都有
+    \begin{align*}
+        t^4 - t = 0.
+    \end{align*}
+    因此, $f(x)$ 与 $g(x)$ 诱导的整式函数是同一函数!
+
+    不过, 在某些场合下, 整式函数可以确定整式. 之后我们还会提到这一点.
+\end{remark}
+
+知道什么是整式在一点的值后, 下面的这个命题就不会太突兀了. 这也是本节的核心命题.
+
+\begin{proposition}
+    设 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \geq 1$), $a \in D$. 则存在 $n-1$ 次整式 $q(x)$ ($\in D[x]$) 使
+    \begin{align*}
+        f(x) = q(x) (x-a) + f(a).
+    \end{align*}
+    根据带余除法, 这样的 $q(x)$ 一定是唯一的.
+\end{proposition}
+
+\begin{pf}
+    因为 $x-a$ 的首项系数 $1$ 是单位, 故存在 $D[x]$ 的二元 $q(x)$, $r(x)$ 使
+    \begin{align*}
+        f(x) = q(x) (x-a) + r(x), \quad \deg r(x) < \deg (x-a) = 1.
+    \end{align*}
+    所以, $r(x) = c$, $c \in D$. 用 $D$ 的元 $a$ 替换 $x$, 有
+    \begin{align*}
+        f(a) = q(a) (a-a) + c = c.
+    \end{align*}
+    所以
+    \begin{align*}
+        f(x) = q(x) (x-a) + f(a).
+    \end{align*}
+    再看这个 $q(x)$ 的次. 因为 $f(x)$ 的次不低于 $x-a$ 的次, 故
+    \begin{align*}
+         & \deg q(x) = \deg f(x) - \deg (x-a) = n-1. \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{remark}
+    如果用 $D$ 的元 $b$ 替换 $x$, 则
+    \begin{align*}
+        f(b) = (b-a)q(b) + f(a),
+    \end{align*}
+    也就是说, 存在 $r \in D$ 使
+    \begin{align*}
+        f(b) - f(a) = (b-a)r.
+    \end{align*}
+    所以, 若 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$. 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$).
+
+    此事实有时是有用的. 举个简单的例. 我们说, 不存在系数为整数的整式 $f(x)$ 使 $f(1) = f(-1) + 1$. 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
+    \begin{align*}
+        1 = f(1) - f(-1) = (1 - (-1))r = 2r,
+    \end{align*}
+    而 $1$ 不是偶数, 矛盾.
+\end{remark}

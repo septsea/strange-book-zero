@@ -4,7 +4,7 @@
 
 我们在前几节讨论的都是整环 $D$ 上的整式, 所以它们看上去是有些抽象的. 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个. 细心的读者会注意到我们在前几节未使用 $\sum$ 符号: 这是为了让读者没那么困难地适应整式理论. 从本节起, 我们会较多地使用这个 $\sum$. 读者也可以乘此机会让自己熟悉它. 当然, 我们偶尔也会使用 $\prod$ 符号.
 
-本节并没有什么新的知识. 读者可以乘此机会温习一下所学内容. 我们将重述一些定义与命题. 我们在学校学算学的时候, 也会有复习课. 就当本节就是 ``复习节'' 吧!
+本节并没有什么新的知识 (除了最后几个关于 $\FF[x]$ 的命题). 读者可以乘此机会温习一下所学内容. 我们将重述一些定义与命题. 我们在学校学算学的时候, 也会有复习课. 就当本节就是 ``复习节'' 吧!
 
 先从整式的定义与运算开始.
 
@@ -286,14 +286,14 @@
     \end{align*}
 \end{proposition}
 
-我们看看整式的微商.
+我们看看整式的流数.
 
 \begin{definition}
     设
     \begin{align*}
         f(x) = \sum_{i = 0}^{n} a_i x^i \in \FF[x].
     \end{align*}
-    $f(x)$ 的微商是整式
+    $f(x)$ 的流数是整式
     \begin{align*}
         f^{\prime}(x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \in \FF[x].
     \end{align*}
@@ -326,15 +326,11 @@
 \begin{proposition}
     设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$.
 
-    (i) 设 $p(x) = f(x) + g(x)$. 则
-    \begin{align*}
-        p(h(x)) = f(h(x)) + g(h(x)).
-    \end{align*}
+    (i) 若 $f(x) = g(x)$, 则 $(f \circ h)(x) = (g \circ h)(x)$.
 
-    (ii) 设 $q(x) = f(x) g(x)$. 则
-    \begin{align*}
-        q(h(x)) = f(h(x)) g(h(x)).
-    \end{align*}
+    (ii) 若 $p(x) = f(x) + g(x)$, 则 $(p \circ h)(x) = (f \circ h)(x) + (g \circ h)(x)$.
+
+    (iii) 若 $q(x) = f(x) g(x)$, 则 $(q \circ h)(x) = (f \circ h)(x) \cdot (g \circ h)(x)$.
 \end{proposition}
 
 \begin{proposition}
@@ -372,7 +368,7 @@
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的微商适合链规则:
+    设 $f(x)$, $g(x) \in \FF[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的流数适合链规则:
     \begin{align*}
         (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x).
     \end{align*}
@@ -382,55 +378,7 @@
     % \end{align*}
 \end{proposition}
 
-最后, 我们回顾整式函数与整式的根.
-
-\begin{definition}
-    设 $a_0, a_1, \cdots, a_n \in \FF$. 称
-    \begin{align*}
-         & \FF \to \FF, \tag*{$f \colon$}   \\
-         & t \mapsto \sum_{i = 0}^n a_i t^i
-    \end{align*}
-    为 $\FF$ 的整式函数. 我们也说, 这个 $f$ 是由 $\FF$ 上 $x$ 的整式
-    \begin{align*}
-        f(x) = \sum_{i = 0}^n a_i x^i
-    \end{align*}
-    诱导的整式函数. 不难看出, 若二个整式相等, 则其诱导的整式函数也相等.
-\end{definition}
-
-\begin{definition}
-    设 $f$ 与 $g$ 是 $\FF$ 的二个整式函数. 二者的和 $f+g$ 定义为
-    \begin{align*}
-         & \FF \to \FF, \tag*{$f+g \colon$} \\
-         & t \mapsto f(t) + g(t).
-    \end{align*}
-    二者的积 $fg$ 定义为
-    \begin{align*}
-         & \FF \to \FF, \tag*{$fg \colon$} \\
-         & t \mapsto f(t) g(t).
-    \end{align*}
-\end{definition}
-
-设 $f$, $g$ 是 $\FF$ 的二个整式函数:
-\begin{align*}
-     & \FF \to \FF, \tag*{$f \colon$}  \\
-     & t \mapsto \sum_{i=0}^n a_i t^i, \\
-     & \FF \to \FF, \tag*{$g \colon$}  \\
-     & t \mapsto \sum_{i=0}^n b_i t^i.
-\end{align*}
-利用 $\FF$ 的运算律, 可以得到
-\begin{align*}
-     & \FF \to \FF, \tag*{$f+g \colon$}                                                  \\
-     & t \mapsto \sum_{i=0}^n (a_i + b_i) t^i,                                           \\
-     & \FF \to \FF, \tag*{$fg \colon$}                                                   \\
-     & t \mapsto \sum_{i=0}^{2n} \left( \sum_{\ell=0}^{i} a_\ell b_{i-\ell} \right) t^i.
-\end{align*}
-由此可得下面的命题:
-
-\begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数. 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的整式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的整式函数.
-
-    通俗地说, 若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $\FF$ 的元 $t$, 这样的关系仍成立.
-\end{proposition}
+有时, 我们会把整式的不定元 $x$ 改为数. 这就引出了整式在一点的值.
 
 \begin{definition}
     设
@@ -443,7 +391,7 @@
     \end{align*}
     简单地写为 $f(t)$, 并称其为整式 $f(x)$ 在点 $t$ 的值.
 
-    顺便一提, $f(x)$ 的微商也是整式:
+    顺便一提, $f(x)$ 的流数也是整式:
     \begin{align*}
         f^{\prime} (x) = \sum_{i = 1}^{n} i a_i x^{i - 1}.
     \end{align*}
@@ -454,8 +402,55 @@
     简单地写为 $f^{\prime} (t)$.
 \end{definition}
 
-下面是带余除法的推论. 它在根的讨论里起了重要的作用.
+整式在一点的值适合如下性质:
+\begin{proposition}
+    设 $t \in \FF$. 设 $f(x)$, $g(x) \in \FF[x]$.
 
+    (i) 若 $f(x) = g(x)$, 则 $f(t) = g(t)$.
+
+    (ii) 若 $p(x) = f(x) + g(x)$, 则 $p(t) = f(t) + g(t)$.
+
+    (iii) 若 $q(x) = f(x) g(x)$, 则 $q(t) = f(t) g(t)$.
+\end{proposition}
+
+我们得到了如下命题:
+\begin{proposition}
+    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $\FF$ 的元 $t$, 这样的关系仍成立.
+\end{proposition}
+
+\begin{definition}
+    设 $f(x) \in \FF[x]$. 称函数
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f_\mathrm{f} \colon$} \\
+         & t \mapsto f(t)
+    \end{align*}
+    为 $\FF$ 的整式函数. 我们也说, 这个函数是由 $\FF$ 上 $x$ 的整式 $f(x)$ 诱导的整式函数.
+\end{definition}
+
+\begin{definition}
+    设 $f_\mathrm{f}$ 与 $g_\mathrm{f}$ 是 $\FF$ 的二个整式函数. 二者的和 $f_\mathrm{f} + g_\mathrm{f}$ 定义为
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f_\mathrm{f} + g_\mathrm{f} \colon$} \\
+         & t \mapsto f_\mathrm{f} (t) + g_\mathrm{f} (t).
+    \end{align*}
+    二者的积 $f_\mathrm{f} \, g_\mathrm{f}$ 定义为
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f_\mathrm{f} \, g_\mathrm{f} \colon$} \\
+         & t \mapsto f_\mathrm{f} (t) g_\mathrm{f} (t).
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x) \in \FF[x]$. 设 $f_\mathrm{f}$, $g_\mathrm{f}$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数.
+
+    (i) 若 $f(x) = g(x)$, 则 $f_\mathrm{f} = g_\mathrm{f}$ (函数的相等).
+
+    (ii) $f(x) + g(x)$ 诱导整式函数 $f_\mathrm{f} + g_\mathrm{f}$.
+
+    (iii) $f(x) g(x)$ 诱导整式函数 $f_\mathrm{f} \, g_\mathrm{f}$.
+\end{proposition}
+
+下面是带余除法的推论. 它在根的讨论里起了重要的作用.
 \begin{proposition}
     设 $f(x) \in \FF[x]$ 是 $n$ 次整式 ($n \geq 1$), $a \in \FF$. 则存在 $n-1$ 次整式 $q(x)$ ($\in \FF[x]$) 使
     \begin{align*}
@@ -463,6 +458,8 @@
     \end{align*}
     根据带余除法, 这样的 $q(x)$ 一定是唯一的.
 \end{proposition}
+
+最后, 我们回顾整式的根.
 
 \begin{definition}
     设 $f(x)$ 是 $\FF$ 上 $x$ 的整式. 若有 $a \in \FF$ 使 $f(a) = 0$, 则说 $a$ 是 (整式) $f(x)$ 的根.
@@ -509,15 +506,15 @@
 \end{proposition}
 
 \begin{definition}
-    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 那么, 存在唯一的整式 $q(x) \in \FF[x]$ 使
+    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 设 $f(x) \neq 0$. 那么, 存在唯一的整式 $q(x) \in \FF[x]$ 使
     \begin{align*}
-        f(x) = (x - a) q(x).
+        f(x) = (x - a) q(x),
     \end{align*}
-    若 $q(a) = 0$, 则说 $a$ 是 $f(x)$ 的一个重根. 若 $q(a) \neq 0$, 则说 $a$ 是 $f(x)$ 的一个单根.
+    且 $q(x) \neq 0$. 若 $q(a) = 0$, 则说 $a$ 是 $f(x)$ 的一个重根. 若 $q(a) \neq 0$, 则说 $a$ 是 $f(x)$ 的一个单根.
 \end{definition}
 
 \begin{proposition}
-    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 则:
+    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 设 $f(x) \neq 0$. 则:
 
     (i) 若 $a$ 是 $f(x)$ 的重根, 则 $a$ 是 $f^{\prime} (x)$ 的根;
 
@@ -539,7 +536,7 @@
 由此立得
 
 \begin{proposition}
-    设 $f(x),g(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = g(t)$, 则 $f(x)$ 与 $g(x)$ 是二个相同的整式. 通俗地说, 若系数为 $\FF$ 的元的二个整式在无限多个地方有相同的取值, 则这二个整式必相等.
+    设 $f(x)$, $g(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = g(t)$, 则 $f(x)$ 与 $g(x)$ 是二个相同的整式. 通俗地说, 若系数为 $\FF$ 的元的二个整式在无限多个地方有相同的取值, 则这二个整式必相等.
 \end{proposition}
 
 \begin{pf}
@@ -553,5 +550,5 @@
 \end{proposition}
 
 \begin{remark}
-    以后, 我们不再区分 ``整式'' 与 ``整式函数''. 从现在开始, 读者可以认为本文接下来讨论的 ``整式'' 跟中学里的整式是同一事物.
+    这个命题说明, 整式 (本文讨论的 ``整式'') 与整式函数 (中学算学的 ``整式'') 可被认为是同一事物. 尽管如此, 除非特别说明, 我们仍视形如 ``$a_0 + a_1 x + \cdots + a_n x^n$'' 的文字为整式, 而不是整式函数. 或者这么说——在本文的讨论里, $x$ 不再是数.
 \end{remark}

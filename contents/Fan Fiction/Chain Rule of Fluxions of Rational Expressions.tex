@@ -1,23 +1,23 @@
-\subsection*{\ChainRuleOfDerivativesOfRationalExpressions}
-\addcontentsline{toc}{subsection}{\ChainRuleOfDerivativesOfRationalExpressions}
-\markright{\ChainRuleOfDerivativesOfRationalExpressions}
+\subsection*{\ChainRuleOfFluxionsOfRationalExpressions}
+\addcontentsline{toc}{subsection}{\ChainRuleOfFluxionsOfRationalExpressions}
+\markright{\ChainRuleOfFluxionsOfRationalExpressions}
 
-本文介绍有理式的微商的链规则 \term{the chain rule}.
+本文介绍有理式的流数的链规则 \term{the chain rule}.
 
 原则上, 本文应该在 ``\OperationsOnRationalExprsssions'' 里. 不过, 本文的运算不像加法、减法、乘法、除法、幂那么基础. 为了不让一篇文过难 (为了对读者友好一些), 作者决定另开一篇文.
 
-本文是选读内容. 非选读文 (即必读文) 不会提及选读文的内容. 选读文之间也会尽量独立. 如果一篇选读文需要别的选读文的知识, 作者会明确地指出读者需要读哪些选读文. 比方说, 本文假定读者已经读过 ``\CompositionOfRationalExpressions'' 与 ``\DerivativesOfRationalExpressions''.
+本文是选读内容. 非选读文 (即必读文) 不会提及选读文的内容. 选读文之间也会尽量独立. 如果一篇选读文需要别的选读文的知识, 作者会明确地指出读者需要读哪些选读文. 比方说, 本文假定读者已经读过 ``\CompositionOfRationalExpressions'' 与 ``\FluxionsOfRationalExpressions''.
 
 换句话说, 读者可放心地跳过本文.
 
 \myLine
 
-我们刚学了有理式的微商. 所以, 作者就不在这里重述那些运算律了.
+我们刚学了有理式的流数. 所以, 作者就不在这里重述那些运算律了.
 
-我们也学过整式的微商的链规则:
+我们也学过整式的流数的链规则:
 
 \begin{proposition}
-    设 $f$, $g$ 是整式. $f$ 与 $g$ 的复合的微商适合链规则:
+    设 $f$, $g$ 是整式. $f$ 与 $g$ 的复合的流数适合链规则:
     \begin{align*}
         D(g \circ f) = (Dg \circ f) \cdot Df.
     \end{align*}
@@ -26,7 +26,7 @@
 本文的任务就是将 ``整式'' 推广为 ``有理式''. 不过, 慢慢来. 先试着替换内层的 $f$——也就是说, 我们先考虑有理式 $r$ 与整式 $g$ 的复合.
 
 \begin{proposition}
-    设 $r$ 是有理式; 设 $g$ 是整式. $r$ 与 $g$ 的复合的微商适合链规则:
+    设 $r$ 是有理式; 设 $g$ 是整式. $r$ 与 $g$ 的复合的流数适合链规则:
     \begin{align*}
         D(g \circ r) = (Dg \circ r) \cdot Dr.
     \end{align*}
@@ -59,7 +59,7 @@
 现在, 我们可以证明有理式的复合的链规则了.
 
 \begin{proposition}
-    设 $r$, $s$ 是有理式. 若 $s \circ r$ 存在, 则 $r$ 与 $s$ 的复合的微商适合链规则:
+    设 $r$, $s$ 是有理式. 若 $s \circ r$ 存在, 则 $r$ 与 $s$ 的复合的流数适合链规则:
     \begin{align*}
         D(s \circ r) = (Ds \circ r) \cdot Dr.
     \end{align*}

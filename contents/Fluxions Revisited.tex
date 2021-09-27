@@ -1,10 +1,10 @@
-\subsection*{\DerivativesRevisited}
-\addcontentsline{toc}{subsection}{\DerivativesRevisited}
-\markright{\DerivativesRevisited}
+\subsection*{\FluxionsRevisited}
+\addcontentsline{toc}{subsection}{\FluxionsRevisited}
+\markright{\FluxionsRevisited}
 
-本节将再讨论整式的微商.
+本节将再讨论整式的流数.
 
-在讨论微商前, 让我们捡起在 ``\GeneralizedBinomialCoefficients'' 节里没用过的二项展开:
+在讨论流数前, 让我们捡起在 ``\GeneralizedBinomialCoefficients'' 节里没用过的二项展开:
 
 \begin{proposition}
     设 $r$, $s \in \FF[x]$. 设 $n$ 是非负整数. 则
@@ -126,14 +126,14 @@
     \end{align*}
 \end{example}
 
-现在, 读者可能不再那么不熟悉二项展开了. 我们正式重述微商. 不过, 我们并不会完全照搬 ``\Derivatives'' 节.
+现在, 读者可能不再那么不熟悉二项展开了. 我们正式重述流数. 不过, 我们并不会完全照搬 ``\Fluxions'' 节.
 
 \begin{definition}
     设
     \begin{align*}
         f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \in \FF[x].
     \end{align*}
-    $f(x)$ 的微商是整式
+    $f(x)$ 的流数是整式
     \begin{align*}
         Df(x) = 0 + 1a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1} \in \FF[x].
     \end{align*}
@@ -149,7 +149,7 @@
 \end{remark}
 
 \begin{remark}
-    读者可能会注意到我们在这里换了个记号. 之前, 我们用 $f^{\prime} (x)$ 或 $(f(x))^{\prime}$ 表示整式 $f(x)$ 的微商——那个时候, 我们还是在抽象的整环 $D$ 上讨论问题. 现在, 我们在熟悉的 $\FF$ 里讨论问题. 读者已经很久都没见到 $D$ 了吧? 从此节开始, 我们用 $D$ 记号表示微商. 所以, $D$ 将不表示整环.
+    读者可能会注意到我们在这里换了个记号. 之前, 我们用 $f^{\prime} (x)$ 或 $(f(x))^{\prime}$ 表示整式 $f(x)$ 的流数——那个时候, 我们还是在抽象的整环 $D$ 上讨论问题. 现在, 我们在熟悉的 $\FF$ 里讨论问题. 读者已经很久都没见到 $D$ 了吧? 从此节开始, 我们用 $D$ 记号表示流数. 所以, $D$ 将不表示整环.
 \end{remark}
 
 \begin{example}
@@ -227,7 +227,7 @@
         Df (x) = 3x^2, \quad Dg (x) = 2x + 1.
     \end{align*}
 
-    (i) $4g(x)$ 也是整式, 当然可以有微商. 因为
+    (i) $4g(x)$ 也是整式, 当然可以有流数. 因为
     \begin{align*}
         4g(x) = 4x^2 + 4x - 4,
     \end{align*}
@@ -254,30 +254,30 @@
     \end{align*}
 \end{example}
 
-前面讲差商与差分时, 我们引入了高级差商与高级差分. 类似地, 我们引入高级微商.
+前面讲差商与差分时, 我们引入了高级差商与高级差分. 类似地, 我们引入高级流数.
 
 \begin{definition}
     设 $f(x) \in \FF[x]$. 记
     \begin{align*}
         D^0 f(x) = f(x) \in \FF[x],
     \end{align*}
-    并称其为 $f(x)$ 的 $0$ 级微商 \term{zeroth-order derivative}. $1$ 级微商就是微商:
+    并称其为 $f(x)$ 的 $0$ 级流数 \term{zeroth-order fluxion}. $1$ 级流数就是流数:
     \begin{align*}
         D^1 f(x) = D f(x) = D (D^0 f(x)) \in \FF[x].
     \end{align*}
-    $1$ 级微商的微商是 $2$ 级微商:
+    $1$ 级流数的流数是 $2$ 级流数:
     \begin{align*}
         D^2 f(x) = D (D^1 f(x)) \in \FF[x].
     \end{align*}
-    $2$ 级微商的微商是 $3$ 级微商:
+    $2$ 级流数的流数是 $3$ 级流数:
     \begin{align*}
         D^3 f(x) = D (D^2 f(x)) \in \FF[x].
     \end{align*}
-    一般地, $e$ 级微商就是 $e - 1$ 级微商的微商:
+    一般地, $e$ 级流数就是 $e - 1$ 级流数的流数:
     \begin{align*}
         D^e f(x) = D (D^{e-1} f(x)) \in \FF[x].
     \end{align*}
-    高级微商可指代任意 $e$ 级微商, 此处 $e > 1$.
+    高级流数可指代任意 $e$ 级流数, 此处 $e > 1$.
 
     设 $t \in \FF$. 既然 $D^e f(x)$ 是某个整式
     \begin{align*}
@@ -295,23 +295,23 @@
     \begin{align*}
         f(x) = 2x^3 + 3x^2 + 5x + 7.
     \end{align*}
-    根据定义, $f(x)$ 的 $0$ 级微商就是自己:
+    根据定义, $f(x)$ 的 $0$ 级流数就是自己:
     \begin{align*}
         D^0 f(x) = 2x^3 + 3x^2 + 5x + 7.
     \end{align*}
-    $f(x)$ 的 $1$ 级微商是
+    $f(x)$ 的 $1$ 级流数是
     \begin{align*}
         D^1 f(x) = Df(x) = 6x^2 + 6x + 5.
     \end{align*}
-    $f(x)$ 的 $2$ 级微商是
+    $f(x)$ 的 $2$ 级流数是
     \begin{align*}
         D^2 f(x) = D(D^1 f(x)) = 12x + 6.
     \end{align*}
-    $f(x)$ 的 $3$ 级微商是
+    $f(x)$ 的 $3$ 级流数是
     \begin{align*}
         D^3 f(x) = D(D^2 f(x)) = 12.
     \end{align*}
-    $f(x)$ 的 $4$ 级微商是
+    $f(x)$ 的 $4$ 级流数是
     \begin{align*}
         D^4 f(x) = D(D^3 f(x)) = 0.
     \end{align*}
@@ -321,7 +321,7 @@
     \end{align*}
 \end{example}
 
-类似地, 高级微商适合如下性质:
+类似地, 高级流数适合如下性质:
 
 \begin{proposition}
     设 $e$ 是非负整数. 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
@@ -336,7 +336,7 @@
 \end{pf}
 
 % cSpell: disable-next-line
-当初我们为得到 Vandermonde 恒等式与二项展开, 我们引入了临时工具 $r^{[k]}$. 现在, 类似地, 为了更方便地讨论整式的高级微商, 我们引入
+当初我们为得到 Vandermonde 恒等式与二项展开, 我们引入了临时工具 $r^{[k]}$. 现在, 类似地, 为了更方便地讨论整式的高级流数, 我们引入
 
 \begin{definition}
     设 $m$ 为整数. 设 $r \in \FF[x]$. 定义
@@ -386,7 +386,7 @@
     用算学归纳法. 我们把具体过程留给读者当练习.
 \end{pf}
 
-现在, 我们看高级微商与二项展开的关系.
+现在, 我们看高级流数与二项展开的关系.
 
 固定某 $c \in \FF$. 固定某非负整数 $n$. 任取不高于 $n$ 的非负整数 $i$. 则
 \begin{align*}
@@ -456,7 +456,7 @@
 \end{remark}
 
 \begin{remark}
-    我们提一个读者可能已经注意到的事实. 设 $n$ 是非负整数. 则 $n$ 次整式的 $n$ 级微商不是 $0$, 但 $n+1$ 级微商是 $0$. 这也解释了为什么在 Taylor 公式里, 我们只要求 $n$ 不低于 $f(x)$ 的次.
+    我们提一个读者可能已经注意到的事实. 设 $n$ 是非负整数. 则 $n$ 次整式的 $n$ 级流数不是 $0$, 但 $n+1$ 级流数是 $0$. 这也解释了为什么在 Taylor 公式里, 我们只要求 $n$ 不低于 $f(x)$ 的次.
 \end{remark}
 
 \begin{example}
@@ -536,7 +536,7 @@ Taylor 公式一个用途是证明
 \end{pf}
 
 \begin{remark}
-    事实上, 我们得到了高级微商的 Leibniz 公式 \term{Leibniz's formula}: 若 $k$ 是非负整数, 且 $f(x)$, $g(x) \in \FF[x]$, 则
+    事实上, 我们得到了高级流数的 Leibniz 公式 \term{Leibniz's formula}: 若 $k$ 是非负整数, 且 $f(x)$, $g(x) \in \FF[x]$, 则
     \begin{align*}
         D^k (f(x)g(x)) = \sum_{i = 0}^{k} \binom{k}{i} D^i f(x) D^{k-i} g(x).
     \end{align*}
@@ -557,7 +557,7 @@ Taylor 公式一个用途是证明
     \begin{align*}
         f(x) g(x) = x^5 + x^4 - x^3 + 2x^2 + 2x - 2
     \end{align*}
-    的微商是
+    的流数是
     \begin{align*}
         D(f(x) g(x)) = 5x^4 + 4x^3 - 3x^2 + 4x + 2.
     \end{align*}
@@ -603,14 +603,14 @@ Taylor 公式一个用途是证明
 \end{example}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的微商适合链规则:
+    设 $f(x)$, $g(x) \in \FF[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的流数适合链规则:
     \begin{align*}
         D(g \circ f) (x) = (Dg \circ f)(x) Df (x).
     \end{align*}
 \end{proposition}
 
 \begin{pf}
-    可看 ``\Derivatives'' 节的相应内容.
+    可看 ``\Fluxions'' 节的相应内容.
 \end{pf}
 
 \begin{example}

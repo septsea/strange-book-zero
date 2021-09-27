@@ -1,8 +1,8 @@
-\subsection*{\Derivatives}
-\addcontentsline{toc}{subsection}{\Derivatives}
-\markright{\Derivatives}
+\subsection*{\Fluxions}
+\addcontentsline{toc}{subsection}{\Fluxions}
+\markright{\Fluxions}
 
-本节讨论整式的微商.
+本节讨论整式的流数.
 
 在本节, 我们会将一些容易证明的命题留给读者练习. 读者可乘此机会让自己熟悉证明命题的过程与算学归纳法.
 
@@ -11,7 +11,7 @@
     \begin{align*}
         f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_{n-1} x^{n-1} + a_n x^n \in D[x].
     \end{align*}
-    $f(x)$ 的微商 \term{derivative} 是整式
+    $f(x)$ 的流数 \term{fluxion} 是整式
     \begin{align*}
         f^{\prime}(x) = 0 + 1a_1 + 2a_2 x + \cdots + (n-1)a_{n-1} x^{n-2} + na_n x^{n-1} \in D[x].
     \end{align*}
@@ -67,14 +67,14 @@
          & 6 \cdot 1 = 2 \cdot (3 \cdot 1) = (3 \cdot 1) + (3 \cdot 1) = 0, \\
          & 3 \cdot (-1) = (-1) + (-1) + (-1) = 1 + 1 + 1 = 0 + 1 = 1.
     \end{align*}
-    所以, 当我们把 $f(x)$ 视为 $V[x]$ 中元时, 它的微商 ``有点奇怪''. 同样的道理, 在 $V$ 与 $V[x]$ 中,
+    所以, 当我们把 $f(x)$ 视为 $V[x]$ 中元时, 它的流数 ``有点奇怪''. 同样的道理, 在 $V$ 与 $V[x]$ 中,
     \begin{align*}
         (x^{2k})^{\prime} = (2k \cdot 1) x^{2k-1} = 0 x^{2k-1} = 0.
     \end{align*}
 \end{example}
 
 \begin{remark}
-    微商就是 $D[x]$ 到 $D[x]$ 的函数 (也就是 $D[x]$ 的变换):
+    流数就是 $D[x]$ 到 $D[x]$ 的函数 (也就是 $D[x]$ 的变换):
     \begin{align*}
          & D[x] \to D[x], \tag*{$\prime \colon$}                                        \\
          & a_0 + a_1 x + \cdots + a_n x^n \mapsto a_1 + 2a_2 x + \cdots + na_n x^{n-1}.
@@ -136,30 +136,34 @@
 \begin{proposition}
     设 $f(x)$, $g(x)$, $h(x) \in D[x]$.
 
-    (i) 设 $p(x) = f(x) + g(x)$. 则
-    \begin{align*}
-        p(h(x)) = f(h(x)) + g(h(x)).
-    \end{align*}
+    (i) 若 $f(x) = g(x)$, 则 $(f \circ h)(x) = (g \circ h)(x)$.
 
-    (ii) 设 $q(x) = f(x) g(x)$. 则
-    \begin{align*}
-        q(h(x)) = f(h(x)) g(h(x)).
-    \end{align*}
+    (ii) 若 $p(x) = f(x) + g(x)$, 则 $(p \circ h)(x) = (f \circ h)(x) + (g \circ h)(x)$.
+
+    (iii) 若 $q(x) = f(x) g(x)$, 则 $(q \circ h)(x) = (f \circ h)(x) \cdot (g \circ h)(x)$.
 \end{proposition}
 
 \begin{pf}
-    设
+    设 $h(x) \in D[x]$. 设
     \begin{align*}
          & f(x) = a_0 + a_1 x + \cdots + a_n x^n, \\
          & g(x) = b_0 + b_1 x + \cdots + b_n x^n
     \end{align*}
     是 $D[x]$ 中二个元. 这样,
     \begin{align*}
-         & f(h(x)) = a_0 + a_1 h(x) + \cdots + a_n (h(x))^n, \\
-         & g(h(x)) = b_0 + b_1 h(x) + \cdots + b_n (h(x))^n.
+         & (f \circ h)(x) = a_0 + a_1 h(x) + \cdots + a_n (h(x))^n, \\
+         & (g \circ h)(x) = b_0 + b_1 h(x) + \cdots + b_n (h(x))^n.
     \end{align*}
 
-    (i) 根据加法的定义, 有
+    (i) 若 $f(x) = g(x)$, 则对任意 $0$ 至 $n$ 间的整数 $i$, 都有 $a_i = b_i$. 所以
+    \begin{align*}
+        (f \circ h)(x)
+        = {} & a_0 + a_1 h(x) + \cdots + a_n (h(x))^n \\
+        = {} & b_0 + b_1 h(x) + \cdots + b_n (h(x))^n \\
+        = {} & (g \circ h)(x).
+    \end{align*}
+
+    (ii) 根据整式的加法的定义, 有
     \begin{align*}
         p(x) = f(x) + g(x) = c_0 + c_1 x + \cdots + c_n x^n,
     \end{align*}
@@ -169,18 +173,18 @@
     \end{align*}
     所以
     \begin{align*}
-        p(h(x)) = c_0 + c_1 h(x) + \cdots + c_n (h(x))^n.
+        (p \circ h)(x) = c_0 + c_1 h(x) + \cdots + c_n (h(x))^n.
     \end{align*}
     根据整式的运算律, 有
     \begin{align*}
-             & f(h(x)) + g(h(x))                                                                   \\
+             & (f \circ h)(x) + (g \circ h)(x)                                                     \\
         = {} & (a_0 + a_1 h(x) + \cdots + a_n (h(x))^n) + (b_0 + b_1 h(x) + \cdots + b_n (h(x))^n) \\
         = {} & (a_0 + b_0) + (a_1 + b_1) h(x) + \cdots + (a_n + b_n) (h(x))^n                      \\
         = {} & c_0 + c_1 h(x) + \cdots + c_n (h(x))^n                                              \\
-        = {} & p(h(x)).
+        = {} & (p \circ h)(x).
     \end{align*}
 
-    (ii) 根据乘法的定义, 有
+    (iii) 根据整式的乘法的定义, 有
     \begin{align*}
         q(x) = f(x) g(x) = d_0 + d_1 x + \cdots + d_{2n} x^{2n},
     \end{align*}
@@ -190,19 +194,18 @@
     \end{align*}
     所以
     \begin{align*}
-        q(h(x)) = d_0 + d_1 h(x) + \cdots + d_{2n} (h(x))^{2n}.
+        (q \circ h)(x) = d_0 + d_1 h(x) + \cdots + d_{2n} (h(x))^{2n}.
     \end{align*}
     根据整式的运算律, 有
     \begin{align*}
-             & f(h(x)) g(h(x))                                                                               \\
+             & (f \circ h)(x) \cdot (g \circ h)(x)                                                           \\
         = {} & (a_0 + a_1 h(x) + \cdots + a_n (h(x))^n) (b_0 + b_1 h(x) + \cdots + b_n (h(x))^n)             \\
         = {} & (a_0 b_0) + (a_0 b_1 + a_1 b_0) h(x) + \cdots + (a_n b_n) (h(x))^{2n}                         \\
         = {} & (a_0 b_0) + (a_0 b_1 + a_1 b_0) h(x) + \cdots + (a_0 b_{2n} + a_1 b_{2n-1} + \cdots + a_n b_n \\
              & \qquad + a_{n+1} b_{n-1} + \cdots + a_{2n} b_0) (h(x))^{2n}                                   \\
         = {} & c_0 + c_1 h(x) + \cdots + c_{2n} (h(x))^{2n}                                                  \\
-        = {} & q(h(x)). \qedhere
+        = {} & (q \circ h)(x). \qedhere
     \end{align*}
-
 \end{pf}
 
 我们得到了如下命题:
@@ -210,7 +213,7 @@
     若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为整式 $h(x)$, 这样的关系仍成立.
 \end{proposition}
 
-下面, 我们来了解微商的运算法则. 先看一个例.
+下面, 我们来了解流数的运算法则. 先看一个例.
 
 \begin{example}
     考虑 $\ZZ$ 与 $\ZZ[x]$. 取
@@ -222,7 +225,7 @@
         f^{\prime} (x) = 3x^2, \quad g^{\prime} (x) = 2x + 1.
     \end{align*}
 
-    (i) $4g(x)$ 也是整式, 当然可以有微商. 因为
+    (i) $4g(x)$ 也是整式, 当然可以有流数. 因为
     \begin{align*}
         4g(x) = 4x^2 + 4x - 4,
     \end{align*}
@@ -407,7 +410,7 @@
     \begin{align*}
         f(x) g(x) = x^5 + x^4 - x^3 + 2x^2 + 2x - 2
     \end{align*}
-    的微商是
+    的流数是
     \begin{align*}
         (f(x) g(x))^{\prime} = 5x^4 + 4x^3 - 3x^2 + 4x + 2.
     \end{align*}
@@ -420,7 +423,7 @@
     \end{align*}
 \end{example}
 
-也许这不太能体现 (\myStar) 的作用: 算二个整式积的微商时, 先拆再算好像没什么不方便的. 的确如此. 可是 (\myStar) 的推论
+也许这不太能体现 (\myStar) 的作用: 算二个整式积的流数时, 先拆再算好像没什么不方便的. 的确如此. 可是 (\myStar) 的推论
 \begin{align*}
     ((f(x))^k)^{\prime} = k(f(x))^{k-1} f^{\prime}(x)
 \end{align*}
@@ -432,9 +435,9 @@
          & p(x) = (g \circ f) (x) = g(f(x)) = (x^3 + 2)^2 + (x^3 + 2) - 1, \\
          & q(x) = (f \circ g) (x) = f(g(x)) = (x^2 + x - 1)^3 + 2
     \end{align*}
-    的微商.
+    的流数.
 
-    用定义写出 $p(x)$ 的微商并不是很难. 因为
+    用定义写出 $p(x)$ 的流数并不是很难. 因为
     \begin{align*}
         p(x) = (x^6 + 4x^3 + 4) + x^3 + 2 - 1 = x^6 + 5x^3 + 5,
     \end{align*}
@@ -457,7 +460,7 @@
     (g \circ f)^{\prime}(x) = ((f(x))^k)^{\prime} = k(f(x))^{k-1} f^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x).
 \end{align*}
 
-这告诉我们什么呢? 如果我们把 $f(x)$ 看成文字 $y$, 那么 $y^k \in D[y]$ 的微商是 $ky^{k-1}$. 将此结果乘 $y = f(x) \in D[x]$ 的微商 $f^{\prime} (x)$, 就是 $(g \circ f) (x) \in D[x]$ 的微商.
+这告诉我们什么呢? 如果我们把 $f(x)$ 看成文字 $y$, 那么 $y^k \in D[y]$ 的流数是 $ky^{k-1}$. 将此结果乘 $y = f(x) \in D[x]$ 的流数 $f^{\prime} (x)$, 就是 $(g \circ f) (x) \in D[x]$ 的流数.
 
 取 $h(x) = x \in D[x]$. 那么 $(f \circ h)(x)$ 就是 $f(x)$. 因为 $(x)^{\prime} = 1$, 所以
 \begin{align*}
@@ -471,7 +474,7 @@
 幸运的事儿是, 这个猜想是正确的.
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in D[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的微商适合链规则 \term{the chain rule}:
+    设 $f(x)$, $g(x) \in D[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的流数适合链规则 \term{the chain rule}:
     \begin{align*}
         (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x).
     \end{align*}
@@ -508,7 +511,7 @@
 \end{pf}
 
 \begin{example}
-    我们用链规则计算 $p(x)$ 的微商:
+    我们用链规则计算 $p(x)$ 的流数:
     \begin{align*}
         p^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x) = (2(x^3+2) + 1)(3x^2) = 3x^2(2x^3 + 5).
     \end{align*}

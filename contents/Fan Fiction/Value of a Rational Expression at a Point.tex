@@ -1,0 +1,402 @@
+\subsection*{\ValueOfARationalExpressionAtAPoint}
+\addcontentsline{toc}{subsection}{\ValueOfARationalExpressionAtAPoint}
+\markright{\ValueOfARationalExpressionAtAPoint}
+
+本文介绍有理式在一点的值与有理函数.
+
+我们很久都没使用集的符号了. 的确, 作者经常用 ``$f(x)$ 是整式'' 代替 ``$f(x) \in \FF[x]$''; 作者经常用 ``$a$ 是数'' 代替 ``$a \in \FF$''. 不过, 当讨论函数时, 作者自己也躲不开集了. 如果读者对集、函数陌生, 读者可自行前往 ``\Prerequisites'' 复习.
+
+作者再说一件事. 或许, 我们在前面的几篇讨论有理式的文里, 偶尔用 $t$ 表示有理式——毕竟, $r$ 是 ``rational expression'', 自然地就接着用在 $r$ 后面的 $s$, $t$ 表示有理式了. 不过, 在本文, $t$ 一定是数.
+
+我们学过整式在一点的值与整式函数.
+
+\begin{definition}
+    设整式
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n.
+    \end{align*}
+    设 $t$ 是数. 我们把数
+    \begin{align*}
+        a_0 + a_1 t + \cdots + a_n t^n
+    \end{align*}
+    简单地写为 $f(t)$, 并称其为整式 $f(x)$ 在点 $t$ 的值.
+
+    顺便一提, $f(x)$ 的流数也是整式:
+    \begin{align*}
+        Df (x) = a_1 + 2a_2 x + \cdots + na_n x^{n-1}.
+    \end{align*}
+    我们把数
+    \begin{align*}
+        a_1 + 2a_2 t + \cdots + na_n t^{n-1}
+    \end{align*}
+    简单地写为 $Df (t)$.
+\end{definition}
+
+整式在一点的值适合如下性质:
+\begin{proposition}
+    设 $t$ 是数. 设 $f(x)$, $g(x)$ 是整式.
+
+    (i) 若 $f(x) = g(x)$, 则 $f(t) = g(t)$.
+
+    (ii) 若 $p(x) = f(x) + g(x)$, 则 $p(t) = f(t) + g(t)$.
+
+    (iii) 若 $q(x) = f(x) g(x)$, 则 $q(t) = f(t) g(t)$.
+\end{proposition}
+
+我们得到了如下命题:
+\begin{proposition}
+    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为数 $t$, 这样的关系仍成立.
+\end{proposition}
+
+\begin{definition}
+    设 $f(x) \in \FF[x]$. 称函数
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f_\mathrm{f} \colon$} \\
+         & t \mapsto f(t)
+    \end{align*}
+    为 $\FF$ 的整式函数. 我们也说, 这个函数是由 $\FF$ 上 $x$ 的整式 $f(x)$ 诱导的整式函数.
+\end{definition}
+
+\begin{definition}
+    设 $f_\mathrm{f}$ 与 $g_\mathrm{f}$ 是 $\FF$ 的二个整式函数. 二者的和 $f_\mathrm{f} + g_\mathrm{f}$ 定义为
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f_\mathrm{f} + g_\mathrm{f} \colon$} \\
+         & t \mapsto f_\mathrm{f} (t) + g_\mathrm{f} (t).
+    \end{align*}
+    二者的积 $f_\mathrm{f} \, g_\mathrm{f}$ 定义为
+    \begin{align*}
+         & \FF \to \FF, \tag*{$f_\mathrm{f} \, g_\mathrm{f} \colon$} \\
+         & t \mapsto f_\mathrm{f} (t) g_\mathrm{f} (t).
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x)$ 是整式. 设 $f_\mathrm{f}$, $g_\mathrm{f}$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数.
+
+    (i) 若 $f(x) = g(x)$, 则 $f_\mathrm{f} = g_\mathrm{f}$ (函数的相等).
+
+    (ii) $f(x) + g(x)$ 诱导整式函数 $f_\mathrm{f} + g_\mathrm{f}$.
+
+    (iii) $f(x) g(x)$ 诱导整式函数 $f_\mathrm{f} \, g_\mathrm{f}$.
+\end{proposition}
+
+我们将采取类似的方法讨论有理式在一点的值与有理函数.
+
+接下来的讨论会比较多; 请读者休息一会儿.
+
+\myLine
+
+我们正式引入有理式在一点的值.
+
+设 $f(x)$, $g(x)$ 是整式, 且 $f(x) \neq 0$. 我们知道, $f(x)$ 在点 $t$ 的值就是换不定元 $x$ 为数 $t$. 有理式可视为二个整式的比, 所以, $r(x) = \frac{g(x)}{f(x)}$ 在点 $t$ 的值似乎也应该是 $\frac{g(t)}{f(t)}$. 不过, 事情并不是这么简单.
+
+\begin{example}
+    设 $r(x) = \frac{1}{x+1}$, $s(x) = \frac{x}{x^2+x}$, $y(x) = \frac{x-1}{x^2-1}$. 由有理式的相等, $r(x) = s(x) = y(x)$.
+
+    设 $f(x)$, $g(x)$ 是整式, 且 $f(x) \neq 0$. 设 $f(t) \neq 0$. 不正式地说, $r(x) = \frac{g(x)}{f(x)}$ 在点 $t$ 的值是 $\frac{g(t)}{f(t)}$.
+
+    根据这个不正式的定义, $r(3) = \frac{1}{4}$, $s(3) = \frac{3}{9} = \frac{1}{3}$, $y(3) = \frac{2}{6} = \frac{1}{3}$. 所以, $r(3) = s(3) = y(3)$. 但是, $r(0) = 1$, $y(0) = \frac{-1}{-1} = 1$, $s(0)$ 是什么呢 ($x^2+x$ 在 $0$ 处的值为 $0$)? 类似地, $r(1) = \frac{1}{2}$, $s(1) = \frac{1}{2}$, $y(1)$ 是什么呢 ($x^2-1$ 在 $1$ 处的值为 $0$)? 同理, $r(-1)$, $s(-1)$, $y(-1)$ 又是什么? 会不会存在有理式 $z(x)$ 使 $z(x) = r(x)$, 且 $z(-1)$ ``有意义''?
+\end{example}
+
+上例的 ``不正式的定义'' 有一些问题. 设 $t$ 是数. 设整式 $f(x)$, $g(x)$, $u(x)$, $v(x)$ 适合 $f(x) \neq 0$, $u(x) \neq 0$, $\frac{g(x)}{f(x)} = \frac{v(x)}{u(x)}$. 设 $f(t) = 0$, 但 $u(t) \neq 0$. $\frac{v(x)}{u(x)}$ 在点 $t$ 的值是 $\frac{v(t)}{u(t)}$; 不过, $\frac{g(x)}{f(x)}$ 在点 $t$ 的值应该是什么——或者说, 不定义? 假如不定义 $\frac{g(x)}{f(x)}$ 在点 $t$ 的值, 那么相等的有理式在点 $t$ 的值就不一定相等了. 所以, 我们也应该定义 $\frac{g(x)}{f(x)}$ 在点 $t$ 的值. 我们希望相等的有理式在点 $t$ 的值是相等的 (若存在), 故我们试定义 $\frac{g(x)}{f(x)}$ 在点 $t$ 的值是 $\frac{v(t)}{u(t)}$ (因为 $u(t) \neq 0$). 由此, 我们给出
+\begin{definition}
+    设 $t$ 是数. 设 $r(x)$ 是有理式.
+
+    (i) 若存在整式 $f(x)$, $g(x)$ 适合 $f(x) \neq 0$, $r(x) = \frac{g(x)}{f(x)}$, 且 $f(t) \neq 0$, 定义 $r(x)$ 在点 $t$ 的值为
+    \begin{align*}
+        r(t) = \frac{g(t)}{f(t)}.
+    \end{align*}
+
+    (ii) 若这样的 $f(x)$, $g(x)$ 不存在, 则 $r(t)$ 是不定义的 (或者说, ``不存在的'').
+\end{definition}
+
+其实, 这个有理式在一点的值的定义还是有点小八哥的. ``若存在整式 $f(x)$, $g(x)$……''——这样的整式可能不止一对 (如果存在). 问题就是: 相等的输入能否给出相等的输出? 假如 $t^{\prime} = t$, 不难由整式在一点的值的定义看出, 因为 $(t^{\prime})^k = t^k$, 故 $g(t) = g(t^{\prime})$, $f(t) = f(t^{\prime})$. 真正关键的是: 不同的 $f(x)$, $g(x)$ 能否给出相同的结果.
+
+\begin{proposition}
+    设 $f(x)$, $g(x)$, $u(x)$, $v(x)$ 是整式, 且 $f(x) \neq 0$, $u(x) \neq 0$. 设 $t$ 是数. 若 $f(t) \neq 0$, 且 $u(t) \neq 0$, 则
+    \begin{align*}
+        \frac{g(t)}{f(t)} = \frac{v(t)}{u(t)}.
+    \end{align*}
+\end{proposition}
+
+\begin{pf}
+    因为 $\frac{g(x)}{f(x)} = \frac{v(x)}{u(x)}$, 故 $gu = fv$. 所以
+    \begin{align*}
+        g(t) u(t) = f(t) v(t).
+    \end{align*}
+    因为 $f(t) \neq 0$, 且 $u(t) \neq 0$, 故
+    \begin{align*}
+         & \frac{g(t)}{f(t)} = \frac{v(t)}{u(t)}. \qedhere
+    \end{align*}
+\end{pf}
+
+接下来, 我们可证明
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $t$ 是数. 若 $r(t)$ 存在, 且 $r = s$, 则 $s(t)$ 存在, 且
+    \begin{align*}
+        r(t) = s(t).
+    \end{align*}
+    当然, 若 $r(t)$ 不存在, 则 $s(t)$ 也不存在.
+\end{proposition}
+
+\begin{remark}
+    所以, 有理式在一点的值也适合 ``相同的输入给出相同的输出''——不论值是否存在.
+\end{remark}
+
+\begin{pf}
+    设 $r(t)$ 存在. 所以, 存在一对整式 $f(x)$, $g(x)$ 适合 $r(x) = \frac{g(x)}{f(x)}$, $f(x) \neq 0$, 且 $f(t) \neq 0$. 因为 $r(x) = s(x)$, 故 $s(x) = \frac{g(x)}{f(x)}$. 所以, $s(t)$ 亦存在, 且 $s(t) = r(t)$.
+
+    设 $r(t)$ 不存在. 我们要说明, $s(t)$ 也不存在. 用反证法. 假如 $s(t)$ 存在. 因为 $s(x) = r(x)$, 故我们可用完全一样的方法证明 $r(t)$ 也存在. 矛盾!
+\end{pf}
+
+\begin{remark}
+    设 $f(x)$, $q(x)$ 是整式. 若 $r(x)$ 是整式 $\frac{f(x) q(x)}{q(x)}$, 且 $q(x) \neq 0$, $q(t) \neq 0$, 则
+    \begin{align*}
+        r(t) = \frac{h(t)}{q(t)} = \frac{f(t) q(t)}{q(t)} = f(t),
+    \end{align*}
+    其中 $h(x) = f(x) q(x)$. 所以, 有理式在一点的值并不与整式在一点的值冲突.
+\end{remark}
+
+\begin{example}
+    设 $r(x) = \frac{1}{x+1}$, $s(x) = \frac{x}{x^2+x}$, $y(x) = \frac{x-1}{x^2-1}$.
+
+    按照新定义, $r(x)$, $s(x)$, $y(x)$ 在 $3$ 处的值都是 $\frac{1}{3}$. 尽管 $x^2 + x$ 在 $0$ 处的值为 $0$, 但按照新定义, $s(0) = r(0) = y(0) = 1$. 尽管 $x^2 - 1$ 在 $1$ 处的值为 $0$, 但按照新定义, $y(1) = s(1) = r(1) = \frac{1}{2}$.
+
+    我们证明: $r(x)$ 在 $-1$ 处的值不存在. 用反证法. 假设 $r(x)$ 在 $-1$ 处的值存在. 那么, 存在整式 $f(x)$, $g(x)$ 使 $f(x) \neq 0$, $r(x) = \frac{g(x)}{f(x)}$, 且 $f(-1) \neq 0$. 因为 $r(x) = \frac{1}{x+1}$, 故 $g(x) \cdot (x+1) = f(x) \cdot 1$, 即 $f(x) = (x+1) g(x)$. 所以 $f(-1) = 0$. 矛盾! 由此可知, $s(x)$, $y(x)$ 在 $-1$ 处的值也不存在.
+\end{example}
+
+设 $t$ 是数. 设 $r(x)$ 是有理式. 我们试讨论 $r(x)$ 在点 $t$ 的值存在的一个必要与充分条件.
+
+每一个有理式都可写为最简形. 具体地说, 存在二个整式 $F(x)$, $G(x)$ 使 $F(x) \neq 0$, $r(x) = \frac{G(x)}{F(x)}$, 且 $F(x)$ 与 $G(x)$ 互素.
+
+若 $F(t) \neq 0$, 那么 $r(t)$ 存在. 这是很显然的——见定义.
+
+若 $F(t) = 0$, 我们证明: $r(t)$ 一定不存在.
+
+先说明 $G(t) \neq 0$. 用反证法. 设 $G(t) = 0$. 既然 $F(x)$, $G(x)$ 互素, 则有整式 $u(x)$, $v(x)$ 使 $F(x) u(x) + G(x) v(x) = 1$. 所以
+\begin{align*}
+    F(t) u(t) + G(t) v(t) = 1,
+\end{align*}
+即 $0 + 0 = 1$, 矛盾!
+
+再说明 $r(t)$ 不存在. 用反证法. 假定存在整式 $f(x)$, $g(x)$ 使 $r(x) = \frac{g(x)}{f(x)}$, $f(x) \neq 0$, 且 $f(t) \neq 0$. 根据有理式相等的定义, $G(x) f(x) = F(x) g(x)$. 所以
+\begin{align*}
+    G(t) f(t) = F(t) g(t) = 0.
+\end{align*}
+因为 $G(t) \neq 0$, 故 $f(t) = 0$ (消去律). 矛盾!
+
+综上, 我们有
+\begin{proposition}
+    设 $r(x)$ 是有理式. 设 $t$ 是数. 设 $r(x)$ 的一个最简形为 $\frac{G(x)}{F(x)}$; 也就是说, 设 $r(x) = \frac{G(x)}{F(x)}$, 整式 $F(x)$, $G(x)$ 互素, 且 $F(x) \neq 0$. 则 $r(t)$ 存在的一个必要与充分条件是 $F(t) \neq 0$.
+\end{proposition}
+
+有了这些准备, 我们可以进一步地讨论有理式在一点的值的性质了.
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $t$ 是数. 设 $r(t)$, $s(t)$ 都存在.
+
+    (i) 若 $r(x) = s(x)$, 则 $r(t) = s(t)$.
+
+    (ii) 若 $r(x) + s(x) = S(x)$, 则 $S(t)$ 存在, 且 $r(t) + s(t) = S(t)$.
+
+    (iii) 若 $r(x) s(x) = P(x)$, 则 $P(t)$ 存在, 且 $r(t) s(t) = P(t)$.
+\end{proposition}
+
+\begin{pf}
+    设整式 $f(x)$, $g(x)$, $u(x)$, $v(x)$ 适合 $r(x) = \frac{g(x)}{f(x)}$, $s(x) = \frac{v(x)}{u(x)}$, $f(x) \neq 0$, $u(x) \neq 0$, $f(t) \neq 0$, $u(t) \neq 0$. 所以 $f(t) u(t) \neq 0$. 作整式 $j(x) = f(x) u(x)$. 所以 $j(t) \neq 0$.
+
+    (i) 作者不必再证一次吧?
+
+    (ii) $S(x) = r(x) + s(x) = \frac{g(x) u(x) + f(x) v(x)}{j(x)}$. 作整式 $k_1 (x) = g(x) u(x) + f(x) v(x)$. 因为 $j(t) \neq 0$, 故 $S(t)$ 存在. 则
+    \begin{align*}
+        S(t) = \frac{k_1 (t)}{j(t)} = \frac{g(t) u(t) + f(t) v(t)}{f(t) u(t)} = \frac{g(t)}{f(t)} + \frac{v(t)}{u(t)} = r(t) + s(t).
+    \end{align*}
+
+    (iii) $P(x) = r(x) s(x) = \frac{g(x) v(x)}{j(x)}$. 作整式 $k_2 (x) = g(x) v(x)$. 因为 $j(t) \neq 0$, 故 $P(t)$ 存在. 则
+    \begin{align*}
+         & P(t) = \frac{k_2 (t)}{j(t)} = \frac{g(t) v(t)}{f(t) u(t)} = \frac{g(t)}{f(t)} \cdot \frac{v(t)}{u(t)} = r(t) s(t). \qedhere
+    \end{align*}
+\end{pf}
+
+\begin{proposition}
+    设 $t$ 是数. 设 $r(x)$, $s(x)$ 是有理式, 且 $s(x) \neq 0$. 设 $r(t)$, $s(t)$ 均存在, 且 $s(t) \neq 0$. 设 $h(x) = \frac{r(x)}{s(x)}$. 则 $h(t)$ 也存在, 且
+    \begin{align*}
+        h(t) = \frac{r(t)}{s(t)}.
+    \end{align*}
+\end{proposition}
+
+\begin{remark}
+    此命题与定义似乎很相似, 但它们是不一样的!
+\end{remark}
+
+\begin{pf}
+    我们先说明: 若 $s(x) \neq 0$, 且 $s(t) \neq 0$, 则 $s^{-1} (t)$ 也存在, 且 $s^{-1} (t) = (s(t))^{-1}$. 这里, $s^{-1} (x)$ 是有理式 $\frac{1}{s(x)}$.
+
+    设整式 $f(x)$, $g(x)$ 适合 $f(x) \neq 0$, $s(x) = \frac{g(x)}{f(x)}$, $f(t) \neq 0$. 因为 $s(x) \neq 0$, 故 $g(x) \neq 0$. 因为 $s(t) = \frac{g(t)}{f(t)}$, 且 $s(t) \neq 0$, 故 $g(t) \neq 0$.
+
+    现在我们看 $s^{-1} (t)$ 是否存在. 因为 $s^{-1} (x) = \frac{f(x)}{g(x)}$, 且 $g(x) \neq 0$, $g(t) \neq 0$, 故 $s^{-1} (t)$ 存在, 且 $s^{-1} (t) = \frac{f(t)}{g(t)}$. 由此易知, $s(t) s^{-1} (t) = 1$.
+
+    有了这个结论, 命题的证明就容易多了. 因为 $h(x) = r(x) s^{-1} (x)$, 故
+    \begin{align*}
+         & h(t) = r(t) s^{-1} (t) = r(t) (s(t))^{-1} = \frac{r(t)}{s(t)}. \qedhere
+    \end{align*}
+\end{pf}
+
+我们总结一下.
+
+\begin{definition}
+    设 $t$ 是数. 设 $r(x)$ 是有理式.
+
+    (i) 若存在整式 $f(x)$, $g(x)$ 适合 $f(x) \neq 0$, $r(x) = \frac{g(x)}{f(x)}$, 且 $f(t) \neq 0$, 定义 $r(x)$ 在点 $t$ 的值为
+    \begin{align*}
+        r(t) = \frac{g(t)}{f(t)}.
+    \end{align*}
+
+    (ii) 若这样的 $f(x)$, $g(x)$ 不存在, 则 $r(t)$ 是不定义的 (或者说, ``不存在的'').
+\end{definition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x)$, $u(x)$, $v(x)$ 是整式, 且 $f(x) \neq 0$, $u(x) \neq 0$. 设 $t$ 是数. 若 $f(t) \neq 0$, 且 $u(t) \neq 0$, 则
+    \begin{align*}
+        \frac{g(t)}{f(t)} = \frac{v(t)}{u(t)}.
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $t$ 是数. 若 $r(t)$ 存在, 且 $r = s$, 则 $s(t)$ 存在, 且
+    \begin{align*}
+        r(t) = s(t).
+    \end{align*}
+    当然, 若 $r(t)$ 不存在, 则 $s(t)$ 也不存在.
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$ 是有理式. 设 $t$ 是数. 设 $r(x)$ 的一个最简形为 $\frac{G(x)}{F(x)}$; 也就是说, 设 $r(x) = \frac{G(x)}{F(x)}$, 整式 $F(x)$, $G(x)$ 互素, 且 $F(x) \neq 0$. 则 $r(t)$ 存在的一个必要与充分条件是 $F(t) \neq 0$.
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $t$ 是数. 设 $r(t)$, $s(t)$ 都存在.
+
+    (i) 若 $r(x) = s(x)$, 则 $r(t) = s(t)$.
+
+    (ii) 若 $r(x) + s(x) = S(x)$, 则 $S(t)$ 存在, 且 $r(t) + s(t) = S(t)$.
+
+    (iii) 若 $r(x) s(x) = P(x)$, 则 $P(t)$ 存在, 且 $r(t) s(t) = P(t)$.
+\end{proposition}
+
+\begin{proposition}
+    设 $t$ 是数. 设 $r(x)$, $s(x)$ 是有理式, 且 $s(x) \neq 0$. 设 $r(t)$, $s(t)$ 均存在, 且 $s(t) \neq 0$. 设 $h(x) = \frac{r(x)}{s(x)}$. 则 $h(t)$ 也存在, 且
+    \begin{align*}
+        h(t) = \frac{r(t)}{s(t)}.
+    \end{align*}
+\end{proposition}
+
+请读者休息一会儿.
+
+\myLine
+
+有了有理式在一点的值, 我们可方便地讨论有理函数.
+
+不过, 我们要注意很关键的一点——有理函数不再是 $\FF$ 到 $\FF$ 的函数.
+
+\begin{definition}
+    设 $r(x)$ 是 ($\FF$ 上 $x$ 的) 有理式\myFN{设 $f(x)$, $g(x)$ 是 $\FF$ 上 $x$ 的整式 (也就是说, $f(x)$, $g(x)$ 的系数都是 $\FF$ 的元), 且 $f(x) \neq 0$. 那么 $\frac{g(x)}{f(x)}$ 就是 $\FF$ 上 $x$ 的有理式 \term{rational expression in $x$ over $\FF$}.}. 设 $A$ 是 $\FF$ 的非空子集, 且适合: 任取 $a \in A$, $r(a)$ 存在. 称函数
+    \begin{align*}
+         & A \to \FF, \tag*{$r_\mathrm{f} \colon$} \\
+         & t \mapsto r(t)
+    \end{align*}
+    为 $A$ 到 $\FF$ 的有理函数 \term{rational function}. 我们也说, 这个函数是由 ($\FF$ 上 $x$ 的) 有理式 $r(x)$ 诱导的 $A$ 到 $\FF$ 的有理函数 \term{the rational function induced by $r(x)$}.
+\end{definition}
+
+我们在中学算学里学习的反比例函数就是有理函数.
+
+\begin{example}
+    设 $A$ 是全体不为零的实数作成的集. $A$ 当然有元 (例如, $1$). 设 $k$ 是非零的实数. 设 $r(x) = \frac{k}{x}$. 任取 $a \in A$, $r(a)$ 都是存在的. 所以, $r(x)$ 可诱导函数
+    \begin{align*}
+         & A \to \RR,                    \\
+         & t \mapsto r(t) = \frac{k}{t}.
+    \end{align*}
+    这就是反比例函数 \term{reciprocal function}.
+\end{example}
+
+\begin{definition}
+    设 $r_\mathrm{f}$ 与 $s_\mathrm{f}$ 是 $A$ 到 $\FF$ 的二个有理函数. 二者的和 $r_\mathrm{f} + s_\mathrm{f}$ 定义为
+    \begin{align*}
+         & A \to \FF, \tag*{$r_\mathrm{f} + s_\mathrm{f} \colon$} \\
+         & t \mapsto r_\mathrm{f} (t) + s_\mathrm{f} (t).
+    \end{align*}
+    二者的积 $r_\mathrm{f} \, s_\mathrm{f}$ 定义为
+    \begin{align*}
+         & A \to \FF, \tag*{$r_\mathrm{f} \, s_\mathrm{f} \colon$} \\
+         & t \mapsto r_\mathrm{f} (t) s_\mathrm{f} (t).
+    \end{align*}
+    若任取 $a \in A$, $s_\mathrm{f} (a) \neq 0$, 则二者的比 $\frac{r_\mathrm{f}}{s_\mathrm{f}}$ 定义为
+    \begin{align*}
+         & A \to \FF, \tag*{$\frac{r_\mathrm{f}}{s_\mathrm{f}} \colon$} \\
+         & t \mapsto \frac{r_\mathrm{f} (t)}{s_\mathrm{f} (t)}.
+    \end{align*}
+\end{definition}
+
+\begin{remark}
+    这里的 $r_{\mathrm{f}} (t)$ 是 $A$ 的元 $t$ 在函数 $r_{\mathrm{f}}$ 下的象 $i$. 根据函数 $r_{\mathrm{f}}$ 的定义, $i$ 就是 $r(t)$.
+
+    我们顺便看看 $r(x)$, $r(t)$, $r_\mathrm{f} (t)$ 的区别.
+
+    因为在本文里, $x$ 是不定元, 故 $r(x)$ 总是表示 ($\FF$ 上 $x$ 的) 有理式.
+
+    在本文里, $t$ 一般是 $\FF$ 的元, 故当 $t$ 是 $\FF$ 的元时, $r(t)$ 也是 $\FF$ 的元 (若 $r(x)$ 在点 $t$ 的值存在).
+
+    $r_\mathrm{f} (t)$ 表示 ``($A$ 的元) $t$ 在有理式 $r(x)$ 诱导的 ($A$ 到 $\FF$ 的) 有理函数 $r_\mathrm{f}$ 下的象'', 所以它也是 $\FF$ 的元. 一般地, $r_\mathrm{f} (t) = r(t)$.
+\end{remark}
+
+利用有理式在一点的值的性质, 我们立得
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $r_\mathrm{f}$, $s_\mathrm{f}$ 分别是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\FF$ 的有理函数.
+
+    (i) 若 $r(x) = s(x)$, 则 $r_\mathrm{f} = s_\mathrm{f}$ (函数的相等).
+
+    (ii) $r(x) + s(x)$ 诱导 ($A$ 到 $\FF$ 的, 下同) 有理函数 $r_\mathrm{f} + s_\mathrm{f}$.
+
+    (iii) $r(x) s(x)$ 诱导有理函数 $r_\mathrm{f} \, s_\mathrm{f}$.
+
+    (iv) 若对任意 $a \in A$, $s(a) \neq 0$, 则 $\frac{r(x)}{s(x)}$ 诱导有理函数 $\frac{r_\mathrm{f}}{s_\mathrm{f}}$.
+\end{proposition}
+
+Review what you have learned and take a break, will you, readers?
+
+\myLine
+
+我们以二个命题结束本文.
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $A \subset \FF$, 且 $A$ 有无限多个元. 设任取 $a \in A$, $r(a)$, $s(a)$ 均存在, 且 $r(a) = s(a)$. $r(x)$ 与 $s(x)$ 一定是相等的有理式. 通俗地说, 若系数为 $\FF$ 的元的二个有理式在无限多个地方有相同的取值, 则这二个有理式必相等.
+\end{proposition}
+
+\begin{remark}
+    这是整式的相应的命题的推广.
+\end{remark}
+
+\begin{pf}
+    设整式 $f(x)$, $g(x)$, $u(x)$, $v(x)$ 适合 $f(x) \neq 0$, $u(x) \neq 0$, $r(x) = \frac{g(x)}{f(x)}$, $s(x) = \frac{v(x)}{u(x)}$, 且任取 $a \in A$, $f(a) \neq 0$, $u(a) \neq 0$. 所以, 对任意 $a \in A$,
+    \begin{align*}
+        r(a) = s(a)
+        \iff {} & \frac{g(a)}{f(a)} = \frac{v(a)}{u(a)} \\
+        \iff {} & g(a) u(a) = f(a) v(a)                 \\
+        \iff {} & g(a) u(a) - f(a) v(a) = 0.
+    \end{align*}
+    作整式 $h(x) = g(x) u(x) - f(x) v(x)$. 所以, 对任意 $a \in A$, $h(a) = 0$. 因为 $A$ 有无限多个元, 故 $h(x)$ 是零整式. 所以
+    \begin{align*}
+        h(x) = 0
+        \iff {} & g(x) u(x) - f(x) v(x) = 0             \\
+        \iff {} & g(x) u(x) = f(x) v(x)                 \\
+        \iff {} & \frac{g(x)}{f(x)} = \frac{v(x)}{u(x)} \\
+        \iff {} & r(x) = s(x). \qedhere
+    \end{align*}
+\end{pf}
+
+用有理函数的语言转述此命题, 就是
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $A$ 是 $\FF$ 的非空子集. 设 $A$ 有无限多个元. 设 $r_{\mathrm{f}}$, $s_{\mathrm{f}}$ 是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\FF$ 的二个有理函数. 若 $r_{\mathrm{f}} = s_{\mathrm{f}}$, 则 $r(x) = s(x)$.
+\end{proposition}
+
+本文就到这里. 感谢读者读到这里.

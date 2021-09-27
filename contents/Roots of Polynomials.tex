@@ -2,156 +2,7 @@
 \addcontentsline{toc}{subsection}{\RootsOfPolynomials}
 \markright{\RootsOfPolynomials}
 
-我们回顾一下熟悉的整式函数.
-
-\begin{definition}
-    设 $a_0, a_1, \cdots, a_n \in D$. 称
-    \begin{align*}
-         & D \to D, \tag*{$f \colon$}               \\
-         & t \mapsto a_0 + a_1 t + \cdots + a_n t^n
-    \end{align*}
-    为 $D$ 的整式函数 \term{polynomial function}. 我们也说, 这个 $f$ 是由 $D$ 上 $x$ 的整式
-    \begin{align*}
-        f(x) = a_0 + a_1 x + \cdots + a_n x^n
-    \end{align*}
-    诱导的整式函数 \term{the polynomial function induced by $f$}. 不难看出, 若二个整式相等, 则其诱导的整式函数也相等.
-\end{definition}
-
-\begin{definition}
-    设 $f$ 与 $g$ 是 $D$ 的二个整式函数. 二者的和 $f+g$ 定义为
-    \begin{align*}
-         & D \to D, \tag*{$f+g \colon$} \\
-         & t \mapsto f(t) + g(t).
-    \end{align*}
-    二者的积 $fg$ 定义为
-    \begin{align*}
-         & D \to D, \tag*{$fg \colon$} \\
-         & t \mapsto f(t) g(t).
-    \end{align*}
-\end{definition}
-
-设 $f$, $g$ 是 $D$ 的二个整式函数:
-\begin{align*}
-     & D \to D, \tag*{$f \colon$}                \\
-     & t \mapsto a_0 + a_1 t + \cdots + a_n t^n, \\
-     & D \to D, \tag*{$g \colon$}                \\
-     & t \mapsto b_0 + b_1 t + \cdots + b_n t^n.
-\end{align*}
-利用 $D$ 的运算律, 可以得到
-\begin{align*}
-     & D \to D, \tag*{$f+g \colon$}                                      \\
-     & t \mapsto (a_0 + b_0) + (a_1 + b_1) t + \cdots + (a_n + b_n) t^n, \\
-     & D \to D, \tag*{$fg \colon$}                                       \\
-     & t \mapsto c_0 + c_1 t + \cdots + c_{2n} t^{2n},
-\end{align*}
-其中
-\begin{align*}
-    c_k = a_0 b_k + a_1 b_{k-1} + \cdots + a_k b_0.
-\end{align*}
-由此可得下面的命题:
-
-\begin{proposition}
-    设 $f(x)$, $g(x) \in D[x]$, $f$, $g$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数. 那么 $f+g$ 是 $f(x)+g(x)$ 诱导的整式函数, 且 $fg$ 是 $f(x)g(x)$ 诱导的整式函数.
-
-    通俗地说, 若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $D$ 的元 $t$, 这样的关系仍成立.
-\end{proposition}
-
-\begin{example}
-    考虑 $\FF$ 与 $\FF[x]$. 前面, 利用带余除法, 得到关系
-    \begin{align*}
-        8x^6 + 1 = (4x^3 + 12x - 8) \cdot 2(x-1)^2 (x+2) + (72x^2 - 96x + 33).
-    \end{align*}
-    这里 $x$ 只是一个文字, 不是数! 但是, 上面的命题告诉我们, 可以把 $x$ 看成一个数. 比如, 由上面的式可以立即看出, $8t^6 + 1$ 与 $72t^2 - 96t + 33$ 在 $t = 1$ 或 $t = -2$ 时值是一样的.
-
-    可是, 对于这样的式, 我们不能将 $x$ 改写为 $\FF$ 的元 $t$:
-    \begin{align*}
-        \deg 3x^2 < \deg 2x^3.
-    \end{align*}
-    可以看到, 若 $t=0$, 则 $3t^2 = 2t^3 = 0$, 而 $0$ 的次是 $-\infty$; 若 $t \neq 0$, 则 $3t^2$ 与 $2t^3$ 都是非零数, 次都是 $0$.
-\end{example}
-
-\begin{remark}
-    我们已经知道, 整式确定整式函数. 自然地, 有这样的问题: 整式函数能否确定整式? 一般情况下, 这个问题的答案是 no.
-
-    考虑 $4$ 元集 $V$. 作 $V$ 上 $x$ 的二个整式:
-    \begin{align*}
-        f(x) = x^4 - x, \quad g(x) = 0.
-    \end{align*}
-    显然, 这是二个不相等的整式. 但是, 任取 $t \in V$, 都有
-    \begin{align*}
-        t^4 - t = 0.
-    \end{align*}
-    因此, $f(x)$ 与 $g(x)$ 诱导的整式函数是同一函数!
-
-    不过, 在某些场合下, 整式函数可以确定整式. 之后我们还会提到这一点.
-\end{remark}
-
-\begin{remark}
-    设 $f(x) = a_0 + a_1 x + \cdots + a_n x^n \in D[x]$. 设 $t$ 是 $D$ 的元. 以后, 我们直接写
-    \begin{align*}
-        f(t) = a_0 + a_1 t + \cdots + a_n t^n.
-    \end{align*}
-    并称 $f(t)$ 是整式 $f(x)$ 在点 \term{point} $t$ 的值. 至少, 一方通行 \term{one-way traffic} 是没问题的.
-
-    顺便一提, $f(x)$ 的微商也是整式:
-    \begin{align*}
-        f^{\prime} (x) = a_1 + 2a_2 x + \cdots + na_n x^{n-1}.
-    \end{align*}
-    我们把
-    \begin{align*}
-        a_1 + 2a_2 t + \cdots + na_n t^{n-1} \in D
-    \end{align*}
-    简单地写为 $f^{\prime} (t)$.
-\end{remark}
-
-了解了整式与整式函数的关系后, 下面的这个命题就不会太突兀了.
-
-\begin{proposition}
-    设 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \geq 1$), $a \in D$. 则存在 $n-1$ 次整式 $q(x)$ ($\in D[x]$) 使
-    \begin{align*}
-        f(x) = q(x) (x-a) + f(a).
-    \end{align*}
-    根据带余除法, 这样的 $q(x)$ 一定是唯一的.
-\end{proposition}
-
-\begin{pf}
-    因为 $x-a$ 的首项系数 $1$ 是单位, 故存在 $D[x]$ 的二元 $q(x)$, $r(x)$ 使
-    \begin{align*}
-        f(x) = q(x) (x-a) + r(x), \quad \deg r(x) < \deg (x-a) = 1.
-    \end{align*}
-    所以, $r(x) = c$, $c \in D$. 用 $D$ 的元 $a$ 替换 $x$, 有
-    \begin{align*}
-        f(a) = q(a) (a-a) + c = c.
-    \end{align*}
-    所以
-    \begin{align*}
-        f(x) = q(x) (x-a) + f(a).
-    \end{align*}
-    再看这个 $q(x)$ 的次. 因为 $f(x)$ 的次不低于 $x-a$ 的次, 故
-    \begin{align*}
-         & \deg q(x) = \deg f(x) - \deg (x-a) = n-1. \qedhere
-    \end{align*}
-\end{pf}
-
-\begin{remark}
-    如果用 $D$ 的元 $b$ 替换 $x$, 则
-    \begin{align*}
-        f(b) = (b-a)q(b) + f(a),
-    \end{align*}
-    也就是说, 存在 $r \in D$ 使
-    \begin{align*}
-        f(b) - f(a) = (b-a)r.
-    \end{align*}
-    所以, 若 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \geq 1$), $a,b \in D$, 则存在 $r \in D$ 使 $f(b) - f(a) = (b-a)r$. 当 $f(x)$ 的次低于 $1$ 时, 这个命题也对 (取 $r=0$).
-
-    举个简单的例. 我们说, 不存在系数为整数的整式 $f(x)$ 使 $f(1) = f(-1) + 1$. 假如说这样的 $f$ 存在, 那么应存在整数 $r$ 使
-    \begin{align*}
-        1 = f(1) - f(-1) = (1 - (-1))r = 2r,
-    \end{align*}
-    而 $1$ 不是偶数, 矛盾.
-\end{remark}
-
-现在, 我们讨论整式的根的基本性质.
+本节讨论整式的根.
 
 \begin{definition}
     设 $f(x)$ 是 $D$ 上 $x$ 的整式. 若有 $a \in D$ 使 $f(a) = 0$, 则说 $a$ 是 (整式) $f(x)$ 的根 \term{root}.
@@ -196,7 +47,7 @@
     \begin{align*}
         f(a) = q(a) (a-a) = 0.
     \end{align*}
-    再看必要性. 设 $f(a)=0$. 根据上面的命题, 存在 $n-1$ 次整式 $q(x) \in D[x]$ 使
+    再看必要性. 设 $f(a)=0$. 根据 ``\ValueOfAPolynomialAtAPoint'' 节的命题, 存在 $n-1$ 次整式 $q(x) \in D[x]$ 使
     \begin{align*}
          & f(x) = q(a) (x-a) + f(a) = q(a) (x-a). \qedhere
     \end{align*}
@@ -233,7 +84,7 @@
 \end{pf}
 
 \begin{remark}
-    再看前面提到的 $4$ 元集 $V$. 可以看出, 因为 $V$ 的元 ``不够多'', 所以出现了取零值的非零整式.
+    再看 ``\ValueOfAPolynomialAtAPoint'' 节提到的 $4$ 元集 $V$. 可以看出, 因为 $V$ 的元 ``不够多'', 所以出现了恒取零值的非零整式.
 \end{remark}
 
 此事实的一个推论是:
@@ -276,12 +127,16 @@ $$
 根据根的定义, $-\frac{b}{2a} \in \RR$ 是 $f(x)$ 的根. 我们发现, 这个根 ``出现了'' $2$ 次, 是重复的. 我们给这样的根一个特殊点的称呼.
 
 \begin{definition}
-    设 $a \in D$ 是整式 $f(x) \in D[x]$ 的根. 那么, 存在唯一的整式 $q(x) \in D[x]$ 使
+    设 $a \in D$ 是整式 $f(x) \in D[x]$ 的根. 设 $f(x) \neq 0$. 那么, 存在唯一的整式 $q(x) \in D[x]$ 使
     \begin{align*}
-        f(x) = (x - a) q(x).
+        f(x) = (x - a) q(x),
     \end{align*}
-    若 $q(a) = 0$, 则说 $a$ 是 $f(x)$ 的一个重根 \term{multiple root}. 若 $q(a) \neq 0$, 则说 $a$ 是 $f(x)$ 的一个单根 \term{simple root}.
+    且 $q(x) \neq 0$. 若 $q(a) = 0$, 则说 $a$ 是 $f(x)$ 的一个重根 \term{multiple root}. 若 $q(a) \neq 0$, 则说 $a$ 是 $f(x)$ 的一个单根 \term{simple root}.
 \end{definition}
+
+\begin{remark}
+    任意的 $D$ 的元 $a$ 都是 $0$ 的根. 如果忽视定义的 ``$f(x) \neq 0$'' ``$q(x) \neq 0$'', 那么 $a$ 是 $0$ 的重根. 这件事过于平常, 故我们将其排除.
+\end{remark}
 
 \begin{example}
     看 $\ZZ$ 上 $x$ 的整式
@@ -300,7 +155,7 @@ $$
 \end{example}
 
 \begin{proposition}
-    设 $a \in D$ 是整式 $f(x) \in D[x]$ 的根. 则:
+    设 $a \in D$ 是整式 $f(x) \in D[x]$ 的根. 设 $f(x) \neq 0$. 则:
 
     (i) 若 $a$ 是 $f(x)$ 的重根, 则 $a$ 是 $f^{\prime} (x)$ 的根;
 
@@ -333,8 +188,13 @@ $$
     \begin{align*}
         f(x) = ax^2 + bx + c \in \RR[x], \quad a \neq 0.
     \end{align*}
-    它的微商 $f^{\prime} (x) = 2ax + b$ 恰有一个根 $t_0 = -\frac{b}{2a}$. 由上个命题, $f(x)$ 有重根相当于 $f(t_0) = 0$, 即
+    它的流数 $f^{\prime} (x) = 2ax + b$ 恰有一个根 $t_0 = -\frac{b}{2a}$. 由上个命题, $f(x)$ 有重根相当于 $f(t_0) = 0$, 即
     \begin{align*}
-        0 = f(t_0) = a \cdot \frac{b^2}{4a^2} - \frac{b^2}{2a} + c = \frac{4ac - b^2}{4a} = -\frac{\Delta}{4a}.
+        0 = f(t_0) = a \cdot \frac{b^2}{4a^2} - \frac{b^2}{2a} + c = \frac{4ac - b^2}{4a} = -\frac{\Delta}{4a},
     \end{align*}
+    其中 $\Delta = b^2 - 4ac$.
+
+    我们在中学就知道, 系数全是实数的 $1$ 元 $2$ 次方程 $at^2 + bt + c = 0$ ($a \neq 0$) 有二个相等的根的一个必要与充分条件是 $\Delta = 0$. 将 ``方程的根'' 转为 ``整式的根'', 就有: $f(x)$ 有二个相等的根的一个必要与充分条件是 $\Delta = 0$.
+
+    当然, 读者也不难看出: 不难看出, ``(至少) 有二个相等的根'' 相当于 ``有重根''.
 \end{example}

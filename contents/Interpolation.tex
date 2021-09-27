@@ -55,7 +55,7 @@
     y = x^2 + x - 1.
 \end{align*}
 
-在初中, 一般用左 $y$ 右 $x$ 的等式表示函数 (的解析式). 这种表示法强调因变元 \term{dependent variable} $y$ 与自变元 \term{independent variable} $x$ 的关系. 不过, 既然我们有 $f(x)$ 这样的记号, 那么因变元就不必写出了. 并且, 我们在前节提到, 我们不再区分整式与整式函数. 所以, 为方便, 我们用另一种方式叙述这二个问题:
+在初中, 一般用左 $y$ 右 $x$ 的等式表示函数 (的解析式). 这种表示法强调因变元 \term{dependent variable} $y$ 与自变元 \term{independent variable} $x$ 的关系. 不过, 既然我们有 $f(x)$ 这样的记号, 那么因变元就不必写出了. 所以, 为方便, 我们用另一种方式叙述这二个问题:
 
 \begin{example}
     求次为 $1$ 的整式 $f(x)$, 使 $f(-1)=2$, $f(1)=3$.
@@ -285,7 +285,7 @@
     \begin{align*}
         N_{n+1} (x) = (x - x_i) \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell).
     \end{align*}
-    二边求微商, 有
+    二边求流数, 有
     \begin{align*}
         N_{n+1} (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell) + (x - x_i) \left( \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} (x - x_\ell) \right)^{\prime}.
     \end{align*}
@@ -473,7 +473,7 @@
     \begin{align*}
         N_{\ell + 1} (x) = P(x) (x - x_{\ell}).
     \end{align*}
-    二边求微商, 有
+    二边求流数, 有
     \begin{align*}
         N_{\ell + 1}^{\prime} (x) = P^{\prime} (x) (x - x_{\ell}) + P(x).
     \end{align*}

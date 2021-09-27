@@ -49,7 +49,7 @@
 \begin{definition}
     设 $r(x)$, $s(x)$ 是有理式.
 
-    (i) 若存在整式 $f(x)$, $g(x)$ 适合 $g(x) \neq 0$, $s(x) = \frac{g(x)}{f(x)}$, 且 $(f \circ r)(x) = f(r(x)) \neq 0$, 定义
+    (i) 若存在整式 $f(x)$, $g(x)$ 适合 $f(x) \neq 0$, $s(x) = \frac{g(x)}{f(x)}$, 且 $(f \circ r)(x) = f(r(x)) \neq 0$, 定义
     \begin{align*}
         (s \circ r)(x) = s(r(x)) = \frac{(g \circ r)(x)}{(f \circ r)(x)} = \frac{g(r(x))}{f(r(x))}.
     \end{align*}
@@ -57,7 +57,7 @@
 
     在语境明确的情况下, ``$(x)$'' 可不写出.
 
-    (ii) 若这样的 $f(x)$, $g(x)$ 不存在, 则 $(s \circ r)(x)$ 是未定义的 (或者说, ``不存在的'').
+    (ii) 若这样的 $f(x)$, $g(x)$ 不存在, 则 $(s \circ r)(x)$ 是不定义的 (或者说, ``不存在的'').
 \end{definition}
 
 其实, 作者给出的有理式与有理式的复合的定义还是有点小八哥的. ``若存在整式 $f(x)$, $g(x)$……''——这样的整式可能不止一对 (如果存在). 问题就是: 相等的输入能否给出相等的输出? 假如 $r^{\prime} = r$, 不难由有理式与整式的复合的定义看出, 因为 $(r^{\prime})^k = r^k$, 故 $g \circ r = g \circ r^{\prime}$, $f \circ r = f \circ r^{\prime}$. 真正关键的是: 不同的 $f$, $g$ 能否给出相同的结果.
@@ -100,13 +100,12 @@
 \end{pf}
 
 \begin{remark}
-    若 $s$ 是整式 $\frac{fq}{q}$, 且 $q \neq 0$, $q \circ r \neq 0$, 则
+    设 $f$, $q$ 是整式. 若 $s$ 是整式 $\frac{fq}{q}$, 且 $q \neq 0$, $q \circ r \neq 0$, 则
     \begin{align*}
-        s \circ r = \frac{(fq) \circ r}{q \circ r} = \frac{(f \circ r) \cdot (q \circ r)}{q \circ r} = q \circ r.
+        s \circ r = \frac{(fq) \circ r}{q \circ r} = \frac{(f \circ r) \cdot (q \circ r)}{q \circ r} = f \circ r.
     \end{align*}
     所以, 有理式与有理式的复合并不与有理式与整式的复合冲突.
 \end{remark}
-
 
 还有一点, 这个定义或许有些不自然——的确, 它不像有理式与整式的复合那样, 直接替换 $s(x)$ 的 $x$ 为 $r(x)$ 即可. 我们还要关心复合是否存在. 但, 不管怎么样, 我们看一些例.
 
@@ -210,7 +209,7 @@ $s \circ r$ 不存在, 意味着对任意适合条件 $s = \frac{g}{f}$, $f \neq
 \end{align*}
 即 $0 + 0 = 1$, 矛盾!
 
-再说明 $s \circ r$ 不存在. 用反证法. 若存在整式 $f$, $g$ 使 $s = \frac{g}{f}$, $f \neq 0$, 且 $f \circ r \neq 0$. 根据有理式相等的定义, $Gf = Fg$. 所以
+再说明 $s \circ r$ 不存在. 用反证法. 假定存在整式 $f$, $g$ 使 $s = \frac{g}{f}$, $f \neq 0$, 且 $f \circ r \neq 0$. 根据有理式相等的定义, $Gf = Fg$. 所以
 \begin{align*}
     (G \circ r) \cdot (f \circ r) = (F \circ r) \cdot (g \circ r) = 0.
 \end{align*}
@@ -232,13 +231,13 @@ $s \circ r$ 不存在, 意味着对任意适合条件 $s = \frac{g}{f}$, $f \neq
 \begin{definition}
     设 $r$, $s$ 是有理式.
 
-    (i) 若存在整式 $f$, $g$ 适合 $g \neq 0$, $s = \frac{g}{f}$, 且 $f \circ r \neq 0$, 定义
+    (i) 若存在整式 $f$, $g$ 适合 $f \neq 0$, $s = \frac{g}{f}$, 且 $f \circ r \neq 0$, 定义
     \begin{align*}
         s \circ r = \frac{g \circ r}{f \circ r}.
     \end{align*}
     这称为有理式 $r$ 与 $s$ 的复合. 显然, $s \circ r$ 仍为有理式.
 
-    (ii) 若这样的 $f$, $g$ 不存在, 则 $s \circ r$ 是未定义的 (或者说, ``不存在的'').
+    (ii) 若这样的 $f$, $g$ 不存在, 则 $s \circ r$ 是不定义的 (或者说, ``不存在的'').
 \end{definition}
 
 \begin{proposition}
@@ -309,7 +308,7 @@ $s \circ r$ 不存在, 意味着对任意适合条件 $s = \frac{g}{f}$, $f \neq
 \end{pf}
 
 \begin{proposition}
-    设 $s$, $t$ 是有理式, 且 $t \neq 0$. 设 $s \circ r$, $t \circ r$ 均存在, 且 $t \circ r \neq 0$. 设 $h = \frac{s}{t}$. 则 $h \circ r$ 也存在, 且
+    设 $r$, $s$, $t$ 是有理式, 且 $t \neq 0$. 设 $s \circ r$, $t \circ r$ 均存在, 且 $t \circ r \neq 0$. 设 $h = \frac{s}{t}$. 则 $h \circ r$ 也存在, 且
     \begin{align*}
         h \circ r = \frac{s \circ r}{t \circ r}.
     \end{align*}
