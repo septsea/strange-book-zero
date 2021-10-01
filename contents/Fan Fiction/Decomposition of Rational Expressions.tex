@@ -1,0 +1,689 @@
+\subsection*{\DecompositionOfRationalExpressions}
+\addcontentsline{toc}{subsection}{\DecompositionOfRationalExpressions}
+\markright{\DecompositionOfRationalExpressions}
+
+本文介绍有理式的分解. 具体地说, 介绍如何写有理式为若干个 ``简单的'' 有理式的和.
+
+或许这听上去有些陌生; 不过, 读者在中学算学 (或小学算学) 里一定见过这样的问题:
+\begin{quotation}
+    计算
+    \begin{align*}
+        S = 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \frac{1}{15} + \frac{1}{21} + \frac{1}{28} + \frac{1}{36} + \frac{1}{45} + \frac{1}{55}.
+    \end{align*}
+\end{quotation}
+我们该怎么计算这个和呢? 难道, 我们一个一个地加吗? 或许, 这只不过是 $10$ 个有理数的和, 所以即使是一个一个地加, 也不是特别难, 对吧? 那读者试试下面的 $S^{\prime}$?
+\begin{align*}
+    S^{\prime}
+    = {} & 1 + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \frac{1}{15} + \frac{1}{21} + \frac{1}{28} + \frac{1}{36} + \frac{1}{45} + \frac{1}{55} + \frac{1}{66} + \frac{1}{78} \\
+         & \qquad + \frac{1}{91} + \frac{1}{105} + \frac{1}{120} + \frac{1}{136} + \frac{1}{153} + \frac{1}{171} + \frac{1}{190} + \frac{1}{210}.
+\end{align*}
+一个一个地加并不是坏方法. 对计算机而言, 求这里的 $S$ (或 $S^{\prime}$) 只不过是 a piece of cake. However, we are human beings, after all; calculating fractions without writing anything down is generally a challenging task (at least for the writer of the article). Let's think of a trick (or a strategy), just as Carl Friedrich Gauß had done.
+
+以简单的 $S$ 为例. 首先, 改写一下 $S$:
+\begin{align*}
+    S = \frac{1}{1} + \frac{1}{3} + \frac{1}{6} + \frac{1}{10} + \frac{1}{15} + \frac{1}{21} + \frac{1}{28} + \frac{1}{36} + \frac{1}{45} + \frac{1}{55}.
+\end{align*}
+我们看 $\frac{1}{\ast}$ 的 $\ast$. $3 - 1 = 2$, $6 - 3 = 3$, $10 - 6 = 4$, $\cdots$, $55 - 45 = 10$. 也就是说,
+\begin{align*}
+     & 1 = 1,                                       \\
+     & 3 = 1 + 2,                                   \\
+     & 6 = 1 + 2 + 3,                               \\
+     & 10 = 1 + 2 + 3 + 4,                          \\
+     & \cdots \cdots \cdots \cdots \cdots \cdots
+    \cdots \cdots \cdots \cdots \cdots \cdots,      \\
+     & 55 = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10.
+\end{align*}
+我们知道
+\begin{align*}
+    1 + 2 + 3 + \cdots + n = \frac{n(n+1)}{2}.
+\end{align*}
+所以
+\begin{align*}
+    S
+    = {} & \frac{2}{2} + \frac{2}{6} + \frac{2}{12} + \frac{2}{20} + \frac{2}{30}
+    + \frac{2}{42} + \frac{2}{56} + \frac{2}{72} + \frac{2}{90} + \frac{2}{110}   \\
+    = {} & \frac{2}{1 \cdot 2} + \frac{2}{2 \cdot 3} + \frac{2}{3 \cdot 4}
+    + \frac{2}{4 \cdot 5} + \frac{2}{5 \cdot 6} + \frac{2}{6 \cdot 7}
+    + \frac{2}{7 \cdot 8}                                                         \\
+         & \qquad + \frac{2}{8 \cdot 9} + \frac{2}{9 \cdot 10}
+    + \frac{2}{10 \cdot 11}.
+\end{align*}
+接下来, 我们想办法处理 $\frac{2}{n(n+1)}$. 这该怎么处理呢?
+
+我们知道, 有理数的加、减规则是
+\begin{align*}
+    \frac{b}{a} \pm \frac{d}{c} = \frac{bc \pm ad}{ac}.
+\end{align*}
+取 $a = n$, $c = n+1$, 就有
+\begin{align*}
+    \frac{b}{n} \pm \frac{d}{n+1} = \frac{b(n+1) \pm nd}{n(n+1)} = \frac{(b \pm d)n + b}{n(n+1)}.
+\end{align*}
+由此可见, 取 $b = d = 2$, 再取 $\pm$ 为 $-$, 就有
+\begin{align*}
+    \frac{2}{n} - \frac{2}{n+1} = \frac{2}{n(n+1)}.
+\end{align*}
+所以
+\begin{align*}
+     & \frac{2}{1 \cdot 2} = \frac{2}{1} - \frac{2}{2},     \\
+     & \frac{2}{2 \cdot 3} = \frac{2}{2} - \frac{2}{3},     \\
+     & \frac{2}{3 \cdot 4} = \frac{2}{3} - \frac{2}{4},     \\
+     & \frac{2}{4 \cdot 5} = \frac{2}{4} - \frac{2}{5},     \\
+     & \cdots \cdots \cdots \cdots \cdots \cdots
+    \cdots \cdots \cdots \cdots \cdots \cdots,              \\
+     & \frac{2}{10 \cdot 11} = \frac{2}{10} - \frac{2}{11}.
+\end{align*}
+从而
+\begin{align*}
+    S = \frac{2}{1} - \frac{2}{11} = \frac{20}{11}.
+\end{align*}
+
+用完全类似的手段, 读者可算出 $S^{\prime} = \frac{40}{21}$. (留给读者作为练习.)
+
+这里, 作者留下一个问题, 就当是给读者的练习: 若 $n$ 是正整数, 证明
+\begin{align*}
+    \frac{1}{1^2} + \frac{1}{2^2} + \frac{1}{3^2} + \cdots + \frac{1}{n^2} < 2.
+\end{align*}
+\textit{Hint: note that $\frac{1}{n^2} = \frac{4}{4n^2} < \frac{4}{4n^2 - 1}$.}\myFN{Well, maybe some readers feel like finding what the left-hand side is. The task is not easy, though. There is no ``nice'' closed-form solution for $1+\frac{1}{2^2}+\frac{1}{3^2}+\cdots+\frac{1}{n^2}$.}
+
+虽然本文的目的并不是深入地研究有理数的和, 但读者似乎也能看到, 使有理数裂开是一个好方法.
+
+仿照前面求 $S$ 的思路, 我们不难看出
+\begin{align*}
+    \frac{2}{x(x+1)} = \frac{2}{x} - \frac{2}{x+1}.
+\end{align*}
+读者可自行作减法相信上式. 这就是本文将讨论的 ``有理式的分解''. 将 $x$ 替换为正整数 $n$, 则因为 $x(x+1)$, $x$, $x+1$ 在正整数的值都不是 $0$, 故上式的三个有理式在点 $n$ 的值都存在. 因此, 研究有理式的分解有助于我们写出 ``有理数的分解''.
+
+请读者休息一会儿; 我们将介绍几个命题——它们是有理式的分解的理论基础.
+
+\myLine
+
+我们继续.
+
+\begin{definition}
+    设 $r$ 是有理式.
+
+    (i) 若存在二个整式 $f$, $g$ 使 $f \neq 0$, $\deg g < \deg f$, 且 $r = \frac{g}{f}$, 则 $r$ 是真有理式 \term{proper rational expression}.
+
+    (ii) 若这样的整式不存在, 则 $r$ 是假有理式 \term{improper rational expression}.
+\end{definition}
+
+\begin{remark}
+    这里的 ``真'' ``假'' 不是 ``true'' ``false''!
+\end{remark}
+
+\begin{example}
+    设 $f$ 是整式. 若 $f \neq 0$, 则 $f$ 是假有理式.
+
+    用反证法. 设 $f$ 是真有理式. 则存在整式 $p$, $q$ 使 $p \neq 0$, $\deg q < \deg p$, 且 $f = \frac{q}{p}$. 所以 $fp = q$. 因为 $f \neq 0$, 故 $\deg f \geq 0$. 从而
+    \begin{align*}
+        \deg p > \deg q = \deg f + \deg p \geq \deg p.
+    \end{align*}
+    这是矛盾!
+\end{example}
+
+\begin{proposition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f \neq 0$, $u \neq 0$. 设 $\frac{g}{f} = \frac{v}{u}$.
+
+    (i) 若 $\deg g < \deg f$, 则 $\deg v < \deg u$. 所以, 有理式不可能既是真有理式又是假有理式.
+
+    (ii) 若 $\deg g \geq \deg f$, 则 $\deg v \geq \deg u$. 所以, 若某有理式可写为次较高的整式与次较低的整式的比, 则它一定是假有理式.
+\end{proposition}
+
+\begin{pf}
+    由 $\frac{g}{f} = \frac{v}{u}$ 可知 $gu = fv$, 故
+    \begin{align*}
+        \deg g + \deg u = \deg f + \deg v.
+    \end{align*}
+
+    (i) 设 $\deg g < \deg f$.
+
+    若 $g = 0$, 则 $fv = 0$. 因为 $f \neq 0$, 故 $v = 0$. 所以 $\deg v$ 低于 $\deg u$.
+
+    若 $g \neq 0$, 则 $\deg g \geq 0$. 故
+    \begin{align*}
+        \deg u - \deg v = \deg f - \deg g > 0
+    \end{align*}
+    因为 $fv \neq 0$, 故 $v \neq 0$. 所以
+    \begin{align*}
+        \deg u = (\deg u - \deg v) + \deg v > 0 + \deg v = \deg v.
+    \end{align*}
+
+    (ii) 用反证法. 设 $\deg v < \deg u$. 用完全一样的手法, 可证 $\deg g < \deg f$. 这与假定矛盾!
+\end{pf}
+
+由此可知
+\begin{proposition}
+    设 $r$, $s$ 是有理式. 若 $r = s$, 且 $r$ 是真 (假) 有理式, 则 $s$ 也是真 (假) 有理式.
+\end{proposition}
+
+\begin{example}
+    $\frac{x+1}{x}$ 是假有理式. $\frac{x}{x+1}$ 也是假有理式. $\frac{1}{x^2 - 1}$ 是真有理式. $0 = \frac{0}{1}$ 也是真有理式.
+\end{example}
+
+有了真有理式的概念, 不难引出如下命题.
+
+\begin{proposition}
+    设 $r$ 是有理式.
+
+    (i) 存在整式 $p$ 与真有理式 $s$ 使 $r = p + s$.
+
+    (ii) 若整式 $p^{\prime}$ 与真有理式 $s^{\prime}$ 适合 $p + s = p^{\prime} + s^{\prime}$, 则 $p = p^{\prime}$, 且 $s = s^{\prime}$.
+\end{proposition}
+
+\begin{pf}
+    (i) 设整式 $f$, $g$ 适合 $f \neq 0$, $r = \frac{g}{f}$. 根据带余除法, 存在整式 $Q$, $R$ 使
+    \begin{align*}
+        g = fQ + R, \quad \deg R < \deg f.
+    \end{align*}
+    所以
+    \begin{align*}
+        \frac{g}{f} = Q + \frac{R}{f},
+    \end{align*}
+    其中 $Q$ 是整式, 而 $\frac{R}{f}$ 是真有理式. 取 $p = Q$, $s = \frac{R}{f}$ 即可.
+
+    (ii) 设整式 $p^{\prime}$ 与真有理式 $s^{\prime}$ 适合
+    \begin{align*}
+        p + s = p^{\prime} + s^{\prime}.
+    \end{align*}
+    所以
+    \begin{align*}
+        p - p^{\prime} = s^{\prime} - s
+    \end{align*}
+    设整式 $u_1$, $v_1$, $u_2$, $v_2$ 适合 $u_1 \neq 0$, $u_2 \neq 0$, $\deg v_1 < \deg u_1$, $\deg v_2 < \deg u_2$, 且 $s^{\prime} = \frac{v_1}{u_1}$, $s = \frac{v_2}{u_2}$. 则
+    \begin{align*}
+        p - p^{\prime} = \frac{v_1}{u_1} - \frac{v_2}{u_2} = \frac{v_1 u_2 - u_1 v_2}{u_1 u_2}.
+    \end{align*}
+    所以
+    \begin{align*}
+        (p - p^{\prime}) (u_1 u_2) = v_1 u_2 - u_1 v_2.
+    \end{align*}
+    因为 $\deg v_1 < \deg u_1$, $\deg v_2 < \deg u_2$, 故
+    \begin{align*}
+         & \deg {(v_1 u_2)} = \deg v_1 + \deg u_2 < \deg u_1 + \deg u_2 = \deg {(u_1 u_2)}, \\
+         & \deg {(u_1 v_2)} = \deg u_1 + \deg v_2 < \deg u_1 + \deg u_2 = \deg {(u_1 u_2)}.
+    \end{align*}
+    从而
+    \begin{align*}
+        \deg {(v_1 u_2 - u_1 v_2)} < \deg {(u_1 u_2)}.
+    \end{align*}
+    假如 $p - p^{\prime} \neq 0$, 则
+    \begin{align*}
+        \deg {((p - p^{\prime})(u_1 u_2))} = \deg {(p - p^{\prime})} + \deg {(u_1 u_2)} \geq \deg {(u_1 u_2)}.
+    \end{align*}
+    所以
+    \begin{align*}
+        \deg {(u_1 u_2)} \leq \deg {((p - p^{\prime})(u_1 u_2))} = \deg {(v_1 u_2 - u_1 v_2)} < \deg {(u_1 u_2)},
+    \end{align*}
+    矛盾! 故 $p - p^{\prime} = 0$. 从而 $s^{\prime} - s = 0$. 从而 $p = p^{\prime}$, 且 $s = s^{\prime}$.
+\end{pf}
+
+由此不难得到如下命题:
+\begin{proposition}
+    每一个有理式均可唯一地写为一个整式与一个有理式的和. 具体地说, 我们有:
+
+    (i) 真有理式可唯一地写为零整式与自身的和;
+
+    (ii) 整式可唯一地写为自身与零有理式的和;
+
+    (iii) 不是整式的假有理式可唯一地写为非零的整式与非零的真有理式的和.
+\end{proposition}
+
+\begin{example}
+    设 $f = x^3 - 3x + 2$, $g = x^6 + 1$. 我们试写 $\frac{g}{f}$ 为整式与真有理式的和.
+
+    利用带余除法, 我们有
+    \begin{align*}
+        g = f \cdot (x^3 + 3x - 2) + (9x^2 - 12x + 5).
+    \end{align*}
+    所以
+    \begin{align*}
+        \frac{g}{f} = (x^3 + 3x - 2) + \underbrace{\frac{9x^2 - 12x + 5}{x^3 - 3x + 2}}_{s}.
+    \end{align*}
+    至此, 我们已化 $\frac{g}{f}$ 为整式加真有理式的形式. $s$ 还能接着分解吗? 当然, 我们没法再写 $s$ 为非零的整式加真有理式的形式. 所以, 我们需要其他类型的分解. 我们希望像写 $\frac{2}{x(x+1)} = \frac{2}{x} - \frac{2}{x+1}$ 那样分解 $s$.
+\end{example}
+
+看来, 通过带余除法, 有理式的分解可转变为真有理式的分解. 不过, 进一步分解真有理式需要更多的整式知识.
+
+请读者再休息一下. 我们即将讨论真有理式的分解.
+
+\myLine
+
+我们继续.
+
+\begin{proposition}
+    设整式 $p_1$, $p_2$, $\cdots$, $p_n$ PRP, 且 $p_1$, $p_2$, $\cdots$, $p_n$ 均不为零. 设 $f = p_1 p_2 \cdots p_n$. 设整式 $Q_i$ 适合 $p_1 p_2 \cdots p_n = p_i Q_i$ ($i$ 取 $1$ 至 $n$ 间的整数, 下同; 此条件就是说 $Q_i = \frac{f}{p_i}$). 设整式 $g$ 适合 $\deg g < \deg f$.
+
+    (i) $Q_1$, $Q_2$, $\cdots$, $Q_n$ 互素.
+
+    (ii) 存在整式 $u_1$, $u_2$, $\cdots$, $u_n$ 使
+    \begin{align*}
+        u_1 Q_1 + u_2 Q_2 + \cdots + u_n Q_n = g.
+    \end{align*}
+
+    (iii) 存在整式 $v_1$, $v_2$, $\cdots$, $v_n$ 使
+    \begin{align*}
+        v_1 Q_1 + v_2 Q_2 + \cdots + v_n Q_n = g,
+    \end{align*}
+    且 $\deg v_i < \deg p_i$.
+
+    (iv) 若整式 $v_1^{\prime}$, $v_2^{\prime}$, $\cdots$, $v_n^{\prime}$ 适合
+    \begin{align*}
+        v_1^{\prime} Q_1 + v_2^{\prime} Q_2 + \cdots + v_n^{\prime} Q_n = g,
+    \end{align*}
+    且 $\deg v_i^{\prime} < \deg p_i$, 则 $v_i = v_i^{\prime}$, 其中 $v_i$ 是 (iii) 里的 $v_i$.
+
+    (v) 存在唯一的一组整式 $v_1$, $v_2$, $\cdots$, $v_n$ 使
+    \begin{align*}
+        \frac{v_1}{p_1} + \frac{v_2}{p_2} + \cdots + \frac{v_n}{p_n} = \frac{g}{f},
+    \end{align*}
+    且 $\deg v_i < \deg p_i$.
+\end{proposition}
+
+\begin{pf}
+    (i) 用反证法. 若 $Q_1$, $Q_2$, $\cdots$, $Q_n$ 不互素, 则存在不可约的整式 $w$, $w$ 是 $Q_1$, $Q_2$, $\cdots$, $Q_n$ 的公因子. 因为 $w$ 是 $Q_1$ 的因子, 且 $w$ 是不可约的, 故 $w$ 是 $p_2$, $p_3$, $\cdots$, $p_n$ 的其中一个的因子. 因为 $p_2$, $p_3$, $\cdots$, $p_n$ PRP, 故存在 $2$, $3$, $\cdots$, $n$ 中的某数 $j$, 使 $w$ 是 $p_j$ 的因子, 但 $w$ 不是 $p_k$ 的因子, $k$ 是 $2$, $3$, $\cdots$, $n$ 中不等于 $j$ 的数. 因为 $w$ 也是 $Q_j$ 的因子, 故 $w$ 是 $p_1$, $\cdots$, $p_{j-1}$, $p_{j+1}$, $\cdots$, $p_n$ 的其中一个的因子. 因为 $w$ 不是 $p_k$ 的因子 ($k$ 是 $2$, $3$, $\cdots$, $n$ 中不等于 $j$ 的数), 故 $w$ 必为 $p_1$ 的因子. 所以 $w$ 是 $p_1$ 与 $p_j$ 的公因子. 这跟 $p_1$ 与 $p_j$ 互素矛盾!
+
+    (ii) 由 (i) 知, $Q_1$, $Q_2$, $\cdots$, $Q_n$ 互素. 所以, 由 Bézout 等式知, 存在整式 $\alpha_1$, $\alpha_2$, $\cdots$, $\alpha_n$ 使
+    \begin{align*}
+        \alpha_1 Q_1 + \alpha_2 Q_2 + \cdots + \alpha_n Q_n = 1.
+    \end{align*}
+    所以
+    \begin{align*}
+        g
+        = {} & g \cdot 1                                                                         \\
+        = {} & g \cdot (\alpha_1 Q_1 + \alpha_2 Q_2 + \cdots + \alpha_n Q_n)                     \\
+        = {} & g \cdot (\alpha_1 Q_1) + g \cdot (\alpha_2 Q_2) + \cdots + g \cdot (\alpha_n Q_n) \\
+        = {} & (g\alpha_1) Q_1 + (g\alpha_2) Q_2 + \cdots + (g\alpha_n) Q_n.
+    \end{align*}
+    取 $u_i = g\alpha_i$ 即可.
+
+    (iii) 若 $n = 1$, 则 $u_1 Q_1 = g$. 所以
+    \begin{align*}
+        \deg p_1 - \deg u_1
+        = {} & (\deg p_1 + \deg Q_1) - (\deg u_1 + \deg Q_1) \\
+        = {} & \deg {(p_1 Q_1)} - \deg {(u_1 Q_1)}           \\
+        = {} & \deg f - \deg g                               \\
+        > {} & 0.
+    \end{align*}
+    取 $v_1 = u_1$ 即可.
+
+    设 $n \geq 2$. 设 $j$ 是 $1$ 至 $n-1$ 间的整数. 根据带余除法, 存在整式 $h_i$, $v_i$ 使
+    \begin{align*}
+        u_j = h_j p_j + v_j, \quad \deg v_j < \deg p_j.
+    \end{align*}
+    所以
+    \begin{align*}
+        u_j Q_j = h_j p_j Q_j + v_j Q_j = h_j f + v_j Q_j = v_j Q_j + (p_n h_j) Q_n.
+    \end{align*}
+    所以
+    \begin{align*}
+             & u_1 Q_1 + u_2 Q_2 + \cdots + u_{n-1} Q_{n-1}                                                                      \\
+        = {} & v_1 Q_1 + (p_n h_1) Q_n + v_2 Q_2 + (p_n h_2) Q_n + \cdots + v_{n-1} Q_{n-1} + (p_n h_{n-1}) Q_n                  \\
+        = {} & (v_1 Q_1 + v_2 Q_2 + \cdots + v_{n-1} Q_{n-1}) + \underbrace{(p_n h_1 + p_n h_2 + \cdots + p_n h_{n-1})}_{t} Q_n.
+    \end{align*}
+    从而
+    \begin{align*}
+        g
+        = {} & u_1 Q_1 + u_2 Q_2 + \cdots + u_{n-1} Q_{n-1} + u_n Q_n                                              \\
+        = {} & {\underbrace{v_1 Q_1 + v_2 Q_2 + \cdots + v_{n-1} Q_{n-1}}_{s}} + \underbrace{(t + u_n)}_{v_n} Q_n.
+    \end{align*}
+    根据带余除法, $v_1$, $v_2$, $\cdots$, $v_{n-1}$ 的次分别低于 $p_1$, $p_2$, $\cdots$, $p_{n-1}$ 的次. 我们要证明 $v_n$ 的次低于 $p_n$ 的次.
+
+    我们先说明 $s$ 的次低于 $f$ 的次. 因为 $v_j$ 的次低于 $p_j$ 的次, 故 $v_j Q_j$ 的次低于 $p_j Q_j = f$ 的次. $s$ 是这些 $v_j Q_j$ 的和, 故 $s$ 的次也低于 $f$ 的次.
+
+    不难看出 $v_n Q_n = g - s$, 且 $\deg {(g - s)} < \deg f$. 所以
+    \begin{align*}
+        \deg p_n - \deg v_n
+        = {} & (\deg p_n + \deg Q_n) - (\deg v_n + \deg Q_n) \\
+        = {} & \deg {(p_n Q_n)} - \deg {(v_n Q_n)}           \\
+        = {} & \deg f - \deg {(g - s)}                       \\
+        > {} & 0.
+    \end{align*}
+
+    (iv) 设整式 $v_1$, $v_1^{\prime}$, $v_2$, $v_2^{\prime}$, $\cdots$, $v_n$, $v_n^{\prime}$ 适合
+    \begin{align*}
+        v_1 Q_1 + v_2 Q_2 + \cdots + v_n Q_n = v_1^{\prime} Q_1 + v_2^{\prime} Q_2 + \cdots + v_n^{\prime} Q_n,
+    \end{align*}
+    且 $\deg v_i < \deg p_i$, $\deg v_i^{\prime} < \deg p_i$. 任取 $1$ 至 $n$ 间的整数 $i$. 则
+    \begin{align*}
+        v_i Q_i - v_i^{\prime} Q_i
+        = {} & (v_1^{\prime} Q_1 + \cdots + v_{i-1}^{\prime} Q_{i-1} + v_{i+1}^{\prime} Q_{i+1} + \cdots + v_n^{\prime} Q_n) \\
+             & \quad - (v_1 Q_1 + \cdots + v_{i-1} Q_{i-1} + v_{i+1} Q_{i+1} + \cdots +  v_n Q_n)                            \\
+        = {} & p_i d.
+    \end{align*}
+    (因为 $p_i$ 是 $Q_1$, $\cdots$, $Q_{i-1}$, $Q_{i+1}$, $\cdots$, $Q_n$ 这 $n-1$ 个整式的因子.) 所以
+    \begin{align*}
+        (v_i - v_i^{\prime}) Q_i = p_i d.
+    \end{align*}
+    因为 $p_i$ 与 $Q_i$ 互素 (PRP 的性质), 故 $p_i$ 一定是 $v_i - v_i^{\prime}$ 的因子. 不过, $v_i - v_i^{\prime}$ 的次低于 $p_i$ 的次, 故 $v_i - v_i^{\prime}$ 一定是 $0$. 所以, $v_i = v_i^{\prime}$.
+
+    (v) 结合 (iii) (iv), 将 (iii) 的结果的二侧同乘 $f^{-1}$ 即可. 如果这里的有理式表示不唯一, 那么将与 (iv) 矛盾.
+\end{pf}
+
+\begin{example}
+    我们看前面的例:
+    \begin{align*}
+        \underbrace{\frac{x^6 + 1}{x^3 - 3x + 2}}_{r} = (x^3 + 3x - 2) + \underbrace{\frac{9x^2 - 12x + 5}{x^3 - 3x + 2}}_{s}.
+    \end{align*}
+    我们已化假有理式 $r$ 为整式加真有理式 $s$ 的形式. 我们继续分解 $s$. 因为 $x^3 - 3x + 2 = (x - 1)^2 (x + 2)$, 且 $(x - 1)^2$ 与 $x + 2$ PRP (二个互素的整式当然 PRP), 故故存在唯一的整式 $p$, $q$, 使
+    \begin{align*}
+        \frac{9x^2 - 12x + 5}{(x - 1)^2 (x + 2)} = \frac{p}{(x - 1)^2} + \frac{q}{x + 2},
+    \end{align*}
+    且 $\deg p < \deg {(x - 1)^2} = 2$, $\deg q < \deg {(x + 2)} = 1$. 前面的命题的证明并没有具体地给出找出 $p$ 与 $q$ 的方法. 事实上, 对我们而言, 最好的方法还是待定系数法.
+
+    具体地, 设 $p = A + Bx$, $q = M$, 也就是
+    \begin{align*}
+        \frac{9x^2 - 12x + 5}{(x - 1)^2 (x + 2)} = \frac{A + Bx}{(x - 1)^2} + \frac{M}{x + 2}.
+    \end{align*}
+    上式的二侧同乘 $(x - 1)^2 (x + 2)$, 有
+    \begin{align*}
+        9x^2 - 12x + 5 = (A + Bx) (x + 2) + M (x - 1)^2. \tag*{(\myStar)}
+    \end{align*}
+    我们要由 (\myStar) 定三个系数: $A$, $B$, $M$.
+
+    一个方法是利用整式的相等的定义. 先化简 (\myStar) 的右侧:
+    \begin{align*}
+        9x^2 - 12x + 5 = (B + M) x^2 + (A + 2B - 2M) x + (2A + M).
+    \end{align*}
+    根据整式的相等, 可得 $3$ 元 $1$ 次方程组:
+    \begin{align*}
+        \begin{cases}
+            9 = B + M.         \\
+            -12 = A + 2B - 2M, \\
+            5 = 2A + M.
+        \end{cases}
+    \end{align*}
+    由此可解出
+    \begin{align*}
+        A = -\frac{10}{9}, \quad B = \frac{16}{9}, \quad M = \frac{65}{9}.
+    \end{align*}
+    所以
+    \begin{align*}
+        \frac{9x^2 - 12x + 5}{(x - 1)^2 (x + 2)} = \frac{2(8x - 5)}{9(x - 1)^2} + \frac{65}{9(x + 2)}.
+    \end{align*}
+
+    另一个方法是利用整式在一点的值. 这个方法往往快一些. 用 $-2$ 代替 (\myStar) 的 $x$, 有
+    \begin{align*}
+        9(-2)^2 - 12(-2) + 5 = (A - 2B) (-2 + 2) + M (-2-1)^2 \implies 65 = 9M.
+    \end{align*}
+    用 $1$ 代替 (\myStar) 的 $x$, 有
+    \begin{align*}
+        9 - 12 + 5 = (A + B) (1 + 2) + M (1 - 1)^2 \implies 2 = 3 (A + B).
+    \end{align*}
+    对 (\myStar) 的二侧求流数, 有
+    \begin{align*}
+        18x - 12 = B (x + 2) + (A + Bx) + 2M (x - 1).
+    \end{align*}
+    用 $1$ 代替 $x$, 有
+    \begin{align*}
+        18 - 12 = B (1 + 2) + (A + B) + 2M (1 - 1) \implies 6 = 3B + (A + B).
+    \end{align*}
+    由此可解出
+    \begin{align*}
+        A = -\frac{10}{9}, \quad B = \frac{16}{9}, \quad M = \frac{65}{9}.
+    \end{align*}
+    所以
+    \begin{align*}
+        \frac{9x^2 - 12x + 5}{(x - 1)^2 (x + 2)} = \frac{2(8x - 5)}{9(x - 1)^2} + \frac{65}{9(x + 2)}.
+    \end{align*}
+
+    综上, 我们有
+    \begin{align*}
+        \frac{x^6 + 1}{x^3 - 3x + 2} = (x^3 + 3x - 2) + {\underbrace{\frac{2(8x - 5)}{9(x - 1)^2}}_{m}} + \frac{65}{9(x + 2)}.
+    \end{align*}
+    事实上, $m$ 还可继续写为更简单的形式. 因为
+    \begin{align*}
+        2(8x - 5) = 16x - 10 = 16x - 16 + 6 = 16(x - 1) + 6,
+    \end{align*}
+    故
+    \begin{align*}
+        \frac{2(8x - 5)}{9(x - 1)^2}
+        = {} & \frac{16(x - 1) + 6}{9(x - 1)^2}                    \\
+        = {} & \frac{16(x - 1)}{9(x - 1)^2} + \frac{6}{9(x - 1)^2} \\
+        = {} & \frac{16/9}{x - 1} + \frac{2/3}{(x - 1)^2}.
+    \end{align*}
+    这里, $16/9$ 与 $2/3$ 的次都低于 $x-1$ 的次. 也就是说, 我们可写
+    \begin{align*}
+        \frac{x^6 + 1}{x^3 - 3x + 2} = (x^3 + 3x - 2) + \frac{16}{9(x - 1)} + \frac{2}{3(x - 1)^2} + \frac{65}{9(x + 2)}.
+    \end{align*}
+\end{example}
+
+请读者再休息一会儿. 我们将对上例最后的现象作进一步的研究.
+
+\myLine
+
+我们继续.
+
+\begin{proposition}
+    设 $p$ 是次高于 $0$ 的整式. 设 $\deg p = K$.
+
+    (i) 设整式 $q$ 的次低于 $nK$, $n$ 为正整数. 存在 $n$ 个次低于 $K$ 的整式 $u_0$, $u_1$, $\cdots$, $u_{n-1}$ 使
+    \begin{align*}
+        q = u_0 p^0 + u_1 p^1 + \cdots + u_{n-1} p^{n-1}.
+    \end{align*}
+
+    (ii) 若次低于 $K$ 的整式 $u_0^{\prime}$, $u_1^{\prime}$, $\cdots$, $u_{n-1}^{\prime}$ 适合
+    \begin{align*}
+        q = u_0 p^0 + u_1 p^1 + \cdots + u_{n-1} p^{n-1},
+    \end{align*}
+    则 $u_i = u_i^{\prime}$, $i$ 是 $0$ 至 $n-1$ 间的整数.
+
+    (iii) 存在唯一的一组整式 $v_1$, $v_2$, $\cdots$, $v_n$ 使
+    \begin{align*}
+        \frac{q}{p^n} = \frac{v_1}{p} + \frac{v_2}{p^2} + \cdots + \frac{v_n}{p^n},
+    \end{align*}
+    且 $\deg v_i < K$.
+\end{proposition}
+
+\begin{pf}
+    (i) 用算学归纳法. 若 $n = 1$, 则 $q$ 的次低于 $K$. 所以 $q = q p^0$. 取 $u_0 = q$ 即可. 设 $n = \ell$ ($\ell \geq 1$) 时, 命题成立. 考虑 $n = \ell + 1$ 时的情形. 根据带余除法, 存在整式 $u_\ell$, $r$ 使
+    \begin{align*}
+        q = u_\ell p^\ell + r, \quad \deg r < \deg p^\ell = \ell K.
+    \end{align*}
+    根据归纳假设, 既然 $r$ 的次低于 $\ell K$, 那么就有 $\ell$ 个次低于 $K$ 的整式 $u_0$, $u_1$, $\cdots$, $u_{\ell - 1}$ 使
+    \begin{align*}
+        r = u_0 p^0 + u_1 p^1 + \cdots + u_{\ell - 1} p^{\ell - 1}.
+    \end{align*}
+    我们说, $\deg u_\ell < K$. 事实上, $u_\ell p^\ell = q - r$. 因为 $q$ 的次低于 $(\ell + 1)K$, $r$ 的次低于 $\ell K$, 故 $q - r$ 的次低于 $(\ell + 1)K$. 所以
+    \begin{align*}
+        K - \deg u_\ell
+        = {} & (K + \ell K) - (\deg u_\ell + \ell K)     \\
+        = {} & (\ell + 1)K - (\deg u_\ell + \deg p^\ell) \\
+        = {} & (\ell + 1)K - \deg {(u_\ell p^\ell)}      \\
+        = {} & (\ell + 1)K - \deg {(q - r)}              \\
+        > {} & 0.
+    \end{align*}
+    所以
+    \begin{align*}
+        q = u_0 p^0 + u_1 p^1 + \cdots + u_{\ell - 1} p^{\ell - 1} + u_\ell p^\ell,
+    \end{align*}
+    且每个 $u_i$ 的次低于 $K$.
+
+    (ii) 设整式 $u_0$, $u_0^{\prime}$, $u_1$, $u_1^{\prime}$, $\cdots$, $u_{n-1}$, $u_{n-1}^{\prime}$ 适合
+    \begin{align*}
+        u_0 p^0 + u_1 p^1 + \cdots + u_{n-1} p^{n-1} = u_0^{\prime} p^0 + u_1^{\prime} p^1 + \cdots + u_{n-1}^{\prime} p^{n-1},
+    \end{align*}
+    且 $\deg u_i < K$, $\deg u_i^{\prime} < K$. 我们的目标是说明 $u_i = u_i^{\prime}$. 将上式写为
+    \begin{align*}
+        (u_0 - u_0^{\prime}) p^0 + (u_1 - u_1^{\prime}) p^1 + \cdots + (u_{n-1} - u_{n-1}^{\prime}) p^{n-1} = 0,
+    \end{align*}
+    其中 $\deg {(u_i - u_i^{\prime})} < K$. 记 $d_i = u_i - u_i^{\prime}$, 则
+    \begin{align*}
+        d_0 p^0 + d_1 p^1 + \cdots + d_{n-1} p^{n-1} = 0, \quad \deg d_i < K. \tag*{(\myStar)}
+    \end{align*}
+    如果我们能说明 (\myStar) 的每个 $d_i$ 都是 $0$, 那么 $u_i = u_i^{\prime}$.
+
+    用算学归纳法. 当 $n = 1$ 时, $0 = d_0 p^0 = d_0$, 不必证了. 假定 $n = \ell$ ($\ell \geq 1$) 时, 命题成立. 考虑 $n = \ell + 1$ 时的情形. 设
+    \begin{align*}
+        {\underbrace{d_0 p^0 + d_1 p^1 + \cdots + d_{\ell - 1} p^{\ell - 1}}_{r}} + d_\ell p^\ell = 0, \quad \deg d_i < K.
+    \end{align*}
+    注意到 $r$ 的次低于 $\ell K$, 故根据带余除法的唯一性 (用 $p^\ell$ 除 $0$), 有 $d_\ell = r = 0$. 根据归纳假设, $d_0 = d_1 = \cdots = d_{\ell - 1} = 0$. 所以 (\myStar) 的每个 $d_i$ 都是 $0$.
+
+    (iii) 根据 (i) (ii), 若 $q$ 的次低于 $nK$, 则存在唯一的一组整式 $u_0$, $u_1$, $\cdots$, $u_{n-1}$ 使
+    \begin{align*}
+        q = u_{n-1} p^{n-1} + u_{n-2} p^{n-2} + \cdots + u_0 p^0,
+    \end{align*}
+    且 $\deg u_i < K$. 二侧同乘 $(p^n)^{-1}$, 有
+    \begin{align*}
+        \frac{q}{p^n} = \frac{u_{n-1}}{p} + \frac{u_{n-2}}{p^2} + \cdots + \frac{u_0}{p^n}.
+    \end{align*}
+    取 $v_1$, $v_2$, $\cdots$, $v_n$ 分别为 $u_{n-1}$, $u_{n-2}$, $\cdots$, $u_0$ 即可; 具体地, 取 $v_j = u_{n-j}$. 这样, $\deg v_j < K$. 如果这里的有理式表示不唯一, 那么将与 (ii) 矛盾.
+\end{pf}
+
+总结一下, 我们有下面的命题.
+\begin{proposition}
+    设 $f = c p_1^{m_1} p_2^{m_2} \cdots p_k^{m_k}$, 其中 $c$ 是非零的数, $p_1$, $p_2$, $\cdots$, $p_k$ PRP, 且每个 $p_i$ 的次高于 $0$, 每个 $m_i$ 都是正整数. 设 $g$ 的次低于 $f$ 的次. 存在唯一的一组整式 $h_{ij}$ ($i$ 是 $1$ 至 $k$ 间的整数, $j$ 是 $1$ 至 $m_i$ 间的整数) 适合
+    \begin{align*}
+        \frac{g}{f}
+        % = {} & \sum_{i = 1}^{k} \sum_{j = 1}^{m_i} \frac{h_{ij}}{p_i^j} \\
+        = {} & \frac{h_{11}}{p_1} + \frac{h_{12}}{p_1^2} + \cdots + \frac{h_{1 m_1}}{p_1^{m_1}} + \frac{h_{21}}{p_2} + \frac{h_{22}}{p_2^2} + \cdots + \frac{h_{2 m_2}}{p_2^{p_2}} \\
+             & \qquad + \cdots + \frac{h_{k1}}{p_k} + \frac{h_{k2}}{p_k^2} + \cdots + \frac{h_{k m_k}}{p_k^{m_k}},
+    \end{align*}
+    且 $\deg h_{ij} < \deg p_i$.
+\end{proposition}
+
+\begin{pf}
+    不难看出, $\frac{g}{f} = \frac{c^{-1} g}{c^{-1} f}$, 且 $\deg {(c^{-1} f)} = \deg f$, $\deg {(c^{-1} g)} = \deg g$, $c^{-1} f = p_1^{m_1} p_2^{m_2} \cdots p_k^{m_k}$. 既然 $p_1$, $p_2$, $\cdots$, $p_k$ PRP, 那么 $p_1^{m_1}$, $p_2^{m_2}$, $\cdots$, $p_k^{m_k}$ 亦 PRP. 所以, 存在唯一的一组整式 $H_1$, $H_2$, $\cdots$, $H_k$ 使
+    \begin{align*}
+        \frac{g}{f} = \frac{c^{-1} g}{c^{-1} f} = \frac{H_1}{p_1^{m_1}} + \frac{H_2}{p_2^{m_2}} + \cdots + \frac{H_k}{p_k^{m_k}},
+    \end{align*}
+    且 $\deg H_i < \deg p_i^{m_i} = m_i \deg p_i$. 每个 $\frac{H_i}{p_i^{m_i}}$ 又可唯一地写为
+    \begin{align*}
+        \frac{H_i}{p_i^{m_i}} = \frac{h_{i1}}{p_i} + \frac{h_{i2}}{p_i^2} + \cdots + \frac{h_{im_i}}{p_i^{m_i}},
+    \end{align*}
+    其中, 每个整式 $h_{ij}$ 的次低于 $\deg p_i$. 合并这些式即得结论.
+\end{pf}
+
+% 我们看一个有用的命题.
+% \begin{proposition}
+%     设 $a$ 是数. 设 $m$ 是正整数. 设 $q(x)$ 是整式, 且 $q(a) \neq 0$. 设 $h(x) = (x - a)^m q(x)$. 则
+%     \begin{align*}
+%         D^0 h(a) = D^1 h(a) = \cdots = D^{m-1} h(a) = 0,
+%     \end{align*}
+%     但 $D^m h(a) \neq 0$. 这里 $D^0 h(x) = h(x)$, $D^j h(x)$ 是 $D^{j-1} h(x)$ 的流数 (也就是说, $D^j h(x)$ 是 $h(x)$ 的 $j$ 级流数), 且 $D^j h(a)$ 是整式 $D^j h(x)$ 在点 $a$ 的值.
+% \end{proposition}
+
+% \begin{pf}
+%     设 $q(x)$ 的次为 $n$. 因为 $q(a) \neq 0$, 故 $n \geq 0$. 所以存在 $n+1$ 个数 $b_0$, $b_1$, $\cdots$, $b_n$ 使
+%     \begin{align*}
+%         q(x) = b_0 + b_1 (x - a) + \cdots + b_n (x - a)^n,
+%     \end{align*}
+%     且 $q(a) = b_0 \neq 0$. 所以
+%     \begin{align*}
+%         h(x) = b_0 (x - a)^m + b_1 (x - a)^{m+1} + \cdots + b_n (x - a)^{m+n}.
+%     \end{align*}
+%     由 Taylor 公式可读出
+%     \begin{align*}
+%         D^0 h(a) = D^1 h(a) = \cdots = D^{m-1} h(a) = 0,
+%     \end{align*}
+%     但 $D^m h(a) = m! b_0 \neq 0$.
+% \end{pf}
+
+我们以一个具体的例结束本文, 顺便帮助读者消化本文的知识.
+
+\begin{example}
+    设 $f = x^5 - 7x^4 + 19x^3 - 25x^2 + 16x - 4$, $g = x^6 - 30x^4 + 108x^3 - 159x^2 + 110x - 29$. 试分解 $r = \frac{g}{f}$.
+
+    显然, $r$ 是假有理式. 所以, 先用带余除法化 $r$ 为一整式加一真有理式 $s$ 的形式:
+    \begin{align*}
+        g = f \cdot (x + 7) + (2x - 1),
+    \end{align*}
+    也就是
+    \begin{align*}
+        \frac{g}{f} = x + 7 + {\underbrace{\frac{2x - 1}{x^5 - 7x^4 + 19x^3 - 25x^2 + 16x - 4}}_{s}}.
+    \end{align*}
+    接下来, 我们要继续分解 $s$. 为此, 我们需要找 $f$ 的因子分解. 当然, 这个工作就交给读者朋友自行完成:
+    \begin{align*}
+        f = (x - 1)^3 (x - 2)^2.
+    \end{align*}
+    也就是说,
+    \begin{align*}
+        \frac{g}{f} = x + 7 + {\underbrace{\frac{2x - 1}{(x - 1)^3 (x - 2)^2}}_{s}}.
+    \end{align*}
+    $x - 1$ 与 $x - 2$ 互素, 当然 PRP. 所以, 存在三个次低于 $\deg {(x - 1)}$ 的整式 $p_1$, $p_2$, $p_3$ 与二个次低于 $\deg {(x - 2)}$ 的整式 $q_1$, $q_2$ 使
+    \begin{align*}
+        \frac{2x - 1}{(x - 1)^3 (x - 2)^2} = \frac{p_1}{x - 1} + \frac{p_2}{(x - 1)^2} + \frac{p_3}{(x - 1)^3} + \frac{q_1}{x - 2} + \frac{q_2}{(x - 2)^2}.
+    \end{align*}
+    因为 $x - 1$ 与 $x - 2$ 的次均为 $1$, 故 $p_1$, $p_2$, $p_3$, $q_1$, $q_2$ 实际全是数, 即: 存在数 $A$, $B$, $C$, $M$, $N$ 使
+    \begin{align*}
+        \frac{2x - 1}{(x - 1)^3 (x - 2)^2} = \frac{A}{x - 1} + \frac{B}{(x - 1)^2} + \frac{C}{(x - 1)^3} + \frac{M}{x - 2} + \frac{N}{(x - 2)^2}.
+    \end{align*}
+    上式二侧同乘 $f$, 有
+    \begin{align*}
+        \tag*{(0)} \begin{aligned}
+            2x - 1
+            = {} & A (x - 1)^2 (x - 2)^2 + B (x - 1) (x - 2)^2 + C (x - 2)^2 \\
+                 & \qquad + M (x - 1)^3 (x - 2) + N (x - 1)^3.
+        \end{aligned}
+    \end{align*}
+    替换 (0) 的 $x$ 为 $1$, 有
+    \begin{align*}
+        2 \cdot 1 - 1 = C (1 - 2)^2 = C \implies C = 1.
+    \end{align*}
+    替换 (0) 的 $x$ 为 $2$, 有
+    \begin{align*}
+        2 \cdot 2 - 1 = N (2 - 1)^2 = N \implies N = 3.
+    \end{align*}
+    从而 (0) 变为 (为方便, 我们仍使用同样的标记)
+    \begin{align*}
+        \tag*{(0)} \begin{aligned}
+            2x - 1
+            = {} & A (x - 1)^2 (x - 2)^2 + B (x - 1) (x - 2)^2 + (x - 2)^2 \\
+                 & \qquad + M (x - 1)^3 (x - 2) + 3 (x - 1)^3.
+        \end{aligned}
+    \end{align*}
+    对 (0) 的二侧同时求流数, 有
+    \begin{align*}
+        \tag*{(1)} \begin{aligned}
+            2
+            = {} & 2A (x - 1) (x - 2)^2 + 2A (x - 1)^2 (x - 2)              \\
+                 & \qquad + B (x - 2)^2 + 2B (x - 1) (x - 2) + 2(x - 2)     \\
+                 & \qquad + 3M (x - 1)^2 (x - 2) + M(x - 1)^3 + 9 (x - 1)^2 \\
+            = {} & 2A (x - 1) (x - 2)^2 + (2A + 3M) (x - 1)^2 (x - 2)       \\
+                 & \qquad + B (x - 2)^2 + 2B (x - 1) (x - 2) + 2(x - 2)     \\
+                 & \qquad + M(x - 1)^3 + 9 (x - 1)^2.
+        \end{aligned}
+    \end{align*}
+    替换 (1) 的 $x$ 为 $1$, 有
+    \begin{align*}
+        2 = B (1 - 2)^2 + 2 (1 - 2) \implies B = 4.
+    \end{align*}
+    替换 (1) 的 $x$ 为 $2$, 有
+    \begin{align*}
+        2 = M (2 - 1)^3 + 9 (2 - 1)^2 \implies M = -7.
+    \end{align*}
+    从而 (1) 变为 (为方便, 我们仍使用同样的标记)
+    \begin{align*}
+        \tag*{(1)} \begin{aligned}
+            2
+            = {} & 2A (x - 1) (x - 2)^2 + (2A - 21) (x - 1)^2 (x - 2)  \\
+                 & \qquad + 4 (x - 2)^2 + 8 (x - 1) (x - 2) + 2(x - 2) \\
+                 & \qquad - 7(x - 1)^3 + 9 (x - 1)^2.
+        \end{aligned}
+    \end{align*}
+    对 (1) 的二侧同时求流数, 有
+    \begin{align*}
+        \tag*{(2)} \begin{aligned}
+            0
+            = {} & 2A (x - 2)^2 + 4A (x - 1)(x - 2)                            \\
+                 & \qquad + 2(2A - 21) (x - 1) (x - 2) + (2A - 21) (x - 1)^2   \\
+                 & \qquad + 8 (x - 2) + 8 (x - 1) + 8 (x - 2) + 2              \\
+                 & \qquad - 21(x - 1)^2 + 18 (x - 1)                           \\
+            = {} & 2A (x - 2)^2 + 2(4A - 21) (x - 1)(x - 2)                    \\
+                 & \qquad + 2(A - 21) (x - 1)^2 + 16 (x - 2) + 26 (x - 1) + 2.
+        \end{aligned}
+    \end{align*}
+    替换 (2) 的 $x$ 为 $1$, 有
+    \begin{align*}
+        0 = 2A (1 - 2)^2 + 16 (1 - 2) + 2 \implies A = 7.
+    \end{align*}
+    从而
+    \begin{align*}
+        s = \frac{7}{x - 1} + \frac{4}{(x - 1)^2} + \frac{1}{(x - 1)^3} - \frac{7}{x - 2} + \frac{3}{(x - 2)^2}.
+    \end{align*}
+    综上,
+    \begin{align*}
+        r = (x + 7) + \frac{7}{x - 1} + \frac{4}{(x - 1)^2} + \frac{1}{(x - 1)^3} - \frac{7}{x - 2} + \frac{3}{(x - 2)^2}.
+    \end{align*}
+\end{example}
+
+恭喜! 读者辛苦了. 请好好地休息一下吧.

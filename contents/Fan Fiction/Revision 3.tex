@@ -1,0 +1,365 @@
+\subsection*{\Revision{3}}
+\addcontentsline{toc}{subsection}{\Revision{3}}
+\markright{\Revision{3}}
+
+本文的目标是帮助读者回顾所学的知识.
+
+本文不会有新的东西. 我们又开始复习了. 这次, 我们要复习四篇文的内容.
+
+当然, 读者要清楚一个事实: ``\Revision{3}'' 的整式的系数都是 $\FF$ 的元. 这很重要.
+
+我们先复习有理式及其运算.
+
+\begin{definition}
+    设 $f$, $g$ 是整式, 且 $f \neq 0$. 形如 $\frac{g}{f}$ 的文字是有理式.
+\end{definition}
+
+\begin{definition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f$, $u$ 不是零.
+
+    (i) $\frac{g}{f} = \frac{v}{u}$ 定义为 $gu = fv$.
+
+    (ii) 有理式的加法定义为
+    \begin{align*}
+        \frac{g}{f} + \frac{v}{u} = \frac{gu + fv}{fu}.
+    \end{align*}
+
+    (iii) 有理式的乘法定义为
+    \begin{align*}
+        \frac{g}{f} \cdot \frac{v}{u} = \frac{gv}{fu}.
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    设 $r$, $s$ 是有理式.
+
+    (i) 有理式的减法定义为
+    \begin{align*}
+        r - s = r + (-s).
+    \end{align*}
+
+    (ii) 若 $s \neq 0$, 则有理式的除法定义为
+    \begin{align*}
+        \frac{r}{s} = rs^{-1}.
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    设 $r$, $s$, $t$, $w$ 是有理式.
+
+    (I) 整式都是有理式. 具体地说, 若 $f$, $d$ 是整式, 且 $d \neq 0$, 则 $f = \frac{fd}{d}$.
+
+    有理式的相等适合如下性质:
+
+    (R) 反射律: $r = r$.
+
+    (S) 对称律: 若 $r = s$, 则 $s = r$.
+
+    (T) 推移律: 若 $r = s$, 且 $s = t$, 则 $r = t$.
+
+    有理式的加法适合如下性质:
+
+    (A0) $r + s$ 也是有理式.
+
+    (A1) 若 $r = t$, $s = w$, 则 $r + s = t + w$.
+
+    (A2) 加法交换律: $r + s = s + r$.
+
+    (A3) 加法结合律: $(r + s) + t = r + (s + t)$.
+
+    (A4) 零: 存在一个称为 ``$0$'' 的有理式, 使 $0 + r = r$.
+
+    (A5) 相反元: 存在一个称为 ``$-r$'' 的有理式, 使 $-r + r = 0$.
+
+    有理式的减法适合如下性质:
+
+    (S0) $r - s$ 也是有理式.
+
+    (S1) 若 $r = t$, $s = w$, 则 $r - s = t - w$.
+
+    有理式的乘法适合如下性质:
+
+    (M0) $rs$ 也是有理式.
+
+    (M1) 若 $r = t$, $s = w$, 则 $rs = tw$.
+
+    (M2) 乘法交换律: $rs = sr$.
+
+    (M3) 乘法结合律: $(rs)t = r(st)$.
+
+    (M4) 幺: 存在一个称为 ``$1$'' 的有理式, 使 $1r = r$.
+
+    (M5)$^{\prime}$ 倒元: 若 $r \neq 0$, 则存在一个称为 ``$r^{-1}$'' 的有理式, 使 $r^{-1} r = 1$.
+
+    加法与乘法还有一座桥:
+
+    (D) 分配律: $r (s + t) = rs + rt$.
+
+    根据分配律, 我们有 $0r = r0 = 0$, $-rs = (-r)s$, $-s = (-1)s$.
+
+    下设 $s \neq 0$, $w \neq 0$. 有理式的除法适合如下性质:
+
+    (D0) $\frac{r}{s}$ 也是有理式.
+
+    (D1) 若 $r = t$, $s = w$, 则 $\frac{r}{s} = \frac{t}{w}$.
+
+    (D2) $\frac{r}{s} = \frac{t}{w}$ 的一个必要与充分条件是 $rw = st$.
+
+    (D3) $\frac{r}{s} = \frac{rw}{sw} = \frac{wr}{ws}$.
+
+    (D4) $\frac{r}{s} \pm \frac{t}{w} = \frac{rw \pm st}{sw}$.
+
+    (D5) $-\frac{r}{s} = \frac{-r}{s}$.
+
+    (D6) $\frac{r}{s} \cdot \frac{t}{w} = \frac{rt}{sw}$.
+
+    (D7) $\left( \frac{s}{w} \right)^{-1} = \frac{w}{s}$.
+
+    (D8) $\frac{s}{s} = 1$.
+\end{proposition}
+
+\begin{proposition}
+    设 $r$, $s$ 是有理式, 且 $s \neq 0$. 存在二个互素的整式 $F$, $G$ 使 $F \neq 0$, 且
+    \begin{align*}
+        \frac{r}{s} = \frac{G}{F}.
+    \end{align*}
+\end{proposition}
+
+\begin{remark}
+    不正式地说, $\frac{G}{F}$ 是 $\frac{r}{s}$ 的一个最简形.
+\end{remark}
+
+\begin{proposition}
+    若 $r$, $s$, $t$ 是有理式, 且 $s \neq 0$, 则
+    \begin{align*}
+        \frac{r}{s} \pm \frac{t}{s} = \frac{r \pm t}{s}.
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    若 $r$, $s$, $t$, $w$ 是有理式, 且 $s \neq 0$, $w \neq 0$, 则
+    \begin{align*}
+        \frac{r/s}{t/w} = \frac{rw}{st}.
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    若 $r$, $s$, $t$ 是有理式, 且 $s \neq 0$, 则
+    \begin{align*}
+        \frac{r}{s} \cdot t = t \cdot \frac{r}{s} = \frac{rt}{s} = \frac{tr}{s}.
+    \end{align*}
+\end{proposition}
+
+\begin{definition}
+    设 $r$ 是有理式. 设 $n$ 是正整数.
+
+    (i) $r^0$ 是 $r$ 的 $0$ 次幂. 定义 $r^0 = 1$.
+
+    (ii) $r^n$ 是 $n$ 个 $r$ 的积.
+
+    (iii) $r^{-n}$ 是 $n$ 个 $r^{-1}$ 的积.
+\end{definition}
+
+\begin{proposition}
+    设 $r$, $s$ 是有理式, 且 $m$, $n$ 是非负整数. 有理式的幂适合如下规则:
+
+    (i) $r^{m+n} = r^m r^n$.
+
+    (ii) $(r^m)^n = r^{mn}$.
+
+    (iii) $r^m s^m = (rs)^m$.
+
+    若 $r$, $s$ 均不为 $0$, 则 $m$, $n$ 可取全体整数.
+\end{proposition}
+
+\begin{definition}
+    设
+    \begin{align*}
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n
+    \end{align*}
+    是整式. 设 $r(x)$ 是有理式. 定义
+    \begin{align*}
+        (f \circ r)(x) = f(r(x)) = a_0 + a_1 r(x) + \cdots + a_n (r(x))^n.
+    \end{align*}
+    这称为有理式 $r(x)$ 与整式 $f(x)$ 的复合. 显然, $(f \circ r)(x)$ 仍为有理式.
+
+    在语境明确的情况下, ``$(x)$'' 可不写出.
+\end{definition}
+
+\begin{proposition}
+    设 $f$, $g$ 是整式, 且 $r$ 是有理式.
+
+    (i) 若 $f = g$, 则 $f \circ r = g \circ r$.
+
+    (ii) 若 $f + g = s$, 则 $f \circ r + g \circ r = s \circ r$. 这里, $\circ$ 的优先级高于 $+$; 所以, $f \circ r + g \circ r$ 是 $(f \circ r) + (g \circ r)$ 的简写.
+
+    (iii) 若 $fg = p$, 则 $(f \circ r) \cdot (g \circ r) = p \circ r$.
+\end{proposition}
+
+\begin{proposition}
+    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为有理式 $r(x)$, 这样的关系仍成立.
+\end{proposition}
+
+\begin{proposition}
+    设 $r$, $s$, $t$ 是有理式, $n$ 是正整数. 下面的乘法公式成立:
+    \begin{align*}
+         & (r + s)^{n} = r^n + \binom{n}{1} r^{n-1} s + \cdots + \binom{n}{i} r^{n-i} s^i + \cdots + s^n, \\
+         & r^n - s^n = (r - s)(r^{n-1} + r^{n-2} s + \cdots + r^{n-i} s^{i-1} + \cdots + s^{n-1}),        \\
+         & r^2 - s^2 = (r - s)(r + s),                                                                    \\
+         & r^3 - s^3 = (r - s)(r^2 + rs + s^2),                                                           \\
+         & r^3 + s^3 = (r + s)(r^2 - rs + s^2),                                                           \\
+         & r^3 + s^3 + t^3 - 3rst = (r + s + t)(r^2 + s^2 + t^2 - rs - rt - st).
+    \end{align*}
+\end{proposition}
+
+下面回顾有理式在一点的值与有理函数的相关知识.
+
+\begin{definition}
+    设 $t$ 是数. 设 $r(x)$ 是有理式.
+
+    (i) 若存在整式 $f(x)$, $g(x)$ 适合 $f(x) \neq 0$, $r(x) = \frac{g(x)}{f(x)}$, 且 $f(t) \neq 0$, 定义 $r(x)$ 在点 $t$ 的值为
+    \begin{align*}
+        r(t) = \frac{g(t)}{f(t)}.
+    \end{align*}
+
+    (ii) 若这样的 $f(x)$, $g(x)$ 不存在, 则 $r(t)$ 是不定义的 (或者说, ``不存在的'').
+\end{definition}
+
+\begin{proposition}
+    设 $f(x)$, $g(x)$, $u(x)$, $v(x)$ 是整式, 且 $f(x) \neq 0$, $u(x) \neq 0$. 设 $t$ 是数. 若 $f(t) \neq 0$, 且 $u(t) \neq 0$, 则
+    \begin{align*}
+        \frac{g(t)}{f(t)} = \frac{v(t)}{u(t)}.
+    \end{align*}
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $t$ 是数. 若 $r(t)$ 存在, 且 $r = s$, 则 $s(t)$ 存在, 且
+    \begin{align*}
+        r(t) = s(t).
+    \end{align*}
+    当然, 若 $r(t)$ 不存在, 则 $s(t)$ 也不存在.
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$ 是有理式. 设 $t$ 是数. 设 $r(x)$ 的一个最简形为 $\frac{G(x)}{F(x)}$; 也就是说, 设 $r(x) = \frac{G(x)}{F(x)}$, 整式 $F(x)$, $G(x)$ 互素, 且 $F(x) \neq 0$. 则 $r(t)$ 存在的一个必要与充分条件是 $F(t) \neq 0$.
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $t$ 是数. 设 $r(t)$, $s(t)$ 都存在.
+
+    (i) 若 $r(x) = s(x)$, 则 $r(t) = s(t)$.
+
+    (ii) 若 $r(x) + s(x) = S(x)$, 则 $S(t)$ 存在, 且 $r(t) + s(t) = S(t)$.
+
+    (iii) 若 $r(x) s(x) = P(x)$, 则 $P(t)$ 存在, 且 $r(t) s(t) = P(t)$.
+\end{proposition}
+
+\begin{proposition}
+    设 $t$ 是数. 设 $r(x)$, $s(x)$ 是有理式, 且 $s(x) \neq 0$. 设 $r(t)$, $s(t)$ 均存在, 且 $s(t) \neq 0$. 设 $h(x) = \frac{r(x)}{s(x)}$. 则 $h(t)$ 也存在, 且
+    \begin{align*}
+        h(t) = \frac{r(t)}{s(t)}.
+    \end{align*}
+\end{proposition}
+
+\begin{definition}
+    设 $r(x)$ 是 ($\FF$ 上 $x$ 的) 有理式. 设 $A$ 是 $\FF$ 的非空子集, 且适合: 任取 $a \in A$, $r(a)$ 存在. 称函数
+    \begin{align*}
+         & A \to \FF, \tag*{$r_\mathrm{f} \colon$} \\
+         & t \mapsto r(t)
+    \end{align*}
+    为 $A$ 到 $\FF$ 的有理函数. 我们也说, 这个函数是由 ($\FF$ 上 $x$ 的) 有理式 $r(x)$ 诱导的 $A$ 到 $\FF$ 的有理函数.
+\end{definition}
+
+\begin{definition}
+    设 $r_\mathrm{f}$ 与 $s_\mathrm{f}$ 是 $A$ 到 $\FF$ 的二个有理函数. 二者的和 $r_\mathrm{f} + s_\mathrm{f}$ 定义为
+    \begin{align*}
+         & A \to \FF, \tag*{$r_\mathrm{f} + s_\mathrm{f} \colon$} \\
+         & t \mapsto r_\mathrm{f} (t) + s_\mathrm{f} (t).
+    \end{align*}
+    二者的积 $r_\mathrm{f} \, s_\mathrm{f}$ 定义为
+    \begin{align*}
+         & A \to \FF, \tag*{$r_\mathrm{f} \, s_\mathrm{f} \colon$} \\
+         & t \mapsto r_\mathrm{f} (t) s_\mathrm{f} (t).
+    \end{align*}
+    若任取 $a \in A$, $s_\mathrm{f} (a) \neq 0$, 则二者的比 $\frac{r_\mathrm{f}}{s_\mathrm{f}}$ 定义为
+    \begin{align*}
+         & A \to \FF, \tag*{$\frac{r_\mathrm{f}}{s_\mathrm{f}} \colon$} \\
+         & t \mapsto \frac{r_\mathrm{f} (t)}{s_\mathrm{f} (t)}.
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $r_\mathrm{f}$, $s_\mathrm{f}$ 分别是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\FF$ 的有理函数.
+
+    (i) 若 $r(x) = s(x)$, 则 $r_\mathrm{f} = s_\mathrm{f}$ (函数的相等).
+
+    (ii) $r(x) + s(x)$ 诱导 ($A$ 到 $\FF$ 的, 下同) 有理函数 $r_\mathrm{f} + s_\mathrm{f}$.
+
+    (iii) $r(x) s(x)$ 诱导有理函数 $r_\mathrm{f} \, s_\mathrm{f}$.
+
+    (iv) 若对任意 $a \in A$, $s(a) \neq 0$, 则 $\frac{r(x)}{s(x)}$ 诱导有理函数 $\frac{r_\mathrm{f}}{s_\mathrm{f}}$.
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $A \subset \FF$, 且 $A$ 有无限多个元. 设任取 $a \in A$, $r(a)$, $s(a)$ 均存在, 且 $r(a) = s(a)$. $r(x)$ 与 $s(x)$ 一定是相等的有理式. 通俗地说, 若系数为 $\FF$ 的元的二个有理式在无限多个地方有相同的取值, 则这二个有理式必相等.
+\end{proposition}
+
+\begin{proposition}
+    设 $r(x)$, $s(x)$ 是有理式. 设 $A$ 是 $\FF$ 的非空子集. 设 $A$ 有无限多个元. 设 $r_{\mathrm{f}}$, $s_{\mathrm{f}}$ 是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\FF$ 的二个有理函数. 若 $r_{\mathrm{f}} = s_{\mathrm{f}}$, 则 $r(x) = s(x)$.
+\end{proposition}
+
+最后, 我们复习有理式的分解.
+
+\begin{definition}
+    设 $r$ 是有理式.
+
+    (i) 若存在二个整式 $f$, $g$ 使 $f \neq 0$, $\deg g < \deg f$, 且 $r = \frac{g}{f}$, 则 $r$ 是真有理式.
+
+    (ii) 若这样的整式不存在, 则 $r$ 是假有理式.
+\end{definition}
+
+\begin{proposition}
+    设 $f$, $g$, $u$, $v$ 是整式, 且 $f \neq 0$, $u \neq 0$. 设 $\frac{g}{f} = \frac{v}{u}$.
+
+    (i) 若 $\deg g < \deg f$, 则 $\deg v < \deg u$. 所以, 有理式不可能既是真有理式又是假有理式.
+
+    (ii) 若 $\deg g \geq \deg f$, 则 $\deg v \geq \deg u$. 所以, 若某有理式可写为次较高的整式与次较低的整式的比, 则它一定是假有理式.
+\end{proposition}
+
+\begin{proposition}
+    设 $r$, $s$ 是有理式. 若 $r = s$, 且 $r$ 是真 (假) 有理式, 则 $s$ 也是真 (假) 有理式.
+\end{proposition}
+
+\begin{proposition}
+    设 $r$ 是有理式.
+
+    (i) 存在整式 $p$ 与真有理式 $s$ 使 $r = p + s$.
+
+    (ii) 若整式 $p^{\prime}$ 与真有理式 $s^{\prime}$ 适合 $p + s = p^{\prime} + s^{\prime}$, 则 $p = p^{\prime}$, 且 $s = s^{\prime}$.
+\end{proposition}
+
+\begin{proposition}
+    每一个有理式均可唯一地写为一个整式与一个有理式的和. 具体地说, 我们有:
+
+    (i) 真有理式可唯一地写为零整式与自身的和;
+
+    (ii) 整式可唯一地写为自身与零有理式的和;
+
+    (iii) 不是整式的假有理式可唯一地写为非零的整式与非零的真有理式的和.
+\end{proposition}
+
+\begin{proposition}
+    设 $f = c p_1^{m_1} p_2^{m_2} \cdots p_k^{m_k}$, 其中 $c$ 是非零的数, $p_1$, $p_2$, $\cdots$, $p_k$ PRP, 且每个 $p_i$ 的次高于 $0$, 每个 $m_i$ 都是正整数. 设 $g$ 的次低于 $f$ 的次. 存在唯一的一组整式 $h_{ij}$ ($i$ 是 $1$ 至 $k$ 间的整数, $j$ 是 $1$ 至 $m_i$ 间的整数) 适合
+    \begin{align*}
+        \frac{g}{f}
+        = {} & \frac{h_{11}}{p_1} + \frac{h_{12}}{p_1^2} + \cdots + \frac{h_{1 m_1}}{p_1^{m_1}} + \frac{h_{21}}{p_2} + \frac{h_{22}}{p_2^2} + \cdots + \frac{h_{2 m_2}}{p_2^{p_2}} \\
+             & \qquad + \cdots + \frac{h_{k1}}{p_k} + \frac{h_{k2}}{p_k^2} + \cdots + \frac{h_{k m_k}}{p_k^{m_k}},
+    \end{align*}
+    且 $\deg h_{ij} < \deg p_i$.
+\end{proposition}
+
+\begin{remark}
+    可用待定系数法求诸 $h_{ij}$.
+\end{remark}
+
+好. 就到这里吧.

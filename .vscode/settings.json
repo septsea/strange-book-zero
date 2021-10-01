@@ -182,7 +182,9 @@
         "texorpdfstring",
         "smallmatrix",
         "binom",
-        "notin"
+        "notin",
+        "Gauß",
+        "Bézout"
     ],
     "todo-tree.filtering.excludeGlobs": [
         "**/*.ttc",
