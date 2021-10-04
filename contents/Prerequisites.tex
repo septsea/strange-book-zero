@@ -461,9 +461,9 @@
     \begin{align*}
         A \times B = \{\, (a,b) \mid a \in A, \ b \in B  \,\}.
     \end{align*}
-    $A \times A$ 可简写为 $A^2$. 类似地,
+    类似地,
     \begin{align*}
-        A \times B \times C = \{\, (a,b,c) \mid a \in A, \ b \in B, \ c \in C  \,\}, \quad A^3 = A \times A \times A.
+        A \times B \times C = \{\, (a,b,c) \mid a \in A, \ b \in B, \ c \in C  \,\}.
     \end{align*}
 \end{definition}
 
@@ -500,9 +500,9 @@
 \end{definition}
 
 \begin{example}
-    可以把 $\RR^2$ 看作平面上的点集.
+    可以把 $\RR \times \RR$ 看作平面上的点集.
     \begin{align*}
-         & \RR^2 \to \RR,  \tag*{$f$:}  \\
+         & \RR \times \RR \to \RR,  \tag*{$f$:}  \\
          & (x,y) \mapsto \sqrt{x^2+y^2}
     \end{align*}
     是函数: 它表示点 $(x,y)$ 到点 $(0,0)$ 的距离.
@@ -560,7 +560,7 @@
 \subsubsection*{\BinaryFunctions}
 
 \begin{definition}
-    $A^2$ 到 $A$ 的函数称为 $A$ 的二元运算 \term{binary function}.
+    $A \times A$ 到 $A$ 的函数称为 $A$ 的二元运算 \term{binary function}.
 \end{definition}
 
 \begin{example}
@@ -589,7 +589,7 @@
     \begin{align*}
         A = \{\, a_1, a_2, \cdots, a_n \,\}.
     \end{align*}
-    设 $f$ 是 $A^2$ 到 $B$ 的函数. 则任给整数 $i,j$, $1 \leq i,j \leq n$, 记
+    设 $f$ 是 $A \times A$ 到 $B$ 的函数. 则任给整数 $i,j$, $1 \leq i,j \leq n$, 记
     \begin{align*}
         f(a_i, a_j) = b_{i,j} \in B.
     \end{align*}
@@ -1074,7 +1074,7 @@
 \end{example}
 
 \begin{remark}
-    设 $f(i,j)$ 是 $\ZZ^2$ 的非空子集到加群 $G$ 的函数. 记
+    设 $f(i,j)$ 是 $\ZZ \times \ZZ$ 的非空子集到加群 $G$ 的函数. 记
     \begin{align*}
         S_C = \sum_{j=p}^{q} \sum_{i=m}^{n} f(i,j), \quad S_R = \sum_{i=m}^{n} \sum_{j=p}^{q} f(i,j),
     \end{align*}
@@ -1297,13 +1297,13 @@
 \end{example}
 
 \begin{example}
-    再来看一个非整环例. 考虑 $\ZZ^2$. 设 $a,b,c,d \in \ZZ$. 规定
+    再来看一个非整环例. 考虑 $\ZZ \times \ZZ$. 设 $a,b,c,d \in \ZZ$. 规定
     \begin{align*}
          & (a,b) = (c,d) \iff a = b \text{ and } c = d, \\
          & (a,b) + (c,d) = (a+b,c+d),                   \\
          & (a,b)(c,d) = (ac,bd).
     \end{align*}
-    可以验证, 在这二种运算下, $\ZZ^2$ 作成一个交换环, 其加法、乘法幺分别是 $(0,0)$, $(1,1)$. 可是
+    可以验证, 在这二种运算下, $\ZZ \times \ZZ$ 作成一个交换环, 其加法、乘法幺分别是 $(0,0)$, $(1,1)$. 可是
     \begin{align*}
         (1,0) \neq (0,0), \quad (0,1) \neq (0,-1), \quad (1,0)(0,1) = (1,0)(0,-1).
     \end{align*}
@@ -1311,7 +1311,7 @@
 \end{example}
 
 \begin{remark}
-    可是, 如果这么定义乘法, 那么 $\ZZ^2$ 可作为一个整环:
+    可是, 如果这么定义乘法, 那么 $\ZZ \times \ZZ$ 可作为一个整环:
     \begin{align*}
         (a,b)(c,d) = (ac-bd,ad+bc).
     \end{align*}
