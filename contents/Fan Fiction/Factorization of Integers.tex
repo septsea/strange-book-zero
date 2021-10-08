@@ -291,19 +291,19 @@
     \end{align*}
     $f$ 的因子必为
     \begin{align*}
-        \varepsilon^{\prime} p_{j_1} p_{j_2} \cdots p_{j_s} \tag*{(\myStar)},
+        \varepsilon^{\prime} p_{j_1} p_{j_2} \cdots p_{j_s} \tag*{(\ding{72})},
     \end{align*}
     其中 $\varepsilon^{\prime}$ 是单位, $j_1$, $j_2$, $\cdots$, $j_s$ 是 $1$, $2$, $\cdots$, $m$ 中 $s$ 个不同的数 ($s$ 可取 $0$; 此时, 这就是单位).
 \end{proposition}
 
 \begin{pf}
-    若 $f$ 是单位, 则 $m = 0$. 此时我们无法从 $m$ 个数 $1$, $2$, $\cdots$, $m$ 中 ``取出'' 数, 故 $s = 0$. 所以 (\myStar) 变为单位——这恰为 $f$ 的因子.
+    若 $f$ 是单位, 则 $m = 0$. 此时我们无法从 $m$ 个数 $1$, $2$, $\cdots$, $m$ 中 ``取出'' 数, 故 $s = 0$. 所以 (\ding{72}) 变为单位——这恰为 $f$ 的因子.
 
     若 $f$ 既不是 $0$, 也不是单位, 则
     \begin{align*}
         g = \varepsilon^{-1} f = p_1 p_2 \cdots p_m
     \end{align*}
-    既不是 $0$, 也不是单位 (如果读者不能理解这一点, 读者可用反证法). 因为 $f$ 与 $g$ 相伴, 故 $g$ 的因子都是 $f$ 的因子, 且 $f$ 的因子都是 $g$ 的因子 (如果读者不能理解这一点, 读者可设 $d$ 是 $f$ 的因子, 则因 $f$ 是 $g$ 的因子, 故 $d$ 也是 $g$ 的因子; 反过来也是类似的). 这样, 既然 $g$ 的因子都形如 (\myStar) (可直接套用上命题于 $g$), 那么 $f$ 的因子也都形如 (\myStar).
+    既不是 $0$, 也不是单位 (如果读者不能理解这一点, 读者可用反证法). 因为 $f$ 与 $g$ 相伴, 故 $g$ 的因子都是 $f$ 的因子, 且 $f$ 的因子都是 $g$ 的因子 (如果读者不能理解这一点, 读者可设 $d$ 是 $f$ 的因子, 则因 $f$ 是 $g$ 的因子, 故 $d$ 也是 $g$ 的因子; 反过来也是类似的). 这样, 既然 $g$ 的因子都形如 (\ding{72}) (可直接套用上命题于 $g$), 那么 $f$ 的因子也都形如 (\ding{72}).
 \end{pf}
 
 作者给一个建议. $f$ 的因子分解里, 可能会有相伴的不可约的整数. 最好将相伴的整数化为相同的整数 (顶多差一个单位罢了); 否则, 得到的结果不会特别好看.
@@ -399,13 +399,13 @@
 \begin{pf}
     首先我们说明, $f$ 的因子一定形如
     \begin{align*}
-        \varepsilon^{\prime \prime} q_1^{t_1} q_2^{t_2} \cdots q_s^{t_s}, \tag*{(\myStar)}
+        \varepsilon^{\prime \prime} q_1^{t_1} q_2^{t_2} \cdots q_s^{t_s}, \tag*{(\ding{72})}
     \end{align*}
-    其中 $\varepsilon^{\prime \prime}$ 是单位, $t_i$ 是不高于 $r_i$ 的非负整数 ($i = 1$, $2$, $\cdots$, $s$). 显然, (\myStar) 是 $f$ 的因子:
+    其中 $\varepsilon^{\prime \prime}$ 是单位, $t_i$ 是不高于 $r_i$ 的非负整数 ($i = 1$, $2$, $\cdots$, $s$). 显然, (\ding{72}) 是 $f$ 的因子:
     \begin{align*}
         f = \left(\varepsilon^{\prime \prime} q_1^{t_1} q_2^{t_2} \cdots q_s^{t_s}\right) \left((\varepsilon^{\prime \prime})^{-1} \varepsilon^{\prime} q_1^{r_1 - t_1} q_2^{r_2 - t_2} \cdots q_s^{r_s - t_s}\right).
     \end{align*}
-    现在, 我们要说明, $f$ 的因子可写为 (\myStar) 的形式. 我们已经知道, $f$ 的因子一定形如
+    现在, 我们要说明, $f$ 的因子可写为 (\ding{72}) 的形式. 我们已经知道, $f$ 的因子一定形如
     \begin{align*}
         g = \varepsilon^{\prime \prime \prime} p_{j_1} p_{j_2} \cdots p_{j_u},
     \end{align*}
@@ -423,7 +423,7 @@
     \end{align*}
     因为 $w_i > r_{k_i}$, 故 $q_{k_i}$ 仍为上式左侧的因子; 这样, $q_{k_i}$ 也是上式右侧的因子. 因为 $q_{k_i}$ 是不可约的, 所以 $q_{k_i}$ 一定是 $q_1^{r_1}$, $\cdots$, $q_{k_i - 1}^{r_{k_i - 1}}$, $q_{k_i + 1}^{r_{k_i + 1}}$, $\cdots$, $q_s^{r_s}$ (此处无 $q_{k_i}$ 的幂!) 这 $s-1$ 个整数中的某一个 (不要求恰有一个) 的因子. 设 $q_{k_i}$ 是 $q_\alpha^{r_\alpha}$ ($r_\alpha \neq k_i$) 的因子. 类似地, 把幂写为 $r_\alpha$ 个 $q_\alpha$ 的积, 即知 $q_{k_i}$ 是 $q_\alpha$ 的因子. 所以 $q_{k_i}$ 与 $q_\alpha$ 不互素. 所以 $q_{k_i}$ 与 $q_\alpha$ 相伴! 矛盾.
 
-    由上述讨论, 知: 每个 $w_i$ 不超过 $r_{k_i}$. $q_{k_1}$, $q_{k_2}$, $\cdots$, $q_{k_\ell}$ 可能不能包含 $q_1$, $q_2$, $\cdots$, $q_s$; 如果这样, 就把缺的 $q_i$ 用 $1 = q_i^0$ 补上. 综上, $f$ 的每一个因子都可写为 (\myStar) 的形式.
+    由上述讨论, 知: 每个 $w_i$ 不超过 $r_{k_i}$. $q_{k_1}$, $q_{k_2}$, $\cdots$, $q_{k_\ell}$ 可能不能包含 $q_1$, $q_2$, $\cdots$, $q_s$; 如果这样, 就把缺的 $q_i$ 用 $1 = q_i^0$ 补上. 综上, $f$ 的每一个因子都可写为 (\ding{72}) 的形式.
 
     设
     \begin{align*}
@@ -456,7 +456,7 @@
     \end{align*}
     且 $q_i$ 是不可约的, 故 $q_i$ 是 $q_1^{t_{1,1}}$, $\cdots$, $q_{i-1}^{t_{2,i-1}}$, $q_{i+1}^{t_{2,i+1}}$, $\cdots$, $q_s^{t_{2,s}}$ (此处无 $q_i$ 的幂!) 这 $s-1$ 个数中的某一个 (不要求恰有一个) 的因子. 设 $q_i$ 是 $q_\alpha^{t_{2,\alpha}}$ ($i \neq \alpha$) 的因子. 类似地, 把幂写为 $t_{2,\alpha}$ 个 $q_\alpha$ 的积, 即知 $q_i$ 是 $q_\alpha$ 的因子. 所以 $q_i$ 与 $q_\alpha$ 不互素. 所以 $q_i$ 与 $q_\alpha$ 相伴! 矛盾. 类似地, 若假定 $t_{1,i} < t_{2,i}$, 也可导出矛盾.
 
-    上段文字说明: 在 (\myStar) 里, 不同的 $t_1$, $t_2$, $\cdots$, $t_s$ 给出不相伴的整数. 所以, 为计算 $f$ 至多有多少个互不相伴的因子, 我们只要计算有多少 $t_1$, $t_2$, $\cdots$, $t_s$ 适合条件 $0 \leq t_i \leq r_i$ 且 $t_i$ 为整数即可. 显然, 每个 $t_i$ 有 $1 + r_i$ 种取值 ($0$, $1$, $\cdots$, $r_i$), 且 $t_i$ 的取值与 $t_j$ 的取值是互不影响的 ($i \neq j$). 根据乘法原理, 这样的 $t_1$, $t_2$, $\cdots$, $t_s$ 的数目为
+    上段文字说明: 在 (\ding{72}) 里, 不同的 $t_1$, $t_2$, $\cdots$, $t_s$ 给出不相伴的整数. 所以, 为计算 $f$ 至多有多少个互不相伴的因子, 我们只要计算有多少 $t_1$, $t_2$, $\cdots$, $t_s$ 适合条件 $0 \leq t_i \leq r_i$ 且 $t_i$ 为整数即可. 显然, 每个 $t_i$ 有 $1 + r_i$ 种取值 ($0$, $1$, $\cdots$, $r_i$), 且 $t_i$ 的取值与 $t_j$ 的取值是互不影响的 ($i \neq j$). 根据乘法原理, 这样的 $t_1$, $t_2$, $\cdots$, $t_s$ 的数目为
     \begin{align*}
         n = (1 + r_1) (1 + r_2) \cdots (1 + r_s).
     \end{align*}

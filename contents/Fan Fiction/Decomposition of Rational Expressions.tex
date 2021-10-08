@@ -376,11 +376,11 @@
     \end{align*}
     上式的二侧同乘 $(x - 1)^2 (x + 2)$, 有
     \begin{align*}
-        9x^2 - 12x + 5 = (A + Bx) (x + 2) + M (x - 1)^2. \tag*{(\myStar)}
+        9x^2 - 12x + 5 = (A + Bx) (x + 2) + M (x - 1)^2. \tag*{(\ding{72})}
     \end{align*}
-    我们要由 (\myStar) 定三个系数: $A$, $B$, $M$.
+    我们要由 (\ding{72}) 定三个系数: $A$, $B$, $M$.
 
-    一个方法是利用整式的相等的定义. 先化简 (\myStar) 的右侧:
+    一个方法是利用整式的相等的定义. 先化简 (\ding{72}) 的右侧:
     \begin{align*}
         9x^2 - 12x + 5 = (B + M) x^2 + (A + 2B - 2M) x + (2A + M).
     \end{align*}
@@ -401,15 +401,15 @@
         \frac{9x^2 - 12x + 5}{(x - 1)^2 (x + 2)} = \frac{2(8x - 5)}{9(x - 1)^2} + \frac{65}{9(x + 2)}.
     \end{align*}
 
-    另一个方法是利用整式在一点的值. 这个方法往往快一些. 用 $-2$ 代替 (\myStar) 的 $x$, 有
+    另一个方法是利用整式在一点的值. 这个方法往往快一些. 用 $-2$ 代替 (\ding{72}) 的 $x$, 有
     \begin{align*}
         9(-2)^2 - 12(-2) + 5 = (A - 2B) (-2 + 2) + M (-2-1)^2 \implies 65 = 9M.
     \end{align*}
-    用 $1$ 代替 (\myStar) 的 $x$, 有
+    用 $1$ 代替 (\ding{72}) 的 $x$, 有
     \begin{align*}
         9 - 12 + 5 = (A + B) (1 + 2) + M (1 - 1)^2 \implies 2 = 3 (A + B).
     \end{align*}
-    对 (\myStar) 的二侧求流数, 有
+    对 (\ding{72}) 的二侧求流数, 有
     \begin{align*}
         18x - 12 = B (x + 2) + (A + Bx) + 2M (x - 1).
     \end{align*}
@@ -508,15 +508,15 @@
     \end{align*}
     其中 $\deg {(u_i - u_i^{\prime})} < K$. 记 $d_i = u_i - u_i^{\prime}$, 则
     \begin{align*}
-        d_0 p^0 + d_1 p^1 + \cdots + d_{n-1} p^{n-1} = 0, \quad \deg d_i < K. \tag*{(\myStar)}
+        d_0 p^0 + d_1 p^1 + \cdots + d_{n-1} p^{n-1} = 0, \quad \deg d_i < K. \tag*{(\ding{72})}
     \end{align*}
-    如果我们能说明 (\myStar) 的每个 $d_i$ 都是 $0$, 那么 $u_i = u_i^{\prime}$.
+    如果我们能说明 (\ding{72}) 的每个 $d_i$ 都是 $0$, 那么 $u_i = u_i^{\prime}$.
 
     用算学归纳法. 当 $n = 1$ 时, $0 = d_0 p^0 = d_0$, 不必证了. 假定 $n = \ell$ ($\ell \geq 1$) 时, 命题成立. 考虑 $n = \ell + 1$ 时的情形. 设
     \begin{align*}
         {\underbrace{d_0 p^0 + d_1 p^1 + \cdots + d_{\ell - 1} p^{\ell - 1}}_{r}} + d_\ell p^\ell = 0, \quad \deg d_i < K.
     \end{align*}
-    注意到 $r$ 的次低于 $\ell K$, 故根据带余除法的唯一性 (用 $p^\ell$ 除 $0$), 有 $d_\ell = r = 0$. 根据归纳假设, $d_0 = d_1 = \cdots = d_{\ell - 1} = 0$. 所以 (\myStar) 的每个 $d_i$ 都是 $0$.
+    注意到 $r$ 的次低于 $\ell K$, 故根据带余除法的唯一性 (用 $p^\ell$ 除 $0$), 有 $d_\ell = r = 0$. 根据归纳假设, $d_0 = d_1 = \cdots = d_{\ell - 1} = 0$. 所以 (\ding{72}) 的每个 $d_i$ 都是 $0$.
 
     (iii) 根据 (i) (ii), 若 $q$ 的次低于 $nK$, 则存在唯一的一组整式 $u_0$, $u_1$, $\cdots$, $u_{n-1}$ 使
     \begin{align*}
