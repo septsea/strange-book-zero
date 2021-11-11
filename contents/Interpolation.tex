@@ -809,18 +809,18 @@
     有兴趣的读者可展开上式, 以验证我们的计算是否正确. 由此可见, Newton 插值公式在实操上优于 Lagrange 插值公式.
 \end{example}
 
-我们以带余除法与插值的关系结束本节.
+我们以带馀除法与插值的关系结束本节.
 
 \begin{proposition}
     设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设
     \begin{align*}
         d(x) = (x - x_0) (x - x_1) \cdots (x - x_n) \in \FF[x]
     \end{align*}
-    是 $n+1$ 次整式. 由带余除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
+    是 $n+1$ 次整式. 由带馀除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
     \begin{align*}
         f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1.
     \end{align*}
-    余式 $r(x)$ 可具体地写出:
+    馀式 $r(x)$ 可具体地写出:
     \begin{align*}
         r(x) = \sum_{i = 0}^{n} f(x_i) \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell}
     \end{align*}
@@ -832,7 +832,7 @@
 \end{proposition}
 
 \begin{pf}
-    由带余除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
+    由带馀除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
     \begin{align*}
         f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1.
     \end{align*}
