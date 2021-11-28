@@ -1,59 +1,6 @@
 {
-    /* ======================================== */
-    /* Git settings */
-    "git.enableSmartCommit": true,
-    "git.postCommitCommand": "sync",
-    "git.autofetch": "all",
-    "git.confirmSync": false,
-    /* ======================================== */
     /* General settings for LaTeX extension */
     "latex-workshop.latex.tools": [
-        {
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                // "-pdf",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "pdflatex",
-            "command": "pdflatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "makeindex",
-            "command": "makeindex",
-            "args": [
-                "%DOCFILE%.nlo",
-                "-s",
-                "nomencl.ist",
-                "-o",
-                "%DOCFILE%.nls"
-            ]
-        },
-        {
-            "name": "biber",
-            "command": "biber",
-            "args": [
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ]
-        },
         {
             "name": "latexmk",
             "command": "latexmk",
@@ -70,123 +17,28 @@
             "tools": [
                 "latexmk"
             ]
-        },
-        {
-            "name": "xe*2",
-            "tools": [
-                "xelatex",
-                "xelatex"
-            ]
-        },
-        {
-            "name": "xelatex🔃",
-            "tools": [
-                "xelatex",
-            ]
-        },
-        {
-            "name": "xe->mkind->bib->xe*2🔃",
-            "tools": [
-                "xelatex",
-                "makeindex",
-                "biber",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-        {
-            "name": "pdf->mkind->bib->pdf*2🔃",
-            "tools": [
-                "pdflatex",
-                "makeindex",
-                "biber",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "xe->bib->xe->xe🔃",
-            "tools": [
-                "xelatex",
-                "bibtex",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-        {
-            "name": "biber🔃",
-            "tools": [
-                "biber"
-            ]
-        },
-        {
-            "name": "pdflatex🔃",
-            "tools": [
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "pdf->bib->pdf->pdf🔃",
-            "tools": [
-                "pdflatex",
-                "bibtex",
-                "pdflatex",
-                "pdflatex"
-            ]
-        },
-        {
-            "name": "BibTeX🔃",
-            "tools": [
-                "bibtex"
-            ]
         }
     ],
-    // "latex-workshop.view.pdf.viewer": "tab",
-    "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
-    "latex-workshop.view.pdf.invertMode.enabled": "auto",
-    "latex-workshop.view.pdf.invert": 0.9,
-    // "latex-workshop.view.pdf.trim": 3,
-    "latex-workshop.view.pdf.viewer": "external",
-    "latex-workshop.view.pdf.external.viewer.args": [
-        "%PDF%"
-    ],
-    "latex-workshop.view.pdf.external.synctex.args": [
-        "-forward-search",
-        "%TEX%",
-        "%LINE%",
-        "%PDF%"
-    ],
-    // Change these 2 paths when necessary
-    "latex-workshop.view.pdf.external.viewer.command": "C:\\Program Files\\SumatraPDF\\SumatraPDF.exe",
-    "latex-workshop.view.pdf.external.synctex.command": "C:\\Program Files\\SumatraPDF\\SumatraPDF.exe",
-    "latex-workshop.showContextMenu": false,
     "latex-workshop.latex.recipe.default": "latexmk",
-    // "editor.wordWrap": "on",
-    "latex-workshop.synctex.synctexjs.enabled": false,
-    // "latex-workshop.synctex.afterBuild.enabled": true,
-    "latex-workshop.latex.autoBuild.run": "never",
-    "latex-workshop.mathpreviewpanel.editorGroup": "below",
-    /* ======================================== */
     /* Fancy settings below. */
-    "editor.wordWrap": "on",
     "cSpell.ignoreWords": [
+        "Bézout",
+        "Gauß",
+        "Vandermonde",
         "addcontentsline",
         "arraycolsep",
+        "binom",
+        "codomain",
         "markright",
         "mathbb",
         "mathrm",
-        "qedhere",
-        "texorpdfstring",
-        "smallmatrix",
-        "binom",
         "notin",
-        "Gauß",
-        "Bézout"
+        "qedhere",
+        "smallmatrix",
+        "subring",
+        "texorpdfstring"
     ],
     "todo-tree.filtering.excludeGlobs": [
-        "**/*.ttc",
-        "**/*.ttf",
-        "**/*.djvu",
         "**/*.pdf",
         "**/*.md"
     ],
