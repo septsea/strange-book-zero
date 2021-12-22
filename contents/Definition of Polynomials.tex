@@ -7,9 +7,9 @@
 \begin{definition}
     设 $D$ 是整环. 设 $x$ 是不在 $D$ 里的任意一个文字. 形如
     \begin{align*}
-        f(x) = a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in D,\ a_n \neq 0)
+        f(x) = a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \quad (n \in \mathbb{N},\ a_0,a_1,\cdots,a_n \in D,\ a_n \neq 0)
     \end{align*}
-    的表达式称为 $D$ 上 $x$ 的一个整式\myFN{事实上, 英语的 ``polynomial'' 应翻译为汉语的 ``多项式''——不过, 读者在中学算学里学到的 ``多项式'' 是不包括形如 $3x^2$, $-4x^3$ 等 ``恰有 $1$ 项的整式'' 的. 的确, 形如 $cx^n$ ($c \in D$, $n \in \NN$) 的表达式是 ``单项式'' \term{monomial}; 读者在中学算学里学到的 ``多项式'' 是 ``几个单项式的和''; ``单项式'' 与 ``多项式'' 统称 ``整式''. 可惜, ``integral expression'' 似乎并不表示 ``整式''. 顺便一提, 算学的术语似乎是混乱的. 我们在中学算学学习有理数的时候, ``整数与分数统称有理数'', 可是有的时候 ``分数'' 是 ``有理数'' 的同义词. 正如读者所见, ``单项式与多项式统称整式'', 可是在深一些的算学里, 由于 ``单项式'' 被认为是 ``恰有 $1$ 项的多项式'', 故几乎所有算学家都用 ``多项式'' 一词代替 ``整式'', 这使 ``整式'' 反而变为了 ``野鸡名词'' (毕竟, 英语的 ``integral expression'' 似乎并不表示 ``整式''). 作者不打算在术语问题上浪费过多的时间, 故作者使用对读者友好的 ``整式'' 一词——代价就是, 读者很有可能在别的算学文献里看不到 ``整式'', 而是 ``多项式'' (英语就是这样).} \term{polynomial in $x$ over $D$}. $n$ 称为其次 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次项 \term{the $i^\text{th}$ term}. $f(x)$ 的次可写为 $\deg f(x)$.
+    的表达式称为 $D$ 上 $x$ 的一个整式\myFN{事实上, 英语的 ``polynomial'' 应翻译为汉语的 ``多项式''——不过, 读者在中学算学里学到的 ``多项式'' 是不包括形如 $3x^2$, $-4x^3$ 等 ``恰有 $1$ 项的整式'' 的. 的确, 形如 $cx^n$ ($c \in D$, $n \in \mathbb{N}$) 的表达式是 ``单项式'' \term{monomial}; 读者在中学算学里学到的 ``多项式'' 是 ``几个单项式的和''; ``单项式'' 与 ``多项式'' 统称 ``整式''. 可惜, ``integral expression'' 似乎并不表示 ``整式''. 顺便一提, 算学的术语似乎是混乱的. 我们在中学算学学习有理数的时候, ``整数与分数统称有理数'', 可是有的时候 ``分数'' 是 ``有理数'' 的同义词. 正如读者所见, ``单项式与多项式统称整式'', 可是在深一些的算学里, 由于 ``单项式'' 被认为是 ``恰有 $1$ 项的多项式'', 故几乎所有算学家都用 ``多项式'' 一词代替 ``整式'', 这使 ``整式'' 反而变为了 ``野鸡名词'' (毕竟, 英语的 ``integral expression'' 似乎并不表示 ``整式''). 作者不打算在术语问题上浪费过多的时间, 故作者使用对读者友好的 ``整式'' 一词——代价就是, 读者很有可能在别的算学文献里看不到 ``整式'', 而是 ``多项式'' (英语就是这样).} \term{polynomial in $x$ over $D$}. $n$ 称为其次 \term{degree}, $a_i$ 称为其 $i$ 次系数 \term{the $i^\text{th}$ coefficient}, $a_i x^i$ 称为其 $i$ 次项 \term{the $i^\text{th}$ term}. $f(x)$ 的次可写为 $\deg f(x)$.
 
     若二个整式的次与各同次系数均相等, 则二者相等.
 
@@ -31,14 +31,14 @@
 
     $D$ 上 $x$ 的所有整式作成的集是 $D[x]$:
     \begin{align*}
-        D[x] = \{\, a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \mid n \in \NN,\ a_0,a_1,\cdots,a_n \in D \,\}.
+        D[x] = \{\, a_0 x^0 + a_1 x^1 + \cdots + a_n x^n \mid n \in \mathbb{N},\ a_0,a_1,\cdots,a_n \in D \,\}.
     \end{align*}
 
     文字 $x$ 只是一个符号, 它与 $D$ 的元的和与积都是形式的. 我们说, $x$ 是不定元 \term{indeterminate}.
 \end{definition}
 
 \begin{example}
-    $0y^0 + 1y^1 + (-1)y^2 + 0y^3 + (-7)y^4 \in \ZZ[y]$ 是一个 $4$ 次整式. 顺便一提, 一般把 $y^1$ 写为 $y$. 这个整式的一个更普通的写法是
+    $0y^0 + 1y^1 + (-1)y^2 + 0y^3 + (-7)y^4 \in \mathbb{Z}[y]$ 是一个 $4$ 次整式. 顺便一提, 一般把 $y^1$ 写为 $y$. 这个整式的一个更普通的写法是
     \begin{align*}
         y - y^2 - 7y^4.
     \end{align*}
@@ -51,7 +51,7 @@
 \end{example}
 
 \begin{example}
-    考虑 $\ZZ$ 与 $\ZZ[x]$. 设
+    考虑 $\mathbb{Z}$ 与 $\mathbb{Z}[x]$. 设
     \begin{align*}
         f(x) = ax^0 + x + 2x^2 - x^4 - bx^5, \quad g(x) = cx + dx^2 - x^4 - 3x^5,
     \end{align*}
@@ -83,7 +83,7 @@
 \end{definition}
 
 \begin{example}
-    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$. 先改写一下:
+    取 $\mathbb{Z}[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$. 先改写一下:
     \begin{align*}
         f(x) = 1x^0 + 0x + 2x^2 + 0x^3, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3.
     \end{align*}
@@ -188,7 +188,7 @@
 \end{remark}
 
 \begin{example}
-    $y - y^2 - 7y^4 \in \ZZ[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$, 且其首项系数是 $-7$.
+    $y - y^2 - 7y^4 \in \mathbb{Z}[x]$ 可以写为 $-7y^4 - y^2 + y$, 其首项是 $-7y^4$, 且其首项系数是 $-7$.
 \end{example}
 
 现在考虑乘法.
@@ -213,7 +213,7 @@
 \end{definition}
 
 \begin{example}
-    取 $\ZZ[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$. 先改写一下:
+    取 $\mathbb{Z}[x]$ 的二个元 $f(x)=x^0 + 2x^2$, $g(x)=-3x^0 + 4x - x^3$. 先改写一下:
     \begin{align*}
         f(x) = 1x^0 + 0x + 2x^2, \quad g(x) = -3x^0 + 4x + 0x^2 + (-1)x^3.
     \end{align*}
@@ -292,7 +292,7 @@
     \begin{align*}
         c_{m+n} = a_m b_n = pq \neq 0.
     \end{align*}
-    所以, 任取 $m$, $n \in \NN$, 必有
+    所以, 任取 $m$, $n \in \mathbb{N}$, 必有
     \begin{align*}
         (px^m) (qx^n) = (pq) x^{m+n}.
     \end{align*}
@@ -388,7 +388,7 @@
     \end{align*}
     现在, 我们利用
     \begin{align*}
-        (px^m) (qx^n) = (pq) x^{m+n} \quad (p,q \in D, \, m,n \in \NN)
+        (px^m) (qx^n) = (pq) x^{m+n} \quad (p,q \in D, \, m,n \in \mathbb{N})
     \end{align*}
     与运算律再算一次:
     \begin{align*}
@@ -403,11 +403,11 @@
 \end{example}
 
 \begin{definition}
-    设 $m \in \NN$. 整式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
+    设 $m \in \mathbb{N}$. 整式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
     \begin{align*}
         (f(x))^m = \underbrace{f(x) \cdot f(x) \cdot \cdots \cdot f(x)}_{\text{$m$ $f(x)$\apostrophe s}}.
     \end{align*}
-    既然 $D[x]$ 是整环, 那么前面的幂规则都适用. 具体地说, 设 $m$, $n \in \NN$, $f(x)$, $g(x) \in D[x]$, 则
+    既然 $D[x]$ 是整环, 那么前面的幂规则都适用. 具体地说, 设 $m$, $n \in \mathbb{N}$, $f(x)$, $g(x) \in D[x]$, 则
     \begin{align*}
          & (f(x))^m (f(x))^n = (f(x))^{m+n},  \\
          & ((f(x))^m)^n = (f(x))^{mn},        \\
@@ -430,7 +430,7 @@
         a_0 + a_1 x + \cdots + a_n x^n.
     \end{align*}
 
-    这儿还有一件事儿值得一提. 考虑
+    这{\scriptsize 儿}还有一件事{\scriptsize 儿}值得一提. 考虑
     \begin{align*}
         D_0 = \{\, ax^0 \mid a \in D \,\} \subset D[x].
     \end{align*}

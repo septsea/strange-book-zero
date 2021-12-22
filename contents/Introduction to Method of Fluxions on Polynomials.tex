@@ -4,11 +4,11 @@
 
 本节讨论整式的流数术 \term{method of fluxions} 初步\myFN{学过 $1$ 元函数流数术的读者可能会觉得本节废话连篇. 不过, 为照顾不熟悉三角不等式及相关知识的读者, 作者也没什么更好的写作思路了.}. 这也是本文的最终节.
 
-How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知识. 然后, 我们给读者介绍了系数为整环的元的整式. 当初, 整式还是有点抽象的. 我们利用带馀除法推出了几个很重要的命题, 并指出: 当整式的系数为 $\FF$ 的元时, 整式与中学学的整式 (函数) 没有根本上的区别. 我们在 ``\Interpolation'' 节开始介绍整式的应用. 后面的 ``\SummationFormulae'' 节告诉读者一种方便的求和法. 在上节, 我们捡起很久未出场的流数, 并把它重讲了一遍. 我们利用高级流数推广了二项展开, 得到了 Taylor 公式, 并用它重证整式的积的流数规则.
+How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知识. 然后, 我们给读者介绍了系数为整环的元的整式. 当初, 整式还是有点抽象的. 我们利用带馀除法推出了几个很重要的命题, 并指出: 当整式的系数为 $\mathbb{F}$ 的元时, 整式与中学学的整式 (函数) 没有根本上的区别. 我们在 ``\Interpolation'' 节开始介绍整式的应用. 后面的 ``\SummationFormulae'' 节告诉读者一种方便的求和法. 在上节, 我们捡起很久未出场的流数, 并把它重讲了一遍. 我们利用高级流数推广了二项展开, 得到了 Taylor 公式, 并用它重证整式的积的流数规则.
 
 之前, 流数都是形式的——有点 ``空降'' 的味道. 现在, 我们要用 Taylor 公式给流数一种含义. 如果读者知道一点分析学 \term{calculus}, 读者将不会对本节感到特别陌生; 如果读者没有学过分析学, 无妨视本节为 ``入分作''.
 
-我们在 ``\PolynomialsOverF'' 节说过, 我们不再讨论抽象的整环或系数为整环的元的整式, 而是讨论 $\FF$ 与 $\FF[x]$. 现在, 我们再具体一点——讨论老朋友 $\RR$ 与 $\RR[x]$.
+我们在 ``\PolynomialsOverF'' 节说过, 我们不再讨论抽象的整环或系数为整环的元的整式, 而是讨论 $\mathbb{F}$ 与 $\mathbb{F}[x]$. 现在, 我们再具体一点——讨论老朋友 $\mathbb{R}$ 与 $\mathbb{R}[x]$.
 
 不过, 我们需要承认一个事实是对的. 为什么说 ``承认'' 呢? 因为它的证明需要超出本文的知识很多很多的工具. 但是, 它并不是什么 ``牵强附会'' 的命题. 是什么命题呢? 我们不必现在就说; 我们在用到它的时候再说.
 
@@ -25,11 +25,11 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 请读者尝试自行证明下面四个命题. 当然, 熟悉这四个命题的读者可以不证. 我们把它们写在这里供读者参考.
 
 \begin{proposition}
-    设 $a \in \RR$. 则 $|a| \geq 0$.
+    设 $a \in \mathbb{R}$. 则 $|a| \geq 0$.
 \end{proposition}
 
 \begin{proposition}
-    设 $a \in \RR$. 则
+    设 $a \in \mathbb{R}$. 则
     \begin{align*}
         a = \begin{cases}
             |a|,  & \quad a \geq 0; \\
@@ -39,11 +39,11 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 \end{proposition}
 
 \begin{proposition}
-    设 $a \in \RR$. 则 $-|a| \leq a \leq |a|$.
+    设 $a \in \mathbb{R}$. 则 $-|a| \leq a \leq |a|$.
 \end{proposition}
 
 \begin{proposition}
-    设 $a \in \RR$, 且 $b > 0$. 则
+    设 $a \in \mathbb{R}$, 且 $b > 0$. 则
     \begin{align*}
          & |a| \leq b \iff -b \leq a \leq b; \\
          & |a| < b \iff -b < a < b.
@@ -62,7 +62,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 利用这些性质, 我们有
 
 \begin{proposition}
-    设 $a_0$, $a_1$, $\cdots$, $a_{n-1} \in \RR$. 则
+    设 $a_0$, $a_1$, $\cdots$, $a_{n-1} \in \mathbb{R}$. 则
     \begin{align*}
         |a_0 a_1 \cdots a_{n-1}| = |a_0| \cdot |a_1| \cdot \cdots \cdot |a_{n-1}|.
     \end{align*}
@@ -79,7 +79,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 下面是一个十分重要的不等式:
 
 \begin{proposition}
-    设 $a_0$, $a_1$, $\cdots$, $a_{n-1} \in \RR$. 则
+    设 $a_0$, $a_1$, $\cdots$, $a_{n-1} \in \mathbb{R}$. 则
     \begin{align*}
         |a_0 + a_1 + \cdots + a_{n-1}| \leq |a_0| + |a_1| + \cdots + |a_{n-1}|.
     \end{align*}
@@ -113,24 +113,24 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 \begin{definition}
     设 $a$, $b$ 是实数, 且 $a < b$. 称
     \begin{align*}
-        [a,b] = \{\, t \in \RR \mid a \leq t \leq b \,\}
+        [a,b] = \{\, t \in \mathbb{R} \mid a \leq t \leq b \,\}
     \end{align*}
     为闭区间 \term{closed interval}; 称
     \begin{align*}
-        (a,b) = \{\, t \in \RR \mid a < t < b \,\}
+        (a,b) = \{\, t \in \mathbb{R} \mid a < t < b \,\}
     \end{align*}
     为开区间 \term{open interval}. 类似地, 有半闭区间 \term{half-closed interval}:
     \begin{align*}
-         & [a,b) = \{\, t \in \RR \mid a \leq t < b \,\}, \\
-         & (a,b] = \{\, t \in \RR \mid a < t \leq b \,\}.
+         & [a,b) = \{\, t \in \mathbb{R} \mid a \leq t < b \,\}, \\
+         & (a,b] = \{\, t \in \mathbb{R} \mid a < t \leq b \,\}.
     \end{align*}
     $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$ 都是有限区间 \term{finite interval}. 此名暗示着, 还有无限区间 \term{infinite interval}:
     \begin{align*}
-         & (-\infty, a) = \{\, t \in \RR \mid t < a \,\},    \\
-         & (-\infty, a] = \{\, t \in \RR \mid t \leq a \,\}, \\
-         & (b, +\infty) = \{\, t \in \RR \mid t > b \,\},    \\
-         & [b, +\infty) = \{\, t \in \RR \mid t \geq b \,\}, \\
-         & (-\infty, +\infty) = \RR.
+         & (-\infty, a) = \{\, t \in \mathbb{R} \mid t < a \,\},    \\
+         & (-\infty, a] = \{\, t \in \mathbb{R} \mid t \leq a \,\}, \\
+         & (b, +\infty) = \{\, t \in \mathbb{R} \mid t > b \,\},    \\
+         & [b, +\infty) = \{\, t \in \mathbb{R} \mid t \geq b \,\}, \\
+         & (-\infty, +\infty) = \mathbb{R}.
     \end{align*}
     有限区间与无限区间都是区间 \term{interval}.
 \end{definition}
@@ -146,7 +146,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 % 下面的定义指出, 利用 $S$ 的非空子集, 点可被分为三类.
 
 % \begin{definition}
-%     设 $S$ 是 $\RR$ 的非空子集. 设 $a \in \RR$. 若存在正数 $\delta_0$ 使
+%     设 $S$ 是 $\mathbb{R}$ 的非空子集. 设 $a \in \mathbb{R}$. 若存在正数 $\delta_0$ 使
 %     \begin{align*}
 %         |t - a| < \delta_0 \implies t \in S,
 %     \end{align*}
@@ -164,7 +164,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 % \begin{example}
 %     考虑
 %     \begin{align*}
-%         S = (0, 4] = \{\, t \in \RR \mid 0 < t \leq 4 \,\}.
+%         S = (0, 4] = \{\, t \in \mathbb{R} \mid 0 < t \leq 4 \,\}.
 %     \end{align*}
 
 %     $2$ 是 $S$ 的内点. 这是因为, 存在正数 $\delta_0 = 1$, 使
@@ -206,7 +206,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 
 %     (vi) 若 $t \in (b,+\infty)$, 则 $t$ 是 $(b,+\infty)$, $[b,+\infty)$ 的内点, 且 $t$ 是 $(-\infty,b)$, $(-\infty,b]$ 的外点;
 
-%     (vii) 若 $t \in \RR$, 则 $t$ 是 $\RR$ 的内点;
+%     (vii) 若 $t \in \mathbb{R}$, 则 $t$ 是 $\mathbb{R}$ 的内点;
 
 %     (viii) 若 $r > |a|$ 且 $r > |b|$, 则 $[a,b]$, $(a,b)$, $[a,b)$, $(a,b]$ 都是 $[-r, r]$ 的真子集.
 % \end{remark}
@@ -214,7 +214,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 下面建立一些关于整式的不等式.
 
 \begin{proposition}
-    设 $n$ 是非负整数. 设 $a_0, a_1$, $\cdots$, $a_n \in \RR$. 任取正数 $r$, 必存在正数 $M$ 使
+    设 $n$ 是非负整数. 设 $a_0, a_1$, $\cdots$, $a_n \in \mathbb{R}$. 任取正数 $r$, 必存在正数 $M$ 使
     \begin{align*}
         |u| \leq r \implies |a_0 + a_1 u + \cdots + a_n u^n| \leq M.
     \end{align*}
@@ -240,7 +240,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 \end{pf}
 
 \begin{proposition}
-    设 $I$ 是有限区间. 设 $f(x) \in \RR[x]$. 存在正数 $M$ 使
+    设 $I$ 是有限区间. 设 $f(x) \in \mathbb{R}[x]$. 存在正数 $M$ 使
     \begin{align*}
         u \in I \implies |f(u)| \leq M.
     \end{align*}
@@ -250,7 +250,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 \begin{pf}
     取 $r > 0$ 使 $I \subset [-r, r]$. 设
     \begin{align*}
-        f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \RR[x].
+        f(x) = a_0 + a_1 x + \cdots + a_n x^n \in \mathbb{R}[x].
     \end{align*}
     根据上个命题, 存在正数 $M$ 使
     \begin{align*}
@@ -262,10 +262,10 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
     \end{align*}
 \end{pf}
 
-我们有时称 $\RR$ 的元为点.
+我们有时称 $\mathbb{R}$ 的元为点.
 
 \begin{proposition}
-    设 $f(x) \in \RR[x]$. 设 $t_0 \in \RR$. 任取 $\varepsilon > 0$, 必有 $\delta > 0$, 使
+    设 $f(x) \in \mathbb{R}[x]$. 设 $t_0 \in \mathbb{R}$. 任取 $\varepsilon > 0$, 必有 $\delta > 0$, 使
     \begin{align*}
         |t - t_0| < \delta \implies |f(t) - f(t_0)| < \varepsilon.
     \end{align*}
@@ -273,7 +273,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 \end{proposition}
 
 \begin{pf}
-    若 $f(x) = c$, $c \in \RR$, 则
+    若 $f(x) = c$, $c \in \mathbb{R}$, 则
     \begin{align*}
         |f(t) - f(t_0)| = |c - c| = 0 < \varepsilon
     \end{align*}
@@ -290,9 +290,9 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
     设 $I = [t_0 - 1, t_0 + 1]$. 不难看出,
     \begin{align*}
         I
-        = {} & \{\, t \in \RR \mid t_0 - 1 \leq t \leq t_0 + 1 \,\} \\
-        = {} & \{\, t \in \RR \mid -1 \leq t - t_0 \leq 1 \,\}      \\
-        = {} & \{\, t \in \RR \mid |t - t_0| \leq 1 \,\}.
+        = {} & \{\, t \in \mathbb{R} \mid t_0 - 1 \leq t \leq t_0 + 1 \,\} \\
+        = {} & \{\, t \in \mathbb{R} \mid -1 \leq t - t_0 \leq 1 \,\}      \\
+        = {} & \{\, t \in \mathbb{R} \mid |t - t_0| \leq 1 \,\}.
     \end{align*}
     利用上个命题, 存在 $M > 0$ 使
     \begin{align*}
@@ -309,7 +309,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 \end{pf}
 
 \begin{proposition}
-    设 $t_0 \in \RR$. 设 $\ell$ 是非负整数. 设
+    设 $t_0 \in \mathbb{R}$. 设 $\ell$ 是非负整数. 设
     \begin{align*}
          & f(x) = a_\ell (x - t_0)^\ell + a_{\ell+1} (x - t_0)^{\ell+1}
         + \cdots + a_n (x - t_0)^n,                                     \\
@@ -359,7 +359,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 下面讨论流数与变率的关系.
 
 \begin{definition}
-    设 $a$, $b$ 是实数, 且 $a < b$. 设 $f(x) \in \RR[x]$. 我们说整式 $f(x)$ 在区间 $[a, b]$ 的平均变率 \term{average rate of change} 是
+    设 $a$, $b$ 是实数, 且 $a < b$. 设 $f(x) \in \mathbb{R}[x]$. 我们说整式 $f(x)$ 在区间 $[a, b]$ 的平均变率 \term{average rate of change} 是
     \begin{align*}
         \frac{f(b) - f(a)}{b - a}.
     \end{align*}
@@ -370,7 +370,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
     \begin{align*}
         \frac{f(b) - f(a)}{b - a} = \frac{(a_0 + a_1 b) - (a_0 + a_1 a)}{b - a} = a_1.
     \end{align*}
-    可以看到, $f(x)$ 在 $[a, b]$ 的平均变率与具体区间无关. 反过来, 若整式 $f(x)$ 适合: 任取 $c$, $d \in \RR$, $c < d$, 都有
+    可以看到, $f(x)$ 在 $[a, b]$ 的平均变率与具体区间无关. 反过来, 若整式 $f(x)$ 适合: 任取 $c$, $d \in \mathbb{R}$, $c < d$, 都有
     \begin{align*}
         \frac{f(d) - f(c)}{d - c}
     \end{align*}
@@ -388,7 +388,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
     \end{align*}
 \end{example}
 
-从上面的例可知: 次低于 $2$ 的整式 $f(x) = a_0 + a_1 x$ 在任意闭区间 $[a, b]$ 的平均变率都是常数. 我们说, 任取 $t \in \RR$, $f(x)$ 在点 $t$ 的变率 \term{rate of change} 是 $a_1$.
+从上面的例可知: 次低于 $2$ 的整式 $f(x) = a_0 + a_1 x$ 在任意闭区间 $[a, b]$ 的平均变率都是常数. 我们说, 任取 $t \in \mathbb{R}$, $f(x)$ 在点 $t$ 的变率 \term{rate of change} 是 $a_1$.
 
 不过, 次高于 $1$ 的整式有着不一样的平均变率.
 
@@ -430,7 +430,7 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 \begin{proposition}
     虽然我们还不能准确地定义变率, 但生活经验告诉我们, 变率应适合如下特性:
 
-    设 $f (x)$, $g (x) \in \RR[x]$. 若 $f (t_0) = g (t_0)$, 且存在 $\delta > 0$ 使
+    设 $f (x)$, $g (x) \in \mathbb{R}[x]$. 若 $f (t_0) = g (t_0)$, 且存在 $\delta > 0$ 使
     \begin{align*}
         t_0 - \delta < t < t_0 & \implies f (t) < g (t), \\
         t_0 < t < t_0 + \delta & \implies f (t) > g (t).
@@ -440,12 +440,12 @@ How time flies! 一开始, 我们在 ``\Prerequisites'' 给读者介绍预备知
 
 为充分利用此特性, 我们特化之.
 
-设 $A \in \RR$. 取 $g(x) = f(t_0) + A (x - t_0)$, 则 $f(t_0) = g(t_0)$. 因为 $g(x)$ 在 $t_0$ 的变率是 $A$, 故
+设 $A \in \mathbb{R}$. 取 $g(x) = f(t_0) + A (x - t_0)$, 则 $f(t_0) = g(t_0)$. 因为 $g(x)$ 在 $t_0$ 的变率是 $A$, 故
 
 \begin{proposition}
     变率应适合如下特性:
 
-    设 $f (x) \in \RR[x]$. 若存在 $\delta_0 > 0$ 使
+    设 $f (x) \in \mathbb{R}[x]$. 若存在 $\delta_0 > 0$ 使
     \begin{align*}
         t_0 - \delta_0 < t < t_0 & \implies f (t) < f(t_0) + A (t - t_0), \\
         t_0 < t < t_0 + \delta_0 & \implies f (t) > f(t_0) + A (t - t_0).
@@ -483,7 +483,7 @@ $t_0 - \delta < t < t_0$ 与 $t_0 < t < t_0 + \delta$ 相当于
 \begin{proposition}
     变率应适合如下特性:
 
-    设 $f (x) \in \RR[x]$. 若存在 $\delta > 0$ 使
+    设 $f (x) \in \mathbb{R}[x]$. 若存在 $\delta > 0$ 使
     \begin{align*}
         0 < |t - t_0| < \delta & \implies \frac{f(t) - f(t_0)}{t - t_0} > A,
     \end{align*}
@@ -495,7 +495,7 @@ $t_0 - \delta < t < t_0$ 与 $t_0 < t < t_0 + \delta$ 相当于
 \begin{proposition}
     变率应适合如下特性:
 
-    设 $f (x) \in \RR[x]$. 若存在 $\delta > 0$ 使
+    设 $f (x) \in \mathbb{R}[x]$. 若存在 $\delta > 0$ 使
     \begin{align*}
         0 < |t - t_0| < \delta & \implies \frac{f(t) - f(t_0)}{t - t_0} < A,
     \end{align*}
@@ -504,7 +504,7 @@ $t_0 - \delta < t < t_0$ 与 $t_0 < t < t_0 + \delta$ 相当于
 
 现在, 让我们揭秘变率.
 
-设 $t_0 \in \RR$. 设 $f(x)$ 的次不高于 $n$. 根据 Taylor 公式,
+设 $t_0 \in \mathbb{R}$. 设 $f(x)$ 的次不高于 $n$. 根据 Taylor 公式,
 \begin{align*}
     f(x) = f(t_0) + Df(t_0) (x - t_0) + \sum_{j = 2}^{n} \frac{D^j f(t_0)}{j!} (x - t_0)^j.
 \end{align*}
@@ -512,7 +512,7 @@ $t_0 - \delta < t < t_0$ 与 $t_0 < t < t_0 + \delta$ 相当于
 \begin{align*}
     \frac{f(t) - f(t_0)}{t - t_0} = Df(t_0) + \sum_{j = 2}^{n} \frac{D^j f(t_0)}{j!} (t - t_0)^{j - 1}.
 \end{align*}
-设 $A \in \RR$. 则
+设 $A \in \mathbb{R}$. 则
 \begin{align*}
     \frac{f(t) - f(t_0)}{t - t_0} - A = (Df(t_0) - A) + \sum_{j = 2}^{n} \frac{D^j f(t_0)}{j!} (t - t_0)^{j - 1}.
 \end{align*}
@@ -560,7 +560,7 @@ $t_0 - \delta < t < t_0$ 与 $t_0 < t < t_0 + \delta$ 相当于
 我们得到了本节最重要的命题:
 
 \begin{proposition}
-    设 $f (x) \in \RR[x]$. 设 $t_0 \in \RR$. 则 $Df(t_0)$ 是 $f(x)$ 在点 $t_0$ 的变率.
+    设 $f (x) \in \mathbb{R}[x]$. 设 $t_0 \in \mathbb{R}$. 则 $Df(t_0)$ 是 $f(x)$ 在点 $t_0$ 的变率.
 \end{proposition}
 
 至此, 我们找到了流数的一种含义, 本节的任务终了. 我们就讨论到这里吧. 再见, 读者朋友!

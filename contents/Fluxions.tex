@@ -19,19 +19,19 @@
 \end{definition}
 
 \begin{remark}
-    整环 $D$ 里不一定有名为 ${} \pm 2$, ${}\pm 3$, $\cdots$ 的元. 回忆一下, 若 $a \in D$, $n \in \NN$, 则
+    整环 $D$ 里不一定有名为 ${} \pm 2$, ${}\pm 3$, $\cdots$ 的元. 回忆一下, 若 $a \in D$, $n \in \mathbb{N}$, 则
     \begin{align*}
         na = n \cdot a = \underbrace{a + a + \cdots + a}_{\text{$n$ $a$\apostrophe s}}.
     \end{align*}
-    若 $-n \in \NN$, 则
+    若 $-n \in \mathbb{N}$, 则
     \begin{align*}
         na = -((-n)a).
     \end{align*}
-    当然, 在 $\ZZ$ (或 $\FF$) 里, $na$ 可以认为是 $\ZZ$ (或 $\FF$) 的二个元 $n$ 与 $a$ 的积.
+    当然, 在 $\mathbb{Z}$ (或 $\mathbb{F}$) 里, $na$ 可以认为是 $\mathbb{Z}$ (或 $\mathbb{F}$) 的二个元 $n$ 与 $a$ 的积.
 \end{remark}
 
 \begin{example}
-    取 $f(x) = x^6 - x^3 + 1 \in D[x]$. 若 $D = \FF$, 则
+    取 $f(x) = x^6 - x^3 + 1 \in D[x]$. 若 $D = \mathbb{F}$, 则
     \begin{align*}
         f^{\prime}(x) = 6x^5 - 3x^2 + 0 = 6x^5 - 3x^2.
     \end{align*}
@@ -216,7 +216,7 @@
 下面, 我们来了解流数的运算法则. 先看一个例.
 
 \begin{example}
-    考虑 $\ZZ$ 与 $\ZZ[x]$. 取
+    考虑 $\mathbb{Z}$ 与 $\mathbb{Z}[x]$. 取
     \begin{align*}
         f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1.
     \end{align*}
@@ -328,7 +328,7 @@
 \end{proposition}
 
 \begin{pf}
-    我们证明 (\ding{72}), 将剩下的二个式留给读者作练习. 首先, 任取 $i$, $j \in \NN$, $p$, $q \in D$, 有
+    我们证明 (\ding{72}), 将剩下的二个式留给读者作练习. 首先, 任取 $i$, $j \in \mathbb{N}$, $p$, $q \in D$, 有
     \begin{align*}
         px^i \cdot qx^j = pqx^{i+j}.
     \end{align*}
@@ -397,7 +397,7 @@
 \end{pf}
 
 \begin{example}
-    考虑 $\ZZ$ 与 $\ZZ[x]$. 取
+    考虑 $\mathbb{Z}$ 与 $\mathbb{Z}[x]$. 取
     \begin{align*}
         f(x) = x^3 + 2, \quad g(x) = x^2 + x - 1.
     \end{align*}
@@ -430,7 +430,7 @@
 很有用. 看下面的例.
 
 \begin{example}
-    还是考虑 $\ZZ$ 与 $\ZZ[x]$. 计算
+    还是考虑 $\mathbb{Z}$ 与 $\mathbb{Z}[x]$. 计算
     \begin{align*}
          & p(x) = (g \circ f) (x) = g(f(x)) = (x^3 + 2)^2 + (x^3 + 2) - 1, \\
          & q(x) = (f \circ g) (x) = f(g(x)) = (x^2 + x - 1)^3 + 2
@@ -471,7 +471,7 @@
 \begin{align*}
     (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x).
 \end{align*}
-幸运的事儿是, 这个猜想是正确的.
+幸运的事{\scriptsize 儿}是, 这个猜想是正确的.
 
 \begin{proposition}
     设 $f(x)$, $g(x) \in D[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的流数适合链规则 \term{the chain rule}:

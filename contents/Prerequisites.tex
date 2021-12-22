@@ -73,27 +73,27 @@
     证明 ``$\ell$ 的一个必要与充分条件是 $r$'' 时, 我们会把它分为必要性 \term{necessity} 与充分性 \term{sufficiency} 二个部分. 证明必要性, 就是证明 ``$r$ 是 $\ell$ 的一个必要条件'', 也就是证明 ``若 $\ell$, 则 $r$'' 是对的; 换句话说, 证明左边可以推出右边. 证明充分性, 就是证明 ``$r$ 是 $\ell$ 的一个充分条件'', 也就是证明 ``若 $r$, 则 $\ell$'' 是对的; 换句话说, 证明右边可以推出左边.
 \end{remark}
 
-命题就介绍到这里. 下面回顾复数基础.\myFN{如果读者没学过复数, 也不用怕. 本文不要求读者很了解复数; 本文只要求读者看到 ``$\ii$'' 不觉得陌生、恐惧.}
+命题就介绍到这里. 下面回顾复数基础.\myFN{如果读者没学过复数, 也不用怕. 本文不要求读者很了解复数; 本文只要求读者看到 ``$\mathrm{i}$'' 不觉得陌生、恐惧.}
 
 \begin{definition}
-    复数 \term{complex number} 是形如 $x + y \ii$ ($x$, $y$ 是实数) 的数.
+    复数 \term{complex number} 是形如 $x + y \mathrm{i}$ ($x$, $y$ 是实数) 的数.
 \end{definition}
 
 \begin{remark}
-    可将 $x + y \ii$ 写为 $x + \ii y$.
+    可将 $x + y \mathrm{i}$ 写为 $x + \mathrm{i} y$.
 \end{remark}
 
 \begin{definition}
     设 $a,b,c,d$ 是实数. 则
     \begin{align*}
-        a + b \ii = c + d \ii \iff a = c \text{ and } b = d.
+        a + b \mathrm{i} = c + d \mathrm{i} \iff a = c \text{ and } b = d.
     \end{align*}
 \end{definition}
 
 \begin{remark}
-    我们把形如 $a+0 \ii$ 的复数写为 $a$, 并认为 $a+0 \ii$ 是实数. 反过来, $a$ 也可以认为是复数 $a + 0 \ii$.
+    我们把形如 $a+0 \mathrm{i}$ 的复数写为 $a$, 并认为 $a+0 \mathrm{i}$ 是实数. 反过来, $a$ 也可以认为是复数 $a + 0 \mathrm{i}$.
 
-    形如 $0 + b \ii$ 的复数可写为 $b \ii$. 按照习惯, $1\ii$ 可写为 $\ii$, 且 $-1\ii$ 可写为 $-\ii$.
+    形如 $0 + b \mathrm{i}$ 的复数可写为 $b \mathrm{i}$. 按照习惯, $1\mathrm{i}$ 可写为 $\mathrm{i}$, 且 $-1\mathrm{i}$ 可写为 $-\mathrm{i}$.
 
     设 $z_1, z_2, z_3$ 是任意三个复数. 读者可验证, 复数的相等适合如下三条件: $z_1 = z_1$; 若 $z_1 = z_2$, 则 $z_2 = z_1$; 若 $z_1 = z_2$, 且 $z_2 = z_3$, 则 $z_1 = z_3$.
 \end{remark}
@@ -101,24 +101,24 @@
 \begin{definition}
     复数的加、乘法定义为
     \begin{align*}
-         & (a + b \ii) + (c + d \ii) = (a + c) + (b + d) \ii,   \\
-         & (a + b \ii) (c + d \ii) = (ac - bd) + (ad + bc) \ii.
+         & (a + b \mathrm{i}) + (c + d \mathrm{i}) = (a + c) + (b + d) \mathrm{i},   \\
+         & (a + b \mathrm{i}) (c + d \mathrm{i}) = (ac - bd) + (ad + bc) \mathrm{i}.
     \end{align*}
     由此可见, 二个复数的和 (或积) 还是复数.
 \end{definition}
 
 \begin{example}
-    我们计算 $\ii$ 与自己的积:
+    我们计算 $\mathrm{i}$ 与自己的积:
     \begin{align*}
-        \ii \cdot \ii = (0 + 1\ii) (0 + 1\ii) = (0 \cdot 0 - 1 \cdot 1) + (0 \cdot 1 + 1 \cdot 0) \ii = -1.
+        \mathrm{i} \cdot \mathrm{i} = (0 + 1\mathrm{i}) (0 + 1\mathrm{i}) = (0 \cdot 0 - 1 \cdot 1) + (0 \cdot 1 + 1 \cdot 0) \mathrm{i} = -1.
     \end{align*}
     简单地说, 就是
     \begin{align*}
-        \ii \cdot \ii = \ii^2 = -1.
+        \mathrm{i} \cdot \mathrm{i} = \mathrm{i}^2 = -1.
     \end{align*}
 \end{example}
 
-设 $z_1, z_2, z_3$ 是任意三个复数 (不必不同). 设 $z_1 = a + b \ii$.
+设 $z_1, z_2, z_3$ 是任意三个复数 (不必不同). 设 $z_1 = a + b \mathrm{i}$.
 
 \begin{proposition}
     复数的加法适合如下运算律:
@@ -129,13 +129,13 @@
 
     (iii) $0 + z_1 = z_1$;
 
-    (iv) 存在复数 $w = (-a) + (-b) \ii$ 使 $w + z_1 = 0$.
+    (iv) 存在复数 $w = (-a) + (-b) \mathrm{i}$ 使 $w + z_1 = 0$.
 
     通常把适合 (iv) 的 $w$ 记为 $-z_1$, 且称之为 $z_1$ 的相反数.
 \end{proposition}
 
 \begin{remark}
-    $(-a) + (-b) \ii$ 可写为 $-a-b \ii$.
+    $(-a) + (-b) \mathrm{i}$ 可写为 $-a-b \mathrm{i}$.
 \end{remark}
 
 \begin{definition}
@@ -156,7 +156,7 @@
 
     (viii) $(-1) z_1 = -z_1$;
 
-    (ix) 若 $z_1 \neq 0$, 则存在复数 $v = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \ii$ 使 $v z_1 = 1$.
+    (ix) 若 $z_1 \neq 0$, 则存在复数 $v = \frac{a}{a^2 + b^2} + \frac{-b}{a^2 + b^2} \mathrm{i}$ 使 $v z_1 = 1$.
 
     通常把适合 (ix) 的 $v$ 记为 $z_1^{-1}$, 且称之为 $z_1$ 的倒数.
 \end{proposition}
@@ -177,26 +177,26 @@
 \end{proposition}
 
 \begin{remark}
-    $a$, $b\ii$, $c$, $d\ii$ 都可以看成是复数. 这样
+    $a$, $b\mathrm{i}$, $c$, $d\mathrm{i}$ 都可以看成是复数. 这样
     \begin{align*}
-        (a + b \ii) (c + d \ii)
-        = {} & (a + b \ii) c + (a + b \ii) (d \ii)  \\
-        = {} & ac + b \ii c + a d \ii + b \ii d \ii \\
-        = {} & ac + bc\ii + ad\ii + bd\ii^2         \\
-        = {} & (ac + bd\ii^2) + (ad + bc)\ii        \\
-        = {} & (ac - bd) + (ad + bc)\ii.
+        (a + b \mathrm{i}) (c + d \mathrm{i})
+        = {} & (a + b \mathrm{i}) c + (a + b \mathrm{i}) (d \mathrm{i})         \\
+        = {} & ac + b \mathrm{i} c + a d \mathrm{i} + b \mathrm{i} d \mathrm{i} \\
+        = {} & ac + bc\mathrm{i} + ad\mathrm{i} + bd\mathrm{i}^2                \\
+        = {} & (ac + bd\mathrm{i}^2) + (ad + bc)\mathrm{i}                      \\
+        = {} & (ac - bd) + (ad + bc)\mathrm{i}.
     \end{align*}
-    也就是说, 我们不必死记复数的乘法规则: 只要用运算律与 $\ii^2 = -1$ 即可召唤它.
+    也就是说, 我们不必死记复数的乘法规则: 只要用运算律与 $\mathrm{i}^2 = -1$ 即可召唤它.
 \end{remark}
 
 \begin{definition}
-    设 $a$, $b$ 是实数. $a + b\ii$ 的共轭 \term{conjugate} 是复数 $a - b\ii$. 复数 $z_1$ 的共轭可写为 $\overline{z_1}$.
+    设 $a$, $b$ 是实数. $a + b\mathrm{i}$ 的共轭 \term{conjugate} 是复数 $a - b\mathrm{i}$. 复数 $z_1$ 的共轭可写为 $\overline{z_1}$.
 \end{definition}
 
 \begin{proposition}
     共轭适合如下性质:
 
-    (x) $\overline{z_1} + z_1$ 与 $\ii \cdot (\overline{z_1} - z_1)$ 都是实数;
+    (x) $\overline{z_1} + z_1$ 与 $\mathrm{i} \cdot (\overline{z_1} - z_1)$ 都是实数;
 
     (xi) $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$, $\overline{z_1 z_2} = \overline{z_1} \cdot \overline{z_2}$;
 
@@ -271,7 +271,7 @@
         = {} & \frac{\ell(\ell+1)}{2}                          \\
         = {} & \frac{(\ell+1)((\ell+1) - 1)}{2},
     \end{align*}
-    故我们由 $P(\ell)$ 推出了 $P(\ell + 1)$. 我们在哪儿用到了 $P(\ell)$ 呢? 我们在标了 (IH) 的那一行用了 $P(\ell)$. 这样的假设称为归纳假设 \term{induction hypothesis}.
+    故我们由 $P(\ell)$ 推出了 $P(\ell + 1)$. 我们在哪{\scriptsize 儿}用到了 $P(\ell)$ 呢? 我们在标了 (IH) 的那一行用了 $P(\ell)$. 这样的假设称为归纳假设 \term{induction hypothesis}.
 
     既然 (i) (ii) 都适合, 那么任取不低于 $n_0=1$ 的整数 $n$, $P(n)$ 都对.
 \end{example}
@@ -378,20 +378,20 @@
 \end{definition}
 
 \begin{example}
-    全体整数作成的集用 $\ZZ$ \term{Zahl}\myFN{A German word which means \textit{number}.} 表示. 它可以写为
+    全体整数作成的集用 $\mathbb{Z}$ \term{Zahl}\myFN{A German word which means \textit{number}.} 表示. 它可以写为
     \begin{align*}
-        \ZZ = \{\, 0,1,-1,2,-2,\cdots,n,-n,\cdots \,\}.
+        \mathbb{Z} = \{\, 0,1,-1,2,-2,\cdots,n,-n,\cdots \,\}.
     \end{align*}
 \end{example}
 
 \begin{example}
-    全体非负整数作成的集用 $\NN$ \term{natural} 表示. 它可以写为
+    全体非负整数作成的集用 $\mathbb{N}$ \term{natural} 表示. 它可以写为
     \begin{align*}
-        \NN = \{\, x \mid x \in \ZZ \text{ and } x \geq 0 \,\}.
+        \mathbb{N} = \{\, x \mid x \in \mathbb{Z} \text{ and } x \geq 0 \,\}.
     \end{align*}
     为了方便, 也可以写为
     \begin{align*}
-        \NN = \{\, x \in \ZZ \mid x \geq 0 \,\}.
+        \mathbb{N} = \{\, x \in \mathbb{Z} \mid x \geq 0 \,\}.
     \end{align*}
 \end{example}
 
@@ -404,32 +404,32 @@
 \end{example}
 
 \begin{example}
-    全体有理数作成的集用 $\QQ$ \term{quotient} 表示. 因为整数是有理数, 所以 $\ZZ \subset \QQ$. 因为有理数 $\frac12$ 不是整数, 我们说 $\ZZ$ 是 $\QQ$ 的真子集.
+    全体有理数作成的集用 $\mathbb{Q}$ \term{quotient} 表示. 因为整数是有理数, 所以 $\mathbb{Z} \subset \mathbb{Q}$. 因为有理数 $\frac12$ 不是整数, 我们说 $\mathbb{Z}$ 是 $\mathbb{Q}$ 的真子集.
 \end{example}
 
 \begin{definition}
-    全体实数作成的集用 $\RR$ \term{real} 表示.
+    全体实数作成的集用 $\mathbb{R}$ \term{real} 表示.
 \end{definition}
 
 \begin{definition}
-    全体复数作成的集用 $\CC$ \term{complex} 表示. 不难看出,
+    全体复数作成的集用 $\mathbb{C}$ \term{complex} 表示. 不难看出,
     \begin{align*}
-        \NN \subset \ZZ \subset \QQ \subset \RR \subset \CC.
+        \mathbb{N} \subset \mathbb{Z} \subset \mathbb{Q} \subset \mathbb{R} \subset \mathbb{C}.
     \end{align*}
 \end{definition}
 
 \begin{definition}
-    $\FF$ \term{field} 可表示 $\QQ$, $\RR$, $\CC$ 的任意一个. 不难看出, $\FF$ 适合这几条:
+    $\mathbb{F}$ \term{field} 可表示 $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$ 的任意一个. 不难看出, $\mathbb{F}$ 适合这几条:
 
-    (i) $0 \in \FF$, $1 \in \FF$, $0 \neq 1$;
+    (i) $0 \in \mathbb{F}$, $1 \in \mathbb{F}$, $0 \neq 1$;
 
-    (ii) 任取 $x,y \in \FF$ ($y \neq 0$), 必有 $x-y, \frac{x}{y} \in \FF$.
+    (ii) 任取 $x,y \in \mathbb{F}$ ($y \neq 0$), 必有 $x-y, \frac{x}{y} \in \mathbb{F}$.
 
     后面会见到稍详细的论述.
 \end{definition}
 
 \begin{definition}
-    设 $\mathbb{L}$ 是 $\CC$, $\RR$, $\QQ$, $\ZZ$, $\NN$, $\FF$ 的任意一个. $\mathbb{L}^{\ast}$ 表示 $\mathbb{L}$ 去掉 $0$ 后得到的集. 不难看出, $\mathbb{L}$ 是 $\mathbb{L}^{\ast}$ 的真超集.
+    设 $\mathbb{L}$ 是 $\mathbb{C}$, $\mathbb{R}$, $\mathbb{Q}$, $\mathbb{Z}$, $\mathbb{N}$, $\mathbb{F}$ 的任意一个. $\mathbb{L}^{\ast}$ 表示 $\mathbb{L}$ 去掉 $0$ 后得到的集. 不难看出, $\mathbb{L}$ 是 $\mathbb{L}^{\ast}$ 的真超集.
 \end{definition}
 
 \begin{definition}
@@ -498,9 +498,9 @@
 \end{definition}
 
 \begin{example}
-    可以把 $\RR \times \RR$ 看作平面上的点集.
+    可以把 $\mathbb{R} \times \mathbb{R}$ 看作平面上的点集.
     \begin{align*}
-         & \RR \times \RR \to \RR,  \tag*{$f$:} \\
+         & \mathbb{R} \times \mathbb{R} \to \mathbb{R},  \tag*{$f$:} \\
          & (x,y) \mapsto \sqrt{x^2+y^2}
     \end{align*}
     是函数: 它表示点 $(x,y)$ 到点 $(0,0)$ 的距离.
@@ -540,15 +540,15 @@
 \end{definition}
 
 \begin{example}
-    设 $A \subset \CC$, 且 $A$ 非空. 定义二个 $A$ 到 $\CC$ 的函数: $f_1 (x) = x^2$, $f_2 (x) = |x|^2$. 如果 $A = \RR$, 那么 $f_1 = f_2$. 可是, 若 $A = \CC$, $f_1$ 与 $f_2$ 不相等.
+    设 $A \subset \mathbb{C}$, 且 $A$ 非空. 定义二个 $A$ 到 $\mathbb{C}$ 的函数: $f_1 (x) = x^2$, $f_2 (x) = |x|^2$. 如果 $A = \mathbb{R}$, 那么 $f_1 = f_2$. 可是, 若 $A = \mathbb{C}$, $f_1$ 与 $f_2$ 不相等.
 \end{example}
 
 \begin{example}
-    设 $A$ 是全体正实数作成的集. 定义二个 $A$ 到 $\RR$ 的函数: $f_1 (x) = \frac16 \log_{2} {x^3}$, $f_2 (x) = \log_{4} {x}$. 知道对数的读者可以看出, $f_1$ 与 $f_2$ 有着相同的对应法则, 故 $f_1 = f_2$. 因为 $f_2$ 是对数函数 \term{logarithmic function}, 所以 $f_1$ 也是.\myFN{如果读者没学过对数, 可放心地跳过本例哟!}
+    设 $A$ 是全体正实数作成的集. 定义二个 $A$ 到 $\mathbb{R}$ 的函数: $f_1 (x) = \frac16 \log_{2} {x^3}$, $f_2 (x) = \log_{4} {x}$. 知道对数的读者可以看出, $f_1$ 与 $f_2$ 有着相同的对应法则, 故 $f_1 = f_2$. 因为 $f_2$ 是对数函数 \term{logarithmic function}, 所以 $f_1$ 也是.\myFN{如果读者没学过对数, 可放心地跳过本例哟!}
 \end{example}
 
 \begin{remark}
-    在语境清楚的情况下, 可以单说函数的对应法则. 比如, 中学算学课说 ``$2$ 次函数 $f(x) = x^2 + x - 1$'' 时, 定义域与陪域默认都是 $\RR$. 中学的函数一般都是实数的子集到实数的子集的函数. 所谓 ``自然定义域'' 是指 (在一定范围内) 一切使对应法则有意义的元构成的集. 比如, 在中学, 我们说 $\frac{1}{x}$ 的自然定义域是 $\RR^{\ast}$, $\sqrt{x}$ 的自然定义域是一切非负实数. 在研究复变函数时, 我们说 $\frac{1}{z}$ 的自然定义域是 $\CC^{\ast}$. 如果不明确函数的定义域, 我们会根据语境作出自然定义域作为它的定义域.
+    在语境清楚的情况下, 可以单说函数的对应法则. 比如, 中学算学课说 ``$2$ 次函数 $f(x) = x^2 + x - 1$'' 时, 定义域与陪域默认都是 $\mathbb{R}$. 中学的函数一般都是实数的子集到实数的子集的函数. 所谓 ``自然定义域'' 是指 (在一定范围内) 一切使对应法则有意义的元构成的集. 比如, 在中学, 我们说 $\frac{1}{x}$ 的自然定义域是 $\mathbb{R}^{\ast}$, $\sqrt{x}$ 的自然定义域是一切非负实数. 在研究复变函数时, 我们说 $\frac{1}{z}$ 的自然定义域是 $\mathbb{C}^{\ast}$. 如果不明确函数的定义域, 我们会根据语境作出自然定义域作为它的定义域.
 \end{remark}
 
 \begin{definition}
@@ -562,7 +562,7 @@
 \end{definition}
 
 \begin{example}
-    设 $f(x,y) = x-y$. 这个 $f$ 是 $\ZZ$ 的二元运算; 但是, 它不是 $\NN$ 的二元运算.
+    设 $f(x,y) = x-y$. 这个 $f$ 是 $\mathbb{Z}$ 的二元运算; 但是, 它不是 $\mathbb{N}$ 的二元运算.
 \end{example}
 
 \begin{remark}
@@ -630,7 +630,7 @@
 \end{example}
 
 \begin{example}
-    设 $\FF_{\mathrm{nu}}$ 是将 $\FF$ 去掉 $0$, $1$ 后得到的集\myFN{这个 $\FF_{\mathrm{nu}}$ 只是临时记号: $\mathrm{nu}$ 表示 \textit{nil}, \textit{unity}.}. 看下列 $6$ 个法则:
+    设 $\mathbb{F}_{\mathrm{nu}}$ 是将 $\mathbb{F}$ 去掉 $0$, $1$ 后得到的集\myFN{这个 $\mathbb{F}_{\mathrm{nu}}$ 只是临时记号: $\mathrm{nu}$ 表示 \textit{nil}, \textit{unity}.}. 看下列 $6$ 个法则:
     \begin{align*}
          & x \mapsto x; \tag*{$f_0 \colon$}               \\
          & x \mapsto 1-x; \tag*{$f_1 \colon$}             \\
@@ -639,7 +639,7 @@
          & x \mapsto 1-\frac{1}{x}; \tag*{$f_4 \colon$}   \\
          & x \mapsto \frac{1}{1-x}. \tag*{$f_5 \colon$}
     \end{align*}
-    记 $S_6 = \{\, f_0,f_1,f_2,f_3,f_4,f_5 \,\}$. 可以验证, $S_6 \subset T(\FF_{\mathrm{nu}})$.
+    记 $S_6 = \{\, f_0,f_1,f_2,f_3,f_4,f_5 \,\}$. 可以验证, $S_6 \subset T(\mathbb{F}_{\mathrm{nu}})$.
 
     进一步地, $36$ 次复合告诉我们, 任取 $f,g \in S_6$, 必有 $g \circ f \in S_6$. 可以验证, 这是 $S_6$ 的 (复合) 运算表:
     \begin{align*}
@@ -667,7 +667,7 @@
 \end{definition}
 
 \begin{example}
-    $\ZZ$ 的加法当然适合结合律. 可是, 它的减法不适合结合律.
+    $\mathbb{Z}$ 的加法当然适合结合律. 可是, 它的减法不适合结合律.
 \end{example}
 
 \begin{remark}
@@ -695,7 +695,7 @@
 \end{definition}
 
 \begin{example}
-    $\FF^{\ast}$ 的乘法当然适合交换律. 可是, 它的除法不适合交换律.
+    $\mathbb{F}^{\ast}$ 的乘法当然适合交换律. 可是, 它的除法不适合交换律.
 \end{example}
 
 \begin{example}
@@ -718,7 +718,7 @@
     \begin{align*}
          & x \cdot (y + z) = x \cdot y + x \cdot z, \tag*{(LD)}
     \end{align*}
-    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略. 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$. 但有意思的事儿是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式是对的. 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的.} \term{left distributivity}. 类似地, 若
+    则说 $+$ 与 $\cdot$ 适合左 ($\cdot$) 分配律\myFN{在不引起歧义时, 括号里的内容可省略. 或者这么说: 当我们说 $+$, $\cdot$ 适合分配律时, 我们不会理解为 $x + (y \cdot z) = (x + y) \cdot (x + z)$. 但有意思的事{\tiny 儿}是, 如果把 $+$ 理解为并, $\cdot$ 理解为交, $x$, $y$, $z$ 理解为集, 那这个式是对的. 当然, $x \cdot (y + z) = x \cdot y + x \cdot z$ 也是对的.} \term{left distributivity}. 类似地, 若
     \begin{align*}
          & (y + z) \cdot x = y \cdot x + z \cdot x, \tag*{(RD)}
     \end{align*}
@@ -726,7 +726,7 @@
 \end{definition}
 
 \begin{example}
-    $\FF$ 的加法与乘法适合分配律. 当然, 减法与乘法也适合分配律:
+    $\mathbb{F}$ 的加法与乘法适合分配律. 当然, 减法与乘法也适合分配律:
     \begin{align*}
         x(y-z) = xy - xz = yx - zx = (y-z)x.
     \end{align*}
@@ -749,11 +749,11 @@
 \end{definition}
 
 \begin{example}
-    显然, $\NN$ 的乘法不适合消去律, 但 $\NN^{\ast}$ 的乘法适合消去律\myFN{后面提到整环时, 我们会稍微修改一下消去律的描述.}.
+    显然, $\mathbb{N}$ 的乘法不适合消去律, 但 $\mathbb{N}^{\ast}$ 的乘法适合消去律\myFN{后面提到整环时, 我们会稍微修改一下消去律的描述.}.
 \end{example}
 
 \begin{example}
-    考虑 $x \circ y = x^3 + y^2$. 若把 $\circ$ 视为 $\NN$ 的二元运算, 那么它适合消去律. 若把 $\circ$ 视为 $\QQ$ 的二元运算, 那么它适合右消去律. 若把 $\circ$ 视为 $\CC$ 的二元运算, 那么它不适合任意一个消去律\myFN{考虑复数 $-\frac{1}{2} + \ii \frac{\sqrt{3}}{2}$; 它的立方是 $1$. 现在, 或许这个例有点难; 不过, 当读者学到后面时, 或许读者会对此有更深的理解吧!}.
+    考虑 $x \circ y = x^3 + y^2$. 若把 $\circ$ 视为 $\mathbb{N}$ 的二元运算, 那么它适合消去律. 若把 $\circ$ 视为 $\mathbb{Q}$ 的二元运算, 那么它适合右消去律. 若把 $\circ$ 视为 $\mathbb{C}$ 的二元运算, 那么它不适合任意一个消去律\myFN{考虑复数 $-\frac{1}{2} + \mathrm{i} \frac{\sqrt{3}}{2}$; 它的立方是 $1$. 现在, 或许这个例有点难; 不过, 当读者学到后面时, 或许读者会对此有更深的理解吧!}.
 \end{example}
 
 \begin{example}
@@ -772,7 +772,7 @@
 \end{example}
 
 \begin{example}
-    我们看 $\circ$ 在 $S_6$ 里是否适合消去律. 取 $f,g,h \in S_6$. 由表易知, 当 $g \neq h$ 时, $f \circ g \neq f \circ h$ (横着看运算表), 且 $g \circ f \neq h \circ f$ (竖着看运算表). 这说明, $\circ$ 在 $T(\FF_{\mathrm{nu}})$ 的子集 $S_6$ 里适合消去律.
+    我们看 $\circ$ 在 $S_6$ 里是否适合消去律. 取 $f,g,h \in S_6$. 由表易知, 当 $g \neq h$ 时, $f \circ g \neq f \circ h$ (横着看运算表), 且 $g \circ f \neq h \circ f$ (竖着看运算表). 这说明, $\circ$ 在 $T(\mathbb{F}_{\mathrm{nu}})$ 的子集 $S_6$ 里适合消去律.
 \end{example}
 
 \begin{definition}
@@ -787,7 +787,7 @@
 \end{definition}
 
 \begin{example}
-    $\FF$ 的加法的幺是 $0$, 且其乘法的幺是 $1$.
+    $\mathbb{F}$ 的加法的幺是 $0$, 且其乘法的幺是 $1$.
 \end{example}
 
 \begin{example}
@@ -810,7 +810,7 @@
 \end{definition}
 
 \begin{example}
-    $\FF$ 的每个元都有加法逆, 即其相反数.
+    $\mathbb{F}$ 的每个元都有加法逆, 即其相反数.
 \end{example}
 
 \begin{remark}
@@ -865,7 +865,7 @@
 \end{definition}
 
 \begin{example}
-    $\NN$ 关于加法 (或乘法) 作成半群.
+    $\mathbb{N}$ 关于加法 (或乘法) 作成半群.
 \end{example}
 
 \begin{example}
@@ -894,7 +894,7 @@
 \end{definition}
 
 \begin{example}
-    还是看熟悉的 $\NN$. 对于乘法而言, 这里的幂就是普通的幂——一个数自乘多次的结果. 对于加法而言, 这里的幂相当于乘法——一个数自加多次的结果.
+    还是看熟悉的 $\mathbb{N}$. 对于乘法而言, 这里的幂就是普通的幂——一个数自乘多次的结果. 对于加法而言, 这里的幂相当于乘法——一个数自加多次的结果.
 \end{example}
 
 \begin{definition}
@@ -902,7 +902,7 @@
 \end{definition}
 
 \begin{example}
-    $\NN$ 关于加法 (或乘法) 不能作成群. $\ZZ$ 关于加法作成群, 但关于乘法不能作成群. $\FF$ 关于乘法不能作成群, 但 $\FF^{\ast}$ 关于乘法作成群. 不过, $\FF^{\ast}$ 关于加法不能作成群.
+    $\mathbb{N}$ 关于加法 (或乘法) 不能作成群. $\mathbb{Z}$ 关于加法作成群, 但关于乘法不能作成群. $\mathbb{F}$ 关于乘法不能作成群, 但 $\mathbb{F}^{\ast}$ 关于乘法作成群. 不过, $\mathbb{F}^{\ast}$ 关于加法不能作成群.
 \end{example}
 
 \begin{example}
@@ -943,7 +943,7 @@
 \end{definition}
 
 \begin{example}
-    对于 $\FF^{\ast}$ 的乘法而言, 这里的任意整数幂跟普通的整数幂没有任何区别. 我们学习数的负整数幂的时候, 也是借助倒数定义的.
+    对于 $\mathbb{F}^{\ast}$ 的乘法而言, 这里的任意整数幂跟普通的整数幂没有任何区别. 我们学习数的负整数幂的时候, 也是借助倒数定义的.
 \end{example}
 
 \subsubsection*{\Subgroups}
@@ -953,7 +953,7 @@
 \end{definition}
 
 \begin{example}
-    对加法来说, $\ZZ$ 是 $\FF$ 的子群. 对乘法来说, $\ZZ^{\ast}$ 不是 $\FF^{\ast}$ 的子群.
+    对加法来说, $\mathbb{Z}$ 是 $\mathbb{F}$ 的子群. 对乘法来说, $\mathbb{Z}^{\ast}$ 不是 $\mathbb{F}^{\ast}$ 的子群.
 \end{example}
 
 \begin{remark}
@@ -988,7 +988,7 @@
 \subsubsection*{\AdditiveGroups}
 
 \begin{definition}
-    若 $G$ 关于名为 $+$ 的二元运算作成群, 幺 $e$ 读作 ``零元'' 写作 $0$, $x \in G$ 的逆 $x^{-1}$ 读作 ``$x$ 的相反元'' 写作 $-x$, 且 $+$ 适合交换律, 则说 $G$ 是加群 \term{additive group}. 相应地, ``元的幂'' 也应该改为 ``元的倍'': $x^m$ 写为 $mx$. 用加法的语言改写前面的幂的规则, 就得到了倍的规则: 对任意 $x,y \in G$, $m,n \in \ZZ$, 有
+    若 $G$ 关于名为 $+$ 的二元运算作成群, 幺 $e$ 读作 ``零元'' 写作 $0$, $x \in G$ 的逆 $x^{-1}$ 读作 ``$x$ 的相反元'' 写作 $-x$, 且 $+$ 适合交换律, 则说 $G$ 是加群 \term{additive group}. 相应地, ``元的幂'' 也应该改为 ``元的倍'': $x^m$ 写为 $mx$. 用加法的语言改写前面的幂的规则, 就得到了倍的规则: 对任意 $x,y \in G$, $m,n \in \mathbb{Z}$, 有
     \begin{align*}
          & (m+n)x = mx + nx, \\
          & m(nx) = (mn)x,    \\
@@ -1018,7 +1018,7 @@
 \end{remark}
 
 \begin{example}
-    显而易见, $\ZZ$, $\FF$ 都是加群.
+    显而易见, $\mathbb{Z}$, $\mathbb{F}$ 都是加群.
 \end{example}
 
 \begin{example}
@@ -1032,7 +1032,7 @@
 \subsubsection*{\Sums}
 
 \begin{definition}
-    设 $f$ 是 $\ZZ$ 的非空子集 $S$ 到加群 $G$ 的函数. 设 $p$, $q$ 是二个整数. 如果 $p \leq q$, 则记
+    设 $f$ 是 $\mathbb{Z}$ 的非空子集 $S$ 到加群 $G$ 的函数. 设 $p$, $q$ 是二个整数. 如果 $p \leq q$, 则记
     \begin{align*}
         \sum_{j = p}^{q} f(j) = f(p) + f(p + 1) + \cdots + f(q).
     \end{align*}
@@ -1065,14 +1065,14 @@
 \end{example}
 
 \begin{example}
-    设 $f$ 与 $g$ 是 $\ZZ$ 的非空子集 $S$ 到加群 $G$ 的函数. 因为加群的加法适合结合律与交换律, 所以
+    设 $f$ 与 $g$ 是 $\mathbb{Z}$ 的非空子集 $S$ 到加群 $G$ 的函数. 因为加群的加法适合结合律与交换律, 所以
     \begin{align*}
         \sum_{j=p}^{q} (f(j) + g(j)) = \sum_{j=p}^{q} f(j) + \sum_{j=p}^{q} g(j).
     \end{align*}
 \end{example}
 
 \begin{remark}
-    设 $f(i,j)$ 是 $\ZZ \times \ZZ$ 的非空子集到加群 $G$ 的函数. 记
+    设 $f(i,j)$ 是 $\mathbb{Z} \times \mathbb{Z}$ 的非空子集到加群 $G$ 的函数. 记
     \begin{align*}
         S_C = \sum_{j=p}^{q} \sum_{i=m}^{n} f(i,j), \quad S_R = \sum_{i=m}^{n} \sum_{j=p}^{q} f(i,j),
     \end{align*}
@@ -1124,11 +1124,11 @@
 \end{remark}
 
 \begin{example}
-    $\ZZ$, $\FF$ (关于普通加法与乘法) 都是环.
+    $\mathbb{Z}$, $\mathbb{F}$ (关于普通加法与乘法) 都是环.
 \end{example}
 
 \begin{example}
-    全体偶数作成的集也是环. 一般地, 设 $k$ 是整数, 则全体 $nk$ ($n \in \ZZ$) 作成的集是环.
+    全体偶数作成的集也是环. 一般地, 设 $k$ 是整数, 则全体 $nk$ ($n \in \mathbb{Z}$) 作成的集是环.
 \end{example}
 
 \begin{example}
@@ -1214,7 +1214,7 @@
 \end{remark}
 
 \begin{example}
-    在 $\ZZ$, $\FF$ 里, 这些就是我们熟悉的 (部分的) 数的运算律.
+    在 $\mathbb{Z}$, $\mathbb{F}$ 里, 这些就是我们熟悉的 (部分的) 数的运算律.
 \end{example}
 
 \begin{remark}
@@ -1244,7 +1244,7 @@
 \end{definition}
 
 \begin{example}
-    $\ZZ$, $\FF$ 都是整环. 当然, 也有介于 $\ZZ$ 与 $\FF$ 之间的整环. 假如 $s \in \CC$ 的平方是整数, 那么全体形如 $x + sy$ ($x,y \in \ZZ$) 的数作成一个整环.
+    $\mathbb{Z}$, $\mathbb{F}$ 都是整环. 当然, 也有介于 $\mathbb{Z}$ 与 $\mathbb{F}$ 之间的整环. 假如 $s \in \mathbb{C}$ 的平方是整数, 那么全体形如 $x + sy$ ($x,y \in \mathbb{Z}$) 的数作成一个整环.
 \end{example}
 
 \begin{example}
@@ -1293,13 +1293,13 @@
 \end{example}
 
 \begin{example}
-    再来看一个非整环例. 考虑 $\ZZ \times \ZZ$. 设 $a,b,c,d \in \ZZ$. 规定
+    再来看一个非整环例. 考虑 $\mathbb{Z} \times \mathbb{Z}$. 设 $a,b,c,d \in \mathbb{Z}$. 规定
     \begin{align*}
          & (a,b) = (c,d) \iff a = b \text{ and } c = d, \\
          & (a,b) + (c,d) = (a+b,c+d),                   \\
          & (a,b)(c,d) = (ac,bd).
     \end{align*}
-    可以验证, 在这二种运算下, $\ZZ \times \ZZ$ 作成一个交换环, 其加法、乘法幺分别是 $(0,0)$, $(1,1)$. 可是
+    可以验证, 在这二种运算下, $\mathbb{Z} \times \mathbb{Z}$ 作成一个交换环, 其加法、乘法幺分别是 $(0,0)$, $(1,1)$. 可是
     \begin{align*}
         (1,0) \neq (0,0), \quad (0,1) \neq (0,-1), \quad (1,0)(0,1) = (1,0)(0,-1).
     \end{align*}
@@ -1307,13 +1307,13 @@
 \end{example}
 
 \begin{remark}
-    可是, 如果这么定义乘法, 那么 $\ZZ \times \ZZ$ 可作为一个整环:
+    可是, 如果这么定义乘法, 那么 $\mathbb{Z} \times \mathbb{Z}$ 可作为一个整环:
     \begin{align*}
         (a,b)(c,d) = (ac-bd,ad+bc).
     \end{align*}
     事实上, 这就是复数乘法, 因为
     \begin{align*}
-        (a+ \ii b)(c+ \ii d) = (ac-bd) + \ii (ad+bc).
+        (a+ \mathrm{i} b)(c+ \mathrm{i} d) = (ac-bd) + \mathrm{i} (ad+bc).
     \end{align*}
 \end{remark}
 
@@ -1338,13 +1338,13 @@
 \end{remark}
 
 \begin{example}
-    设 $D \subset \CC$, 且 $D$ 是整环. 不难看出, $\ZZ \subset D$.
+    设 $D \subset \mathbb{C}$, 且 $D$ 是整环. 不难看出, $\mathbb{Z} \subset D$.
 \end{example}
 
 \subsubsection*{\Products}
 
 \begin{definition}
-    设 $f$ 是 $\ZZ$ 的非空子集 $S$ 到整环 $D$ 的函数. 设 $p$, $q$ 是二个整数. 如果 $p \leq q$, 则记
+    设 $f$ 是 $\mathbb{Z}$ 的非空子集 $S$ 到整环 $D$ 的函数. 设 $p$, $q$ 是二个整数. 如果 $p \leq q$, 则记
     \begin{align*}
         \prod_{j = p}^{q} f(j) = f(p) \cdot f(p + 1) \cdot \cdots \cdot f(q).
     \end{align*}
@@ -1460,11 +1460,11 @@
 \end{remark}
 
 \begin{example}
-    看全体整数作成的整环 $\ZZ$. 它恰有二个单位: $1$ 与 $-1$.
+    看全体整数作成的整环 $\mathbb{Z}$. 它恰有二个单位: $1$ 与 $-1$.
 \end{example}
 
 \begin{example}
-    $\FF$ 也是整环. 它有无限多个单位: 任意 $\FF^{\ast}$ 的元都是单位.
+    $\mathbb{F}$ 也是整环. 它有无限多个单位: 任意 $\mathbb{F}^{\ast}$ 的元都是单位.
 \end{example}
 
 \begin{example}
@@ -1474,7 +1474,7 @@
 \begin{example}
     现在看一个不那么平凡的例. 设
     \begin{align*}
-        D = \{\, x + y\sqrt{3} \mid x,y \in \ZZ \,\}.
+        D = \{\, x + y\sqrt{3} \mid x,y \in \mathbb{Z} \,\}.
     \end{align*}
     这个 $D$ (关于数的运算) 作成整环.
 
@@ -1503,7 +1503,7 @@
     \end{align*}
     而这是荒谬的. 所以 $d - b = 0$. 这样 $a - c = 0$.
 
-    现在再来看单位问题. 若 $k$ 是高于 $1$ 的整数, 则 $k$ 不是 $D$ 的单位. 反证法. 若 $k$ 是单位, 则有 $c,d \in \ZZ$ 使
+    现在再来看单位问题. 若 $k$ 是高于 $1$ 的整数, 则 $k$ 不是 $D$ 的单位. 反证法. 若 $k$ 是单位, 则有 $c,d \in \mathbb{Z}$ 使
     \begin{align*}
         1 = k(c + d\sqrt{3}) = kc + kd\sqrt{3} \implies 1 = kc,
     \end{align*}
@@ -1525,7 +1525,7 @@
 \end{definition}
 
 \begin{example}
-    不难看出, $\FF$ 是域. 这也解释了为什么我们用 $\FF$ 表示 $\QQ$, $\RR$, $\CC$ 之一.
+    不难看出, $\mathbb{F}$ 是域. 这也解释了为什么我们用 $\mathbb{F}$ 表示 $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$ 之一.
 \end{example}
 
 \begin{remark}
@@ -1547,5 +1547,5 @@
 \end{remark}
 
 \begin{example}
-    设 $F \subset \CC$, 且 $F$ 是域. 不难看出, $\QQ \subset F$.
+    设 $F \subset \mathbb{C}$, 且 $F$ 是域. 不难看出, $\mathbb{Q} \subset F$.
 \end{example}

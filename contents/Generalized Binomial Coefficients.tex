@@ -7,7 +7,7 @@
 回忆一下: 正整数 $n$ 的阶乘 $n!$ 是前 $n$ 个正整数的积; $0$ 的阶乘 $0!$ 是 $1$.
 
 \begin{definition}
-    设 $n$ 是整数. 设 $r \in \FF[x]$. 定义广义二项系数 \term{generalized binomial coefficient} 如下:
+    设 $n$ 是整数. 设 $r \in \mathbb{F}[x]$. 定义广义二项系数 \term{generalized binomial coefficient} 如下:
     \begin{align*}
         \binom{r}{n} = \begin{cases}
             \frac{1}{n!} (r - 0)(r - 1) \cdots (r - (n - 1)), & \quad n > 0; \\
@@ -73,7 +73,7 @@
         \binom{n}{n} = 1;
     \end{align*}
 
-    (ii) 任取 $n \in \ZZ$, 必有
+    (ii) 任取 $n \in \mathbb{Z}$, 必有
     \begin{align*}
         \binom{x + 1}{n} = \binom{x}{n} + \binom{x}{n - 1};
     \end{align*}
@@ -83,14 +83,14 @@
         \sum_{\ell = 0}^{m - 1} \binom{\ell}{n} = \binom{m}{n + 1};
     \end{align*}
 
-    (iv) 任取 $n \in \ZZ$, 必有
+    (iv) 任取 $n \in \mathbb{Z}$, 必有
     \begin{align*}
         \binom{-x}{n} = (-1)^n \binom{x + n - 1}{n};
     \end{align*}
 
     (v) 若 $t$, $n$ 是整数, 则
     \begin{align*}
-        \binom{t}{n} \in \ZZ.
+        \binom{t}{n} \in \mathbb{Z}.
     \end{align*}
 \end{proposition}
 
@@ -141,24 +141,24 @@
         = {} & (-1)^n \binom{x+n-1}{n}.
     \end{align*}
 
-    (v) 若 $n < 0$, 则 $\binom{t}{n} = 0 \in \ZZ$. 若 $n = 0$, 则 $\binom{t}{n} = 1 \in \ZZ$. 下面考虑 $n \geq 1$ 的情形.
+    (v) 若 $n < 0$, 则 $\binom{t}{n} = 0 \in \mathbb{Z}$. 若 $n = 0$, 则 $\binom{t}{n} = 1 \in \mathbb{Z}$. 下面考虑 $n \geq 1$ 的情形.
 
-    我们先说明, 当 $t$ 是非负整数时, $\binom{t}{n} \in \ZZ$.
+    我们先说明, 当 $t$ 是非负整数时, $\binom{t}{n} \in \mathbb{Z}$.
 
-    对 $n$ 用算学归纳法. 当 $n = 1$ 时, $\binom{t}{n} = t \in \ZZ$.
+    对 $n$ 用算学归纳法. 当 $n = 1$ 时, $\binom{t}{n} = t \in \mathbb{Z}$.
 
-    设 $n = s \geq 1$ 时, $\binom{t}{n} \in \ZZ$. 考虑 $n = s + 1$ 的情形. 由 (iii) 可知
+    设 $n = s \geq 1$ 时, $\binom{t}{n} \in \mathbb{Z}$. 考虑 $n = s + 1$ 的情形. 由 (iii) 可知
     \begin{align*}
         \binom{t}{s + 1} = \sum_{\ell = 0}^{t - 1} \binom{\ell}{s}.
     \end{align*}
-    根据归纳假设, $\binom{\ell}{s}$ ($\ell = 0$, $1$, $\cdots$, $t-1$) 都是整数, 故它们的和 $\binom{t}{s + 1}$ 也是整数. 所以, $n = s + 1$ 时, $\binom{t}{n} \in \ZZ$.
+    根据归纳假设, $\binom{\ell}{s}$ ($\ell = 0$, $1$, $\cdots$, $t-1$) 都是整数, 故它们的和 $\binom{t}{s + 1}$ 也是整数. 所以, $n = s + 1$ 时, $\binom{t}{n} \in \mathbb{Z}$.
 
     现在考虑 $t$ 为负整数的情形. 由 (iv) 可知
     \begin{align*}
-        \binom{t}{n} = (-1)^n \binom{-t + n - 1}{n} \in \ZZ.
+        \binom{t}{n} = (-1)^n \binom{-t + n - 1}{n} \in \mathbb{Z}.
     \end{align*}
 
-    综上, 若 $t$, $n$ 是整数, 则 $\binom{t}{n} \in \ZZ$.
+    综上, 若 $t$, $n$ 是整数, 则 $\binom{t}{n} \in \mathbb{Z}$.
 \end{pf}
 
 性质 (i) (ii) 有计数相关的解释. 下面我们为读者提供二例.
@@ -180,17 +180,17 @@
 
     (vi) 任意次不高于 $n$ 的整式都可唯一地写为 $\binom{x}{0}$, $\binom{x}{1}$, $\cdots$, $\binom{x}{n}$ 的线性组合;
 
-    (vii) 设 $c_0$, $c_1$, $\cdots$, $c_n \in \FF$. 设
+    (vii) 设 $c_0$, $c_1$, $\cdots$, $c_n \in \mathbb{F}$. 设
     \begin{align*}
         f(x) = c_0 \binom{x}{0} + c_1 \binom{x}{1} + \cdots + c_n \binom{x}{n}.
     \end{align*}
-    若 $c_0$, $c_1$, $\cdots$, $c_n \in \ZZ$, 则任取 $t \in \ZZ$, 必有 $f(t) \in \ZZ$; 若 $c_0$, $c_1$, $\cdots$, $c_n$ 不全是整数, 则存在整数 $u$ 使 $f(u)$ 不是整数. 换句话说, 任取 $t \in \ZZ$, 必有 $f(t) \in \ZZ$ 的一个必要与充分条件是: $c_0$, $c_1$, $\cdots$, $c_n$ 全是整数.
+    若 $c_0$, $c_1$, $\cdots$, $c_n \in \mathbb{Z}$, 则任取 $t \in \mathbb{Z}$, 必有 $f(t) \in \mathbb{Z}$; 若 $c_0$, $c_1$, $\cdots$, $c_n$ 不全是整数, 则存在整数 $u$ 使 $f(u)$ 不是整数. 换句话说, 任取 $t \in \mathbb{Z}$, 必有 $f(t) \in \mathbb{Z}$ 的一个必要与充分条件是: $c_0$, $c_1$, $\cdots$, $c_n$ 全是整数.
 \end{proposition}
 
 \begin{pf}
     (vi) 注意到 $\binom{x}{0}$, $\binom{x}{1}$, $\cdots$, $\binom{x}{n}$ 的次分别是 $0$, $1$, $\cdots$, $n$.
 
-    (vii) 设 $c_0$, $c_1$, $\cdots$, $c_n \in \ZZ$. 设 $t \in \ZZ$. 由 (v), $\binom{t}{0}$, $\binom{t}{1}$, $\cdots$, $\binom{t}{n}$ 都是整数, 故 $f(t)$ 也是整数.
+    (vii) 设 $c_0$, $c_1$, $\cdots$, $c_n \in \mathbb{Z}$. 设 $t \in \mathbb{Z}$. 由 (v), $\binom{t}{0}$, $\binom{t}{1}$, $\cdots$, $\binom{t}{n}$ 都是整数, 故 $f(t)$ 也是整数.
 
     设 $c_0$, $c_1$, $\cdots$, $c_n$ 不全是整数. 这样, 存在 $\ell$ 使 $c_0$, $c_1$, $\cdots$, $c_{\ell - 1}$ 这 $\ell$ 个数全为整数, 而 $c_{\ell}$ 不是整数 (从左往右, 一个一个地看). 那么
     \begin{align*}
@@ -207,7 +207,7 @@
 \end{pf}
 
 \begin{example}
-    我们知道, 若整式 $f(x)$ 的系数全为整数, 则 $t \in \ZZ$ 时 $f(t) \in \ZZ$. 不过, 反过来就不对了. 在中学, 读者也许知道 $n$ 是整数时 $\frac{n(n+1)}{2}$ 也是整数: $n$ 与 $n+1$ 必一奇一偶, 故积是偶数, 从而被 $2$ 除后仍为整数. 现在可以这么看:
+    我们知道, 若整式 $f(x)$ 的系数全为整数, 则 $t \in \mathbb{Z}$ 时 $f(t) \in \mathbb{Z}$. 不过, 反过来就不对了. 在中学, 读者也许知道 $n$ 是整数时 $\frac{n(n+1)}{2}$ 也是整数: $n$ 与 $n+1$ 必一奇一偶, 故积是偶数, 从而被 $2$ 除后仍为整数. 现在可以这么看:
     \begin{align*}
         \frac{n(n+1)}{2} = \frac{(n+1)(n+1-1)}{2} = \binom{n+1}{2}.
     \end{align*}
@@ -216,7 +216,7 @@
 下面我们介绍二个与广义二项系数有关的和. 不过, 我们先介绍一个用完就丢的工具.
 
 \begin{definition}
-    固定某 $h \in \FF[x]$. 设 $n$ 是非负整数, $r \in \FF[x]$. 定义
+    固定某 $h \in \mathbb{F}[x]$. 设 $n$ 是非负整数, $r \in \mathbb{F}[x]$. 定义
     \begin{align*}
         r^{[n]} = \begin{cases}
             (r - 0)(r - h) \cdots (r - (n-1)h), & \quad n > 0; \\
@@ -232,7 +232,7 @@
 若 $h = 0$, $r^{[n]}$ 就变为 $r$ 的 $n$ 次幂. 若 $h = 1$, $r^{[n]}$ 就变为 $n! \binom{x}{n}$.
 
 \begin{proposition}
-    设 $r$, $s \in \FF[x]$. 设 $n$ 是非负整数. 则
+    设 $r$, $s \in \mathbb{F}[x]$. 设 $n$ 是非负整数. 则
     \begin{align*}
         (r + s)^{[n]} = \sum_{k = 0}^{n} \binom{n}{k} r^{[n - k]} s^{[k]}. \tag*{(\ding{72})}
     \end{align*}
@@ -293,7 +293,7 @@
         + \binom{3}{0} \binom{4}{3}.
     \end{align*}
 
-    回到中华人民共和国东部的浙江省. 回到 ``普通高等学校招生全国统一考试''. 前面提到, 在那儿, 参加考试的人从 $7$ 科目里选 $3$ 个. 政治、历史、地理是偏 ``阿先生'' \term{arts} 的; 物理、化学、生物、技术是偏 ``赛先生'' \term{science} 的.
+    回到中华人民共和国东部的浙江省. 回到 ``普通高等学校招生全国统一考试''. 前面提到, 在那{\scriptsize 儿}, 参加考试的人从 $7$ 科目里选 $3$ 个. 政治、历史、地理是偏 ``阿先生'' \term{arts} 的; 物理、化学、生物、技术是偏 ``赛先生'' \term{science} 的.
 
     $7$ 选 $3$ 可以这么选:
 

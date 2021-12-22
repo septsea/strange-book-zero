@@ -65,7 +65,7 @@
     求次为 $2$ 的整式 $f(x)$, 使 $f(-1)=-1$, $f(1)=1$, $f(2)=5$.
 \end{example}
 
-设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 这 $n+1$ 个不同的元称为 $n+1$ 个节点 \term{node}. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 通俗地说, 整式插值 \term{polynomial interpolation} 的任务是: 找一个整式 $f(x) \in \FF[x]$ 使
+设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\mathbb{F}$ 的 $n+1$ 个互不相同的元. 这 $n+1$ 个不同的元称为 $n+1$ 个节点 \term{node}. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \mathbb{F}$. 通俗地说, 整式插值 \term{polynomial interpolation} 的任务是: 找一个整式 $f(x) \in \mathbb{F}[x]$ 使
 \begin{align*}
     f(x_i) = y_i \quad (i = 0,1,\cdots,n),
 \end{align*}
@@ -103,15 +103,15 @@
 有没有什么 ``松紧得当的'' ``附加条件'' 呢? 回想一下这个命题:
 
 \begin{proposition}
-    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\FF$ 的元. 设 $n$ 是非负整数. 设
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\mathbb{F}$ 的元. 设 $n$ 是非负整数. 设
     \begin{align*}
         f(x) = \sum_{i = 0}^n a_i x^i, \quad g(x) = \sum_{i = 0}^n b_i x^i.
     \end{align*}
-    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\mathbb{F}$ 的元, 且
     \begin{align*}
         f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
     \end{align*}
-    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个整式若在多于 $n$ 处取一样的值, 则这二个整式相等.
+    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为 $\mathbb{F}$ 的元) 的二个整式若在多于 $n$ 处取一样的值, 则这二个整式相等.
 \end{proposition}
 
 由此, 我们可以试着作出这样的 ``附加条件'': 整式的次低于节点数. 至少, 这个条件不是太松: 因为上面的命题说, 这样的整式若存在, 必唯一.
@@ -119,7 +119,7 @@
 这个 ``附加条件'' 一定能让我们求出这个整式吗? 不好说.
 
 \begin{example}
-    如果把 $\FF$ 跟 $\FF[x]$ 改为 $\ZZ$ 跟 $\ZZ[x]$, 那么就没有 $1$ 次整式 $f(x)$ 使 $f(-1)=2$, $f(1)=3$. 为啥? 看 $2$ 元 $1$ 次方程组
+    如果把 $\mathbb{F}$ 跟 $\mathbb{F}[x]$ 改为 $\mathbb{Z}$ 跟 $\mathbb{Z}[x]$, 那么就没有 $1$ 次整式 $f(x)$ 使 $f(-1)=2$, $f(1)=3$. 为啥? 看 $2$ 元 $1$ 次方程组
     \begin{align*}
         \begin{cases}
             2 = -a + b, \\
@@ -131,7 +131,7 @@
 
 具体地说, 设次低于节点数 $n+1$ 的整式
 \begin{align*}
-    f(x) = \sum_{i=0}^n a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x]
+    f(x) = \sum_{i=0}^n a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \in \mathbb{F}[x]
 \end{align*}
 适合
 \begin{align*}
@@ -147,14 +147,14 @@
         y_n = 1 a_0 + x_n a_1 + \cdots + x_n^n a_n.
     \end{cases}
 \end{align*}
-这是一个有 $n+1$ 个 $n+1$ 元 $1$ 次方程的方程组, 且未知元是 $a_0$, $a_1$, $\cdots$, $a_n$. 假如我们能解出这个方程组, 且这个方程组的解 ``不超出 $\FF$ 的范围'' (我们说, 上面的 $2$ 元 $1$ 次方程组超出了 $\ZZ$ 的范围, 但没有超出 $\FF$ 的范围), 那么就能说明 ``整式的次低于节点数'' 这个 ``附加条件'' 是 ``松紧得当的''.
+这是一个有 $n+1$ 个 $n+1$ 元 $1$ 次方程的方程组, 且未知元是 $a_0$, $a_1$, $\cdots$, $a_n$. 假如我们能解出这个方程组, 且这个方程组的解 ``不超出 $\mathbb{F}$ 的范围'' (我们说, 上面的 $2$ 元 $1$ 次方程组超出了 $\mathbb{Z}$ 的范围, 但没有超出 $\mathbb{F}$ 的范围), 那么就能说明 ``整式的次低于节点数'' 这个 ``附加条件'' 是 ``松紧得当的''.
 
 可惜, 我们在初中并没有研究一般的多元 $1$ 次方程组. 我们在学习 $2$ (或 $3$) 元 $1$ 次方程组的时候, 主要学习怎么用代入消元法与加减消元法解方程组, 并没有过多地讨论方程组什么时候有解与解的结构这样的问题.
 
 我们换一个角度看问题. 首先, 我们有如下命题:
 
 \begin{proposition}
-    设 $t_0$, $t_1$, $\cdots$, $t_{s-1} \in \FF$ 互不相同. 则 $t_0$, $t_1$, $\cdots$, $t_{s-1}$ ($1 \leq s \leq n$) 是 $n$ 次整式 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-s$ 次整式 $q(x) \in \FF[x]$ 使
+    设 $t_0$, $t_1$, $\cdots$, $t_{s-1} \in \mathbb{F}$ 互不相同. 则 $t_0$, $t_1$, $\cdots$, $t_{s-1}$ ($1 \leq s \leq n$) 是 $n$ 次整式 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-s$ 次整式 $q(x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         f(x) = (x - t_0)(x - t_1) \cdots (x-t_{s-1}) q(x).
     \end{align*}
@@ -163,7 +163,7 @@
 \begin{pf}
     先看充分性. 既然 $f(x)$ 能写为这种形式, 将 $x$ 换为 $t_i$ ($i = 0$, $1$, $\cdots$, $s-1$), 则有 $f(t_i) = 0$.
 
-    再看必要性. 因为 $t_0$ 是 $f(x)$ 的根, 故存在 $n-1$ 次整式 $q_1 (x) \in \FF[x]$ 使
+    再看必要性. 因为 $t_0$ 是 $f(x)$ 的根, 故存在 $n-1$ 次整式 $q_1 (x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         f(x) = (x - t_0) q_1 (x).
     \end{align*}
@@ -171,11 +171,11 @@
     \begin{align*}
         (t_j - t_0) q_1 (t_j) = f(t_j) = 0 = (t_j - t_0) 0.
     \end{align*}
-    根据消去律, $q_1 (t_j) = 0$. 这样, $t_1$, $\cdots$, $t_{s-1}$ 这 $s-1$ 个 $\FF$ 中元是 $q_1 (x)$ 的根. 所以, 对 $q_1 (x)$ 来说, 存在 $n-1-1 = n-2$ 次整式 $q_2 (x) \in \FF[x]$ 使
+    根据消去律, $q_1 (t_j) = 0$. 这样, $t_1$, $\cdots$, $t_{s-1}$ 这 $s-1$ 个 $\mathbb{F}$ 中元是 $q_1 (x)$ 的根. 所以, 对 $q_1 (x)$ 来说, 存在 $n-1-1 = n-2$ 次整式 $q_2 (x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         q_1 (x) = (x - t_1) q_2 (x) \implies f(x) = (x - t_0) (x - t_1) q_2 (x),
     \end{align*}
-    且 $t_2$, $\cdots$, $t_{s-1}$ 这 $s-2$ 个 $\FF$ 中元是 $q_2 (x)$ 的根. 再将这个过程进行 $s-2$ 次, 可得到 $n-s$ 次整式 $q_s (x) \in \FF[x]$ 使
+    且 $t_2$, $\cdots$, $t_{s-1}$ 这 $s-2$ 个 $\mathbb{F}$ 中元是 $q_2 (x)$ 的根. 再将这个过程进行 $s-2$ 次, 可得到 $n-s$ 次整式 $q_s (x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         f(x) = (x - t_0) (x - t_1) \cdots (x - t_{s-1}) q_s (x).
     \end{align*}
@@ -220,7 +220,7 @@
     \end{align*}
 \end{example}
 
-回到一般的设定 (也就是说, $y_0$, $y_1$, $\cdots$, $y_n$ 是 $\FF$ 的任意元). 作 $n+1$ 个整式
+回到一般的设定 (也就是说, $y_0$, $y_1$, $\cdots$, $y_n$ 是 $\mathbb{F}$ 的任意元). 作 $n+1$ 个整式
 \begin{align*}
     L_{i} (x) = \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell} \quad (i = 0,1,\cdots,n).
 \end{align*}
@@ -247,7 +247,7 @@
 综合上面的事实, 我们已经证明了
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 存在唯一的整式
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\mathbb{F}$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \mathbb{F}$. 存在唯一的整式
     \begin{align*}
         f(x) = \sum_{i = 0}^{n} y_i \prod_{\begin{smallmatrix}0 \leq \ell \leq n \\\ell \neq i\end{smallmatrix}} \frac{x - x_\ell}{x_i - x_\ell}
     \end{align*}
@@ -348,11 +348,11 @@
         = {} & - \frac{(x-1)(x-2)(x+2)}{(-1-1)(-1-2)(-1+2)} + \frac{(x+1)(x-2)(x+2)}{(1+1)(1-2)(1+2)}                   \\
              & + 5 \cdot \frac{(x+1)(x-1)(x+2)}{(2+1)(2-1)(2+2)} - 11 \cdot \frac{(x+1)(x-1)(x-2)}{(-2+1)(-2-1)(-2-2)}.
     \end{align*}
-    不过, 实践告诉我们, 拆开 $4$ 个 $3$ 次整式后再相加可不是什么轻松的事儿——至少比前一个例复杂一些. 而且, 加一个节点后, $L_0 (x)$, $L_1 (x)$, $L_2 (x)$ (跟之前相比) 都要多乘一个 $1$ 次整式. 有无稍微容易一些的算法呢?
+    不过, 实践告诉我们, 拆开 $4$ 个 $3$ 次整式后再相加可不是什么轻松的事{\scriptsize 儿}——至少比前一个例复杂一些. 而且, 加一个节点后, $L_0 (x)$, $L_1 (x)$, $L_2 (x)$ (跟之前相比) 都要多乘一个 $1$ 次整式. 有无稍微容易一些的算法呢?
 \end{example}
 
 \begin{definition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 定义
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\mathbb{F}$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \mathbb{F}$. 定义
     \begin{align*}
         [x_i, x_j] = \frac{y_i - y_j}{x_i - x_j} \quad (i \neq j).
     \end{align*}
@@ -411,7 +411,7 @@
     类似地, 读者还可以计算 $[x_1, x_2, x_0]$, $[x_2, x_0, x_1]$, $[x_2, x_1, x_0]$, 它们跟上面三个 $2$ 级差商有着同样的值. 换句话说, 我们猜想, $2$ 级差商 $[x_i, x_j, x_k]$ 的三个文字 $x_i$, $x_j$, $x_k$ 的次序可以任意交换, 且值不变 (当然, $y_i$, $y_j$, $y_k$ 的次序也要交换).
 \end{example}
 
-幸运的事儿是, 我们没猜错:
+幸运的事{\scriptsize 儿}是, 我们没猜错:
 
 \begin{proposition}
     设 $m$ 是高于 $1$ 的整数. $m - 1$ 级差商 $[x_0, x_1, \cdots, x_{m-1}]$ 可表示为
@@ -536,7 +536,7 @@
     表示.
 \end{remark}
 
-现在, 我们来看看差商在整式插值里的用处. 设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 作 $n+1$ 个整式:
+现在, 我们来看看差商在整式插值里的用处. 设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\mathbb{F}$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \mathbb{F}$. 作 $n+1$ 个整式:
 \begin{align*}
      & N_0 (x) = 1,                                          \\
      & N_1 (x) = x - x_0,                                    \\
@@ -556,7 +556,7 @@
 \begin{align*}
     f(x_i) = y_i \quad (i = 0,1,\cdots,n).
 \end{align*}
-对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_n \in \FF$ 使
+对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_n \in \mathbb{F}$ 使
 \begin{align*}
     f(x) = \sum_{i = 0}^{n} c_i N_{n} (x).
 \end{align*}
@@ -567,7 +567,7 @@
 找出 $c_n$, 还有 $n$ 个系数要找呢! 接下来的系数该怎么找呢?
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元 ($n \geq 1$). 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 作 $n+1$ 个整式:
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\mathbb{F}$ 的 $n+1$ 个互不相同的元 ($n \geq 1$). 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \mathbb{F}$. 作 $n+1$ 个整式:
     \begin{align*}
          & N_0 (x) = 1,                                          \\
          & N_1 (x) = x - x_0,                                    \\
@@ -580,7 +580,7 @@
     \begin{align*}
         f(x_i) = y_i \quad (i = 0,1,\cdots,n).
     \end{align*}
-    对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_n \in \FF$ 使
+    对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_n \in \mathbb{F}$ 使
     \begin{align*}
         f(x) = \sum_{i = 0}^{n} c_i N_{n} (x).
     \end{align*}
@@ -612,7 +612,7 @@
     \begin{align*}
         f(x_i) = y_i \quad (i = 0,1,\cdots,\ell + 1).
     \end{align*}
-    对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_{\ell}, c_{\ell + 1} \in \FF$ 使
+    对这个 $f(x)$ 而言, 存在 (唯一的) $c_0$, $c_1$, $\cdots$, $c_{\ell}, c_{\ell + 1} \in \mathbb{F}$ 使
     \begin{align*}
         f(x) = \sum_{i = 0}^{\ell} c_i N_{i} (x) + c_{\ell + 1} N_{\ell + 1} (x).
     \end{align*}
@@ -638,7 +638,7 @@
     \begin{align*}
         h(x_i) = y_i \quad (i = 0,1,\cdots,\ell).
     \end{align*}
-    对这个 $h(x)$ 而言, 存在 (唯一的) $d_0$, $d_1$, $\cdots$, $d_{\ell} \in \FF$ 使
+    对这个 $h(x)$ 而言, 存在 (唯一的) $d_0$, $d_1$, $\cdots$, $d_{\ell} \in \mathbb{F}$ 使
     \begin{align*}
         h(x) = \sum_{i = 0}^{\ell} d_i N_{i} (x).
     \end{align*}
@@ -659,7 +659,7 @@
 为方便, 记 $[x_i] = y_i$, 称其为 $x_i$ 的 $0$ 级差商. 我们证明了
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \FF$. 存在唯一的整式
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\mathbb{F}$ 的 $n+1$ 个互不相同的元. 设 $y_0$, $y_1$, $\cdots$, $y_{n} \in \mathbb{F}$. 存在唯一的整式
     \begin{align*}
         f(x)
         = {} & \sum_{i = 0}^{n} [x_0, x_1, \cdots, x_i]
@@ -812,11 +812,11 @@
 我们以带馀除法与插值的关系结束本节.
 
 \begin{proposition}
-    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\FF$ 的 $n+1$ 个互不相同的元. 设
+    设 $x_0$, $x_1$, $\cdots$, $x_{n}$ 是 $\mathbb{F}$ 的 $n+1$ 个互不相同的元. 设
     \begin{align*}
-        d(x) = (x - x_0) (x - x_1) \cdots (x - x_n) \in \FF[x]
+        d(x) = (x - x_0) (x - x_1) \cdots (x - x_n) \in \mathbb{F}[x]
     \end{align*}
-    是 $n+1$ 次整式. 由带馀除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
+    是 $n+1$ 次整式. 由带馀除法知, 任取 $f(x) \in \mathbb{F}[x]$, 存在唯一的 $q(x)$, $r(x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1.
     \end{align*}
@@ -832,7 +832,7 @@
 \end{proposition}
 
 \begin{pf}
-    由带馀除法知, 任取 $f(x) \in \FF[x]$, 存在唯一的 $q(x)$, $r(x) \in \FF[x]$ 使
+    由带馀除法知, 任取 $f(x) \in \mathbb{F}[x]$, 存在唯一的 $q(x)$, $r(x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         f(x) = q(x) d(x) + r(x), \quad \deg r(x) < n + 1.
     \end{align*}

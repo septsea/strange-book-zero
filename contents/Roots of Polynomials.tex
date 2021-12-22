@@ -9,11 +9,11 @@
 \end{definition}
 
 \begin{example}
-    设 $D \subset \CC$, 且 $\ZZ \subset D$. 看 $D$ 上 $x$ 的整式
+    设 $D \subset \mathbb{C}$, 且 $\mathbb{Z} \subset D$. 看 $D$ 上 $x$ 的整式
     \begin{align*}
         f(x) = (2x-1)(x+1)(x^2 - 3)(x^2 + 1)(x^2 + 4).
     \end{align*}
-    如果 $D = \ZZ$, 则 $f(x)$ 有一个在 $D$ 里的根: $-1$. 如果 $D = \QQ$, 则 $f(x)$ 有二个在 $D$ 里的根: $-1$, $\frac12$. 如果 $D = \RR$, 则 $f(x)$ 有四个在 $D$ 里的根: $-1$, $\frac12$, $\pm \sqrt{3}$. 如果 $D = \CC$, 则 $f(x)$ 有八个在 $D$ 里的根: $-1$, $\frac12$, $\pm \sqrt{3}$, $\pm \ii$, $\pm 2\ii$.
+    如果 $D = \mathbb{Z}$, 则 $f(x)$ 有一个在 $D$ 里的根: $-1$. 如果 $D = \mathbb{Q}$, 则 $f(x)$ 有二个在 $D$ 里的根: $-1$, $\frac12$. 如果 $D = \mathbb{R}$, 则 $f(x)$ 有四个在 $D$ 里的根: $-1$, $\frac12$, $\pm \sqrt{3}$. 如果 $D = \mathbb{C}$, 则 $f(x)$ 有八个在 $D$ 里的根: $-1$, $\frac12$, $\pm \sqrt{3}$, $\pm \mathrm{i}$, $\pm 2\mathrm{i}$.
 \end{example}
 
 \begin{example}
@@ -21,7 +21,7 @@
     \begin{align*}
         f(x) = x^2 + x - 1.
     \end{align*}
-    若 $D = \RR$, 则 $f(x)$ 的二个根是 $\frac{-1 \pm \sqrt{5}}{2}$. 若 $D = V$, 则 $f(x)$ 的二个根是 $\tau$, $\tau^2$. 当然, 若 $D \subset \QQ$, 则 $f(x)$ 无 ($D$ 的) 根.
+    若 $D = \mathbb{R}$, 则 $f(x)$ 的二个根是 $\frac{-1 \pm \sqrt{5}}{2}$. 若 $D = V$, 则 $f(x)$ 的二个根是 $\tau$, $\tau^2$. 当然, 若 $D \subset \mathbb{Q}$, 则 $f(x)$ 无 ($D$ 的) 根.
 \end{example}
 
 \begin{remark}
@@ -31,7 +31,7 @@
 
     再设 $f(x) = ax + b$ 是 $1$ 次整式. 若存在 $c \in D$ 使 $b = ac$, 则 $f(x)$ 有一个根 $-c$. 并且, $f(x)$ 也不会有另一个根 (若 $at_1 + b = at_2 + b$, 则 $at_1 = at_2$, 故 $t_1 = t_2$). 若这样的 $c$ 不存在, 则 $f(x)$ 无根 (反设 $f(x)$ 有根 $d$, 则由 $ad + b = 0$ 知 $b = a(-d)$, 矛盾). 换句话说, $1$ 次整式至多有一个根.
 
-    结合上面的二个例, 我们猜想: $n$ 次整式 ($n \in \NN$) 至多有 $n$ 个 (不同的) 根. 幸运的事儿是, 这个猜想是正确的.
+    结合上面的二个例, 我们猜想: $n$ 次整式 ($n \in \mathbb{N}$) 至多有 $n$ 个 (不同的) 根. 幸运的事{\scriptsize 儿}是, 这个猜想是正确的.
 \end{remark}
 
 \begin{proposition}
@@ -54,7 +54,7 @@
 \end{pf}
 
 \begin{proposition}
-    设 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \in \NN$). 则 $f(x)$ 至多有 $n$ 个不同的根.
+    设 $f(x) \in D[x]$ 是 $n$ 次整式 ($n \in \mathbb{N}$). 则 $f(x)$ 至多有 $n$ 个不同的根.
 \end{proposition}
 
 \begin{pf}
@@ -122,9 +122,9 @@
 \end{align*}
 记
 $$
-    f(x) = a \left( x + \frac{b}{2a} \right)^2 \in \RR[x].
+    f(x) = a \left( x + \frac{b}{2a} \right)^2 \in \mathbb{R}[x].
 $$
-根据根的定义, $-\frac{b}{2a} \in \RR$ 是 $f(x)$ 的根. 我们发现, 这个根 ``出现了'' $2$ 次, 是重复的. 我们给这样的根一个特殊点的称呼.
+根据根的定义, $-\frac{b}{2a} \in \mathbb{R}$ 是 $f(x)$ 的根. 我们发现, 这个根 ``出现了'' $2$ 次, 是重复的. 我们给这样的根一个特殊点的称呼.
 
 \begin{definition}
     设 $a \in D$ 是整式 $f(x) \in D[x]$ 的根. 设 $f(x) \neq 0$. 那么, 存在唯一的整式 $q(x) \in D[x]$ 使
@@ -139,7 +139,7 @@ $$
 \end{remark}
 
 \begin{example}
-    看 $\ZZ$ 上 $x$ 的整式
+    看 $\mathbb{Z}$ 上 $x$ 的整式
     \begin{align*}
         f(x) = (x^2 - 3)(x^2 + 2)(x - 1)^2 (x + 2).
     \end{align*}
@@ -186,7 +186,7 @@ $$
 \begin{example}
     我们看
     \begin{align*}
-        f(x) = ax^2 + bx + c \in \RR[x], \quad a \neq 0.
+        f(x) = ax^2 + bx + c \in \mathbb{R}[x], \quad a \neq 0.
     \end{align*}
     它的流数 $f^{\prime} (x) = 2ax + b$ 恰有一个根 $t_0 = -\frac{b}{2a}$. 由上个命题, $f(x)$ 有重根相当于 $f(t_0) = 0$, 即
     \begin{align*}

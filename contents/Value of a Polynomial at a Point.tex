@@ -29,7 +29,7 @@
 \end{definition}
 
 \begin{example}
-    取 $t = 10$. 设 $f(x) = x^2 - x - 1 \in \ZZ[x]$. 因为 $10^2 - 10 - 1 = 89$, 故 $f(10) = 89$. 不难算出 $f^{\prime} (x) = 2x - 1$. 因为 $2 \cdot 10 - 1 = 19$, 故 $f^{\prime} (10) = 19$.
+    取 $t = 10$. 设 $f(x) = x^2 - x - 1 \in \mathbb{Z}[x]$. 因为 $10^2 - 10 - 1 = 89$, 故 $f(10) = 89$. 不难算出 $f^{\prime} (x) = 2x - 1$. 因为 $2 \cdot 10 - 1 = 19$, 故 $f^{\prime} (10) = 19$.
 \end{example}
 
 整式在一点的值适合如下性质:
@@ -114,7 +114,7 @@
 \end{proposition}
 
 \begin{example}
-    考虑 $\FF$ 与 $\FF[x]$. 前面, 利用带馀除法, 得到关系
+    考虑 $\mathbb{F}$ 与 $\mathbb{F}[x]$. 前面, 利用带馀除法, 得到关系
     \begin{align*}
         8x^6 + 1 = (4x^3 + 12x - 8) \cdot 2(x-1)^2 (x+2) + (72x^2 - 96x + 33).
     \end{align*}
@@ -124,7 +124,7 @@
 \begin{remark}
     或许, 读者认为整式在一点的值的性质是理所当然的. 不过, 事实并非如此. 读者应注意到, 是 $D$ 的加法与乘法运算律支撑这一事实, 而不是别的.
 
-    对于这样的式, 我们不能将 $x$ 改写为 $\FF$ 的元 $t$:
+    对于这样的式, 我们不能将 $x$ 改写为 $\mathbb{F}$ 的元 $t$:
     \begin{align*}
         \deg 3x^2 < \deg 2x^3.
     \end{align*}
@@ -145,17 +145,17 @@
 读者在中学算学里接触的 $1$ 次函数、$2$ 次函数都是整式函数.
 
 \begin{example}
-    设 $f(x) = 2x + 3 \in \RR[x]$. $f(x)$ 诱导的整式函数是
+    设 $f(x) = 2x + 3 \in \mathbb{R}[x]$. $f(x)$ 诱导的整式函数是
     \begin{align*}
-         & \RR \to \RR,             \\
+         & \mathbb{R} \to \mathbb{R}, \\
          & t \mapsto f(t) = 2t + 3.
     \end{align*}
 \end{example}
 
 \begin{example}
-    设 $f(x) = x^2 + x - 1 \in \RR[x]$. $f(x)$ 诱导的整式函数是
+    设 $f(x) = x^2 + x - 1 \in \mathbb{R}[x]$. $f(x)$ 诱导的整式函数是
     \begin{align*}
-         & \RR \to \RR,                  \\
+         & \mathbb{R} \to \mathbb{R},    \\
          & t \mapsto f(t) = t^2 + t - 1.
     \end{align*}
 \end{example}

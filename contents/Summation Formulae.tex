@@ -2,7 +2,7 @@
 \addcontentsline{toc}{subsection}{\SummationFormulae}
 \markright{\SummationFormulae}
 
-本节讨论求和公式 \term{summation formula} 问题: 设 $f(x) \in \FF[x]$, 求
+本节讨论求和公式 \term{summation formula} 问题: 设 $f(x) \in \mathbb{F}[x]$, 求
 \begin{align*}
     S(n) = \sum_{\ell = 0}^{n - 1} f(\ell) = f(0) + f(1) + \cdots + f(n - 1).
 \end{align*}
@@ -78,7 +78,7 @@
 \begin{align*}
     S(n+1) - S(n) = f(n).
 \end{align*}
-反过来, 设 $\NN$ 到 $\FF$ 的函数 $W(n)$ 适合 $W(0) = 0$ 与 $W(n+1) - W(n) = f(n)$, 则
+反过来, 设 $\mathbb{N}$ 到 $\mathbb{F}$ 的函数 $W(n)$ 适合 $W(0) = 0$ 与 $W(n+1) - W(n) = f(n)$, 则
 \begin{align*}
     \sum_{\ell = 0}^{n - 1} f(\ell)
     = {} & \sum_{\ell = 0}^{n - 1} (W(\ell+1) - W(\ell))                       \\
@@ -87,13 +87,13 @@
     = {} & W(n) - W(0)                                                         \\
     = {} & W(n).
 \end{align*}
-这样, 任给 $f(x) \in \FF[x]$, 若我们能找到适合条件 $S(0) = 0$ 与 $S(x+1) - S(x) = f(x)$ 的整式, 则
+这样, 任给 $f(x) \in \mathbb{F}[x]$, 若我们能找到适合条件 $S(0) = 0$ 与 $S(x+1) - S(x) = f(x)$ 的整式, 则
 \begin{align*}
     \sum_{\ell = 0}^{n - 1} f(\ell) = S(n).
 \end{align*}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $m$ 次整式. 存在唯一的 $m+1$ 次整式 $F(x) \in \FF[x]$ 适合条件:
+    设 $f(x) \in \mathbb{F}[x]$ 是 $m$ 次整式. 存在唯一的 $m+1$ 次整式 $F(x) \in \mathbb{F}[x]$ 适合条件:
 
     (i) $F(0) = 0$;
 
@@ -105,13 +105,13 @@
     \begin{align*}
         \deg F(x) = -\infty = -\infty + 1 = \deg f(x) + 1.
     \end{align*}
-    设 $m \geq 0$. 根据广义二项系数的性质, 存在 $m+1$ 个 $\FF$ 中元 $c_0$, $\cdots$, $c_{m}$ 使
+    设 $m \geq 0$. 根据广义二项系数的性质, 存在 $m+1$ 个 $\mathbb{F}$ 中元 $c_0$, $\cdots$, $c_{m}$ 使
     \begin{align*}
         f(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell}, \quad c_{m} \neq 0.
     \end{align*}
     (读者可思考: 若 $c_{m} = 0$, $f(x)$ 还能是 $m$ 次整式吗?) 作整式
     \begin{align*}
-        F(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell+1} \in \FF[x].
+        F(x) = \sum_{\ell = 0}^{m} c_\ell \binom{x}{\ell+1} \in \mathbb{F}[x].
     \end{align*}
     显然 $\deg F(x) = m + 1$. 验证 (i):
     \begin{align*}
@@ -126,7 +126,7 @@
         = {} & f(x).
     \end{align*}
 
-    再看唯一性. 设 $G(x) \in \FF[x]$ 是 $m+1$ 次整式, 并适合条件 $G(0) = 0$ 与 $G(x + 1) - G(x) = f(x)$. 作
+    再看唯一性. 设 $G(x) \in \mathbb{F}[x]$ 是 $m+1$ 次整式, 并适合条件 $G(0) = 0$ 与 $G(x + 1) - G(x) = f(x)$. 作
     \begin{align*}
         H(x) = F(x) - G(x).
     \end{align*}
@@ -196,14 +196,14 @@
 由此可见, 若我们能把 $f(x)$ 写为广义二项系数的线性组合, 则寻找 $S(n)$ 的过程将十分简单. 接下来, 我们讨论怎么方便地把整式写为广义二项系数的线性组合.
 
 \begin{definition}
-    设 $f(x) \in \FF[x]$. 定义 $f(x)$ 的差分 \term{difference} 为
+    设 $f(x) \in \mathbb{F}[x]$. 定义 $f(x)$ 的差分 \term{difference} 为
     \begin{align*}
-        \Delta f(x) = f(x+1) - f(x) \in \FF[x].
+        \Delta f(x) = f(x+1) - f(x) \in \mathbb{F}[x].
     \end{align*}
 
-    设 $t \in \FF$. 我们把
+    设 $t \in \mathbb{F}$. 我们把
     \begin{align*}
-        f(t+1) - f(t) \in \FF
+        f(t+1) - f(t) \in \mathbb{F}
     \end{align*}
     也写为 $\Delta f(t)$.
 \end{definition}
@@ -243,13 +243,13 @@
 差分也有类似的性质.
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$. 则
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$, $c \in \mathbb{F}$. 则
 
     (i) $\Delta (cf(x)) = c \Delta f(x)$;
 
     (ii) $\Delta (f(x) \pm g(x)) = \Delta f(x) \pm \Delta g(x)$.
 
-    由 (i) (ii) 与算学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    由 (i) (ii) 与算学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \mathbb{F}$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \mathbb{F}[x]$ 时,
     \begin{align*}
         \Delta \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
         = \sum_{\ell = 0}^{k-1} c_\ell \Delta f_\ell (x).
@@ -281,35 +281,35 @@
 \end{pf}
 
 \begin{definition}
-    设 $f(x) \in \FF[x]$. 记
+    设 $f(x) \in \mathbb{F}[x]$. 记
     \begin{align*}
-        \Delta^0 f(x) = f(x) \in \FF[x],
+        \Delta^0 f(x) = f(x) \in \mathbb{F}[x],
     \end{align*}
     并称其为 $f(x)$ 的 $0$ 级差分 \term{zeroth-order difference}. $1$ 级差分就是差分:
     \begin{align*}
-        \Delta^1 f(x) = \Delta f(x) = \Delta (\Delta^0 f(x)) \in \FF[x].
+        \Delta^1 f(x) = \Delta f(x) = \Delta (\Delta^0 f(x)) \in \mathbb{F}[x].
     \end{align*}
     $1$ 级差分的差分是 $2$ 级差分:
     \begin{align*}
-        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) \in \FF[x].
+        \Delta^2 f(x) = \Delta (\Delta^1 f(x)) \in \mathbb{F}[x].
     \end{align*}
     $2$ 级差分的差分是 $3$ 级差分:
     \begin{align*}
-        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) \in \FF[x].
+        \Delta^3 f(x) = \Delta (\Delta^2 f(x)) \in \mathbb{F}[x].
     \end{align*}
     一般地, $e$ 级差分就是 $e - 1$ 级差分的差分:
     \begin{align*}
-        \Delta^e f(x) = \Delta (\Delta^{e-1} f(x)) \in \FF[x].
+        \Delta^e f(x) = \Delta (\Delta^{e-1} f(x)) \in \mathbb{F}[x].
     \end{align*}
     高级差分可指代任意 $e$ 级差分, 此处 $e > 1$.
 
-    设 $t \in \FF$. 既然 $\Delta^e f(x)$ 是某个整式
+    设 $t \in \mathbb{F}$. 既然 $\Delta^e f(x)$ 是某个整式
     \begin{align*}
-        v_0 + v_1 x + \cdots + v_s x^s \in \FF[x],
+        v_0 + v_1 x + \cdots + v_s x^s \in \mathbb{F}[x],
     \end{align*}
     我们将
     \begin{align*}
-        v_0 + v_1 t + \cdots + v_s t^s \in \FF
+        v_0 + v_1 t + \cdots + v_s t^s \in \mathbb{F}
     \end{align*}
     简单地写为 $\Delta^e f(t)$.
 \end{definition}
@@ -383,7 +383,7 @@
 高级差分适合如下性质:
 
 \begin{proposition}
-    设 $e$ 是非负整数. 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    设 $e$ 是非负整数. 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \mathbb{F}$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \mathbb{F}[x]$ 时,
     \begin{align*}
         \Delta^e \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)
         = \sum_{\ell = 0}^{k-1} c_\ell \Delta^e f_\ell (x).
@@ -406,7 +406,7 @@
 \end{pf}
 
 \begin{proposition}
-    设 $e$ 是非负整数. 设 $f(x) \in \FF[x]$. 则
+    设 $e$ 是非负整数. 设 $f(x) \in \mathbb{F}[x]$. 则
     \begin{align*}
         \Delta^e f(x) = \sum_{k = 0}^{e} (-1)^{e-k} \binom{e}{k} f(x+k).
     \end{align*}
@@ -464,7 +464,7 @@
     显然.
 \end{pf}
 
-设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的整式. 我们知道, $f(x)$ 一定可以写为广义二项系数的线性组合:
+设 $f(x) \in \mathbb{F}[x]$ 是次不高于 $m$ 的整式. 我们知道, $f(x)$ 一定可以写为广义二项系数的线性组合:
 \begin{align*}
     f(x) = \sum_{k = 0}^{m} c_{k} \binom{x}{k}.
 \end{align*}
@@ -487,7 +487,7 @@
 我们已经证明了
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是次不高于 $m$ 的整式. 则
+    设 $f(x) \in \mathbb{F}[x]$ 是次不高于 $m$ 的整式. 则
     \begin{align*}
         f(x)
         = {} & \sum_{k = 0}^{m} \Delta^k f(0) \binom{x}{k}                                                   \\

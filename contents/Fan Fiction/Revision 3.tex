@@ -6,7 +6,7 @@
 
 本文不会有新的东西. 我们又开始复习了. 这次, 我们要复习四篇文的内容.
 
-当然, 读者要清楚一个事实: ``\Revision{3}'' 的整式的系数都是 $\FF$ 的元. 这很重要.
+当然, 读者要清楚一个事实: ``\Revision{3}'' 的整式的系数都是 $\mathbb{F}$ 的元. 这很重要.
 
 我们先复习有理式及其运算.
 
@@ -262,38 +262,38 @@
 \end{proposition}
 
 \begin{definition}
-    设 $r(x)$ 是 ($\FF$ 上 $x$ 的) 有理式. 设 $A$ 是 $\FF$ 的非空子集, 且适合: 任取 $a \in A$, $r(a)$ 存在. 称函数
+    设 $r(x)$ 是 ($\mathbb{F}$ 上 $x$ 的) 有理式. 设 $A$ 是 $\mathbb{F}$ 的非空子集, 且适合: 任取 $a \in A$, $r(a)$ 存在. 称函数
     \begin{align*}
-         & A \to \FF, \tag*{$r_\mathrm{f} \colon$} \\
+         & A \to \mathbb{F}, \tag*{$r_\mathrm{f} \colon$} \\
          & t \mapsto r(t)
     \end{align*}
-    为 $A$ 到 $\FF$ 的有理函数. 我们也说, 这个函数是由 ($\FF$ 上 $x$ 的) 有理式 $r(x)$ 诱导的 $A$ 到 $\FF$ 的有理函数.
+    为 $A$ 到 $\mathbb{F}$ 的有理函数. 我们也说, 这个函数是由 ($\mathbb{F}$ 上 $x$ 的) 有理式 $r(x)$ 诱导的 $A$ 到 $\mathbb{F}$ 的有理函数.
 \end{definition}
 
 \begin{definition}
-    设 $r_\mathrm{f}$ 与 $s_\mathrm{f}$ 是 $A$ 到 $\FF$ 的二个有理函数. 二者的和 $r_\mathrm{f} + s_\mathrm{f}$ 定义为
+    设 $r_\mathrm{f}$ 与 $s_\mathrm{f}$ 是 $A$ 到 $\mathbb{F}$ 的二个有理函数. 二者的和 $r_\mathrm{f} + s_\mathrm{f}$ 定义为
     \begin{align*}
-         & A \to \FF, \tag*{$r_\mathrm{f} + s_\mathrm{f} \colon$} \\
+         & A \to \mathbb{F}, \tag*{$r_\mathrm{f} + s_\mathrm{f} \colon$} \\
          & t \mapsto r_\mathrm{f} (t) + s_\mathrm{f} (t).
     \end{align*}
     二者的积 $r_\mathrm{f} \, s_\mathrm{f}$ 定义为
     \begin{align*}
-         & A \to \FF, \tag*{$r_\mathrm{f} \, s_\mathrm{f} \colon$} \\
+         & A \to \mathbb{F}, \tag*{$r_\mathrm{f} \, s_\mathrm{f} \colon$} \\
          & t \mapsto r_\mathrm{f} (t) s_\mathrm{f} (t).
     \end{align*}
     若任取 $a \in A$, $s_\mathrm{f} (a) \neq 0$, 则二者的比 $\frac{r_\mathrm{f}}{s_\mathrm{f}}$ 定义为
     \begin{align*}
-         & A \to \FF, \tag*{$\frac{r_\mathrm{f}}{s_\mathrm{f}} \colon$} \\
+         & A \to \mathbb{F}, \tag*{$\frac{r_\mathrm{f}}{s_\mathrm{f}} \colon$} \\
          & t \mapsto \frac{r_\mathrm{f} (t)}{s_\mathrm{f} (t)}.
     \end{align*}
 \end{definition}
 
 \begin{proposition}
-    设 $r(x)$, $s(x)$ 是有理式. 设 $r_\mathrm{f}$, $s_\mathrm{f}$ 分别是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\FF$ 的有理函数.
+    设 $r(x)$, $s(x)$ 是有理式. 设 $r_\mathrm{f}$, $s_\mathrm{f}$ 分别是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\mathbb{F}$ 的有理函数.
 
     (i) 若 $r(x) = s(x)$, 则 $r_\mathrm{f} = s_\mathrm{f}$ (函数的相等).
 
-    (ii) $r(x) + s(x)$ 诱导 ($A$ 到 $\FF$ 的, 下同) 有理函数 $r_\mathrm{f} + s_\mathrm{f}$.
+    (ii) $r(x) + s(x)$ 诱导 ($A$ 到 $\mathbb{F}$ 的, 下同) 有理函数 $r_\mathrm{f} + s_\mathrm{f}$.
 
     (iii) $r(x) s(x)$ 诱导有理函数 $r_\mathrm{f} \, s_\mathrm{f}$.
 
@@ -301,11 +301,11 @@
 \end{proposition}
 
 \begin{proposition}
-    设 $r(x)$, $s(x)$ 是有理式. 设 $A \subset \FF$, 且 $A$ 有无限多个元. 设任取 $a \in A$, $r(a)$, $s(a)$ 均存在, 且 $r(a) = s(a)$. $r(x)$ 与 $s(x)$ 一定是相等的有理式. 通俗地说, 若系数为 $\FF$ 的元的二个有理式在无限多个地方有相同的取值, 则这二个有理式必相等.
+    设 $r(x)$, $s(x)$ 是有理式. 设 $A \subset \mathbb{F}$, 且 $A$ 有无限多个元. 设任取 $a \in A$, $r(a)$, $s(a)$ 均存在, 且 $r(a) = s(a)$. $r(x)$ 与 $s(x)$ 一定是相等的有理式. 通俗地说, 若系数为 $\mathbb{F}$ 的元的二个有理式在无限多个地方有相同的取值, 则这二个有理式必相等.
 \end{proposition}
 
 \begin{proposition}
-    设 $r(x)$, $s(x)$ 是有理式. 设 $A$ 是 $\FF$ 的非空子集. 设 $A$ 有无限多个元. 设 $r_{\mathrm{f}}$, $s_{\mathrm{f}}$ 是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\FF$ 的二个有理函数. 若 $r_{\mathrm{f}} = s_{\mathrm{f}}$, 则 $r(x) = s(x)$.
+    设 $r(x)$, $s(x)$ 是有理式. 设 $A$ 是 $\mathbb{F}$ 的非空子集. 设 $A$ 有无限多个元. 设 $r_{\mathrm{f}}$, $s_{\mathrm{f}}$ 是 $r(x)$, $s(x)$ 诱导的 $A$ 到 $\mathbb{F}$ 的二个有理函数. 若 $r_{\mathrm{f}} = s_{\mathrm{f}}$, 则 $r(x) = s(x)$.
 \end{proposition}
 
 最后, 我们复习有理式的分解.

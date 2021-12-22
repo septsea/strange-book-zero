@@ -2,26 +2,26 @@
 \addcontentsline{toc}{subsection}{\PolynomialsOverF}
 \markright{\PolynomialsOverF}
 
-我们在前几节讨论的都是整环 $D$ 上的整式, 所以它们看上去是有些抽象的. 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\FF$ 与 $\FF[x]$, 其中 $\FF$ 可代指 $\QQ$, $\RR$, $\CC$ 的任意一个. 细心的读者会注意到我们在前几节未使用 $\sum$ 符号: 这是为了让读者没那么困难地适应整式理论. 从本节起, 我们会较多地使用这个 $\sum$. 读者也可以乘此机会让自己熟悉它. 当然, 我们偶尔也会使用 $\prod$ 符号.
+我们在前几节讨论的都是整环 $D$ 上的整式, 所以它们看上去是有些抽象的. 从现在开始, 我们不讨论抽象的 $D$ 与 $D[x]$, 而是讨论 $\mathbb{F}$ 与 $\mathbb{F}[x]$, 其中 $\mathbb{F}$ 可代指 $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$ 的任意一个. 细心的读者会注意到我们在前几节未使用 $\sum$ 符号: 这是为了让读者没那么困难地适应整式理论. 从本节起, 我们会较多地使用这个 $\sum$. 读者也可以乘此机会让自己熟悉它. 当然, 我们偶尔也会使用 $\prod$ 符号.
 
-本节并没有什么新的知识 (除了最后几个关于 $\FF[x]$ 的命题). 读者可以乘此机会温习一下所学内容. 我们将重述一些定义与命题. 我们在学校学算学的时候, 也会有复习课. 就当本节就是 ``复习节'' 吧!
+本节并没有什么新的知识 (除了最后几个关于 $\mathbb{F}[x]$ 的命题). 读者可以乘此机会温习一下所学内容. 我们将重述一些定义与命题. 我们在学校学算学的时候, 也会有复习课. 就当本节就是 ``复习节'' 吧!
 
 先从整式的定义与运算开始.
 
 \begin{definition}
-    设 $x$ 是不在 $\FF$ 里的任意一个文字. 形如
+    设 $x$ 是不在 $\mathbb{F}$ 里的任意一个文字. 形如
     \begin{align*}
         f(x)
-        = {} & \sum_{i=0}^n a_i x^i                                                                       \\
-        = {} & a_0 + a_1 x + \cdots + a_n x^n \quad (n \in \NN,\ a_0,a_1,\cdots,a_n \in \FF,\ a_n \neq 0)
+        = {} & \sum_{i=0}^n a_i x^i                                                                                     \\
+        = {} & a_0 + a_1 x + \cdots + a_n x^n \quad (n \in \mathbb{N},\ a_0,a_1,\cdots,a_n \in \mathbb{F},\ a_n \neq 0)
     \end{align*}
-    的表达式称为 $\FF$ 上 $x$ 的一个整式. $n$ 称为其次, $a_i$ 称为其 $i$ 次系数, $a_i x^i$ 称为其 $i$ 次项. $f(x)$ 的次可写为 $\deg f(x)$.
+    的表达式称为 $\mathbb{F}$ 上 $x$ 的一个整式. $n$ 称为其次, $a_i$ 称为其 $i$ 次系数, $a_i x^i$ 称为其 $i$ 次项. $f(x)$ 的次可写为 $\deg f(x)$.
 
     若二个整式的次与各同次系数均相等, 则二者相等.
 
     整式的系数为 $0$ 的项可以不写.
 
-    约定 $0 \in \FF$ 也是整式, 称为零整式. 零整式的次是 $-\infty$. 任取整数 $m$, 约定
+    约定 $0 \in \mathbb{F}$ 也是整式, 称为零整式. 零整式的次是 $-\infty$. 任取整数 $m$, 约定
     \begin{align*}
          & -\infty = -\infty, \quad -\infty < m,                        \\
          & -\infty + m = m + (-\infty) = -\infty + (-\infty) = -\infty.
@@ -35,18 +35,18 @@
         a_0 = a_1 = \cdots = a_n = 0.
     \end{align*}
 
-    $\FF$ 上 $x$ 的所有整式作成的集是 $\FF[x]$:
+    $\mathbb{F}$ 上 $x$ 的所有整式作成的集是 $\mathbb{F}[x]$:
     \begin{align*}
-        \FF[x] = \left\{\, \sum_{i=0}^n a_i x^i \,\,\middle|\,\, n \in \NN,\ a_0,a_1,\cdots,a_n \in \FF \,\right\}.
+        \mathbb{F}[x] = \left\{\, \sum_{i=0}^n a_i x^i \,\,\middle|\,\, n \in \mathbb{N},\ a_0,a_1,\cdots,a_n \in \mathbb{F} \,\right\}.
     \end{align*}
 
-    文字 $x$ 只是一个符号, 它与 $\FF$ 的元的和与积都是形式的. 我们说, $x$ 是不定元.
+    文字 $x$ 只是一个符号, 它与 $\mathbb{F}$ 的元的和与积都是形式的. 我们说, $x$ 是不定元.
 \end{definition}
 
 \begin{definition}
     设
     \begin{align*}
-        f(x) = \sum_{i=0}^n a_i x^i, \quad g(x) = \sum_{i=0}^n b_i x^i \in \FF[x].
+        f(x) = \sum_{i=0}^n a_i x^i, \quad g(x) = \sum_{i=0}^n b_i x^i \in \mathbb{F}[x].
     \end{align*}
     规定加法如下:
     \begin{align*}
@@ -55,9 +55,9 @@
 \end{definition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$. $\FF[x]$ 的加法适合如下性质:
+    设 $f(x)$, $g(x)$, $h(x) \in \mathbb{F}[x]$. $\mathbb{F}[x]$ 的加法适合如下性质:
 
-    (i) $f(x) + g(x) \in \FF[x]$;
+    (i) $f(x) + g(x) \in \mathbb{F}[x]$;
 
     (ii) $(f(x) + g(x)) + h(x)$ = $f(x) + (g(x) + h(x))$;
 
@@ -71,7 +71,7 @@
 \begin{definition}
     设
     \begin{align*}
-        f(x) = \sum_{i=0}^n a_i x^i, \quad g(x) = \sum_{i=0}^n b_i x^i \in \FF[x].
+        f(x) = \sum_{i=0}^n a_i x^i, \quad g(x) = \sum_{i=0}^n b_i x^i \in \mathbb{F}[x].
     \end{align*}
     则
     \begin{align*}
@@ -84,7 +84,7 @@
 \end{definition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 则
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$. 则
     \begin{align*}
         \deg {(f(x) \pm g(x))} \leq \max \{\, \deg f(x), \deg g(x) \,\}.
     \end{align*}
@@ -101,7 +101,7 @@
 \begin{definition}
     设
     \begin{align*}
-        f(x) = \sum_{i=0}^n a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \in \FF[x].
+        f(x) = \sum_{i=0}^n a_i x^i = a_0 + a_1 x + \cdots + a_n x^n \in \mathbb{F}[x].
     \end{align*}
     这称为 $f(x)$ 的升次排列. 下面的写法称为 $f(x)$ 的降次排列:
     \begin{align*}
@@ -114,7 +114,7 @@
 \begin{definition}
     设
     \begin{align*}
-        f(x) = \sum_{i=0}^m a_i x^i, \quad g(x) = \sum_{j=0}^n b_j x^j \in \FF[x].
+        f(x) = \sum_{i=0}^m a_i x^i, \quad g(x) = \sum_{j=0}^n b_j x^j \in \mathbb{F}[x].
     \end{align*}
     规定乘法如下:
     \begin{align*}
@@ -123,23 +123,23 @@
 \end{definition}
 
 \begin{proposition}
-    设 $m$, $n \in \NN$, $p$, $q \in \FF$. 则
+    设 $m$, $n \in \mathbb{N}$, $p$, $q \in \mathbb{F}$. 则
     \begin{align*}
         px^i \cdot qx^j = (px^i) (qx^j) = (pq)x^{i + j}.
     \end{align*}
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 则
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$. 则
     \begin{align*}
         \deg f(x) g(x) = \deg f(x) + \deg g(x).
     \end{align*}
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$. $\FF[x]$ 的加法与乘法适合 (i) 至 (v) 及如下性质:
+    设 $f(x)$, $g(x)$, $h(x) \in \mathbb{F}[x]$. $\mathbb{F}[x]$ 的加法与乘法适合 (i) 至 (v) 及如下性质:
 
-    (vi) $f(x) g(x) \in \FF[x]$;
+    (vi) $f(x) g(x) \in \mathbb{F}[x]$;
 
     (vii) $(f(x) g(x)) h(x) = f(x) (g(x) h(x))$;
 
@@ -163,15 +163,15 @@
 \end{proposition}
 
 \begin{remark}
-    $\FF[x]$ 的一个名字就是 (域) $\FF$ 上 ($x$) 的整式环.
+    $\mathbb{F}[x]$ 的一个名字就是 (域) $\mathbb{F}$ 上 ($x$) 的整式环.
 \end{remark}
 
 \begin{definition}
-    设 $m \in \NN$. 整式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
+    设 $m \in \mathbb{N}$. 整式 $f(x)$ 的 $m$ 次幂就是 $m$ 个 $f(x)$ 的积:
     \begin{align*}
         (f(x))^m = \underbrace{f(x) \cdot f(x) \cdot \cdots \cdot f(x)}_{\text{$m$ $f(x)$\apostrophe s}} = \prod_{\ell = 0}^{m-1} f(x).
     \end{align*}
-    设 $m$, $n \in \NN$, $f(x)$, $g(x) \in \FF[x]$, 则整式的幂适合如下规则:
+    设 $m$, $n \in \mathbb{N}$, $f(x)$, $g(x) \in \mathbb{F}[x]$, 则整式的幂适合如下规则:
     \begin{align*}
          & (f(x))^m (f(x))^n = (f(x))^{m+n},  \\
          & ((f(x))^m)^n = (f(x))^{mn},        \\
@@ -180,16 +180,16 @@
 \end{definition}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$. 非零的 $c \in \FF$ 是 $0$ 次整式, 那么
+    设 $f(x) \in \mathbb{F}[x]$. 非零的 $c \in \mathbb{F}$ 是 $0$ 次整式, 那么
     \begin{align*}
         \deg cf(x) = \deg f(x).
     \end{align*}
 \end{proposition}
 
-再来看整式的带馀除法. 因为 $\FF$ 的每个非零元都是 $\FF$ 的单位, 所以有
+再来看整式的带馀除法. 因为 $\mathbb{F}$ 的每个非零元都是 $\mathbb{F}$ 的单位, 所以有
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是非零整式. 对任意 $g(x) \in \FF[x]$, 存在唯一的 $q(x), r(x) \in \FF[x]$ 使
+    设 $f(x) \in \mathbb{F}[x]$ 是非零整式. 对任意 $g(x) \in \mathbb{F}[x]$, 存在唯一的 $q(x), r(x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         g(x) = q(x) f(x) + r(x), \quad \deg r(x) < \deg f(x).
     \end{align*}
@@ -199,10 +199,10 @@
     \end{align*}
 \end{proposition}
 
-可以看到, 在 $\FF[x]$ 里, 带馀除法的适用范围更广了. 我们还得到了一个有用的事实.
+可以看到, 在 $\mathbb{F}[x]$ 里, 带馀除法的适用范围更广了. 我们还得到了一个有用的事实.
 
 \begin{proposition}
-    整式的带馀除法不因系数的范围变大而改变. 具体地说, 设 $E$, $K$ 是三文字 $\QQ$, $\RR$, $\CC$ 的任意二个, 且 $K \subset E$. 设 $f(x)$, $g(x) \in K[x]$, 且 $f(x) \neq 0$. 设 $K$ 上的整式 $q_1 (x)$, $r_1 (x)$ 适合
+    整式的带馀除法不因系数的范围变大而改变. 具体地说, 设 $E$, $K$ 是三文字 $\mathbb{Q}$, $\mathbb{R}$, $\mathbb{C}$ 的任意二个, 且 $K \subset E$. 设 $f(x)$, $g(x) \in K[x]$, 且 $f(x) \neq 0$. 设 $K$ 上的整式 $q_1 (x)$, $r_1 (x)$ 适合
     \begin{align*}
         g(x) = q_1 (x) f(x) + r_1 (x), \quad \deg r_1 (x) < \deg f(x).
     \end{align*}
@@ -216,17 +216,17 @@
 下面回顾整式的相等. 我们借助 ``线性无关'' 讨论相等问题.
 
 \begin{definition}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$. 设 $c_0$, $c_1$, $\cdots$, $c_n \in \FF$. 我们说
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \mathbb{F}[x]$. 设 $c_0$, $c_1$, $\cdots$, $c_n \in \mathbb{F}$. 我们说
     \begin{align*}
         \sum_{i = 0}^{n} c_i p_i (x)
     \end{align*}
     是整式 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的一个线性组合. $c_0$, $c_1$, $\cdots$, $c_n$ 就是此线性组合的系数.
 
-    若不存在一组不全为 $0$ 的 $\FF$ 中元 $d_0$, $d_1$, $\cdots$, $d_n$ 使
+    若不存在一组不全为 $0$ 的 $\mathbb{F}$ 中元 $d_0$, $d_1$, $\cdots$, $d_n$ 使
     \begin{align*}
         \sum_{i = 0}^{n} d_i p_i (x) = 0,
     \end{align*}
-    则说 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的. 换句话说, ``$p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的'' 意味着: 若 $\FF$ 中元 $r_0$, $r_1$, $\cdots$, $r_n$ 使
+    则说 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的. 换句话说, ``$p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的'' 意味着: 若 $\mathbb{F}$ 中元 $r_0$, $r_1$, $\cdots$, $r_n$ 使
     \begin{align*}
         \sum_{i = 0}^{n} r_i p_i (x) = 0,
     \end{align*}
@@ -234,21 +234,21 @@
 \end{definition}
 
 \begin{proposition}
-    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \FF[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次整式. 则:
+    设 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x) \in \mathbb{F}[x]$ 分别是 $0$, $1$, $\cdots$, $n$ 次整式. 则:
 
     (i) $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 是线性无关的;
 
     (ii) 任意次不高于 $n$ 的整式都可唯一地写为 $p_0 (x)$, $p_1 (x)$, $\cdots$, $p_n (x)$ 的线性组合.
 \end{proposition}
 
-由于 $\FF$ 的每个非零元都是单位, 上面的命题的结论变强了. 下面的例体现了这一点.
+由于 $\mathbb{F}$ 的每个非零元都是单位, 上面的命题的结论变强了. 下面的例体现了这一点.
 
 \begin{example}
-    考虑 $\FF$ 与 $\FF[x]$. 取 $n=2$, 及
+    考虑 $\mathbb{F}$ 与 $\mathbb{F}[x]$. 取 $n=2$, 及
     \begin{align*}
         p_0 (x) = -1, \quad p_1 (x) = 2x, \quad p_2 (x) = 3x^2.
     \end{align*}
-    这三个整式是线性无关的. 考虑 $f(x) = 3 + x - 2x^2$. 设 $c_0$, $c_1$, $c_2 \in \FF$ 使
+    这三个整式是线性无关的. 考虑 $f(x) = 3 + x - 2x^2$. 设 $c_0$, $c_1$, $c_2 \in \mathbb{F}$ 使
     \begin{align*}
         3 + x - 2x^2 = c_0 \cdot (-1) + c_1 \cdot 2x + c_2 \cdot 3x^2.
     \end{align*}
@@ -260,15 +260,15 @@
     \begin{align*}
         c_0 = -3, \quad c_1 = \frac12, \quad c_2 = -\frac23.
     \end{align*}
-    可以看到, 在 $\ZZ$ 与 $\ZZ[x]$ 里 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的线性组合还不能表示这个 $f(x)$, 但当我们在 ``大环境'' $\FF$ 与 $\FF[x]$ 下讨论问题时就可以了.
+    可以看到, 在 $\mathbb{Z}$ 与 $\mathbb{Z}[x]$ 里 $p_0 (x)$, $p_1 (x)$, $p_2 (x)$ 的线性组合还不能表示这个 $f(x)$, 但当我们在 ``大环境'' $\mathbb{F}$ 与 $\mathbb{F}[x]$ 下讨论问题时就可以了.
 \end{example}
 
 \begin{remark}
-    我们常常把 $D$ 的元分为三类: 零、单位、非零且不是单位的元. 但是在 $\FF$, 只要分为二类即可: 零与非零.
+    我们常常把 $D$ 的元分为三类: 零、单位、非零且不是单位的元. 但是在 $\mathbb{F}$, 只要分为二类即可: 零与非零.
 \end{remark}
 
 \begin{proposition}
-    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n \in \FF$. 设 $c \in \FF$. 再设
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n \in \mathbb{F}$. 设 $c \in \mathbb{F}$. 再设
     \begin{align*}
         f(x) = \sum_{i = 0}^n a_i (x-c)^i, \quad g(x) = \sum_{i = 0}^n b_i (x-c)^i.
     \end{align*}
@@ -278,9 +278,9 @@
     \end{align*}
     并且, 任取
     \begin{align*}
-        f(x) = \sum_{i = 0}^n u_i x^i \in \FF[x],
+        f(x) = \sum_{i = 0}^n u_i x^i \in \mathbb{F}[x],
     \end{align*}
-    必存在 $v_0$, $v_1$, $\cdots$, $v_n \in \FF$ 使
+    必存在 $v_0$, $v_1$, $\cdots$, $v_n \in \mathbb{F}$ 使
     \begin{align*}
         f(x) = \sum_{i = 0}^n v_i (x-c)^i.
     \end{align*}
@@ -291,17 +291,17 @@
 \begin{definition}
     设
     \begin{align*}
-        f(x) = \sum_{i = 0}^{n} a_i x^i \in \FF[x].
+        f(x) = \sum_{i = 0}^{n} a_i x^i \in \mathbb{F}[x].
     \end{align*}
     $f(x)$ 的流数是整式
     \begin{align*}
-        f^{\prime}(x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \in \FF[x].
+        f^{\prime}(x) = \sum_{i = 1}^{n} i a_i x^{i - 1} \in \mathbb{F}[x].
     \end{align*}
     $f^{\prime} (x)$ 也可写为 $(f(x))^{\prime}$.
 \end{definition}
 
 \begin{remark}
-    若 $f(x) = c$, $c \in \FF$, 则 $f^{\prime} (x)$ 为零整式.
+    若 $f(x) = c$, $c \in \mathbb{F}$, 则 $f^{\prime} (x)$ 为零整式.
 \end{remark}
 
 \begin{definition}
@@ -309,7 +309,7 @@
     \begin{align*}
         f(x) = \sum_{i = 0}^{m} a_i x^i, \quad g(x) = \sum_{j = 0}^{n} b_j x^j
     \end{align*}
-    为 $\FF[x]$ 中的二个元. 我们称
+    为 $\mathbb{F}[x]$ 中的二个元. 我们称
     \begin{align*}
         (g \circ f)(x) = g(f(x)) = \sum_{j = 0}^{n} b_j (f(x))^j
     \end{align*}
@@ -317,14 +317,14 @@
 \end{definition}
 
 \begin{proposition}
-    整式的复合适合结合律. 具体地说, 设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$, 则
+    整式的复合适合结合律. 具体地说, 设 $f(x)$, $g(x)$, $h(x) \in \mathbb{F}[x]$, 则
     \begin{align*}
         ((h \circ g) \circ f)(x) = (h \circ (g \circ f))(x).
     \end{align*}
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x)$, $h(x) \in \FF[x]$.
+    设 $f(x)$, $g(x)$, $h(x) \in \mathbb{F}[x]$.
 
     (i) 若 $f(x) = g(x)$, 则 $(f \circ h)(x) = (g \circ h)(x)$.
 
@@ -338,24 +338,24 @@
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$, $c \in \FF$. 则
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$, $c \in \mathbb{F}$. 则
 
     (i) $(cf(x))^{\prime} = c f^{\prime} (x)$;
 
     (ii) $(f(x) \pm g(x))^{\prime} = f^{\prime} (x) \pm g^{\prime} (x)$.
 
-    由 (i) (ii) 与算学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \FF$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    由 (i) (ii) 与算学归纳法可知: 当 $c_0$, $c_1$, $\cdots$, $c_{k-1} \in \mathbb{F}$, 且 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \mathbb{F}[x]$ 时,
     \begin{align*}
         \left( \sum_{\ell = 0}^{k-1} c_\ell f_\ell (x) \right)^{\prime} = \sum_{\ell = 0}^{k-1} c_\ell f_\ell^{\prime} (x).
     \end{align*}
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 则
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$. 则
     \begin{align*}
         (f(x) g(x))^{\prime} = f^{\prime} (x) g(x) + f(x) g^{\prime} (x). \tag*{(\ding{72})}
     \end{align*}
-    由 (\ding{72}) 与算学归纳法可知: 当 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \FF[x]$ 时,
+    由 (\ding{72}) 与算学归纳法可知: 当 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{k-1} (x) \in \mathbb{F}[x]$ 时,
     \begin{align*}
              & (f_0 (x) f_1 (x) \cdots f_{k-1} (x))^{\prime}                                                      \\
         = {} & f_0^{\prime} (x) f_1 (x) \cdots f_{k-1} (x) + f_0 (x) f_1^{\prime} (x) \cdots f_{k-1} (x) + \cdots \\
@@ -368,7 +368,7 @@
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的流数适合链规则:
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$. 则 $f(x)$ 与 $g(x)$ 的复合的流数适合链规则:
     \begin{align*}
         (g \circ f)^{\prime} (x) = (g^{\prime} \circ f)(x) f^{\prime} (x).
     \end{align*}
@@ -383,9 +383,9 @@
 \begin{definition}
     设
     \begin{align*}
-        f(x) = \sum_{i=0}^n a_i x^i \in \FF[x].
+        f(x) = \sum_{i=0}^n a_i x^i \in \mathbb{F}[x].
     \end{align*}
-    设 $t \in \FF$. 我们把 $\FF$ 的元
+    设 $t \in \mathbb{F}$. 我们把 $\mathbb{F}$ 的元
     \begin{align*}
         \sum_{i=0}^n a_i t^i
     \end{align*}
@@ -397,14 +397,14 @@
     \end{align*}
     我们把
     \begin{align*}
-        \sum_{i = 1}^{n} i a_i t^{i - 1} \in \FF
+        \sum_{i = 1}^{n} i a_i t^{i - 1} \in \mathbb{F}
     \end{align*}
     简单地写为 $f^{\prime} (t)$.
 \end{definition}
 
 整式在一点的值适合如下性质:
 \begin{proposition}
-    设 $t \in \FF$. 设 $f(x)$, $g(x) \in \FF[x]$.
+    设 $t \in \mathbb{F}$. 设 $f(x)$, $g(x) \in \mathbb{F}[x]$.
 
     (i) 若 $f(x) = g(x)$, 则 $f(t) = g(t)$.
 
@@ -415,33 +415,33 @@
 
 我们得到了如下命题:
 \begin{proposition}
-    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $\FF$ 的元 $t$, 这样的关系仍成立.
+    若整式 $f_0 (x)$, $f_1 (x)$, $\cdots$, $f_{n-1} (x)$ 之间有一个由加法与乘法计算得到的关系, 那么将 $x$ 换为 $\mathbb{F}$ 的元 $t$, 这样的关系仍成立.
 \end{proposition}
 
 \begin{definition}
-    设 $f(x) \in \FF[x]$. 称函数
+    设 $f(x) \in \mathbb{F}[x]$. 称函数
     \begin{align*}
-         & \FF \to \FF, \tag*{$f_\mathrm{f} \colon$} \\
+         & \mathbb{F} \to \mathbb{F}, \tag*{$f_\mathrm{f} \colon$} \\
          & t \mapsto f(t)
     \end{align*}
-    为 $\FF$ 的整式函数. 我们也说, 这个函数是由 $\FF$ 上 $x$ 的整式 $f(x)$ 诱导的整式函数.
+    为 $\mathbb{F}$ 的整式函数. 我们也说, 这个函数是由 $\mathbb{F}$ 上 $x$ 的整式 $f(x)$ 诱导的整式函数.
 \end{definition}
 
 \begin{definition}
-    设 $f_\mathrm{f}$ 与 $g_\mathrm{f}$ 是 $\FF$ 的二个整式函数. 二者的和 $f_\mathrm{f} + g_\mathrm{f}$ 定义为
+    设 $f_\mathrm{f}$ 与 $g_\mathrm{f}$ 是 $\mathbb{F}$ 的二个整式函数. 二者的和 $f_\mathrm{f} + g_\mathrm{f}$ 定义为
     \begin{align*}
-         & \FF \to \FF, \tag*{$f_\mathrm{f} + g_\mathrm{f} \colon$} \\
+         & \mathbb{F} \to \mathbb{F}, \tag*{$f_\mathrm{f} + g_\mathrm{f} \colon$} \\
          & t \mapsto f_\mathrm{f} (t) + g_\mathrm{f} (t).
     \end{align*}
     二者的积 $f_\mathrm{f} \, g_\mathrm{f}$ 定义为
     \begin{align*}
-         & \FF \to \FF, \tag*{$f_\mathrm{f} \, g_\mathrm{f} \colon$} \\
+         & \mathbb{F} \to \mathbb{F}, \tag*{$f_\mathrm{f} \, g_\mathrm{f} \colon$} \\
          & t \mapsto f_\mathrm{f} (t) g_\mathrm{f} (t).
     \end{align*}
 \end{definition}
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 设 $f_\mathrm{f}$, $g_\mathrm{f}$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数.
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$. 设 $f_\mathrm{f}$, $g_\mathrm{f}$ 分别是 $f(x)$, $g(x)$ 诱导的整式函数.
 
     (i) 若 $f(x) = g(x)$, 则 $f_\mathrm{f} = g_\mathrm{f}$ (函数的相等).
 
@@ -452,7 +452,7 @@
 
 下面是带馀除法的推论. 它在根的讨论里起了重要的作用.
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $n$ 次整式 ($n \geq 1$), $a \in \FF$. 则存在 $n-1$ 次整式 $q(x)$ ($\in \FF[x]$) 使
+    设 $f(x) \in \mathbb{F}[x]$ 是 $n$ 次整式 ($n \geq 1$), $a \in \mathbb{F}$. 则存在 $n-1$ 次整式 $q(x)$ ($\in \mathbb{F}[x]$) 使
     \begin{align*}
         f(x) = q(x) (x-a) + f(a).
     \end{align*}
@@ -462,11 +462,11 @@
 最后, 我们回顾整式的根.
 
 \begin{definition}
-    设 $f(x)$ 是 $\FF$ 上 $x$ 的整式. 若有 $a \in \FF$ 使 $f(a) = 0$, 则说 $a$ 是 (整式) $f(x)$ 的根.
+    设 $f(x)$ 是 $\mathbb{F}$ 上 $x$ 的整式. 若有 $a \in \mathbb{F}$ 使 $f(a) = 0$, 则说 $a$ 是 (整式) $f(x)$ 的根.
 \end{definition}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $n$ 次整式 ($n \geq 1$). $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次整式 $q(x)$ ($\in \FF[x]$) 使
+    设 $f(x) \in \mathbb{F}[x]$ 是 $n$ 次整式 ($n \geq 1$). $a$ 是 $f(x)$ 的根的一个必要与充分条件是: 存在 $n-1$ 次整式 $q(x)$ ($\in \mathbb{F}[x]$) 使
     \begin{align*}
         f(x) = q(x) (x-a).
     \end{align*}
@@ -474,39 +474,39 @@
 \end{proposition}
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$ 是 $n$ 次整式 ($n \in \NN$). 则 $f(x)$ 至多有 $n$ 个不同的根.
+    设 $f(x) \in \mathbb{F}[x]$ 是 $n$ 次整式 ($n \in \mathbb{N}$). 则 $f(x)$ 至多有 $n$ 个不同的根.
 \end{proposition}
 
 \begin{remark}
-    在上节, 我们知道, 整环 $D$ 上的整式 $f(x) = ax + b$ ($a \neq 0$) 不一定有根. 可是, 在域 $\FF$ 里, $f(x)$ 就有根 $-\frac{b}{a}$.
+    在上节, 我们知道, 整环 $D$ 上的整式 $f(x) = ax + b$ ($a \neq 0$) 不一定有根. 可是, 在域 $\mathbb{F}$ 里, $f(x)$ 就有根 $-\frac{b}{a}$.
 \end{remark}
 
 \begin{proposition}
-    设 $a_0$, $a_1$, $\cdots$, $a_n$ 是 $\FF$ 的元. 设 $n$ 是非负整数. 设
+    设 $a_0$, $a_1$, $\cdots$, $a_n$ 是 $\mathbb{F}$ 的元. 设 $n$ 是非负整数. 设
     \begin{align*}
         f(x) = \sum_{i = 0}^n a_i x^i.
     \end{align*}
-    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\mathbb{F}$ 的元, 且
     \begin{align*}
         f(t_0) = f(t_1) = \cdots = f(t_n) = 0,
     \end{align*}
-    则 $f(x)$ 必为零整式. 通俗地说, 次不高于 $n$ (且系数为 $\FF$ 的元) 的整式不可能有 $n$ 个以上的互不相同的根, 除非这个整式是零.
+    则 $f(x)$ 必为零整式. 通俗地说, 次不高于 $n$ (且系数为 $\mathbb{F}$ 的元) 的整式不可能有 $n$ 个以上的互不相同的根, 除非这个整式是零.
 \end{proposition}
 
 \begin{proposition}
-    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\FF$ 的元. 设 $n$ 是非负整数. 设
+    设 $a_0$, $b_0$, $a_1$, $b_1$, $\cdots$, $a_n$, $b_n$ 是 $\mathbb{F}$ 的元. 设 $n$ 是非负整数. 设
     \begin{align*}
         f(x) = \sum_{i = 0}^n a_i x^i, \quad g(x) = \sum_{i = 0}^n b_i x^i.
     \end{align*}
-    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\FF$ 的元, 且
+    若 $t_0$, $t_1$, $\cdots$, $t_n$ 是 $n+1$ 个互不相同的 $\mathbb{F}$ 的元, 且
     \begin{align*}
         f(t_0) = g(t_0), \quad f(t_1) = g(t_1), \quad \cdots, \quad f(t_n) = g(t_n),
     \end{align*}
-    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为 $\FF$ 的元) 的二个整式若在多于 $n$ 处取一样的值, 则这二个整式相等.
+    则 $f(x)$ 必等于 $g(x)$. 通俗地说, 若次不高于 $n$ (且系数为 $\mathbb{F}$ 的元) 的二个整式若在多于 $n$ 处取一样的值, 则这二个整式相等.
 \end{proposition}
 
 \begin{definition}
-    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 设 $f(x) \neq 0$. 那么, 存在唯一的整式 $q(x) \in \FF[x]$ 使
+    设 $a \in \mathbb{F}$ 是整式 $f(x) \in \mathbb{F}[x]$ 的根. 设 $f(x) \neq 0$. 那么, 存在唯一的整式 $q(x) \in \mathbb{F}[x]$ 使
     \begin{align*}
         f(x) = (x - a) q(x),
     \end{align*}
@@ -514,7 +514,7 @@
 \end{definition}
 
 \begin{proposition}
-    设 $a \in \FF$ 是整式 $f(x) \in \FF[x]$ 的根. 设 $f(x) \neq 0$. 则:
+    设 $a \in \mathbb{F}$ 是整式 $f(x) \in \mathbb{F}[x]$ 的根. 设 $f(x) \neq 0$. 则:
 
     (i) 若 $a$ 是 $f(x)$ 的重根, 则 $a$ 是 $f^{\prime} (x)$ 的根;
 
@@ -523,10 +523,10 @@
     所以, $f(x)$ 有重根的一个必要与充分条件是: $f(x)$ 与 $f^{\prime} (x)$ 有公共根.
 \end{proposition}
 
-下面是一些新命题. 由于 $\FF$ 里有无限多个元, 所以
+下面是一些新命题. 由于 $\mathbb{F}$ 里有无限多个元, 所以
 
 \begin{proposition}
-    设 $f(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = 0$, 则 $f(x)$ 必为零整式. 通俗地说, 系数为 $\FF$ 的元的整式不可能有无限多个根, 除非这个整式是零.
+    设 $f(x) \in \mathbb{F}[x]$. 设 $S \subset \mathbb{F}$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = 0$, 则 $f(x)$ 必为零整式. 通俗地说, 系数为 $\mathbb{F}$ 的元的整式不可能有无限多个根, 除非这个整式是零.
 \end{proposition}
 
 \begin{pf}
@@ -536,7 +536,7 @@
 由此立得
 
 \begin{proposition}
-    设 $f(x)$, $g(x) \in \FF[x]$. 设 $S \subset \FF$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = g(t)$, 则 $f(x)$ 与 $g(x)$ 是二个相同的整式. 通俗地说, 若系数为 $\FF$ 的元的二个整式在无限多个地方有相同的取值, 则这二个整式必相等.
+    设 $f(x)$, $g(x) \in \mathbb{F}[x]$. 设 $S \subset \mathbb{F}$, 且 $S$ 有无限多个元. 若任取 $t \in S$, 必有 $f(t) = g(t)$, 则 $f(x)$ 与 $g(x)$ 是二个相同的整式. 通俗地说, 若系数为 $\mathbb{F}$ 的元的二个整式在无限多个地方有相同的取值, 则这二个整式必相等.
 \end{proposition}
 
 \begin{pf}
@@ -546,7 +546,7 @@
 前面已经知道, 整式确定整式函数. 利用上面的命题, 我们有
 
 \begin{proposition}
-    $\FF$ 上的整式与 $\FF$ 的整式函数是一一对应的: 不但二个不同的 $\FF$ 上的整式给出二个不同的 $\FF$ 的整式函数, 而且二个不同的 $\FF$ 的整式函数给出二个不同的 $\FF$ 上的整式.
+    $\mathbb{F}$ 上的整式与 $\mathbb{F}$ 的整式函数是一一对应的: 不但二个不同的 $\mathbb{F}$ 上的整式给出二个不同的 $\mathbb{F}$ 的整式函数, 而且二个不同的 $\mathbb{F}$ 的整式函数给出二个不同的 $\mathbb{F}$ 上的整式.
 \end{proposition}
 
 \begin{remark}
