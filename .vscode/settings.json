@@ -5,7 +5,7 @@
             "name": "latexmk",
             "command": "latexmk",
             "args": [
-                "-pdflatex=\"xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S\"",
+                "-pdflatex=\"xelatex -file-line-error -halt-on-error --shell-escape -interaction=nonstopmode -synctex=1 %O %S\"",
                 "-pdf",
                 "%DOCFILE%.tex"
             ]

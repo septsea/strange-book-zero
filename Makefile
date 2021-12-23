@@ -6,7 +6,7 @@ all: $(MAIN).pdf
 
 $(MAIN).pdf: $(MAIN).tex
 # %O is a substitution for options and %S is a substitution for the source file
-		latexmk -pdflatex="xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S" -pdf $(MAIN)
+		latexmk -pdflatex="xelatex -file-line-error -halt-on-error --shell-escape -interaction=nonstopmode -synctex=1 %O %S" -pdf $(MAIN)
 # xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 $(MAIN).tex
 # xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 $(MAIN).tex
 
