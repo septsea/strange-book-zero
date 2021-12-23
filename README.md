@@ -31,8 +31,8 @@ The following tells you how to compile the source code. If you just want to read
 To compile the `tex` files, try one of the following:
 
 - Execute `make`.
-- Execute `latexmk -pdflatex="xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S" -pdf main.tex` if you do not have `make` installed or you prefer not to use `make`.
-- Execute `xelatex -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 main.tex` if you prefer not to use `latexmk`.
+- Execute `latexmk -pdflatex="xelatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 %O %S" -pdf main.tex` if you do not have `make` installed or you prefer not to use `make`.
+- Execute `xelatex -shell-escape -file-line-error -halt-on-error -interaction=nonstopmode -synctex=1 main.tex` if you prefer not to use `latexmk`.
 - Open the folder which contains `main.tex` with Visual Studio Code (make sure that the extension `LaTeX Workshop` by *James Yu* is installed.)
 - If you think that Visual Studio Code sucks, just use whatever text editor you like. By the way, I do think that Visual Studio Code still needs improving.
 - Whatever method you like is fine. Just remember to compile them with `XeLaTeX`.
