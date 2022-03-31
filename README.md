@@ -1,5 +1,11 @@
 # Strange Book Zero
 
+I will remake the book. The code is in chaos. Now I cannot even compile the book successfully.
+
+我之后找个时间重做本书吧。代码一团糟。我现在甚至无法编译本书。
+
+---
+
 Written in `LaTeX`, this is a strange book discussing basic stuffs of polynomials.
 
 这是一本用 `LaTeX` 写的讨论整式的基本的东西的奇怪的书。
